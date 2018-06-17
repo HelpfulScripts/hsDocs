@@ -21,7 +21,7 @@ for the http server. Then edit the `index.json` file to include the documentatio
 
 ## Installation
 Install `hsDocs` from `npm` the standard way:
-> npm i hsdoc
+> npm i hsdocs
 
 Please see the [docs](https://helpfulscripts.github.io/hsDocs/docs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
 

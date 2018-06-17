@@ -35,8 +35,8 @@ where
 
 Examples:
 - '{@link overview Overview of hsDocs docSet}' -> {@link overview Overview of hsDocs docSet}
-- '{@link hsdoc: Overview of hsDocs docSet}' -> {@link hsdoc: Overview of hsDocs docSet}
-- '{@link hsdoc:DocSets.DocSets.add the `adds` function}' --> {@link hsDocs:DocSets.DocSets.add the `adds` function}
+- '{@link hsdocs: Overview of hsDocs docSet}' -> {@link hsdocs: Overview of hsDocs docSet}
+- '{@link hsdocs:DocSets.DocSets.add the `adds` function}' --> {@link hsDocs:DocSets.DocSets.add the `adds` function}
 - '{@link DocSets.DocSets.add the `adds` function}' --> {@link DocSets.DocSets.add the `adds` function}
 
 
