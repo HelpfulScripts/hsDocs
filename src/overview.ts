@@ -1,5 +1,8 @@
 /**
 # hsDocs
+
+Helpful Scripts code documentation viewer. [Github page](https://github.com/HelpfulScripts/hsDocs)
+
 ___
 hsDocs.js is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.
 It renders JSON documentation files as created by [typedoc](http://typedoc.org).
