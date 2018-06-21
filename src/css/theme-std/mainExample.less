@@ -1,16 +1,38 @@
 @bg-example: #eed;
 @bg-source:  #dde;
-@menuItemBorder: 1px solid #ddd; 
+@menuItemBorder: 1px solid rgb(240, 30, 30); 
 @windowHeight: 300px;
+@LayoutSpacing: 1px solid white; 
 
-example {
+.hs-layout-spacing {
+    .hs-column-layout > .hs-layout {
+        border-left: @LayoutSpacing; 
+        border-right: @LayoutSpacing; 
+        &:first-of-type { border-left: 0; }  
+        &:last-of-type { border-right: 0; }  
+    } 
+    .hs-row-layout > .hs-layout {
+        border-top: @LayoutSpacing;
+        border-bottom: @LayoutSpacing;
+        &:first-of-type { border-top: 0; }  
+        &:last-of-type { border-bottom: 0; }  
+    } 
+}
+
+example { 
     display:block;
     height: @windowHeight;
     width: 100%;
     padding: 5px;
     box-sizing: border-box;
+
+    .hs-selectable {
+        border-bottom:0;
+        height:100%;
+    }
      
     .hs-execution { 
+        .hs-layout-spacing;
         background-color: @bg-example; 
         div { margin: 0px; }
         .hs-leaf { padding: 5px; } 
@@ -27,9 +49,9 @@ example {
     }
 
     .hs-source {
-        .hs-menu .hs-selectable {
+        .hs-menu .hs-layout {
             background-color: white;
-            &.hs-selected {
+            .hs-layout  {
                 background-color: @bg-source;
             }
         }

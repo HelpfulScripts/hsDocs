@@ -1,11 +1,7 @@
 if (!global['window']) {
-    console.log('creating non-browser polyfill');
-    // Polyfill DOM env for mithril
     global['window'] = require("mithril/test-utils/browserMock.js")();
     global['document'] = window.document;
-
 }
-
 const o = require("mithril/ospec/ospec");
 const m = require("mithril");
 
