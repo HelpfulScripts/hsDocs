@@ -6,8 +6,33 @@
   position: absolute;
   display: block;
   overflow: scroll;
+  border: 0;
+}
+.hs-column-layout .hs-layout-spacing > .hs-layout {
+  border: 1px solid white;
+}
+.hs-column-layout .hs-layout-spacing > .hs-layout > .hs-layout:first-of-type {
+  border-left: 0;
+}
+.hs-column-layout .hs-layout-spacing > .hs-layout > .hs-layout:last-of-type {
+  border-right: 0;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout {
+  border: 1px solid white;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout:first-of-type {
+  border-top: 0;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout:last-of-type {
+  border-bottom: 0;
+}
+.hs-row-layout {
+  box-sizing: border-box;
 }
 .hs-row-layout > .hs-layout {
+  box-sizing: border-box;
+}
+.hs-column-layout {
   box-sizing: border-box;
 }
 .hs-column-layout > .hs-layout {
@@ -35,7 +60,7 @@
 .hs-align-center {
   text-align: center;
 }
-/*# sourceMappingURL=hslayout.css.map */
+/*# sourceMappingURL=_dist/bin/hsLayout.css.map */
 .hs-menu {
   position: relative;
   margin: 0px;
@@ -1001,6 +1026,26 @@ code {
   border-radius: 4px;
   padding: 3px;
 }
+.hs-layout-spacing .hs-column-layout > .hs-layout {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.hs-layout-spacing .hs-column-layout > .hs-layout:first-of-type {
+  border-left: 0;
+}
+.hs-layout-spacing .hs-column-layout > .hs-layout:last-of-type {
+  border-right: 0;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout:first-of-type {
+  border-top: 0;
+}
+.hs-layout-spacing .hs-row-layout > .hs-layout:last-of-type {
+  border-bottom: 0;
+}
 example {
   display: block;
   height: 300px;
@@ -1008,8 +1053,32 @@ example {
   padding: 5px;
   box-sizing: border-box;
 }
+example .hs-selectable {
+  border-bottom: 0;
+  height: 100%;
+}
 example .hs-execution {
   background-color: #eed;
+}
+example .hs-execution .hs-column-layout > .hs-layout {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+example .hs-execution .hs-column-layout > .hs-layout:first-of-type {
+  border-left: 0;
+}
+example .hs-execution .hs-column-layout > .hs-layout:last-of-type {
+  border-right: 0;
+}
+example .hs-execution .hs-row-layout > .hs-layout {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+example .hs-execution .hs-row-layout > .hs-layout:first-of-type {
+  border-top: 0;
+}
+example .hs-execution .hs-row-layout > .hs-layout:last-of-type {
+  border-bottom: 0;
 }
 example .hs-execution div {
   margin: 0px;
@@ -1026,10 +1095,10 @@ example .hs-execution .hs-white {
   bottom: 0;
   right: 0;
 }
-example .hs-source .hs-menu .hs-selectable {
+example .hs-source .hs-menu .hs-layout {
   background-color: white;
 }
-example .hs-source .hs-menu .hs-selectable.hs-selected {
+example .hs-source .hs-menu .hs-layout .hs-layout {
   background-color: #dde;
 }
 example .hs-source .hs-source-main {
@@ -1063,4 +1132,4 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
-/*# sourceMappingURL=hsDocs.css.map */
+/*# sourceMappingURL=_dist/bin/hsDocs.css.map */
