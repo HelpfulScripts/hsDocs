@@ -4,7 +4,7 @@ hsDocs [![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.
 Helpful Scripts code documentation tool.
 
 **hsDocs**  is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.
-It renders JSON documentation files as created by [typedoc](http://typedoc.org).
+It renders JSON documentation files, as created by [typedoc](http://typedoc.org), into html pages that can be viewed via browser. [This example](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) shows the rendered docset for the hsDoc code itself.
 
 ## Creating the Documentation DocSet
 Follow the instruction for `typedoc` in commenting the code and set the `json` option to create a 
@@ -22,6 +22,24 @@ for the http server. Then edit the `index.json` file to include the documentatio
 ## Installation
 Install `hsDocs` from `npm` the standard way:
 > npm i hsdocs
+
+## Typedoc configuration
+Below is an example configuration for use with `grunt` and [`grunt-typedoc`](https://www.npmjs.com/package/grunt-typedoc): 
+````
+typedoc: {
+    code: {
+        options: {
+            target: 'es6',
+            module: 'commonjs',
+            moduleResolution: "node",
+            json:   `_dist/docs/data/${lib}.json`,
+            mode:   'modules',
+            name:   `${lib}`
+        },
+        src: ['src/**/*.ts', '!src/**/*.*.ts'] // no specs
+    }
+},
+```
 
 Please see the [docs](https://helpfulscripts.github.io/hsDocs/docs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
 
