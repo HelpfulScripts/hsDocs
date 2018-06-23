@@ -41,7 +41,7 @@ typedoc: {
 }
 ```
 
-Please see the [docs](https://helpfulscripts.github.io/hsDocs/docs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
+Please see the [docs](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
 
 Please report any issues and provide feedback.
  
