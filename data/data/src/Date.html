@@ -1,0 +1,95 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/Date.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>#&nbsp;Date&nbsp;formatting&nbsp;support.&nbsp;<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>Formats&nbsp;are&nbsp;specified&nbsp;in&nbsp;a&nbsp;printf-style&nbsp;format&nbsp;string.&nbsp;<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>##&nbsp;Supported&nbsp;Formats<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>-&nbsp;`%YY,&nbsp;%YYYY`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;two-&nbsp;or&nbsp;four-digit&nbsp;year,&nbsp;as&nbsp;'73',&nbsp;'1973'<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>-&nbsp;`%M,&nbsp;%MM,&nbsp;%MMM,&nbsp;%MMMM`&nbsp;:&nbsp;month&nbsp;of&nbsp;year&nbsp;as&nbsp;'2',&nbsp;'02',&nbsp;'Feb',&nbsp;'February'<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>-&nbsp;`%D,&nbsp;%DD`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;day&nbsp;of&nbsp;month&nbsp;as&nbsp;'5',&nbsp;'05'&nbsp;(1...31)<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>-&nbsp;`%DDD,&nbsp;%DDDD`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;day&nbsp;of&nbsp;week&nbsp;as&nbsp;'Tue',&nbsp;'Tuesday'<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>-&nbsp;`%h,&nbsp;%hh`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;hour&nbsp;of&nbsp;day&nbsp;as&nbsp;'7',&nbsp;'07&nbsp;(0...23)<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>-&nbsp;`%m,&nbsp;%mm`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;minutes&nbsp;as&nbsp;'6',&nbsp;'06'&nbsp;(0..59)<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>-&nbsp;`%ss`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;seconds&nbsp;as&nbsp;'09'&nbsp;(0...59)<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>-&nbsp;`%j,&nbsp;%jj,&nbsp;%jjj`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;milliseconds&nbsp;as&nbsp;'1',&nbsp;'15',&nbsp;'159'<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*/</comment><br>
+<span id=14 class="line">&nbsp;&nbsp;14</span><br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;<comment>/**&nbsp;short&nbsp;and&nbsp;long&nbsp;month&nbsp;names&nbsp;*/</comment><br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>const&nbsp;monthStr&nbsp;=&nbsp;[<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;['Jan',&nbsp;'January'],&nbsp;['Feb',&nbsp;'February'],&nbsp;['Mar',&nbsp;'March'],&nbsp;['Apr',&nbsp;'April'],&nbsp;['May',&nbsp;'May'],&nbsp;['Jun',&nbsp;'June'],<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;['Jul',&nbsp;'July'],&nbsp;['Aug',&nbsp;'August'],&nbsp;['Sep',&nbsp;'September'],&nbsp;['Oct',&nbsp;'October'],&nbsp;['Nov',&nbsp;'November'],&nbsp;['Dec',&nbsp;'December']];<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span><br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;<comment>/**&nbsp;short&nbsp;and&nbsp;long&nbsp;weekday&nbsp;names&nbsp;*/</comment><br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>const&nbsp;dayStr&nbsp;=&nbsp;[<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;['Sun',&nbsp;'Sunday'],['Mon',&nbsp;'Monday'],['Tue',&nbsp;'Tuesday'],['Wed',&nbsp;'Wednesday'],['Thu',&nbsp;'Thursday'],['Fri',&nbsp;'Friday'],['Sat',&nbsp;'Saturday']];<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span><br>
+<span id=24 class="line">&nbsp;&nbsp;24</span><comment>/**&nbsp;add&nbsp;leading&nbsp;zeros&nbsp;to&nbsp;an&nbsp;integer&nbsp;until&nbsp;`digits`&nbsp;are&nbsp;reached&nbsp;*/</comment><br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>function&nbsp;formatNumber(number:number,&nbsp;digits:number):string&nbsp;{<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;''+number;<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(r.length&nbsp;<&nbsp;digits)&nbsp;{&nbsp;r&nbsp;=&nbsp;"0"&nbsp;+&nbsp;r;&nbsp;}<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>}<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span><br>
+<span id=31 class="line">&nbsp;&nbsp;31</span><br>
+<span id=32 class="line">&nbsp;&nbsp;32</span><comment>/**<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;*&nbsp;##&nbsp;Example:<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;*&nbsp;<pre><br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;*&nbsp;date('%MM/%DD/%YY');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;->&nbsp;08/17/16&nbsp;(using&nbsp;current&nbsp;date)<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;*&nbsp;let&nbsp;d&nbsp;=&nbsp;new&nbsp;Date('7/4/2010');<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;*&nbsp;date('%DDDD,&nbsp;%MM/%DD/%YY',&nbsp;d);&nbsp;//&nbsp;->&nbsp;Sunday,&nbsp;07/04/10<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*&nbsp;</pre><br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;*&nbsp;@param&nbsp;formatString&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use.<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;*&nbsp;@param&nbsp;[date=new&nbsp;Date()]&nbsp;the&nbsp;date&nbsp;to&nbsp;format.<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;*&nbsp;@returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;`formatString`&nbsp;where&nbsp;all&nbsp;supported&nbsp;patterns&nbsp;are&nbsp;replaced&nbsp;by&nbsp;the&nbsp;respective&nbsp;values&nbsp;from&nbsp;`date`.<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;*/</comment><br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>export&nbsp;function&nbsp;date(formatString:string,&nbsp;date=new&nbsp;Date()):string&nbsp;{<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;isNaN(&nbsp;date.getTime()&nbsp;)?<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'invalid':<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatString<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%YYYY/g,	''+date.getFullYear())<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%YY/g,&nbsp;&nbsp;	''+(date.getFullYear()%100))<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%MMMM/g,&nbsp;&nbsp;monthStr[date.getMonth()][1])<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%MMM/g,&nbsp;&nbsp;	monthStr[date.getMonth()][0])<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%MM/g,&nbsp;&nbsp;	formatNumber(date.getMonth()+1,2))<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%M/g,&nbsp;&nbsp;	''+(date.getMonth()+1))<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%DDDD/g,&nbsp;	dayStr[date.getDay()][1])<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%DDD/g,&nbsp;&nbsp;	dayStr[date.getDay()][0])<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%DD/g,&nbsp;&nbsp;	formatNumber(date.getDate(),2))<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%D/g,&nbsp;&nbsp;	''+date.getDate())<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%hh/g,&nbsp;&nbsp;	formatNumber(date.getHours(),2))<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%h/g,&nbsp;	''+date.getHours())<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%mm/g,&nbsp;&nbsp;	formatNumber(date.getMinutes(),2))<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%m/g,&nbsp;&nbsp;	''+date.getMinutes())<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%ss/g,&nbsp;&nbsp;	formatNumber(date.getSeconds(),2))<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%jjj/g,&nbsp;&nbsp;	formatNumber(date.getMilliseconds(),3))<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%jj/g,&nbsp;&nbsp;	formatNumber(date.getMilliseconds()/10,2))<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/%j/g,		formatNumber(date.getMilliseconds()/100,1));<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>}<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span><br>
+<span id=67 class="line">&nbsp;&nbsp;67</span><comment>/**&nbsp;converts&nbsp;minutes,&nbsp;hours,&nbsp;days,&nbsp;weeks&nbsp;...&nbsp;into&nbsp;milliseconds&nbsp;and&nbsp;back&nbsp;*/</comment>&nbsp;<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>export&nbsp;const&nbsp;ms&nbsp;=&nbsp;{<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;fromMinutes:&nbsp;&nbsp;&nbsp;&nbsp;(min:number)&nbsp;=>&nbsp;1000*60*min,<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;fromHours:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(h:number)&nbsp;&nbsp;&nbsp;=>&nbsp;1000*60*60*h,<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;fromDays:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(d:number)&nbsp;&nbsp;&nbsp;=>&nbsp;1000*60*60*24*d,<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;fromWeeks:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(w:number)&nbsp;&nbsp;&nbsp;=>&nbsp;1000*60*60*24*7*w,<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;toMinutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ms:number)&nbsp;&nbsp;=>&nbsp;ms/(1000*60),<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;toHours:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ms:number)&nbsp;&nbsp;=>&nbsp;ms/(1000*60*60),<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;toDays:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ms:number)&nbsp;&nbsp;=>&nbsp;ms/(1000*60*60*24),<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;toWeeks:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ms:number)&nbsp;&nbsp;=>&nbsp;ms/(1000*60*60*24*7)<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>};<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span><br></code></div>
+                </body>
+            

@@ -1,0 +1,153 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/view/Layout.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;#&nbsp;Layout<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;A&nbsp;`mithril`&nbsp;component&nbsp;class&nbsp;that&nbsp;layouts&nbsp;available&nbsp;space&nbsp;in&nbsp;the&nbsp;window.<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;###&nbsp;Invocation<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;invoked&nbsp;as&nbsp;`m(Layout,&nbsp;{name:<string>,&nbsp;content:Array<Vnode>})`<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;###&nbsp;Attributes&nbsp;(node.attrs):<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;-&nbsp;<key>:Array<String>,&nbsp;required.&nbsp;<key>&nbsp;matches&nbsp;a&nbsp;registered&nbsp;{@link&nbsp;Layouter&nbsp;Layouter}<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*&nbsp;-&nbsp;content:&nbsp;Array<Vnode>,&nbsp;required.&nbsp;The&nbsp;Vnode&nbsp;children&nbsp;to&nbsp;lay&nbsp;out.&nbsp;<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;-&nbsp;css:String,&nbsp;optional.&nbsp;The&nbsp;css&nbsp;specifier&nbsp;to&nbsp;use&nbsp;for&nbsp;this&nbsp;`Layout`&nbsp;component.<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;-&nbsp;route:&nbsp;object&nbsp;literal&nbsp;holding&nbsp;parameters&nbsp;passed&nbsp;from&nbsp;`m.route`<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;-&nbsp;href:&nbsp;String,&nbsp;optional.&nbsp;If&nbsp;present,&nbsp;makes&nbsp;the&nbsp;component&nbsp;clickable<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;-&nbsp;onclick:(),&nbsp;optional.&nbsp;The&nbsp;function&nbsp;to&nbsp;call&nbsp;when&nbsp;clicked<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*/</comment><br>
+<span id=16 class="line">&nbsp;&nbsp;16</span><br>
+<span id=17 class="line">&nbsp;&nbsp;17</span><comment>/**&nbsp;*/</comment><br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>import&nbsp;{&nbsp;m,&nbsp;Vnode}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'../mithril';<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>import&nbsp;{&nbsp;Layouter&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./Layouter';&nbsp;<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span><br>
+<span id=21 class="line">&nbsp;&nbsp;21</span><comment>/**<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>Base&nbsp;class&nbsp;for&nbsp;applying&nbsp;layouts.&nbsp;Subclasses&nbsp;should&nbsp;implement&nbsp;a&nbsp;{@link&nbsp;Layout.Layout.getComponents&nbsp;`getComponents`}&nbsp;method&nbsp;that&nbsp;returns<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>the&nbsp;components&nbsp;to&nbsp;render.&nbsp;The&nbsp;default&nbsp;implementation&nbsp;returns&nbsp;the&nbsp;conponents&nbsp;passed&nbsp;in&nbsp;`node.attrs.content`.<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>Optionally,&nbsp;the&nbsp;subclass&nbsp;can&nbsp;also&nbsp;implement&nbsp;{@link&nbsp;Layout.Layout.getCSS&nbsp;`getCSS`}&nbsp;to&nbsp;provide&nbsp;the&nbsp;CSS&nbsp;class&nbsp;to&nbsp;<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>assign&nbsp;to&nbsp;the&nbsp;component,&nbsp;and&nbsp;override&nbsp;the&nbsp;default&nbsp;implementation,&nbsp;which&nbsp;returns&nbsp;`node.attrs.css`.&nbsp;<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>###&nbsp;Example:<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span><code><br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>import&nbsp;{&nbsp;Layout,&nbsp;px,&nbsp;FILL&nbsp;}&nbsp;&nbsp;from&nbsp;'hslayout';<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>const&nbsp;TitleHeight&nbsp;&nbsp;&nbsp;=&nbsp;px(30);&nbsp;<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>const&nbsp;FooterHeight&nbsp;&nbsp;=&nbsp;px(10);&nbsp;<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>class&nbsp;MyLayout&nbsp;extends&nbsp;Layout&nbsp;{<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:Vnode):Vnode&nbsp;{<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.layout('.my-layout',&nbsp;{&nbsp;rows:[TitleHeight,&nbsp;FILL,&nbsp;FooterHeight]&nbsp;},&nbsp;[<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(),&nbsp;<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(),<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m()<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;getCSS(node:Vnode):string&nbsp;{<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>}&nbsp;<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span></code><br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;*/</comment><br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>export&nbsp;class&nbsp;Layout&nbsp;{<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;holds&nbsp;structural&nbsp;elements&nbsp;in&nbsp;style&nbsp;form:&nbsp;left,&nbsp;right,&nbsp;top,&nbsp;bottom,&nbsp;width,&nbsp;height<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;style:string;<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span><br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>//&nbsp;&nbsp;&nbsp;&nbsp;oninit(node:Vnode)&nbsp;&nbsp;&nbsp;{&nbsp;this.report('Layout:init',&nbsp;node);&nbsp;}<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>//&nbsp;&nbsp;&nbsp;&nbsp;oncreate(node:Vnode)&nbsp;{&nbsp;this.report('Layout:create',&nbsp;node);&nbsp;}&nbsp;<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>//&nbsp;&nbsp;&nbsp;&nbsp;onupdate(node:Vnode)&nbsp;{&nbsp;this.report('Layout:update',&nbsp;node);&nbsp;}<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span><br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Called&nbsp;during&nbsp;the&nbsp;lifecycle&nbsp;`view`&nbsp;call&nbsp;to&nbsp;retrieve&nbsp;the&nbsp;subcomponents&nbsp;to&nbsp;render&nbsp;in&nbsp;this&nbsp;container.<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;default&nbsp;implementation&nbsp;returns&nbsp;components&nbsp;stored&nbsp;in&nbsp;`node.attrs.content`.&nbsp;This&nbsp;allows&nbsp;for&nbsp;<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;creating&nbsp;containers&nbsp;directly&nbsp;via&nbsp;mithril:&nbsp;`m(Layout,&nbsp;{content:[...]})`.&nbsp;<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;In&nbsp;case&nbsp;`node.attrs.content`&nbsp;is&nbsp;an&nbsp;array&nbsp;of&nbsp;literals&nbsp;with&nbsp;a&nbsp;`compClass`&nbsp;field&nbsp;describing&nbsp;a&nbsp;Component&nbsp;class,&nbsp;<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;method&nbsp;will&nbsp;create&nbsp;a&nbsp;Mithril&nbsp;node&nbsp;on&nbsp;that&nbsp;class&nbsp;and&nbsp;pass&nbsp;the&nbsp;`node.attrs.route`&nbsp;argument&nbsp;down&nbsp;to&nbsp;it.<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Override&nbsp;this&nbsp;method&nbsp;to&nbsp;create&nbsp;containers&nbsp;that&nbsp;return&nbsp;more&nbsp;sophisticated&nbsp;content.<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;a&nbsp;String,&nbsp;a&nbsp;Vnode,&nbsp;or&nbsp;an&nbsp;array&nbsp;of&nbsp;Strings&nbsp;or&nbsp;Vnodes<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;getComponents(node:Vnode):Vnode&nbsp;{<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;!Array.isArray(node.attrs.content)?&nbsp;node.attrs.content&nbsp;:<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.attrs.content.map((c:any)&nbsp;=>&nbsp;{<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(c.compClass)&nbsp;{&nbsp;<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.attrs.route&nbsp;=&nbsp;node.attrs.route;<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(c.compClass,&nbsp;c.attrs);<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;c;<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span><br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Called&nbsp;during&nbsp;the&nbsp;lifecycle&nbsp;`view`&nbsp;call&nbsp;to&nbsp;retrieve&nbsp;the&nbsp;css&nbsp;style&nbsp;class&nbsp;to&nbsp;apply&nbsp;to&nbsp;this&nbsp;container.<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;default&nbsp;implementation&nbsp;returns&nbsp;components&nbsp;stored&nbsp;in&nbsp;`node.attrs.css`.&nbsp;This&nbsp;allows&nbsp;for&nbsp;<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;creating&nbsp;containers&nbsp;directly&nbsp;via&nbsp;mithril:&nbsp;`m(Layout,&nbsp;{content:[...],&nbsp;css:'.my-class'})`.<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Override&nbsp;this&nbsp;method&nbsp;to&nbsp;create&nbsp;containers&nbsp;that&nbsp;return&nbsp;more&nbsp;sophisticated&nbsp;content.<br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;getCSS(node:Vnode):string&nbsp;{<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node.attrs.css&nbsp;||&nbsp;'';<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span><br>
+<span id=86 class="line">&nbsp;&nbsp;86</span><br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;normalizeContent(components:Array<typeof&nbsp;Layout|string>|string):&nbsp;Vnode&nbsp;{<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(typeof&nbsp;components&nbsp;===&nbsp;'string')&nbsp;{&nbsp;<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[m('.hs-leaf',&nbsp;m.trust(components))];&nbsp;<br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(components.length>0)&nbsp;{&nbsp;//&nbsp;an&nbsp;array:&nbsp;ensure&nbsp;elements&nbsp;are&nbsp;Layout&nbsp;components<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;components.map((comp:string|typeof&nbsp;Layout):Vnode&nbsp;=>&nbsp;<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(comp&nbsp;instanceof&nbsp;Layout)?&nbsp;comp&nbsp;:&nbsp;m(Layout,&nbsp;{content:comp})<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=96 class="line">&nbsp;&nbsp;96</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;else:&nbsp;assume&nbsp;components&nbsp;is&nbsp;a&nbsp;mithril&nbsp;node:&nbsp;return&nbsp;node&nbsp;as&nbsp;an&nbsp;array<br>
+<span id=97 class="line">&nbsp;&nbsp;97</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[components];<br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=99 class="line">&nbsp;&nbsp;99</span><br>
+<span id=100 class="line">&nbsp;100</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;lays&nbsp;out&nbsp;the&nbsp;component&nbsp;in&nbsp;`components`&nbsp;according&nbsp;to&nbsp;the&nbsp;configuration&nbsp;in&nbsp;`attrs`.<br>
+<span id=102 class="line">&nbsp;102</span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;method&nbsp;returns&nbsp;a&nbsp;vnode&nbsp;container&nbsp;that&nbsp;has&nbsp;an&nbsp;associated&nbsp;`cssClass`&nbsp;style.<br>
+<span id=103 class="line">&nbsp;103</span>&nbsp;&nbsp;&nbsp;&nbsp;`layout`&nbsp;is&nbsp;called&nbsp;during&nbsp;the&nbsp;`render`&nbsp;phase&nbsp;of&nbsp;the&nbsp;`mithril`&nbsp;lifecycle,&nbsp;<br>
+<span id=104 class="line">&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;which&nbsp;ensures&nbsp;an&nbsp;outside-in&nbsp;calling&nbsp;sequence&nbsp;on&nbsp;containers;&nbsp;<br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;i.e.&nbsp;the&nbsp;outermost&nbsp;containers&nbsp;are&nbsp;called&nbsp;first,&nbsp;and&nbsp;`node`&nbsp;will&nbsp;already&nbsp;have&nbsp;the&nbsp;<br>
+<span id=106 class="line">&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;`style`&nbsp;field&nbsp;set&nbsp;with&nbsp;required&nbsp;style&nbsp;attributes.&nbsp;<br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;These&nbsp;are&nbsp;added&nbsp;to&nbsp;any&nbsp;`attrs`&nbsp;parameter&nbsp;provided.<br>
+<span id=108 class="line">&nbsp;108</span><br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;format&nbsp;for&nbsp;the&nbsp;layout&nbsp;configuration&nbsp;in&nbsp;`attrs`&nbsp;is&nbsp;<code><br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;{<keyword>:&nbsp;<parameter>}<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;`keyword`&nbsp;is&nbsp;the&nbsp;keyword&nbsp;with&nbsp;which&nbsp;the&nbsp;`Layouter`&nbsp;was&nbsp;registered.<br>
+<span id=113 class="line">&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;cssClass&nbsp;a&nbsp;css&nbsp;style&nbsp;designator;&nbsp;same&nbsp;as&nbsp;used&nbsp;in&nbsp;m(cssClass,&nbsp;...)&nbsp;<br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;layout&nbsp;the&nbsp;attribute&nbsp;object&nbsp;literal&nbsp;that&nbsp;configures&nbsp;the&nbsp;layout<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;components&nbsp;the&nbsp;components&nbsp;to&nbsp;layout&nbsp;within&nbsp;the&nbsp;container.&nbsp;<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;either&nbsp;a&nbsp;primitive&nbsp;`string`,&nbsp;or&nbsp;an&nbsp;array&nbsp;of&nbsp;`Layout`s&nbsp;or&nbsp;`string`s.<br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;a&nbsp;vnode&nbsp;that&nbsp;has&nbsp;an&nbsp;associated&nbsp;`cssClass`&nbsp;style.<br>
+<span id=118 class="line">&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=119 class="line">&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;view(node:Vnode):&nbsp;Vnode&nbsp;{<br>
+<span id=120 class="line">&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;this.normalizeContent(this.getComponents(node));&nbsp;//&nbsp;-->&nbsp;Vnode[]<br>
+<span id=121 class="line">&nbsp;121</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;css&nbsp;=&nbsp;Layouter.createLayout(node.attrs,&nbsp;content);<br>
+<span id=122 class="line">&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;attrs:any&nbsp;=&nbsp;{<br>
+<span id=123 class="line">&nbsp;123</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style:&nbsp;node.style,<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route:&nbsp;node.attrs.route,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=125 class="line">&nbsp;125</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onclick:&nbsp;node.attrs.onclick<br>
+<span id=126 class="line">&nbsp;126</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=127 class="line">&nbsp;127</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.attrs.route&nbsp;=&nbsp;undefined;<br>
+<span id=128 class="line">&nbsp;128</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(node.attrs.href)&nbsp;{&nbsp;<br>
+<span id=129 class="line">&nbsp;129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs.href&nbsp;=&nbsp;node.attrs.href;<br>
+<span id=130 class="line">&nbsp;130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs.oncreate&nbsp;=&nbsp;m.route.link;<br>
+<span id=131 class="line">&nbsp;131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs.onupdate&nbsp;=&nbsp;m.route.link;<br>
+<span id=132 class="line">&nbsp;132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=133 class="line">&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(`.hs-layout&nbsp;${css}&nbsp;${this.getCSS(node)}`,&nbsp;attrs,&nbsp;content.map((c:any)&nbsp;=>&nbsp;c));<br>
+<span id=134 class="line">&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=135 class="line">&nbsp;135</span>}<br>
+<span id=136 class="line">&nbsp;136</span><br></code></div>
+                </body>
+            
