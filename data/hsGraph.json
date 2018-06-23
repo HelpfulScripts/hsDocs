@@ -6278,7 +6278,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsGraph/src/Graph.ts",
 			"comment": {
 				"shortText": "# Graph\nThe main `Graph` object that contains all graph components and sets up the controlling logic.\n`Graph` sets up a viewBox that is always 1000 units wide. the height automatically adjusts to fill available space while\npreserving a uniform scaling (i.e. preserveAspectRatio = default (xMidYMid)).",
-				"text": "### Attributes\nThe main entry point for applications using this library is the `Graph` class,\ntypically called as `m(Graph, {cfgFn: (cfg:any) => {...});`\nAccepted attributes are:\n- cfgFn: a {@link Graph.CfgFn CfgFn} function that allows setting graph parameters.\n\n### Example\n<example>\n<file name='script.js'>\nlet series = {\n   names:['time', 'volume', 'price'],\n   rows:[\n         [-1,   0.2, 0.8],\n         [0.2,  0.7, 0.87],\n         [0.4, -0.2, 0.7],\n         [0.6,    0, 0.7],\n         [0.8,  0.5, 0.6],\n         [1,    0.7, 0.75]\n   ]\n};\n\nfunction myConfig(cfg) {\n     cfg.series.data   = [series];\n     cfg.series.series = [\n         { x:'time', y:'volume']},\n         { x:'time', y:'price']}\n     ];\n     cfg.series.series[0].style.marker.visible = true;\n     cfg.series.series[1].style.marker.visible = true;\n     cfg.series.series[1].style.marker.shape = hsgraph.Series.marker.diamond;\n     const axes = cfg.axes.primary;\n     cfg.chart.title.text          = 'Volume over Time';\n     cfg.chart.title.xpos          = 'end';\n     cfg.chart.title.ypos          = 'top';\n     cfg.chart.title.vOffset       = -1.5;\n     axes.x.title.text = 'time';\n     axes.y.title.text = 'volume';\n     axes.x.crossesAt = 0;\n     axes.y.crossesAt = 0;\n     cfg.axes.secondary.x.visible = false;\n     cfg.axes.secondary.y.visible = false;\n}\n\nm.mount(root, {\n     view:() => m(hsgraph.Graph, {cfgFn: myConfig })\n});\n\n</file>\n<file name='style.css'>\n.hs-graph-chart { fill: #fff; }\n.hs-graph-series { stroke-width: 5; }\n</file>\n</example>\n\n### Configurations and Defaults\nSee {@link Graph.Graph.defaultConfig Graph.defaultConfig}\n"
+				"text": "### Attributes\nThe main entry point for applications using this library is the `Graph` class,\ntypically called as `m(Graph, {cfgFn: (cfg:any) => {...});`\nAccepted attributes are:\n- cfgFn: a {@link Graph.CfgFn CfgFn} function that allows setting graph parameters.\n\n### Example\n<example>\n<file name='script.js'>\nlet series = {\n   colNames:['time', 'volume', 'price'],\n   rows:[\n         [-1,   0.2, 0.8],\n         [0.2,  0.7, 0.87],\n         [0.4, -0.2, 0.7],\n         [0.6,    0, 0.7],\n         [0.8,  0.5, 0.6],\n         [1,    0.7, 0.75]\n   ]\n};\n\nfunction myConfig(cfg) {\n     cfg.series.data   = [series];\n     cfg.series.series = [\n         { x:'time', y:'volume'},\n         { x:'time', y:'price'}\n     ];\n     cfg.series.series[0].style.marker.visible = true;\n     cfg.series.series[1].style.marker.visible = true;\n     cfg.series.series[1].style.marker.shape = hsgraph.Series.marker.diamond;\n     const axes = cfg.axes.primary;\n     cfg.chart.title.text    = 'Volume over Time';\n     cfg.chart.title.xpos    = 'end';\n     cfg.chart.title.ypos    = 'top';\n     cfg.chart.title.vOffset = -1.5;\n     axes.x.title.text       = 'time';\n     axes.y.title.text       = 'volume';\n     axes.x.crossesAt = 0;\n     axes.y.crossesAt = 0;\n     cfg.axes.secondary.x.visible = false;\n     cfg.axes.secondary.y.visible = false;\n}\n\nm.mount(root, {\n     view:() => m(hsgraph.Graph, {cfgFn: myConfig })\n});\n\n</file>\n<file name='style.css'>\n.hs-graph-chart { fill: #fff; }\n.hs-graph-series { stroke-width: 5; }\n</file>\n</example>\n\n### Configurations and Defaults\nSee {@link Graph.Graph.defaultConfig Graph.defaultConfig}\n"
 			},
 			"children": [
 				{
@@ -27741,23 +27741,6 @@
 			]
 		},
 		{
-			"id": 1569,
-			"name": "\"example/start\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsGraph/src/example/start.ts",
-			"sources": [
-				{
-					"fileName": "example/start.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
 			"id": 1568,
 			"name": "\"index\"",
 			"kind": 1,
@@ -27775,7 +27758,7 @@
 			]
 		},
 		{
-			"id": 1570,
+			"id": 1569,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -27785,7 +27768,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsGraph/src/overview.ts",
 			"comment": {
 				"shortText": "# hsGraph",
-				"text": "Helpful Scripts Graph plotting functions. [Github page](https://github.com/HelpfulScripts/hsGraph)\n\nhsGraph is a simple graphing utility written in JavaScript and based on the [Mithril](https://mithril.js.org) framework.\nIt supports various chart types and scales and provides a convenient programmatic configuration mechanism.\n\n## Usage\nIn mithril, simply render or mount a {@link Graph Graph} Component object and provide a `cfg`\nattribute with the graph's configuration.\n\n### Simple Example\n<example>\n<file name='script.js'>\nlet data = {\n   colNames:['time', 'volume'],\n   rows:[\n     [-1, 0.2],\n     [0.2, 0.7],\n     [0.4, -0.2],\n     [0.6, 0],\n     [0.8, 0.5],\n     [1, 0.7]\n]};\n\nm.mount(root, {\n     view:() => m(hsgraph.Graph, {cfgFn: cfg => {\n         cfg.chart.title.text = 'Simple Example';\n         cfg.series.data      = [data];\n         cfg.series.series    = [{ x:'time', y:'volume' }];\n     }})\n});\n\n</file>\n<file name='style.css'>\n.hs-graph-chart { fill: #fff; }\n.hs-graph-series { stroke-width: 5; }\n</file>\n</example>\n\n## Setting the data to render\nData is provided in a rows-of-columns style array: `data[row][column]`.\nThe first row in the data array contains column names by which the series can be identified.\nThere is no conceptual limit to the number of rows or columns provided to `hsGraph`.\nIn the configuration,\n- set the array containing the data: `series.data = data;`\n- and specify the x- and y-columns to render, by name: `series.series = [{xHeader:<string>, yHeader:<string>}]`\n\n## Configuration\nAll graph components are highly configurable. `hsGraph` uses default values for all configurable fields\nthat can easily be changed, either programmatically or via a custom stylesheet.\n\nTo programmatically set rendering parameters, simply provide a configuration function `cfg => {}`\nto the `cfgFn` attribute when setting up the mithril mount call - see example above.\nThe `cfgFn` receives a configuration object that is fully initialized with default values,\nand should overwrite parameters as needed. See the overview for each component for configurable\nparameters.\n\nAvailable configurations include:\n- &nbsp; {@link Graph.Graph.defaultConfig Graph.defaultConfig }\n- &nbsp; {@link Canvas.Canvas.defaultConfig Canvas.defaultConfig}\n- &nbsp; {@link Chart.Chart.defaultConfig Chart.defaultConfig}\n- &nbsp; {@link Axes.Axes.defaultConfig Axes.defaultConfig}\n- &nbsp; {@link Grid.Grid.defaultConfig Grid.defaultConfig}\n- &nbsp; {@link Series.Series.defaultConfig Series.defaultConfig}\n- &nbsp; {@link Legend.Legend.defaultConfig Legend.defaultConfig}\n\n## Graph Components\nThe rendered graph is organized in a layered structure of components:\n- &nbsp; {@link Canvas Canvas}:  the background canvas on which all components are rendered\n- &nbsp; {@link Chart Chart}: the chart area and title\n- &nbsp; {@link Axes Axes}: the x- and y-axes, tick marks and labels, and axis title\n- &nbsp; {@link Grid Grid}: the major and minor gridlines\n- &nbsp; {@link Series Series}: the one or more data series to render\n- &nbsp; {@link Legend Legend}: the legend for the shown series\n\n"
+				"text": "Helpful Scripts Graph plotting functions. [Github page](https://github.com/HelpfulScripts/hsGraph)\n\nhsGraph is a simple graphing utility written in JavaScript and based on the [Mithril](https://mithril.js.org) framework.\nIt supports various chart types and scales and provides a convenient programmatic configuration mechanism.\n\n## Usage\nIn mithril, simply render or mount a {@link Graph Graph} Component object and provide a `cfg`\nattribute with the graph's configuration.\n\n### Simple Example\n<example>\n<file name='script.js'>\nlet data = {\n   colNames:['time', 'volume'],\n   rows:[\n     [-1, 0.2],\n     [0.2, 0.7],\n     [0.4, -0.2],\n     [0.6, 0],\n     [0.8, 0.5],\n     [1, 0.7]\n]};\n\nm.mount(root, {\n     view:() => m(hsgraph.Graph, {cfgFn: cfg => {\n         cfg.chart.title.text = 'Simple Example';\n         cfg.series.data      = [data];\n         cfg.series.series    = [{ x:'time', y:'volume' }];\n         cfg.axes.primary.x.title.text = 'Time';\n         cfg.axes.primary.y.title.text = 'Volume';\n     }})\n});\n\n</file>\n<file name='style.css'>\n.hs-graph-chart { fill: #fff; }\n.hs-graph-series { stroke-width: 5; }\n</file>\n</example>\n\n## Setting the data to render\nData is provided in a rows-of-columns style array: `data[row][column]`.\nThe first row in the data array contains column names by which the series can be identified.\nThere is no conceptual limit to the number of rows or columns provided to `hsGraph`.\nIn the configuration,\n- set the array containing the data: `series.data = data;`\n- and specify the x- and y-columns to render, by name: `series.series = [{xHeader:<string>, yHeader:<string>}]`\n\n## Configuration\nAll graph components are highly configurable. `hsGraph` uses default values for all configurable fields\nthat can easily be changed, either programmatically or via a custom stylesheet.\n\nTo programmatically set rendering parameters, simply provide a configuration function `cfg => {}`\nto the `cfgFn` attribute when setting up the mithril mount call - see example above.\nThe `cfgFn` receives a configuration object that is fully initialized with default values,\nand should overwrite parameters as needed. See the overview for each component for configurable\nparameters.\n\nAvailable configurations include:\n- &nbsp; {@link Graph.Graph.defaultConfig Graph.defaultConfig }\n- &nbsp; {@link Canvas.Canvas.defaultConfig Canvas.defaultConfig}\n- &nbsp; {@link Chart.Chart.defaultConfig Chart.defaultConfig}\n- &nbsp; {@link Axes.Axes.defaultConfig Axes.defaultConfig}\n- &nbsp; {@link Grid.Grid.defaultConfig Grid.defaultConfig}\n- &nbsp; {@link Series.Series.defaultConfig Series.defaultConfig}\n- &nbsp; {@link Legend.Legend.defaultConfig Legend.defaultConfig}\n\n## Graph Components\nThe rendered graph is organized in a layered structure of components:\n- &nbsp; {@link Canvas Canvas}:  the background canvas on which all components are rendered\n- &nbsp; {@link Chart Chart}: the chart area and title\n- &nbsp; {@link Axes Axes}: the x- and y-axes, tick marks and labels, and axis title\n- &nbsp; {@link Grid Grid}: the major and minor gridlines\n- &nbsp; {@link Series Series}: the one or more data series to render\n- &nbsp; {@link Legend Legend}: the legend for the shown series\n\n"
 			},
 			"sources": [
 				{
@@ -27816,9 +27799,8 @@
 				69,
 				1,
 				855,
-				1569,
 				1568,
-				1570
+				1569
 			]
 		}
 	]
