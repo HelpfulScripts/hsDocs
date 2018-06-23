@@ -45,10 +45,10 @@ typedoc: {
 Install `hsDocs`from npm (see above), then copy and host the entire folder in your favorite web server.
 To add a new docset, 
 1. copy the docset's `json` file created by `typedoc` into the `data` folder of the hsDocs directory
-2. edit `./data/index.json` to add a reference to the new `json`file.
+2. edit `./data/index.json` to add a reference to the new `json`file (`myLib.json` in the typedoc config example above).
+3. reload the browser. The new docset should appear as a tab across the top
 
-
-Please see the [docs](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
+Please see the [docs](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) for further documentation and examples
 
 Please report any issues and provide feedback.
  
