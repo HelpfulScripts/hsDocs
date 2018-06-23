@@ -25,20 +25,20 @@ Install `hsDocs` from `npm` the standard way:
 
 ## Typedoc configuration
 Below is an example configuration for use with `grunt` and [`grunt-typedoc`](https://www.npmjs.com/package/grunt-typedoc): 
-````
+```
 typedoc: {
     code: {
         options: {
             target: 'es6',
             module: 'commonjs',
             moduleResolution: "node",
-            json:   `_dist/docs/data/${lib}.json`,
+            json:   `_dist/docs/data/myLib.json`,
             mode:   'modules',
-            name:   `${lib}`
+            name:   `myLib`
         },
-        src: ['src/**/*.ts', '!src/**/*.*.ts'] // no specs
+        src: ['src/**/*.ts', '!src/**/*.*.ts'] // all .ts files, no specs
     }
-},
+}
 ```
 
 Please see the [docs](https://helpfulscripts.github.io/hsDocs/docs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
