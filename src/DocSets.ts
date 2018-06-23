@@ -29,7 +29,7 @@ export class DocSets {
     public static add(content:any) {
         const lib = content.name;
         DocSets.gList.set.push(lib);
-        DocSets.gList.set.sort();
+//        DocSets.gList.set.sort();
         DocSets.gList.index[lib] = {};
         recursiveIndex(content, DocSets.gList.index[lib], lib);
     }
