@@ -21,7 +21,7 @@ for the http server. Then edit the `index.json` file to include the documentatio
 
 ## Installation
 Install `hsDocs` from `npm` the standard way:
-> npm i hsdocs
+> `npm i hsdocs`
 
 ## Typedoc configuration
 Below is an example configuration for use with `grunt` and [`grunt-typedoc`](https://www.npmjs.com/package/grunt-typedoc): 
@@ -40,6 +40,13 @@ typedoc: {
     }
 }
 ```
+
+## Hosting the docs
+Install `hsDocs`from npm (see above), then copy and host the entire folder in your favorite web server.
+To add a new docset, 
+1. copy the docset's `json` file created by `typedoc` into the `data` folder of the hsDocs directory
+2. edit `./data/index.json` to add a reference to the new `json`file.
+
 
 Please see the [docs](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) for further documentation and examaples
 
