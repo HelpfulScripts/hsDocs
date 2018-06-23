@@ -15,6 +15,8 @@ export function flags(mdl:any, ignore:string[]=[]) {
         isPrivate:              'private',
         isProtected:            'protected',
         isConstructorProperty:  'constructorProperty',
+        isAbstract:             'abstract',
+        isConst:                'const',
         isStatic:               'static',
         isOptional:             'optional'
     };
