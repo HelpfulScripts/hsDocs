@@ -755,7 +755,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -871,7 +871,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -1037,7 +1037,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -1184,7 +1184,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -1384,7 +1384,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -1559,7 +1559,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -3508,7 +3508,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -3624,7 +3624,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -3790,7 +3790,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -3937,7 +3937,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -4137,7 +4137,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -4312,7 +4312,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -5060,7 +5060,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -5176,7 +5176,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -5386,7 +5386,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -5533,7 +5533,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -5733,7 +5733,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -5950,7 +5950,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -6343,7 +6343,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesConfig",
-												"id": 992
+												"id": 1014
 											}
 										},
 										{
@@ -7051,7 +7051,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -7167,7 +7167,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -7421,7 +7421,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -7568,7 +7568,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -7768,7 +7768,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -7943,7 +7943,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -8547,7 +8547,7 @@
 							"type": {
 								"type": "reference",
 								"name": "SeriesConfig",
-								"id": 992
+								"id": 1014
 							}
 						},
 						{
@@ -9258,7 +9258,7 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						},
 						{
 							"type": "reference",
@@ -9969,7 +9969,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -10085,7 +10085,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -10251,7 +10251,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -10398,7 +10398,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -10598,7 +10598,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -10773,7 +10773,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -11746,7 +11746,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -11870,7 +11870,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									],
@@ -11972,7 +11972,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -12087,7 +12087,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -12210,7 +12210,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -12326,7 +12326,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -12373,7 +12373,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -12584,7 +12584,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -12731,7 +12731,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -12878,7 +12878,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -12997,7 +12997,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -13172,7 +13172,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -13568,7 +13568,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -13702,7 +13702,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									],
@@ -13814,7 +13814,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -13939,7 +13939,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -14072,7 +14072,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -14188,7 +14188,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -14234,7 +14234,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -14455,7 +14455,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -14602,7 +14602,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -14749,7 +14749,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -14878,7 +14878,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -15053,7 +15053,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -15427,7 +15427,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -15558,7 +15558,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -15682,7 +15682,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									],
@@ -15794,7 +15794,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -15919,7 +15919,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -16052,7 +16052,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -16168,7 +16168,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -16214,7 +16214,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -16435,7 +16435,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -16582,7 +16582,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -16729,7 +16729,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -16858,7 +16858,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -17033,7 +17033,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -17408,7 +17408,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -17542,7 +17542,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									],
@@ -17654,7 +17654,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -17779,7 +17779,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -17912,7 +17912,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -18028,7 +18028,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -18074,7 +18074,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -18295,7 +18295,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -18442,7 +18442,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -18589,7 +18589,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -18718,7 +18718,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -18893,7 +18893,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -19267,7 +19267,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -19401,7 +19401,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									],
@@ -19513,7 +19513,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -19638,7 +19638,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesStyle",
-												"id": 973
+												"id": 995
 											}
 										},
 										{
@@ -19771,7 +19771,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -19887,7 +19887,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -19933,7 +19933,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -20154,7 +20154,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -20301,7 +20301,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -20448,7 +20448,7 @@
 											"type": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										},
 										{
@@ -20577,7 +20577,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -20752,7 +20752,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -21255,7 +21255,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							]
@@ -21361,7 +21361,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							]
@@ -21517,7 +21517,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							]
@@ -21654,7 +21654,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							]
@@ -21834,7 +21834,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							]
@@ -21989,7 +21989,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							]
@@ -24094,7 +24094,36 @@
 					"comment": {},
 					"children": [
 						{
-							"id": 894,
+							"id": 892,
+							"name": "defaultColors",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"comment": {
+								"shortText": "determines the default color for the first couple of series"
+							},
+							"sources": [
+								{
+									"fileName": "Series.ts",
+									"line": 98,
+									"character": 31
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#000', '#444', '#888', '#ccc']"
+						},
+						{
+							"id": 916,
 							"name": "circle",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24103,7 +24132,7 @@
 							},
 							"signatures": [
 								{
-									"id": 895,
+									"id": 917,
 									"name": "circle",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24113,7 +24142,7 @@
 									},
 									"parameters": [
 										{
-											"id": 896,
+											"id": 918,
 											"name": "c",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24128,7 +24157,7 @@
 											}
 										},
 										{
-											"id": 897,
+											"id": 919,
 											"name": "r",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24142,7 +24171,7 @@
 											}
 										},
 										{
-											"id": 898,
+											"id": 920,
 											"name": "style",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24156,7 +24185,7 @@
 											}
 										},
 										{
-											"id": 899,
+											"id": 921,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24194,7 +24223,7 @@
 							}
 						},
 						{
-							"id": 900,
+							"id": 922,
 							"name": "clipRect",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24203,7 +24232,7 @@
 							},
 							"signatures": [
 								{
-									"id": 901,
+									"id": 923,
 									"name": "clipRect",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24213,7 +24242,7 @@
 									},
 									"parameters": [
 										{
-											"id": 902,
+											"id": 924,
 											"name": "tl",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24228,7 +24257,7 @@
 											}
 										},
 										{
-											"id": 903,
+											"id": 925,
 											"name": "area",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24243,7 +24272,7 @@
 											}
 										},
 										{
-											"id": 904,
+											"id": 926,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24282,7 +24311,7 @@
 							}
 						},
 						{
-							"id": 877,
+							"id": 899,
 							"name": "drawClipRect",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24291,14 +24320,14 @@
 							},
 							"signatures": [
 								{
-									"id": 878,
+									"id": 900,
 									"name": "drawClipRect",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 879,
+											"id": 901,
 											"name": "clipID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24309,7 +24338,7 @@
 											}
 										},
 										{
-											"id": 880,
+											"id": 902,
 											"name": "scales",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24330,13 +24359,13 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 147,
+									"line": 165,
 									"character": 16
 								}
 							]
 						},
 						{
-							"id": 912,
+							"id": 934,
 							"name": "horLine",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24345,7 +24374,7 @@
 							},
 							"signatures": [
 								{
-									"id": 913,
+									"id": 935,
 									"name": "horLine",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24355,7 +24384,7 @@
 									},
 									"parameters": [
 										{
-											"id": 914,
+											"id": 936,
 											"name": "x0",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24369,7 +24398,7 @@
 											}
 										},
 										{
-											"id": 915,
+											"id": 937,
 											"name": "x1",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24383,7 +24412,7 @@
 											}
 										},
 										{
-											"id": 916,
+											"id": 938,
 											"name": "y",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24397,7 +24426,7 @@
 											}
 										},
 										{
-											"id": 917,
+											"id": 939,
 											"name": "cssClass",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24427,7 +24456,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 201,
+									"line": 204,
 									"character": 11
 								}
 							],
@@ -24438,7 +24467,7 @@
 							}
 						},
 						{
-							"id": 905,
+							"id": 927,
 							"name": "line",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24447,7 +24476,7 @@
 							},
 							"signatures": [
 								{
-									"id": 906,
+									"id": 928,
 									"name": "line",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24457,7 +24486,7 @@
 									},
 									"parameters": [
 										{
-											"id": 907,
+											"id": 929,
 											"name": "x0",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24471,7 +24500,7 @@
 											}
 										},
 										{
-											"id": 908,
+											"id": 930,
 											"name": "x1",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24485,7 +24514,7 @@
 											}
 										},
 										{
-											"id": 909,
+											"id": 931,
 											"name": "y0",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24499,7 +24528,7 @@
 											}
 										},
 										{
-											"id": 910,
+											"id": 932,
 											"name": "y1",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24513,7 +24542,7 @@
 											}
 										},
 										{
-											"id": 911,
+											"id": 933,
 											"name": "cssClass",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24543,7 +24572,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 185,
+									"line": 188,
 									"character": 8
 								}
 							],
@@ -24554,7 +24583,7 @@
 							}
 						},
 						{
-							"id": 933,
+							"id": 955,
 							"name": "polygon",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24563,7 +24592,7 @@
 							},
 							"signatures": [
 								{
-									"id": 934,
+									"id": 956,
 									"name": "polygon",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24573,7 +24602,7 @@
 									},
 									"parameters": [
 										{
-											"id": 935,
+											"id": 957,
 											"name": "dataFore",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24587,7 +24616,7 @@
 											}
 										},
 										{
-											"id": 936,
+											"id": 958,
 											"name": "dataBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24601,7 +24630,7 @@
 											}
 										},
 										{
-											"id": 937,
+											"id": 959,
 											"name": "x",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24615,7 +24644,7 @@
 											}
 										},
 										{
-											"id": 938,
+											"id": 960,
 											"name": "yFore",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24626,7 +24655,7 @@
 											}
 										},
 										{
-											"id": 939,
+											"id": 961,
 											"name": "yBack",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24637,7 +24666,7 @@
 											}
 										},
 										{
-											"id": 940,
+											"id": 962,
 											"name": "scales",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24652,7 +24681,7 @@
 											}
 										},
 										{
-											"id": 941,
+											"id": 963,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24666,7 +24695,7 @@
 											}
 										},
 										{
-											"id": 942,
+											"id": 964,
 											"name": "style",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24682,7 +24711,7 @@
 											}
 										},
 										{
-											"id": 943,
+											"id": 965,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24709,7 +24738,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 259,
+									"line": 262,
 									"character": 11
 								}
 							],
@@ -24720,7 +24749,7 @@
 							}
 						},
 						{
-							"id": 924,
+							"id": 946,
 							"name": "polyline",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24729,7 +24758,7 @@
 							},
 							"signatures": [
 								{
-									"id": 925,
+									"id": 947,
 									"name": "polyline",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24739,7 +24768,7 @@
 									},
 									"parameters": [
 										{
-											"id": 926,
+											"id": 948,
 											"name": "data",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24756,7 +24785,7 @@
 											}
 										},
 										{
-											"id": 927,
+											"id": 949,
 											"name": "x",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24770,7 +24799,7 @@
 											}
 										},
 										{
-											"id": 928,
+											"id": 950,
 											"name": "y",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24784,7 +24813,7 @@
 											}
 										},
 										{
-											"id": 929,
+											"id": 951,
 											"name": "scales",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24799,7 +24828,7 @@
 											}
 										},
 										{
-											"id": 930,
+											"id": 952,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24813,7 +24842,7 @@
 											}
 										},
 										{
-											"id": 931,
+											"id": 953,
 											"name": "style",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24829,7 +24858,7 @@
 											}
 										},
 										{
-											"id": 932,
+											"id": 954,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24856,7 +24885,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 238,
+									"line": 241,
 									"character": 12
 								}
 							],
@@ -24867,7 +24896,7 @@
 							}
 						},
 						{
-							"id": 888,
+							"id": 910,
 							"name": "rect",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24876,7 +24905,7 @@
 							},
 							"signatures": [
 								{
-									"id": 889,
+									"id": 911,
 									"name": "rect",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24886,7 +24915,7 @@
 									},
 									"parameters": [
 										{
-											"id": 890,
+											"id": 912,
 											"name": "tl",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24901,7 +24930,7 @@
 											}
 										},
 										{
-											"id": 891,
+											"id": 913,
 											"name": "area",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24916,7 +24945,7 @@
 											}
 										},
 										{
-											"id": 892,
+											"id": 914,
 											"name": "style",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24930,7 +24959,7 @@
 											}
 										},
 										{
-											"id": 893,
+											"id": 915,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -24968,7 +24997,7 @@
 							}
 						},
 						{
-							"id": 944,
+							"id": 966,
 							"name": "shape",
 							"kind": 2048,
 							"kindString": "Method",
@@ -24977,7 +25006,7 @@
 							},
 							"signatures": [
 								{
-									"id": 945,
+									"id": 967,
 									"name": "shape",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -24987,7 +25016,7 @@
 									},
 									"parameters": [
 										{
-											"id": 946,
+											"id": 968,
 											"name": "points",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25001,7 +25030,7 @@
 											}
 										},
 										{
-											"id": 947,
+											"id": 969,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25015,7 +25044,7 @@
 											}
 										},
 										{
-											"id": 948,
+											"id": 970,
 											"name": "style",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25029,7 +25058,7 @@
 											}
 										},
 										{
-											"id": 949,
+											"id": 971,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25056,7 +25085,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 285,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -25067,7 +25096,7 @@
 							}
 						},
 						{
-							"id": 884,
+							"id": 906,
 							"name": "text",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25076,7 +25105,7 @@
 							},
 							"signatures": [
 								{
-									"id": 885,
+									"id": 907,
 									"name": "text",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -25086,7 +25115,7 @@
 									},
 									"parameters": [
 										{
-											"id": 886,
+											"id": 908,
 											"name": "cfg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25101,7 +25130,7 @@
 											}
 										},
 										{
-											"id": 887,
+											"id": 909,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25140,7 +25169,7 @@
 							}
 						},
 						{
-							"id": 918,
+							"id": 940,
 							"name": "verLine",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25149,7 +25178,7 @@
 							},
 							"signatures": [
 								{
-									"id": 919,
+									"id": 941,
 									"name": "verLine",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -25159,7 +25188,7 @@
 									},
 									"parameters": [
 										{
-											"id": 920,
+											"id": 942,
 											"name": "x",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25173,7 +25202,7 @@
 											}
 										},
 										{
-											"id": 921,
+											"id": 943,
 											"name": "y0",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25187,7 +25216,7 @@
 											}
 										},
 										{
-											"id": 922,
+											"id": 944,
 											"name": "y1",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25201,7 +25230,7 @@
 											}
 										},
 										{
-											"id": 923,
+											"id": 945,
 											"name": "cssClass",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25231,7 +25260,7 @@
 							"sources": [
 								{
 									"fileName": "SVGElem.ts",
-									"line": 217,
+									"line": 220,
 									"character": 11
 								}
 							],
@@ -25242,7 +25271,7 @@
 							}
 						},
 						{
-							"id": 881,
+							"id": 903,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25251,14 +25280,14 @@
 							},
 							"signatures": [
 								{
-									"id": 882,
+									"id": 904,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 883,
+											"id": 905,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25280,13 +25309,13 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 157,
+									"line": 175,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 874,
+							"id": 896,
 							"name": "adjustConfig",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25296,7 +25325,7 @@
 							},
 							"signatures": [
 								{
-									"id": 875,
+									"id": 897,
 									"name": "adjustConfig",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -25306,7 +25335,7 @@
 									},
 									"parameters": [
 										{
-											"id": 876,
+											"id": 898,
 											"name": "cfg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25330,13 +25359,13 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 137,
+									"line": 155,
 									"character": 23
 								}
 							]
 						},
 						{
-							"id": 871,
+							"id": 893,
 							"name": "defaultConfig",
 							"kind": 2048,
 							"kindString": "Method",
@@ -25346,18 +25375,18 @@
 							},
 							"signatures": [
 								{
-									"id": 872,
+									"id": 894,
 									"name": "defaultConfig",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"comment": {
 										"shortText": "Defines default values for all configurable parameters in `Series`\nSee {@link Graph.Graph.makeConfig Graph.makeConfig} for the sequence of initializations.",
-										"text": "### Configurations and Defaults\n```\n cfg.series = {@link Series.SeriesConfig <SeriesConfig>}{\n         // pool of `Data` sets to be plotted, initialized as `[]`\n     data: {@link hsdatab:Data.DataSet <DataSet[]>},\n         // series an markers are clipped to the plot area\n     clip: true,\n         // array of series descriptors, initialized to empty array (no series)\n     series: {@link Series.SeriesDef <SeriesDef>}[],\n         // sets the default colors that will be assigend to series by index\n     defaultColors:\n         ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#000', '#444', '#888', '#ccc'],\n         // sets the default style to be applied to series\n     defaultStyle: {@link Series.SeriesStyle <SeriesStyle>} {\n         line:   {\n             color: <color>, // the line color to use, preset from defaultColors\n             width: 5,       // the line width in viewbox units\n             visible: true   // whether line is draw or not\n         },\n         marker: {\n             color: <color>, // the marker color to use, preset from defaultColors\n             size: 10,       // the marker size in viewbox coordinates\n             shape: Series.marker.circle, // the marker shaper, See {@link Series.Series.marker Series.marker}\n             visible: true\n         },\n         fill: {\n             color: <color>, // the fill color to use, preset from defaultColors\n             visible: true\n         },\n         bar: {\n             color: <color>, // the bar color to use, preset from defaultColors\n             width: 10,\n             visible: true\n         }\n     }\n }\n```"
+										"text": "### Configurations and Defaults\n```\n cfg.series = {@link Series.SeriesConfig <SeriesConfig>}{\n         // pool of `Data` sets to be plotted, initialized as `[]`\n     data: {@link hsdatab:Data.DataSet <DataSet[]>},\n         // series an markers are clipped to the plot area\n     clip: true,\n         // array of series descriptors, initialized to empty array (no series)\n     series: {@link Series.SeriesDef <SeriesDef>}[]\n }\n\n// sets the default colors that will be assigend to series by index\nSeries.defaultColors:\n         ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#000', '#444', '#888', '#ccc'];\n\n// sets the default style to be applied to series\nSeries.defaultStyle: {@link Series.SeriesStyle <SeriesStyle>} {\n         line:   {\n             color: <color>, // the line color to use, preset from defaultColors\n             width: 5,       // the line width in viewbox units\n             visible: true   // whether line is draw or not\n         },\n         marker: {\n             color: <color>, // the marker color to use, preset from defaultColors\n             size: 10,       // the marker size in viewbox coordinates\n             shape: Series.marker.circle, // the marker shaper, See {@link Series.Series.marker Series.marker}\n             visible: true\n         },\n         fill: {\n             color: <color>, // the fill color to use, preset from defaultColors\n             visible: true\n         },\n         bar: {\n             color: <color>, // the bar color to use, preset from defaultColors\n             width: 50,\n             offset: 30,\n             visible: false\n         }\n     }\n```"
 									},
 									"parameters": [
 										{
-											"id": 873,
+											"id": 895,
 											"name": "cfg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25381,10 +25410,530 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 129,
+									"line": 147,
 									"character": 24
 								}
 							]
+						},
+						{
+							"id": 871,
+							"name": "defaultStyle",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"comment": {
+								"shortText": "determines the default style applied to each series.\nColors will be chosen by series index from `defaultColors`."
+							},
+							"children": [
+								{
+									"id": 887,
+									"name": "bar",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 888,
+											"name": "color",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 94,
+													"character": 23
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"default\""
+										},
+										{
+											"id": 891,
+											"name": "offset",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 94,
+													"character": 68
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "30"
+										},
+										{
+											"id": 889,
+											"name": "visible",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 94,
+													"character": 42
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "false"
+											},
+											"defaultValue": "false"
+										},
+										{
+											"id": 890,
+											"name": "width",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 94,
+													"character": 56
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "50"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												888,
+												891,
+												889,
+												890
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Series.ts",
+											"line": 94,
+											"character": 11
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 884,
+									"name": "fill",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 885,
+											"name": "color",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 93,
+													"character": 23
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"default\""
+										},
+										{
+											"id": 886,
+											"name": "visible",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 93,
+													"character": 42
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "false"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												885,
+												886
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Series.ts",
+											"line": 93,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 881,
+									"name": "label",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 882,
+											"name": "color",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 92,
+													"character": 23
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"default\""
+										},
+										{
+											"id": 883,
+											"name": "visible",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 92,
+													"character": 42
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "false"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												882,
+												883
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Series.ts",
+											"line": 92,
+											"character": 13
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 872,
+									"name": "line",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 873,
+											"name": "color",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 90,
+													"character": 23
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"default\""
+										},
+										{
+											"id": 874,
+											"name": "visible",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 90,
+													"character": 42
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "true"
+											},
+											"defaultValue": "true"
+										},
+										{
+											"id": 875,
+											"name": "width",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 90,
+													"character": 55
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "2"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												873,
+												874,
+												875
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Series.ts",
+											"line": 90,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								},
+								{
+									"id": 876,
+									"name": "marker",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {
+										"isExported": true
+									},
+									"children": [
+										{
+											"id": 877,
+											"name": "color",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 91,
+													"character": 23
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"default\""
+										},
+										{
+											"id": 880,
+											"name": "shape",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 91,
+													"character": 66
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "symbol"
+											},
+											"defaultValue": " Series.marker.circle"
+										},
+										{
+											"id": 879,
+											"name": "size",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 91,
+													"character": 55
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "10"
+										},
+										{
+											"id": 878,
+											"name": "visible",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {
+												"isExported": true
+											},
+											"sources": [
+												{
+													"fileName": "Series.ts",
+													"line": 91,
+													"character": 42
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "false"
+											},
+											"defaultValue": "false"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												877,
+												880,
+												879,
+												878
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Series.ts",
+											"line": 91,
+											"character": 14
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										887,
+										884,
+										881,
+										872,
+										876
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Series.ts",
+									"line": 89,
+									"character": 30
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
 						},
 						{
 							"id": 868,
@@ -25734,29 +26283,37 @@
 					],
 					"groups": [
 						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								892
+							]
+						},
+						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								894,
-								900,
-								877,
-								912,
-								905,
-								933,
-								924,
-								888,
-								944,
-								884,
-								918,
-								881,
-								874,
-								871
+								916,
+								922,
+								899,
+								934,
+								927,
+								955,
+								946,
+								910,
+								966,
+								906,
+								940,
+								903,
+								896,
+								893
 							]
 						},
 						{
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
+								871,
 								868,
 								857,
 								863
@@ -25779,7 +26336,7 @@
 					]
 				},
 				{
-					"id": 992,
+					"id": 1014,
 					"name": "SeriesConfig",
 					"kind": 128,
 					"kindString": "Class",
@@ -25791,7 +26348,7 @@
 					},
 					"children": [
 						{
-							"id": 995,
+							"id": 1017,
 							"name": "clip",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25805,7 +26362,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 311,
+									"line": 329,
 									"character": 15
 								}
 							],
@@ -25816,7 +26373,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 994,
+							"id": 1016,
 							"name": "data",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25830,7 +26387,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 308,
+									"line": 326,
 									"character": 15
 								}
 							],
@@ -25843,35 +26400,7 @@
 							}
 						},
 						{
-							"id": 1017,
-							"name": "defaultColors",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"comment": {
-								"shortText": "determines the default color for the first couple of series"
-							},
-							"sources": [
-								{
-									"fileName": "Series.ts",
-									"line": 326,
-									"character": 24
-								}
-							],
-							"type": {
-								"type": "array",
-								"elementType": {
-									"type": "intrinsic",
-									"name": "string"
-								}
-							},
-							"defaultValue": " ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#000', '#444', '#888', '#ccc']"
-						},
-						{
-							"id": 993,
+							"id": 1015,
 							"name": "seriesDefs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25882,7 +26411,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 301,
+									"line": 319,
 									"character": 22
 								}
 							],
@@ -25891,7 +26420,7 @@
 								"elementType": {
 									"type": "reference",
 									"name": "SeriesDef",
-									"id": 979
+									"id": 1001
 								}
 							},
 							"defaultValue": " []"
@@ -25922,7 +26451,7 @@
 									"elementType": {
 										"type": "reference",
 										"name": "SeriesDef",
-										"id": 979
+										"id": 1001
 									}
 								}
 							},
@@ -25947,7 +26476,7 @@
 											"elementType": {
 												"type": "reference",
 												"name": "SeriesDef",
-												"id": 979
+												"id": 1001
 											}
 										}
 									}
@@ -25960,534 +26489,15 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 332,
+									"line": 335,
 									"character": 21
 								},
 								{
 									"fileName": "Series.ts",
-									"line": 360,
+									"line": 363,
 									"character": 21
 								}
 							]
-						},
-						{
-							"id": 996,
-							"name": "defaultStyle",
-							"kind": 2097152,
-							"kindString": "Object literal",
-							"flags": {
-								"isExported": true,
-								"isPublic": true
-							},
-							"comment": {
-								"shortText": "determines the default style applied to each series.\nColors will be chosen by series index from `defaultColors`."
-							},
-							"children": [
-								{
-									"id": 1012,
-									"name": "bar",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 1013,
-											"name": "color",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 322,
-													"character": 23
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"default\""
-										},
-										{
-											"id": 1016,
-											"name": "offset",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 322,
-													"character": 68
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "30"
-										},
-										{
-											"id": 1014,
-											"name": "visible",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 322,
-													"character": 42
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "false"
-											},
-											"defaultValue": "false"
-										},
-										{
-											"id": 1015,
-											"name": "width",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 322,
-													"character": 56
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "50"
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												1013,
-												1016,
-												1014,
-												1015
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Series.ts",
-											"line": 322,
-											"character": 11
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 1009,
-									"name": "fill",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 1010,
-											"name": "color",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 321,
-													"character": 23
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"default\""
-										},
-										{
-											"id": 1011,
-											"name": "visible",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 321,
-													"character": 42
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "false"
-											},
-											"defaultValue": "false"
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												1010,
-												1011
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Series.ts",
-											"line": 321,
-											"character": 12
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 1006,
-									"name": "label",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 1007,
-											"name": "color",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 320,
-													"character": 23
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"default\""
-										},
-										{
-											"id": 1008,
-											"name": "visible",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 320,
-													"character": 42
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "false"
-											},
-											"defaultValue": "false"
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												1007,
-												1008
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Series.ts",
-											"line": 320,
-											"character": 13
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 997,
-									"name": "line",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 998,
-											"name": "color",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 318,
-													"character": 23
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"default\""
-										},
-										{
-											"id": 999,
-											"name": "visible",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 318,
-													"character": 42
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "true"
-											},
-											"defaultValue": "true"
-										},
-										{
-											"id": 1000,
-											"name": "width",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 318,
-													"character": 55
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "2"
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												998,
-												999,
-												1000
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Series.ts",
-											"line": 318,
-											"character": 12
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								},
-								{
-									"id": 1001,
-									"name": "marker",
-									"kind": 2097152,
-									"kindString": "Object literal",
-									"flags": {
-										"isExported": true
-									},
-									"children": [
-										{
-											"id": 1002,
-											"name": "color",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 319,
-													"character": 23
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											},
-											"defaultValue": "\"default\""
-										},
-										{
-											"id": 1005,
-											"name": "shape",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 319,
-													"character": 66
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "symbol"
-											},
-											"defaultValue": " Series.marker.circle"
-										},
-										{
-											"id": 1004,
-											"name": "size",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 319,
-													"character": 55
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "number"
-											},
-											"defaultValue": "10"
-										},
-										{
-											"id": 1003,
-											"name": "visible",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {
-												"isExported": true
-											},
-											"sources": [
-												{
-													"fileName": "Series.ts",
-													"line": 319,
-													"character": 42
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "false"
-											},
-											"defaultValue": "false"
-										}
-									],
-									"groups": [
-										{
-											"title": "Variables",
-											"kind": 32,
-											"children": [
-												1002,
-												1005,
-												1004,
-												1003
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "Series.ts",
-											"line": 319,
-											"character": 14
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "object"
-									}
-								}
-							],
-							"groups": [
-								{
-									"title": "Object literals",
-									"kind": 2097152,
-									"children": [
-										1012,
-										1009,
-										1006,
-										997,
-										1001
-									]
-								}
-							],
-							"sources": [
-								{
-									"fileName": "Series.ts",
-									"line": 317,
-									"character": 23
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "object"
-							}
 						}
 					],
 					"groups": [
@@ -26495,10 +26505,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								995,
-								994,
 								1017,
-								993
+								1016,
+								1015
 							]
 						},
 						{
@@ -26507,25 +26516,18 @@
 							"children": [
 								1018
 							]
-						},
-						{
-							"title": "Object literals",
-							"kind": 2097152,
-							"children": [
-								996
-							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 300,
+							"line": 318,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 968,
+					"id": 990,
 					"name": "BarStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26534,7 +26536,7 @@
 					},
 					"children": [
 						{
-							"id": 971,
+							"id": 993,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26547,7 +26549,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -26558,11 +26560,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ColoredCfg.color",
-								"id": 951
+								"id": 973
 							}
 						},
 						{
-							"id": 970,
+							"id": 992,
 							"name": "offset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26575,7 +26577,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 227,
+									"line": 245,
 									"character": 10
 								}
 							],
@@ -26585,7 +26587,7 @@
 							}
 						},
 						{
-							"id": 972,
+							"id": 994,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26610,7 +26612,7 @@
 							}
 						},
 						{
-							"id": 969,
+							"id": 991,
 							"name": "width",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26623,7 +26625,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 224,
+									"line": 242,
 									"character": 9
 								}
 							],
@@ -26638,17 +26640,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								971,
-								970,
-								972,
-								969
+								993,
+								992,
+								994,
+								991
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 222,
+							"line": 240,
 							"character": 25
 						}
 					],
@@ -26656,12 +26658,12 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						}
 					]
 				},
 				{
-					"id": 950,
+					"id": 972,
 					"name": "ColoredCfg",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26670,7 +26672,7 @@
 					},
 					"children": [
 						{
-							"id": 951,
+							"id": 973,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26683,7 +26685,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -26693,7 +26695,7 @@
 							}
 						},
 						{
-							"id": 952,
+							"id": 974,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26723,15 +26725,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								951,
-								952
+								973,
+								974
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 199,
+							"line": 217,
 							"character": 27
 						}
 					],
@@ -26746,32 +26748,32 @@
 						{
 							"type": "reference",
 							"name": "LineStyle",
-							"id": 953
+							"id": 975
 						},
 						{
 							"type": "reference",
 							"name": "MarkerStyle",
-							"id": 957
+							"id": 979
 						},
 						{
 							"type": "reference",
 							"name": "FillStyle",
-							"id": 962
+							"id": 984
 						},
 						{
 							"type": "reference",
 							"name": "TextStyle",
-							"id": 965
+							"id": 987
 						},
 						{
 							"type": "reference",
 							"name": "BarStyle",
-							"id": 968
+							"id": 990
 						}
 					]
 				},
 				{
-					"id": 962,
+					"id": 984,
 					"name": "FillStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26780,7 +26782,7 @@
 					},
 					"children": [
 						{
-							"id": 963,
+							"id": 985,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26793,7 +26795,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -26804,11 +26806,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ColoredCfg.color",
-								"id": 951
+								"id": 973
 							}
 						},
 						{
-							"id": 964,
+							"id": 986,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26838,15 +26840,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								963,
-								964
+								985,
+								986
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 216,
+							"line": 234,
 							"character": 26
 						}
 					],
@@ -26854,12 +26856,12 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						}
 					]
 				},
 				{
-					"id": 953,
+					"id": 975,
 					"name": "LineStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26868,7 +26870,7 @@
 					},
 					"children": [
 						{
-							"id": 955,
+							"id": 977,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26881,7 +26883,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -26892,11 +26894,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ColoredCfg.color",
-								"id": 951
+								"id": 973
 							}
 						},
 						{
-							"id": 956,
+							"id": 978,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26921,7 +26923,7 @@
 							}
 						},
 						{
-							"id": 954,
+							"id": 976,
 							"name": "width",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26934,7 +26936,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 205,
+									"line": 223,
 									"character": 9
 								}
 							],
@@ -26949,16 +26951,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								955,
-								956,
-								954
+								977,
+								978,
+								976
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 203,
+							"line": 221,
 							"character": 26
 						}
 					],
@@ -26966,12 +26968,12 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						}
 					]
 				},
 				{
-					"id": 957,
+					"id": 979,
 					"name": "MarkerStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26980,7 +26982,7 @@
 					},
 					"children": [
 						{
-							"id": 960,
+							"id": 982,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26993,7 +26995,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -27004,11 +27006,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ColoredCfg.color",
-								"id": 951
+								"id": 973
 							}
 						},
 						{
-							"id": 959,
+							"id": 981,
 							"name": "shape",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27021,7 +27023,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 213,
+									"line": 231,
 									"character": 9
 								}
 							],
@@ -27031,7 +27033,7 @@
 							}
 						},
 						{
-							"id": 958,
+							"id": 980,
 							"name": "size",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27044,7 +27046,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 210,
+									"line": 228,
 									"character": 8
 								}
 							],
@@ -27054,7 +27056,7 @@
 							}
 						},
 						{
-							"id": 961,
+							"id": 983,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27084,17 +27086,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								960,
-								959,
-								958,
-								961
+								982,
+								981,
+								980,
+								983
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 208,
+							"line": 226,
 							"character": 28
 						}
 					],
@@ -27102,12 +27104,12 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						}
 					]
 				},
 				{
-					"id": 979,
+					"id": 1001,
 					"name": "SeriesDef",
 					"kind": 256,
 					"kindString": "Interface",
@@ -27115,11 +27117,11 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "Defines Series columns and values to use, as well as the plot type to apply.\nThe following settings are available for configuration:\n```\ncfg.series.series = [{\n   type: TYPE,        // the series type, e.g. 'line', etc. See below.\n   dataIndex: number, // the `Data` set to use. The index refers to the position in `series.data`\n   x: string,         // the column name or index of the x-coordinate to use for drawing\n   y: string,         // the column name or index of the y-coordinate to use for drawing\n   yBase: string,     // if specified, used as lower series for filling the area\n   l: string,         // the column name or index to use for series labels\n   hOffset: number;   // horizontal label offset in em o\n   vOffset?: number;  // vertical label offset in em\n   map?: 'stacked' | 'shared'; // stack series, or show the share (normalize to 100%)\n   style: {@link SeriesStyle SeriesStyle},  // allows overriding a default style setting\n   cond: {@link hsdatab:DataFilters.Condition Condition} // allows specifying a filter applied to data before rendering.\n}]\n```\nThe following series <TYPE>s are available. For configuration details, see:\n- 'line':  (or omitted): {@link PlotLine PlotLine}\n- 'markers': {@link PlotMarkers PlotMarkers}\n- 'area':    {@link PlotArea PlotArea}\n- 'bar':     {@link PlotBar PlotBar}"
+						"shortText": "Defines Series columns and values to use, as well as the plot type to apply.\nThe following settings are available for configuration:\n```\ncfg.series.series = [{\n   type: TYPE,        // the series type, e.g. 'line', etc. See below.\n   dataIndex: number, // the `Data` set to use. The index refers to the position in `series.data`\n   x: string,         // the column name or index of the x-coordinate to use for drawing\n   y: string,         // the column name or index of the y-coordinate to use for drawing\n   yBase: string,     // if specified, used as lower series for filling the area\n   l: string,         // the column name or index to use for series labels\n   hOffset: number;   // horizontal label offset in em o\n   vOffset?: number;  // vertical label offset in em\n   map?: 'stacked' | 'shared'; // stack series, or show the share (normalize to 100%)\n   style: {@link Series.SeriesStyle SeriesStyle},  // allows overriding a default style setting\n   cond: {@link hsdatab:DataFilters.Condition Condition} // allows specifying a filter applied to data before rendering.\n}]\n```\nThe following series *TYPE*s are available. For configuration details, see:\n- 'line':  (or omitted): {@link PlotLine PlotLine}\n- 'markers': {@link PlotMarkers PlotMarkers}\n- 'area':    {@link PlotArea PlotArea}\n- 'bar':     {@link PlotBar PlotBar}"
 					},
 					"children": [
 						{
-							"id": 991,
+							"id": 1013,
 							"name": "cond",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27133,7 +27135,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 283,
+									"line": 301,
 									"character": 8
 								}
 							],
@@ -27143,7 +27145,7 @@
 							}
 						},
 						{
-							"id": 988,
+							"id": 1010,
 							"name": "dataIndex",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27157,7 +27159,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 277,
+									"line": 295,
 									"character": 13
 								}
 							],
@@ -27167,7 +27169,7 @@
 							}
 						},
 						{
-							"id": 985,
+							"id": 1007,
 							"name": "hOffset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27178,7 +27180,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 273,
+									"line": 291,
 									"character": 11
 								}
 							],
@@ -27188,7 +27190,7 @@
 							}
 						},
 						{
-							"id": 984,
+							"id": 1006,
 							"name": "l",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27199,7 +27201,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 272,
+									"line": 290,
 									"character": 5
 								}
 							],
@@ -27209,7 +27211,7 @@
 							}
 						},
 						{
-							"id": 987,
+							"id": 1009,
 							"name": "map",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27220,7 +27222,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 275,
+									"line": 293,
 									"character": 7
 								}
 							],
@@ -27230,7 +27232,7 @@
 							}
 						},
 						{
-							"id": 990,
+							"id": 1012,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27244,18 +27246,18 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 281,
+									"line": 299,
 									"character": 9
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "SeriesStyle",
-								"id": 973
+								"id": 995
 							}
 						},
 						{
-							"id": 989,
+							"id": 1011,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27269,7 +27271,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 279,
+									"line": 297,
 									"character": 8
 								}
 							],
@@ -27279,7 +27281,7 @@
 							}
 						},
 						{
-							"id": 986,
+							"id": 1008,
 							"name": "vOffset",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27290,7 +27292,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 274,
+									"line": 292,
 									"character": 11
 								}
 							],
@@ -27300,7 +27302,7 @@
 							}
 						},
 						{
-							"id": 980,
+							"id": 1002,
 							"name": "x",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27313,7 +27315,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 268,
+									"line": 286,
 									"character": 5
 								}
 							],
@@ -27323,7 +27325,7 @@
 							}
 						},
 						{
-							"id": 981,
+							"id": 1003,
 							"name": "y",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27334,7 +27336,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 269,
+									"line": 287,
 									"character": 5
 								}
 							],
@@ -27344,7 +27346,7 @@
 							}
 						},
 						{
-							"id": 982,
+							"id": 1004,
 							"name": "yBase",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27355,7 +27357,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 270,
+									"line": 288,
 									"character": 9
 								}
 							],
@@ -27365,7 +27367,7 @@
 							}
 						},
 						{
-							"id": 983,
+							"id": 1005,
 							"name": "ySum",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27376,7 +27378,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 271,
+									"line": 289,
 									"character": 8
 								}
 							],
@@ -27391,31 +27393,31 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								991,
-								988,
-								985,
-								984,
-								987,
-								990,
-								989,
-								986,
-								980,
-								981,
-								982,
-								983
+								1013,
+								1010,
+								1007,
+								1006,
+								1009,
+								1012,
+								1011,
+								1008,
+								1002,
+								1003,
+								1004,
+								1005
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 262,
+							"line": 280,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 973,
+					"id": 995,
 					"name": "SeriesStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -27424,7 +27426,7 @@
 					},
 					"children": [
 						{
-							"id": 977,
+							"id": 999,
 							"name": "bar",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27434,18 +27436,18 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 234,
+									"line": 252,
 									"character": 7
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "BarStyle",
-								"id": 968
+								"id": 990
 							}
 						},
 						{
-							"id": 976,
+							"id": 998,
 							"name": "fill",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27455,18 +27457,18 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 233,
+									"line": 251,
 									"character": 8
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "FillStyle",
-								"id": 962
+								"id": 984
 							}
 						},
 						{
-							"id": 978,
+							"id": 1000,
 							"name": "label",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27476,18 +27478,18 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 235,
+									"line": 253,
 									"character": 9
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "TextStyle",
-								"id": 965
+								"id": 987
 							}
 						},
 						{
-							"id": 974,
+							"id": 996,
 							"name": "line",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27497,18 +27499,18 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 231,
+									"line": 249,
 									"character": 8
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "LineStyle",
-								"id": 953
+								"id": 975
 							}
 						},
 						{
-							"id": 975,
+							"id": 997,
 							"name": "marker",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27518,14 +27520,14 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 232,
+									"line": 250,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reference",
 								"name": "MarkerStyle",
-								"id": 957
+								"id": 979
 							}
 						}
 					],
@@ -27534,24 +27536,24 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								977,
-								976,
-								978,
-								974,
-								975
+								999,
+								998,
+								1000,
+								996,
+								997
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 230,
+							"line": 248,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 965,
+					"id": 987,
 					"name": "TextStyle",
 					"kind": 256,
 					"kindString": "Interface",
@@ -27560,7 +27562,7 @@
 					},
 					"children": [
 						{
-							"id": 966,
+							"id": 988,
 							"name": "color",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27573,7 +27575,7 @@
 							"sources": [
 								{
 									"fileName": "Series.ts",
-									"line": 201,
+									"line": 219,
 									"character": 9
 								}
 							],
@@ -27584,11 +27586,11 @@
 							"inheritedFrom": {
 								"type": "reference",
 								"name": "ColoredCfg.color",
-								"id": 951
+								"id": 973
 							}
 						},
 						{
-							"id": 967,
+							"id": 989,
 							"name": "visible",
 							"kind": 1024,
 							"kindString": "Property",
@@ -27618,15 +27620,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								966,
-								967
+								988,
+								989
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Series.ts",
-							"line": 219,
+							"line": 237,
 							"character": 26
 						}
 					],
@@ -27634,7 +27636,7 @@
 						{
 							"type": "reference",
 							"name": "ColoredCfg",
-							"id": 950
+							"id": 972
 						}
 					]
 				},
@@ -27707,21 +27709,21 @@
 					"kind": 128,
 					"children": [
 						856,
-						992
+						1014
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						968,
-						950,
-						962,
-						953,
-						957,
+						990,
+						972,
+						984,
+						975,
 						979,
-						973,
-						965
+						1001,
+						995,
+						987
 					]
 				},
 				{
@@ -27768,7 +27770,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsGraph/src/overview.ts",
 			"comment": {
 				"shortText": "# hsGraph",
-				"text": "Helpful Scripts Graph plotting functions. [Github page](https://github.com/HelpfulScripts/hsGraph)\n\nhsGraph is a simple graphing utility written in JavaScript and based on the [Mithril](https://mithril.js.org) framework.\nIt supports various chart types and scales and provides a convenient programmatic configuration mechanism.\n\n## Usage\nIn mithril, simply render or mount a {@link Graph Graph} Component object and provide a `cfg`\nattribute with the graph's configuration.\n\n### Simple Example\n<example>\n<file name='script.js'>\nlet data = {\n   colNames:['time', 'volume'],\n   rows:[\n     [-1, 0.2],\n     [0.2, 0.7],\n     [0.4, -0.2],\n     [0.6, 0],\n     [0.8, 0.5],\n     [1, 0.7]\n]};\n\nm.mount(root, {\n     view:() => m(hsgraph.Graph, {cfgFn: cfg => {\n         cfg.chart.title.text = 'Simple Example';\n         cfg.series.data      = [data];\n         cfg.series.series    = [{ x:'time', y:'volume' }];\n         cfg.axes.primary.x.title.text = 'Time';\n         cfg.axes.primary.y.title.text = 'Volume';\n     }})\n});\n\n</file>\n<file name='style.css'>\n.hs-graph-chart { fill: #fff; }\n.hs-graph-series { stroke-width: 5; }\n</file>\n</example>\n\n## Setting the data to render\nData is provided in a rows-of-columns style array: `data[row][column]`.\nThe first row in the data array contains column names by which the series can be identified.\nThere is no conceptual limit to the number of rows or columns provided to `hsGraph`.\nIn the configuration,\n- set the array containing the data: `series.data = data;`\n- and specify the x- and y-columns to render, by name: `series.series = [{xHeader:<string>, yHeader:<string>}]`\n\n## Configuration\nAll graph components are highly configurable. `hsGraph` uses default values for all configurable fields\nthat can easily be changed, either programmatically or via a custom stylesheet.\n\nTo programmatically set rendering parameters, simply provide a configuration function `cfg => {}`\nto the `cfgFn` attribute when setting up the mithril mount call - see example above.\nThe `cfgFn` receives a configuration object that is fully initialized with default values,\nand should overwrite parameters as needed. See the overview for each component for configurable\nparameters.\n\nAvailable configurations include:\n- &nbsp; {@link Graph.Graph.defaultConfig Graph.defaultConfig }\n- &nbsp; {@link Canvas.Canvas.defaultConfig Canvas.defaultConfig}\n- &nbsp; {@link Chart.Chart.defaultConfig Chart.defaultConfig}\n- &nbsp; {@link Axes.Axes.defaultConfig Axes.defaultConfig}\n- &nbsp; {@link Grid.Grid.defaultConfig Grid.defaultConfig}\n- &nbsp; {@link Series.Series.defaultConfig Series.defaultConfig}\n- &nbsp; {@link Legend.Legend.defaultConfig Legend.defaultConfig}\n\n## Graph Components\nThe rendered graph is organized in a layered structure of components:\n- &nbsp; {@link Canvas Canvas}:  the background canvas on which all components are rendered\n- &nbsp; {@link Chart Chart}: the chart area and title\n- &nbsp; {@link Axes Axes}: the x- and y-axes, tick marks and labels, and axis title\n- &nbsp; {@link Grid Grid}: the major and minor gridlines\n- &nbsp; {@link Series Series}: the one or more data series to render\n- &nbsp; {@link Legend Legend}: the legend for the shown series\n\n"
+				"text": "Helpful Scripts Graph plotting functions. [Github page](https://github.com/HelpfulScripts/hsGraph)\n\nhsGraph is a simple graphing utility written in JavaScript and based on the [Mithril](https://mithril.js.org) framework.\nIt supports various chart types and scales and provides a convenient programmatic configuration mechanism.\n\n## Usage\nIn mithril, simply render or mount a {@link Graph Graph} Component object and provide a `cfg`\nattribute with the graph's configuration.\n\n## Setting the data to render\nData is provided in a rows-of-columns style array: `data[row][column]`.\nThe first row in the data array contains column names by which the series can be identified.\nThere is no conceptual limit to the number of rows or columns provided to `hsGraph`.\nIn the configuration,\n- set the array containing the data: `series.data = data;`\n- and specify the x- and y-columns to render, by name: `series.series = [{xHeader:<string>, yHeader:<string>}]`\n\n## Configuration\nAll graph components are highly configurable. `hsGraph` uses default values for all configurable fields\nthat can easily be changed, either programmatically or via a custom stylesheet.\n\nThere are two ways to programmatically set rendering parameters.\n1. change the deafult configuration style or color. This will change the default for all\nsubsequently drawn graphs\n```\nhsgraph.Series.defaultStyle.line.width  = 10;\n```\n2. provide a configuration function `cfg => {}` to the `cfgFn` attribute\nwhen setting up the mithril mount call - see example below. The `cfgFn`\nreceives a configuration object that is fully initialized with default values,\nand should overwrite parameters as needed. See the overview for each component\nfor configurable parameters. Example:\n```\ncfg => {\n...\ncfg.series.series[0].style.line.width = 10;\n}\n```\n\n\n\nAvailable configuration options and their default settings are documented in:\n- &nbsp; {@link Graph.Graph.defaultConfig Graph.defaultConfig }\n- &nbsp; {@link Canvas.Canvas.defaultConfig Canvas.defaultConfig}\n- &nbsp; {@link Chart.Chart.defaultConfig Chart.defaultConfig}\n- &nbsp; {@link Axes.Axes.defaultConfig Axes.defaultConfig}\n- &nbsp; {@link Grid.Grid.defaultConfig Grid.defaultConfig}\n- &nbsp; {@link Series.Series.defaultConfig Series.defaultConfig}\n- &nbsp; {@link Legend.Legend.defaultConfig Legend.defaultConfig}\n\n## Graph Components\nThe rendered graph is organized in a layered structure of components:\n- &nbsp; {@link Canvas Canvas}:  the background canvas on which all components are rendered\n- &nbsp; {@link Chart Chart}: the chart area and title\n- &nbsp; {@link Axes Axes}: the x- and y-axes, tick marks and labels, and axis title\n- &nbsp; {@link Grid Grid}: the major and minor gridlines\n- &nbsp; {@link Series Series}: the one or more data series to render\n- &nbsp; {@link Legend Legend}: the legend for the shown series\n\n## Supported Plot Types\n<example height=640px>\n<file name='script.js'>\nlet series = {\n   colNames:['time', 'volume', 'costs'],\n   rows:[[-1,  0.2, 0.3], [0.2, 0.7, 0.2], [0.4, 0.1, 0.3],\n         [0.6, 0,   0.1], [0.8, 0.3, 0.5], [1,   0.2, 0.4]]};\n\nconst plot = (type, link) => m(hslayout.Layout, {\n   rows: ['40px', 'fill'],\n   content: [\n      m('h4', [m('a', {href:`#!/api/hsGraph/hsGraph.${link}`}, `${type} plot:`)]),\n      m(hsgraph.Graph, {cfgFn: cfg => {\n         cfg.axes.primary.x.title.text = 'time';\n         cfg.series.data      = [series];\n         cfg.series.series    = [\n             { x:'time', y:'volume', type:type },\n             { x:'time', y:'costs', type:type }\n         ];\n      }}),\n]});\n\nhsgraph.Series.defaultStyle.line.width = 6;\nhsgraph.Series.defaultStyle.bar.width  = 20;\nhsgraph.Series.defaultStyle.bar.offset = 25;\nhsgraph.Series.defaultColors[0] = 'rgba(255, 0, 0, 0.5)';\nhsgraph.Series.defaultColors[1] = 'rgba(0, 255, 0, 0.5)';\n\nm.mount(root, { view:() => m('.hs-white', m(hslayout.Layout, {\n   rows: [], content: [\n      plot('marker', 'PlotMarkers'),\n      plot('line',   'PlotLine'),\n      plot('area',   'PlotArea'),\n      plot('bar',    'PlotBar')\n]}))});\n</file>\n<file name='style.css'>\n</file>\n</example>\n"
 			},
 			"sources": [
 				{
