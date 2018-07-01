@@ -1,4 +1,5 @@
 const showdown  = require('showdown');
+import { m }  from 'hslayout';
 
 /**
  * process a markdown comment string and returns the equivalent html syntax. 
@@ -6,7 +7,7 @@ const showdown  = require('showdown');
  * @param short if true, only the first paragraph is returned
  * @return the marked down comment
  */
-export function markDown(text:string, short:boolean=false, currentRoute:string):string {
+export function markDown(text:string, short:boolean=false, currentRoute:string = m.route.get()):string {
     const converter = new showdown.Converter({
         tables:                 true,   // enables |...| style tables; requires 2nd |---| line
         ghCompatibleHeaderId:   true,   // github-style dash-separated header IDs
