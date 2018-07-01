@@ -1,11 +1,12 @@
-import { m, Vnode}      from 'hslayout';
-import { Layout }    from 'hslayout';
-import { DocSets }      from '../DocSets'; 
-import { comment, commentLong }  from './MainComment';
-import { flags, sourceLink, signature, type, 
+import { m, Vnode}              from 'hslayout';
+import { Layout }               from 'hslayout';
+import { DocSets }              from '../DocSets'; 
+import { comment, commentLong } from './MainComment';
+import { flags, sourceLink, 
+         signature, type, 
          extensionOf, inheritedFrom,
-         kindString, itemName, makeID } 
-                        from './Parts'; 
+         kindString, itemName, 
+         makeID }               from './Parts'; 
 
 
 /**
