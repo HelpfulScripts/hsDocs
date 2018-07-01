@@ -120,10 +120,13 @@ function mainCommentParams(params:any):Vnode {
 
 /**
  * finds segments of `<code>...</code>` in `comment` and replaces them with a prettified version.
- * Currently the function performs two operations:
+ * Currently the function performs operations in this sequence:
  * - add indentation for brackets {...}
  * - wrap the &lt;code&gt;...&lt;/code&gt; part within &lt;pre&gt;...&lt;/pre&gt; brackets
+ * - apply markdown syntax
+ * - wrap results in a trusted mithril node
  * @param comment the comment comment 
+ * @param short only return the first paragraph
  */
 function prettifyCode(comment:string, short:boolean):Vnode { 
 //    const indentSpaces = 2;
