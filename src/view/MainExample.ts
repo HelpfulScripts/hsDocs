@@ -125,24 +125,12 @@ export function example(context:any) {
         const instance = shortCheckSum(exmpl);
         let IDs = gInitialized[instance]; 
         if (!IDs) {
-            IDs = gInitialized[instance] = initDesc(() => addExample(IDs)   // called when source menu changes
-                .then(executeScript) 
-                .catch(executeError)
-            );
+            IDs = gInitialized[instance] = initDesc(IDs);
             IDs.executeSource = exmpl;
-            const libNames = Object.keys(modules);
-            Promise.all(libNames.map(name => modules[name]))
-            .then((libs) => {
-                try {
-                    const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
-                    IDs.executeScript = (root:any) => scriptFn(root, ...libs);
-                }
-                catch(e) { console.log('creating script:' + e); }                
-            });
+            createExecuteScript(IDs, exmpl);
         }
-        if (document.getElementById(IDs.menuID)) { 
-        } else {
-            addExample(IDs).then(executeScript).catch(executeError);
+        if (!document.getElementById(IDs.menuID)) { 
+            addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
         }
 
         const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
@@ -161,17 +149,35 @@ export function example(context:any) {
     };
 }
 
+function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
+    const libNames = Object.keys(modules);
+    return Promise.all(libNames.map(name => modules[name]))
+    .then((libs) => {
+        try {
+            const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
+            IDs.executeScript = (root:any) => scriptFn(root, ...libs);
+            return true;
+        }
+        catch(e) { 
+            console.log('creating script:' + e); 
+            return false;
+        } 
+    });
+}
+
 /**
  * creates the example configuration 
  */
-function initDesc(fn:any):CommentDescriptor {
+function initDesc(IDs:CommentDescriptor):CommentDescriptor {
     return {
         exampleID:  getNewID(),    // example tag ID
         menuID:     getNewID(),    // main execution area tag ID
         desc:<SelectorDesc>{ 
             items:<string[]>[],
             selectedItem: 'js',
-            changed: fn,
+            changed: () => addExample(IDs)   // called when source menu changes
+                        .then(executeScript) 
+                        .catch(executeError),
             size: ["50px"]
         },
         pages:{},
