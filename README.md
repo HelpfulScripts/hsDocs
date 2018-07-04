@@ -1,5 +1,9 @@
-hsDocs [![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/) [![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)
+hsDocs 
 ========
+[![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs) 
+[![Build status](https://ci.appveyor.com/api/projects/status/wrxskwwprsl41a59?svg=true)](https://ci.appveyor.com/project/HelpfulScripts/hsdocs)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/) 
+[![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)
 
 Helpful Scripts code documentation tool.
 
