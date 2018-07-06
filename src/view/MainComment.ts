@@ -63,7 +63,11 @@ function textOrShortTextOrDescription(comment:any, short:boolean):Vnode {
     if (comment.tags) {
         comment.tags.map((tag:any) => {if (tag.tag==='description') { text = tag.text;}} );
     }
+<<<<<<< HEAD
     text = text.replace(/<example([\S\s]*?)<\/example>/gi, short? '' : example);
+=======
+    text = text.replace(/<example([\S\s]*?)<\/example>/gi, short? '' : example());
+>>>>>>> fixingExamples
     return m('.hs-item-comment-desc', prettifyCode(text, short));
 }
 

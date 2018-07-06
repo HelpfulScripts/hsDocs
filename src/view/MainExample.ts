@@ -273,4 +273,3 @@ function getCommentDescriptor(IDs:CommentDescriptor, example:string):string {
     });
     return IDs.pages['js'];
 }
-
