@@ -120,7 +120,7 @@ const gInitialized:{string?:CommentDescriptor} = {};
  * @param exmpl the example string extracted from the comment, including the `<example>` tags.
  * @param context the context in which the example script should be run, expressed as `name`:`namespace` pairs.
  */
-export function example(context:any) { 
+export function example(context:any={}) { 
     return (exmpl:string) => { 
         const instance = shortCheckSum(exmpl);
         let IDs = gInitialized[instance]; 
