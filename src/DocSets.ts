@@ -22,14 +22,18 @@ const FILE:string = './data/index.json';
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList = <{set:string[], index:{}}>{set:[], index:{}};
+    private static gList = <{set:string[], index:{}, docs:[string]}>{set:[], index:{}, docs:[]};
     private static gTitle: string;
 
-    /** Adds the docset in `content` to the `gList` */
-    public static add(content:any) {
+    /**
+     * Adds the docset in `content` to the `gList` at the position of `file` in `DocSets.gList.docs`.
+     * @param content the docSet content to add. 
+     * @param file the file name from which the content was read. 
+     */
+    public static add(content:any, file:string) {
         const lib = content.name;
-        DocSets.gList.set.push(lib);
-//        DocSets.gList.set.sort();
+        const i = DocSets.gList.docs.indexOf(file);
+        DocSets.gList.set[i] = lib;
         DocSets.gList.index[lib] = {};
         recursiveIndex(content, DocSets.gList.index[lib], lib);
     }
@@ -38,16 +42,16 @@ export class DocSets {
      * loads an index set and the docsets it contains from driectory `dir`.
      * @param file the optional directory to read from. If unspecified, 
      * read from the index file specified by {@link DocSets.FILE `FILE`}.
+     * @return a promise to load the index set
      */
     public static loadList(file?:string):Promise<void> {
         file = file || FILE;   
-//console.log('requesting docSet ' + file);
         return DocSets.loadIndexSet(file); 
     }
 
     /**
      * returns the specified documentation element.
-     * When called without parameters, a string[] of available docSets is returned.
+     * When called without parameters, a `string[lib]` of available docSets is returned.
      * When called with only `lib` specified, the corresponding docSet overview is returned.
      * @param lib specifies the docset to scan. 
      * @param id specifies the element within the docSet, either by its id number, or by its path
@@ -75,6 +79,7 @@ export class DocSets {
             .then((result:any) =>  {
 //console.log('received index');
                 DocSets.gTitle = result.title;
+                DocSets.gList.docs = result.docs;
                 let i = file.lastIndexOf('/');
                 const dir = file.substring(0,i+1);
                 return Promise.all(result.docs.map((f:string) => loadDocSet(dir, f)));            
@@ -96,7 +101,7 @@ function loadDocSet(dir:string, file:string):Promise<void> {
     return m.request({ method: "GET", url: dir+file })
         .then((r:any) => {
 // console.log('received ' + dir+file);
-            DocSets.add(r);
+            DocSets.add(r, file);
         })
         .catch(console.log);
 }
