@@ -12,7 +12,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/hsConfig.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/hsConfig.ts",
 			"comment": {
 				"shortText": "##HsConfig\nTool to configure a layout via a configuration object that is either defined\nas an object literal or as a JSON file.",
 				"text": "The structure of the configuration object follows the convention\n<code>\n{\n<Class>: <Configuration>\n[,route: {\ndefault: '/api',\npaths: [\n'/api',\n'/api/:lib',\n'/api/:lib/:field'\n]\n}]\n}\n</code>\n`<Class>` is either {@link hsLayout:Layout.Layout Layout} or a subclass thereof.\n`<Configuration>` is an object literal `{ <Attr>:<Value>[, ...] }`\n\nArrays and Object Literals in `<Configuration>` define a layout tree that will be traversed,\nAfter which the tree will be instantiated by calling `m(<Class>, <Configuration>)`.\nMithril will then recursively create the Classes in the tree and call their `view` methods,\nwhere `Configuration`settings will be available via the `node.attrs` parameter.\n\nThe default `Layout` implementation recognizes the following special `<Attr>` keys:\n\n- `content`: the subcomponents to render in `Layout`, allowing for following `<Value>` types:\n    - `[{<Class>: <Configuration>}, ...]`\n    - `['string literal', ...]`\n    - `'string literal'`\n- `css`: the CSS class to set on `Layout`\n- `href`: a href attribute to set on `Layout`. This makes `Layout` clickable and sends the\nrespective attribute value to the Mithril router.\n- `onclick`: a function to call when `Layout` is clicked.\n"
@@ -505,7 +505,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/index.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/index.ts",
 			"sources": [
 				{
 					"fileName": "index.ts",
@@ -522,7 +522,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/mithril.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/mithril.ts",
 			"children": [
 				{
 					"id": 3,
@@ -538,7 +538,7 @@
 					"sources": [
 						{
 							"fileName": "mithril.ts",
-							"line": 21,
+							"line": 19,
 							"character": 17
 						}
 					],
@@ -562,7 +562,7 @@
 					"sources": [
 						{
 							"fileName": "mithril.ts",
-							"line": 16,
+							"line": 14,
 							"character": 14
 						}
 					],
@@ -578,13 +578,14 @@
 					"kind": 32,
 					"kindString": "Variable",
 					"flags": {
+						"isExported": true,
 						"isConst": true
 					},
 					"sources": [
 						{
 							"fileName": "mithril.ts",
-							"line": 23,
-							"character": 7
+							"line": 21,
+							"character": 14
 						}
 					],
 					"type": {
@@ -627,7 +628,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/overview.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/overview.ts",
 			"comment": {
 				"shortText": "# hsLayout",
 				"text": "Helpful Scripts UI layout tools. [Github page](https://github.com/HelpfulScripts/hsLayout)\n\nhsLayout provides means to layout the browser window in various ways.\nSee [Layout Examples](example/layout.html)\n\n## Concepts\n\n### Layouts\nLayouts can be either defined generically:\n```\nm(Layout, {\n    css: '.myLayoutClass',  // optional\n    columns: []\n    content: ['left', 'right']\n})\n```\nOr, for more complex cases, by defining a class that extends {@link Layout.Layout `Layout`}:\n```\nclass Columns extends Layout {\n    getComponents(node:Vnode) {\n        return [m(LeftColumn), m(CenterColumn), m(RightColumn)]\n    }\n}\nm(Columns);\n```\n\n### Layouters\nTo create new layout styles, define a class that extends the abstract {@link Layouter.Layouter `Layouter`} class.\nThis class should implement the `getStyles` method which calculates the styles attributes required for each `Component`\nto be layed out in a `Layout`.\n\nCurrently defined Layouters:\n- &nbsp; {@link PillaredLayouter.Columns `Columns`}\n- &nbsp; {@link PillaredLayouter.Rows    `Rows`}\n- &nbsp; {@link TileLayouter             `Tiles`}\n\n### Example\n<example>\n<file name='script.js'>\nconst theContent = ['Top row: 50px', 'Bottom row: remainder']\nm.mount(root, {view: () => m(hslayout.Layout, {\n    css: 'myColumn',\n    rows: [\"50px\", \"fill\"],\n    content:theContent\n    })\n});\n</file>\n</example>\n\n### Nested Example\n<example>\n<file name='script.js'>\nm.mount(root, {view: () =>\n    m(hslayout.Layout, {\n        css: 'myColumn',\n        rows: [\"150px\", \"fill\"],\n        content:[\n            m(hslayout.Layout, {columns:['20%'], content:['top left', 'top 2nd']}),\n            m(hslayout.Layout, {columns:['20%'], content:['bottom left', 'bottom 2nd']})\n        ]\n    })\n});\n</file>\n</example>\n"
@@ -648,7 +649,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/view/Layout.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/view/Layout.ts",
 			"comment": {
 				"shortText": "# Layout\nA `mithril` component class that layouts available space in the window.",
 				"text": "### Invocation\ninvoked as `m(Layout, {name:<string>, content:Array<Vnode>})`\n\n### Attributes (node.attrs):\n- <key>:Array<String>, required. <key> matches a registered {@link Layouter Layouter}\n- content: Array<Vnode>, required. The Vnode children to lay out.\n- css:String, optional. The css specifier to use for this `Layout` component.\n- route: object literal holding parameters passed from `m.route`\n- href: String, optional. If present, makes the component clickable\n- onclick:(), optional. The function to call when clicked\n"
@@ -959,7 +960,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/view/Layouter.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/view/Layouter.ts",
 			"comment": {
 				"shortText": "Layouter.ts provides basic mechanisms for laying out a view container.\nSubclasses of `Layouter` should\n- implement the {@link Layouter.Layouter.getStyles getStyles} method.\n- register the subclass and configuration keyword with the static\n{@link Layouter.Layouter.register register} method."
 			},
@@ -1496,7 +1497,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/view/PillaredLayouter.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/view/PillaredLayouter.ts",
 			"comment": {
 				"shortText": "Lays out components in pillars, i.e. either {@link hsLayout:PillaredLayout.Columns columns}\nor {@link hsLayout:PillaredLayout.Rows rows}\nUse either of\n- `{rows: [attributes]}`\n- `{columns: [attributes]}`",
 				"text": "to invoke this layout.\n\n### Example\n<code>\n{rows: [px(200), FILL]}   // --> top row has height 200px, all other rows evenly share remaining space\n{rows: [\"200px\", \"fill\"]} // --> equivalent description\n</code>\n\n## Attributes\nThe following values **v** are valid entries in The Attributes array:\n- **px(n)** or **\"<n>px\"** -- a fixed number of pixels\n- **pc(n)** or **\"<n>%\"**  -- a fixed percentage of available space\n- **FILL** or **\"fill\"**   -- a special constant to indicate - may appear only once per array.\n\nThe following options are supported for the Attributes array:\n- **[ ]**: An empty array; all components will be evenly spaced across the available width.\n- **[v]**: All components have the specified width (in px or %) and will fill the available space from the left,\nleaving any remaining unused space on the right.\n- **[v1, v2]**: All components have the specified widths (in px or %) and will fill the available space from the left,\nleaving any remaining unused space on the right. If there are more components than widths, the right-most width\nwill be used for the reminaing widgets.\n- **[v, FILL]**: Sets the first (left) widget to a width of `v`.<br>\nif `v` is specified in %, the remaining n-1 components will have equal relative widths of `(100-v)/(n-1)%`<br>\nif `v` is specified in px, the remaining n-1 components will have their right borders at location `i*100/n%`, with i=1...n.\n- **[FILL, v]**: Sets the last (right) widget to a width of `v`.<br>\nif `v` is specified in %, the remaining n-1 components will have equal relative widths of `(100-v)/(n-1)%`<br>\nif `v` is specified in px, the remaining n-1 components will have their left borders at location `i*100/n%`, with i=0...n-1.\n- **[va, FILL, vb]**: Sets the first and last widget to a width of `va`/`vb`.<br>\nBoth have to be specified either in px or in %.<br>\nif the unit is %, the remaining n-2 components will have equal relative widths of `(100-vb-va)/(n-2)%`<br>\nif the unit is px, the remaining n-2 components will have their left/right borders at location `i*100/n%`.\n- **[v1, v2, FILL, v3, v4]**: multiple widths can be specified in uninterrupted sequence both from the left and the right.\n"
@@ -3882,7 +3883,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/view/TileLayouter.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/view/TileLayouter.ts",
 			"comment": {
 				"shortText": "Lays out components in tiles\nUse\n- `{tiles: [attributes]}`",
 				"text": "to invoke this layout.\n\n### Example\n<code>\n{tiles: [\"20%\"]}   // --> tiles will all have 20% of available height and width\n</code>\n<example>\n<file name='script.js'>\nlet c = [1,2,3,4,5];\n\nm.mount(root, {\n    view:() => m(hslayout.Layout, {\n        tiles:[],\n        content: c.map((c,i)=>(''+i)),\n        css: '.myExample'\n    })\n});\n\nfunction next() {\n    if (c.length >= 9) { c = []; }\n    else { c.push(''); }\n    setTimeout(next, 2000);\n    m.redraw();\n}\nnext();\n</file>\n<file name='style.css'>\n.myExample .hs-layout {\n    border: 1px solid white;\n    background-color: #ccc;\n    color:       #a44;\n    text-align:  center;\n}\n</file>\n</example>\n\n## Attributes\nThe following options are supported for the Attributes array:\n- **[ ]**: An empty array; The available tiles will cover the entire width and height.\nTheir size will adapt as tiles are added.\n- **[FILL]**: like [ ], except the last tile fills the available space.\n- **[v]**: All components have the specified width and height (in px or %) and will fill the available space from the left,\nleaving any remaining unused space on the right.\n- **[w, h]**: All components have the specified width w and height h (in px or %) and will fill the available space from the left,\nleaving any remaining unused space on the right.\n- **[v, FILL]**: like [v], except that the last tile in each row will fill the remaining available width\nand the tiles in the bottom row will fill the remaining height\n- **[w, h, FILL]**: like [w, h], except that the last tile will fill the remaining available width.\n\nv, w, and h can take on the following vakues:\n- **px(n)** or **\"_n_ px\"** -- a fixed number of pixels\n- **pc(n)** or **\"_n_ %\"**  -- a fixed percentage of available space\n- **FILL** or **\"fill\"**   -- fills the remaining space - may appear only once per array.\n\n"
@@ -4673,7 +4674,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/mithril/hsLayout/src/view/Tokens.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/mithril/hsLayout/src/view/Tokens.ts",
 			"comment": {
 				"shortText": "## Layout Tokens\nUsed to specify layout sizes"
 			},
