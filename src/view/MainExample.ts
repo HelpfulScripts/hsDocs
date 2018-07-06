@@ -120,33 +120,31 @@ const gInitialized:{string?:CommentDescriptor} = {};
  * @param exmpl the example string extracted from the comment, including the `<example>` tags.
  * @param context the context in which the example script should be run, expressed as `name`:`namespace` pairs.
  */
-export function example(context:any={}) { 
-    return (exmpl:string) => { 
-        const instance = shortCheckSum(exmpl);
-        let IDs = gInitialized[instance]; 
-        if (!IDs) {
-            IDs = gInitialized[instance] = initDesc(IDs);
-            IDs.executeSource = exmpl;
-            createExecuteScript(IDs, exmpl);
-        }
-        if (!document.getElementById(IDs.menuID)) { 
-            addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
-        }
+export function example(exmpl:string) { 
+    const instance = shortCheckSum(exmpl);
+    let IDs = gInitialized[instance]; 
+    if (!IDs) {
+        IDs = gInitialized[instance] = initDesc(IDs);
+        IDs.executeSource = exmpl;
+        createExecuteScript(IDs, exmpl);
+    }
+    if (!document.getElementById(IDs.menuID)) { 
+        addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
+    }
 
-        const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
-        const wrapWithID = (css:string) => css==='$exampleID'? `#${IDs.exampleID}`: `#${IDs.menuID} ${css}`;
+    const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
+    const wrapWithID = (css:string) => css==='$exampleID'? `#${IDs.exampleID}`: `#${IDs.menuID} ${css}`;
 
-        // prefix css selectors with ID of main execution area to sandbox the scope
-        // (^|}): start of string or end of previous style def
-        // \s*?: any white spaces
-        // (\S*?): capturing group: css name
-        // \s*?{: whitespaces, followed by start of style def
-        const style = (!IDs.pages['css'])? '':                              // empty if no css defined
-                      IDs.pages['css'].replace(/(^|})\s*?(\S*?)\s*?{/gi,    // otherwise wrap each css statement
-                         (x:string, ...args:any[]) => x.replace(args[1], wrapWithID(args[1]))
-        );
-        return `<style>${style}</style><example id=${IDs.exampleID} style="height:${frameHeight}" class="hs-layout-frame"></example>`;
-    };
+    // prefix css selectors with ID of main execution area to sandbox the scope
+    // (^|}): start of string or end of previous style def
+    // \s*?: any white spaces
+    // (\S*?): capturing group: css name
+    // \s*?{: whitespaces, followed by start of style def
+    const style = (!IDs.pages['css'])? '':                              // empty if no css defined
+                    IDs.pages['css'].replace(/(^|})\s*?(\S*?)\s*?{/gi,    // otherwise wrap each css statement
+                        (x:string, ...args:any[]) => x.replace(args[1], wrapWithID(args[1]))
+    );
+    return `<style>${style}</style><example id=${IDs.exampleID} style="height:${frameHeight}" class="hs-layout-frame"></example>`;
 }
 
 function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
@@ -233,11 +231,16 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
  */
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
-    try { IDs.executeScript(root); }
-    catch(e) { 
-        console.log("error executing script: " + e); 
-        console.log(IDs.executeSource);
-        console.log(e.stack);
+    if (root) {
+        console.log(`root found for menuID ${IDs.menuID}`);
+        try { IDs.executeScript(root); }
+        catch(e) { 
+            console.log("error executing script: " + e); 
+            console.log(IDs.executeSource);
+            console.log(e.stack);
+        }
+    } else {
+        console.log(`root not found for menuID ${IDs.menuID}`);
     }
     m.redraw();
     return IDs;
