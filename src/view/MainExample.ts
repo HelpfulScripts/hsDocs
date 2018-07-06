@@ -72,20 +72,17 @@
  */
 
 /** */
-import { m }                    from 'hslayout';
+import { m }                from 'hslayout';
 import { Menu, SelectorDesc }   from 'hswidget';
-import { Layout }               from 'hslayout';
-import { shortCheckSum }        from 'hsutil'; 
-import { delay }                from 'hsutil'; 
+import { Layout }        from 'hslayout';
+import { shortCheckSum }    from 'hsutil'; 
+import { delay }            from 'hsutil'; 
+import * as hslayout        from 'hslayout';
+import * as hswidget        from 'hswidget';
+import * as hsgraph         from 'hsgraph';
+import * as hsdatab         from 'hsdatab';
+import * as hsutil          from 'hsutil';
 
-const modules = {
-    m:          Promise.resolve(m),
-    hsutil:     import(/* webpackChunkName: "hsutil" */   'hsutil'),
-    hsdatab:    import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
-    hslayout:   import(/* webpackChunkName: "hslayout" */ 'hslayout'),
-    hswidget:   import(/* webpackChunkName: "hswidget" */ 'hswidget'),
-    hsgraph:    import(/* webpackChunkName: "hsgraph" */  'hsgraph')
-};
 
 /**
  * describes an executable comment example
@@ -108,29 +105,44 @@ const gInitialized:{string?:CommentDescriptor} = {};
 
 /**
  * creates the example configuration, generates the DOM hook, and sets up the example execution.
- * `example` takes a context map of the form `{ name:module, ...}` containing libraries to be used 
- * withibn the example, and returns a function that can be used in calls to `string.replace`. 
- * See the following example:
+ * `example` takes a context map of the form `{ name:module, ...}` and return a function 
+ * that can be used in calls to `string.replace`as in the following example:
  * <code><pre>
  * import * as layout from "layout";
  * text = text.replace(/<example>([\S\s]*?)<\/example>/gi, example({layout:layout}));
  * </pre></code>
  * The modules `m`, `hsLayout`, and `hsGraph` will be added by default as 
  * ` { m: m, layout: layout, widget: widget } `
- * @param exmpl the example string extracted from the comment, including the `<example>` tags.
+ * @param example the example string extracted from the comment, including the `<example>` tags.
  * @param context the context in which the example script should be run, expressed as `name`:`namespace` pairs.
  */
-export function example(context:any) { 
+export function example(context:any={}) { 
+    context.m        = m;
+    context.hslayout = hslayout;
+    context.hswidget = hswidget;
+    context.hsgraph  = hsgraph;
+    context.hsdatab   = hsdatab;
+    context.hsutil   = hsutil;
     return (exmpl:string) => { 
         const instance = shortCheckSum(exmpl);
         let IDs = gInitialized[instance]; 
         if (!IDs) {
-            IDs = gInitialized[instance] = initDesc(IDs);
+            IDs = gInitialized[instance] = initDesc(() => addExample(IDs)   // called when source menu changes
+                .then(executeScript) 
+                .catch(executeError)
+            );
             IDs.executeSource = exmpl;
-            createExecuteScript(IDs, exmpl);
+            try {
+                const libNames = Object.keys(context);
+                const modules = libNames.map(n => context[n]);
+                const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
+                IDs.executeScript = (root:any) => scriptFn(root, ...modules);
+            }
+            catch(e) { console.log('creating script:' + e); }
         }
-        if (!document.getElementById(IDs.menuID)) { 
-            addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
+        if (document.getElementById(IDs.menuID)) { 
+        } else {
+            addExample(IDs).then(executeScript).catch(executeError);
         }
 
         const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
@@ -149,35 +161,17 @@ export function example(context:any) {
     };
 }
 
-function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
-    const libNames = Object.keys(modules);
-    return Promise.all(libNames.map(name => modules[name]))
-    .then((libs) => {
-        try {
-            const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
-            IDs.executeScript = (root:any) => scriptFn(root, ...libs);
-            return true;
-        }
-        catch(e) { 
-            console.log('creating script:' + e); 
-            return false;
-        } 
-    });
-}
-
 /**
  * creates the example configuration 
  */
-function initDesc(IDs:CommentDescriptor):CommentDescriptor {
+function initDesc(fn:any):CommentDescriptor {
     return {
         exampleID:  getNewID(),    // example tag ID
         menuID:     getNewID(),    // main execution area tag ID
         desc:<SelectorDesc>{ 
             items:<string[]>[],
             selectedItem: 'js',
-            changed: () => addExample(IDs)   // called when source menu changes
-                        .then(executeScript) 
-                        .catch(executeError),
+            changed: fn,
             size: ["50px"]
         },
         pages:{},
