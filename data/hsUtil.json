@@ -12,7 +12,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/Checksum.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/Checksum.ts",
 			"comment": {
 				"shortText": "Creates a checksum on a string.\nAdapted from https://stackoverflow.com/questions/811195/fast-open-source-checksum-for-small-strings"
 			},
@@ -88,7 +88,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/Date.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/Date.ts",
 			"comment": {
 				"shortText": "# Date formatting support.\nFormats are specified in a printf-style format string.\n## Supported Formats\n- `%YY, %YYYY`           : two- or four-digit year, as '73', '1973'\n- `%M, %MM, %MMM, %MMMM` : month of year as '2', '02', 'Feb', 'February'\n- `%D, %DD`              : day of month as '5', '05' (1...31)\n- `%DDD, %DDDD`          : day of week as 'Tue', 'Tuesday'\n- `%h, %hh`              : hour of day as '7', '07 (0...23)\n- `%m, %mm`              : minutes as '6', '06' (0..59)\n- `%ss`                  : seconds as '09' (0...59)\n- `%j, %jj, %jjj`        : milliseconds as '1', '15', '159'"
 			},
@@ -688,7 +688,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/Number.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/Number.ts",
 			"comment": {
 				"shortText": "# Number Formatting Support."
 			},
@@ -775,7 +775,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/PacingQueue.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/PacingQueue.ts",
 			"comment": {
 				"shortText": "# PacingQueue\nensures that a functions in a sequence are not executed faster than a preset minimum delay"
 			},
@@ -1125,7 +1125,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/TimedPromise.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/TimedPromise.ts",
 			"comment": {
 				"shortText": "## Helpful Script Utility Module\nProvides convenience functions that don't depend on specific frameworks or libraries"
 			},
@@ -1268,7 +1268,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/index.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/index.ts",
 			"sources": [
 				{
 					"fileName": "index.ts",
@@ -1285,7 +1285,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/overview.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/overview.ts",
 			"comment": {
 				"shortText": "# hsUtil",
 				"text": "Helpful Scripts utility functions that are framework independent.\n\n## Index\n- &nbsp; {@link TimedPromise TimedPromise} functions that provide delays and timeouts for promises.\n- &nbsp; {@link CheckSum CheckSum} a quick checksum implementation for small strings\n- &nbsp; {@link Date Date} printf-style date formatting function\n- &nbsp; {@link showdown showdown} an ES6 wrapper for the showdown library\n"
@@ -1306,7 +1306,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/node.js/ts6/dev/hsLibs/standalone/hsUtil/src/showdown.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/showdown.ts",
 			"children": [
 				{
 					"id": 50,

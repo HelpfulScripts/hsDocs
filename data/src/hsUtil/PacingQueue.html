@@ -1,0 +1,63 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/PacingQueue.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;#&nbsp;PacingQueue<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;ensures&nbsp;that&nbsp;a&nbsp;functions&nbsp;in&nbsp;a&nbsp;sequence&nbsp;are&nbsp;not&nbsp;executed&nbsp;faster&nbsp;than&nbsp;a&nbsp;preset&nbsp;minimum&nbsp;delay<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*/</comment><br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span><br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;<comment>/**&nbsp;*/</comment><br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>export&nbsp;class&nbsp;PacingQueue&nbsp;{<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;&nbsp;&nbsp;&nbsp;delayMS:number;<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;&nbsp;&nbsp;&nbsp;queue&nbsp;=&nbsp;<any[]>[];<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;&nbsp;&nbsp;&nbsp;baseMS&nbsp;=&nbsp;Date.now();<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;delay&nbsp;the&nbsp;minimum&nbsp;number&nbsp;of&nbsp;milliseconds&nbsp;between&nbsp;executions&nbsp;of&nbsp;<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;two&nbsp;registered&nbsp;functions;&nbsp;defaults&nbsp;to&nbsp;100;<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;&nbsp;&nbsp;&nbsp;constructor(delayMS=100)&nbsp;{<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.delayMS&nbsp;=&nbsp;delayMS;&nbsp;<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.next(this.queue);&nbsp;<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span><br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;nextTimeout()&nbsp;{<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(()&nbsp;=>&nbsp;this.next(this.queue),&nbsp;this.delayMS);<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span><br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;add(fn:&nbsp;(msSinceAdding:number)&nbsp;=>&nbsp;any):Promise<any>&nbsp;{<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;Promise((resolve,&nbsp;reject)&nbsp;=>&nbsp;{<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.queue.length&nbsp;===&nbsp;0)&nbsp;{&nbsp;this.nextTimeout();&nbsp;}<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.queue.push({fn:fn,&nbsp;resolve:resolve,&nbsp;reject:reject,&nbsp;time:Date.now()});<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>		});<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span><br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;next(q:any[])&nbsp;{<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(q.length&nbsp;>&nbsp;0)&nbsp;{<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;entry&nbsp;=&nbsp;q.shift();<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.resolve(<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry.fn(Date.now()&nbsp;-&nbsp;entry.time)&nbsp;&nbsp;&nbsp;//&nbsp;call&nbsp;the&nbsp;registered&nbsp;function&nbsp;with&nbsp;the&nbsp;actual&nbsp;delay&nbsp;<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch((err:any)&nbsp;=>&nbsp;{<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`error&nbsp;calling&nbsp;paced&nbsp;function:&nbsp;${err}`);<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(err.stack);<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;err;<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.nextTimeout();<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>}<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span><br></code></div>
+                </body>
+            
