@@ -168,7 +168,7 @@ module.exports = (grunt, dir, dependencies, type) => {
         ts: {
             options: {
                 target: "es6",
-                module: "es6", 
+                module: "es6",
                 rootDir: "./src",
                 moduleResolution: "node",
                 inlineSourceMap: true,
@@ -177,9 +177,6 @@ module.exports = (grunt, dir, dependencies, type) => {
                 suppressImplicitAnyIndexErrors: true
             },
             src : {
-                options: {
-                    additionalFlags: '--module esnext'
-                },
                 outDir:     "_dist/src",
                 src: ["src/**/*.ts", "!src/**/*.spec.ts", "!src/example/*.ts"],
             },
@@ -247,12 +244,14 @@ module.exports = (grunt, dir, dependencies, type) => {
 		},
 
         webpack: {
+            options: {
+                stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+            },
             appProd: { 
                 entry: './_dist/src/index.js',
-                mode: 'production',
                 output: {
                     filename: `${lib}.min.js`,
-                    chunkFilename: '[name].bundle.min.js',
+                    chunkFilename: '[name].bundle.js',
                     path: path.resolve(dir, './_dist/bin')
                 },
                 plugins: [
@@ -266,11 +265,9 @@ module.exports = (grunt, dir, dependencies, type) => {
             },
             appDev: {
                 entry: './_dist/src/index.js',
-                mode: 'development',
                 devtool: "inline-source-map",
                 output: {
                     filename: `${lib}.js`,
-                    chunkFilename: '[name].bundle.js',
                     path: path.resolve(dir, './_dist/bin')
                 }
             },

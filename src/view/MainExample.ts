@@ -74,16 +74,19 @@
 /** */
 import { m }                    from 'hslayout';
 import { Menu, SelectorDesc }   from 'hswidget';
+import * as hswidget            from 'hswidget';
+import * as hslayout            from 'hslayout';
 import { Layout }               from 'hslayout';
 import { shortCheckSum }        from 'hsutil'; 
 import { delay }                from 'hsutil'; 
+import * as hsutil              from 'hsutil';
 
 const modules = {
     m:          Promise.resolve(m),
-    hsutil:     import(/* webpackChunkName: "hsutil" */   'hsutil'),
+    hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   'hsutil'),
+    hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ 'hslayout'),
+    hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ 'hswidget'),
     hsdatab:    import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
-    hslayout:   import(/* webpackChunkName: "hslayout" */ 'hslayout'),
-    hswidget:   import(/* webpackChunkName: "hswidget" */ 'hswidget'),
     hsgraph:    import(/* webpackChunkName: "hsgraph" */  'hsgraph')
 };
 
