@@ -1,0 +1,89 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/date.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;@ngdoc&nbsp;object<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;@name&nbsp;hsNode.date<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;@description&nbsp;.<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;###&nbsp;Date&nbsp;formatting&nbsp;support.&nbsp;<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;Formats&nbsp;are&nbsp;specified&nbsp;in&nbsp;a&nbsp;printf-style&nbsp;format&nbsp;string.&nbsp;<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;###&nbsp;Example:<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;<pre><br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;import&nbsp;date&nbsp;&nbsp;from&nbsp;'./date';<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*&nbsp;date('%MM/%DD/%YY');&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;->&nbsp;08/17/16&nbsp;(using&nbsp;current&nbsp;date)<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;let&nbsp;d&nbsp;=&nbsp;new&nbsp;Date('7/4/2010');<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;date('%DDDD,&nbsp;%MM/%DD/%YY',&nbsp;d);&nbsp;//&nbsp;->&nbsp;Sunday,&nbsp;07/04/10<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;</pre><br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;###&nbsp;Supported&nbsp;Formats<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>-&nbsp;`%YY,&nbsp;%YYYY`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;two-&nbsp;or&nbsp;four-digit&nbsp;year,&nbsp;as&nbsp;'73',&nbsp;'1973'<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>-&nbsp;`%M,&nbsp;%MM,&nbsp;%MMM,&nbsp;%MMMM`&nbsp;:&nbsp;month&nbsp;of&nbsp;year&nbsp;as&nbsp;'2',&nbsp;'02',&nbsp;'Feb',&nbsp;'February'<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>-&nbsp;`%D,&nbsp;%DD`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;day&nbsp;of&nbsp;month&nbsp;as&nbsp;'5',&nbsp;'05'&nbsp;(1...31)<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>-&nbsp;`%DDD,&nbsp;%DDDD`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;day&nbsp;of&nbsp;week&nbsp;as&nbsp;'Tue',&nbsp;'Tuesday'<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>-&nbsp;`%h,&nbsp;%hh`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;hour&nbsp;of&nbsp;day&nbsp;as&nbsp;'7',&nbsp;'07&nbsp;(0...23)<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>-&nbsp;`%m,&nbsp;%mm`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;minutes&nbsp;as&nbsp;'6',&nbsp;'06'&nbsp;(0..59)<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>-&nbsp;`%ss`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;seconds&nbsp;as&nbsp;'09'&nbsp;(0...59)<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>-&nbsp;`%j,&nbsp;%jj,&nbsp;%jjj`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;milliseconds&nbsp;as&nbsp;'1',&nbsp;'15',&nbsp;'159'<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;*/</comment><br>
+<span id=24 class="line">&nbsp;&nbsp;24</span><br>
+<span id=25 class="line">&nbsp;&nbsp;25</span><comment>/**&nbsp;translates&nbsp;short&nbsp;month&nbsp;names&nbsp;to&nbsp;full&nbsp;month&nbsp;names&nbsp;*/</comment><br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>const&nbsp;monthStr&nbsp;=&nbsp;[<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;['Jan',&nbsp;'January'],&nbsp;['Feb',&nbsp;'February'],&nbsp;['Mar',&nbsp;'March'],&nbsp;['Apr',&nbsp;'April'],&nbsp;['May',&nbsp;'May'],&nbsp;['Jun',&nbsp;'June'],<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;['Jul',&nbsp;'July'],&nbsp;['Aug',&nbsp;'August'],&nbsp;['Sep',&nbsp;'September'],&nbsp;['Oct',&nbsp;'October'],&nbsp;['Nov',&nbsp;'November'],&nbsp;['Dec',&nbsp;'December']];<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span><br>
+<span id=30 class="line">&nbsp;&nbsp;30</span><comment>/**&nbsp;translates&nbsp;short&nbsp;day&nbsp;names&nbsp;to&nbsp;full&nbsp;day&nbsp;names&nbsp;*/</comment><br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>const&nbsp;dayStr&nbsp;=&nbsp;[<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;['Sun',&nbsp;'Sunday'],['Mon',&nbsp;'Monday'],['Tue',&nbsp;'Tuesday'],['Wed',&nbsp;'Wednesday'],['Thu',&nbsp;'Thursday'],['Fri',&nbsp;'Friday'],['Sat',&nbsp;'Saturday']];<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span><br>
+<span id=34 class="line">&nbsp;&nbsp;34</span><comment>/**<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;*&nbsp;left-pads&nbsp;a&nbsp;`number`&nbsp;with&nbsp;zeros&nbsp;to&nbsp;match&nbsp;`minDigits`&nbsp;minimum&nbsp;digits<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;*/</comment><br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>function&nbsp;formatNumber(number:number,&nbsp;minDigits:number):string&nbsp;{<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;r&nbsp;=&nbsp;""+number;<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(r.length&nbsp;<&nbsp;minDigits)&nbsp;{&nbsp;r&nbsp;=&nbsp;"0"&nbsp;+&nbsp;r;&nbsp;}<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>}<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span><br>
+<span id=43 class="line">&nbsp;&nbsp;43</span><br>
+<span id=44 class="line">&nbsp;&nbsp;44</span><comment>/**<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;*&nbsp;@ngdoc&nbsp;method&nbsp;<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;*&nbsp;@name&nbsp;()<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;*&nbsp;@methodOf&nbsp;hsNode.date<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;*&nbsp;@param&nbsp;{String}&nbsp;formatString&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use.<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;*&nbsp;@param&nbsp;{Date=}&nbsp;[date=new&nbsp;Date()]&nbsp;the&nbsp;date&nbsp;to&nbsp;format.<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;*&nbsp;@returns&nbsp;{String}&nbsp;a&nbsp;copy&nbsp;of&nbsp;`formatString`&nbsp;where&nbsp;all&nbsp;supported&nbsp;patterns&nbsp;are&nbsp;replaced&nbsp;by&nbsp;the&nbsp;respective&nbsp;values&nbsp;from&nbsp;`date`.<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;*/</comment><br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>export&nbsp;default&nbsp;(formatString:string,&nbsp;date=new&nbsp;Date())&nbsp;=>&nbsp;formatString<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>	.replace(/%YYYY/g,	''+date.getFullYear())<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>	.replace(/%YY/g,&nbsp;&nbsp;	''+(date.getFullYear()%100))<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>	.replace(/%MMMM/g,&nbsp;&nbsp;monthStr[date.getMonth()][1])<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>	.replace(/%MMM/g,&nbsp;&nbsp;	monthStr[date.getMonth()][0])<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>	.replace(/%MM/g,&nbsp;&nbsp;	formatNumber(date.getMonth()+1,2))<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>	.replace(/%M/g,&nbsp;&nbsp;	''+(date.getMonth()+1))<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>	.replace(/%DDDD/g,&nbsp;	dayStr[date.getDay()][1])<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>	.replace(/%DDD/g,&nbsp;&nbsp;	dayStr[date.getDay()][0])<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>	.replace(/%DD/g,&nbsp;&nbsp;	formatNumber(date.getDate(),2))<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>	.replace(/%D/g,&nbsp;&nbsp;	''+date.getDate())<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>	.replace(/%hh/g,&nbsp;&nbsp;	formatNumber(date.getHours(),2))<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>	.replace(/%h/g,&nbsp;	''+date.getHours())<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>	.replace(/%mm/g,&nbsp;&nbsp;	formatNumber(date.getMinutes(),2))<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>	.replace(/%m/g,&nbsp;&nbsp;	''+date.getMinutes())<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>	.replace(/%ss/g,&nbsp;&nbsp;	formatNumber(date.getSeconds(),2))<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>	.replace(/%jjj/g,&nbsp;&nbsp;	formatNumber(date.getMilliseconds(),3))<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>	.replace(/%jj/g,&nbsp;&nbsp;	formatNumber(date.getMilliseconds()/10,2))<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>	.replace(/%j/g,		formatNumber(date.getMilliseconds()/100,1))<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>;<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span><br></code></div>
+                </body>
+            

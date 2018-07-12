@@ -1,0 +1,174 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/view/MainComment.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;Processing&nbsp;of&nbsp;comments.<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*/</comment><br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span><br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span><comment>/**&nbsp;*/</comment><br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>import&nbsp;{&nbsp;m,&nbsp;Vnode&nbsp;}&nbsp;from&nbsp;'hslayout';<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>import&nbsp;{&nbsp;markDown&nbsp;}&nbsp;from&nbsp;'../markdown';<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;example&nbsp;}&nbsp;&nbsp;from&nbsp;'./MainExample';<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span><br>
+<span id=10 class="line">&nbsp;&nbsp;10</span><comment>/**<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;Main&nbsp;comment&nbsp;processing.&nbsp;The&nbsp;result&nbsp;appears&nbsp;directly&nbsp;below&nbsp;the&nbsp;title&nbsp;in&nbsp;the&nbsp;main&nbsp;panel.<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;Function&nbsp;parameters&nbsp;are&nbsp;not&nbsp;reported&nbsp;in&nbsp;short&nbsp;form&nbsp;here&nbsp;since&nbsp;it&nbsp;is&nbsp;assumed&nbsp;they&nbsp;will&nbsp;be&nbsp;listed&nbsp;<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;individually&nbsp;below&nbsp;the&nbsp;main&nbsp;comment<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;@param&nbsp;mdl&nbsp;the&nbsp;module&nbsp;to&nbsp;scan&nbsp;for&nbsp;comments<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*&nbsp;@return&nbsp;a&nbsp;vnode&nbsp;representing&nbsp;the&nbsp;comment&nbsp;entries<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;*/</comment><br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>export&nbsp;function&nbsp;commentLong(mdl:any):Vnode&nbsp;{&nbsp;<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;content:any[]&nbsp;=&nbsp;[];<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(mdl.comment)&nbsp;{<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(textOrShortTextOrDescription(mdl.comment,&nbsp;false));<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(returns(mdl.comment,&nbsp;false));<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(commentRemainder(mdl.comment));<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('.hs-item-comment',&nbsp;content);<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>}<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span><br>
+<span id=27 class="line">&nbsp;&nbsp;27</span><comment>/**<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;*&nbsp;Shortended&nbsp;comment&nbsp;processing.&nbsp;This&nbsp;form&nbsp;is&nbsp;used&nbsp;to&nbsp;report&nbsp;on&nbsp;subitems&nbsp;below&nbsp;the&nbsp;main&nbsp;panel&nbsp;item.<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;*&nbsp;If&nbsp;`short`&nbsp;is&nbsp;true,&nbsp;only&nbsp;the&nbsp;first&nbsp;paragraph&nbsp;of&nbsp;the&nbsp;main&nbsp;comment&nbsp;will&nbsp;be&nbsp;returned.&nbsp;Otherwise,&nbsp;<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;*&nbsp;this&nbsp;function&nbsp;creates&nbsp;a&nbsp;full&nbsp;comment&nbsp;including&nbsp;an&nbsp;inline&nbsp;list&nbsp;of&nbsp;parameters&nbsp;and&nbsp;the&nbsp;return&nbsp;value<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;*&nbsp;@param&nbsp;mdl&nbsp;the&nbsp;module&nbsp;to&nbsp;scan&nbsp;for&nbsp;comments<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;*&nbsp;@param&nbsp;short&nbsp;if&nbsp;true,&nbsp;only&nbsp;the&nbsp;first&nbsp;paragraph&nbsp;of&nbsp;the&nbsp;main&nbsp;comment&nbsp;is&nbsp;processed.<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;*&nbsp;@return&nbsp;a&nbsp;vnode&nbsp;representing&nbsp;the&nbsp;comment&nbsp;entries<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;*/</comment><br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>export&nbsp;function&nbsp;comment(mdl:any,&nbsp;short=false):Vnode&nbsp;{<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;content:any[]&nbsp;=&nbsp;[];<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(mdl.comment)&nbsp;{<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(textOrShortTextOrDescription(mdl.comment,&nbsp;short));<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!short)&nbsp;{<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(otherCommentTags(mdl.comment));<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(mdl.parameters)&nbsp;{<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;content.concat(mainCommentParams(mdl.parameters));<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(returns(mdl.comment,&nbsp;false));<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(commentRemainder(mdl.comment));<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('.hs-item-comment',&nbsp;content);<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>}&nbsp;<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span><br>
+<span id=51 class="line">&nbsp;&nbsp;51</span><comment>/**<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;*&nbsp;Report&nbsp;the&nbsp;item's&nbsp;description.&nbsp;This&nbsp;can&nbsp;come&nbsp;in&nbsp;different&nbsp;forms&nbsp;that&nbsp;are&nbsp;all&nbsp;handled&nbsp;here:<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;*&nbsp;-&nbsp;comment.shortText:&nbsp;<description><br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;*&nbsp;-&nbsp;comment.text:&nbsp;<description><br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;*&nbsp;-&nbsp;comment.tags[{tag:'description},&nbsp;text:<description>]<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;*&nbsp;Any&nbsp;resulting&nbsp;comment&nbsp;will&nbsp;be&nbsp;translated&nbsp;from&nbsp;markdown&nbsp;to&nbsp;html&nbsp;and&nbsp;returned&nbsp;as&nbsp;a&nbsp;`Vnode`.<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;*&nbsp;@param&nbsp;comment&nbsp;the&nbsp;comment&nbsp;object&nbsp;to&nbsp;parse<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;*&nbsp;@param&nbsp;short&nbsp;boolean;&nbsp;if&nbsp;true,&nbsp;only&nbsp;the&nbsp;first&nbsp;paragraph&nbsp;of&nbsp;the&nbsp;description&nbsp;will&nbsp;be&nbsp;returned<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;*/</comment><br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>function&nbsp;textOrShortTextOrDescription(comment:any,&nbsp;short:boolean):Vnode&nbsp;{<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;text&nbsp;=&nbsp;(comment.shortText&nbsp;||&nbsp;'');<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(comment.text)&nbsp;{&nbsp;text&nbsp;+=&nbsp;'\n'+&nbsp;(comment.text&nbsp;||&nbsp;'');&nbsp;}<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(comment.tags)&nbsp;{<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment.tags.map((tag:any)&nbsp;=>&nbsp;{if&nbsp;(tag.tag==='description')&nbsp;{&nbsp;text&nbsp;=&nbsp;tag.text;}}&nbsp;);<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;=&nbsp;text.replace(/<example([\S\s]*?)<\/example>/gi,&nbsp;short?&nbsp;''&nbsp;:&nbsp;example);<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('.hs-item-comment-desc',&nbsp;prettifyCode(text,&nbsp;short));<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>}<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span><br>
+<span id=70 class="line">&nbsp;&nbsp;70</span><comment>/**<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;*&nbsp;creates&nbsp;the&nbsp;`returns`&nbsp;message&nbsp;for&nbsp;a&nbsp;function&nbsp;or&nbsp;method.<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;*/</comment><br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>function&nbsp;returns(comment:any,&nbsp;short:boolean):Vnode&nbsp;{<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;text&nbsp;=&nbsp;comment.returns;<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('.hs-item-comment-return',&nbsp;!text?&nbsp;'':&nbsp;[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-tag',&nbsp;'returns:'),&nbsp;<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-text',&nbsp;text)<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>}<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span><br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>function&nbsp;commentRemainder(comment:any):string|Vnode&nbsp;{<br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('',&nbsp;Object.keys(comment).map((tag:any)&nbsp;=>&nbsp;{<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(tag)&nbsp;{<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'tags':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;already&nbsp;handled<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'shortText':&nbsp;&nbsp;&nbsp;//&nbsp;already&nbsp;handled<br>
+<span id=86 class="line">&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'text':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;already&nbsp;handled<br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'description':&nbsp;//&nbsp;already&nbsp;handled<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'returns':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;already&nbsp;handled<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'';<br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;return&nbsp;m('.hs-item-comment-special',&nbsp;[<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-tag',&nbsp;tag),&nbsp;<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-text',&nbsp;comment[tag])<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);;<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span>&nbsp;&nbsp;&nbsp;&nbsp;}));<br>
+<span id=96 class="line">&nbsp;&nbsp;96</span>}<br>
+<span id=97 class="line">&nbsp;&nbsp;97</span><br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>function&nbsp;otherCommentTags(comment:any):string|Vnode&nbsp;{<br>
+<span id=99 class="line">&nbsp;&nbsp;99</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('',&nbsp;!comment.tags?&nbsp;[]&nbsp;:&nbsp;comment.tags.map((tag:any)&nbsp;=>&nbsp;{<br>
+<span id=100 class="line">&nbsp;100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(tag.tag)&nbsp;{<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;'description':&nbsp;return&nbsp;'';&nbsp;//&nbsp;skip&nbsp;since&nbsp;already&nbsp;handled<br>
+<span id=102 class="line">&nbsp;102</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;return&nbsp;m('.hs-item-comment-special',&nbsp;[<br>
+<span id=103 class="line">&nbsp;103</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-tag',&nbsp;tag.tag),&nbsp;<br>
+<span id=104 class="line">&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-text',&nbsp;tag.text)<br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
+<span id=106 class="line">&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;}));<br>
+<span id=108 class="line">&nbsp;108</span>}<br>
+<span id=109 class="line">&nbsp;109</span><br>
+<span id=110 class="line">&nbsp;110</span>function&nbsp;mainCommentParams(params:any):Vnode&nbsp;{<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m('.hs-item-comment-params',&nbsp;&nbsp;params.map((par:any)&nbsp;=><br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('.hs-item-comment-param',&nbsp;[<br>
+<span id=113 class="line">&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-tag',&nbsp;par.name+':'),&nbsp;<br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('span.hs-item-comment-text',&nbsp;!par.comment?&nbsp;''&nbsp;:<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((par.defaultValue!==undefined)?&nbsp;`[default:&nbsp;${par.defaultValue}]&nbsp;`&nbsp;:&nbsp;'')&nbsp;+&nbsp;par.comment.text<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])<br>
+<span id=118 class="line">&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;));<br>
+<span id=119 class="line">&nbsp;119</span>}<br>
+<span id=120 class="line">&nbsp;120</span><br>
+<span id=121 class="line">&nbsp;121</span><comment>/**<br>
+<span id=122 class="line">&nbsp;122</span>&nbsp;*&nbsp;finds&nbsp;segments&nbsp;of&nbsp;`<code>...</code>`&nbsp;in&nbsp;`comment`&nbsp;and&nbsp;replaces&nbsp;them&nbsp;with&nbsp;a&nbsp;prettified&nbsp;version.<br>
+<span id=123 class="line">&nbsp;123</span>&nbsp;*&nbsp;Currently&nbsp;the&nbsp;function&nbsp;performs&nbsp;operations&nbsp;in&nbsp;this&nbsp;sequence:<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;*&nbsp;-&nbsp;add&nbsp;indentation&nbsp;for&nbsp;brackets&nbsp;{...}<br>
+<span id=125 class="line">&nbsp;125</span>&nbsp;*&nbsp;-&nbsp;wrap&nbsp;the&nbsp;&lt;code&gt;...&lt;/code&gt;&nbsp;part&nbsp;within&nbsp;&lt;pre&gt;...&lt;/pre&gt;&nbsp;brackets<br>
+<span id=126 class="line">&nbsp;126</span>&nbsp;*&nbsp;-&nbsp;apply&nbsp;markdown&nbsp;syntax<br>
+<span id=127 class="line">&nbsp;127</span>&nbsp;*&nbsp;-&nbsp;wrap&nbsp;results&nbsp;in&nbsp;a&nbsp;trusted&nbsp;mithril&nbsp;node<br>
+<span id=128 class="line">&nbsp;128</span>&nbsp;*&nbsp;@param&nbsp;comment&nbsp;the&nbsp;comment&nbsp;comment&nbsp;<br>
+<span id=129 class="line">&nbsp;129</span>&nbsp;*&nbsp;@param&nbsp;short&nbsp;only&nbsp;return&nbsp;the&nbsp;first&nbsp;paragraph<br>
+<span id=130 class="line">&nbsp;130</span>&nbsp;*/</comment><br>
+<span id=131 class="line">&nbsp;131</span>function&nbsp;prettifyCode(comment:string,&nbsp;short:boolean):Vnode&nbsp;{&nbsp;<br>
+<span id=132 class="line">&nbsp;132</span>//&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;indentSpaces&nbsp;=&nbsp;2;<br>
+<span id=133 class="line">&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;comment;<br>
+<span id=134 class="line">&nbsp;134</span><br>
+<span id=135 class="line">&nbsp;135</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;braceIndenting(text:string):&nbsp;string&nbsp;{<br>
+<span id=136 class="line">&nbsp;136</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;indent&nbsp;=&nbsp;0;<br>
+<span id=137 class="line">&nbsp;137</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;result&nbsp;=&nbsp;text<br>
+<span id=138 class="line">&nbsp;138</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.substring(6,&nbsp;text.length-7)&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;remove&nbsp;<code>&nbsp;and&nbsp;</code></comment><br>
+<span id=139 class="line">&nbsp;139</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.trim()<br>
+<span id=140 class="line">&nbsp;140</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/(<)/g,&nbsp;'&lt;').replace(/(>)/g,&nbsp;'&gt;')<br>
+<span id=141 class="line">&nbsp;141</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.split('\n')<br>
+<span id=142 class="line">&nbsp;142</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map((l:string)&nbsp;=>&nbsp;{<br>
+<span id=143 class="line">&nbsp;143</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;oldIndent&nbsp;=&nbsp;indent;<br>
+<span id=144 class="line">&nbsp;144</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;k&nbsp;=&nbsp;l.trim();<br>
+<span id=145 class="line">&nbsp;145</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indent&nbsp;+=&nbsp;Math.max(-1,&nbsp;Math.min(1,&nbsp;k.split('{').length&nbsp;-&nbsp;k.split('}').length));&nbsp;<br>
+<span id=146 class="line">&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indent&nbsp;+=&nbsp;Math.max(-1,&nbsp;Math.min(1,&nbsp;k.split('[').length&nbsp;-&nbsp;k.split(']').length));&nbsp;<br>
+<span id=147 class="line">&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'<span&nbsp;class="hs-code-indent"></span>'.repeat(((indent&nbsp;<&nbsp;oldIndent)?indent:oldIndent))&nbsp;+&nbsp;k;<br>
+<span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+<span id=149 class="line">&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.join('\n')<br>
+<span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.trim();<br>
+<span id=151 class="line">&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'<pre><code>'&nbsp;+&nbsp;result&nbsp;+&nbsp;'</code></pre>';<br>
+<span id=152 class="line">&nbsp;152</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=153 class="line">&nbsp;153</span><br>
+<span id=154 class="line">&nbsp;154</span>&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;result.replace(/<code>([\S\s]*?)<\/code>/gi,&nbsp;braceIndenting);<br>
+<span id=155 class="line">&nbsp;155</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m.trust(markDown(result,&nbsp;short,&nbsp;m.route.get()));<br>
+<span id=156 class="line">&nbsp;156</span>}<br>
+<span id=157 class="line">&nbsp;157</span><br></code></div>
+                </body>
+            

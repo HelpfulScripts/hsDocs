@@ -1,0 +1,72 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/node.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;@ngdoc&nbsp;overview<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;@name&nbsp;hsNode<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;@description&nbsp;<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;Utility&nbsp;Modules&nbsp;for&nbsp;use&nbsp;with&nbsp;Node.js<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;======================================<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;Provides<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log&nbsp;log}:&nbsp;logging&nbsp;support&nbsp;<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.date&nbsp;date}:&nbsp;sprintf-style&nbsp;date&nbsp;formatting&nbsp;<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.excel&nbsp;excel}:&nbsp;reading&nbsp;tables&nbsp;from&nbsp;Excel&nbsp;files&nbsp;<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.hsLibs&nbsp;hsLibs}:&nbsp;NodeJS&nbsp;module&nbsp;wrapper&nbsp;for&nbsp;hs&nbsp;and&nbsp;hsData&nbsp;libraries&nbsp;<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;#&nbsp;Test&nbsp;Status:&nbsp;NodeJS<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;<iframe&nbsp;src='../../libraries/hsNode/tests/index.html'&nbsp;<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*&nbsp;		style="border:none;&nbsp;"<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;*&nbsp;		width="130%"&nbsp;height="500px"><br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;*&nbsp;</iframe>&nbsp;<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;*/</comment><br>
+<span id=19 class="line">&nbsp;&nbsp;19</span><br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>const&nbsp;util&nbsp;&nbsp;=&nbsp;require('util');<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span><br>
+<span id=22 class="line">&nbsp;&nbsp;22</span><comment>/**<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;*&nbsp;@ngdoc&nbsp;function<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;*&nbsp;@name&nbsp;inspect<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;*&nbsp;@methodOf&nbsp;hsNode.hsLibs<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;*&nbsp;@description&nbsp;inspects&nbsp;the&nbsp;provided&nbsp;obj&nbsp;using&nbsp;the&nbsp;node&nbsp;utilities&nbsp;inspect&nbsp;function.<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;*&nbsp;@param&nbsp;{obejct}&nbsp;obj&nbsp;the&nbsp;object&nbsp;to&nbsp;inspect<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;*&nbsp;@param&nbsp;{number}&nbsp;depth&nbsp;the&nbsp;depth-level&nbsp;to&nbsp;report&nbsp;on,&nbsp;or&nbsp;inifinite&nbsp;depth&nbsp;if&nbsp;omitted<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;*&nbsp;@param&nbsp;{boolean}&nbsp;color&nbsp;the&nbsp;depth-level&nbsp;to&nbsp;report&nbsp;on,&nbsp;or&nbsp;inifinite&nbsp;depth&nbsp;if&nbsp;omitted<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;*&nbsp;@return&nbsp;{string}&nbsp;a&nbsp;color-formatted&nbsp;string&nbsp;representing&nbsp;`obj`<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;*/</comment><br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>export&nbsp;function&nbsp;inspect(obj:any,&nbsp;depth:number=null,&nbsp;colors=true)&nbsp;{<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;util.inspect(obj,&nbsp;{colors:colors,&nbsp;depth:depth});<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>}<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span><br>
+<span id=36 class="line">&nbsp;&nbsp;36</span><comment>/**<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;*&nbsp;@ngdoc&nbsp;function<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*&nbsp;@name&nbsp;timeout<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;*&nbsp;@methodOf&nbsp;hsNode.hsLibs<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;*&nbsp;@description&nbsp;timeout&nbsp;promise&nbsp;for&nbsp;use&nbsp;in&nbsp;Promise.race().<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;*&nbsp;@param&nbsp;{number}&nbsp;ms&nbsp;the&nbsp;milliseconds&nbsp;to&nbsp;wait&nbsp;before&nbsp;rejecting<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;*&nbsp;@return&nbsp;{Promise}&nbsp;a&nbsp;Promise&nbsp;that&nbsp;rejects&nbsp;after&nbsp;`ms`&nbsp;<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;*/</comment><br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>export&nbsp;function&nbsp;timeout(ms:number)&nbsp;{&nbsp;return&nbsp;new&nbsp;Promise((resolve,&nbsp;reject)&nbsp;=>&nbsp;{&nbsp;setTimeout(reject,&nbsp;ms);&nbsp;});&nbsp;}<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span><br>
+<span id=46 class="line">&nbsp;&nbsp;46</span><comment>/**<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;*&nbsp;@ngdoc&nbsp;function<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;*&nbsp;@name&nbsp;delay<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;*&nbsp;@methodOf&nbsp;hsNode.hsLibs<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;*&nbsp;@description&nbsp;delay&nbsp;promise&nbsp;for&nbsp;use&nbsp;in&nbsp;delay(ms).then(doSomething).<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;*&nbsp;@param&nbsp;number&nbsp;ms&nbsp;the&nbsp;milliseconds&nbsp;to&nbsp;wait&nbsp;before&nbsp;resolving<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;*&nbsp;@return&nbsp;a&nbsp;Promise&nbsp;that&nbsp;resolves&nbsp;after&nbsp;`ms`&nbsp;<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;*/</comment><br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>export&nbsp;function&nbsp;delay(ms:number)&nbsp;&nbsp;&nbsp;{&nbsp;return&nbsp;new&nbsp;Promise(resolve&nbsp;=>&nbsp;{&nbsp;setTimeout(resolve,&nbsp;ms);&nbsp;});&nbsp;}<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span><br></code></div>
+                </body>
+            
