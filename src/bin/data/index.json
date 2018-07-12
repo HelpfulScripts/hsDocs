@@ -5,7 +5,8 @@
         "hsDatab.json",
         "hsLayout.json",
         "hsWidget.json",
-        "hsGraph.json"
+        "hsGraph.json",
+        "hsNode.json"
     ],
     "title": "HS Libraries"
 }
