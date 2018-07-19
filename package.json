@@ -56,6 +56,6 @@
     "mithril": "^1.1.6",
     "showdown": "^1.8.6",
     "hswidget": "^2.0.0",
-    "hsutil": "^2.0.2",
+    "hsutil": "^2.0.2"
   }
 }
