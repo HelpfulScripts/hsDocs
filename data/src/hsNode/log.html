@@ -53,215 +53,208 @@
 <span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*&nbsp;-&nbsp;[ERROR](#error)<br>
 <span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;*&nbsp;<br>
 <span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;*&nbsp;##&nbsp;Reporting&nbsp;methods<br>
-<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_debug&nbsp;debug()}<br>
-<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_info&nbsp;info()}<br>
-<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_warn&nbsp;warn()}<br>
-<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_error&nbsp;error()}<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_debug&nbsp;debug()}<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_info&nbsp;info()}<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_warn&nbsp;warn()}<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_error&nbsp;error()}<br>
 <span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;*&nbsp;<br>
 <span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;*&nbsp;##&nbsp;Configurations:<br>
-<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_level&nbsp;level()}<br>
-<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_format&nbsp;format()}<br>
-<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_prefix&nbsp;prefix()}<br>
-<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;*&nbsp;-&nbsp;{@link&nbsp;hsNode.log#methods_logFile&nbsp;logFile()}<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_level&nbsp;level()}<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_format&nbsp;format()}<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_prefix&nbsp;prefix()}<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;*&nbsp;-&nbsp;&nbsp;{@link&nbsp;hsNode.log#methods_logFile&nbsp;logFile()}<br>
 <span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;*/</comment><br>
 <span id=52 class="line">&nbsp;&nbsp;52</span><br>
 <span id=53 class="line">&nbsp;&nbsp;53</span><comment>/**&nbsp;importing&nbsp;nodejs&nbsp;file&nbsp;system&nbsp;function;&nbsp;needed&nbsp;to&nbsp;create&nbsp;logfiles&nbsp;*/</comment><br>
-<span id=54 class="line">&nbsp;&nbsp;54</span>import&nbsp;{&nbsp;inspect&nbsp;}&nbsp;from&nbsp;'util';<br>
-<span id=55 class="line">&nbsp;&nbsp;55</span>import&nbsp;{&nbsp;fsUtil&nbsp;}&nbsp;from&nbsp;"./";<br>
-<span id=56 class="line">&nbsp;&nbsp;56</span>import&nbsp;{&nbsp;date&nbsp;}&nbsp;from&nbsp;'hsutil';<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>import&nbsp;{&nbsp;inspect&nbsp;}&nbsp;&nbsp;from&nbsp;'util';<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>import&nbsp;*&nbsp;as&nbsp;fsUtil&nbsp;&nbsp;from&nbsp;"./fsUtil";<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>import&nbsp;{&nbsp;date&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'hsutil';<br>
 <span id=57 class="line">&nbsp;&nbsp;57</span><br>
-<span id=58 class="line">&nbsp;&nbsp;58</span><comment>/**&nbsp;Debug&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;0&nbsp;*/</comment><br>
-<span id=59 class="line">&nbsp;&nbsp;59</span>const&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('DEBUG');<br>
-<span id=60 class="line">&nbsp;&nbsp;60</span><br>
-<span id=61 class="line">&nbsp;&nbsp;61</span><comment>/**&nbsp;Info&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;1&nbsp;*/</comment><br>
-<span id=62 class="line">&nbsp;&nbsp;62</span>const&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('INFO');<br>
-<span id=63 class="line">&nbsp;&nbsp;63</span><br>
-<span id=64 class="line">&nbsp;&nbsp;64</span><comment>/**&nbsp;Info&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;2&nbsp;*/</comment><br>
-<span id=65 class="line">&nbsp;&nbsp;65</span>const&nbsp;WARN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('WARN');<br>
-<span id=66 class="line">&nbsp;&nbsp;66</span><br>
-<span id=67 class="line">&nbsp;&nbsp;67</span><comment>/**&nbsp;Warning&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;3&nbsp;*/</comment><br>
-<span id=68 class="line">&nbsp;&nbsp;68</span>const&nbsp;ERROR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('ERROR');<br>
-<span id=69 class="line">&nbsp;&nbsp;69</span><br>
-<span id=70 class="line">&nbsp;&nbsp;70</span><comment>/**<br>
-<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;*&nbsp;Type&nbsp;definition&nbsp;for&nbsp;level&nbsp;descriptors<br>
-<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;*/</comment><br>
-<span id=73 class="line">&nbsp;&nbsp;73</span>interface&nbsp;LevelDesc&nbsp;{&nbsp;importance:number;&nbsp;sym:symbol;&nbsp;desc:string;&nbsp;};<br>
-<span id=74 class="line">&nbsp;&nbsp;74</span><br>
-<span id=75 class="line">&nbsp;&nbsp;75</span><comment>/**&nbsp;map&nbsp;of&nbsp;valid&nbsp;reporting&nbsp;levels&nbsp;*/</comment><br>
-<span id=76 class="line">&nbsp;&nbsp;76</span>const&nbsp;gLevels&nbsp;=&nbsp;{<br>
-<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;[DEBUG]:&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;0,&nbsp;sym:&nbsp;DEBUG,&nbsp;desc:&nbsp;'DEBUG'},<br>
-<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;[INFO]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;1,&nbsp;sym:&nbsp;INFO,&nbsp;&nbsp;desc:&nbsp;'INFO'},<br>
-<span id=79 class="line">&nbsp;&nbsp;79</span>&nbsp;&nbsp;&nbsp;&nbsp;[WARN]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;2,&nbsp;sym:&nbsp;WARN,&nbsp;&nbsp;desc:&nbsp;'WARN'},<br>
-<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;[ERROR]:&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;3,&nbsp;sym:&nbsp;ERROR,&nbsp;desc:&nbsp;'ERROR'}<br>
-<span id=81 class="line">&nbsp;&nbsp;81</span>};<br>
-<span id=82 class="line">&nbsp;&nbsp;82</span><br>
-<span id=83 class="line">&nbsp;&nbsp;83</span><comment>/**&nbsp;current&nbsp;reporting&nbsp;level,&nbsp;same&nbsp;across&nbsp;all&nbsp;modules&nbsp;*/</comment><br>
-<span id=84 class="line">&nbsp;&nbsp;84</span>var&nbsp;gLevel:LevelDesc&nbsp;=&nbsp;(gLevel===undefined)?&nbsp;gLevels[INFO]&nbsp;:&nbsp;gLevel;&nbsp;<br>
-<span id=85 class="line">&nbsp;&nbsp;85</span>console.log('set&nbsp;log&nbsp;level&nbsp;to&nbsp;'&nbsp;+&nbsp;gLevel.sym.toString());<br>
-<span id=86 class="line">&nbsp;&nbsp;86</span><br>
-<span id=87 class="line">&nbsp;&nbsp;87</span><comment>/**&nbsp;current&nbsp;date&nbsp;format&nbsp;string.&nbsp;See&nbsp;[date&nbsp;module]('_date_.html')&nbsp;*/</comment><br>
-<span id=88 class="line">&nbsp;&nbsp;88</span>let&nbsp;gDateFormat&nbsp;&nbsp;&nbsp;=&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj';<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span><br>
+<span id=59 class="line">&nbsp;&nbsp;59</span><br>
+<span id=60 class="line">&nbsp;&nbsp;60</span><comment>/**<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;*&nbsp;Type&nbsp;definition&nbsp;for&nbsp;level&nbsp;descriptors<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;*/</comment><br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>interface&nbsp;LevelDesc&nbsp;{&nbsp;importance:number;&nbsp;sym:symbol;&nbsp;desc:string;&nbsp;};<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span><br>
+<span id=65 class="line">&nbsp;&nbsp;65</span><comment>/**&nbsp;Debug&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;0&nbsp;*/</comment><br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>const&nbsp;DEBUG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('DEBUG');<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span><br>
+<span id=68 class="line">&nbsp;&nbsp;68</span><comment>/**&nbsp;Info&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;1&nbsp;*/</comment><br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>const&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('INFO');<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span><br>
+<span id=71 class="line">&nbsp;&nbsp;71</span><comment>/**&nbsp;Info&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;2&nbsp;*/</comment><br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>const&nbsp;WARN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('WARN');<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span><br>
+<span id=74 class="line">&nbsp;&nbsp;74</span><comment>/**&nbsp;Warning&nbsp;reporting&nbsp;level&nbsp;with&nbsp;importance&nbsp;3&nbsp;*/</comment><br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>const&nbsp;ERROR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Symbol('ERROR');<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span><br>
+<span id=77 class="line">&nbsp;&nbsp;77</span><br>
+<span id=78 class="line">&nbsp;&nbsp;78</span><comment>/**&nbsp;map&nbsp;of&nbsp;valid&nbsp;reporting&nbsp;levels&nbsp;*/</comment><br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>const&nbsp;gLevels&nbsp;=&nbsp;{<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;[DEBUG]:&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;0,&nbsp;sym:&nbsp;DEBUG,&nbsp;desc:&nbsp;'DEBUG'},<br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>&nbsp;&nbsp;&nbsp;&nbsp;[INFO]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;1,&nbsp;sym:&nbsp;INFO,&nbsp;&nbsp;desc:&nbsp;'INFO'},<br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;[WARN]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;2,&nbsp;sym:&nbsp;WARN,&nbsp;&nbsp;desc:&nbsp;'WARN'},<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;[ERROR]:&nbsp;&nbsp;&nbsp;&nbsp;{importance:&nbsp;3,&nbsp;sym:&nbsp;ERROR,&nbsp;desc:&nbsp;'ERROR'}<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>};<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span><br>
+<span id=86 class="line">&nbsp;&nbsp;86</span><comment>/**&nbsp;current&nbsp;reporting&nbsp;level,&nbsp;same&nbsp;across&nbsp;all&nbsp;modules&nbsp;*/</comment><br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>let&nbsp;gLevel:LevelDesc&nbsp;=&nbsp;gLevels[INFO];&nbsp;<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>console.log('set&nbsp;log&nbsp;level&nbsp;to&nbsp;'&nbsp;+&nbsp;gLevel.sym.toString());<br>
 <span id=89 class="line">&nbsp;&nbsp;89</span><br>
-<span id=90 class="line">&nbsp;&nbsp;90</span><comment>/**&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;log&nbsp;file,&nbsp;or&nbsp;undefined&nbsp;*/</comment><br>
-<span id=91 class="line">&nbsp;&nbsp;91</span>let&nbsp;gLogFile:&nbsp;string;	//&nbsp;initially&nbsp;disabled<br>
+<span id=90 class="line">&nbsp;&nbsp;90</span><comment>/**&nbsp;current&nbsp;date&nbsp;format&nbsp;string.&nbsp;See&nbsp;[date&nbsp;module]('_date_.html')&nbsp;*/</comment><br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>let&nbsp;gDateFormat&nbsp;&nbsp;&nbsp;=&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj';<br>
 <span id=92 class="line">&nbsp;&nbsp;92</span><br>
-<span id=93 class="line">&nbsp;&nbsp;93</span><br>
-<span id=94 class="line">&nbsp;&nbsp;94</span>function&nbsp;log()&nbsp;{<br>
-<span id=95 class="line">&nbsp;&nbsp;95</span>	let&nbsp;gPrefix&nbsp;=&nbsp;'';<br>
-<span id=96 class="line">&nbsp;&nbsp;96</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;gColors&nbsp;=&nbsp;true;<br>
-<span id=97 class="line">&nbsp;&nbsp;97</span><br>
-<span id=98 class="line">&nbsp;&nbsp;98</span>	<comment>/**<br>
-<span id=99 class="line">&nbsp;&nbsp;99</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;reporting&nbsp;level&nbsp;according&nbsp;to&nbsp;`newLevel`.&nbsp;<br>
-<span id=100 class="line">&nbsp;100</span>	&nbsp;*&nbsp;Valid&nbsp;values&nbsp;are&nbsp;{@link&nbsp;hsNode.log.DEBUG&nbsp;DEBUG},&nbsp;{@link&nbsp;hsNode.log.INFO&nbsp;INFO},&nbsp;{@link&nbsp;hsNode.log.WARN&nbsp;WARN},&nbsp;or&nbsp;{@link&nbsp;hsNode.log.ERROR&nbsp;ERROR}.<br>
-<span id=101 class="line">&nbsp;101</span>	&nbsp;*&nbsp;Subsequent&nbsp;reporting&nbsp;calls<br>
-<span id=102 class="line">&nbsp;102</span>	&nbsp;*&nbsp;will&nbsp;be&nbsp;filtered&nbsp;such&nbsp;that&nbsp;only&nbsp;calls&nbsp;with&nbsp;an&nbsp;importance&nbsp;at&nbsp;least&nbsp;the&nbsp;same&nbsp;as&nbsp;<br>
-<span id=103 class="line">&nbsp;103</span>	&nbsp;*&nbsp;`newLevel`&nbsp;will&nbsp;be&nbsp;written&nbsp;to&nbsp;the&nbsp;log.<br>
-<span id=104 class="line">&nbsp;104</span>	&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;newLevel&nbsp;the&nbsp;new&nbsp;reporting&nbsp;level&nbsp;to&nbsp;set.&nbsp;<br>
-<span id=105 class="line">&nbsp;105</span>	&nbsp;*&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;method&nbsp;returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;reporting&nbsp;level.&nbsp;<br>
-<span id=106 class="line">&nbsp;106</span>	&nbsp;*&nbsp;@return&nbsp;{Symbol}&nbsp;the&nbsp;new&nbsp;reporting&nbsp;level&nbsp;(DEBUG,&nbsp;INFO,&nbsp;ERROR)<br>
-<span id=107 class="line">&nbsp;107</span>	&nbsp;*/</comment><br>
-<span id=108 class="line">&nbsp;108</span>	function&nbsp;level(newLevel?:symbol):symbol&nbsp;{<br>
-<span id=109 class="line">&nbsp;109</span>	&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(newLevel)&nbsp;{&nbsp;<br>
-<span id=110 class="line">&nbsp;110</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLevels[newLevel])&nbsp;{&nbsp;<br>
-<span id=111 class="line">&nbsp;111</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	let&nbsp;oldLevel&nbsp;=&nbsp;gLevel;<br>
-<span id=112 class="line">&nbsp;112</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLevel&nbsp;=&nbsp;gLevels[newLevel];<br>
-<span id=113 class="line">&nbsp;113</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;msg&nbsp;=&nbsp;'new&nbsp;log&nbsp;level&nbsp;\''&nbsp;+&nbsp;gLevel.desc.toUpperCase()&nbsp;+&nbsp;'\'&nbsp;(was&nbsp;'&nbsp;+&nbsp;oldLevel.desc.toUpperCase()&nbsp;+&nbsp;')';<br>
-<span id=114 class="line">&nbsp;114</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out((gLevel.sym&nbsp;===&nbsp;oldLevel.sym)?DEBUG&nbsp;:&nbsp;INFO,&nbsp;msg);<br>
-<span id=115 class="line">&nbsp;115</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=116 class="line">&nbsp;116</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;out(ERROR,&nbsp;"unkown&nbsp;level&nbsp;"&nbsp;+&nbsp;newLevel.toString()&nbsp;+&nbsp;';&nbsp;log&nbsp;level&nbsp;remains&nbsp;'&nbsp;+&nbsp;gLevel.sym.toString());&nbsp;}<br>
-<span id=117 class="line">&nbsp;117</span>	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=118 class="line">&nbsp;118</span>	&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLevel.sym;<br>
-<span id=119 class="line">&nbsp;119</span>	}<br>
-<span id=120 class="line">&nbsp;120</span><br>
-<span id=121 class="line">&nbsp;121</span>	<comment>/**<br>
-<span id=122 class="line">&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;debug&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
-<span id=123 class="line">&nbsp;123</span>	&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
-<span id=124 class="line">&nbsp;124</span>	&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;DEBUG&nbsp;or&nbsp;lower.<br>
-<span id=125 class="line">&nbsp;125</span>	&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
-<span id=126 class="line">&nbsp;126</span>	&nbsp;*/</comment><br>
-<span id=127 class="line">&nbsp;127</span>	function&nbsp;debug(msg:string)&nbsp;{&nbsp;out(DEBUG,&nbsp;msg);&nbsp;}<br>
-<span id=128 class="line">&nbsp;128</span><br>
-<span id=129 class="line">&nbsp;129</span>	<comment>/**<br>
-<span id=130 class="line">&nbsp;130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;informational&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
-<span id=131 class="line">&nbsp;131</span>	&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
-<span id=132 class="line">&nbsp;132</span>	&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;INFO&nbsp;or&nbsp;lower.<br>
-<span id=133 class="line">&nbsp;133</span>	&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
-<span id=134 class="line">&nbsp;134</span>	&nbsp;*/</comment><br>
-<span id=135 class="line">&nbsp;135</span>	function&nbsp;info(msg:string)&nbsp;&nbsp;{&nbsp;out(INFO,&nbsp;msg);&nbsp;}<br>
-<span id=136 class="line">&nbsp;136</span><br>
-<span id=137 class="line">&nbsp;137</span>	<comment>/**<br>
-<span id=138 class="line">&nbsp;138</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;warning&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
-<span id=139 class="line">&nbsp;139</span>	&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
-<span id=140 class="line">&nbsp;140</span>	&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;WARN&nbsp;or&nbsp;lower.<br>
-<span id=141 class="line">&nbsp;141</span>	&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
-<span id=142 class="line">&nbsp;142</span>	&nbsp;*/</comment><br>
-<span id=143 class="line">&nbsp;143</span>	function&nbsp;warn(msg:string)&nbsp;{&nbsp;out(WARN,&nbsp;msg);&nbsp;}<br>
-<span id=144 class="line">&nbsp;144</span><br>
-<span id=145 class="line">&nbsp;145</span>	<comment>/**<br>
-<span id=146 class="line">&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;error&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
-<span id=147 class="line">&nbsp;147</span>	&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;always&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log.<br>
-<span id=148 class="line">&nbsp;148</span>	&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
-<span id=149 class="line">&nbsp;149</span>	&nbsp;*/</comment><br>
-<span id=150 class="line">&nbsp;150</span>	function&nbsp;error(msg:string)&nbsp;{&nbsp;out(ERROR,&nbsp;msg);&nbsp;}<br>
-<span id=151 class="line">&nbsp;151</span><br>
-<span id=152 class="line">&nbsp;152</span>	<comment>/**<br>
-<span id=153 class="line">&nbsp;153</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use&nbsp;for&nbsp;logging.&nbsp;If&nbsp;no&nbsp;parameter&nbsp;is&nbsp;specified,<br>
-<span id=154 class="line">&nbsp;154</span>	&nbsp;*&nbsp;the&nbsp;function&nbsp;returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;format&nbsp;string.&nbsp;The&nbsp;preset&nbsp;is&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj'<br>
-<span id=155 class="line">&nbsp;155</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;For&nbsp;supported&nbsp;formats&nbsp;see&nbsp;{@link&nbsp;date&nbsp;date}.<br>
-<span id=156 class="line">&nbsp;156</span>	&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;fmtStr&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use.&nbsp;<br>
-<span id=157 class="line">&nbsp;157</span>	&nbsp;*&nbsp;@return&nbsp;{String}&nbsp;the&nbsp;currently&nbsp;set&nbsp;format&nbsp;string<br>
-<span id=158 class="line">&nbsp;158</span>	&nbsp;*/</comment><br>
-<span id=159 class="line">&nbsp;159</span>	function&nbsp;dateFormat(fmtStr?:string):string&nbsp;{&nbsp;<br>
-<span id=160 class="line">&nbsp;160</span>	&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(fmtStr)&nbsp;{&nbsp;gDateFormat&nbsp;=&nbsp;fmtStr;&nbsp;}<br>
-<span id=161 class="line">&nbsp;161</span>	&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gDateFormat;<br>
-<span id=162 class="line">&nbsp;162</span>	}<br>
-<span id=163 class="line">&nbsp;163</span><br>
-<span id=164 class="line">&nbsp;164</span>	<comment>/**<br>
-<span id=165 class="line">&nbsp;165</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;defines&nbsp;a&nbsp;prefix&nbsp;to&nbsp;be&nbsp;printed&nbsp;for&nbsp;each&nbsp;call&nbsp;to&nbsp;a&nbsp;log&nbsp;function.&nbsp;<br>
-<span id=166 class="line">&nbsp;166</span>	&nbsp;*&nbsp;The&nbsp;return&nbsp;object&nbsp;contains&nbsp;all&nbsp;functions&nbsp;defined&nbsp;for&nbsp;export.&nbsp;<br>
-<span id=167 class="line">&nbsp;167</span>	&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;prf&nbsp;the&nbsp;prefix&nbsp;to&nbsp;prepend.&nbsp;<br>
-<span id=168 class="line">&nbsp;168</span>	&nbsp;*/</comment><br>
-<span id=169 class="line">&nbsp;169</span>	function&nbsp;prefix(prf=''):void&nbsp;{<br>
-<span id=170 class="line">&nbsp;170</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gPrefix&nbsp;=&nbsp;prf?&nbsp;prf&nbsp;+&nbsp;'&nbsp;'&nbsp;:&nbsp;'';<br>
-<span id=171 class="line">&nbsp;171</span>	}<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span><comment>/**&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;log&nbsp;file,&nbsp;or&nbsp;undefined&nbsp;*/</comment><br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>let&nbsp;gLogFile:&nbsp;string;	//&nbsp;initially&nbsp;disabled<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span><br>
+<span id=96 class="line">&nbsp;&nbsp;96</span><comment>/**&nbsp;boolean&nbsp;determining&nbsp;if&nbsp;log&nbsp;will&nbsp;be&nbsp;printed&nbsp;in&nbsp;color&nbsp;*/</comment><br>
+<span id=97 class="line">&nbsp;&nbsp;97</span>let&nbsp;gColors&nbsp;=&nbsp;true;<br>
+<span id=98 class="line">&nbsp;&nbsp;98</span><br>
+<span id=99 class="line">&nbsp;&nbsp;99</span><br>
+<span id=100 class="line">&nbsp;100</span>class&nbsp;Log&nbsp;{<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;gPrefix&nbsp;=&nbsp;'';<br>
+<span id=102 class="line">&nbsp;102</span>&nbsp;&nbsp;&nbsp;&nbsp;DEBUG&nbsp;&nbsp;&nbsp;=&nbsp;DEBUG;<br>
+<span id=103 class="line">&nbsp;103</span>&nbsp;&nbsp;&nbsp;&nbsp;INFO&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;INFO;<br>
+<span id=104 class="line">&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;WARN&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;WARN;<br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;ERROR&nbsp;&nbsp;&nbsp;=&nbsp;ERROR;<br>
+<span id=106 class="line">&nbsp;106</span><br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=108 class="line">&nbsp;108</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;reporting&nbsp;level&nbsp;according&nbsp;to&nbsp;`newLevel`.&nbsp;<br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Valid&nbsp;values&nbsp;are&nbsp;{@link&nbsp;hsNode.log.DEBUG&nbsp;DEBUG},&nbsp;{@link&nbsp;hsNode.log.INFO&nbsp;INFO},&nbsp;{@link&nbsp;hsNode.log.WARN&nbsp;WARN},&nbsp;or&nbsp;{@link&nbsp;hsNode.log.ERROR&nbsp;ERROR}.<br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Subsequent&nbsp;reporting&nbsp;calls<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;will&nbsp;be&nbsp;filtered&nbsp;such&nbsp;that&nbsp;only&nbsp;calls&nbsp;with&nbsp;an&nbsp;importance&nbsp;at&nbsp;least&nbsp;the&nbsp;same&nbsp;as&nbsp;<br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;`newLevel`&nbsp;will&nbsp;be&nbsp;written&nbsp;to&nbsp;the&nbsp;log.<br>
+<span id=113 class="line">&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;newLevel&nbsp;the&nbsp;new&nbsp;reporting&nbsp;level&nbsp;to&nbsp;set.&nbsp;<br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;method&nbsp;returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;reporting&nbsp;level.&nbsp;<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;{Symbol}&nbsp;the&nbsp;new&nbsp;reporting&nbsp;level&nbsp;(DEBUG,&nbsp;INFO,&nbsp;ERROR)<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;level(newLevel?:symbol):symbol&nbsp;{<br>
+<span id=118 class="line">&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(newLevel)&nbsp;{&nbsp;<br>
+<span id=119 class="line">&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLevels[newLevel])&nbsp;{&nbsp;<br>
+<span id=120 class="line">&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;oldLevel&nbsp;=&nbsp;gLevel;<br>
+<span id=121 class="line">&nbsp;121</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLevel&nbsp;=&nbsp;gLevels[newLevel];<br>
+<span id=122 class="line">&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;msg&nbsp;=&nbsp;'new&nbsp;log&nbsp;level&nbsp;\''&nbsp;+&nbsp;gLevel.desc.toUpperCase()&nbsp;+&nbsp;'\'&nbsp;(was&nbsp;'&nbsp;+&nbsp;oldLevel.desc.toUpperCase()&nbsp;+&nbsp;')';<br>
+<span id=123 class="line">&nbsp;123</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.out((gLevel.sym&nbsp;===&nbsp;oldLevel.sym)?DEBUG&nbsp;:&nbsp;INFO,&nbsp;msg);<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=125 class="line">&nbsp;125</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;this.out(ERROR,&nbsp;"unkown&nbsp;level&nbsp;"&nbsp;+&nbsp;newLevel.toString()&nbsp;+&nbsp;';&nbsp;log&nbsp;level&nbsp;remains&nbsp;'&nbsp;+&nbsp;gLevel.sym.toString());&nbsp;}<br>
+<span id=126 class="line">&nbsp;126</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=127 class="line">&nbsp;127</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLevel.sym;<br>
+<span id=128 class="line">&nbsp;128</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=129 class="line">&nbsp;129</span><br>
+<span id=130 class="line">&nbsp;130</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=131 class="line">&nbsp;131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;debug&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
+<span id=132 class="line">&nbsp;132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
+<span id=133 class="line">&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;DEBUG&nbsp;or&nbsp;lower.<br>
+<span id=134 class="line">&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
+<span id=135 class="line">&nbsp;135</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=136 class="line">&nbsp;136</span>&nbsp;&nbsp;&nbsp;&nbsp;debug(msg:string)&nbsp;{&nbsp;this.out(DEBUG,&nbsp;msg);&nbsp;}<br>
+<span id=137 class="line">&nbsp;137</span><br>
+<span id=138 class="line">&nbsp;138</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=139 class="line">&nbsp;139</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;informational&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
+<span id=140 class="line">&nbsp;140</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
+<span id=141 class="line">&nbsp;141</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;INFO&nbsp;or&nbsp;lower.<br>
+<span id=142 class="line">&nbsp;142</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
+<span id=143 class="line">&nbsp;143</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=144 class="line">&nbsp;144</span>&nbsp;&nbsp;&nbsp;&nbsp;info(msg:string)&nbsp;&nbsp;{&nbsp;this.out(INFO,&nbsp;msg);&nbsp;}<br>
+<span id=145 class="line">&nbsp;145</span><br>
+<span id=146 class="line">&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=147 class="line">&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;warning&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
+<span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;actually&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log&nbsp;only&nbsp;if&nbsp;the&nbsp;current&nbsp;<br>
+<span id=149 class="line">&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reporting&nbsp;level&nbsp;is&nbsp;WARN&nbsp;or&nbsp;lower.<br>
+<span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
+<span id=151 class="line">&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=152 class="line">&nbsp;152</span>&nbsp;&nbsp;&nbsp;&nbsp;warn(msg:string)&nbsp;{&nbsp;this.out(WARN,&nbsp;msg);&nbsp;}<br>
+<span id=153 class="line">&nbsp;153</span><br>
+<span id=154 class="line">&nbsp;154</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=155 class="line">&nbsp;155</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;reports&nbsp;an&nbsp;error&nbsp;message&nbsp;to&nbsp;the&nbsp;log.&nbsp;<br>
+<span id=156 class="line">&nbsp;156</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;message&nbsp;will&nbsp;always&nbsp;be&nbsp;reported&nbsp;to&nbsp;the&nbsp;log.<br>
+<span id=157 class="line">&nbsp;157</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;msg&nbsp;the&nbsp;message&nbsp;to&nbsp;report.<br>
+<span id=158 class="line">&nbsp;158</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=159 class="line">&nbsp;159</span>&nbsp;&nbsp;&nbsp;&nbsp;error(msg:string)&nbsp;{&nbsp;this.out(ERROR,&nbsp;msg);&nbsp;}<br>
+<span id=160 class="line">&nbsp;160</span><br>
+<span id=161 class="line">&nbsp;161</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=162 class="line">&nbsp;162</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use&nbsp;for&nbsp;logging.&nbsp;If&nbsp;no&nbsp;parameter&nbsp;is&nbsp;specified,<br>
+<span id=163 class="line">&nbsp;163</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;function&nbsp;returns&nbsp;the&nbsp;currently&nbsp;set&nbsp;format&nbsp;string.&nbsp;The&nbsp;preset&nbsp;is&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj'<br>
+<span id=164 class="line">&nbsp;164</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;For&nbsp;supported&nbsp;formats&nbsp;see&nbsp;{@link&nbsp;date&nbsp;date}.<br>
+<span id=165 class="line">&nbsp;165</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;fmtStr&nbsp;the&nbsp;format&nbsp;string&nbsp;to&nbsp;use.&nbsp;<br>
+<span id=166 class="line">&nbsp;166</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;{String}&nbsp;the&nbsp;currently&nbsp;set&nbsp;format&nbsp;string<br>
+<span id=167 class="line">&nbsp;167</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=168 class="line">&nbsp;168</span>&nbsp;&nbsp;&nbsp;&nbsp;dateFormat(fmtStr?:string):string&nbsp;{&nbsp;<br>
+<span id=169 class="line">&nbsp;169</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(fmtStr)&nbsp;{&nbsp;gDateFormat&nbsp;=&nbsp;fmtStr;&nbsp;}<br>
+<span id=170 class="line">&nbsp;170</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gDateFormat;<br>
+<span id=171 class="line">&nbsp;171</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <span id=172 class="line">&nbsp;172</span><br>
-<span id=173 class="line">&nbsp;173</span>	<comment>/**<br>
-<span id=174 class="line">&nbsp;174</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;a&nbsp;new&nbsp;logfile&nbsp;name&nbsp;template.&nbsp;Logfiles&nbsp;are&nbsp;created&nbsp;using&nbsp;this&nbsp;template&nbsp;<br>
-<span id=175 class="line">&nbsp;175</span>	&nbsp;*&nbsp;at&nbsp;the&nbsp;time&nbsp;of&nbsp;each&nbsp;log&nbsp;entry&nbsp;call.&nbsp;If&nbsp;the&nbsp;file&nbsp;exists,&nbsp;the&nbsp;log&nbsp;entry&nbsp;will&nbsp;be&nbsp;appended.<br>
-<span id=176 class="line">&nbsp;176</span>	&nbsp;*&nbsp;@param&nbsp;{String}&nbsp;[fileNameTemplate='log-%YYYY-%MM-%DD.txt']&nbsp;a&nbsp;template&nbsp;to&nbsp;use&nbsp;for&nbsp;log&nbsp;file&nbsp;names.&nbsp;<br>
-<span id=177 class="line">&nbsp;177</span>	&nbsp;*&nbsp;To&nbsp;disable&nbsp;logging,&nbsp;use&nbsp;file=''.<br>
-<span id=178 class="line">&nbsp;178</span>	&nbsp;*&nbsp;@return&nbsp;{Promise}&nbsp;promise&nbsp;to&nbsp;return&nbsp;the&nbsp;current&nbsp;logfile&nbsp;name&nbsp;template<br>
-<span id=179 class="line">&nbsp;179</span>	&nbsp;*/</comment><br>
-<span id=180 class="line">&nbsp;180</span>	function&nbsp;logFile(file='log-%YYYY-%MM-%DD.txt'):Promise<string>&nbsp;{<br>
-<span id=181 class="line">&nbsp;181</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Promise.resolve(file)<br>
-<span id=182 class="line">&nbsp;182</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(file&nbsp;=>&nbsp;{<br>
-<span id=183 class="line">&nbsp;183</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(file&nbsp;!==&nbsp;gLogFile)&nbsp;{<br>
-<span id=184 class="line">&nbsp;184</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLogFile&nbsp;=&nbsp;(file==='')?&nbsp;undefined&nbsp;:&nbsp;file;<br>
-<span id=185 class="line">&nbsp;185</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=186 class="line">&nbsp;186</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!gLogFile)&nbsp;{&nbsp;info("disabling&nbsp;logfile");&nbsp;return&nbsp;gLogFile;&nbsp;}<br>
-<span id=187 class="line">&nbsp;187</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLogFile.indexOf('/')>=0)&nbsp;{&nbsp;<br>
-<span id=188 class="line">&nbsp;188</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;dir&nbsp;=&nbsp;gLogFile.substring(0,&nbsp;gLogFile.lastIndexOf('/'));<br>
-<span id=189 class="line">&nbsp;189</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fsUtil.pathExists(dir).then(exists&nbsp;=>&nbsp;{<br>
-<span id=190 class="line">&nbsp;190</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!exists)&nbsp;{&nbsp;<br>
-<span id=191 class="line">&nbsp;191</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLogFile&nbsp;=&nbsp;undefined;&nbsp;<br>
-<span id=192 class="line">&nbsp;192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;warn(`path&nbsp;${dir}&nbsp;doesn't&nbsp;exists;&nbsp;logfile&nbsp;disabled`);&nbsp;<br>
-<span id=193 class="line">&nbsp;193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=194 class="line">&nbsp;194</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;info(gLogFile?&nbsp;"now&nbsp;logging&nbsp;to&nbsp;file&nbsp;"&nbsp;+&nbsp;date(gLogFile)&nbsp;:&nbsp;"disabling&nbsp;logfile");&nbsp;}<br>
-<span id=195 class="line">&nbsp;195</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLogFile;<br>
-<span id=196 class="line">&nbsp;196</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-<span id=197 class="line">&nbsp;197</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=198 class="line">&nbsp;198</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info("now&nbsp;logging&nbsp;to&nbsp;file&nbsp;"&nbsp;+&nbsp;date(gLogFile));<br>
-<span id=199 class="line">&nbsp;199</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLogFile;<br>
-<span id=200 class="line">&nbsp;200</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-<span id=201 class="line">&nbsp;201</span>	}<br>
-<span id=202 class="line">&nbsp;202</span>	<br>
-<span id=203 class="line">&nbsp;203</span>	function&nbsp;out(sym:symbol,&nbsp;msg:any)&nbsp;{	<br>
-<span id=204 class="line">&nbsp;204</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;color&nbsp;=&nbsp;{&nbsp;ERROR:&nbsp;'\x1b[31m\x1b[1m',&nbsp;WARN:&nbsp;'\x1b[33m',&nbsp;DEBUG:&nbsp;'\x1b[36m',&nbsp;INFO:&nbsp;'\x1b[32m'&nbsp;};<br>
-<span id=205 class="line">&nbsp;205</span>		let&nbsp;desc&nbsp;=&nbsp;gLevels[sym];<br>
-<span id=206 class="line">&nbsp;206</span>	&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(desc.importance&nbsp;>=&nbsp;gLevel.importance)&nbsp;{<br>
-<span id=207 class="line">&nbsp;207</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;dateStr&nbsp;=&nbsp;date(gDateFormat);<br>
-<span id=208 class="line">&nbsp;208</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;line&nbsp;=&nbsp;(typeof&nbsp;msg&nbsp;===&nbsp;'string')?&nbsp;msg&nbsp;:&nbsp;inspect(msg,&nbsp;{colors:gColors,&nbsp;depth:null});<br>
-<span id=209 class="line">&nbsp;209</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;gColors?&nbsp;((color[sym]||"")&nbsp;+&nbsp;dateStr&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;gPrefix&nbsp;+&nbsp;desc.desc&nbsp;+&nbsp;'\x1b[0m&nbsp;'&nbsp;+&nbsp;line)&nbsp;:<br>
-<span id=210 class="line">&nbsp;210</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(dateStr&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;gPrefix&nbsp;+&nbsp;desc.desc&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;line);<br>
-<span id=211 class="line">&nbsp;211</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(line);<br>
-<span id=212 class="line">&nbsp;212</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(msg.stack)&nbsp;{&nbsp;console.log(msg.stack);&nbsp;}<br>
-<span id=213 class="line">&nbsp;213</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLogFile)&nbsp;{<br>
-<span id=214 class="line">&nbsp;214</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	const&nbsp;filename&nbsp;=&nbsp;date(gLogFile);<br>
-<span id=215 class="line">&nbsp;215</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fsUtil.appendFile(filename,&nbsp;line+'\n').catch(e&nbsp;=>&nbsp;{&nbsp;<br>
-<span id=216 class="line">&nbsp;216</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`error&nbsp;appending&nbsp;to&nbsp;file&nbsp;${gLogFile}:&nbsp;${e}`);&nbsp;<br>
-<span id=217 class="line">&nbsp;217</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;Error(e);&nbsp;});<br>
-<span id=218 class="line">&nbsp;218</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=219 class="line">&nbsp;219</span>	&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=220 class="line">&nbsp;220</span>	}<br>
-<span id=221 class="line">&nbsp;221</span><br>
-<span id=222 class="line">&nbsp;222</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;defaultConfig(cfg:{colors?:boolean,&nbsp;logFile?:string,&nbsp;dateFormat?:string,&nbsp;level?:symbol&nbsp;})&nbsp;{<br>
-<span id=223 class="line">&nbsp;223</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;colors&nbsp;=&nbsp;true;<br>
-<span id=224 class="line">&nbsp;224</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.colors!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;gColors&nbsp;=&nbsp;colors&nbsp;=&nbsp;cfg.colors;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;true&nbsp;/&nbsp;false<br>
-<span id=225 class="line">&nbsp;225</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.logFile!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;logFile(cfg.logFile||undefined);&nbsp;}&nbsp;&nbsp;&nbsp;//&nbsp;{logFile:null}&nbsp;=>&nbsp;logFile(undefined)<br>
-<span id=226 class="line">&nbsp;226</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.dateFormat!==undefined)&nbsp;{&nbsp;dateFormat(cfg.dateFormat);&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;e.g.&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj'<br>
-<span id=227 class="line">&nbsp;227</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.level!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;level(cfg.level);&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;e.g.&nbsp;INFO<br>
-<span id=228 class="line">&nbsp;228</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=229 class="line">&nbsp;229</span><br>
-<span id=230 class="line">&nbsp;230</span>	return&nbsp;{<br>
-<span id=231 class="line">&nbsp;231</span>		DEBUG:	&nbsp;&nbsp;&nbsp;&nbsp;DEBUG,<br>
-<span id=232 class="line">&nbsp;232</span>		INFO:	&nbsp;&nbsp;&nbsp;&nbsp;INFO,<br>
-<span id=233 class="line">&nbsp;233</span>		WARN:	&nbsp;&nbsp;&nbsp;&nbsp;WARN,<br>
-<span id=234 class="line">&nbsp;234</span>		ERROR:	&nbsp;&nbsp;&nbsp;&nbsp;ERROR,<br>
-<span id=235 class="line">&nbsp;235</span>		level:	&nbsp;&nbsp;&nbsp;&nbsp;level,<br>
-<span id=236 class="line">&nbsp;236</span>		debug:	&nbsp;&nbsp;&nbsp;&nbsp;debug,<br>
-<span id=237 class="line">&nbsp;237</span>		info:&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;info,<br>
-<span id=238 class="line">&nbsp;238</span>		warn:	&nbsp;&nbsp;&nbsp;&nbsp;warn,<br>
-<span id=239 class="line">&nbsp;239</span>		error:	&nbsp;&nbsp;&nbsp;&nbsp;error,<br>
-<span id=240 class="line">&nbsp;240</span>		dateFormat:&nbsp;dateFormat,<br>
-<span id=241 class="line">&nbsp;241</span>		prefix:	&nbsp;&nbsp;&nbsp;&nbsp;prefix,<br>
-<span id=242 class="line">&nbsp;242</span>		logFile:&nbsp;&nbsp;&nbsp;&nbsp;logFile,<br>
-<span id=243 class="line">&nbsp;243</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaultConfig<br>
-<span id=244 class="line">&nbsp;244</span>	};<br>
-<span id=245 class="line">&nbsp;245</span>}<br>
-<span id=246 class="line">&nbsp;246</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-<span id=247 class="line">&nbsp;247</span>export&nbsp;default&nbsp;log();<br>
-<span id=248 class="line">&nbsp;248</span><br>
-<span id=249 class="line">&nbsp;249</span><br>
-<span id=250 class="line">&nbsp;250</span><br></code></div>
+<span id=173 class="line">&nbsp;173</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=174 class="line">&nbsp;174</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;defines&nbsp;a&nbsp;prefix&nbsp;to&nbsp;be&nbsp;printed&nbsp;for&nbsp;each&nbsp;call&nbsp;to&nbsp;a&nbsp;log&nbsp;function.&nbsp;<br>
+<span id=175 class="line">&nbsp;175</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;return&nbsp;object&nbsp;contains&nbsp;all&nbsp;functions&nbsp;defined&nbsp;for&nbsp;export.&nbsp;<br>
+<span id=176 class="line">&nbsp;176</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{String=}&nbsp;prf&nbsp;the&nbsp;prefix&nbsp;to&nbsp;prepend.&nbsp;<br>
+<span id=177 class="line">&nbsp;177</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=178 class="line">&nbsp;178</span>&nbsp;&nbsp;&nbsp;&nbsp;prefix(prf=''):void&nbsp;{<br>
+<span id=179 class="line">&nbsp;179</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.gPrefix&nbsp;=&nbsp;prf?&nbsp;prf&nbsp;+&nbsp;'&nbsp;'&nbsp;:&nbsp;'';<br>
+<span id=180 class="line">&nbsp;180</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=181 class="line">&nbsp;181</span><br>
+<span id=182 class="line">&nbsp;182</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=183 class="line">&nbsp;183</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;a&nbsp;new&nbsp;logfile&nbsp;name&nbsp;template.&nbsp;Logfiles&nbsp;are&nbsp;created&nbsp;using&nbsp;this&nbsp;template&nbsp;<br>
+<span id=184 class="line">&nbsp;184</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;at&nbsp;the&nbsp;time&nbsp;of&nbsp;each&nbsp;log&nbsp;entry&nbsp;call.&nbsp;If&nbsp;the&nbsp;file&nbsp;exists,&nbsp;the&nbsp;log&nbsp;entry&nbsp;will&nbsp;be&nbsp;appended.<br>
+<span id=185 class="line">&nbsp;185</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;{String}&nbsp;[fileNameTemplate='log-%YYYY-%MM-%DD.txt']&nbsp;a&nbsp;template&nbsp;to&nbsp;use&nbsp;for&nbsp;log&nbsp;file&nbsp;names.&nbsp;<br>
+<span id=186 class="line">&nbsp;186</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;To&nbsp;disable&nbsp;logging,&nbsp;use&nbsp;file=''.<br>
+<span id=187 class="line">&nbsp;187</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;{Promise}&nbsp;promise&nbsp;to&nbsp;return&nbsp;the&nbsp;current&nbsp;logfile&nbsp;name&nbsp;template<br>
+<span id=188 class="line">&nbsp;188</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=189 class="line">&nbsp;189</span>&nbsp;&nbsp;&nbsp;&nbsp;logFile(file='log-%YYYY-%MM-%DD.txt'):Promise<string>&nbsp;{<br>
+<span id=190 class="line">&nbsp;190</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Promise.resolve(file)<br>
+<span id=191 class="line">&nbsp;191</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(file&nbsp;=>&nbsp;{<br>
+<span id=192 class="line">&nbsp;192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(file&nbsp;!==&nbsp;gLogFile)&nbsp;{<br>
+<span id=193 class="line">&nbsp;193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLogFile&nbsp;=&nbsp;(file==='')?&nbsp;undefined&nbsp;:&nbsp;file;<br>
+<span id=194 class="line">&nbsp;194</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=195 class="line">&nbsp;195</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!gLogFile)&nbsp;{&nbsp;this.info("disabling&nbsp;logfile");&nbsp;return&nbsp;gLogFile;&nbsp;}<br>
+<span id=196 class="line">&nbsp;196</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLogFile.indexOf('/')>=0)&nbsp;{&nbsp;<br>
+<span id=197 class="line">&nbsp;197</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;dir&nbsp;=&nbsp;gLogFile.substring(0,&nbsp;gLogFile.lastIndexOf('/'));<br>
+<span id=198 class="line">&nbsp;198</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;fsUtil.pathExists(dir).then(exists&nbsp;=>&nbsp;{<br>
+<span id=199 class="line">&nbsp;199</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!exists)&nbsp;{&nbsp;<br>
+<span id=200 class="line">&nbsp;200</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gLogFile&nbsp;=&nbsp;undefined;&nbsp;<br>
+<span id=201 class="line">&nbsp;201</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.warn(`path&nbsp;${dir}&nbsp;doesn't&nbsp;exists;&nbsp;logfile&nbsp;disabled`);&nbsp;<br>
+<span id=202 class="line">&nbsp;202</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=203 class="line">&nbsp;203</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;this.info(gLogFile?&nbsp;"now&nbsp;logging&nbsp;to&nbsp;file&nbsp;"&nbsp;+&nbsp;date(gLogFile)&nbsp;:&nbsp;"disabling&nbsp;logfile");&nbsp;}<br>
+<span id=204 class="line">&nbsp;204</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLogFile;<br>
+<span id=205 class="line">&nbsp;205</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=206 class="line">&nbsp;206</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=207 class="line">&nbsp;207</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.info("now&nbsp;logging&nbsp;to&nbsp;file&nbsp;"&nbsp;+&nbsp;date(gLogFile));<br>
+<span id=208 class="line">&nbsp;208</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;gLogFile;<br>
+<span id=209 class="line">&nbsp;209</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=210 class="line">&nbsp;210</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=211 class="line">&nbsp;211</span><br>
+<span id=212 class="line">&nbsp;212</span>&nbsp;&nbsp;&nbsp;&nbsp;out(sym:symbol,&nbsp;msg:any)&nbsp;{	<br>
+<span id=213 class="line">&nbsp;213</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;color&nbsp;=&nbsp;{&nbsp;ERROR:&nbsp;'\x1b[31m\x1b[1m',&nbsp;WARN:&nbsp;'\x1b[33m',&nbsp;DEBUG:&nbsp;'\x1b[36m',&nbsp;INFO:&nbsp;'\x1b[32m'&nbsp;};<br>
+<span id=214 class="line">&nbsp;214</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;desc&nbsp;=&nbsp;gLevels[sym];<br>
+<span id=215 class="line">&nbsp;215</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(desc.importance&nbsp;>=&nbsp;gLevel.importance)&nbsp;{<br>
+<span id=216 class="line">&nbsp;216</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;dateStr&nbsp;=&nbsp;date(gDateFormat);<br>
+<span id=217 class="line">&nbsp;217</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;line&nbsp;=&nbsp;(typeof&nbsp;msg&nbsp;===&nbsp;'string')?&nbsp;msg&nbsp;:&nbsp;inspect(msg,&nbsp;{depth:null,&nbsp;colors:gColors});<br>
+<span id=218 class="line">&nbsp;218</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;gColors?&nbsp;((color[sym]||"")&nbsp;+&nbsp;dateStr&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;this.gPrefix&nbsp;+&nbsp;desc.desc&nbsp;+&nbsp;'\x1b[0m&nbsp;'&nbsp;+&nbsp;line)&nbsp;:<br>
+<span id=219 class="line">&nbsp;219</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(dateStr&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;this.gPrefix&nbsp;+&nbsp;desc.desc&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;line);<br>
+<span id=220 class="line">&nbsp;220</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(line);<br>
+<span id=221 class="line">&nbsp;221</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(msg.stack)&nbsp;{&nbsp;console.log(msg.stack);&nbsp;}<br>
+<span id=222 class="line">&nbsp;222</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gLogFile)&nbsp;{<br>
+<span id=223 class="line">&nbsp;223</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;filename&nbsp;=&nbsp;date(gLogFile);<br>
+<span id=224 class="line">&nbsp;224</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fsUtil.appendFile(filename,&nbsp;line+'\n').catch(e&nbsp;=>&nbsp;{&nbsp;<br>
+<span id=225 class="line">&nbsp;225</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`error&nbsp;appending&nbsp;to&nbsp;file&nbsp;${gLogFile}:&nbsp;${e}`);&nbsp;<br>
+<span id=226 class="line">&nbsp;226</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;Error(e);&nbsp;});<br>
+<span id=227 class="line">&nbsp;227</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=228 class="line">&nbsp;228</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=229 class="line">&nbsp;229</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=230 class="line">&nbsp;230</span><br>
+<span id=231 class="line">&nbsp;231</span>&nbsp;&nbsp;&nbsp;&nbsp;config(cfg:{colors?:boolean,&nbsp;logFile?:string,&nbsp;dateFormat?:string,&nbsp;level?:symbol&nbsp;})&nbsp;{<br>
+<span id=232 class="line">&nbsp;232</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;colors&nbsp;=&nbsp;true;<br>
+<span id=233 class="line">&nbsp;233</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.colors!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;gColors&nbsp;=&nbsp;colors&nbsp;=&nbsp;cfg.colors;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;true&nbsp;/&nbsp;false<br>
+<span id=234 class="line">&nbsp;234</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.logFile!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;this.logFile(cfg.logFile||undefined);&nbsp;}&nbsp;&nbsp;&nbsp;//&nbsp;{logFile:null}&nbsp;=>&nbsp;logFile(undefined)<br>
+<span id=235 class="line">&nbsp;235</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.dateFormat!==undefined)&nbsp;{&nbsp;this.dateFormat(cfg.dateFormat);&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;e.g.&nbsp;'%YYYY%MM%DD&nbsp;%hh:%mm:%ss.%jjj'<br>
+<span id=236 class="line">&nbsp;236</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cfg.level!==undefined)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;this.level(cfg.level);&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;e.g.&nbsp;INFO<br>
+<span id=237 class="line">&nbsp;237</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=238 class="line">&nbsp;238</span>}<br>
+<span id=239 class="line">&nbsp;239</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=240 class="line">&nbsp;240</span>export&nbsp;let&nbsp;log&nbsp;=&nbsp;new&nbsp;Log();<br>
+<span id=241 class="line">&nbsp;241</span><br>
+<span id=242 class="line">&nbsp;242</span><br>
+<span id=243 class="line">&nbsp;243</span><br></code></div>
                 </body>
             

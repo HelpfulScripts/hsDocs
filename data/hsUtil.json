@@ -1127,7 +1127,7 @@
 			},
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/TimedPromise.ts",
 			"comment": {
-				"shortText": "## Helpful Script Utility Module\nProvides convenience functions that don't depend on specific frameworks or libraries"
+				"shortText": "## Helpful Script Timing Support\nProvides convenience functions that don't depend on specific frameworks or libraries"
 			},
 			"children": [
 				{
@@ -1150,7 +1150,7 @@
 								"tags": [
 									{
 										"tag": "description",
-										"text": "delay promise for use in `Promise.all(param).then(delay(ms)).then(doSomething)`.\n`delay` passes the parameter received from the calling promise down to the resolving promise."
+										"text": "delay promise for use in `Promise.all(param).then(delay(ms)).then(doSomething)`.\n`delay` passes the parameter received from the calling promise down to the resolving promise.\nUsage:\n```\nPromise.resolve(...)\n   .then(delay(10))\n   .then(...)\n   .catch(...)\n```"
 									}
 								]
 							},
@@ -1176,7 +1176,7 @@
 					"sources": [
 						{
 							"fileName": "TimedPromise.ts",
-							"line": 22,
+							"line": 29,
 							"character": 21
 						}
 					]
@@ -1227,7 +1227,7 @@
 								"typeArguments": [
 									{
 										"type": "intrinsic",
-										"name": "any"
+										"name": "void"
 									}
 								]
 							}
@@ -1279,6 +1279,112 @@
 		},
 		{
 			"id": 79,
+			"name": "\"mithril\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/mithril.ts",
+			"children": [
+				{
+					"id": 81,
+					"name": "Vnode",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "provide and export a Typescript Vnode type"
+					},
+					"sources": [
+						{
+							"fileName": "mithril.ts",
+							"line": 19,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 80,
+					"name": "m",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "import and re-export the mithril m objkect"
+					},
+					"sources": [
+						{
+							"fileName": "mithril.ts",
+							"line": 14,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": " require(\"mithril\")"
+				},
+				{
+					"id": 82,
+					"name": "o",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "mithril.ts",
+							"line": 21,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": " require(\"mithril/ospec/ospec\")"
+				}
+			],
+			"groups": [
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						81
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						80,
+						82
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "mithril.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 83,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1288,7 +1394,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/overview.ts",
 			"comment": {
 				"shortText": "# hsUtil",
-				"text": "Helpful Scripts utility functions that are framework independent.\n\n## Index\n- &nbsp; {@link TimedPromise TimedPromise} functions that provide delays and timeouts for promises.\n- &nbsp; {@link CheckSum CheckSum} a quick checksum implementation for small strings\n- &nbsp; {@link Date Date} printf-style date formatting function\n- &nbsp; {@link showdown showdown} an ES6 wrapper for the showdown library\n"
+				"text": "Helpful Scripts utility functions that are framework independent.\n\n## Index\n- &nbsp; {@link TimedPromise TimedPromise} functions that provide delays and timeouts for promises.\n- &nbsp; {@link CheckSum CheckSum} a quick checksum implementation for small strings\n- &nbsp; {@link Date Date} printf-style date formatting function\n- &nbsp; {@link round Number.round} rounding to n digits\n- &nbsp; {@link showdown showdown} an ES6 wrapper for the showdown library\n"
 			},
 			"sources": [
 				{
@@ -1431,6 +1537,7 @@
 				41,
 				78,
 				79,
+				83,
 				48
 			]
 		}

@@ -1,0 +1,97 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/overview.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;#&nbsp;Home&nbsp;Security&nbsp;Setup<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;A&nbsp;simple&nbsp;homebrew&nbsp;alarm&nbsp;system.<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;##Installation<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;1.&nbsp;User&nbsp;Setup<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;create&nbsp;a&nbsp;standard&nbsp;user&nbsp;`obs`<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec`<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/log`<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/alarm`<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/snap`<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/C1_C4D6553FAFB7/`<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/C1_C4D6553FAFB7/snap`<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Create&nbsp;folder&nbsp;`/Users/obs/homeSec/C1_C4D6553FAFB7/record`<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;install&nbsp;`nodejs`&nbsp;globally<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;*&nbsp;2.&nbsp;System&nbsp;Preferences<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`Desktop&nbsp;&&nbsp;Screen&nbsp;Saver`,&nbsp;set&nbsp;`Start&nbsp;after:`&nbsp;to&nbsp;`never`<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`Energy&nbsp;Saver`;&nbsp;set&nbsp;`Computer&nbsp;Sleep`&nbsp;to&nbsp;`never`;&nbsp;deselect&nbsp;`Put&nbsp;hard&nbsp;disk&nbsp;to&nbsp;sleep`<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`Security&nbsp;&&nbsp;Privacy`;&nbsp;deselect&nbsp;`Require&nbsp;Password`<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`Network->&nbsp;Advanced->TCP/IP`;&nbsp;set&nbsp;`COnfigure&nbsp;IPv4`&nbsp;to&nbsp;`Using&nbsp;DHCP&nbsp;with&nbsp;manual&nbsp;address;<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;`IPv4&nbsp;Address`&nbsp;to&nbsp;`192.168.1.101`<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;install&nbsp;voice&nbsp;`Allison`<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;open&nbsp;panel&nbsp;`Accessibility->Speech`;&nbsp;<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`System&nbsp;Voice:&nbsp;Custom`&nbsp;and&nbsp;select&nbsp;`Allison`.&nbsp;Then&nbsp;close.&nbsp;<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voice&nbsp;will&nbsp;be&nbsp;downloaded&nbsp;automatically.&nbsp;<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;*&nbsp;3.&nbsp;copy&nbsp;into&nbsp;`homeSec`&nbsp;folder:<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;the&nbsp;`dev/node`&nbsp;folder<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;replace&nbsp;the&nbsp;`hsNode`&nbsp;alias&nbsp;with&nbsp;the&nbsp;original&nbsp;source&nbsp;folder<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;the&nbsp;`xcode/CameraOSX.app`&nbsp;application<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;the&nbsp;`postRestartScript`&nbsp;script<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;the&nbsp;`start&nbsp;FTP`&nbsp;script<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;the&nbsp;`relayChatCommands.applescript`&nbsp;script<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;*&nbsp;4.&nbsp;Messages&nbsp;setup<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;open&nbsp;`Messages`&nbsp;and&nbsp;select&nbsp;`Messages->Preferences->AppleScript&nbsp;Handler->Open&nbsp;Scripts&nbsp;Folder`<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;create&nbsp;the&nbsp;`~/Library/Application&nbsp;Scripts/com.apple.iChat`&nbsp;folder<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;copy&nbsp;into&nbsp;that&nbsp;folder&nbsp;the&nbsp;`relayChatCommands.applescript`&nbsp;script<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;close&nbsp;and&nbsp;reopen&nbsp;the&nbsp;`Messages->Preferences`.<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`relayChatCommands.applescript`&nbsp;in&nbsp;`AppleScript&nbsp;Handler->Open&nbsp;Scripts&nbsp;Folder`<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;*&nbsp;5.&nbsp;Startup&nbsp;behaviour<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;in&nbsp;`System&nbsp;Preferences`,&nbsp;select&nbsp;`Users&nbsp;&&nbsp;Groups`&nbsp;and&nbsp;the&nbsp;relevant&nbsp;user<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;select&nbsp;`Login&nbsp;Items`&nbsp;and&nbsp;add&nbsp;the&nbsp;`postRestartScript`&nbsp;script<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;*&nbsp;6.&nbsp;Network&nbsp;Setup&nbsp;<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;FTP&nbsp;server&nbsp;for&nbsp;`puppy`:&nbsp;in&nbsp;`Terminal`,&nbsp;ruyn&nbsp;the&nbsp;`start&nbsp;FTP`&nbsp;script<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;fixed&nbsp;IP&nbsp;address:&nbsp;<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Only&nbsp;needed&nbsp;to&nbsp;run&nbsp;once&nbsp;after&nbsp;System&nbsp;Upgrade<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;*&nbsp;7.&nbsp;Setup&nbsp;Contacts<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;open&nbsp;`Contacts`<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;define&nbsp;entry&nbsp;`Hauke&nbsp;Schmidt`&nbsp;and&nbsp;`Regine&nbsp;Schmidt`<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;*&nbsp;8.&nbsp;Miscelaneous<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;disable&nbsp;`are&nbsp;you&nbsp;sure&nbsp;you&nbsp;want&nbsp;to&nbsp;restart&nbsp;your&nbsp;computer&nbsp;now`&nbsp;question:&nbsp;???<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`Terminal->Preferences->Profiles->Shell`:<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`When&nbsp;the&nbsp;shell&nbsp;exits:&nbsp;Close&nbsp;the&nbsp;window`<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`Ask&nbsp;befor&nbsp;closing:&nbsp;Never`&nbsp;<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;*/</comment><br>
+<span id=55 class="line">&nbsp;&nbsp;55</span><br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;<comment>/**<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;#&nbsp;Alarm&nbsp;Lib<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;A&nbsp;simple&nbsp;homebrew&nbsp;alarm&nbsp;system.<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;##&nbsp;Installation<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;###&nbsp;How&nbsp;it&nbsp;works:<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span><br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;###&nbsp;Installation&nbsp;Steps<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;On&nbsp;the&nbsp;target&nbsp;system:&nbsp;<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;1.&nbsp;create&nbsp;folder&nbsp;and&nbsp;content&nbsp;structure:<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`/Downloads/homesec/`<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`/Applications/homesec/MyCamera/CameraOSX.app`<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;2.&nbsp;install&nbsp;Messages&nbsp;Script:<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;copy&nbsp;_relayChatCommand.applescript_&nbsp;to&nbsp;`~/Library/Application&nbsp;Scripts/con.apple.iChat`<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;open&nbsp;Messages<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;under&nbsp;`Preferences...`&nbsp;->&nbsp;`General`&nbsp;->&nbsp;`AppleScript&nbsp;handler`,&nbsp;select&nbsp;_relayChatCommand.applescript_&nbsp;<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;3.&nbsp;add&nbsp;to&nbsp;login&nbsp;items:<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;_postRestartScript.app_<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;_Safari_<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;_Messages_<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;4.&nbsp;System&nbsp;Preferences&nbsp;settings:<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`Accessibility`&nbsp;->&nbsp;`SystemVoice`:&nbsp;install&nbsp;voice&nbsp;_Allison_&nbsp;in&nbsp;<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`Network`:&nbsp;set&nbsp;manual&nbsp;IP&nbsp;Address:&nbsp;192.168.1.101<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;`Network`:&nbsp;check&nbsp;'Ask&nbsp;to&nbsp;join&nbsp;Networks'&nbsp;<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span><br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;*/</comment><br></code></div>
+                </body>
+            

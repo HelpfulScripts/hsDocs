@@ -1,0 +1,8300 @@
+{
+	"id": 0,
+	"name": "hsHomesec",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "\"node/comm/hsComm\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/comm/hsComm.ts",
+			"children": [
+				{
+					"id": 7,
+					"name": "Comm",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true,
+						"isAbstract": true
+					},
+					"children": [
+						{
+							"id": 8,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 9,
+									"name": "new Comm",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Comm",
+										"id": 7
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 10,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 17,
+							"name": "audioChat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 18,
+									"name": "audioChat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 19,
+											"name": "recipients",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "Recipient",
+													"id": 3
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 15,
+									"character": 22
+								}
+							]
+						},
+						{
+							"id": 10,
+							"name": "sendMessage",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 11,
+									"name": "sendMessage",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 12,
+											"name": "message",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 13,
+											"name": "recipients",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "Recipient",
+													"id": 3
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 13,
+									"character": 24
+								}
+							]
+						},
+						{
+							"id": 14,
+							"name": "videoChat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 15,
+									"name": "videoChat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 16,
+											"name": "recipients",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "Recipient",
+													"id": 3
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 14,
+									"character": 22
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								8
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								17,
+								10,
+								14
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsComm.ts",
+							"line": 10,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 3,
+					"name": "Recipient",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 5,
+							"name": "address",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 5,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 6,
+							"name": "group",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 6,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "tuple",
+								"elements": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						},
+						{
+							"id": 4,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsComm.ts",
+									"line": 4,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								5,
+								6,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsComm.ts",
+							"line": 3,
+							"character": 26
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						7
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/comm/hsComm.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 43,
+			"name": "\"node/comm/hsOSA\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/comm/hsOSA.ts",
+			"children": [
+				{
+					"id": 57,
+					"name": "email",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "sends an email to the list of addresses.",
+						"returns": "a promise that resolves to the returned result\n"
+					},
+					"signatures": [
+						{
+							"id": 58,
+							"name": "email",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sends an email to the list of addresses.",
+								"returns": "a promise that resolves to the returned result\n"
+							},
+							"parameters": [
+								{
+									"id": 59,
+									"name": "subject",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the subject of the message to send"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 60,
+									"name": "recipients",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "an array of recipient email addresses"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Recipient",
+											"id": 3
+										}
+									}
+								},
+								{
+									"id": 61,
+									"name": "content",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "optional; the content of the message to send"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"\""
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 63,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 50,
+					"name": "errorHandler",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 51,
+							"name": "errorHandler",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 52,
+									"name": "cmd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "(Anonymous function)"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 21,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 62,
+					"name": "facetime",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "initiates a facetime call to the specified buddy.",
+						"returns": "a promise that resolves to the returned result\n"
+					},
+					"signatures": [
+						{
+							"id": 63,
+							"name": "facetime",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "initiates a facetime call to the specified buddy.",
+								"returns": "a promise that resolves to the returned result\n"
+							},
+							"parameters": [
+								{
+									"id": 64,
+									"name": "recipient",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the buddy to initiate a facetime call to"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Recipient",
+										"id": 3
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 75,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 53,
+					"name": "iMessage",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "promises to send `message` to a list of buddies in `recipients` using iMessage.",
+						"returns": "a promise that resolves to the returned result\n"
+					},
+					"signatures": [
+						{
+							"id": 54,
+							"name": "iMessage",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "promises to send `message` to a list of buddies in `recipients` using iMessage.",
+								"returns": "a promise that resolves to the returned result\n"
+							},
+							"parameters": [
+								{
+									"id": 55,
+									"name": "message",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the message to send"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 56,
+									"name": "recipients",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "list of recipients in iMessage"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Recipient",
+											"id": 3
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 49,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 77,
+					"name": "isRunning",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "checks if an application is running.",
+						"returns": "a promise that resolves to True if the application is running, else False\n"
+					},
+					"signatures": [
+						{
+							"id": 78,
+							"name": "isRunning",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "checks if an application is running.",
+								"returns": "a promise that resolves to True if the application is running, else False\n"
+							},
+							"parameters": [
+								{
+									"id": 79,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the application to check."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 153,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 68,
+					"name": "launch",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "launches an application.",
+						"returns": "a promise that resolves to True if the application is running, else False\n"
+					},
+					"signatures": [
+						{
+							"id": 69,
+							"name": "launch",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "launches an application.",
+								"returns": "a promise that resolves to True if the application is running, else False\n"
+							},
+							"parameters": [
+								{
+									"id": 70,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the application to launch."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 102,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 71,
+					"name": "launchScript",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "launches an application.",
+						"returns": "a promise that resolves to True if the application is running, else False\n"
+					},
+					"signatures": [
+						{
+							"id": 72,
+							"name": "launchScript",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "launches an application.",
+								"returns": "a promise that resolves to True if the application is running, else False\n"
+							},
+							"parameters": [
+								{
+									"id": 73,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the application to launch."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 118,
+							"character": 25
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "quit",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "quits an application.",
+						"returns": "a promise that resolves to True if the application has quit, else False\n"
+					},
+					"signatures": [
+						{
+							"id": 75,
+							"name": "quit",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "quits an application.",
+								"returns": "a promise that resolves to True if the application has quit, else False\n"
+							},
+							"parameters": [
+								{
+									"id": 76,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the application to quit."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 135,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 44,
+					"name": "responseHandler",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 45,
+							"name": "responseHandler",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 46,
+									"name": "result",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 47,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 49,
+													"name": "err",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "node/comm/hsOSA.ts",
+															"line": 15,
+															"character": 45
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												},
+												{
+													"id": 48,
+													"name": "out",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "node/comm/hsOSA.ts",
+															"line": 15,
+															"character": 36
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														49,
+														48
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "node/comm/hsOSA.ts",
+													"line": 15,
+													"character": 32
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 15,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 86,
+					"name": "restart",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "sets the system audio volume to the specified value.",
+						"returns": "a promise that resolves to undefined\n"
+					},
+					"signatures": [
+						{
+							"id": 87,
+							"name": "restart",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sets the system audio volume to the specified value.",
+								"returns": "a promise that resolves to undefined\n"
+							},
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 189,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 65,
+					"name": "say",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "speaks the provided `text`.",
+						"returns": "a promise that resolves to the returned result\n"
+					},
+					"signatures": [
+						{
+							"id": 66,
+							"name": "say",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "speaks the provided `text`.",
+								"returns": "a promise that resolves to the returned result\n"
+							},
+							"parameters": [
+								{
+									"id": 67,
+									"name": "text",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the text to speak."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 90,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 80,
+					"name": "setBrightness",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "sets the brightness of the screen to the specified value",
+						"returns": "a promise that resolves to undefined\n"
+					},
+					"signatures": [
+						{
+							"id": 81,
+							"name": "setBrightness",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sets the brightness of the screen to the specified value",
+								"returns": "a promise that resolves to undefined\n"
+							},
+							"parameters": [
+								{
+									"id": 82,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the new brightness value (0...1)."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 166,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 83,
+					"name": "setVolume",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "sets the system audio volume to the specified value.",
+						"returns": "a promise that resolves to undefined\n"
+					},
+					"signatures": [
+						{
+							"id": 84,
+							"name": "setVolume",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sets the system audio volume to the specified value.",
+								"returns": "a promise that resolves to undefined\n"
+							},
+							"parameters": [
+								{
+									"id": 85,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "the new volume value (0...7)."
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSA.ts",
+							"line": 178,
+							"character": 22
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						57,
+						50,
+						62,
+						53,
+						77,
+						68,
+						71,
+						74,
+						44,
+						86,
+						65,
+						80,
+						83
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/comm/hsOSA.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 20,
+			"name": "\"node/comm/hsOSAClient\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/comm/hsOSAClient.ts",
+			"children": [
+				{
+					"id": 21,
+					"name": "remoteCommands",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Collection of client-side (OSA-side) scripts to be executed in the context of Apple's\nOpen Scripting Architecture (OSA). The interfacing with OSA is done using\n{@link https://github.com/brandonhorst/node-osa brandonhorst's node-osa} module."
+					},
+					"children": [
+						{
+							"id": 30,
+							"name": "osaBrightness",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 108,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `value => {\n        const Prefs = Application('System Preferences');\n        Prefs.includeStandardAdditions = true;\n        Prefs.activate();\n        const pane = Prefs.panes.whose({id:\"com.apple.preference.displays\"})[0];\n        const anchor = pane.anchors.whose({name: \"displaysDisplayTab\"})[0];\n        Prefs.reveal(anchor);\n        delay(1);\n        const System = Application('System Events');\n        const process = System.processes.whose({name:'System Preferences'})[0];\n        const window = process.windows[0];\n        const tabgroup = window.tabGroups[0];\n        const group = tabgroup.groups[0];\n        const slider = group.sliders[0];\n        slider.value = value;\n        delay(1);\n        Prefs.quit();\n        return true;\n    }`"
+						},
+						{
+							"id": 29,
+							"name": "osaCallFacetime",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 100,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `() => {\n        const app = Application(\"System Events\");\n        const prc = app.applicationProcesses.whose({name:\"FaceTime\"})[0];\n        const win = prc.windows[0];\n        const btn = win.buttons.whose({name:'Call'})[0];\n        btn.click();\n        return true;\n    }`"
+						},
+						{
+							"id": 26,
+							"name": "osaLaunch",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 83,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `function(name) {  \n        const app = Application(name);\n        app.includeStandardAdditions = true;\n        app.activate();\n        return true;\n    }`"
+						},
+						{
+							"id": 27,
+							"name": "osaLaunchScript",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 89,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `name => {  \n        const app = Application(name);\n        app.launch();\n        app.run();\n        return true;\n    }`"
+						},
+						{
+							"id": 22,
+							"name": "osaMessageListen",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 11,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `function() {\n        log.error('   === osaMessageListen not implemented');\n    }`"
+						},
+						{
+							"id": 28,
+							"name": "osaQuit",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 95,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `name => {\n        const app = Application(name);\n        app.quit();\n        return true;\n    }`"
+						},
+						{
+							"id": 32,
+							"name": "osaRestart",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 133,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `() => {\n        const app = Application.currentApplication();\n        app.includeStandardAdditions = true;\n        app.restart();\n        return true;\n    }`"
+						},
+						{
+							"id": 25,
+							"name": "osaSay",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 76,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `function(text) {\n        const app = Application.currentApplication();\n        app.includeStandardAdditions = true;\n        app.setVolume(7);\n        app.say(text, {using:\"Allison\"});\n        app.setVolume(0);\n    }`"
+						},
+						{
+							"id": 24,
+							"name": "osaSendEmail",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 64,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `function(subject, addresses, content) {\n        const Mail = Application('Mail');\n        Mail.includeStandardAdditions = true;\n        const message = Mail.OutgoingMessage().make();\n        message.subject = subject;\n        message.content = content;\n        message.visible = true;\n        for (let i=0; i<addresses.length; i++) {\n            message.toRecipients.push(Mail.Recipient({ address: addresses[i] }));\n        }\n        return message.send();\n    }`"
+						},
+						{
+							"id": 23,
+							"name": "osaSendIMessage",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 14,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `function(message, recipients) {\n        function getService(services) {\n            for (let s=0; s<services.length; s++) {\n                if (services[s].serviceType() === 'iMessage') {  return services[s];  }\n            }\n            return undefined;\n        }\n        function getChat(recipients, services) {\n            const service = getService(services);\n            if (!service) { return undefined; }\n            const chats = service.chats;\n            for (let c=0; c<chats.length; c++) {\n                return chats[c]; \n            }\n            return undefined;\n        }\n        \n        function getBuddy(recipient, services) {\n            for (let s=0; s<services.length; s++) {\n                const service = services[s];\n                if (service.serviceType() === 'iMessage') {\n                    const buddies = service.buddies;\n                    for (let b=0; b<buddies.length; b++) {\n                        const buddy = buddies[b];\n                        if (buddy.handle() === recipient) {\n                            return buddy;\n                        }\n                    }\n                }\n            }\n            return undefined;\n        }\n    \n        const iMessage = Application('Messages');\n        iMessage.includeStandardAdditions = true;\n        \n        if (message.indexOf('/')===0) { message = Path(message); }\n        const chat = getChat(recipients, iMessage.services);\n        if (chat) { \n            iMessage.send(message, {to:chat}); }\n        else {\n            for (let r=0; r<recipients.length; r++) {\n                const buddy = getBuddy(recipients[r], iMessage.services);\n                if (buddy) { \n                    iMessage.send(message, {to:buddy}); \n                }\n            }\n        }\n        return 'done'; \n    }`"
+						},
+						{
+							"id": 31,
+							"name": "osaVolume",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/comm/hsOSAClient.ts",
+									"line": 127,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": " `value => {\n        const app = Application.currentApplication();\n        app.includeStandardAdditions = true;\n        app.setVolume(parseInt(value));\n        return true;\n    }`"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								30,
+								29,
+								26,
+								27,
+								22,
+								28,
+								32,
+								25,
+								24,
+								23,
+								31
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/hsOSAClient.ts",
+							"line": 10,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						21
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/comm/hsOSAClient.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 33,
+			"name": "\"node/comm/osalib\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/comm/osalib.ts",
+			"children": [
+				{
+					"id": 34,
+					"name": "consoleLogPrefix",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/comm/osalib.ts",
+							"line": 9,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "<brandonhorst:node-osa>"
+					},
+					"defaultValue": "\"<brandonhorst:node-osa>\""
+				},
+				{
+					"id": 35,
+					"name": "consoleLogSuffix",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/comm/osalib.ts",
+							"line": 10,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "</brandonhorst:node-osa>"
+					},
+					"defaultValue": "\"</brandonhorst:node-osa>\""
+				},
+				{
+					"id": 36,
+					"name": "extractLogs",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 37,
+							"name": "extractLogs",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 38,
+									"name": "stderr",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/osalib.ts",
+							"line": 12,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 39,
+					"name": "osaJS",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 40,
+							"name": "osaJS",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"returns": "a promise with resolve(stdout, errors) and reject(error, errorLine)\n",
+								"tags": [
+									{
+										"tag": "description",
+										"text": "returns a promise to execute osaString."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 41,
+									"name": "osaFunction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 42,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/comm/osalib.ts",
+							"line": 28,
+							"character": 21
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						34,
+						35
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						36,
+						39
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/comm/osalib.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 374,
+			"name": "\"node/core/hsAlarmInit\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/core/hsAlarmInit.ts",
+			"children": [
+				{
+					"id": 375,
+					"name": "devices",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmInit.ts",
+							"line": 10,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 381,
+					"name": "addCommands",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 382,
+							"name": "addCommands",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmInit.ts",
+							"line": 25,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 376,
+					"name": "setRestartTimer",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 377,
+							"name": "setRestartTimer",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 378,
+									"name": "hour",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 379,
+									"name": "minute",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 380,
+									"name": "recipient",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Recipient",
+										"id": 3
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmInit.ts",
+							"line": 12,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 383,
+					"name": "startSecuritySystem",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 384,
+							"name": "startSecuritySystem",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 385,
+									"name": "settings",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Settings",
+										"id": 89
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmInit.ts",
+							"line": 43,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 386,
+					"name": "startSecuritySystemTestMode",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 387,
+							"name": "startSecuritySystemTestMode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 388,
+									"name": "settings",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Settings",
+										"id": 89
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmInit.ts",
+							"line": 62,
+							"character": 40
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						375
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						381,
+						376,
+						383,
+						386
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/core/hsAlarmInit.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 389,
+			"name": "\"node/core/hsAlarmMain\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/core/hsAlarmMain.ts",
+			"comment": {
+				"shortText": "Home Alarm Manager - Main entry point\nCall as:\n```\nnode run\n```"
+			},
+			"children": [
+				{
+					"id": 390,
+					"name": "settings",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "node/core/hsAlarmMain.ts",
+							"line": 23,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Settings",
+						"id": 89
+					},
+					"defaultValue": " <Settings>{}"
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						390
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/core/hsAlarmMain.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 312,
+			"name": "\"node/core/hsCommandExecution\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/core/hsCommandExecution.ts",
+			"children": [
+				{
+					"id": 314,
+					"name": "gActiveRecipient",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 22,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": "\"\""
+				},
+				{
+					"id": 313,
+					"name": "gRecipients",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 21,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Recipient",
+							"id": 3
+						}
+					},
+					"defaultValue": " <Recipient[]>[]"
+				},
+				{
+					"id": 337,
+					"name": "armFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "arms all armable devices. If `away` is specified, it also sets the device's audible alarm repsonses\nFormat:\n`alarm [away]`"
+					},
+					"signatures": [
+						{
+							"id": 338,
+							"name": "armFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "arms all armable devices. If `away` is specified, it also sets the device's audible alarm repsonses\nFormat:\n`alarm [away]`"
+							},
+							"parameters": [
+								{
+									"id": 339,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "boolean"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 114,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 315,
+					"name": "armingCall",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 316,
+							"name": "armingCall",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 317,
+									"name": "deviceCalls",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Promise",
+											"typeArguments": [
+												{
+													"type": "intrinsic",
+													"name": "boolean"
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 29,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 343,
+					"name": "armingStatusFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 344,
+							"name": "armingStatusFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 345,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "boolean"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 133,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 340,
+					"name": "disarmFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 341,
+							"name": "disarmFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 342,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "boolean"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 124,
+							"character": 21
+						}
+					]
+				},
+				{
+					"id": 331,
+					"name": "facetimeFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 332,
+							"name": "facetimeFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 333,
+									"name": "recipient",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Recipient",
+										"id": 3
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 97,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 322,
+					"name": "helpFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 323,
+							"name": "helpFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 61,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 318,
+					"name": "init",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 319,
+							"name": "init",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 320,
+									"name": "recipients",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "tuple",
+										"elements": [
+											{
+												"type": "reference",
+												"name": "Recipient",
+												"id": 3
+											}
+										]
+									}
+								},
+								{
+									"id": 321,
+									"name": "activeRecipient",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Recipient",
+											"id": 3
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 48,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 346,
+					"name": "lightFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 347,
+							"name": "lightFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 348,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "Query",
+												"id": 357
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 140,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 324,
+					"name": "messageListenerIdle",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 325,
+							"name": "messageListenerIdle",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 67,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 326,
+					"name": "restartFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 327,
+							"name": "restartFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 72,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 334,
+					"name": "sayFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"signatures": [
+						{
+							"id": 335,
+							"name": "sayFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 336,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 102,
+							"character": 18
+						}
+					]
+				},
+				{
+					"id": 328,
+					"name": "snapFn",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "request to snap a picture. If a device name is specified, a snapshot from that device will be requested.\nIf no name is specified, a snapshot from each available camera willbe requested."
+					},
+					"signatures": [
+						{
+							"id": 329,
+							"name": "snapFn",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "request to snap a picture. If a device name is specified, a snapshot from that device will be requested.\nIf no name is specified, a snapshot from each available camera willbe requested."
+							},
+							"parameters": [
+								{
+									"id": 330,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": ": `snap [deviceName]`\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandExecution.ts",
+							"line": 86,
+							"character": 19
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						314,
+						313
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						337,
+						315,
+						343,
+						340,
+						331,
+						322,
+						318,
+						346,
+						324,
+						326,
+						334,
+						328
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/core/hsCommandExecution.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 349,
+			"name": "\"node/core/hsCommandReceiver\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/core/hsCommandReceiver.ts",
+			"children": [
+				{
+					"id": 350,
+					"name": "Command",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 351,
+							"name": "command",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsCommandReceiver.ts",
+									"line": 11,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 352,
+							"name": "commandFn",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsCommandReceiver.ts",
+									"line": 12,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 353,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 354,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 355,
+													"name": "query",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												}
+											],
+											"type": {
+												"type": "reference",
+												"name": "Promise",
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "node/core/hsCommandReceiver.ts",
+											"line": 12,
+											"character": 14
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 356,
+							"name": "desc",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsCommandReceiver.ts",
+									"line": 13,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								351,
+								352,
+								356
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 10,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 357,
+					"name": "Query",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 359,
+							"name": "command",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsCommandReceiver.ts",
+									"line": 18,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 358,
+							"name": "event",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsCommandReceiver.ts",
+									"line": 17,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								359,
+								358
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 16,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 360,
+					"name": "gCommands",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 22,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Command",
+							"id": 350
+						}
+					},
+					"defaultValue": " <Command[]>[]"
+				},
+				{
+					"id": 367,
+					"name": "addCommand",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "adds a command and a corresponding callback function to the list of\nregistered commands."
+					},
+					"signatures": [
+						{
+							"id": 368,
+							"name": "addCommand",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "adds a command and a corresponding callback function to the list of\nregistered commands."
+							},
+							"parameters": [
+								{
+									"id": 369,
+									"name": "cmd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 370,
+									"name": "cmdFn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 371,
+									"name": "desc",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 75,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 372,
+					"name": "getCommands",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "adds a command and a corresponding callback function to the list of\nregistered commands.",
+						"returns": "string[ ] an array of command strings\n"
+					},
+					"signatures": [
+						{
+							"id": 373,
+							"name": "getCommands",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "adds a command and a corresponding callback function to the list of\nregistered commands.",
+								"returns": "string[ ] an array of command strings\n"
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 87,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 361,
+					"name": "interpretCommand",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 362,
+							"name": "interpretCommand",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 363,
+									"name": "query",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Query",
+										"id": 357
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 24,
+							"character": 25
+						}
+					]
+				},
+				{
+					"id": 364,
+					"name": "listen",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "opens an http server on the speicfied `port` and listens for requests.\nThe `query` part of the request is passed into the callback for any registered command.\n`query.command` is used to identify the intended command."
+					},
+					"signatures": [
+						{
+							"id": 365,
+							"name": "listen",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "opens an http server on the speicfied `port` and listens for requests.\nThe `query` part of the request is passed into the callback for any registered command.\n`query.command` is used to identify the intended command."
+							},
+							"parameters": [
+								{
+									"id": 366,
+									"name": "port",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsCommandReceiver.ts",
+							"line": 45,
+							"character": 19
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						350,
+						357
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						360
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						367,
+						372,
+						361,
+						364
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/core/hsCommandReceiver.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 88,
+			"name": "\"node/core/hsSettings\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/core/hsSettings.ts",
+			"children": [
+				{
+					"id": 89,
+					"name": "Settings",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 97,
+							"name": "activeRecipient",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 12,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 95,
+							"name": "cmdPort",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 10,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 91,
+							"name": "devices",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 6,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "tuple",
+								"elements": [
+									{
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									}
+								]
+							}
+						},
+						{
+							"id": 90,
+							"name": "homeSecDir",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 5,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 93,
+							"name": "logDir",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 8,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 94,
+							"name": "logFile",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 9,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 99,
+							"name": "passwd",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 14,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 92,
+							"name": "recDir",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 7,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 96,
+							"name": "recipients",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 11,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "tuple",
+								"elements": [
+									{
+										"type": "reference",
+										"name": "Recipient",
+										"id": 3
+									}
+								]
+							}
+						},
+						{
+							"id": 98,
+							"name": "user",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/core/hsSettings.ts",
+									"line": 13,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								97,
+								95,
+								91,
+								90,
+								93,
+								94,
+								99,
+								92,
+								96,
+								98
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/core/hsSettings.ts",
+							"line": 4,
+							"character": 25
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						89
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/core/hsSettings.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 100,
+			"name": "\"node/device/hsDevice\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/device/hsDevice.ts",
+			"children": [
+				{
+					"id": 198,
+					"name": "AbstractCamera",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true,
+						"isAbstract": true
+					},
+					"children": [
+						{
+							"id": 208,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 209,
+									"name": "new AbstractCamera",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 210,
+											"name": "device",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DeviceSettings",
+												"id": 101
+											}
+										},
+										{
+											"id": 211,
+											"name": "settings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Settings",
+												"id": 89
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "AbstractCamera",
+										"id": 198
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractDevice.__constructor",
+										"id": 190
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 183,
+									"character": 5
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractDevice.__constructor",
+								"id": 190
+							}
+						},
+						{
+							"id": 200,
+							"name": "armed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 143,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 199,
+							"name": "audible",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 142,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 231,
+							"name": "arm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 232,
+									"name": "arm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns a promise to arm or disarm the device.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"parameters": [
+										{
+											"id": 233,
+											"name": "arm",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "`true` will arm, `false` will disarm the device."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.arm",
+										"id": 129
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 243,
+									"character": 16
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.arm",
+								"id": 128
+							}
+						},
+						{
+							"id": 229,
+							"name": "armStatus",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 230,
+									"name": "armStatus",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to check whether the device is armed or not.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.armStatus",
+										"id": 127
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 236,
+									"character": 22
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.armStatus",
+								"id": 126
+							}
+						},
+						{
+							"id": 205,
+							"name": "decodeXmlResult",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isProtected": true
+							},
+							"signatures": [
+								{
+									"id": 206,
+									"name": "decodeXmlResult",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 207,
+											"name": "xml",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 159,
+									"character": 29
+								}
+							]
+						},
+						{
+							"id": 201,
+							"name": "getAttributes",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 202,
+									"name": "getAttributes",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 203,
+											"name": "tag",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 204,
+											"name": "result",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 145,
+									"character": 25
+								}
+							]
+						},
+						{
+							"id": 237,
+							"name": "getAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 238,
+									"name": "getAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getAudible",
+										"id": 137
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 257,
+									"character": 14
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getAudible",
+								"id": 136
+							}
+						},
+						{
+							"id": 223,
+							"name": "getFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 224,
+									"name": "getFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.getFtpCfg",
+										"id": 159
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 218,
+									"character": 22
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.getFtpCfg",
+								"id": 158
+							}
+						},
+						{
+							"id": 247,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 248,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.getName",
+										"id": 196
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getName",
+										"id": 141
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 135,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.getName",
+								"id": 196
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getName",
+								"id": 140
+							}
+						},
+						{
+							"id": 219,
+							"name": "getRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 220,
+									"name": "getRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.getRecordingDir",
+										"id": 155
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 205,
+									"character": 19
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.getRecordingDir",
+								"id": 154
+							}
+						},
+						{
+							"id": 245,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 246,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.getSettings",
+										"id": 194
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getSettings",
+										"id": 139
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 131,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.getSettings",
+								"id": 194
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getSettings",
+								"id": 138
+							}
+						},
+						{
+							"id": 241,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 242,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasAlarm",
+										"id": 186
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasAlarm",
+										"id": 125
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 123,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasAlarm",
+								"id": 186
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasAlarm",
+								"id": 124
+							}
+						},
+						{
+							"id": 239,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 240,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasAudio",
+										"id": 184
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasAudio",
+										"id": 145
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 122,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasAudio",
+								"id": 184
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasAudio",
+								"id": 144
+							}
+						},
+						{
+							"id": 243,
+							"name": "hasMotionAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 244,
+									"name": "hasMotionAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasMotionAlarm",
+										"id": 188
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 124,
+									"character": 18
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasMotionAlarm",
+								"id": 188
+							}
+						},
+						{
+							"id": 212,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 213,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractDevice.hasVideo",
+										"id": 182
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasVideo",
+										"id": 143
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 191,
+									"character": 12
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractDevice.hasVideo",
+								"id": 182
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasVideo",
+								"id": 142
+							}
+						},
+						{
+							"id": 214,
+							"name": "isArmed",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 215,
+									"name": "isArmed",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.isArmed",
+										"id": 132
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 192,
+									"character": 11
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.isArmed",
+								"id": 131
+							}
+						},
+						{
+							"id": 234,
+							"name": "setAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 235,
+									"name": "setAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global audible flag. If the flag is set to true,\ndevices will sound an audible alarm after the next time they are armed.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 236,
+											"name": "audible",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the name of the device"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.setAudible",
+										"id": 134
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 251,
+									"character": 14
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.setAudible",
+								"id": 133
+							}
+						},
+						{
+							"id": 225,
+							"name": "setFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 226,
+									"name": "setFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to set the device's ftp confguration.",
+										"returns": "Promise a promise that resolves to undefined.\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.setFtpCfg",
+										"id": 161
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 224,
+									"character": 22
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.setFtpCfg",
+								"id": 160
+							}
+						},
+						{
+							"id": 216,
+							"name": "setRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 217,
+									"name": "setRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global snapshot directory.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 218,
+											"name": "recDir",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "absolute path to write recordings to"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.setRecordingDir",
+										"id": 152
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 199,
+									"character": 19
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.setRecordingDir",
+								"id": 151
+							}
+						},
+						{
+							"id": 221,
+							"name": "snapPicture",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 222,
+									"name": "snapPicture",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "captures a snapshot from the device and saves it to `snapshotDir`"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.snapPicture",
+										"id": 157
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 212,
+									"character": 24
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.snapPicture",
+								"id": 156
+							}
+						},
+						{
+							"id": 227,
+							"name": "testFtpServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isAbstract": true
+							},
+							"signatures": [
+								{
+									"id": 228,
+									"name": "testFtpServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`.",
+										"returns": "Promise a promise that resolves to the testResult: 0 = success, -1 = failure, -3 = unknown\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.testFtpServer",
+										"id": 163
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 230,
+									"character": 26
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.testFtpServer",
+								"id": 162
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								208
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								200,
+								199
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								231,
+								229,
+								205,
+								201,
+								237,
+								223,
+								247,
+								219,
+								245,
+								241,
+								239,
+								243,
+								212,
+								214,
+								234,
+								225,
+								216,
+								221,
+								227
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 141,
+							"character": 36
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "AbstractDevice",
+							"id": 180
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "Foscam",
+							"id": 250
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Device",
+							"id": 112
+						},
+						{
+							"type": "reference",
+							"name": "Camera",
+							"id": 146
+						},
+						{
+							"type": "reference",
+							"name": "AlarmDevice",
+							"id": 123
+						}
+					]
+				},
+				{
+					"id": 180,
+					"name": "AbstractDevice",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true,
+						"isAbstract": true
+					},
+					"children": [
+						{
+							"id": 190,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 191,
+									"name": "new AbstractDevice",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 192,
+											"name": "deviceSettings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DeviceSettings",
+												"id": 101
+											}
+										},
+										{
+											"id": 193,
+											"name": "settings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Settings",
+												"id": 89
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "AbstractDevice",
+										"id": 180
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 124,
+									"character": 49
+								}
+							]
+						},
+						{
+							"id": 181,
+							"name": "settings",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 119,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "DeviceSettings",
+								"id": 101
+							}
+						},
+						{
+							"id": 196,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 197,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Device.getName",
+										"id": 116
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 135,
+									"character": 11
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Device.getName",
+								"id": 115
+							}
+						},
+						{
+							"id": 194,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 195,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Device.getSettings",
+										"id": 114
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 131,
+									"character": 15
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Device.getSettings",
+								"id": 113
+							}
+						},
+						{
+							"id": 186,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 187,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Device.hasAlarm",
+										"id": 122
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 123,
+									"character": 12
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Device.hasAlarm",
+								"id": 121
+							}
+						},
+						{
+							"id": 184,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 185,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Device.hasAudio",
+										"id": 120
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 122,
+									"character": 12
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Device.hasAudio",
+								"id": 119
+							}
+						},
+						{
+							"id": 188,
+							"name": "hasMotionAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 189,
+									"name": "hasMotionAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 124,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 182,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 183,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Device.hasVideo",
+										"id": 118
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 121,
+									"character": 12
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"name": "Device.hasVideo",
+								"id": 117
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								190
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								181
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								196,
+								194,
+								186,
+								184,
+								188,
+								182
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 118,
+							"character": 36
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "AbstractCamera",
+							"id": 198
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Device",
+							"id": 112
+						}
+					]
+				},
+				{
+					"id": 170,
+					"name": "DeviceList",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 171,
+							"name": "list",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isStatic": true,
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 96,
+									"character": 23
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Device",
+									"id": 112
+								}
+							},
+							"defaultValue": " <Device[]>[]"
+						},
+						{
+							"id": 172,
+							"name": "addDevice",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 173,
+									"name": "addDevice",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 174,
+											"name": "device",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Device",
+												"id": 112
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 97,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 175,
+							"name": "getDevice",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 176,
+									"name": "getDevice",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 177,
+											"name": "name",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Device",
+										"id": 112
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 108,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 178,
+							"name": "getDevices",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 179,
+									"name": "getDevices",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns a copy of the device list"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "Device",
+											"id": 112
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 113,
+									"character": 21
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								171
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								172,
+								175,
+								178
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 95,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 123,
+					"name": "AlarmDevice",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 128,
+							"name": "arm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 129,
+									"name": "arm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns a promise to arm or disarm the device.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"parameters": [
+										{
+											"id": 130,
+											"name": "arm",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "`true` will arm, `false` will disarm the device."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 40,
+									"character": 7
+								}
+							]
+						},
+						{
+							"id": 126,
+							"name": "armStatus",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 127,
+									"name": "armStatus",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to check whether the device is armed or not.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 33,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 136,
+							"name": "getAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 137,
+									"name": "getAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the current value of the audible flag"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 53,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 140,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 141,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.getName",
+										"id": 115
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 20,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.getName",
+								"id": 115
+							}
+						},
+						{
+							"id": 138,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 139,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.getSettings",
+										"id": 113
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 19,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.getSettings",
+								"id": 113
+							}
+						},
+						{
+							"id": 124,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 125,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Device.hasAlarm",
+										"id": 121
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 27,
+									"character": 12
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Device.hasAlarm",
+								"id": 121
+							}
+						},
+						{
+							"id": 144,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 145,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.hasAudio",
+										"id": 119
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 22,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.hasAudio",
+								"id": 119
+							}
+						},
+						{
+							"id": 142,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 143,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.hasVideo",
+										"id": 117
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 21,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.hasVideo",
+								"id": 117
+							}
+						},
+						{
+							"id": 131,
+							"name": "isArmed",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 132,
+									"name": "isArmed",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 42,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 133,
+							"name": "setAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 134,
+									"name": "setAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global audible flag. If the flag is set to true,\ndevices will sound an audible alarm after the next time they are armed.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 135,
+											"name": "audible",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the name of the device"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 50,
+									"character": 14
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								128,
+								126,
+								136,
+								140,
+								138,
+								124,
+								144,
+								142,
+								131,
+								133
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 26,
+							"character": 28
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Device",
+							"id": 112
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"name": "AbstractCamera",
+							"id": 198
+						},
+						{
+							"type": "reference",
+							"name": "Foscam",
+							"id": 250
+						}
+					]
+				},
+				{
+					"id": 146,
+					"name": "Camera",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 158,
+							"name": "getFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 159,
+									"name": "getFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 80,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 166,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 167,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.getName",
+										"id": 115
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 20,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.getName",
+								"id": 115
+							}
+						},
+						{
+							"id": 154,
+							"name": "getRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 155,
+									"name": "getRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "get absolute path on host system to where to store recordings"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 69,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 164,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 165,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.getSettings",
+										"id": 113
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 19,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.getSettings",
+								"id": 113
+							}
+						},
+						{
+							"id": 168,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 169,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "Device.hasAlarm",
+										"id": 121
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 23,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Device.hasAlarm",
+								"id": 121
+							}
+						},
+						{
+							"id": 149,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 150,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Device.hasAudio",
+										"id": 119
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 58,
+									"character": 12
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Device.hasAudio",
+								"id": 119
+							}
+						},
+						{
+							"id": 147,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 148,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "Device.hasVideo",
+										"id": 117
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 57,
+									"character": 12
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "Device.hasVideo",
+								"id": 117
+							}
+						},
+						{
+							"id": 160,
+							"name": "setFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "setFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to set the device's ftp confguration.",
+										"returns": "Promise a promise that resolves to undefined.\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 86,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 151,
+							"name": "setRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 152,
+									"name": "setRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global snapshot directory.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 153,
+											"name": "recDir",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "path to write snapshots to"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 65,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 156,
+							"name": "snapPicture",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 157,
+									"name": "snapPicture",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "captures a snapshot from the device and saves it to `snapshotDir`"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 74,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 162,
+							"name": "testFtpServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 163,
+									"name": "testFtpServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`.",
+										"returns": "Promise a promise that resolves to the testResult: 0 = success, -1 = failure, -3 = unknown\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 92,
+									"character": 17
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								158,
+								166,
+								154,
+								164,
+								168,
+								149,
+								147,
+								160,
+								151,
+								156,
+								162
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 56,
+							"character": 23
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "Device",
+							"id": 112
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"name": "AbstractCamera",
+							"id": 198
+						},
+						{
+							"type": "reference",
+							"name": "Foscam",
+							"id": 250
+						}
+					]
+				},
+				{
+					"id": 112,
+					"name": "Device",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 115,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 116,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 20,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 113,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 114,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 19,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 121,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 122,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 23,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 119,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 120,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 22,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 117,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 118,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 21,
+									"character": 12
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								115,
+								113,
+								121,
+								119,
+								117
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 18,
+							"character": 23
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"name": "AlarmDevice",
+							"id": 123
+						},
+						{
+							"type": "reference",
+							"name": "Camera",
+							"id": 146
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"name": "AbstractCamera",
+							"id": 198
+						},
+						{
+							"type": "reference",
+							"name": "AbstractDevice",
+							"id": 180
+						},
+						{
+							"type": "reference",
+							"name": "Foscam",
+							"id": 250
+						}
+					]
+				},
+				{
+					"id": 101,
+					"name": "DeviceSettings",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 111,
+							"name": "alarmDevs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 15,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "AlarmDevice",
+									"id": 123
+								}
+							}
+						},
+						{
+							"id": 110,
+							"name": "cameras",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 14,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Camera",
+									"id": 146
+								}
+							}
+						},
+						{
+							"id": 109,
+							"name": "devices",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 13,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "Device",
+									"id": 112
+								}
+							}
+						},
+						{
+							"id": 105,
+							"name": "host",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 9,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 102,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 6,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 103,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 7,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 107,
+							"name": "port",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 11,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 106,
+							"name": "prot",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 10,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 108,
+							"name": "recDir",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 12,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 104,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 8,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								111,
+								110,
+								109,
+								105,
+								102,
+								103,
+								107,
+								106,
+								108,
+								104
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsDevice.ts",
+							"line": 5,
+							"character": 31
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						198,
+						180,
+						170
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						123,
+						146,
+						112,
+						101
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/device/hsDevice.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 249,
+			"name": "\"node/device/hsFoscam\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/node/device/hsFoscam.ts",
+			"children": [
+				{
+					"id": 250,
+					"name": "Foscam",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 256,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 257,
+									"name": "new Foscam",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 258,
+											"name": "device",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DeviceSettings",
+												"id": 101
+											}
+										},
+										{
+											"id": 259,
+											"name": "settings",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Settings",
+												"id": 89
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Foscam",
+										"id": 250
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.__constructor",
+										"id": 208
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 64,
+									"character": 5
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.__constructor",
+								"id": 208
+							}
+						},
+						{
+							"id": 273,
+							"name": "armed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isProtected": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 143,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false",
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.armed",
+								"id": 200
+							}
+						},
+						{
+							"id": 251,
+							"name": "path",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 29,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"/cgi-bin/CGIProxy.fcgi?usr=doggie&pwd=a3c-woof-!Yo\""
+						},
+						{
+							"id": 270,
+							"name": "arm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 271,
+									"name": "arm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns a promise to arm or disarm the device.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"parameters": [
+										{
+											"id": 272,
+											"name": "arm",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.arm",
+										"id": 231
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.arm",
+										"id": 129
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 173,
+									"character": 7
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.arm",
+								"id": 231
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.arm",
+								"id": 128
+							}
+						},
+						{
+							"id": 268,
+							"name": "armStatus",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 269,
+									"name": "armStatus",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to check whether the device is armed or not.",
+										"returns": "Promise a promise that resolves to True (status: armed) or False (status: disarmed).\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.armStatus",
+										"id": 229
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.armStatus",
+										"id": 127
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 156,
+									"character": 13
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.armStatus",
+								"id": 229
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.armStatus",
+								"id": 126
+							}
+						},
+						{
+							"id": 274,
+							"name": "decodeXmlResult",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isProtected": true
+							},
+							"signatures": [
+								{
+									"id": 275,
+									"name": "decodeXmlResult",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 276,
+											"name": "xml",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.decodeXmlResult",
+										"id": 205
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 159,
+									"character": 29
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.decodeXmlResult",
+								"id": 205
+							}
+						},
+						{
+							"id": 289,
+							"name": "getAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 290,
+									"name": "getAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.getAudible",
+										"id": 237
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getAudible",
+										"id": 137
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 257,
+									"character": 14
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.getAudible",
+								"id": 237
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getAudible",
+								"id": 136
+							}
+						},
+						{
+							"id": 262,
+							"name": "getFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 263,
+									"name": "getFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`."
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.getFtpCfg",
+										"id": 223
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.getFtpCfg",
+										"id": 159
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 111,
+									"character": 13
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.getFtpCfg",
+								"id": 223
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.getFtpCfg",
+								"id": 158
+							}
+						},
+						{
+							"id": 299,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 300,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.getName",
+										"id": 196
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getName",
+										"id": 141
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 135,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.getName",
+								"id": 196
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getName",
+								"id": 140
+							}
+						},
+						{
+							"id": 284,
+							"name": "getRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 285,
+									"name": "getRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.getRecordingDir",
+										"id": 219
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.getRecordingDir",
+										"id": 155
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 205,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.getRecordingDir",
+								"id": 219
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.getRecordingDir",
+								"id": 154
+							}
+						},
+						{
+							"id": 297,
+							"name": "getSettings",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 298,
+									"name": "getSettings",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DeviceSettings",
+										"id": 101
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.getSettings",
+										"id": 194
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.getSettings",
+										"id": 139
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 131,
+									"character": 15
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.getSettings",
+								"id": 194
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.getSettings",
+								"id": 138
+							}
+						},
+						{
+							"id": 293,
+							"name": "hasAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 294,
+									"name": "hasAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasAlarm",
+										"id": 186
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasAlarm",
+										"id": 125
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 123,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasAlarm",
+								"id": 186
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasAlarm",
+								"id": 124
+							}
+						},
+						{
+							"id": 291,
+							"name": "hasAudio",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 292,
+									"name": "hasAudio",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasAudio",
+										"id": 184
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasAudio",
+										"id": 145
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 122,
+									"character": 12
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasAudio",
+								"id": 184
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasAudio",
+								"id": 144
+							}
+						},
+						{
+							"id": 295,
+							"name": "hasMotionAlarm",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 296,
+									"name": "hasMotionAlarm",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractDevice.hasMotionAlarm",
+										"id": 188
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 124,
+									"character": 18
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractDevice.hasMotionAlarm",
+								"id": 188
+							}
+						},
+						{
+							"id": 277,
+							"name": "hasVideo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 278,
+									"name": "hasVideo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractDevice.hasVideo",
+										"id": 182
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.hasVideo",
+										"id": 212
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.hasVideo",
+										"id": 143
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 191,
+									"character": 12
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractDevice.hasVideo",
+								"id": 182
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.hasVideo",
+								"id": 212
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.hasVideo",
+								"id": 142
+							}
+						},
+						{
+							"id": 279,
+							"name": "isArmed",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 280,
+									"name": "isArmed",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.isArmed",
+										"id": 214
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.isArmed",
+										"id": 132
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 192,
+									"character": 11
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.isArmed",
+								"id": 214
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.isArmed",
+								"id": 131
+							}
+						},
+						{
+							"id": 252,
+							"name": "sendCommandToFoscam",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 253,
+									"name": "sendCommandToFoscam",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promised to send `cmd` to the foscam camera specified in `options`"
+									},
+									"parameters": [
+										{
+											"id": 254,
+											"name": "cmd",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the command string to send"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 255,
+											"name": "dynData",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 36,
+									"character": 31
+								}
+							]
+						},
+						{
+							"id": 286,
+							"name": "setAudible",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 287,
+									"name": "setAudible",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global audible flag. If the flag is set to true,\ndevices will sound an audible alarm after the next time they are armed.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 288,
+											"name": "audible",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the name of the device"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.setAudible",
+										"id": 234
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "AlarmDevice.setAudible",
+										"id": 134
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 251,
+									"character": 14
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.setAudible",
+								"id": 234
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "AlarmDevice.setAudible",
+								"id": 133
+							}
+						},
+						{
+							"id": 264,
+							"name": "setFtpCfg",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 265,
+									"name": "setFtpCfg",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "promises to set the device's ftp confguration.",
+										"returns": "Promise a promise that resolves to undefined.\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.setFtpCfg",
+										"id": 225
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.setFtpCfg",
+										"id": 161
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 122,
+									"character": 13
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.setFtpCfg",
+								"id": 225
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.setFtpCfg",
+								"id": 160
+							}
+						},
+						{
+							"id": 281,
+							"name": "setRecordingDir",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 282,
+									"name": "setRecordingDir",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the global snapshot directory.",
+										"returns": "Promise a promise that always resolves to True.\n"
+									},
+									"parameters": [
+										{
+											"id": 283,
+											"name": "recDir",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "absolute path to write recordings to"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									},
+									"inheritedFrom": {
+										"type": "reference",
+										"name": "AbstractCamera.setRecordingDir",
+										"id": 216
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.setRecordingDir",
+										"id": 152
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsDevice.ts",
+									"line": 199,
+									"character": 19
+								}
+							],
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "AbstractCamera.setRecordingDir",
+								"id": 216
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.setRecordingDir",
+								"id": 151
+							}
+						},
+						{
+							"id": 260,
+							"name": "snapPicture",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 261,
+									"name": "snapPicture",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "captures a snapshot from the device and saves it to gSnapshotDir"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.snapPicture",
+										"id": 221
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.snapPicture",
+										"id": 157
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 87,
+									"character": 15
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.snapPicture",
+								"id": 221
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.snapPicture",
+								"id": 156
+							}
+						},
+						{
+							"id": 266,
+							"name": "testFtpServer",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 267,
+									"name": "testFtpServer",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "gets the device's ftp confguration and calls `cb`.",
+										"returns": "Promise a promise that resolves to the testResult: 0 = success, -1 = failure, -3 = unknown\n"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										]
+									},
+									"overwrites": {
+										"type": "reference",
+										"name": "AbstractCamera.testFtpServer",
+										"id": 227
+									},
+									"implementationOf": {
+										"type": "reference",
+										"name": "Camera.testFtpServer",
+										"id": 163
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "node/device/hsFoscam.ts",
+									"line": 140,
+									"character": 17
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"name": "AbstractCamera.testFtpServer",
+								"id": 227
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "Camera.testFtpServer",
+								"id": 162
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								256
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								273,
+								251
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								270,
+								268,
+								274,
+								289,
+								262,
+								299,
+								284,
+								297,
+								293,
+								291,
+								295,
+								277,
+								279,
+								252,
+								286,
+								264,
+								281,
+								260,
+								266
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 28,
+							"character": 19
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"name": "AbstractCamera",
+							"id": 198
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Device",
+							"id": 112
+						},
+						{
+							"type": "reference",
+							"name": "Camera",
+							"id": 146
+						},
+						{
+							"type": "reference",
+							"name": "AlarmDevice",
+							"id": 123
+						}
+					]
+				},
+				{
+					"id": 302,
+					"name": "armCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 16,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": "\"setMotionDetectConfig&isEnable=1\""
+				},
+				{
+					"id": 303,
+					"name": "disarmCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 17,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "setMotionDetectConfig&isEnable=0"
+					},
+					"defaultValue": "\"setMotionDetectConfig&isEnable=0\""
+				},
+				{
+					"id": 306,
+					"name": "ftpCmdParams",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 20,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "&ftpAddr=ftp://192.168.1.101/homesec/&ftpPort=21&mode=0&userName=hauke&password=Hari.bo01"
+					},
+					"defaultValue": "\"&ftpAddr=ftp://192.168.1.101/homesec/&ftpPort=21&mode=0&userName=hauke&password=Hari.bo01\""
+				},
+				{
+					"id": 305,
+					"name": "getFtpCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 19,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "getFtpConfig"
+					},
+					"defaultValue": "\"getFtpConfig\""
+				},
+				{
+					"id": 310,
+					"name": "linkage",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 24,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": " 4+8"
+				},
+				{
+					"id": 309,
+					"name": "ring",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 23,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "1"
+					},
+					"defaultValue": "1"
+				},
+				{
+					"id": 307,
+					"name": "setFtpCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 21,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": " 'setFtpConfig' + ftpCmdParams"
+				},
+				{
+					"id": 311,
+					"name": "snapInterval",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 25,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "1"
+					},
+					"defaultValue": "1"
+				},
+				{
+					"id": 301,
+					"name": "snapPicCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 15,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "snapPicture"
+					},
+					"defaultValue": "\"snapPicture\""
+				},
+				{
+					"id": 304,
+					"name": "statusCmd",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 18,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "getDevState"
+					},
+					"defaultValue": "\"getDevState\""
+				},
+				{
+					"id": 308,
+					"name": "testFtpSrv",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "node/device/hsFoscam.ts",
+							"line": 22,
+							"character": 16
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": " 'testFtpServer' + ftpCmdParams"
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						250
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						302,
+						303,
+						306,
+						305,
+						310,
+						309,
+						307,
+						311,
+						301,
+						304,
+						308
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "node/device/hsFoscam.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 391,
+			"name": "\"overview\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/hsHomeSec/src/overview.ts",
+			"comment": {
+				"shortText": "# Home Security Setup\nA simple homebrew alarm system.",
+				"text": "##Installation\n1. User Setup\n    - create a standard user `obs`\n    - Create folder `/Users/obs/homeSec`\n    - Create folder `/Users/obs/homeSec/log`\n    - Create folder `/Users/obs/homeSec/alarm`\n    - Create folder `/Users/obs/homeSec/snap`\n    - Create folder `/Users/obs/homeSec/C1_C4D6553FAFB7/`\n    - Create folder `/Users/obs/homeSec/C1_C4D6553FAFB7/snap`\n    - Create folder `/Users/obs/homeSec/C1_C4D6553FAFB7/record`\n    - install `nodejs` globally\n2. System Preferences\n    - select `Desktop & Screen Saver`, set `Start after:` to `never`\n    - select `Energy Saver`; set `Computer Sleep` to `never`; deselect `Put hard disk to sleep`\n    - select `Security & Privacy`; deselect `Require Password`\n    - select `Network-> Advanced->TCP/IP`; set `COnfigure IPv4` to `Using DHCP with manual address;\n      set `IPv4 Address` to `192.168.1.101`\n    - install voice `Allison`\n        - open panel `Accessibility->Speech`;\n        - select `System Voice: Custom` and select `Allison`. Then close.\n          Voice will be downloaded automatically.\n3. copy into `homeSec` folder:\n    - the `dev/node` folder\n    - replace the `hsNode` alias with the original source folder\n    - the `xcode/CameraOSX.app` application\n    - the `postRestartScript` script\n    - the `start FTP` script\n    - the `relayChatCommands.applescript` script\n4. Messages setup\n    - open `Messages` and select `Messages->Preferences->AppleScript Handler->Open Scripts Folder`\n      to create the `~/Library/Application Scripts/com.apple.iChat` folder\n    - copy into that folder the `relayChatCommands.applescript` script\n    - close and reopen the `Messages->Preferences`.\n    - select `relayChatCommands.applescript` in `AppleScript Handler->Open Scripts Folder`\n5. Startup behaviour\n    - in `System Preferences`, select `Users & Groups` and the relevant user\n    - select `Login Items` and add the `postRestartScript` script\n6. Network Setup\n    - FTP server for `puppy`: in `Terminal`, ruyn the `start FTP` script\n    - fixed IP address:\n    - Only needed to run once after System Upgrade\n7. Setup Contacts\n    - open `Contacts`\n    - define entry `Hauke Schmidt` and `Regine Schmidt`\n8. Miscelaneous\n    - disable `are you sure you want to restart your computer now` question: ???\n    - `Terminal->Preferences->Profiles->Shell`:\n        - `When the shell exits: Close the window`\n        - `Ask befor closing: Never`\n"
+			},
+			"sources": [
+				{
+					"fileName": "overview.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1,
+				2,
+				43,
+				20,
+				33,
+				374,
+				389,
+				312,
+				349,
+				88,
+				100,
+				249,
+				391
+			]
+		}
+	]
+}

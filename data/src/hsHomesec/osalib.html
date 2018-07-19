@@ -1,0 +1,90 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/node/comm/osalib.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>import&nbsp;{&nbsp;cp&nbsp;}&nbsp;from&nbsp;'hsnode';&nbsp;<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span><br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>//&nbsp;export&nbsp;function&nbsp;osa<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>//&nbsp;takes&nbsp;a&nbsp;function,&nbsp;any&nbsp;number&nbsp;of&nbsp;arguments,&nbsp;and&nbsp;a&nbsp;callback.<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>//&nbsp;It&nbsp;will&nbsp;run&nbsp;the&nbsp;function&nbsp;in&nbsp;the&nbsp;OSA&nbsp;environment,&nbsp;passing&nbsp;in&nbsp;any&nbsp;given&nbsp;arguements.<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>//&nbsp;that&nbsp;function&nbsp;is&nbsp;expected&nbsp;to&nbsp;return&nbsp;a&nbsp;single&nbsp;value,&nbsp;which&nbsp;will&nbsp;be&nbsp;passed&nbsp;back&nbsp;to&nbsp;the<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>//&nbsp;callback&nbsp;via&nbsp;stdout.<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>const&nbsp;consoleLogPrefix&nbsp;=&nbsp;'<brandonhorst:node-osa>';<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>const&nbsp;consoleLogSuffix&nbsp;=&nbsp;'</brandonhorst:node-osa>';<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span><br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>function&nbsp;extractLogs&nbsp;(stderr:string)&nbsp;{<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;reg&nbsp;=&nbsp;new&nbsp;RegExp('^'&nbsp;+&nbsp;consoleLogPrefix&nbsp;+&nbsp;'&nbsp;([\\s\\S]*?)&nbsp;'&nbsp;+&nbsp;consoleLogSuffix&nbsp;+&nbsp;'$',&nbsp;'gm');<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;matches&nbsp;=&nbsp;[];<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;&nbsp;&nbsp;found;<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;((found&nbsp;=&nbsp;reg.exec(stderr))&nbsp;!==&nbsp;null)&nbsp;{<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matches.push(found[1]);<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reg.lastIndex&nbsp;-=&nbsp;found[0].split(':')[1].length;<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;matches.length&nbsp;>&nbsp;0&nbsp;?&nbsp;matches.join('\n')&nbsp;:&nbsp;null;<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>}<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span><br>
+<span id=23 class="line">&nbsp;&nbsp;23</span><br>
+<span id=24 class="line">&nbsp;&nbsp;24</span><comment>/**<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;*&nbsp;@description&nbsp;returns&nbsp;a&nbsp;promise&nbsp;to&nbsp;execute&nbsp;osaString.<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;*&nbsp;@return&nbsp;{Promise}&nbsp;a&nbsp;promise&nbsp;with&nbsp;resolve(stdout,&nbsp;errors)&nbsp;and&nbsp;reject(error,&nbsp;errorLine)<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;*/</comment><br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>export&nbsp;function&nbsp;osaJS&nbsp;(osaFunction:string,&nbsp;...args:&nbsp;any[]):Promise<any>&nbsp;{<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;get&nbsp;an&nbsp;array&nbsp;of&nbsp;arguments,&nbsp;excluding&nbsp;the&nbsp;osaFunction<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>//&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;args&nbsp;=&nbsp;Array.prototype.slice.call(arguments,&nbsp;1,&nbsp;arguments.length);<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span><br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;conver&nbsp;these&nbsp;args&nbsp;to&nbsp;json<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;jsonArgs&nbsp;=&nbsp;args.map((arg:string)&nbsp;=>&nbsp;JSON.stringify(arg));<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;build&nbsp;a&nbsp;string&nbsp;to&nbsp;call&nbsp;osaFunction,&nbsp;pass&nbsp;in&nbsp;args,&nbsp;and&nbsp;evaulate&nbsp;to<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;JSON&nbsp;representation&nbsp;of&nbsp;the&nbsp;return&nbsp;value,&nbsp;then&nbsp;call&nbsp;it&nbsp;with&nbsp;osascript<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;consoleLogPatch&nbsp;=&nbsp;'var&nbsp;old&nbsp;=&nbsp;console.log;&nbsp;console.log&nbsp;=&nbsp;function&nbsp;()&nbsp;{&nbsp;Array.prototype.unshift.call(arguments,&nbsp;"'&nbsp;+<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consoleLogPrefix&nbsp;+&nbsp;'");&nbsp;Array.prototype.push.call(arguments,&nbsp;"'&nbsp;+&nbsp;consoleLogSuffix&nbsp;+<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'");&nbsp;old.apply(console,&nbsp;arguments);&nbsp;};&nbsp;';<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;functionCallString&nbsp;=&nbsp;consoleLogPatch&nbsp;+&nbsp;'JSON.stringify(('&nbsp;+&nbsp;osaFunction&nbsp;+&nbsp;')('&nbsp;+&nbsp;jsonArgs.join(',')&nbsp;+&nbsp;'));';<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;escapedCall&nbsp;=&nbsp;functionCallString.replace(/^\s+/g,&nbsp;'&nbsp;').replace(/'/g,&nbsp;"'\\''").split('\n');<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;executeString&nbsp;=&nbsp;"osascript&nbsp;-l&nbsp;JavaScript";<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(let&nbsp;r=0;&nbsp;r<escapedCall.length;&nbsp;r++)&nbsp;{<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;escapedCall[r]&nbsp;=&nbsp;escapedCall[r].trim();<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;executeString&nbsp;+=&nbsp;"&nbsp;-e&nbsp;'"&nbsp;+&nbsp;escapedCall[r]&nbsp;+&nbsp;"'";&nbsp;<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span><br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;cp.exec(executeString)<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then((result:{out:string,&nbsp;err:string})&nbsp;=>&nbsp;{<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;log&nbsp;=&nbsp;extractLogs&nbsp;(result.err);<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(log);<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(result.out&nbsp;===&nbsp;'\n')&nbsp;{&nbsp;throw&nbsp;result.err;&nbsp;}<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;return&nbsp;JSON.parse(result.out);&nbsp;}<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{&nbsp;&nbsp;&nbsp;//&nbsp;if&nbsp;nothing&nbsp;was&nbsp;in&nbsp;stdout&nbsp;(or&nbsp;it&nbsp;wasn't&nbsp;JSON),&nbsp;something&nbsp;went&nbsp;wrong<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;Error('Function&nbsp;did&nbsp;not&nbsp;return&nbsp;an&nbsp;object:&nbsp;'&nbsp;+&nbsp;e.message);<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch((err:string)&nbsp;=>&nbsp;{<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;i&nbsp;=&nbsp;err.indexOf('Error&nbsp;on&nbsp;line');<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i>0)&nbsp;{<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;j&nbsp;=&nbsp;err.indexOf(':',&nbsp;i);<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;line&nbsp;=&nbsp;parseInt(err.substring(i+13,&nbsp;j));<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;err&nbsp;=&nbsp;line&nbsp;+&nbsp;':&nbsp;'&nbsp;+&nbsp;escapedCall[line-1];<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;err&nbsp;=&nbsp;'*?*';<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;err;<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>}<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span><br>
+<span id=72 class="line">&nbsp;&nbsp;72</span><br>
+<span id=73 class="line">&nbsp;&nbsp;73</span><br></code></div>
+                </body>
+            
