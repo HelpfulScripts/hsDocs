@@ -1,15 +1,21 @@
 {
   "name": "hsdocs",
   "version": "2.3.1",
-  "keywords": [],
+  "keywords": [
+      "es6",
+      "jsdocs",
+      "typescript",
+      "typedoc"
+  ],
   "description": "Helpful Scripts documentation utility",
+  "homepage": "https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0",
   "author": {
     "name": "masterscripter",
     "email": "helpfulscripts@gmail.com"
   },
   "scripts": {
-    "start": "grunt",
-    "test": "ospec"
+    "build": "grunt travis",
+    "test": "grunt test"
   },
   "license": "MIT",
   "repository": {
@@ -41,14 +47,15 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.14.0",
     "hsdatab": "^2.0.2",
-    "hsutil": "^2.0.2",
-    "hslayout": "^2.0.0",
-    "hswidget": "^2.0.0",
     "hsgraph": "^2.0.0",
     "@types/lodash": "^4.14.109",
-    "@types/mithril": "^1.1.12",
-    "mithril": "^1.1.6",
-    "showdown": "^1.8.6"
+    "@types/mithril": "^1.1.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "hslayout": "^2.0.0",
+    "mithril": "^1.1.6",
+    "showdown": "^1.8.6",
+    "hswidget": "^2.0.0",
+    "hsutil": "^2.0.2",
+  }
 }
