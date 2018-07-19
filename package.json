@@ -1,11 +1,11 @@
 {
   "name": "hsdocs",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "keywords": [
-      "es6",
-      "jsdocs",
-      "typescript",
-      "typedoc"
+    "es6",
+    "jsdocs",
+    "typescript",
+    "typedoc"
   ],
   "description": "Helpful Scripts documentation utility",
   "homepage": "https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0",
