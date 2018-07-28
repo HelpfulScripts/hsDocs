@@ -1,0 +1,4610 @@
+{
+	"id": 0,
+	"name": "hsNode",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "\"cpUtil\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/cpUtil.ts",
+			"children": [
+				{
+					"id": 2,
+					"name": "cp",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "cpUtil.ts",
+							"line": 1,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": " require('child_process')"
+				},
+				{
+					"id": 3,
+					"name": "exec",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 4,
+							"name": "exec",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"returns": "promise to provide the stdout and stderr streams form the child process.\n",
+								"tags": [
+									{
+										"tag": "ngdoc",
+										"text": "object"
+									},
+									{
+										"tag": "name",
+										"text": "exec"
+									},
+									{
+										"tag": "methodof",
+										"text": "hsNode.cpUtil"
+									},
+									{
+										"tag": "description",
+										"text": "executes `command` in a child process and promises to return the stdout and stderr streams.\n<pre>\nlet utils = require('./cpUtils');\nutils.exec(cmd)\n.then((stdout, stderr) => {...})\n.catch(err => {...});\n</pre>"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 5,
+									"name": "command",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the shell command to execute"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 6,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"text": "the options to pass along to the shell"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "reflection",
+										"declaration": {
+											"id": 7,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 9,
+													"name": "stderr",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "cpUtil.ts",
+															"line": 30,
+															"character": 62
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 8,
+													"name": "stdout",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "cpUtil.ts",
+															"line": 30,
+															"character": 47
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														9,
+														8
+													]
+												}
+											]
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "cpUtil.ts",
+							"line": 29,
+							"character": 13
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "cpUtil.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 10,
+			"name": "\"fsUtil\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/fsUtil.ts",
+			"children": [
+				{
+					"id": 11,
+					"name": "Stats",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Convenience functions for file system access, wrapped in Promises.\n- &nbsp;{@link hsNode.fsUtil#methods_realPath realPath}\n- &nbsp;{@link hsNode.fsUtil#methods_pathExists pathExists}\n- &nbsp;{@link hsNode.fsUtil#methods_isfile isFile}\n- &nbsp;{@link hsNode.fsUtil#methods_isdirectory isDirectory}\n- &nbsp;{@link hsNode.fsUtil#methods_readDir readDir}\n- &nbsp;{@link hsNode.fsUtil#methods_readFile readFile}\n- &nbsp;{@link hsNode.fsUtil#methods_readTextFile readTextFile}\n- &nbsp;{@link hsNode.fsUtil#methods_readJsonFile readJsonFile}\n- &nbsp;{@link hsNode.fsUtil#methods_writeFile writeFile}\n- &nbsp;{@link hsNode.fsUtil#methods_writeTextFile writeTextFile}\n- &nbsp;{@link hsNode.fsUtil#methods_writeJsonFile writeJsonFile}\n- &nbsp;{@link hsNode.fsUtil#methods_appendFile appendFile}\n- &nbsp;{@link hsNode.fsUtil#methods_remove remove}"
+					},
+					"children": [
+						{
+							"id": 23,
+							"name": "accessTime",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 34,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 21,
+							"name": "blockSize",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 32,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 13,
+							"name": "device",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 24,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 19,
+							"name": "deviceID",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 30,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 18,
+							"name": "groupID",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 29,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 14,
+							"name": "iNode",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 25,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 24,
+							"name": "modifyTime",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 35,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 22,
+							"name": "numBlocks",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 33,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 16,
+							"name": "numLinks",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 27,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 12,
+							"name": "path",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 23,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 25,
+							"name": "statusChangeTime",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 36,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 20,
+							"name": "totalSize",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 31,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 15,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 26,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 17,
+							"name": "userID",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "fsUtil.ts",
+									"line": 28,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								23,
+								21,
+								13,
+								19,
+								18,
+								14,
+								24,
+								22,
+								16,
+								12,
+								25,
+								20,
+								15,
+								17
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 22,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 26,
+					"name": "fs",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 1,
+							"character": 8
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": " require('fs')"
+				},
+				{
+					"id": 81,
+					"name": "appendFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 82,
+							"name": "appendFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "appends to a file either as binary or text and promises no return.",
+								"returns": "promise to provide the realPath of the file written to.\n"
+							},
+							"parameters": [
+								{
+									"id": 83,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write to"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 84,
+									"name": "content",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the content to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 85,
+									"name": "isText",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "`true`|`false` if file should be read as `utf8`|binary"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "true"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 246,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 33,
+					"name": "error",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 34,
+							"name": "error",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 35,
+									"name": "err",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 70,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 45,
+					"name": "isDirectory",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 46,
+							"name": "isDirectory",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "determines if `thePath` is a directory and promises to provide `true` or `false`.",
+								"returns": "promise to provide `true` or `false`\n"
+							},
+							"parameters": [
+								{
+									"id": 47,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 113,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 42,
+					"name": "isFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 43,
+							"name": "isFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "determines if `thePath` is a file and promises to provide `true` or `false`.",
+								"returns": "promise to provide `true` or `false`\n"
+							},
+							"parameters": [
+								{
+									"id": 44,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 104,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 48,
+					"name": "isLink",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 49,
+							"name": "isLink",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "determines if `thePath` is a directory and promises to provide `true` or `false`.",
+								"returns": "promise to provide `true` or `false`\n"
+							},
+							"parameters": [
+								{
+									"id": 50,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 122,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 30,
+					"name": "lstat",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 31,
+							"name": "lstat",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 32,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "Object"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 56,
+							"character": 14
+						}
+					]
+				},
+				{
+					"id": 39,
+					"name": "pathExists",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 40,
+							"name": "pathExists",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "determines if `thePath` exists and promises to provide `true` or `false`.",
+								"returns": "promise to provide `true` or `false`\n"
+							},
+							"parameters": [
+								{
+									"id": 41,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 95,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 51,
+					"name": "readDir",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 52,
+							"name": "readDir",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "lists all files in a directory and promises to provide the list.",
+								"returns": "promise to provide a list of directory entries.\n"
+							},
+							"parameters": [
+								{
+									"id": 53,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 131,
+							"character": 23
+						}
+					]
+				},
+				{
+					"id": 54,
+					"name": "readFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 55,
+							"name": "readFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "reads a file either as binary or text and promises to provide the content.",
+								"returns": "promise to provide file content.\n"
+							},
+							"parameters": [
+								{
+									"id": 56,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to read"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 57,
+									"name": "isText",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "`true`|`false` if file should be read as `utf8`|binary"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "true"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 153,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 61,
+					"name": "readJsonFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 62,
+							"name": "readJsonFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "reads a text file and promises to provide the content.",
+								"returns": "promise to provide file content.\n"
+							},
+							"parameters": [
+								{
+									"id": 63,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to read"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 179,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 58,
+					"name": "readTextFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 59,
+							"name": "readTextFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "reads a text file and promises to provide the content.",
+								"returns": "promise to provide file content.\n"
+							},
+							"parameters": [
+								{
+									"id": 60,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to read"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 169,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 36,
+					"name": "realPath",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 37,
+							"name": "realPath",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "determines the canonical path for `thePath`, resolving all symbolic links and '../'in the path.",
+								"returns": "promise to provide the real canonical system path.\n"
+							},
+							"parameters": [
+								{
+									"id": 38,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to check"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 83,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 86,
+					"name": "remove",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 87,
+							"name": "remove",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "promises to delete a file or folder.",
+								"returns": "promise to provide the name of the removed file.\n"
+							},
+							"parameters": [
+								{
+									"id": 88,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 260,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 27,
+					"name": "stat",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 28,
+							"name": "stat",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 29,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Stats",
+										"id": 11
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 42,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 64,
+					"name": "writeFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 65,
+							"name": "writeFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "writes a file either as binary or text and promises no return.",
+								"returns": "promise to provide the file name if successful.\n"
+							},
+							"parameters": [
+								{
+									"id": 66,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write to"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 67,
+									"name": "content",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the content to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 68,
+									"name": "isText",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "`true`|`false` if file should be read as `utf8`|binary"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									},
+									"defaultValue": "true"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 192,
+							"character": 25
+						}
+					]
+				},
+				{
+					"id": 77,
+					"name": "writeJsonFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 78,
+							"name": "writeJsonFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "writes a text file and promises no return.",
+								"returns": "promise to provide the file name if successful.\n"
+							},
+							"parameters": [
+								{
+									"id": 79,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 80,
+									"name": "obj",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the object to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 232,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 69,
+					"name": "writeStream",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 70,
+							"name": "writeStream",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "writes content to a file either as a stream and promises no return.",
+								"returns": "promise to provide the file name if successful.\n"
+							},
+							"parameters": [
+								{
+									"id": 71,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write to"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 72,
+									"name": "content",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the content to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 206,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 73,
+					"name": "writeTextFile",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 74,
+							"name": "writeTextFile",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "writes a text file and promises no return.",
+								"returns": "promise to provide the file name if successful.\n"
+							},
+							"parameters": [
+								{
+									"id": 75,
+									"name": "thePath",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the path to write"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 76,
+									"name": "content",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "fsUtil.ts",
+							"line": 221,
+							"character": 29
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						11
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						26
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						81,
+						33,
+						45,
+						42,
+						48,
+						30,
+						39,
+						51,
+						54,
+						61,
+						58,
+						36,
+						86,
+						27,
+						64,
+						77,
+						69,
+						73
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "fsUtil.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 157,
+			"name": "\"httpUtil\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/httpUtil.ts",
+			"comment": {
+				"shortText": "Convenience functions for http access, wrapped in Promises.\n- {@link hsNode.httpUtil#methods_request request}"
+			},
+			"children": [
+				{
+					"id": 182,
+					"name": "Digest",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 186,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 187,
+									"name": "new Digest",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 188,
+											"name": "username",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 189,
+											"name": "password",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Digest",
+										"id": 182
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 35,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 183,
+							"name": "nc",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 33,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"defaultValue": "0"
+						},
+						{
+							"id": 185,
+							"name": "password",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 35,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 184,
+							"name": "username",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 34,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 192,
+							"name": "generateCNONCE",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 193,
+									"name": "generateCNONCE",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Parse challenge digest"
+									},
+									"parameters": [
+										{
+											"id": 194,
+											"name": "qop",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 195,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 196,
+													"name": "cnonce",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "httpUtil.ts",
+															"line": 67,
+															"character": 22
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													},
+													"defaultValue": " cnonce"
+												},
+												{
+													"id": 197,
+													"name": "nc",
+													"kind": 32,
+													"kindString": "Variable",
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "httpUtil.ts",
+															"line": 67,
+															"character": 34
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													},
+													"defaultValue": " nc"
+												}
+											],
+											"groups": [
+												{
+													"title": "Variables",
+													"kind": 32,
+													"children": [
+														196,
+														197
+													]
+												}
+											]
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 57,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 198,
+							"name": "testDigestAuth",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 199,
+									"name": "testDigestAuth",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 200,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 201,
+											"name": "data",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 202,
+											"name": "response",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "IncomingMessage",
+												"id": 158
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "HttpResponse",
+														"id": 178
+													},
+													{
+														"type": "intrinsic",
+														"name": "string"
+													}
+												]
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 70,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 190,
+							"name": "updateNC",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 191,
+									"name": "updateNC",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Update and zero pad nc"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 45,
+									"character": 12
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								186
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								183,
+								185,
+								184
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								192,
+								198,
+								190
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 32,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 178,
+					"name": "HttpResponse",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 181,
+							"name": "body",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 29,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 180,
+							"name": "data",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 28,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 179,
+							"name": "response",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 27,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								181,
+								180,
+								179
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 26,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 158,
+					"name": "IncomingMessage",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 177,
+							"name": "_headers",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 24,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 176,
+							"name": "caseless",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 23,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 159,
+							"name": "headers",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 13,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						},
+						{
+							"id": 160,
+							"name": "httpVersion",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 14,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 161,
+							"name": "method",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 15,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 171,
+							"name": "on",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 22,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 172,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 173,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 174,
+													"name": "event",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												},
+												{
+													"id": 175,
+													"name": "callback",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "httpUtil.ts",
+											"line": 22,
+											"character": 7
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 162,
+							"name": "rawHeaders",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 16,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 163,
+							"name": "rawTrailers",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 17,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 167,
+							"name": "setEncoding",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 21,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 168,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 169,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 170,
+													"name": "enc",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "httpUtil.ts",
+											"line": 21,
+											"character": 16
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 164,
+							"name": "statusCode",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 18,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 165,
+							"name": "statusMessage",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 19,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 166,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "httpUtil.ts",
+									"line": 20,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								177,
+								176,
+								159,
+								160,
+								161,
+								171,
+								162,
+								163,
+								167,
+								164,
+								165,
+								166
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 12,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 203,
+					"name": "http",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {},
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 7,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": "  require('http')"
+				},
+				{
+					"id": 204,
+					"name": "log",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 10,
+							"character": 45
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Log",
+						"id": 94
+					},
+					"defaultValue": " new Log('httpUtil')"
+				},
+				{
+					"id": 209,
+					"name": "compileParams",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 210,
+							"name": "compileParams",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Compose authorization header"
+							},
+							"parameters": [
+								{
+									"id": 211,
+									"name": "params",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 126,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 233,
+					"name": "decodeXmlResult",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 234,
+							"name": "decodeXmlResult",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 235,
+									"name": "xml",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 243,
+							"character": 31
+						}
+					]
+				},
+				{
+					"id": 226,
+					"name": "get",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 227,
+							"name": "get",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sends a http get request and promises to return the result.",
+								"returns": "promise to provide the result of the request.\n"
+							},
+							"parameters": [
+								{
+									"id": 228,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the url to pass along to the get request"
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "HttpResponse",
+												"id": 178
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 205,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 229,
+					"name": "getAttributes",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 230,
+							"name": "getAttributes",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 231,
+									"name": "tag",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 232,
+									"name": "result",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 229,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 219,
+					"name": "isBinary",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 220,
+							"name": "isBinary",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 221,
+									"name": "contentType",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 155,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 205,
+					"name": "omitNull",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 206,
+							"name": "omitNull",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 207,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 208,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {}
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 110,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 215,
+					"name": "parseDigestResponse",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 216,
+							"name": "parseDigestResponse",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 217,
+									"name": "digestHeader",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 218,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {}
+								}
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 145,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 212,
+					"name": "putDoubleQuotes",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 213,
+							"name": "putDoubleQuotes",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "return `true` if double quotes are needed for `entry`"
+							},
+							"parameters": [
+								{
+									"id": 214,
+									"name": "entry",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 141,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 222,
+					"name": "request",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 223,
+							"name": "request",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "sends a http request and promises to return the result.",
+								"returns": "promise to provide the result of the request.\n"
+							},
+							"parameters": [
+								{
+									"id": 224,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the options to pass along to the request"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 225,
+									"name": "postData",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"text": "optional data to post"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "HttpResponse",
+												"id": 178
+											},
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "httpUtil.ts",
+							"line": 175,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						182
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						178,
+						158
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						203,
+						204
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						209,
+						233,
+						226,
+						229,
+						219,
+						205,
+						215,
+						212,
+						222
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "httpUtil.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 236,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 89,
+			"name": "\"log\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/log.ts",
+			"comment": {
+				"shortText": "Logging convenience functions.\n## Usage\n<pre>\nimport Log from './log';\nconst log = new Log();\nlog.info('by the way:'); // -> 20160817 09:59:08.032 info by the way:\nlog.error('oh dear!');   // -> 20160817 09:59:08.045 error *** oh dear!\n</pre>",
+				"text": "### Using the format template:\n<pre>\nlog.entryFormat('%MMM %DD %hh%mm%ss');\nlog.info('by the way:');  // -> Aug 17 095908 info by the way:\nlog.error('oh dear!');    // -> Aug 17 095908 error *** oh dear!\n</pre>\n\n### With module prefix:\n<pre>\nimport log from './log';\nconst log = new Log('Main');\nlog.format('%hh%mm%ss');\nlog.info('by the way:');  // -> 09:59:08.032 Main info by the way:\nlog.error('oh dear!');    // -> 09:59:08.045 Main error *** oh dear!\n</pre>\n\n### Using a log file\n<pre>\nlog.format('%MM%DD');\nlog.info('by the way:'); // -> 0817 info by the way:\nlog.logFile('l%YY%MM');  // -> 0817 info now logging to file l1608.txt\nlog.logFile(null);       // -> 0817 disabling logfile\nlog.error('oh dear!');   // -> 0817 error *** oh dear!\n</pre>\n\n## Reporting Levels:\n- [DEBUG](#debug)\n- [INFO](#info)\n- [WARN](#warn)\n- [ERROR](#error)\n\n## Reporting methods\n- &nbsp;{@link hsNode.log#methods_debug debug()}\n- &nbsp;{@link hsNode.log#methods_info info()}\n- &nbsp;{@link hsNode.log#methods_warn warn()}\n- &nbsp;{@link hsNode.log#methods_error error()}\n\n## Configurations:\n- &nbsp;{@link hsNode.log#methods_level level()}\n- &nbsp;{@link hsNode.log#methods_format format()}\n- &nbsp;{@link hsNode.log#methods_prefix prefix()}\n- &nbsp;{@link hsNode.log#methods_logFile logFile()}\n"
+			},
+			"children": [
+				{
+					"id": 94,
+					"name": "Log",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 100,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "new Log",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "prefix",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"\""
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Log",
+										"id": 94
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 109,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 96,
+							"name": "DEBUG",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 106,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "symbol"
+							},
+							"defaultValue": " DEBUG"
+						},
+						{
+							"id": 99,
+							"name": "ERROR",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 109,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "symbol"
+							},
+							"defaultValue": " ERROR"
+						},
+						{
+							"id": 97,
+							"name": "INFO",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 107,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "symbol"
+							},
+							"defaultValue": " INFO"
+						},
+						{
+							"id": 98,
+							"name": "WARN",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 108,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "symbol"
+							},
+							"defaultValue": " WARN"
+						},
+						{
+							"id": 95,
+							"name": "gPrefix",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 105,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"\""
+						},
+						{
+							"id": 135,
+							"name": "config",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 136,
+									"name": "config",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "configures the log facility.\n- cfg.colors: boolean, determines if output is colored\n- cfg.logfile: sets the naming template for the logfile. Set logFile=null to disable.\n- cfg.entryFormat: sets the format for the timestamp for each log entry\n- cfg.level: sets the reporting level (same as calling log.level())"
+									},
+									"parameters": [
+										{
+											"id": 137,
+											"name": "cfg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "\n"
+											},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 138,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 139,
+															"name": "colors",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "log.ts",
+																	"line": 286,
+																	"character": 22
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "boolean"
+															}
+														},
+														{
+															"id": 141,
+															"name": "entryFormat",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "log.ts",
+																	"line": 286,
+																	"character": 61
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 142,
+															"name": "level",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "log.ts",
+																	"line": 286,
+																	"character": 76
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "symbol"
+															}
+														},
+														{
+															"id": 140,
+															"name": "logFile",
+															"kind": 32,
+															"kindString": "Variable",
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "log.ts",
+																	"line": 286,
+																	"character": 40
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Variables",
+															"kind": 32,
+															"children": [
+																139,
+																141,
+																142,
+																140
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "log.ts",
+															"line": 286,
+															"character": 15
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 286,
+									"character": 10
+								}
+							]
+						},
+						{
+							"id": 106,
+							"name": "debug",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 107,
+									"name": "debug",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "reports an debug message to the log.\nThe message will actually be reported to the log only if the current\nreporting level is DEBUG or lower.",
+										"returns": "promise to return the file written to, or undefined\n"
+									},
+									"parameters": [
+										{
+											"id": 108,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the message to report. If msg is an object literal, a deep inspection will be printed."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 145,
+									"character": 9
+								}
+							]
+						},
+						{
+							"id": 118,
+							"name": "entryFormat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 119,
+									"name": "entryFormat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the format string to use for logging. If no parameter is specified,\nthe function returns the currently set format string. The preset is '%YYYY%MM%DD %hh:%mm:%ss.%jjj'\nFor supported formats see {@link date date}.",
+										"returns": "the currently set format string\n"
+									},
+									"parameters": [
+										{
+											"id": 120,
+											"name": "fmtStr",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "optional format string to use;\n- `entryFormat(null)` sets the format to `defDateFormat`\n- `entryFormat()` returns the current format without changing it."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 182,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 115,
+							"name": "error",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 116,
+									"name": "error",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "reports an error message to the log.\nThe message will always be reported to the log.",
+										"returns": "promise to return the file written to, or undefined\n"
+									},
+									"parameters": [
+										{
+											"id": 117,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the message to report. If msg is an object literal, a deep inspection will be printed."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 171,
+									"character": 9
+								}
+							]
+						},
+						{
+							"id": 109,
+							"name": "info",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 110,
+									"name": "info",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "reports an informational message to the log.\nThe message will actually be reported to the log only if the current\nreporting level is INFO or lower.",
+										"returns": "promise to return the file written to, or undefined\n"
+									},
+									"parameters": [
+										{
+											"id": 111,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the message to report. If msg is an object literal, a deep inspection will be printed."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 154,
+									"character": 8
+								}
+							]
+						},
+						{
+							"id": 131,
+							"name": "inspect",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 132,
+									"name": "inspect",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Simplifies node `util.inspect` call.\nUsage: `log.info('' + log.inspect(struct, 1))"
+									},
+									"parameters": [
+										{
+											"id": 133,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the object literal to inspect"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 134,
+											"name": "depth",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "depth of recursion. Use `null` for infinite depth\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "1"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 276,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 103,
+							"name": "level",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 104,
+									"name": "level",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets the reporting level according to `newLevel`.\nValid values are {@link hsNode.log.DEBUG DEBUG}, {@link hsNode.log.INFO INFO}, {@link hsNode.log.WARN WARN}, or {@link hsNode.log.ERROR ERROR}.\nSubsequent reporting calls\nwill be filtered such that only calls with an importance at least the same as\n`newLevel` will be written to the log.",
+										"returns": "the new reporting level (DEBUG, INFO, ERROR)\n"
+									},
+									"parameters": [
+										{
+											"id": 105,
+											"name": "newLevel",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "the new reporting level to set.\nIf omitted, the method returns the currently set reporting level."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "symbol"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "symbol"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 125,
+									"character": 9
+								}
+							]
+						},
+						{
+							"id": 124,
+							"name": "logFile",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 125,
+									"name": "logFile",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets a new logfile name template. Logfiles are created using this template\nat the time of each log entry call. If the file exists, the log entry will be appended.",
+										"returns": "promise to return the current logfile, or `undefined`\n"
+									},
+									"parameters": [
+										{
+											"id": 126,
+											"name": "file",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "a template to use for log file names. Options for calling:\n- `logFile()`: return current logfile template without changing the template\n- `logFile(null)`: diasble log file\n- `logFile('')`: set default log file template `log-%YYYY-%MM-%DD.txt`\n- `logFile('log%D/%M/%Y.log')`: set new log file template"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 207,
+									"character": 11
+								}
+							]
+						},
+						{
+							"id": 127,
+							"name": "out",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 128,
+									"name": "out",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "reports an error message to the log.\nThe message will be reported to the log if `lvl` meets or exceeds the current reporting level.",
+										"returns": "promise to return the file written to, or undefined\n"
+									},
+									"parameters": [
+										{
+											"id": 129,
+											"name": "lvl",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the reporting level of `msg`"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "symbol"
+											}
+										},
+										{
+											"id": 130,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the message to report. If msg is an object literal, a deep inspection will be printed."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 247,
+									"character": 7
+								}
+							]
+						},
+						{
+							"id": 121,
+							"name": "prefix",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 122,
+									"name": "prefix",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "defines a prefix to be printed for each call to a log function.\nThe return object contains all functions defined for export."
+									},
+									"parameters": [
+										{
+											"id": 123,
+											"name": "prf",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the prefix to prepend. Defaults to '';\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"\""
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 193,
+									"character": 10
+								}
+							]
+						},
+						{
+							"id": 112,
+							"name": "warn",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 113,
+									"name": "warn",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "reports an warning message to the log.\nThe message will actually be reported to the log only if the current\nreporting level is WARN or lower.",
+										"returns": "promise to return the file written to, or undefined\n"
+									},
+									"parameters": [
+										{
+											"id": 114,
+											"name": "msg",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the message to report. If msg is an object literal, a deep inspection will be printed."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Promise",
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 163,
+									"character": 8
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								100
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								96,
+								99,
+								97,
+								98,
+								95
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								135,
+								106,
+								118,
+								115,
+								109,
+								131,
+								103,
+								124,
+								127,
+								121,
+								112
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 104,
+							"character": 16
+						}
+					]
+				},
+				{
+					"id": 90,
+					"name": "LevelDesc",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"comment": {
+						"shortText": "Type definition for level descriptors"
+					},
+					"children": [
+						{
+							"id": 93,
+							"name": "desc",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 66,
+									"character": 57
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 91,
+							"name": "importance",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 66,
+									"character": 32
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 92,
+							"name": "sym",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 66,
+									"character": 44
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "symbol"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								93,
+								91,
+								92
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 66,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 143,
+					"name": "DEBUG",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Debug reporting level with importance 0"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 69,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "unique symbol"
+					},
+					"defaultValue": " Symbol('DEBUG')"
+				},
+				{
+					"id": 146,
+					"name": "ERROR",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Warning reporting level with importance 3"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 78,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "unique symbol"
+					},
+					"defaultValue": " Symbol('ERROR')"
+				},
+				{
+					"id": 144,
+					"name": "INFO",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Info reporting level with importance 1"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 72,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "unique symbol"
+					},
+					"defaultValue": " Symbol('INFO')"
+				},
+				{
+					"id": 145,
+					"name": "WARN",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "Info reporting level with importance 2"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 75,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "unknown",
+						"name": "unique symbol"
+					},
+					"defaultValue": " Symbol('WARN')"
+				},
+				{
+					"id": 153,
+					"name": "defDateFormat",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "current date format string. See [date module]('_date_.html')"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 94,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "%YYYY%MM%DD %hh:%mm:%ss.%jjj"
+					},
+					"defaultValue": "\"%YYYY%MM%DD %hh:%mm:%ss.%jjj\""
+				},
+				{
+					"id": 156,
+					"name": "gColors",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"comment": {
+						"shortText": "boolean determining if log will be printed in color"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 101,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"defaultValue": "true"
+				},
+				{
+					"id": 154,
+					"name": "gDateFormat",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 95,
+							"character": 15
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"defaultValue": " defDateFormat"
+				},
+				{
+					"id": 152,
+					"name": "gLevel",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"comment": {
+						"shortText": "current reporting level, same across all modules"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 90,
+							"character": 10
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "LevelDesc",
+						"id": 90
+					},
+					"defaultValue": " gLevels[INFO]"
+				},
+				{
+					"id": 155,
+					"name": "gLogFile",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"comment": {
+						"shortText": "name of the current log file, or undefined"
+					},
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 98,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 147,
+					"name": "gLevels",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"shortText": "map of valid reporting levels"
+					},
+					"children": [
+						{
+							"id": 148,
+							"name": "__computed",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 151,
+									"name": "desc",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "log.ts",
+											"line": 83,
+											"character": 48
+										},
+										{
+											"fileName": "log.ts",
+											"line": 84,
+											"character": 48
+										},
+										{
+											"fileName": "log.ts",
+											"line": 85,
+											"character": 48
+										},
+										{
+											"fileName": "log.ts",
+											"line": 86,
+											"character": 48
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"ERROR\""
+								},
+								{
+									"id": 149,
+									"name": "importance",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "log.ts",
+											"line": 83,
+											"character": 27
+										},
+										{
+											"fileName": "log.ts",
+											"line": 84,
+											"character": 27
+										},
+										{
+											"fileName": "log.ts",
+											"line": 85,
+											"character": 27
+										},
+										{
+											"fileName": "log.ts",
+											"line": 86,
+											"character": 27
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"defaultValue": "3"
+								},
+								{
+									"id": 150,
+									"name": "sym",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "log.ts",
+											"line": 83,
+											"character": 35
+										},
+										{
+											"fileName": "log.ts",
+											"line": 84,
+											"character": 35
+										},
+										{
+											"fileName": "log.ts",
+											"line": 85,
+											"character": 35
+										},
+										{
+											"fileName": "log.ts",
+											"line": 86,
+											"character": 35
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "symbol"
+									},
+									"defaultValue": " ERROR"
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										151,
+										149,
+										150
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "log.ts",
+									"line": 83,
+									"character": 11
+								},
+								{
+									"fileName": "log.ts",
+									"line": 84,
+									"character": 10
+								},
+								{
+									"fileName": "log.ts",
+									"line": 85,
+									"character": 10
+								},
+								{
+									"fileName": "log.ts",
+									"line": 86,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								148
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "log.ts",
+							"line": 82,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						94
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						90
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						143,
+						146,
+						144,
+						145,
+						153,
+						156,
+						154,
+						152,
+						155
+					]
+				},
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						147
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "log.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 237,
+			"name": "\"overview\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/overview.ts",
+			"comment": {
+				"shortText": "# hsNode",
+				"text": "Helpful Scripts functions that wrap some nodejs calls in Promise wrappers.\n[Github page](https://github.com/HelpfulScripts/hsNode)\n\n## Index of nodejs wrappers\n- &nbsp; {@link cpUtil child_processs} child process execution\n- &nbsp; {@link fsUtil file system} functions\n- &nbsp; {@link httpUtil http} web server functions\n\n## Index of other node support functions\n- &nbsp; {@link log log} logging support with per-module prefixes\n\n\n"
+			},
+			"sources": [
+				{
+					"fileName": "overview.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				1,
+				10,
+				157,
+				236,
+				89,
+				237
+			]
+		}
+	]
+}
