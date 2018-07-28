@@ -116,6 +116,8 @@ module.exports = (grunt, dir, dependencies, type) => {
             app2NPM: { files: [ 
                 { expand:true, cwd: '_dist/bin',        // copy everything from _dist/bin
                     src:['**/*'], dest:`node_modules/${libPath}/` },
+                { expand:true, cwd: '_dist/bin',        // copy everything from _dist/bin
+                    src:['*', '!package.json'], dest:`docs` },
                 { expand:true, cwd: devPath,            // index.html and indexGH.html
                     src:['index.html', 'indexGH.html'], dest:`node_modules/${libPath}/` }
             ]},
