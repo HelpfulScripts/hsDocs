@@ -1,0 +1,184 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/view/TileLayouter.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>Lays&nbsp;out&nbsp;components&nbsp;in&nbsp;tiles<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>Use&nbsp;<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>-&nbsp;`{tiles:&nbsp;[attributes]}`<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span><br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>to&nbsp;invoke&nbsp;this&nbsp;layout.<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span><br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>###&nbsp;Example<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span><code><br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;&nbsp;&nbsp;&nbsp;{tiles:&nbsp;["20%"]}&nbsp;&nbsp;&nbsp;//&nbsp;-->&nbsp;tiles&nbsp;will&nbsp;all&nbsp;have&nbsp;20%&nbsp;of&nbsp;available&nbsp;height&nbsp;and&nbsp;width&nbsp;<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span></code><br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;<example><br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;<file&nbsp;name='script.js'><br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;let&nbsp;c&nbsp;=&nbsp;[1,2,3,4,5];<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*&nbsp;<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;*&nbsp;m.mount(root,&nbsp;{&nbsp;<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view:()&nbsp;=>&nbsp;m(hslayout.Layout,&nbsp;{<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiles:[],&nbsp;<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;c.map((c,i)=>(''+i)),<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css:&nbsp;'.myExample'<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;*&nbsp;});<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;*<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;*&nbsp;function&nbsp;next()&nbsp;{<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(c.length&nbsp;>=&nbsp;9)&nbsp;{&nbsp;c&nbsp;=&nbsp;[];&nbsp;}<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;c.push('');&nbsp;}<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(next,&nbsp;2000);<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.redraw();<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;*&nbsp;}<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;*&nbsp;next();<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;*&nbsp;</file><br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;*&nbsp;<file&nbsp;name='style.css'><br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;*&nbsp;.myExample&nbsp;.hs-layout&nbsp;{&nbsp;<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border:&nbsp;1px&nbsp;solid&nbsp;white;<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color:&nbsp;#ccc;<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#a44;&nbsp;<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align:&nbsp;&nbsp;center;<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*&nbsp;}<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;*&nbsp;</file><br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;*&nbsp;</example><br>
+<span id=41 class="line">&nbsp;&nbsp;41</span><br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>##&nbsp;Attributes<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>The&nbsp;following&nbsp;options&nbsp;are&nbsp;supported&nbsp;for&nbsp;the&nbsp;Attributes&nbsp;array:<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>-&nbsp;**[&nbsp;]**:&nbsp;An&nbsp;empty&nbsp;array;&nbsp;The&nbsp;available&nbsp;tiles&nbsp;will&nbsp;cover&nbsp;the&nbsp;entire&nbsp;width&nbsp;and&nbsp;height.&nbsp;<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;Their&nbsp;size&nbsp;will&nbsp;adapt&nbsp;as&nbsp;tiles&nbsp;are&nbsp;added.<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>-&nbsp;**[FILL]**:&nbsp;like&nbsp;[&nbsp;],&nbsp;except&nbsp;the&nbsp;last&nbsp;tile&nbsp;fills&nbsp;the&nbsp;available&nbsp;space.&nbsp;<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>-&nbsp;**[v]**:&nbsp;All&nbsp;components&nbsp;have&nbsp;the&nbsp;specified&nbsp;width&nbsp;and&nbsp;height&nbsp;(in&nbsp;px&nbsp;or&nbsp;%)&nbsp;and&nbsp;will&nbsp;fill&nbsp;the&nbsp;available&nbsp;space&nbsp;from&nbsp;the&nbsp;left,<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;leaving&nbsp;any&nbsp;remaining&nbsp;unused&nbsp;space&nbsp;on&nbsp;the&nbsp;right.&nbsp;<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>-&nbsp;**[w,&nbsp;h]**:&nbsp;All&nbsp;components&nbsp;have&nbsp;the&nbsp;specified&nbsp;width&nbsp;w&nbsp;and&nbsp;height&nbsp;h&nbsp;(in&nbsp;px&nbsp;or&nbsp;%)&nbsp;and&nbsp;will&nbsp;fill&nbsp;the&nbsp;available&nbsp;space&nbsp;from&nbsp;the&nbsp;left,<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;leaving&nbsp;any&nbsp;remaining&nbsp;unused&nbsp;space&nbsp;on&nbsp;the&nbsp;right.&nbsp;<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>-&nbsp;**[v,&nbsp;FILL]**:&nbsp;like&nbsp;[v],&nbsp;except&nbsp;that&nbsp;the&nbsp;last&nbsp;tile&nbsp;in&nbsp;each&nbsp;row&nbsp;will&nbsp;fill&nbsp;the&nbsp;remaining&nbsp;available&nbsp;width&nbsp;<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;the&nbsp;tiles&nbsp;in&nbsp;the&nbsp;bottom&nbsp;row&nbsp;will&nbsp;fill&nbsp;the&nbsp;remaining&nbsp;height<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>-&nbsp;**[w,&nbsp;h,&nbsp;FILL]**:&nbsp;like&nbsp;[w,&nbsp;h],&nbsp;except&nbsp;that&nbsp;the&nbsp;last&nbsp;tile&nbsp;will&nbsp;fill&nbsp;the&nbsp;remaining&nbsp;available&nbsp;width.&nbsp;<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span><br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>v,&nbsp;w,&nbsp;and&nbsp;h&nbsp;can&nbsp;take&nbsp;on&nbsp;the&nbsp;following&nbsp;vakues:<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>-&nbsp;**px(n)**&nbsp;or&nbsp;**"_n_&nbsp;px"**&nbsp;--&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;pixels&nbsp;<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>-&nbsp;**pc(n)**&nbsp;or&nbsp;**"_n_&nbsp;%"**&nbsp;&nbsp;--&nbsp;a&nbsp;fixed&nbsp;percentage&nbsp;of&nbsp;available&nbsp;space<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>-&nbsp;**FILL**&nbsp;or&nbsp;**"fill"**&nbsp;&nbsp;&nbsp;--&nbsp;fills&nbsp;the&nbsp;remaining&nbsp;space&nbsp;-&nbsp;may&nbsp;appear&nbsp;only&nbsp;once&nbsp;per&nbsp;array.<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span><br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;*/</comment><br>
+<span id=61 class="line">&nbsp;&nbsp;61</span><comment>/**&nbsp;*/</comment><br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>import&nbsp;{&nbsp;Layout&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./Layout';<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>import&nbsp;{&nbsp;Layouter&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./Layouter';<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>import&nbsp;{&nbsp;LayoutToken,&nbsp;<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FillToken,&nbsp;<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DefinedToken,&nbsp;<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PixelToken&nbsp;}&nbsp;&nbsp;&nbsp;from&nbsp;'./Tokens';<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>import&nbsp;{&nbsp;Vnode}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'../mithril';<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span><br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>type&nbsp;descriptor&nbsp;=&nbsp;{top:string,&nbsp;left:string,&nbsp;right:string,&nbsp;bottom:string,&nbsp;width:string,&nbsp;height:string};<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span><br>
+<span id=72 class="line">&nbsp;&nbsp;72</span><comment>/**<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;*/</comment><br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>class&nbsp;Tiles&nbsp;extends&nbsp;Layouter&nbsp;{<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;cssClass:string;<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;unit:&nbsp;any;<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span><br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Constructs&nbsp;a&nbsp;Tileds&nbsp;layout<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;areaDesc&nbsp;Description&nbsp;of&nbsp;the&nbsp;requested&nbsp;layout&nbsp;<br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;constructor(public&nbsp;areaDesc:LayoutToken[])&nbsp;{&nbsp;<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(areaDesc);&nbsp;<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;if&nbsp;any&nbsp;of&nbsp;the&nbsp;dimensions&nbsp;are&nbsp;in&nbsp;px,&nbsp;use&nbsp;the&nbsp;pixel&nbsp;method;&nbsp;else&nbsp;use&nbsp;the&nbsp;percent&nbsp;method<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;get&nbsp;unitPixel&nbsp;if&nbsp;any&nbsp;area&nbsp;is&nbsp;PixelToken&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=86 class="line">&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.unit&nbsp;=&nbsp;areaDesc.some((area:LayoutToken)&nbsp;=>&nbsp;(area&nbsp;instanceof&nbsp;PixelToken))?&nbsp;<br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.unitPixel&nbsp;:&nbsp;this.unitPercent;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span><br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;unitPercent(num:number)&nbsp;{<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;desc&nbsp;=&nbsp;this.areaDesc;<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;fill&nbsp;=&nbsp;this.areaDesc.some(a&nbsp;=>&nbsp;(a&nbsp;instanceof&nbsp;FillToken));<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;root&nbsp;=&nbsp;Math.sqrt(num);<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;rows&nbsp;=&nbsp;Math.round(root);<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;&nbsp;&nbsp;cols&nbsp;=&nbsp;Math.floor(root);<br>
+<span id=96 class="line">&nbsp;&nbsp;96</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(root&nbsp;>&nbsp;cols)&nbsp;{&nbsp;cols++;&nbsp;}<br>
+<span id=97 class="line">&nbsp;&nbsp;97</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;width&nbsp;&nbsp;=&nbsp;(desc[0]&nbsp;instanceof&nbsp;DefinedToken)?&nbsp;desc[0].getSize()&nbsp;:&nbsp;undefined;<br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;height&nbsp;=&nbsp;(desc[1]&nbsp;instanceof&nbsp;DefinedToken)?&nbsp;desc[1].getSize()&nbsp;:&nbsp;width;<br>
+<span id=99 class="line">&nbsp;&nbsp;99</span><br>
+<span id=100 class="line">&nbsp;100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&nbsp;=&nbsp;width&nbsp;&nbsp;||&nbsp;100/cols;<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height&nbsp;=&nbsp;height&nbsp;||&nbsp;100/rows;<br>
+<span id=102 class="line">&nbsp;102</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;left&nbsp;=&nbsp;0;<br>
+<span id=103 class="line">&nbsp;103</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;top&nbsp;&nbsp;=&nbsp;0;<br>
+<span id=104 class="line">&nbsp;104</span><br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;styles&nbsp;=&nbsp;[...Array(num).keys()].map(i&nbsp;=>&nbsp;{&nbsp;<br>
+<span id=106 class="line">&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;r&nbsp;=&nbsp;'auto';&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;w&nbsp;=&nbsp;width+'%';&nbsp;<br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;b&nbsp;=&nbsp;'auto';&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;h&nbsp;=&nbsp;height+'%';<br>
+<span id=108 class="line">&nbsp;108</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;((left&nbsp;+&nbsp;2*width)&nbsp;>&nbsp;100&nbsp;&&&nbsp;fill)&nbsp;{&nbsp;r&nbsp;=&nbsp;'0%';&nbsp;w&nbsp;=&nbsp;'auto';&nbsp;}<br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;((top&nbsp;+&nbsp;2*height)&nbsp;>&nbsp;100&nbsp;&&&nbsp;fill)&nbsp;{&nbsp;b&nbsp;=&nbsp;'0%';&nbsp;h&nbsp;=&nbsp;'auto';&nbsp;}<br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;style&nbsp;=&nbsp;`<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;${Math.floor(top)}%;&nbsp;bottom:${b};<br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${left}%;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right:${r};<br>
+<span id=113 class="line">&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;${w};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;${h};<br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(Math.round(left&nbsp;+=&nbsp;width)&nbsp;>&nbsp;100-Math.floor(width))&nbsp;{&nbsp;left&nbsp;=&nbsp;0;&nbsp;top&nbsp;+=&nbsp;height;&nbsp;}<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;style;<br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=118 class="line">&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;styles;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=119 class="line">&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=120 class="line">&nbsp;120</span><br>
+<span id=121 class="line">&nbsp;121</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;unitPixel(num:number)&nbsp;{&nbsp;//&nbsp;pattern:&nbsp;[px,&nbsp;px,&nbsp;FILL]<br>
+<span id=122 class="line">&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;desc&nbsp;=&nbsp;this.areaDesc;<br>
+<span id=123 class="line">&nbsp;123</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;fill&nbsp;=&nbsp;this.areaDesc.some(a&nbsp;=>&nbsp;(a&nbsp;instanceof&nbsp;FillToken));<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;root&nbsp;=&nbsp;Math.sqrt(num);<br>
+<span id=125 class="line">&nbsp;125</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;rows&nbsp;=&nbsp;Math.round(root);<br>
+<span id=126 class="line">&nbsp;126</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;&nbsp;&nbsp;cols&nbsp;=&nbsp;Math.floor(root);<br>
+<span id=127 class="line">&nbsp;127</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(root&nbsp;>&nbsp;cols)&nbsp;{&nbsp;cols++;&nbsp;}<br>
+<span id=128 class="line">&nbsp;128</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;width&nbsp;&nbsp;=&nbsp;(desc[0]&nbsp;instanceof&nbsp;DefinedToken)?&nbsp;desc[0].getSize()&nbsp;:&nbsp;undefined;<br>
+<span id=129 class="line">&nbsp;129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;height&nbsp;=&nbsp;(desc[1]&nbsp;instanceof&nbsp;DefinedToken)?&nbsp;desc[1].getSize()&nbsp;:&nbsp;width;<br>
+<span id=130 class="line">&nbsp;130</span><br>
+<span id=131 class="line">&nbsp;131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&nbsp;=&nbsp;width&nbsp;&nbsp;||&nbsp;100/cols;<br>
+<span id=132 class="line">&nbsp;132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height&nbsp;=&nbsp;height&nbsp;||&nbsp;100/rows;<br>
+<span id=133 class="line">&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;left&nbsp;=&nbsp;0;<br>
+<span id=134 class="line">&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;top&nbsp;&nbsp;=&nbsp;0;<br>
+<span id=135 class="line">&nbsp;135</span><br>
+<span id=136 class="line">&nbsp;136</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;styles&nbsp;=&nbsp;[...Array(num).keys()].map(i&nbsp;=>&nbsp;{&nbsp;<br>
+<span id=137 class="line">&nbsp;137</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;r&nbsp;=&nbsp;'auto';&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;w&nbsp;=&nbsp;width+'px';&nbsp;<br>
+<span id=138 class="line">&nbsp;138</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;b&nbsp;=&nbsp;'auto';&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;h&nbsp;=&nbsp;height+'px';<br>
+<span id=139 class="line">&nbsp;139</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;style&nbsp;=&nbsp;`<br>
+<span id=140 class="line">&nbsp;140</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top:&nbsp;${Math.floor(top)}%;&nbsp;bottom:${b};<br>
+<span id=141 class="line">&nbsp;141</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;${left}%;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right:${r};<br>
+<span id=142 class="line">&nbsp;142</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;${w};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;${h};<br>
+<span id=143 class="line">&nbsp;143</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;<br>
+<span id=144 class="line">&nbsp;144</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(Math.round(left&nbsp;+=&nbsp;width)&nbsp;>&nbsp;100-Math.floor(width))&nbsp;{&nbsp;left&nbsp;=&nbsp;0;&nbsp;top&nbsp;+=&nbsp;height;&nbsp;}<br>
+<span id=145 class="line">&nbsp;145</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;style;<br>
+<span id=146 class="line">&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=147 class="line">&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;styles;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=149 class="line">&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=151 class="line">&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Calculates&nbsp;the&nbsp;style&nbsp;attributes&nbsp;required&nbsp;for&nbsp;each&nbsp;component&nbsp;in&nbsp;`Components`.<br>
+<span id=152 class="line">&nbsp;152</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;These&nbsp;attributes&nbsp;are&nbsp;saved&nbsp;in&nbsp;a&nbsp;`styles`&nbsp;field&nbsp;on&nbsp;the&nbsp;component&nbsp;itself.&nbsp;<br>
+<span id=153 class="line">&nbsp;153</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;During&nbsp;rendering&nbsp;these&nbsp;`styles`&nbsp;attributes&nbsp;are&nbsp;copied&nbsp;to&nbsp;the&nbsp;`node.attrs.styles`&nbsp;field.<br>
+<span id=154 class="line">&nbsp;154</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;components&nbsp;<br>
+<span id=155 class="line">&nbsp;155</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=156 class="line">&nbsp;156</span>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;getStyles(components:Array<Vnode|Layout>):string&nbsp;&nbsp;{&nbsp;<br>
+<span id=157 class="line">&nbsp;157</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;styles&nbsp;=&nbsp;this.unit(components.length);<br>
+<span id=158 class="line">&nbsp;158</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components.map((c:Layout|Vnode,&nbsp;i:number)&nbsp;=>&nbsp;{<br>
+<span id=159 class="line">&nbsp;159</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.style&nbsp;=&nbsp;styles[i];<br>
+<span id=160 class="line">&nbsp;160</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;<br>
+<span id=161 class="line">&nbsp;161</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;'.hs-tile-layout';<br>
+<span id=162 class="line">&nbsp;162</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=163 class="line">&nbsp;163</span>};<br>
+<span id=164 class="line">&nbsp;164</span><br>
+<span id=165 class="line">&nbsp;165</span><br>
+<span id=166 class="line">&nbsp;166</span>Layouter.register('tiles',&nbsp;Tiles);<br>
+<span id=167 class="line">&nbsp;167</span><br></code></div>
+                </body>
+            

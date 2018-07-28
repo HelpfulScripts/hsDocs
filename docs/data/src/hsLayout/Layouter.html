@@ -1,0 +1,148 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/view/Layouter.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>Layouter.ts&nbsp;provides&nbsp;basic&nbsp;mechanisms&nbsp;for&nbsp;laying&nbsp;out&nbsp;a&nbsp;view&nbsp;container.&nbsp;<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>Subclasses&nbsp;of&nbsp;`Layouter`&nbsp;should<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>-&nbsp;implement&nbsp;the&nbsp;{@link&nbsp;Layouter.Layouter.getStyles&nbsp;getStyles}&nbsp;method.<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>-&nbsp;register&nbsp;the&nbsp;subclass&nbsp;and&nbsp;configuration&nbsp;keyword&nbsp;with&nbsp;the&nbsp;static&nbsp;<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;&nbsp;&nbsp;{@link&nbsp;Layouter.Layouter.register&nbsp;register}&nbsp;method.<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>*/</comment><br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span><br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span><comment>/**&nbsp;*/</comment><br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;Vnode}&nbsp;from&nbsp;'../mithril';<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span><br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>import&nbsp;{&nbsp;LayoutToken&nbsp;}&nbsp;&nbsp;from&nbsp;'./Tokens';<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>import&nbsp;{&nbsp;Layout&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./Layout';<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>import&nbsp;{&nbsp;px,&nbsp;pc,&nbsp;FILL&nbsp;}&nbsp;from&nbsp;'./Tokens';<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span><br>
+<span id=16 class="line">&nbsp;&nbsp;16</span><comment>/**<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>Abstract&nbsp;base&nbsp;class&nbsp;for&nbsp;creating&nbsp;layout&nbsp;style&nbsp;implementations.<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>Subclasses&nbsp;should&nbsp;implement&nbsp;`getStyles`.&nbsp;In&nbsp;addition,&nbsp;subclasses&nbsp;need&nbsp;to&nbsp;be&nbsp;registered&nbsp;with&nbsp;the&nbsp;<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>static&nbsp;`Layouter.register`&nbsp;method.<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>###&nbsp;Example<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span><code><br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>class&nbsp;MyLayouter&nbsp;extends&nbsp;Layouter&nbsp;{<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;cssClass&nbsp;=&nbsp;'.my-css-class';<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;constructor(public&nbsp;areaDesc:LayoutToken[])&nbsp;{&nbsp;<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(areaDesc);&nbsp;<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;getStyles(components:Array<Vnode|Layout>):string&nbsp;{<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components.map((c:Layout|Vnode,&nbsp;i:number)&nbsp;=>&nbsp;{<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.style&nbsp;=&nbsp;`width:auto;&nbsp;height:auto;<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.cssClass;<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;}<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>}<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span><br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>Layouter.register('MyLayouter',&nbsp;MyLayouter);<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span></code><br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;*/</comment><br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>export&nbsp;abstract&nbsp;class&nbsp;Layouter&nbsp;{<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;statis&nbsp;list&nbsp;of&nbsp;available&nbsp;styles.&nbsp;The&nbsp;key&nbsp;for&nbsp;each&nbsp;entry&nbsp;is&nbsp;the&nbsp;keyword&nbsp;that&nbsp;triggers&nbsp;the&nbsp;style,<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;and&nbsp;the&nbsp;value&nbsp;is&nbsp;a&nbsp;constructor&nbsp;for&nbsp;that&nbsp;style<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;layoutStyles:{string?:&nbsp;Layouter}&nbsp;=&nbsp;{};<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span><br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Translates&nbsp;`string`&nbsp;params&nbsp;to&nbsp;{@link&nbsp;hsLayout:Tokens.LayoutToken&nbsp;LayoutTokens}.<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;`params`&nbsp;are&nbsp;expected&nbsp;to&nbsp;either<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;-&nbsp;end&nbsp;in&nbsp;'px'<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;-&nbsp;end&nbsp;in&nbsp;'%'<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;-&nbsp;be&nbsp;equal&nbsp;to&nbsp;'fill'&nbsp;(case&nbsp;insensitive)<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;params&nbsp;an&nbsp;Array&nbsp;of&nbsp;strings&nbsp;that&nbsp;will&nbsp;be&nbsp;converted&nbsp;to&nbsp;an&nbsp;array&nbsp;of&nbsp;LayourTokens.<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;translate(params:Array<string|any>):Array<LayoutToken>&nbsp;{<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(params.length&nbsp;===&nbsp;0)&nbsp;{&nbsp;params.push('');&nbsp;}&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;[]&nbsp;-->&nbsp;['']<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;params.map((param:string|any)&nbsp;=>&nbsp;{<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(typeof&nbsp;param&nbsp;===&nbsp;'string')&nbsp;{<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(param.endsWith('px'))&nbsp;{&nbsp;return&nbsp;px(parseInt(param));&nbsp;}<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(param.endsWith('%'))&nbsp;{&nbsp;return&nbsp;pc(parseInt(param));&nbsp;}<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(param.toLowerCase()==='fill')&nbsp;{&nbsp;return&nbsp;FILL;}<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;param;<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span><br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Register&nbsp;a&nbsp;new&nbsp;Layouter&nbsp;style&nbsp;with&nbsp;corresponding&nbsp;configuration&nbsp;keyword.<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Example:```<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;class&nbsp;ColumnsLayout&nbsp;extends&nbsp;Layouter&nbsp;{...}<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Layouter.register('Column',&nbsp;Columns);<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;```<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;keyword&nbsp;the&nbsp;keyword&nbsp;used&nbsp;in&nbsp;the&nbsp;attributes&nbsp;to&nbsp;`this.layout`<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;style&nbsp;the&nbsp;`Layouter`&nbsp;implementation&nbsp;to&nbsp;instantiate&nbsp;when&nbsp;encountering&nbsp;`keyword`&nbsp;<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;register(keyword:string,&nbsp;style:typeof&nbsp;Layouter)&nbsp;{<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`registering&nbsp;${keyword}&nbsp;layout`);<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layouter.layoutStyles[keyword]&nbsp;=&nbsp;style;<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=81 class="line">&nbsp;&nbsp;81</span><br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lays&nbsp;out&nbsp;the&nbsp;`components`&nbsp;according&nbsp;to&nbsp;the&nbsp;configuration&nbsp;in&nbsp;`attrs`.<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;method&nbsp;will&nbsp;search&nbsp;for&nbsp;a&nbsp;registered&nbsp;layout&nbsp;key&nbsp;in&nbsp;`attrs`,&nbsp;then&nbsp;construct&nbsp;the&nbsp;`Layouter`&nbsp;associated&nbsp;with&nbsp;the&nbsp;key<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;with&nbsp;the&nbsp;parameters&nbsp;for&nbsp;the&nbsp;key,&nbsp;and&nbsp;call&nbsp;the&nbsp;`getStyles`&nbsp;method&nbsp;on&nbsp;the&nbsp;style&nbsp;with&nbsp;the&nbsp;provided&nbsp;`components`.<br>
+<span id=86 class="line">&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;attrs&nbsp;an&nbsp;object&nbsp;literal,&nbsp;typically&nbsp;provided&nbsp;as&nbsp;middle&nbsp;attributes&nbsp;object&nbsp;in&nbsp;the&nbsp;m(css,&nbsp;{},&nbsp;'')&nbsp;call.<br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;components&nbsp;<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;returns&nbsp;the&nbsp;css&nbsp;class&nbsp;that&nbsp;the&nbsp;`getStyles`&nbsp;function&nbsp;returns.<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;createLayout(attrs:any,&nbsp;components:Array<Vnode>):string&nbsp;{<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;css&nbsp;=&nbsp;'';<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object.keys(Layouter.layoutStyles).some(key&nbsp;=>&nbsp;{&nbsp;//&nbsp;executes&nbsp;the&nbsp;first&nbsp;match&nbsp;key&nbsp;in&nbsp;attrs.<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(attrs[key])&nbsp;{&nbsp;<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css&nbsp;=&nbsp;new&nbsp;Layouter.layoutStyles[key](Layouter.translate(attrs[key])).getStyles(components);&nbsp;<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attrs[key]&nbsp;=&nbsp;undefined;<br>
+<span id=96 class="line">&nbsp;&nbsp;96</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;<br>
+<span id=97 class="line">&nbsp;&nbsp;97</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;<br>
+<span id=99 class="line">&nbsp;&nbsp;99</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=100 class="line">&nbsp;100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;css;<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=102 class="line">&nbsp;102</span><br>
+<span id=103 class="line">&nbsp;103</span><br>
+<span id=104 class="line">&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;spacing&nbsp;=&nbsp;0;&nbsp;&nbsp;&nbsp;<br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=106 class="line">&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Layouter&nbsp;Constructor,&nbsp;will&nbsp;be&nbsp;called&nbsp;by&nbsp;the&nbsp;static&nbsp;`createLayout`&nbsp;method&nbsp;when&nbsp;creating&nbsp;the&nbsp;layout&nbsp;on&nbsp;a&nbsp;{@link&nbsp;hsLayout:Layout.Layout&nbsp;`Layout`}.<br>
+<span id=108 class="line">&nbsp;108</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;`areaDesc`&nbsp;parameter&nbsp;is&nbsp;expected&nbsp;to&nbsp;be&nbsp;of&nbsp;the&nbsp;form&nbsp;{<keyword>:&nbsp;{@link&nbsp;hsLayout:Tokens.LayoutToken&nbsp;`LayoutToken`}[]}}&nbsp;<br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;and&nbsp;will&nbsp;be&nbsp;passed&nbsp;through&nbsp;form&nbsp;the&nbsp;`Layout`&nbsp;requesting&nbsp;the&nbsp;layout.<br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;areaDesc&nbsp;<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;constructor(public&nbsp;areaDesc:LayoutToken[])&nbsp;{};<br>
+<span id=113 class="line">&nbsp;113</span><br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Calculates&nbsp;the&nbsp;style&nbsp;attributes&nbsp;required&nbsp;for&nbsp;each&nbsp;component&nbsp;in&nbsp;`Components`.<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;These&nbsp;attributes&nbsp;are&nbsp;saved&nbsp;in&nbsp;a&nbsp;`style`&nbsp;field&nbsp;on&nbsp;the&nbsp;component&nbsp;itself.&nbsp;<br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;During&nbsp;rendering&nbsp;these&nbsp;`style`&nbsp;attributes&nbsp;are&nbsp;copied&nbsp;to&nbsp;the&nbsp;`node.attrs.styles`&nbsp;field.<br>
+<span id=118 class="line">&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;###&nbsp;Example<br>
+<span id=119 class="line">&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;<code>protected&nbsp;getStyles(components:Array<Vnode|Layout>):string&nbsp;{<br>
+<span id=120 class="line">&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;components.map((c:Layout|Vnode,&nbsp;i:number)&nbsp;=>&nbsp;{<br>
+<span id=121 class="line">&nbsp;121</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.style&nbsp;=&nbsp;`width:auto;&nbsp;height:auto;<br>
+<span id=122 class="line">&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;<br>
+<span id=123 class="line">&nbsp;123</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.cssClass;<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=125 class="line">&nbsp;125</span>&nbsp;&nbsp;&nbsp;&nbsp;</code><br>
+<span id=126 class="line">&nbsp;126</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;components&nbsp;<br>
+<span id=127 class="line">&nbsp;127</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
+<span id=128 class="line">&nbsp;128</span>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;abstract&nbsp;getStyles(components:Array<Vnode|Layout>):string;<br>
+<span id=129 class="line">&nbsp;129</span>}<br>
+<span id=130 class="line">&nbsp;130</span><br>
+<span id=131 class="line">&nbsp;131</span><br></code></div>
+                </body>
+            
