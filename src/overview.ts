@@ -38,9 +38,9 @@ where
 
 Examples:
 - '{@link overview Overview of hsDocs docSet}' -> {@link overview Overview of hsDocs docSet}
-- '{@link hsdocs: Overview of hsDocs docSet}' -> {@link hsdocs: Overview of hsDocs docSet}
-- '{@link hsdocs:DocSets.DocSets.add the `adds` function}' --> {@link hsDocs:DocSets.DocSets.add the `adds` function}
-- '{@link DocSets.DocSets.add the `adds` function}' --> {@link DocSets.DocSets.add the `adds` function}
+- '{@link hsDocs: Overview of hsDocs docSet}' -> {@link hsDocs: Overview of hsDocs docSet}
+- '{@link hsDocs:DocSets.DocSets.add the `add` function}' --> {@link hsDocs:DocSets.DocSets.add the `add` function}
+- '{@link DocSets.DocSets.add the `add` function}' --> {@link DocSets.DocSets.add the `add` function}
 
 
 ### Mithril Code Examples

@@ -6,13 +6,13 @@
 	"children": [
 		{
 			"id": 66,
-			"name": "\"hsOSA\"",
+			"name": "\"Commands\"",
 			"kind": 1,
 			"kindString": "External module",
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/hsOSA.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/Commands.ts",
 			"children": [
 				{
 					"id": 67,
@@ -24,7 +24,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "hsOSA.ts",
+							"fileName": "Commands.ts",
 							"line": 8,
 							"character": 51
 						}
@@ -80,7 +80,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSA.ts",
+							"fileName": "Commands.ts",
 							"line": 29,
 							"character": 18
 						}
@@ -128,7 +128,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSA.ts",
+							"fileName": "Commands.ts",
 							"line": 16,
 							"character": 21
 						}
@@ -200,7 +200,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 92,
 									"character": 12
 								}
@@ -262,7 +262,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 80,
 									"character": 12
 								}
@@ -321,7 +321,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 167,
 									"character": 13
 								}
@@ -380,7 +380,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 116,
 									"character": 10
 								}
@@ -439,7 +439,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 132,
 									"character": 16
 								}
@@ -498,7 +498,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 149,
 									"character": 8
 								}
@@ -541,7 +541,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 203,
 									"character": 11
 								}
@@ -600,7 +600,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 103,
 									"character": 7
 								}
@@ -710,7 +710,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 65,
 									"character": 13
 								}
@@ -802,7 +802,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 50,
 									"character": 15
 								}
@@ -861,7 +861,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 180,
 									"character": 17
 								}
@@ -920,7 +920,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSA.ts",
+									"fileName": "Commands.ts",
 									"line": 192,
 									"character": 13
 								}
@@ -949,7 +949,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSA.ts",
+							"fileName": "Commands.ts",
 							"line": 43,
 							"character": 16
 						}
@@ -986,7 +986,24 @@
 			],
 			"sources": [
 				{
-					"fileName": "hsOSA.ts",
+					"fileName": "Commands.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 115,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -994,13 +1011,13 @@
 		},
 		{
 			"id": 1,
-			"name": "\"hsOSAClient\"",
+			"name": "\"osaCalls\"",
 			"kind": 1,
 			"kindString": "External module",
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/hsOSAClient.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/osaCalls.ts",
 			"children": [
 				{
 					"id": 2,
@@ -1045,7 +1062,7 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 8,
 									"character": 22
 								}
@@ -1073,7 +1090,7 @@
 									],
 									"sources": [
 										{
-											"fileName": "hsOSAClient.ts",
+											"fileName": "osaCalls.ts",
 											"line": 8,
 											"character": 23
 										}
@@ -1093,7 +1110,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSAClient.ts",
+							"fileName": "osaCalls.ts",
 							"line": 6,
 							"character": 31
 						}
@@ -1109,7 +1126,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "hsOSAClient.ts",
+							"fileName": "osaCalls.ts",
 							"line": 11,
 							"character": 25
 						}
@@ -1154,7 +1171,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSAClient.ts",
+							"fileName": "osaCalls.ts",
 							"line": 3,
 							"character": 21
 						}
@@ -1194,7 +1211,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSAClient.ts",
+							"fileName": "osaCalls.ts",
 							"line": 4,
 							"character": 22
 						}
@@ -1255,7 +1272,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 135,
 									"character": 17
 								}
@@ -1290,7 +1307,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 124,
 									"character": 19
 								}
@@ -1341,7 +1358,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 62,
 									"character": 15
 								}
@@ -1383,7 +1400,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 19,
 									"character": 17
 								}
@@ -1431,7 +1448,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 98,
 									"character": 13
 								}
@@ -1479,7 +1496,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 107,
 									"character": 19
 								}
@@ -1527,7 +1544,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 116,
 									"character": 11
 								}
@@ -1562,7 +1579,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 166,
 									"character": 14
 								}
@@ -1610,7 +1627,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 87,
 									"character": 10
 								}
@@ -1694,7 +1711,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 39,
 									"character": 16
 								}
@@ -1770,7 +1787,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 26,
 									"character": 18
 								}
@@ -1818,7 +1835,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "hsOSAClient.ts",
+									"fileName": "osaCalls.ts",
 									"line": 157,
 									"character": 13
 								}
@@ -1847,7 +1864,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "hsOSAClient.ts",
+							"fileName": "osaCalls.ts",
 							"line": 18,
 							"character": 24
 						}
@@ -1891,24 +1908,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "hsOSAClient.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 115,
-			"name": "\"index\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/index.ts",
-			"sources": [
-				{
-					"fileName": "index.ts",
+					"fileName": "osaCalls.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -1916,13 +1916,13 @@
 		},
 		{
 			"id": 55,
-			"name": "\"osalib\"",
+			"name": "\"osaLib\"",
 			"kind": 1,
 			"kindString": "External module",
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/osalib.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsOsaES6/src/osaLib.ts",
 			"children": [
 				{
 					"id": 57,
@@ -1934,7 +1934,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "osalib.ts",
+							"fileName": "osaLib.ts",
 							"line": 10,
 							"character": 22
 						}
@@ -1955,7 +1955,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "osalib.ts",
+							"fileName": "osaLib.ts",
 							"line": 11,
 							"character": 22
 						}
@@ -1976,7 +1976,7 @@
 					},
 					"sources": [
 						{
-							"fileName": "osalib.ts",
+							"fileName": "osaLib.ts",
 							"line": 3,
 							"character": 40
 						}
@@ -2023,7 +2023,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "osalib.ts",
+							"fileName": "osaLib.ts",
 							"line": 13,
 							"character": 27
 						}
@@ -2096,7 +2096,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "osalib.ts",
+							"fileName": "osaLib.ts",
 							"line": 23,
 							"character": 21
 						}
@@ -2124,7 +2124,7 @@
 			],
 			"sources": [
 				{
-					"fileName": "osalib.ts",
+					"fileName": "osaLib.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -2158,8 +2158,8 @@
 			"kind": 1,
 			"children": [
 				66,
-				1,
 				115,
+				1,
 				55,
 				116
 			]
