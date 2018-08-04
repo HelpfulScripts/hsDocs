@@ -64,7 +64,7 @@
 .hs-align-center {
   text-align: center;
 }
-/*# sourceMappingURL=_dist/bin/hsLayout.css.map */
+/*# sourceMappingURL=_dist/hsLayout.css.map */
 .hs-menu {
   position: relative;
   margin: 0px;
@@ -479,7 +479,7 @@
   transform: translate(-50%, -50%);
   background-color: #88f;
 }
-/*# sourceMappingURL=_dist/bin/hsWidget.css.map */
+/*# sourceMappingURL=_dist/hsWidget.css.map */
 .hs-graph {
   font-size: 20px;
   position: absolute;
@@ -540,7 +540,7 @@
 .hs-graph-chart-title {
   font-size: 140%;
 }
-/*# sourceMappingURL=_dist/bin/hsGraph.css.map */
+/*# sourceMappingURL=_dist/hsGraph.css.map */
 body {
   color: black;
 }
@@ -1206,4 +1206,4 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
-/*# sourceMappingURL=_dist/bin/hsDocs.css.map */
+/*# sourceMappingURL=_dist/hsDocs.css.map */

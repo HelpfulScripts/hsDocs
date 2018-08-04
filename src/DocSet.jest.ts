@@ -1,5 +1,5 @@
-const thedocs = 'hey!';
+import { DocSets } from './DocSets';
 
 test('dummy test', ()=>{
-    expect(thedocs).toBeDefined();
+    expect(DocSets).toBeDefined();
 });

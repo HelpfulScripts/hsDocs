@@ -1,0 +1,138 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/example/layout.x.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;#&nbsp;Layout&nbsp;Examples<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;<a&nbsp;href='example/layout.html'>See&nbsp;example&nbsp;page</a><br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*/</comment><br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span><br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;<comment>/**&nbsp;*/</comment><br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;m,&nbsp;Vnode&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'../mithril';<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;Layout,&nbsp;HsConfig&nbsp;}&nbsp;&nbsp;from&nbsp;'../';<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span><br>
+<span id=11 class="line">&nbsp;&nbsp;11</span><br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>const&nbsp;myConfig&nbsp;=&nbsp;{<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;&nbsp;&nbsp;&nbsp;Layout:&nbsp;{<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rows:&nbsp;['40px',&nbsp;'fill'],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;header&nbsp;and&nbsp;main&nbsp;body<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Header:&nbsp;{&nbsp;css:'.header',&nbsp;title:&nbsp;'Layout&nbsp;Example'}},<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Main:&nbsp;{<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiles:&nbsp;&nbsp;[''],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;main&nbsp;body&nbsp;wiull&nbsp;arrange&nbsp;in&nbsp;tiles<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxCount:&nbsp;6,<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leafCSS:&nbsp;'leaf',<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Layout:&nbsp;{<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rows:&nbsp;[''],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;1st&nbsp;tile:&nbsp;rows&nbsp;of&nbsp;varying&nbsp;columns<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['&nbsp;']}},<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['100px']&nbsp;}},<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['100px',&nbsp;'200px']&nbsp;}},<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['100px',&nbsp;'fill']&nbsp;}},<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['100px',&nbsp;'fill',&nbsp;'100px']&nbsp;}},<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['20%']&nbsp;}},<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['20%',&nbsp;'fill']&nbsp;}},<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;columns:&nbsp;['20%',&nbsp;'fill',&nbsp;'20%']&nbsp;}}<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}},<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Layout:&nbsp;{<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns:&nbsp;[''],&nbsp;&nbsp;//&nbsp;2nd&nbsp;tile:&nbsp;columns&nbsp;of&nbsp;varying&nbsp;rows<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['&nbsp;']}},<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['100px']&nbsp;}},<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['100px',&nbsp;'200px']&nbsp;}},<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['100px',&nbsp;'fill']&nbsp;}},<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['100px',&nbsp;'fill',&nbsp;'100px']&nbsp;}},<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['20%']&nbsp;}},<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['20%',&nbsp;'fill']&nbsp;}},<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;rows:&nbsp;['20%',&nbsp;'fill',&nbsp;'20%']&nbsp;}}<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}},<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Layout:&nbsp;{<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiles:&nbsp;[''],&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;3rd&nbsp;tile:&nbsp;varying&nbsp;tiles<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css:&nbsp;'tile_pct',<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['&nbsp;']}},<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['40%',&nbsp;'fill']}},<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['40%']}},<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['40%',&nbsp;'30%',&nbsp;'fill']}},<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}},<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;Layout:&nbsp;{<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiles:&nbsp;[''],&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;3rd&nbsp;tile:&nbsp;varying&nbsp;tiles<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css:&nbsp;'tile_px',<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content:&nbsp;[<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['&nbsp;']}},<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['&nbsp;',&nbsp;'fill']}},<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['&nbsp;']}},<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;aLeaf:&nbsp;{&nbsp;css:'leaf',&nbsp;tiles:&nbsp;['&nbsp;']}},<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}}<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}}<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>};<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span><br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>function&nbsp;next(fn:any)&nbsp;{<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;setTimeout(()&nbsp;=>&nbsp;{<br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fn();<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next(fn);<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;2000);<br>
+<span id=79 class="line">&nbsp;&nbsp;79</span>}<br>
+<span id=80 class="line">&nbsp;&nbsp;80</span><br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>const&nbsp;example&nbsp;=&nbsp;{&nbsp;<br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;maxCount:&nbsp;0,<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;Header:&nbsp;class&nbsp;extends&nbsp;Layout&nbsp;{<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:&nbsp;Vnode):&nbsp;Vnode&nbsp;{<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(node.attrs.css,&nbsp;node.attrs.title);<br>
+<span id=86 class="line">&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=87 class="line">&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;Main:&nbsp;class&nbsp;extends&nbsp;Layout&nbsp;{<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:&nbsp;Vnode):&nbsp;Vnode&nbsp;{<br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;example.maxCount&nbsp;=&nbsp;node.attrs.maxCount&nbsp;||&nbsp;3;<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;super.getComponents(node);<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>&nbsp;&nbsp;&nbsp;&nbsp;aLeaf:&nbsp;class&nbsp;extends&nbsp;Layout&nbsp;{<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count&nbsp;=&nbsp;1;<br>
+<span id=96 class="line">&nbsp;&nbsp;96</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inc&nbsp;=&nbsp;1;<br>
+<span id=97 class="line">&nbsp;&nbsp;97</span><br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor()&nbsp;{<br>
+<span id=99 class="line">&nbsp;&nbsp;99</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super();<br>
+<span id=100 class="line">&nbsp;100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next(()&nbsp;=>&nbsp;{<br>
+<span id=101 class="line">&nbsp;101</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.count&nbsp;+=&nbsp;this.inc;<br>
+<span id=102 class="line">&nbsp;102</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.count&nbsp;>=&nbsp;example.maxCount)&nbsp;{&nbsp;this.inc&nbsp;=&nbsp;-1;&nbsp;}<br>
+<span id=103 class="line">&nbsp;103</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.count&nbsp;<=&nbsp;1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;this.inc&nbsp;=&nbsp;+1;&nbsp;}<br>
+<span id=104 class="line">&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.redraw();<br>
+<span id=105 class="line">&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=106 class="line">&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=107 class="line">&nbsp;107</span><br>
+<span id=108 class="line">&nbsp;108</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:&nbsp;Vnode):&nbsp;Vnode&nbsp;{<br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;dims&nbsp;=&nbsp;node.attrs.columns&nbsp;||&nbsp;node.attrs.rows&nbsp;||&nbsp;node.attrs.tiles;<br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;text&nbsp;=&nbsp;'';<br>
+<span id=111 class="line">&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(node.attrs.columns)&nbsp;{&nbsp;text&nbsp;=&nbsp;'Columns';&nbsp;}<br>
+<span id=112 class="line">&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(node.attrs.rows)&nbsp;{&nbsp;text&nbsp;=&nbsp;'Rows';&nbsp;}<br>
+<span id=113 class="line">&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(node.attrs.tiles)&nbsp;{&nbsp;text&nbsp;=&nbsp;'Tiles';&nbsp;}<br>
+<span id=114 class="line">&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;[...Array(this.count).keys()].map((c:number)&nbsp;=>&nbsp;`${text}<br>${c+1}<br>[${dims.join()}]`);<br>
+<span id=115 class="line">&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;content;<br>
+<span id=116 class="line">&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=117 class="line">&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=118 class="line">&nbsp;118</span>};<br>
+<span id=119 class="line">&nbsp;119</span><br>
+<span id=120 class="line">&nbsp;120</span>export&nbsp;const&nbsp;cfg&nbsp;=&nbsp;new&nbsp;HsConfig([example]).attachNodeTree(myConfig,&nbsp;document.body);<br>
+<span id=121 class="line">&nbsp;121</span><br></code></div>
+                </body>
+            
