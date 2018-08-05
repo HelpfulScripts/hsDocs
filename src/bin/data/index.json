@@ -6,7 +6,9 @@
         "hsLayout.json",
         "hsWidget.json",
         "hsGraph.json",
-        "hsNode.json"
+        "hsNode.json",
+        "hsExcel.json",
+        "hsOsaES6.json"
     ],
     "title": "HS Libraries"
 }
