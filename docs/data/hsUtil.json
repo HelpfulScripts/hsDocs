@@ -1174,112 +1174,6 @@
 		},
 		{
 			"id": 72,
-			"name": "\"mithril\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/mithril.ts",
-			"children": [
-				{
-					"id": 74,
-					"name": "Vnode",
-					"kind": 4194304,
-					"kindString": "Type alias",
-					"flags": {
-						"isExported": true
-					},
-					"comment": {
-						"shortText": "provide and export a Typescript Vnode type"
-					},
-					"sources": [
-						{
-							"fileName": "mithril.ts",
-							"line": 19,
-							"character": 17
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					}
-				},
-				{
-					"id": 73,
-					"name": "m",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"comment": {
-						"shortText": "import and re-export the mithril m objkect"
-					},
-					"sources": [
-						{
-							"fileName": "mithril.ts",
-							"line": 14,
-							"character": 14
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					},
-					"defaultValue": " require(\"mithril\")"
-				},
-				{
-					"id": 75,
-					"name": "o",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isExported": true,
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "mithril.ts",
-							"line": 21,
-							"character": 14
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					},
-					"defaultValue": " require(\"mithril/ospec/ospec\")"
-				}
-			],
-			"groups": [
-				{
-					"title": "Type aliases",
-					"kind": 4194304,
-					"children": [
-						74
-					]
-				},
-				{
-					"title": "Variables",
-					"kind": 32,
-					"children": [
-						73,
-						75
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "mithril.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 76,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1437,7 +1331,6 @@
 				41,
 				71,
 				72,
-				76,
 				60
 			]
 		}
