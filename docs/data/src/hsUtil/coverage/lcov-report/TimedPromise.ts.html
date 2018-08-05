@@ -131,7 +131,9 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,10 +168,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -234,7 +238,8 @@ export function timeout(ms:number):Promise&lt;void&gt; {
 /**
  * @description delays a promise, passing the parameter 
  * received from the calling promise down to the resolving promise.
- * Usage 1: a delay within the `then` chain:
+ * 
+ * **Usage 1:** a delay within the `then` chain:
  * ```
  * &lt;PromiseLike&gt;
  *    .then(...)
@@ -242,7 +247,7 @@ export function timeout(ms:number):Promise&lt;void&gt; {
  *    .then(...)
  *    .catch(...)
  * ```
- * Usage 2: an initial delay
+ * **Usage 2:** an initial delay
  * ```
  * delay(10)()
  *    .then(...)
@@ -260,9 +265,10 @@ export function delay(ms:number)   {
 }
 &nbsp;
 /**
- * # Pace
- * ensures that a functions in a sequence are not executed faster than a preset minimum delay.
- * Usage: ```
+ * @description ensures that a functions in a sequence are not executed faster than a preset minimum delay.
+ * 
+ * **Usage:** 
+ * ```
  * const q = new PacingQueue(100); // 100ms between calls
  * ...
  * q.add((ms) =&gt; `I have been called after ${ms}ms`;})
@@ -278,7 +284,7 @@ export class Pace {
      * two registered functions; defaults to 100;
      */
     constructor(pace=100) {
-        this.pace = pace; 
+        this.pace = pace+5; // add 5ms margin. delay() may trigger a millisecond or two early
     }
 &nbsp;
     /**

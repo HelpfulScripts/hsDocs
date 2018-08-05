@@ -796,7 +796,12 @@
 						"isExported": true
 					},
 					"comment": {
-						"shortText": "# Pace\nensures that a functions in a sequence are not executed faster than a preset minimum delay.\nUsage: ```\nconst q = new PacingQueue(100); // 100ms between calls\n...\nq.add((ms) => `I have been called after ${ms}ms`;})\n   .then((result) => console.log(result));     // prints: I have been called after ***ms`\n```"
+						"tags": [
+							{
+								"tag": "description",
+								"text": "ensures that a functions in a sequence are not executed faster than a preset minimum delay.\n\n**Usage:**\n```\nconst q = new PacingQueue(100); // 100ms between calls\n...\nq.add((ms) => `I have been called after ${ms}ms`;})\n   .then((result) => console.log(result));     // prints: I have been called after ***ms`\n```\n"
+							}
+						]
 					},
 					"children": [
 						{
@@ -840,7 +845,7 @@
 							"sources": [
 								{
 									"fileName": "TimedPromise.ts",
-									"line": 56,
+									"line": 58,
 									"character": 26
 								}
 							]
@@ -857,7 +862,7 @@
 							"sources": [
 								{
 									"fileName": "TimedPromise.ts",
-									"line": 55,
+									"line": 57,
 									"character": 16
 								}
 							],
@@ -878,7 +883,7 @@
 							"sources": [
 								{
 									"fileName": "TimedPromise.ts",
-									"line": 56,
+									"line": 58,
 									"character": 21
 								}
 							],
@@ -952,7 +957,7 @@
 													"sources": [
 														{
 															"fileName": "TimedPromise.ts",
-															"line": 72,
+															"line": 74,
 															"character": 11
 														}
 													]
@@ -975,7 +980,7 @@
 							"sources": [
 								{
 									"fileName": "TimedPromise.ts",
-									"line": 72,
+									"line": 74,
 									"character": 7
 								}
 							]
@@ -1008,7 +1013,7 @@
 					"sources": [
 						{
 							"fileName": "TimedPromise.ts",
-							"line": 54,
+							"line": 56,
 							"character": 17
 						}
 					]
@@ -1033,7 +1038,7 @@
 								"tags": [
 									{
 										"tag": "description",
-										"text": "delays a promise, passing the parameter\nreceived from the calling promise down to the resolving promise.\nUsage 1: a delay within the `then` chain:\n```\n<PromiseLike>\n   .then(...)\n   .then(delay(10))\n   .then(...)\n   .catch(...)\n```\nUsage 2: an initial delay\n```\ndelay(10)()\n   .then(...)\n   .catch(...)\n```"
+										"text": "delays a promise, passing the parameter\nreceived from the calling promise down to the resolving promise.\n\n**Usage 1:** a delay within the `then` chain:\n```\n<PromiseLike>\n   .then(...)\n   .then(delay(10))\n   .then(...)\n   .catch(...)\n```\n**Usage 2:** an initial delay\n```\ndelay(10)()\n   .then(...)\n   .catch(...)\n```"
 									}
 								]
 							},
@@ -1059,7 +1064,7 @@
 					"sources": [
 						{
 							"fileName": "TimedPromise.ts",
-							"line": 36,
+							"line": 37,
 							"character": 21
 						}
 					]
