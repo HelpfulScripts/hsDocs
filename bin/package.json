@@ -1,0 +1,61 @@
+{
+  "name": "hsdocs",
+  "version": "2.3.3",
+  "keywords": [
+    "es6",
+    "jsdocs",
+    "typescript",
+    "typedoc"
+  ],
+  "description": "Helpful Scripts documentation utility for Typescript projects",
+  "homepage": "https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0",
+  "author": {
+    "name": "masterscripter",
+    "email": "helpfulscripts@gmail.com"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HelpfulScripts/hsDocs.git"
+  },
+  "engines": {
+    "node": "^8.9.0"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "devDependencies": {
+    "@types/node": "^7.0.66",
+    "grunt": "^1.0.3",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-ts": "^6.0.0-beta.19",
+    "grunt-tslint": "^4.0.1",
+    "grunt-typedoc": "^0.2.4",
+    "grunt-webpack": "^3.1.2",
+    "tslint": "^4.5.1",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.9.2",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.14.0",
+    "hsdatab": "^2.0.2",
+    "hsgraph": "^2.0.0",
+    "@types/lodash": "^4.14.109",
+    "@types/mithril": "^1.1.12"
+  },
+  "dependencies": {
+    "hslayout": "^2.0.0",
+    "mithril": "^1.1.6",
+    "showdown": "^1.8.6",
+    "hswidget": "^2.0.0",
+    "hsutil": "^2.0.2"
+  }
+}

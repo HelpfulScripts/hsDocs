@@ -44,16 +44,11 @@
 <span id=29 class="line">&nbsp;&nbsp;29</span>function&nbsp;exec(command:string,&nbsp;options?:any)&nbsp;{<br>
 <span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;Promise((resolve:(result:{stdout:string,&nbsp;stderr:string})=>void,&nbsp;reject:(e:string)=>void)&nbsp;=>&nbsp;{<br>
 <span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cp.exec(command,&nbsp;options,&nbsp;(error:string,&nbsp;stdout:string,&nbsp;stderr:string)&nbsp;=>&nbsp;{<br>
-<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(error)&nbsp;{<br>
-<span id=33 class="line">&nbsp;&nbsp;33</span>//			&nbsp;&nbsp;&nbsp;&nbsp;log.error('exec&nbsp;for&nbsp;'&nbsp;+&nbsp;command&nbsp;+&nbsp;':&nbsp;'&nbsp;+&nbsp;error);<br>
-<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reject(error);<br>
-<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br>
-<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve({stdout:stdout,&nbsp;stderr:stderr});<br>
-<span id=37 class="line">&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-<span id=38 class="line">&nbsp;&nbsp;38</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-<span id=40 class="line">&nbsp;&nbsp;40</span>}<br>
-<span id=41 class="line">&nbsp;&nbsp;41</span><br>
-<span id=42 class="line">&nbsp;&nbsp;42</span>export&nbsp;{&nbsp;exec&nbsp;};<br></code></div>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error?&nbsp;reject(error)&nbsp;:&nbsp;resolve({stdout:stdout,&nbsp;stderr:stderr});<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>}<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span><br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>export&nbsp;{&nbsp;exec&nbsp;};<br></code></div>
                 </body>
             

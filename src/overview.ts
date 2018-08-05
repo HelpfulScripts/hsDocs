@@ -1,7 +1,9 @@
 /**
 # hsDocs
 
-Helpful Scripts code documentation viewer. [Github page](https://github.com/HelpfulScripts/hsDocs)
+Helpful Scripts code documentation viewer. 
+[`[Github page]`](https://github.com/HelpfulScripts/hsDocs)
+[`[Coverage Info]`](./data/src/hsDocs/coverage/)
 
 ___
 hsDocs.js is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.

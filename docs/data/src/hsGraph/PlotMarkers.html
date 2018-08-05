@@ -1,0 +1,71 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/PlotMarkers.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;##&nbsp;PlotMarkers<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;Plots&nbsp;data&nbsp;as&nbsp;markers&nbsp;by&nbsp;configuring&nbsp;the&nbsp;series'&nbsp;`type`&nbsp;<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;as&nbsp;{@link&nbsp;Series.Series.plot&nbsp;'markers'}.&nbsp;<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;The&nbsp;`cols`&nbsp;name&nbsp;array&nbsp;starts&nbsp;with&nbsp;<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;the&nbsp;x-value&nbsp;column,&nbsp;followed&nbsp;by&nbsp;the&nbsp;y-column.<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;<example><br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;<file&nbsp;name='script.js'><br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*&nbsp;let&nbsp;series&nbsp;=&nbsp;{<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;colNames:['time',&nbsp;'volume'],<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;rows:[<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1,&nbsp;0.2],<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.2,&nbsp;0.7],<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.4,&nbsp;-0.2],<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.6,&nbsp;0],<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0.8,&nbsp;0.5],<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1,&nbsp;0.7]<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>&nbsp;*&nbsp;]};<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>&nbsp;*&nbsp;<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>&nbsp;*&nbsp;m.mount(root,&nbsp;{&nbsp;<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view:()&nbsp;=>&nbsp;m(hsgraph.Graph,&nbsp;{cfgFn:&nbsp;cfg&nbsp;=>&nbsp;{<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cfg.chart.title.text&nbsp;=&nbsp;'Simple&nbsp;Example';<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cfg.series.data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;[series];<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cfg.series.series&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;[{&nbsp;x:'time',&nbsp;y:'volume',&nbsp;type:&nbsp;'marker'&nbsp;}];<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}})<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;*&nbsp;});<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;*<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;*&nbsp;</file><br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;*&nbsp;</example><br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;*/</comment><br>
+<span id=32 class="line">&nbsp;&nbsp;32</span><br>
+<span id=33 class="line">&nbsp;&nbsp;33</span><comment>/**&nbsp;*/</comment><br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>import&nbsp;{&nbsp;m,&nbsp;Vnode}&nbsp;&nbsp;from&nbsp;'hsutil/mithril';<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>import&nbsp;{&nbsp;Data&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'hsdatab';<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>import&nbsp;{&nbsp;XYScale&nbsp;}&nbsp;&nbsp;from&nbsp;'./AxesTypes';<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>import&nbsp;{&nbsp;Plot&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./Plot';<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>import&nbsp;{&nbsp;SeriesDef&nbsp;}from&nbsp;'./Series';<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span><br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>export&nbsp;class&nbsp;PlotMarkers&nbsp;extends&nbsp;Plot&nbsp;{&nbsp;<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;plot(data:Data,&nbsp;series:SeriesDef,&nbsp;scales:XYScale,&nbsp;i:number,&nbsp;clipID:string):&nbsp;Vnode[]&nbsp;{<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;x&nbsp;=&nbsp;data.colNumber(series.x);<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;y&nbsp;=&nbsp;data.colNumber(series.y);<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;l&nbsp;=&nbsp;series.l?&nbsp;data.colNumber(series.l)&nbsp;:&nbsp;undefined;<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(x===undefined)&nbsp;{&nbsp;return&nbsp;m('.error','');&nbsp;}<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(y===undefined)&nbsp;{&nbsp;return&nbsp;m('.error','');&nbsp;}<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.drawMarker(clipID,&nbsp;data.getData(),&nbsp;x,&nbsp;y,&nbsp;scales,&nbsp;series.style,&nbsp;series.y),<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l===undefined)?&nbsp;undefined&nbsp;:<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.drawLabel(clipID,&nbsp;data.getData(),&nbsp;x,&nbsp;y,&nbsp;l,&nbsp;scales,&nbsp;series)<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>}<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span><br></code></div>
+                </body>
+            

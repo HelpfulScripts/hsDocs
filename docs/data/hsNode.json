@@ -1677,7 +1677,7 @@
 			]
 		},
 		{
-			"id": 157,
+			"id": 162,
 			"name": "\"httpUtil\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1690,7 +1690,7 @@
 			},
 			"children": [
 				{
-					"id": 182,
+					"id": 187,
 					"name": "Digest",
 					"kind": 128,
 					"kindString": "Class",
@@ -1699,7 +1699,7 @@
 					},
 					"children": [
 						{
-							"id": 186,
+							"id": 191,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -1708,14 +1708,14 @@
 							},
 							"signatures": [
 								{
-									"id": 187,
+									"id": 192,
 									"name": "new Digest",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 188,
+											"id": 193,
 											"name": "username",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1726,7 +1726,7 @@
 											}
 										},
 										{
-											"id": 189,
+											"id": 194,
 											"name": "password",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1740,7 +1740,7 @@
 									"type": {
 										"type": "reference",
 										"name": "Digest",
-										"id": 182
+										"id": 187
 									}
 								}
 							],
@@ -1753,7 +1753,7 @@
 							]
 						},
 						{
-							"id": 183,
+							"id": 188,
 							"name": "nc",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1774,7 +1774,7 @@
 							"defaultValue": "0"
 						},
 						{
-							"id": 185,
+							"id": 190,
 							"name": "password",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1794,7 +1794,7 @@
 							}
 						},
 						{
-							"id": 184,
+							"id": 189,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1814,7 +1814,7 @@
 							}
 						},
 						{
-							"id": 192,
+							"id": 197,
 							"name": "generateCNONCE",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1823,7 +1823,7 @@
 							},
 							"signatures": [
 								{
-									"id": 193,
+									"id": 198,
 									"name": "generateCNONCE",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1833,7 +1833,7 @@
 									},
 									"parameters": [
 										{
-											"id": 194,
+											"id": 199,
 											"name": "qop",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1850,14 +1850,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 195,
+											"id": 200,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 196,
+													"id": 201,
 													"name": "cnonce",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1876,7 +1876,7 @@
 													"defaultValue": " cnonce"
 												},
 												{
-													"id": 197,
+													"id": 202,
 													"name": "nc",
 													"kind": 32,
 													"kindString": "Variable",
@@ -1900,8 +1900,8 @@
 													"title": "Variables",
 													"kind": 32,
 													"children": [
-														196,
-														197
+														201,
+														202
 													]
 												}
 											]
@@ -1918,7 +1918,7 @@
 							]
 						},
 						{
-							"id": 198,
+							"id": 203,
 							"name": "testDigestAuth",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1927,14 +1927,14 @@
 							},
 							"signatures": [
 								{
-									"id": 199,
+									"id": 204,
 									"name": "testDigestAuth",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 200,
+											"id": 205,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1945,7 +1945,7 @@
 											}
 										},
 										{
-											"id": 201,
+											"id": 206,
 											"name": "data",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1956,7 +1956,7 @@
 											}
 										},
 										{
-											"id": 202,
+											"id": 207,
 											"name": "response",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1964,7 +1964,7 @@
 											"type": {
 												"type": "reference",
 												"name": "IncomingMessage",
-												"id": 158
+												"id": 163
 											}
 										}
 									],
@@ -1978,7 +1978,7 @@
 													{
 														"type": "reference",
 														"name": "HttpResponse",
-														"id": 178
+														"id": 183
 													},
 													{
 														"type": "intrinsic",
@@ -1999,7 +1999,7 @@
 							]
 						},
 						{
-							"id": 190,
+							"id": 195,
 							"name": "updateNC",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2008,7 +2008,7 @@
 							},
 							"signatures": [
 								{
-									"id": 191,
+									"id": 196,
 									"name": "updateNC",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2036,25 +2036,25 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								186
+								191
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								183,
-								185,
-								184
+								188,
+								190,
+								189
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								192,
-								198,
-								190
+								197,
+								203,
+								195
 							]
 						}
 					],
@@ -2067,7 +2067,7 @@
 					]
 				},
 				{
-					"id": 178,
+					"id": 183,
 					"name": "HttpResponse",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2076,7 +2076,7 @@
 					},
 					"children": [
 						{
-							"id": 181,
+							"id": 186,
 							"name": "body",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2097,7 +2097,7 @@
 							}
 						},
 						{
-							"id": 180,
+							"id": 185,
 							"name": "data",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2117,7 +2117,7 @@
 							}
 						},
 						{
-							"id": 179,
+							"id": 184,
 							"name": "response",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2142,9 +2142,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								181,
-								180,
-								179
+								186,
+								185,
+								184
 							]
 						}
 					],
@@ -2157,7 +2157,7 @@
 					]
 				},
 				{
-					"id": 158,
+					"id": 163,
 					"name": "IncomingMessage",
 					"kind": 256,
 					"kindString": "Interface",
@@ -2166,7 +2166,7 @@
 					},
 					"children": [
 						{
-							"id": 177,
+							"id": 182,
 							"name": "_headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2186,7 +2186,7 @@
 							}
 						},
 						{
-							"id": 176,
+							"id": 181,
 							"name": "caseless",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2206,7 +2206,7 @@
 							}
 						},
 						{
-							"id": 159,
+							"id": 164,
 							"name": "headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2226,7 +2226,7 @@
 							}
 						},
 						{
-							"id": 160,
+							"id": 165,
 							"name": "httpVersion",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2246,7 +2246,7 @@
 							}
 						},
 						{
-							"id": 161,
+							"id": 166,
 							"name": "method",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2266,7 +2266,7 @@
 							}
 						},
 						{
-							"id": 171,
+							"id": 176,
 							"name": "on",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2283,21 +2283,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 172,
+									"id": 177,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"signatures": [
 										{
-											"id": 173,
+											"id": 178,
 											"name": "__call",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 174,
+													"id": 179,
 													"name": "event",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2308,7 +2308,7 @@
 													}
 												},
 												{
-													"id": 175,
+													"id": 180,
 													"name": "callback",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2336,7 +2336,7 @@
 							}
 						},
 						{
-							"id": 162,
+							"id": 167,
 							"name": "rawHeaders",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2359,7 +2359,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 168,
 							"name": "rawTrailers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2382,7 +2382,7 @@
 							}
 						},
 						{
-							"id": 167,
+							"id": 172,
 							"name": "setEncoding",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2399,21 +2399,21 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 168,
+									"id": 173,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"signatures": [
 										{
-											"id": 169,
+											"id": 174,
 											"name": "__call",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 170,
+													"id": 175,
 													"name": "enc",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -2441,7 +2441,7 @@
 							}
 						},
 						{
-							"id": 164,
+							"id": 169,
 							"name": "statusCode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2461,7 +2461,7 @@
 							}
 						},
 						{
-							"id": 165,
+							"id": 170,
 							"name": "statusMessage",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2481,7 +2481,7 @@
 							}
 						},
 						{
-							"id": 166,
+							"id": 171,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2506,18 +2506,18 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								177,
-								176,
-								159,
-								160,
-								161,
-								171,
-								162,
-								163,
-								167,
+								182,
+								181,
 								164,
 								165,
-								166
+								166,
+								176,
+								167,
+								168,
+								172,
+								169,
+								170,
+								171
 							]
 						}
 					],
@@ -2530,7 +2530,7 @@
 					]
 				},
 				{
-					"id": 203,
+					"id": 208,
 					"name": "http",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2552,7 +2552,7 @@
 					"defaultValue": "  require('http')"
 				},
 				{
-					"id": 204,
+					"id": 209,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2574,14 +2574,14 @@
 					"defaultValue": " new Log('httpUtil')"
 				},
 				{
-					"id": 209,
+					"id": 214,
 					"name": "compileParams",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 210,
+							"id": 215,
 							"name": "compileParams",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2591,7 +2591,7 @@
 							},
 							"parameters": [
 								{
-									"id": 211,
+									"id": 216,
 									"name": "params",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2620,7 +2620,7 @@
 					]
 				},
 				{
-					"id": 233,
+					"id": 238,
 					"name": "decodeXmlResult",
 					"kind": 64,
 					"kindString": "Function",
@@ -2629,14 +2629,14 @@
 					},
 					"signatures": [
 						{
-							"id": 234,
+							"id": 239,
 							"name": "decodeXmlResult",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 235,
+									"id": 240,
 									"name": "xml",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2662,7 +2662,7 @@
 					]
 				},
 				{
-					"id": 226,
+					"id": 231,
 					"name": "get",
 					"kind": 64,
 					"kindString": "Function",
@@ -2671,7 +2671,7 @@
 					},
 					"signatures": [
 						{
-							"id": 227,
+							"id": 232,
 							"name": "get",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2682,7 +2682,7 @@
 							},
 							"parameters": [
 								{
-									"id": 228,
+									"id": 233,
 									"name": "url",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2715,7 +2715,7 @@
 											{
 												"type": "reference",
 												"name": "HttpResponse",
-												"id": 178
+												"id": 183
 											},
 											{
 												"type": "intrinsic",
@@ -2736,21 +2736,21 @@
 					]
 				},
 				{
-					"id": 229,
+					"id": 234,
 					"name": "getAttributes",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 230,
+							"id": 235,
 							"name": "getAttributes",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 231,
+									"id": 236,
 									"name": "tag",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2761,7 +2761,7 @@
 									}
 								},
 								{
-									"id": 232,
+									"id": 237,
 									"name": "result",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2787,21 +2787,21 @@
 					]
 				},
 				{
-					"id": 219,
+					"id": 224,
 					"name": "isBinary",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 220,
+							"id": 225,
 							"name": "isBinary",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 221,
+									"id": 226,
 									"name": "contentType",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2827,21 +2827,21 @@
 					]
 				},
 				{
-					"id": 205,
+					"id": 210,
 					"name": "omitNull",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 206,
+							"id": 211,
 							"name": "omitNull",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 207,
+									"id": 212,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2855,7 +2855,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 208,
+									"id": 213,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -2873,21 +2873,21 @@
 					]
 				},
 				{
-					"id": 215,
+					"id": 220,
 					"name": "parseDigestResponse",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 216,
+							"id": 221,
 							"name": "parseDigestResponse",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 217,
+									"id": 222,
 									"name": "digestHeader",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2901,7 +2901,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 218,
+									"id": 223,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
@@ -2919,14 +2919,14 @@
 					]
 				},
 				{
-					"id": 212,
+					"id": 217,
 					"name": "putDoubleQuotes",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 213,
+							"id": 218,
 							"name": "putDoubleQuotes",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2936,7 +2936,7 @@
 							},
 							"parameters": [
 								{
-									"id": 214,
+									"id": 219,
 									"name": "entry",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2965,7 +2965,7 @@
 					]
 				},
 				{
-					"id": 222,
+					"id": 227,
 					"name": "request",
 					"kind": 64,
 					"kindString": "Function",
@@ -2974,7 +2974,7 @@
 					},
 					"signatures": [
 						{
-							"id": 223,
+							"id": 228,
 							"name": "request",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2985,7 +2985,7 @@
 							},
 							"parameters": [
 								{
-									"id": 224,
+									"id": 229,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2999,7 +2999,7 @@
 									}
 								},
 								{
-									"id": 225,
+									"id": 230,
 									"name": "postData",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3025,7 +3025,7 @@
 											{
 												"type": "reference",
 												"name": "HttpResponse",
-												"id": 178
+												"id": 183
 											},
 											{
 												"type": "intrinsic",
@@ -3051,38 +3051,38 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						182
+						187
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						178,
-						158
+						183,
+						163
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						203,
-						204
+						208,
+						209
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						209,
-						233,
-						226,
-						229,
-						219,
-						205,
-						215,
-						212,
-						222
+						214,
+						238,
+						231,
+						234,
+						224,
+						210,
+						220,
+						217,
+						227
 					]
 				}
 			],
@@ -3095,7 +3095,7 @@
 			]
 		},
 		{
-			"id": 236,
+			"id": 241,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3173,7 +3173,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 109,
+									"line": 108,
 									"character": 20
 								}
 							]
@@ -3189,7 +3189,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 106,
+									"line": 105,
 									"character": 9
 								}
 							],
@@ -3210,7 +3210,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 109,
+									"line": 108,
 									"character": 9
 								}
 							],
@@ -3231,7 +3231,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 107,
+									"line": 106,
 									"character": 8
 								}
 							],
@@ -3252,7 +3252,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 108,
+									"line": 107,
 									"character": 8
 								}
 							],
@@ -3274,7 +3274,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 105,
+									"line": 104,
 									"character": 19
 								}
 							],
@@ -3285,7 +3285,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 135,
+							"id": 140,
 							"name": "config",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3294,7 +3294,7 @@
 							},
 							"signatures": [
 								{
-									"id": 136,
+									"id": 141,
 									"name": "config",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3304,7 +3304,7 @@
 									},
 									"parameters": [
 										{
-											"id": 137,
+											"id": 142,
 											"name": "cfg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3315,14 +3315,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 138,
+													"id": 143,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 139,
+															"id": 144,
 															"name": "colors",
 															"kind": 32,
 															"kindString": "Variable",
@@ -3332,7 +3332,7 @@
 															"sources": [
 																{
 																	"fileName": "log.ts",
-																	"line": 295,
+																	"line": 281,
 																	"character": 22
 																}
 															],
@@ -3342,7 +3342,7 @@
 															}
 														},
 														{
-															"id": 141,
+															"id": 146,
 															"name": "entryFormat",
 															"kind": 32,
 															"kindString": "Variable",
@@ -3352,7 +3352,7 @@
 															"sources": [
 																{
 																	"fileName": "log.ts",
-																	"line": 295,
+																	"line": 281,
 																	"character": 61
 																}
 															],
@@ -3362,7 +3362,7 @@
 															}
 														},
 														{
-															"id": 142,
+															"id": 147,
 															"name": "level",
 															"kind": 32,
 															"kindString": "Variable",
@@ -3372,7 +3372,7 @@
 															"sources": [
 																{
 																	"fileName": "log.ts",
-																	"line": 295,
+																	"line": 281,
 																	"character": 76
 																}
 															],
@@ -3382,7 +3382,7 @@
 															}
 														},
 														{
-															"id": 140,
+															"id": 145,
 															"name": "logFile",
 															"kind": 32,
 															"kindString": "Variable",
@@ -3392,7 +3392,7 @@
 															"sources": [
 																{
 																	"fileName": "log.ts",
-																	"line": 295,
+																	"line": 281,
 																	"character": 40
 																}
 															],
@@ -3407,17 +3407,17 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																139,
-																141,
-																142,
-																140
+																144,
+																146,
+																147,
+																145
 															]
 														}
 													],
 													"sources": [
 														{
 															"fileName": "log.ts",
-															"line": 295,
+															"line": 281,
 															"character": 15
 														}
 													]
@@ -3434,7 +3434,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 295,
+									"line": 281,
 									"character": 10
 								}
 							]
@@ -3472,6 +3472,18 @@
 												"type": "intrinsic",
 												"name": "string"
 											}
+										},
+										{
+											"id": 109,
+											"name": "log",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
 										}
 									],
 									"type": {
@@ -3489,13 +3501,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 145,
+									"line": 144,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 118,
+							"id": 122,
 							"name": "entryFormat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3504,7 +3516,7 @@
 							},
 							"signatures": [
 								{
-									"id": 119,
+									"id": 123,
 									"name": "entryFormat",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3515,7 +3527,7 @@
 									},
 									"parameters": [
 										{
-											"id": 120,
+											"id": 124,
 											"name": "fmtStr",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3540,13 +3552,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 182,
+									"line": 181,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 115,
+							"id": 118,
 							"name": "error",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3555,7 +3567,7 @@
 							},
 							"signatures": [
 								{
-									"id": 116,
+									"id": 119,
 									"name": "error",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3566,7 +3578,7 @@
 									},
 									"parameters": [
 										{
-											"id": 117,
+											"id": 120,
 											"name": "msg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3578,6 +3590,18 @@
 												"type": "intrinsic",
 												"name": "any"
 											}
+										},
+										{
+											"id": 121,
+											"name": "log",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
 										}
 									],
 									"type": {
@@ -3595,13 +3619,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 171,
+									"line": 170,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 109,
+							"id": 110,
 							"name": "info",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3610,7 +3634,7 @@
 							},
 							"signatures": [
 								{
-									"id": 110,
+									"id": 111,
 									"name": "info",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3621,7 +3645,7 @@
 									},
 									"parameters": [
 										{
-											"id": 111,
+											"id": 112,
 											"name": "msg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3633,6 +3657,18 @@
 												"type": "intrinsic",
 												"name": "any"
 											}
+										},
+										{
+											"id": 113,
+											"name": "log",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
 										}
 									],
 									"type": {
@@ -3650,13 +3686,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 154,
+									"line": 153,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 131,
+							"id": 136,
 							"name": "inspect",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3665,7 +3701,7 @@
 							},
 							"signatures": [
 								{
-									"id": 132,
+									"id": 137,
 									"name": "inspect",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3675,7 +3711,7 @@
 									},
 									"parameters": [
 										{
-											"id": 133,
+											"id": 138,
 											"name": "msg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3689,7 +3725,7 @@
 											}
 										},
 										{
-											"id": 134,
+											"id": 139,
 											"name": "depth",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3713,7 +3749,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 285,
+									"line": 271,
 									"character": 11
 								}
 							]
@@ -3764,13 +3800,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 125,
+									"line": 124,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 124,
+							"id": 128,
 							"name": "logFile",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3779,7 +3815,7 @@
 							},
 							"signatures": [
 								{
-									"id": 125,
+									"id": 129,
 									"name": "logFile",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3790,7 +3826,7 @@
 									},
 									"parameters": [
 										{
-											"id": 126,
+											"id": 130,
 											"name": "file",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3821,13 +3857,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 207,
+									"line": 206,
 									"character": 11
 								}
 							]
 						},
 						{
-							"id": 127,
+							"id": 131,
 							"name": "out",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3836,7 +3872,7 @@
 							},
 							"signatures": [
 								{
-									"id": 128,
+									"id": 132,
 									"name": "out",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3847,7 +3883,7 @@
 									},
 									"parameters": [
 										{
-											"id": 129,
+											"id": 133,
 											"name": "lvl",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3861,7 +3897,7 @@
 											}
 										},
 										{
-											"id": 130,
+											"id": 134,
 											"name": "msg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3873,6 +3909,18 @@
 												"type": "intrinsic",
 												"name": "any"
 											}
+										},
+										{
+											"id": 135,
+											"name": "log",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
 										}
 									],
 									"type": {
@@ -3890,13 +3938,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 256,
+									"line": 242,
 									"character": 7
 								}
 							]
 						},
 						{
-							"id": 121,
+							"id": 125,
 							"name": "prefix",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3905,7 +3953,7 @@
 							},
 							"signatures": [
 								{
-									"id": 122,
+									"id": 126,
 									"name": "prefix",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3915,7 +3963,7 @@
 									},
 									"parameters": [
 										{
-											"id": 123,
+											"id": 127,
 											"name": "prf",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3939,13 +3987,13 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 193,
+									"line": 192,
 									"character": 10
 								}
 							]
 						},
 						{
-							"id": 112,
+							"id": 114,
 							"name": "warn",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3954,7 +4002,7 @@
 							},
 							"signatures": [
 								{
-									"id": 113,
+									"id": 115,
 									"name": "warn",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3965,7 +4013,7 @@
 									},
 									"parameters": [
 										{
-											"id": 114,
+											"id": 116,
 											"name": "msg",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3977,6 +4025,18 @@
 												"type": "intrinsic",
 												"name": "any"
 											}
+										},
+										{
+											"id": 117,
+											"name": "log",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
 										}
 									],
 									"type": {
@@ -3994,7 +4054,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 163,
+									"line": 162,
 									"character": 8
 								}
 							]
@@ -4023,24 +4083,24 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								135,
+								140,
 								106,
+								122,
 								118,
-								115,
-								109,
-								131,
+								110,
+								136,
 								103,
-								124,
-								127,
-								121,
-								112
+								128,
+								131,
+								125,
+								114
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 104,
+							"line": 103,
 							"character": 16
 						}
 					]
@@ -4130,7 +4190,7 @@
 					]
 				},
 				{
-					"id": 143,
+					"id": 148,
 					"name": "DEBUG",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4154,7 +4214,7 @@
 					"defaultValue": " Symbol('DEBUG')"
 				},
 				{
-					"id": 146,
+					"id": 151,
 					"name": "ERROR",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4178,7 +4238,7 @@
 					"defaultValue": " Symbol('ERROR')"
 				},
 				{
-					"id": 144,
+					"id": 149,
 					"name": "INFO",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4202,7 +4262,7 @@
 					"defaultValue": " Symbol('INFO')"
 				},
 				{
-					"id": 145,
+					"id": 150,
 					"name": "WARN",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4226,7 +4286,7 @@
 					"defaultValue": " Symbol('WARN')"
 				},
 				{
-					"id": 153,
+					"id": 158,
 					"name": "defDateFormat",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4239,7 +4299,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 94,
+							"line": 93,
 							"character": 19
 						}
 					],
@@ -4250,7 +4310,7 @@
 					"defaultValue": "\"%YYYY%MM%DD %hh:%mm:%ss.%jjj\""
 				},
 				{
-					"id": 156,
+					"id": 161,
 					"name": "gColors",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4263,7 +4323,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 101,
+							"line": 100,
 							"character": 11
 						}
 					],
@@ -4274,7 +4334,7 @@
 					"defaultValue": "true"
 				},
 				{
-					"id": 154,
+					"id": 159,
 					"name": "gDateFormat",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4284,7 +4344,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 95,
+							"line": 94,
 							"character": 15
 						}
 					],
@@ -4295,7 +4355,7 @@
 					"defaultValue": " defDateFormat"
 				},
 				{
-					"id": 152,
+					"id": 157,
 					"name": "gLevel",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4320,7 +4380,7 @@
 					"defaultValue": " gLevels[INFO]"
 				},
 				{
-					"id": 155,
+					"id": 160,
 					"name": "gLogFile",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4333,7 +4393,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 98,
+							"line": 97,
 							"character": 12
 						}
 					],
@@ -4343,7 +4403,7 @@
 					}
 				},
 				{
-					"id": 147,
+					"id": 152,
 					"name": "gLevels",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -4355,14 +4415,14 @@
 					},
 					"children": [
 						{
-							"id": 148,
+							"id": 153,
 							"name": "__computed",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 151,
+									"id": 156,
 									"name": "desc",
 									"kind": 32,
 									"kindString": "Variable",
@@ -4396,7 +4456,7 @@
 									"defaultValue": "\"ERROR\""
 								},
 								{
-									"id": 149,
+									"id": 154,
 									"name": "importance",
 									"kind": 32,
 									"kindString": "Variable",
@@ -4430,7 +4490,7 @@
 									"defaultValue": "3"
 								},
 								{
-									"id": 150,
+									"id": 155,
 									"name": "sym",
 									"kind": 32,
 									"kindString": "Variable",
@@ -4469,9 +4529,9 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										151,
-										149,
-										150
+										156,
+										154,
+										155
 									]
 								}
 							],
@@ -4508,7 +4568,7 @@
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								148
+								153
 							]
 						}
 					],
@@ -4544,22 +4604,22 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						143,
-						146,
-						144,
-						145,
-						153,
-						156,
-						154,
-						152,
-						155
+						148,
+						151,
+						149,
+						150,
+						158,
+						161,
+						159,
+						157,
+						160
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						147
+						152
 					]
 				}
 			],
@@ -4572,7 +4632,7 @@
 			]
 		},
 		{
-			"id": 237,
+			"id": 242,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -4582,7 +4642,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/node/hsNode/src/overview.ts",
 			"comment": {
 				"shortText": "# hsNode",
-				"text": "Helpful Scripts functions that wrap some nodejs calls in Promise wrappers.\n[Github page](https://github.com/HelpfulScripts/hsNode)\n\n## Index of nodejs wrappers\n- &nbsp; {@link cpUtil child_processs} child process execution\n- &nbsp; {@link fsUtil file system} functions\n- &nbsp; {@link httpUtil http} web server functions\n\n## Index of other node support functions\n- &nbsp; {@link log log} logging support with per-module prefixes\n\n\n"
+				"text": "Helpful Scripts functions that wrap some nodejs calls in Promise wrappers.\n[`[Github page]`](https://github.com/HelpfulScripts/hsNode)\n[`[Coverage Info]`](./data/src/hsNode/coverage/)\n___\n\n## Index of nodejs wrappers\n- &nbsp; {@link cpUtil child_processs} child process execution\n- &nbsp; {@link fsUtil file system} functions\n- &nbsp; {@link httpUtil http} web server functions\n\n## Index of other node support functions\n- &nbsp; {@link log log} logging support with per-module prefixes\n\n\n"
 			},
 			"sources": [
 				{
@@ -4600,10 +4660,10 @@
 			"children": [
 				1,
 				10,
-				157,
-				236,
+				162,
+				241,
 				89,
-				237
+				242
 			]
 		}
 	]
