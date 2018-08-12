@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for fsUtil.ts</title>
+    <title>Code coverage report for Commands.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">hsNode: All files</a> fsUtil.ts
+      <a href="index.html">hsOsaes6: All files</a> Commands.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.89% </span>
+        <span class="strong">63.93% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>80/89</span>
+        <span class='fraction'>39/61</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70.37% </span>
+        <span class="strong">31.58% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>19/27</span>
+        <span class='fraction'>6/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.59% </span>
+        <span class="strong">59.09% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>50/54</span>
+        <span class='fraction'>13/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.96% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>66/71</span>
+        <span class='fraction'>38/57</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -276,596 +276,467 @@
 <a name='L228'></a><a href='#L228'>228</a>
 <a name='L229'></a><a href='#L229'>229</a>
 <a name='L230'></a><a href='#L230'>230</a>
-<a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a>
-<a name='L235'></a><a href='#L235'>235</a>
-<a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a>
-<a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a>
-<a name='L243'></a><a href='#L243'>243</a>
-<a name='L244'></a><a href='#L244'>244</a>
-<a name='L245'></a><a href='#L245'>245</a>
-<a name='L246'></a><a href='#L246'>246</a>
-<a name='L247'></a><a href='#L247'>247</a>
-<a name='L248'></a><a href='#L248'>248</a>
-<a name='L249'></a><a href='#L249'>249</a>
-<a name='L250'></a><a href='#L250'>250</a>
-<a name='L251'></a><a href='#L251'>251</a>
-<a name='L252'></a><a href='#L252'>252</a>
-<a name='L253'></a><a href='#L253'>253</a>
-<a name='L254'></a><a href='#L254'>254</a>
-<a name='L255'></a><a href='#L255'>255</a>
-<a name='L256'></a><a href='#L256'>256</a>
-<a name='L257'></a><a href='#L257'>257</a>
-<a name='L258'></a><a href='#L258'>258</a>
-<a name='L259'></a><a href='#L259'>259</a>
-<a name='L260'></a><a href='#L260'>260</a>
-<a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a>
-<a name='L264'></a><a href='#L264'>264</a>
-<a name='L265'></a><a href='#L265'>265</a>
-<a name='L266'></a><a href='#L266'>266</a>
-<a name='L267'></a><a href='#L267'>267</a>
-<a name='L268'></a><a href='#L268'>268</a>
-<a name='L269'></a><a href='#L269'>269</a>
-<a name='L270'></a><a href='#L270'>270</a>
-<a name='L271'></a><a href='#L271'>271</a>
-<a name='L272'></a><a href='#L272'>272</a>
-<a name='L273'></a><a href='#L273'>273</a>
-<a name='L274'></a><a href='#L274'>274</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L231'></a><a href='#L231'>231</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">61x</span>
-<span class="cline-any cline-yes">61x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">44x</span>
-<span class="cline-any cline-yes">44x</span>
-<span class="cline-any cline-yes">44x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs 	= require('fs');
-import * as path from 'path';
-&nbsp;
-&nbsp;
-/**
- * Convenience functions for file system access, wrapped in Promises.
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_realPath realPath}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_pathExists pathExists}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_isfile isFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_isdirectory isDirectory}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_readDir readDir}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_readFile readFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_readTextFile readTextFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_readJsonFile readJsonFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_writeFile writeFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_writeTextFile writeTextFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_writeJsonFile writeJsonFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_appendFile appendFile}
- * - &amp;nbsp;{@link hsNode.fsUtil#methods_remove remove}
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Collection of scripts to be executed in the context of Apple's
+ * Open Scripting Architecture (OSA). The interfacing with OSA is done using 
+ * {@link https://github.com/brandonhorst/node-osa brandonhorst's node-osa} module.
  */
 &nbsp;
- export interface Stats {
-    path:       string;     // path to the file
-    device:     any;        // ID of device containing file
-    iNode:      number;     // Inode number 
-    type:       number;     // File type and mode 
-    numLinks:   number;     // Number of hard links 
-    userID:     string;     // User ID of owner 
-    groupID:    string;     // Group ID of owner 
-    deviceID:   string;     // Device ID (if special file) 
-    totalSize:  number;     // Total size, in bytes 
-    blockSize:  number;     // Block size for filesystem I/O 
-    numBlocks:  number;     // Number of 512B blocks allocated 
-    accessTime:       any;  // Time of last access
-    modifyTime:       any;  // Time of last modification
-    statusChangeTime: any;  // Time of last status change     
- }
+import { cp }           from 'hsnode';
+import { Log }          from 'hsnode';    const log = new Log('Commands');
+import { OSXcommands}   from './osaCalls';
+import { osaJS }        from './osaLib';
 &nbsp;
-//===============================================================================
-//  Low level Promise wrappers
-&nbsp;
-function stat(thePath:string):Promise&lt;Stats&gt; {
-	return Promise.resolve(thePath)
-        .then(realPath)
-		.then(thePath =&gt; new Promise((resolve:(value:Stats)=&gt;void, reject) =&gt; {
-			fs.stat(thePath, (err:any, stats:Stats) =&gt; {
-				<span class="missing-if-branch" title="if path not taken" >I</span>if(err) { <span class="cstat-no" title="statement not covered" >reject(err); </span>} // reject is hard to test: realpath throws an error before stat can.
-				else { 
-					stats.path = thePath;
-					resolve(stats); 
-				}
-			});
-		}));
-}
-&nbsp;
-function lstat(thePath:string) {
-	return Promise.resolve(thePath)
-		.then(path.normalize)
-		.then(thePath =&gt; new Promise((resolve, reject) =&gt; {
-			fs.lstat(thePath, (err:any, stats:any) =&gt; {
-				if(err) { reject(err); }
-				else    { 
-					stats.path = thePath;
-					resolve(stats); 
-				}
-			});
-		}));
-}
-&nbsp;
-function error(err:any):any {
-    const msg = `*** error in fsUtil: ${err}, stack:\n${err.stack}`;
-    throw new Error(msg);
-}
-&nbsp;
-//===============================================================================
-//   Exported functions
+log.level(log.DEBUG);
 &nbsp;
 /**
- * determines the canonical path for `thePath`, resolving all symbolic links and '../'in the path.
- * @param thePath the path to check
- * @return promise to provide the real canonical system path.
+ * standard response handler for `osaJS` calls.
+ * @param result 
  */
-export function realPath(thePath:string):Promise&lt;string&gt; {
-	return new Promise((resolve:(path:string)=&gt;void, reject:(err:any)=&gt;void) =&gt; {
-		fs.realpath(thePath, (err:any, resolvedPath:string) =&gt; err? reject(err) : resolve(resolvedPath) );
-    })
-    .catch(error);
-}
-&nbsp;
-/**
- * determines if `thePath` exists and promises to provide `true` or `false`.
- * @param thePath the path to check
- * @return promise to provide `true` or `false`
- */
-export function pathExists(thePath:string):Promise&lt;boolean&gt; {
-	return new Promise((resolve) =&gt; {
-        stat(thePath).then((stats:any) =&gt; resolve(true)).catch(() =&gt; resolve(false));
-    });
-}
-&nbsp;
-/**
- * determines if `thePath` is a file and promises to provide `true` or `false`.
- * @param thePath the path to check
- * @return promise to provide `true` or `false`
- */
-export function isFile(thePath:string):Promise&lt;boolean&gt; {
-	return new Promise((resolve) =&gt; {
-        stat(thePath).then((stats:any) =&gt; resolve(stats.isFile())).catch(() =&gt; resolve(false));
-    });
-}
-&nbsp;
-/**
- * determines if `thePath` is a directory and promises to provide `true` or `false`.
- * @param thePath the path to check
- * @return promise to provide `true` or `false`
- */
-export function isDirectory(thePath:string):Promise&lt;boolean&gt; {
-	return new Promise((resolve) =&gt; {
-        stat(thePath).then((stats:any) =&gt; resolve(stats.isDirectory())).catch(() =&gt; resolve(false));
-    });
-}
-&nbsp;
-/**
- * determines if `thePath` is a directory and promises to provide `true` or `false`.
- * @param thePath the path to check
- * @return promise to provide `true` or `false`
- */ 
-export function isLink(thePath:string):Promise&lt;boolean&gt; {
-	return new Promise((resolve) =&gt; {
-        lstat(thePath).then((stats:any) =&gt; resolve(stats.isSymbolicLink())).catch(() =&gt; resolve(false));
-    });
-}
-&nbsp;
-/**
- * lists all files in a directory and promises to provide the list.
- * @param thePath the path to check
- * @return promise to provide a list of directory entries.
- */
-export function readDir(thePath:string):Promise&lt;string[]&gt; {
-	return Promise.resolve(thePath)
-		.then(realPath)
-		.then(thePath =&gt; new Promise((resolve:(files:any)=&gt;void, reject:(err:any)=&gt;void) =&gt; {
-			fs.readdir(thePath, (err:any, files:any) =&gt;  {
-				<span class="missing-if-branch" title="if path not taken" >I</span>if(err) { <span class="cstat-no" title="statement not covered" >reject(err); </span>}
-				else { 
-					files.path = thePath;
-					resolve(files); 
-				}
-			});
-		}))
-        .catch(error);
-}
-&nbsp;
-&nbsp;
-/**
- * reads a file either as binary or text and promises to provide the content.
- * @param thePath the path to read
- * @param isText [default=true] `true`|`false` if file should be read as `utf8`|binary 
- * @return promise to provide file content.
- */
-export function readFile(thePath:string, isText=<span class="branch-0 cbranch-no" title="branch not covered" >true)</span>:Promise&lt;any&gt; {
-	return new Promise((resolve:(data:any)=&gt;void, reject:(err:any)=&gt;void) =&gt; {
-		let encoding = isText? 'utf8' : {};
-		fs.readFile(thePath, encoding, (err:any, data:any) =&gt; {
-            if (err) { reject(err); }
-            else { resolve(data); }
-		});
-	})
-    .catch(error);
-}
-&nbsp;
-/**
- * reads a text file and promises to provide the content.
- * @param thePath the path to read
- * @return promise to provide file content.
- */
-export function readTextFile(thePath:string):Promise&lt;string&gt; { 
-	return readFile(thePath, true)
-    .catch(error);
-}
-&nbsp;
-/**
- * reads a text file and promises to provide the content.
- * @param thePath the path to read
- * @return promise to provide file content.
- */
-export function readJsonFile(thePath:string):Promise&lt;any&gt; {
-    return readFile(thePath, true)
-	.then((data:any) =&gt; (typeof data === 'string')? JSON.parse(data) : <span class="branch-1 cbranch-no" title="branch not covered" >data)</span>
-    .catch(error);
-}
-&nbsp;
-/**
- * writes a file either as binary or text and promises no return.
- * @param thePath the path to write to
- * @param content the content to write
- * @param isText `true`|`false` if file should be read as `utf8`|binary 
- * @return promise to provide the file name if successful.
- */
-export function writeFile(thePath:string, content:string, isText:boolean=<span class="branch-0 cbranch-no" title="branch not covered" >true)</span>:Promise&lt;string&gt; {
-	return new Promise((resolve, reject) =&gt; {
-		var encoding:any = isText? 'utf8' : {encoding: null};
-	    fs.writeFile(thePath, content, encoding, (err:any) =&gt; err? <span class="branch-0 cbranch-no" title="branch not covered" >reject(err) </span>: resolve(thePath));
-	})
-    .catch(error);
+const responseHandler = (cmd:string) =&gt; {
+    return (result:{stdout:string, logResult:string}):string =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (result.logResult) { <span class="cstat-no" title="statement not covered" >log.debug(`messages from executing ${cmd}: ${result.logResult}`); </span>}
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (result.stdout) { 
+            log.debug(`call ${cmd} returned with result ${result.stdout}, ${typeof result.stdout}`); 
+            return JSON.parse(result.stdout);
+        } else { 
+<span class="cstat-no" title="statement not covered" >            log.debug(`call ${cmd} returned without stdout`); </span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+    };
 };
 &nbsp;
 /**
- * writes content to a file either as a stream and promises no return.
- * @param thePath the path to write to
- * @param content the content to write
- * @return promise to provide the file name if successful.
+ * standard error handler for `osaJS` calls
+ * @param cmd 
  */
-<span class="fstat-no" title="function not covered" >export function writeStream(</span>thePath:string, content:string):Promise&lt;string&gt; {
-<span class="cstat-no" title="statement not covered" >	return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
-        let s = <span class="cstat-no" title="statement not covered" >fs.createWriteStream(thePath, {flags:'w', mode:0o666});</span>
-<span class="cstat-no" title="statement not covered" >        s.on('error', <span class="fstat-no" title="function not covered" >(s</span>rc:any) =&gt; <span class="cstat-no" title="statement not covered" >reject(src))</span>;</span>
-<span class="cstat-no" title="statement not covered" >        s.write(content, 'binary', <span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >resolve(thePath))</span>;</span>
-<span class="cstat-no" title="statement not covered" >        s.end();</span>
-	})
-    .catch(error);
-}
-&nbsp;
-/**
- * writes a text file and promises no return.
- * @param thePath the path to write
- * @return promise to provide the file name if successful.
- */
-export function writeTextFile(thePath:string, content:string):Promise&lt;string&gt; { 
-	return writeFile(thePath, content, true)
-    .catch(error);
+const errorHandler = (cmd:string) =&gt; {
+    return (result: {err:string, errLine: string}):string =&gt; {
+        log.error(result.errLine);
+        return result.errLine;
+    };
 };
 &nbsp;
-/**
- * writes a text file and promises no return.
- * @param thePath the path to write
- * @param obj the object to write
- * @return promise to provide the file name if successful.
- */
-export function writeJsonFile(thePath:string, obj:any):Promise&lt;string&gt; {
-    return Promise.resolve(obj)
-	.then(JSON.stringify)
-	.then(data =&gt; writeTextFile(thePath, data))
-    .catch(error);
-}
+&nbsp;
+//---------------------------------------------------------------------------------------
+// Export functions
 &nbsp;
 /**
- * appends to a file either as binary or text and promises no return.
- * @param thePath the path to write to
- * @param content the content to write
- * @param isText `true`|`false` if file should be read as `utf8`|binary 
- * @return promise to provide the realPath of the file written to.
+ * Container holding various OSX calls 
  */
-export function appendFile(thePath:string, content:string, isText:boolean=true):Promise&lt;string&gt; {
-	return new Promise((resolve, reject) =&gt; {
-		var encoding:any = isText? 'utf8' : {encoding: null};
-        fs.appendFile(thePath, content, encoding, (err:any) =&gt; err? <span class="branch-0 cbranch-no" title="branch not covered" >reject(err) </span>: resolve(thePath));
-    })
-    .then(realPath)
-    .catch(error);
-}
+export const osaCommands = {
+    /**
+     * promises to send `message` to a list of buddies in `recipients` using iMessage.
+     * @param message the message to send
+     * @param appleIDs list of recipients in iMessage
+     * @return a promise that resolves to the returned result 
+     */
+    sendMessage: <span class="fstat-no" title="function not covered" >(a</span>ppleIDs:string[], message:string, attachments?:string[]):Promise&lt;any&gt; =&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug(`sending Message to ${appleIDs.join(', ')}, content '${message}', ${attachments?attachments.length:0} attachments`);</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaSendMessage, appleIDs, message, attachments)</span>
+            .then(responseHandler('osaSendMessage'))
+            .catch(errorHandler('osaSendMessage ' + message));
+    },
 &nbsp;
-/**
- * promises to delete a file or folder.
- * @param thePath the path to write
- * @return promise to provide the name of the removed file.
- */
-export function remove(thePath:string):Promise&lt;string&gt; {
-	return new Promise((resolve:(path:string)=&gt;void, reject:(err:any)=&gt;void) =&gt; {
-        fs.unlink(thePath, (e:any) =&gt; (e? <span class="branch-0 cbranch-no" title="branch not covered" >reject(e) </span>: resolve(thePath)));
-	})
-    .catch(error);
-}
-&nbsp;</pre></td></tr>
+    /**
+     * sends an email to the list of addresses.
+     * @param subject the subject of the message to send
+     * @param addresses an array of recipient email addresses
+     * @param content optional; the content of the message to send
+     * @return a promise that resolves to the returned result 
+     * @todo enable for multiple `to`s
+     */
+    sendEmail: <span class="fstat-no" title="function not covered" >(s</span>ubject:string, to:string[], content=<span class="branch-0 cbranch-no" title="branch not covered" >'',</span> attachments?:string[]):Promise&lt;any&gt; =&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug(`sending email to '${to.join(', ')}' with subject '${subject}', content '${content}', ${attachments?attachments.length:0} attachments`);</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaSendEmail, subject, to[0], content, attachments)</span>
+            .then(responseHandler('osaSendEmail'))
+            .catch(errorHandler('osaSendEmail ' + subject));
+    },
+&nbsp;
+    /**
+     * sends an email to the list of addresses.
+     * @param subject the subject of the message to send
+     * @param addresses an array of recipient email addresses
+     * @param content optional; the content of the message to send
+     * @return a promise that resolves to the returned result 
+     * @todo enable for multiple `to`s
+     */
+    getEmail: <span class="fstat-no" title="function not covered" >(d</span>ate:Date):Promise&lt;any&gt; =&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug(`getting emails`);</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaGetEmail, date)</span>
+            .then(responseHandler('osaGetEmail'))
+            .catch(errorHandler('osaGetEmail'));
+    },
+&nbsp;
+    /**
+     * initiates a facetime call to the specified buddy.
+     * @param appleID the buddy to initiate a facetime call to
+     * @return a promise that resolves to the returned result 
+     */
+    facetime: <span class="fstat-no" title="function not covered" >(a</span>ppleID:string) :Promise&lt;any&gt;=&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug('starting facetime call with ' + appleID);</span>
+<span class="cstat-no" title="statement not covered" >        return cp.exec('open facetime://' + appleID)</span>
+            .catch(errorHandler('facetime ' + appleID));
+    },
+&nbsp;
+    /**
+     * speaks the provided `text`.
+     * @param text the text to speak.
+     * @return a promise that resolves to the returned result 
+     */
+    say: <span class="fstat-no" title="function not covered" >(t</span>ext:string):Promise&lt;any&gt; =&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug('saying \'' + text + '\'');</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaSay, text)</span>
+            .then(responseHandler('osaSay'))
+            .then(<span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >`I said '${text}'`)</span>
+            .catch(errorHandler('osaSay ' + text));
+    },
+&nbsp;
+    /**
+     * launches an application. 
+     * @param name the application to launch.  
+     * @return a promise that resolves to True if the application is running, else False 
+     */
+    launch: (name:string):Promise&lt;any&gt; =&gt; { 
+        log.debug('launching \'' + name + '\'');
+        return osaJS(OSXcommands.osaLaunch, name)
+            .then(responseHandler('osaLaunch'))
+            .then(result =&gt; {
+                log.debug(name + ' running: ' + result);
+                return result? true : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
+            })
+            .catch(errorHandler('osaLaunch ' + name));
+    },
+&nbsp;
+    /**
+     * launches an script. 
+     * @param name the script to launch.  
+     * @return a promise that resolves to True if the script is running, else False 
+     */
+    launchScript: <span class="fstat-no" title="function not covered" >(n</span>ame:string):Promise&lt;any&gt; =&gt; { 
+<span class="cstat-no" title="statement not covered" >        log.debug('launching \'' + name + '\'');</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaLaunchScript, name)</span>
+            .then(responseHandler('osaLaunchScript'))
+            .then(<span class="fstat-no" title="function not covered" >result</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                log.debug(name + ' running: ' + result);</span>
+<span class="cstat-no" title="statement not covered" >                return result? true : false;</span>
+            })
+            .catch(errorHandler('osaLaunchScript ' + name));
+    },
+&nbsp;
+&nbsp;
+    /**
+     * quits an application. 
+     * @param name the application to quit.
+     * @return a promise that resolves to True if the application has quit, else False 
+     */
+    quit: (name:string):Promise&lt;any&gt; =&gt; { 
+        let i = name.lastIndexOf('/');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (i&gt;0) { <span class="cstat-no" title="statement not covered" >name = name.substr(i+1); </span>}
+        log.debug('quitting \'' + name + '\'');
+        return osaJS(OSXcommands.osaQuit, name)
+            .then(responseHandler('osaQuit'))
+            .then(result =&gt; {
+                log.debug(name + ' running: ' + result);
+                return result? false : <span class="branch-1 cbranch-no" title="branch not covered" >true;</span>
+            })
+            .catch(errorHandler('osaQuit ' + name));
+    },
+&nbsp;
+    /**
+     * checks if an application is running. 
+     * @param name the application to check.
+     * @return a promise that resolves to True if the application is running, else False 
+     */
+    isRunning: (name:string):Promise&lt;any&gt; =&gt; {
+        const slash = name.lastIndexOf('/');
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (slash &gt;= 0) { <span class="cstat-no" title="statement not covered" >name = name.substring(slash+1, name.lastIndexOf('.')); </span>}
+        log.debug(`checking if '${name}' is running`);
+        return cp.exec('ps -cx')
+            .then(result =&gt; {
+                log.debug(`isRunning result: ${result.stdout.indexOf(name)} ${result.stdout}`);
+                return (result.stdout.indexOf(name) &gt; 0);
+                })
+            .catch(errorHandler('isRunning ' + name));
+    },
+&nbsp;
+    /**
+     * sets the brightness of the screen to the specified value 
+     * @param value the new brightness value (0...1).
+     * @return a promise that resolves to undefined 
+     */
+    setBrightness: (value:number):Promise&lt;any&gt; =&gt; {
+        log.debug('setting brightness to ' + value);
+        return osaJS(OSXcommands.osaBrightness, value)
+            .then(responseHandler('osaBrightness'))
+            .catch(errorHandler('osaBrightness ' + value));
+    },
+&nbsp;
+    /**
+     * sets the system audio volume to the specified value.
+     * @param value the new volume value (0...7).
+     * @return a promise that resolves to undefined 
+     */
+    setVolume: (value:number):Promise&lt;any&gt; =&gt; {
+        log.debug('setting volume to ' + value);
+        return osaJS(OSXcommands.osaVolume, value)
+            .then(responseHandler('osaVolume'))
+            .catch(errorHandler('osaVolume ' + value));
+    },
+&nbsp;
+    /**
+     * sets the system audio volume to the specified value.
+     * @param value the new volume value (0...7).
+     * @return a promise that resolves to undefined 
+     */
+    getVolume: ():Promise&lt;any&gt; =&gt; {
+        log.debug('getting volume');
+        return osaJS(OSXcommands.osaVolumeSettings)
+            .then(responseHandler('osaVolumeSettings'))
+            .catch(errorHandler('osaVolumeSettings'));
+    },
+&nbsp;
+    /**
+     * sets the system audio volume to the specified value. 
+     * @return a promise that resolves to undefined 
+     */
+    restart: <span class="fstat-no" title="function not covered" >():Promise&lt;any&gt; </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >        log.debug('restarting...');</span>
+<span class="cstat-no" title="statement not covered" >        return osaJS(OSXcommands.osaRestart)</span>
+            .then(responseHandler('osaRestart'))
+            .catch(errorHandler('osaRestart '));
+    }
+};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

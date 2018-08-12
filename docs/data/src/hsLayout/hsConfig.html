@@ -162,7 +162,7 @@
 <span id=147 class="line">&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;config&nbsp;an&nbsp;object&nbsp;literal,&nbsp;or&nbsp;name&nbsp;of&nbsp;a&nbsp;JSON&nbsp;file,&nbsp;containing&nbsp;a&nbsp;configration&nbsp;tree<br>
 <span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;root&nbsp;a&nbsp;DOM&nbsp;element&nbsp;to&nbsp;which&nbsp;to&nbsp;attach&nbsp;the&nbsp;tree<br>
 <span id=149 class="line">&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment><br>
-<span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;attachNodeTree(config:any,&nbsp;root:any)&nbsp;{<br>
+<span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;attachNodeTree(config:any,&nbsp;root:any):Promise<void>&nbsp;{<br>
 <span id=151 class="line">&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**<br>
 <span id=152 class="line">&nbsp;152</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;decodes&nbsp;the&nbsp;parts&nbsp;of&nbsp;a&nbsp;`route`&nbsp;declaration&nbsp;in&nbsp;the&nbsp;`config`&nbsp;tree<br>
 <span id=153 class="line">&nbsp;153</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;that&nbsp;will&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;`mithril`&nbsp;`m.route()`&nbsp;command.<br>
@@ -251,7 +251,7 @@
 <span id=236 class="line">&nbsp;236</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 <span id=237 class="line">&nbsp;237</span><br>
 <span id=238 class="line">&nbsp;238</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;context&nbsp;=&nbsp;this.context;<br>
-<span id=239 class="line">&nbsp;239</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.getContent(config)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=239 class="line">&nbsp;239</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this.getContent(config)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 <span id=240 class="line">&nbsp;240</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then((r:any)&nbsp;=>&nbsp;recurse(r,&nbsp;context))<br>
 <span id=241 class="line">&nbsp;241</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(mountOrRoute);<br>
 <span id=242 class="line">&nbsp;242</span>&nbsp;&nbsp;&nbsp;&nbsp;}<br>

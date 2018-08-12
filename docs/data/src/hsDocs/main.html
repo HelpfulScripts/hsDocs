@@ -1,0 +1,142 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/main.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span>import&nbsp;{&nbsp;Log,&nbsp;fs&nbsp;}&nbsp;from&nbsp;'hsnode';&nbsp;const&nbsp;log&nbsp;=&nbsp;new&nbsp;Log('CRIS');<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span><br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>const&nbsp;https&nbsp;=&nbsp;require('https');<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span><br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>function&nbsp;cookieOf(str:string):&nbsp;any&nbsp;{<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;result&nbsp;=&nbsp;{};<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span><br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;&nbsp;&nbsp;&nbsp;str.split(';').map((e:string)&nbsp;=>&nbsp;{&nbsp;<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;f&nbsp;=&nbsp;e.split('=');<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result[f[0]]&nbsp;=&nbsp;f[1]&nbsp;||&nbsp;true;<br>
+<span id=11 class="line">&nbsp;&nbsp;11</span>&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>}<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span><br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>function&nbsp;uriEncode(struct:any):&nbsp;string&nbsp;{<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Object.keys(struct)<br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map((k:string)&nbsp;=>&nbsp;`${encodeURIComponent(k)}=${encodeURIComponent(struct[k])}`)<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.join('&');<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>}<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span><br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>function&nbsp;getAccess(url:string):Promise<string[]>&nbsp;{<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;options&nbsp;=&nbsp;{<br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hostname:&nbsp;'rb-wam-mas.bosch.com',<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port:&nbsp;443,<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;`/pkmsvouchfor?RB-SSO&https://inside.bosch.com/`,<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method:&nbsp;'GET',<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'User-Agent':&nbsp;'Mozilla/5.0'<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;Promise((resolve:any)&nbsp;=>&nbsp;https.request(options,&nbsp;(res:any)&nbsp;=>&nbsp;{<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`getAccess&nbsp;response&nbsp;received:&nbsp;${log.inspect(res.headers,&nbsp;null)}`);<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.headers['set-cookie'].map((c:string)&nbsp;=>&nbsp;cookieOf(c));<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;log.info(`cookies:&nbsp;${log.inspect(cookies)}`);<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.config({colors:false});<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs.writeTextFile('./results/inside.bosch.com.json',&nbsp;log.inspect(res,&nbsp;null));<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve(res.headers['set-cookie']);<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;}));<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span>}<br>
+<span id=38 class="line">&nbsp;&nbsp;38</span><br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>function&nbsp;login(cookies:string[]):Promise<any>&nbsp;{<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;postData&nbsp;=&nbsp;uriEncode({username:&nbsp;'sth1pal',&nbsp;password:'col0..Rado16',&nbsp;'login-form-type':'pwd',&nbsp;standard:'Login'});<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span><br>
+<span id=42 class="line">&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;options&nbsp;=&nbsp;{<br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hostname:&nbsp;'inside.bosch.com',<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port:&nbsp;443,<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path:&nbsp;'/irj/portal',<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method:&nbsp;'POST',<br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-Type':&nbsp;'application/x-www-form-urlencoded',<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-Length':&nbsp;Buffer.byteLength(postData),<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DNT:&nbsp;1,<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection:'keep-alive',<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Accept-Encoding':&nbsp;'br,gzip,deflate',<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Referer:&nbsp;'https://rb-wam-mas.bosch.com/pkmsvouchfor?RB-SSO&https://inside.bosch.com/',<br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accept:&nbsp;'text/html,application/xhtml+xml,application/xml;q=0.9,*<comment>/*;q=0.8',<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'User-Agent':&nbsp;'Mozilla/5.0',<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cookie:&nbsp;cookies<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;console.log(`requesting&nbsp;login&nbsp;with&nbsp;cookies&nbsp;${cookies}`);<br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;Promise((resolve:any)&nbsp;=>&nbsp;{<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;req&nbsp;=&nbsp;https.request(options,&nbsp;(res:any)&nbsp;=>&nbsp;{<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`login&nbsp;result&nbsp;received,&nbsp;headers:${res.headers}`);<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;cookies&nbsp;=&nbsp;res.headers['set-cookie'].map((c:string)&nbsp;=>&nbsp;cookieOf(c));<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`${cookies.length}&nbsp;cookies:`);<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs.writeTextFile('./results/login.json',&nbsp;log.inspect(res,&nbsp;null));<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve();<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req.on('error',&nbsp;(e:any)&nbsp;=>&nbsp;{<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(`problem&nbsp;with&nbsp;request:&nbsp;${e.message}`);<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;write&nbsp;data&nbsp;to&nbsp;request&nbsp;body<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req.write(postData);<br>
+<span id=72 class="line">&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req.end();&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=73 class="line">&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+<span id=74 class="line">&nbsp;&nbsp;74</span>}<br>
+<span id=75 class="line">&nbsp;&nbsp;75</span><br>
+<span id=76 class="line">&nbsp;&nbsp;76</span>getAccess('')<br>
+<span id=77 class="line">&nbsp;&nbsp;77</span>.then(login);<br>
+<span id=78 class="line">&nbsp;&nbsp;78</span><br>
+<span id=79 class="line">&nbsp;&nbsp;79</span><br>
+<span id=80 class="line">&nbsp;&nbsp;80</span>//&nbsp;const&nbsp;Http&nbsp;=&nbsp;new&nbsp;XMLHttpRequest();<br>
+<span id=81 class="line">&nbsp;&nbsp;81</span>//&nbsp;const&nbsp;url&nbsp;=&nbsp;'https://rb-cris.bosch.com/activity/rest/activities/104697'<br>
+<span id=82 class="line">&nbsp;&nbsp;82</span>//&nbsp;Http.open("GET",&nbsp;url);<br>
+<span id=83 class="line">&nbsp;&nbsp;83</span>//&nbsp;Http.send();<br>
+<span id=84 class="line">&nbsp;&nbsp;84</span>//&nbsp;Http.onreadystatechange=(e)=>{<br>
+<span id=85 class="line">&nbsp;&nbsp;85</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(Http.responseText)<br>
+<span id=86 class="line">&nbsp;&nbsp;86</span>//&nbsp;}<br>
+<span id=87 class="line">&nbsp;&nbsp;87</span><br>
+<span id=88 class="line">&nbsp;&nbsp;88</span>//&nbsp;cookie:&nbsp;BC.....<br>
+<span id=89 class="line">&nbsp;&nbsp;89</span><br>
+<span id=90 class="line">&nbsp;&nbsp;90</span>//&nbsp;Set-Cookie:&nbsp;<br>
+<span id=91 class="line">&nbsp;&nbsp;91</span>//&nbsp;PD-S-SESSION-ID:<br>
+<span id=92 class="line">&nbsp;&nbsp;92</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value==1_2_0_ST2Ug+n2Pdj9nehP7WhIu9MdpbQDVzUpyqZ8RXre9eE+My5F<br>
+<span id=93 class="line">&nbsp;&nbsp;93</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Path=/<br>
+<span id=94 class="line">&nbsp;&nbsp;94</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Secure=true<br>
+<span id=95 class="line">&nbsp;&nbsp;95</span><br>
+<span id=96 class="line">&nbsp;&nbsp;96</span><br>
+<span id=97 class="line">&nbsp;&nbsp;97</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<form&nbsp;method="POST"&nbsp;name="stdLogin"&nbsp;action="/pkmslogin.form"><br>
+<span id=98 class="line">&nbsp;&nbsp;98</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input&nbsp;name="username"&nbsp;class="formtext"&nbsp;id="username"&nbsp;style="WIDTH:&nbsp;300px"&nbsp;maxlength="100"><br>
+<span id=99 class="line">&nbsp;&nbsp;99</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input&nbsp;name="password"&nbsp;class="formtext"&nbsp;id="password"&nbsp;style="WIDTH:&nbsp;300px"&nbsp;maxlength="100"&nbsp;type="password"><br>
+<span id=100 class="line">&nbsp;100</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input&nbsp;name="login-form-type"&nbsp;value="pwd"&nbsp;type="HIDDEN"><br>
+<span id=101 class="line">&nbsp;101</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input&nbsp;name="standard"&nbsp;class="formtext"&nbsp;id="username"&nbsp;value="Login"&nbsp;type="submit"><br>
+<span id=102 class="line">&nbsp;102</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form><br>
+<span id=103 class="line">&nbsp;103</span><br>
+<span id=104 class="line">&nbsp;104</span><br>
+<span id=105 class="line">&nbsp;105</span>//&nbsp;Request&nbsp;Data:<br>
+<span id=106 class="line">&nbsp;106</span>//&nbsp;MIME&nbsp;Type:&nbsp;application/x-www-form-urlencoded<br>
+<span id=107 class="line">&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;username:&nbsp;sth1pal<br>
+<span id=108 class="line">&nbsp;108</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;password:&nbsp;col0..Rado16<br>
+<span id=109 class="line">&nbsp;109</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;login-form-type:&nbsp;pwd<br>
+<span id=110 class="line">&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;standard:&nbsp;Login<br>
+<span id=111 class="line">&nbsp;111</span><br>
+<span id=112 class="line">&nbsp;112</span>//&nbsp;&nbsp;Request<br>
+<span id=113 class="line">&nbsp;113</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POST&nbsp;/irj/portal&nbsp;HTTP/1.1<br>
+<span id=114 class="line">&nbsp;114</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content-Type:&nbsp;application/x-www-form-urlencoded<br>
+<span id=115 class="line">&nbsp;115</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Host:&nbsp;inside.bosch.com<br>
+<span id=116 class="line">&nbsp;116</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DNT:&nbsp;1<br>
+<span id=117 class="line">&nbsp;117</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection:&nbsp;keep-alive<br>
+<span id=118 class="line">&nbsp;118</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accept-Language:&nbsp;en-us<br>
+<span id=119 class="line">&nbsp;119</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accept-Encoding:&nbsp;br,&nbsp;gzip,&nbsp;deflate<br>
+<span id=120 class="line">&nbsp;120</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cookie:&nbsp;PD-ID=aJ8+A1Ib02B1a5aM4NqnDSTJXyPZoc2P/26E13VeeSf15C5RhSKgNsnEjJDkOn2W17JDL92I2CmM689cPggpk+Z8KKMhkgvpoC/pD55+bpWjVcyXdvrEphUZ/GVHT3GyCUaty4593lBM/NTY1qE5qp/8U4lFE+VITHD8fx1O0CjkqVh6TG+K1KVb74GyUd/RvNXhXgV456hozV0pCmmjucIDpAuKTopOLWjncTpIdeH4NDCAq4JMBYQ+FbvZRztMViQ9v7k6883kt38Dq13DEXgHPstRCXXU9UaAXnZ69Lc6rZIAWraa34ngJf1UlXkhq54ewC7PYGvZeacBxJvNn23jHMqW5kT0;&nbsp;PD-S-SESSION-ID=1_2_1_FXybD0dSHZsA1wWivrPY0ZHpArRNVxoJSkdGNAunKC+l-sbB;&nbsp;PD_STATEFUL_fff05cba-649e-11d9-8610-0010180a547c=%2F;&nbsp;WT_FPC=id=f2bd248e-11b1-4708-abdd-8f8f1d59eba9:lv=1533625679236:ss=1533625679236<br>
+<span id=121 class="line">&nbsp;121</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User-Agent:&nbsp;Mozilla/5.0&nbsp;(Macintosh;&nbsp;Intel&nbsp;Mac&nbsp;OS&nbsp;X&nbsp;10_13_6)&nbsp;AppleWebKit/605.1.15&nbsp;(KHTML,&nbsp;like&nbsp;Gecko)&nbsp;Version/11.1.2&nbsp;Safari/605.1.15<br>
+<span id=122 class="line">&nbsp;122</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accept:&nbsp;text/html,application/xhtml+xml,application/xml;q=0.9,*/</comment>*;q=0.8<br>
+<span id=123 class="line">&nbsp;123</span>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Referer:&nbsp;https://rb-wam-mas.bosch.com/pkmsvouchfor?RB-SSO&https://inside.bosch.com/<br>
+<span id=124 class="line">&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<span id=125 class="line">&nbsp;125</span><br></code></div>
+                </body>
+            

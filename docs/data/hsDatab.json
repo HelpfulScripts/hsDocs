@@ -68,7 +68,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 92,
+									"line": 95,
 									"character": 5
 								}
 							]
@@ -85,7 +85,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 398,
+									"line": 407,
 									"character": 16
 								}
 							],
@@ -111,7 +111,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 399,
+									"line": 408,
 									"character": 16
 								}
 							],
@@ -137,7 +137,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 400,
+									"line": 409,
 									"character": 16
 								}
 							],
@@ -198,7 +198,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 499,
+									"line": 508,
 									"character": 21
 								}
 							]
@@ -228,7 +228,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 266,
+									"line": 269,
 									"character": 19
 								}
 							]
@@ -296,7 +296,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 535,
+									"line": 544,
 									"character": 19
 								}
 							]
@@ -318,7 +318,7 @@
 									"kindString": "Call signature",
 									"flags": {},
 									"comment": {
-										"shortText": "adds a new column to the data set. if `newCol` already exists,\nthe column index is returned withoput change.",
+										"shortText": "adds a new column to the data set. if `newCol` already exists,\nthe column index is returned without change.",
 										"returns": "the index for the new column\n"
 									},
 									"parameters": [
@@ -338,15 +338,16 @@
 										}
 									],
 									"type": {
-										"type": "intrinsic",
-										"name": "number"
+										"type": "reference",
+										"name": "MetaStruct",
+										"id": 50
 									}
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 146,
+									"line": 149,
 									"character": 17
 								}
 							]
@@ -390,8 +391,19 @@
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "intrinsic",
-												"name": "any"
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "initFn",
+														"id": 172
+													},
+													{
+														"type": "reference",
+														"name": "DataVal",
+														"id": 151
+													}
+												]
 											}
 										}
 									],
@@ -404,7 +416,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 168,
+									"line": 171,
 									"character": 24
 								}
 							]
@@ -452,7 +464,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 200,
+									"line": 203,
 									"character": 18
 								}
 							]
@@ -489,7 +501,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 211,
+									"line": 214,
 									"character": 19
 								}
 							]
@@ -537,7 +549,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 185,
+									"line": 188,
 									"character": 20
 								}
 							]
@@ -585,7 +597,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 221,
+									"line": 224,
 									"character": 18
 								}
 							]
@@ -619,7 +631,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 117,
+									"line": 120,
 									"character": 17
 								}
 							]
@@ -671,7 +683,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 283,
+									"line": 286,
 									"character": 17
 								}
 							]
@@ -742,7 +754,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 233,
+									"line": 236,
 									"character": 21
 								}
 							]
@@ -798,7 +810,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 468,
+									"line": 477,
 									"character": 20
 								}
 							]
@@ -849,7 +861,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 436,
+									"line": 445,
 									"character": 21
 								}
 							]
@@ -903,7 +915,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 135,
+									"line": 138,
 									"character": 20
 								}
 							]
@@ -940,7 +952,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 127,
+									"line": 130,
 									"character": 18
 								}
 							]
@@ -985,7 +997,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 402,
+									"line": 411,
 									"character": 19
 								}
 							]
@@ -1018,7 +1030,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 101,
+									"line": 104,
 									"character": 18
 								}
 							]
@@ -1068,7 +1080,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 109,
+									"line": 112,
 									"character": 17
 								}
 							]
@@ -1090,46 +1102,19 @@
 									"kindString": "Call signature",
 									"flags": {},
 									"comment": {
-										"shortText": " Maps one or more columns in each rows of values based\non the result of the `mapFn`, which behaves similarly to the Array.map() method.\nTwo modes are supported:\n# Array Mode\nIf `col` is omitted, the `mapFn` is passed the column arrays per row as parameter.\nThis allows for complex mapping combining conditions across multiple columns.\n```\ndata.map(function(values){\n   values[1] = values[3] * values[5];\n   return values;\n});\n```\nBe sure to return the `values` array as a result.\n# Column mode\nIf `col` is specified, either as index or by column name, the respective column value is passed\ninto `mapFn`, along with the row index and the entire row array. This allows for simple mapping.\n```\ndata.map('Price', function(value, i, values) {\n   return value * 2;\n});\n```",
+										"shortText": " Maps one or more columns in each rows of values based\non the result of the `mapFn`, which behaves similarly to the Array.map() method.\nTwo modes are supported:",
+										"text": "## Array Mode\nIf `col` is omitted, the `mapFn` is passed the column arrays per row as parameter.\nThis allows for complex mapping combining conditions across multiple columns.\n```\ndata.map(function(values){\n   values[1] = values[3] * values[5];\n   return values;\n});\n```\nBe sure to return the `values` array as a result.\n\n## Column mode\nIf `col` is specified, either as index or by column name, the respective column value is passed\ninto `mapFn`, along with the row index and the entire row array. This allows for simple mapping.\n```\ndata.map('Price', function(value, i, values) {\n   return value * 2;\n});\n```",
 										"returns": "a new Data object containing the mapping.\n"
 									},
 									"parameters": [
 										{
 											"id": 115,
-											"name": "col",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"comment": {
-												"text": "the data column, or columns, to apply the mapping to."
-											},
-											"type": {
-												"type": "union",
-												"types": [
-													{
-														"type": "reference",
-														"name": "ColumnReference",
-														"id": 150
-													},
-													{
-														"type": "array",
-														"elementType": {
-															"type": "reference",
-															"name": "ColumnReference",
-															"id": 150
-														}
-													}
-												]
-											}
-										},
-										{
-											"id": 116,
 											"name": "mapFn",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"comment": {
-												"text": "a function to implement the mapping,\ncalled on each row of the data set in turn as `mapFn(val, i, c, rows)`, where\n- `val`: the column value in the current row\n- `c`: the column index in the current row\n- `i`: the row index\n- `rows`: the rows being iterated over\n`    *\nfollows the same specifications as the function passed to Array.map().<br>\nFor column mode, some predefined map functions can be invoked by providing a\nrespective string instead of a function. The following functions are defined:\n<table>\n<tr><td>'noop'</td><td>replace value with itself, performing no operation.</td></tr>\n<tr><td>'cumulate'</td><td>replace value with the cumulative sum of values up to the current element.</td></tr>\n</table>"
+												"text": "a function to implement the mapping,\ncalled on each row of the data set in turn as `mapFn(val, i, c, rows)`, where\n- `val`: the column value in the current row\n- `c`: the column index in the current row\n- `i`: the row index\n- `rows`: the rows being iterated over\n`    *\nfollows the same specifications as the function passed to Array.map().<br>\nFor column mode, some predefined map functions can be invoked by providing a\nrespective string instead of a function. The following functions are defined:\n <table>\n <tr><td>'noop'</td><td>replace value with itself, performing no operation.</td></tr>\n <tr><td>'cumulate'</td><td>replace value with the cumulative sum of values up to the current element.</td></tr>\n </table>\n"
 											},
 											"type": {
 												"type": "union",
@@ -1141,9 +1126,31 @@
 													{
 														"type": "reference",
 														"name": "mapFn",
-														"id": 116
+														"id": 115
+													},
+													{
+														"type": "reference",
+														"name": "mapRowFn",
+														"id": 166
 													}
 												]
+											}
+										},
+										{
+											"id": 116,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "the data column, or columns, to apply the mapping to."
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
 											}
 										}
 									],
@@ -1157,7 +1164,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 365,
+									"line": 371,
 									"character": 14
 								}
 							]
@@ -1242,7 +1249,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 418,
+									"line": 427,
 									"character": 19
 								}
 							]
@@ -1325,7 +1332,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 313,
+									"line": 316,
 									"character": 15
 								}
 							]
@@ -1396,7 +1403,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 516,
+									"line": 525,
 									"character": 18
 								}
 							]
@@ -1462,7 +1469,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 86,
+									"line": 89,
 									"character": 27
 								}
 							]
@@ -1492,7 +1499,7 @@
 									"sources": [
 										{
 											"fileName": "Data.ts",
-											"line": 74,
+											"line": 77,
 											"character": 16
 										}
 									],
@@ -1516,7 +1523,7 @@
 									"sources": [
 										{
 											"fileName": "Data.ts",
-											"line": 72,
+											"line": 75,
 											"character": 12
 										}
 									],
@@ -1540,7 +1547,7 @@
 									"sources": [
 										{
 											"fileName": "Data.ts",
-											"line": 70,
+											"line": 73,
 											"character": 12
 										}
 									],
@@ -1564,7 +1571,7 @@
 									"sources": [
 										{
 											"fileName": "Data.ts",
-											"line": 68,
+											"line": 71,
 											"character": 14
 										}
 									],
@@ -1588,7 +1595,7 @@
 									"sources": [
 										{
 											"fileName": "Data.ts",
-											"line": 76,
+											"line": 79,
 											"character": 15
 										}
 									],
@@ -1615,7 +1622,7 @@
 							"sources": [
 								{
 									"fileName": "Data.ts",
-									"line": 66,
+									"line": 69,
 									"character": 22
 								}
 							],
@@ -1683,7 +1690,7 @@
 					"sources": [
 						{
 							"fileName": "Data.ts",
-							"line": 62,
+							"line": 65,
 							"character": 17
 						}
 					]
@@ -2268,6 +2275,90 @@
 					}
 				},
 				{
+					"id": 172,
+					"name": "initFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 57,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 173,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 174,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 175,
+											"name": "colVal",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										},
+										{
+											"id": 176,
+											"name": "colIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 177,
+											"name": "row",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataRow",
+												"id": 152
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 57,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
 					"id": 159,
 					"name": "mapFn",
 					"kind": 4194304,
@@ -2305,8 +2396,9 @@
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
 											}
 										},
 										{
@@ -2314,9 +2406,7 @@
 											"name": "colIndex",
 											"kind": 32768,
 											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
+											"flags": {},
 											"type": {
 												"type": "intrinsic",
 												"name": "number"
@@ -2327,9 +2417,7 @@
 											"name": "rowIndex",
 											"kind": 32768,
 											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
+											"flags": {},
 											"type": {
 												"type": "intrinsic",
 												"name": "number"
@@ -2340,24 +2428,21 @@
 											"name": "rows",
 											"kind": 32768,
 											"kindString": "Parameter",
-											"flags": {
-												"isOptional": true
-											},
+											"flags": {},
 											"type": {
 												"type": "array",
 												"elementType": {
-													"type": "array",
-													"elementType": {
-														"type": "intrinsic",
-														"name": "any"
-													}
+													"type": "reference",
+													"name": "DataRow",
+													"id": 152
 												}
 											}
 										}
 									],
 									"type": {
-										"type": "intrinsic",
-										"name": "any"
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
 									}
 								}
 							],
@@ -2365,7 +2450,94 @@
 								{
 									"fileName": "Data.ts",
 									"line": 55,
-									"character": 20
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 166,
+					"name": "mapRowFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 56,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 167,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 168,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 169,
+											"name": "row",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataRow",
+												"id": 152
+											}
+										},
+										{
+											"id": 170,
+											"name": "rowIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 171,
+											"name": "rows",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "DataRow",
+													"id": 152
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataRow",
+										"id": 152
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 56,
+									"character": 22
 								}
 							]
 						}
@@ -2435,7 +2607,7 @@
 								{
 									"fileName": "Data.ts",
 									"line": 54,
-									"character": 20
+									"character": 22
 								}
 							]
 						}
@@ -2472,7 +2644,9 @@
 						148,
 						146,
 						145,
+						172,
 						159,
+						166,
 						154
 					]
 				}
@@ -3240,7 +3414,7 @@
 			]
 		},
 		{
-			"id": 166,
+			"id": 178,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3257,7 +3431,7 @@
 			]
 		},
 		{
-			"id": 167,
+			"id": 179,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3285,8 +3459,8 @@
 			"children": [
 				42,
 				1,
-				166,
-				167
+				178,
+				179
 			]
 		}
 	]
