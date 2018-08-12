@@ -315,7 +315,9 @@
 <a name='L267'></a><a href='#L267'>267</a>
 <a name='L268'></a><a href='#L268'>268</a>
 <a name='L269'></a><a href='#L269'>269</a>
-<a name='L270'></a><a href='#L270'>270</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -325,6 +327,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -595,6 +599,8 @@ import { URL }        from 'url';
 import { createHash } from 'crypto';
 import { Log }        from './log'; const log = new Log('httpUtil');
 &nbsp;
+// log.level(log.DEBUG);
+&nbsp;
 export interface IncomingMessage { 
     headers:        any;
     httpVersion:    string;
@@ -797,7 +803,7 @@ export function request(url:URL, user?:Digest, referer?:string, postData?:any):P
 &nbsp;
 function requestOptions(options:any, user?:Digest, postData?:any):Promise&lt;HttpResponse|string&gt; {
     let auth = (options.headers &amp;&amp; options.headers.Authorization);
-    log.debug(`requesting ${options}`);
+    log.debug(`requesting ${log.inspect(options, 4)}`);
     return new Promise((resolve:(out:HttpResponse)=&gt;void, reject:(e:string)=&gt;void) =&gt; {
         let data = ''; 
         log.debug(`sending request ${auth? 'with authorization ':''}for ${options.protocol}//${options.host}:${options.port}${options.path}`); 
