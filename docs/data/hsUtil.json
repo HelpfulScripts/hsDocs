@@ -681,7 +681,7 @@
 			]
 		},
 		{
-			"id": 66,
+			"id": 74,
 			"name": "\"Number\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -694,7 +694,7 @@
 			},
 			"children": [
 				{
-					"id": 67,
+					"id": 75,
 					"name": "round",
 					"kind": 64,
 					"kindString": "Function",
@@ -703,7 +703,7 @@
 					},
 					"signatures": [
 						{
-							"id": 68,
+							"id": 76,
 							"name": "round",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -713,7 +713,7 @@
 							},
 							"parameters": [
 								{
-									"id": 69,
+									"id": 77,
 									"name": "n",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -727,7 +727,7 @@
 									}
 								},
 								{
-									"id": 70,
+									"id": 78,
 									"name": "d",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -762,7 +762,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						67
+						75
 					]
 				}
 			],
@@ -775,14 +775,52 @@
 			]
 		},
 		{
-			"id": 41,
-			"name": "\"TimedPromise\"",
+			"id": 79,
+			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/TimedPromise.ts",
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 80,
+			"name": "\"overview\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/overview.ts",
+			"comment": {
+				"shortText": "# hsUtil",
+				"text": "Helpful Scripts utility functions for use in both browser and `node` environments\n[`[Github page]`](https://github.com/HelpfulScripts/hsUtil)\n[`[Coverage Info]`](./data/src/hsUtil/coverage/)\n___\n\n## Index - no external dependencies:\n- &nbsp; {@link TimedPromise TimedPromise} functions that provide delays and timeouts for promises.\n- &nbsp; {@link CheckSum CheckSum} a quick checksum implementation for small strings\n- &nbsp; {@link Date Date} printf-style date formatting function\n- &nbsp; {@link round Number.round} rounding to n digits\n\n## Index - dependency on [showdown](https://www.npmjs.com/package/showdown)\n- &nbsp; {@link showdown showdown} an ES6 wrapper for the showdown library\n"
+			},
+			"sources": [
+				{
+					"fileName": "overview.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 41,
+			"name": "\"promises\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/promises.ts",
 			"comment": {
 				"shortText": "## Helpful Script Timing Support\nProvides convenience functions that don't depend on specific frameworks or libraries"
 			},
@@ -844,7 +882,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "TimedPromise.ts",
+									"fileName": "promises.ts",
 									"line": 58,
 									"character": 26
 								}
@@ -861,7 +899,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "TimedPromise.ts",
+									"fileName": "promises.ts",
 									"line": 57,
 									"character": 16
 								}
@@ -882,7 +920,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "TimedPromise.ts",
+									"fileName": "promises.ts",
 									"line": 58,
 									"character": 21
 								}
@@ -956,7 +994,7 @@
 													],
 													"sources": [
 														{
-															"fileName": "TimedPromise.ts",
+															"fileName": "promises.ts",
 															"line": 74,
 															"character": 11
 														}
@@ -979,7 +1017,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "TimedPromise.ts",
+									"fileName": "promises.ts",
 									"line": 74,
 									"character": 7
 								}
@@ -1012,7 +1050,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "TimedPromise.ts",
+							"fileName": "promises.ts",
 							"line": 56,
 							"character": 17
 						}
@@ -1063,9 +1101,153 @@
 					],
 					"sources": [
 						{
-							"fileName": "TimedPromise.ts",
+							"fileName": "promises.ts",
 							"line": 37,
 							"character": 21
+						}
+					]
+				},
+				{
+					"id": 60,
+					"name": "promiseChain",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 61,
+							"name": "promiseChain",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Sequentially calls the provided `tasks` in a `.then()` chain of promises,\nguaranteeing the order of execution per index order in the array.\nEach task can return a result, or a promise for a result."
+							},
+							"typeParameter": [
+								{
+									"id": 62,
+									"name": "T",
+									"kind": 131072,
+									"kindString": "Type parameter",
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 63,
+									"name": "tasks",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "an array of task calls to execute in sequence. Each call will pass the array of results for tasks so far executed."
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reflection",
+											"declaration": {
+												"id": 64,
+												"name": "__type",
+												"kind": 65536,
+												"kindString": "Type literal",
+												"flags": {},
+												"signatures": [
+													{
+														"id": 65,
+														"name": "__call",
+														"kind": 4096,
+														"kindString": "Call signature",
+														"flags": {},
+														"parameters": [
+															{
+																"id": 66,
+																"name": "results",
+																"kind": 32768,
+																"kindString": "Parameter",
+																"flags": {},
+																"type": {
+																	"type": "array",
+																	"elementType": {
+																		"type": "typeParameter",
+																		"name": "T"
+																	}
+																}
+															}
+														],
+														"type": {
+															"type": "union",
+															"types": [
+																{
+																	"type": "typeParameter",
+																	"name": "T"
+																},
+																{
+																	"type": "reference",
+																	"name": "Promise",
+																	"typeArguments": [
+																		{
+																			"type": "typeParameter",
+																			"name": "T"
+																		}
+																	]
+																}
+															]
+														}
+													}
+												],
+												"sources": [
+													{
+														"fileName": "promises.ts",
+														"line": 97,
+														"character": 38
+													}
+												]
+											}
+										}
+									}
+								},
+								{
+									"id": 67,
+									"name": "initialResult",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "optional initial array to collect the task results.\n"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "typeParameter",
+											"name": "T"
+										}
+									},
+									"defaultValue": "[]"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "typeParameter",
+											"name": "T"
+										}
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "promises.ts",
+							"line": 97,
+							"character": 28
 						}
 					]
 				},
@@ -1123,7 +1305,7 @@
 					],
 					"sources": [
 						{
-							"fileName": "TimedPromise.ts",
+							"fileName": "promises.ts",
 							"line": 12,
 							"character": 23
 						}
@@ -1143,58 +1325,21 @@
 					"kind": 64,
 					"children": [
 						57,
+						60,
 						54
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "TimedPromise.ts",
+					"fileName": "promises.ts",
 					"line": 1,
 					"character": 0
 				}
 			]
 		},
 		{
-			"id": 71,
-			"name": "\"index\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/index.ts",
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 72,
-			"name": "\"overview\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/overview.ts",
-			"comment": {
-				"shortText": "# hsUtil",
-				"text": "Helpful Scripts utility functions for use in both browser and `node` environments\n[`[Github page]`](https://github.com/HelpfulScripts/hsUtil)\n[`[Coverage Info]`](./data/src/hsUtil/coverage/)\n___\n\n## Index - no external dependencies:\n- &nbsp; {@link TimedPromise TimedPromise} functions that provide delays and timeouts for promises.\n- &nbsp; {@link CheckSum CheckSum} a quick checksum implementation for small strings\n- &nbsp; {@link Date Date} printf-style date formatting function\n- &nbsp; {@link round Number.round} rounding to n digits\n\n## Index - dependency on [showdown](https://www.npmjs.com/package/showdown)\n- &nbsp; {@link showdown showdown} an ES6 wrapper for the showdown library\n"
-			},
-			"sources": [
-				{
-					"fileName": "overview.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 60,
+			"id": 68,
 			"name": "\"showdown\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1204,7 +1349,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/showdown.ts",
 			"children": [
 				{
-					"id": 62,
+					"id": 70,
 					"name": "converter",
 					"kind": 32,
 					"kindString": "Variable",
@@ -1225,7 +1370,7 @@
 					"defaultValue": " new showdown.Converter()"
 				},
 				{
-					"id": 61,
+					"id": 69,
 					"name": "showdown",
 					"kind": 32,
 					"kindString": "Variable",
@@ -1246,7 +1391,7 @@
 					"defaultValue": " require('showdown')"
 				},
 				{
-					"id": 63,
+					"id": 71,
 					"name": "markDown",
 					"kind": 64,
 					"kindString": "Function",
@@ -1255,7 +1400,7 @@
 					},
 					"signatures": [
 						{
-							"id": 64,
+							"id": 72,
 							"name": "markDown",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1265,7 +1410,7 @@
 							},
 							"parameters": [
 								{
-									"id": 65,
+									"id": 73,
 									"name": "text",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1299,15 +1444,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						62,
-						61
+						70,
+						69
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						63
+						71
 					]
 				}
 			],
@@ -1327,11 +1472,11 @@
 			"children": [
 				1,
 				5,
-				66,
+				74,
+				79,
+				80,
 				41,
-				71,
-				72,
-				60
+				68
 			]
 		}
 	]

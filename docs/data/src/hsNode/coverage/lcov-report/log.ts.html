@@ -364,7 +364,15 @@
 <a name='L316'></a><a href='#L316'>316</a>
 <a name='L317'></a><a href='#L317'>317</a>
 <a name='L318'></a><a href='#L318'>318</a>
-<a name='L319'></a><a href='#L319'>319</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -686,13 +694,12 @@
  * Logging convenience functions.
  * ## Usage
  * &lt;pre&gt;
- * import Log from './log';
- * const log = new Log();
+ * import { Log } from 'hsnode'; const log = new Log();
  * log.info('by the way:'); // -&gt; 20160817 09:59:08.032 info by the way:
  * log.error('oh dear!');   // -&gt; 20160817 09:59:08.045 error *** oh dear!
  * &lt;/pre&gt;
  * 
- * ### Using the format template:
+ * ### Using the `entryFormat` template:
  * &lt;pre&gt;
  * log.entryFormat('%MMM %DD %hh%mm%ss');
  * log.info('by the way:');  // -&gt; Aug 17 095908 info by the way:
@@ -701,25 +708,30 @@
  * 
  * ### With module prefix:
  * &lt;pre&gt;
- * import log from './log';
- * const log = new Log('Main');
- * log.format('%hh%mm%ss');
+ * import { Log } from 'hsnode'; const log = new Log('Main');
+ * log.entryFormat('%hh%mm%ss');
  * log.info('by the way:');  // -&gt; 09:59:08.032 Main info by the way:
  * log.error('oh dear!');    // -&gt; 09:59:08.045 Main error *** oh dear!
  * &lt;/pre&gt;
  * 
  * ### Using a log file
  * &lt;pre&gt;
- * log.format('%MM%DD');
+ * log.entryFormat('%MM%DD');
  * log.info('by the way:'); // -&gt; 0817 info by the way:
  * log.logFile('l%YY%MM');  // -&gt; 0817 info now logging to file l1608.txt
  * log.logFile(null);       // -&gt; 0817 disabling logfile
  * log.error('oh dear!');   // -&gt; 0817 error *** oh dear!
  * &lt;/pre&gt;
  * 
- * ### Setting the Log level
+ * ### Setting the Log level locally for the module
  * ```
  * log.level(log.WARN);
+ * log.info('this will not be reported');
+ * ``` 
+ * 
+ * ### Setting the Log level globally
+ * ```
+ * log.level(log.WARN, true);
  * log.info('this will not be reported');
  * ``` 
  * 
