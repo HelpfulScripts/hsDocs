@@ -1,0 +1,3467 @@
+{
+	"id": 0,
+	"name": "hsDatab",
+	"kind": 0,
+	"flags": {},
+	"children": [
+		{
+			"id": 42,
+			"name": "\"Data\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsDatab/src/Data.ts",
+			"comment": {},
+			"children": [
+				{
+					"id": 56,
+					"name": "Data",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "# Data\nA simple in-memory database that holds data in rows of columns."
+					},
+					"children": [
+						{
+							"id": 67,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 68,
+									"name": "new Data",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 69,
+											"name": "data",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"type": {
+												"type": "reference",
+												"name": "DataSet",
+												"id": 43
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Data",
+										"id": 56
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 95,
+									"character": 5
+								}
+							]
+						},
+						{
+							"id": 117,
+							"name": "data",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 407,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "DataRow",
+									"id": 152
+								}
+							},
+							"defaultValue": " []"
+						},
+						{
+							"id": 118,
+							"name": "meta",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 408,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "MetaStruct",
+									"id": 50
+								}
+							},
+							"defaultValue": " []"
+						},
+						{
+							"id": 119,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 409,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 134,
+							"name": "allRows",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 135,
+									"name": "allRows",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "A generator that provides the specified column value for each row in `Data` in sequence."
+									},
+									"parameters": [
+										{
+											"id": 136,
+											"name": "column",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "\n"
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Iterable",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										]
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 508,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 104,
+							"name": "castData",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 105,
+									"name": "castData",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 269,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 141,
+							"name": "castVal",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 142,
+									"name": "castVal",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"returns": "The result of the cast.",
+										"tags": [
+											{
+												"tag": "description",
+												"text": "Casts the sample to the specified data type.\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 143,
+											"name": "type",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The type to cast into. In case of _any_ - i.e. `type`\ndoes not match any of the previous keywords, no casting occurs."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 144,
+											"name": "val",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 544,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 82,
+							"name": "colAdd",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 83,
+									"name": "colAdd",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "adds a new column to the data set. if `newCol` already exists,\nthe column index is returned without change.",
+										"returns": "the index for the new column\n"
+									},
+									"parameters": [
+										{
+											"id": 84,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the name of the new column"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "MetaStruct",
+										"id": 50
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 149,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 85,
+							"name": "colInitialize",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 86,
+									"name": "colInitialize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "initializes the specifed column with values, adding a new column if needed.\nIf `val`is a function, it is called as ```\nval(colValue:DataVal, rowIndex:number, row:DataRow)\n```\n@param col the column to initialize\n@param initializer the value to initialize with, or a function whose return\nvalue is used to initialize the column"
+									},
+									"parameters": [
+										{
+											"id": 87,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										},
+										{
+											"id": 88,
+											"name": "initializer",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"name": "initFn",
+														"id": 172
+													},
+													{
+														"type": "reference",
+														"name": "DataVal",
+														"id": 151
+													}
+												]
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 171,
+									"character": 24
+								}
+							]
+						},
+						{
+							"id": 92,
+							"name": "colName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 93,
+									"name": "colName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the column name for the specified column.\n`col` can be either an index or a name.",
+										"returns": "the column name or `undefined`.\n"
+									},
+									"parameters": [
+										{
+											"id": 94,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 203,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 95,
+							"name": "colNames",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 96,
+									"name": "colNames",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the names for all columns.",
+										"returns": "an array of strings with the names.\n"
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 214,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 89,
+							"name": "colNumber",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 90,
+									"name": "colNumber",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the column index of the specified column.\n`col` can be either an index or a name.",
+										"returns": "the column number or `undefined`.\n"
+									},
+									"parameters": [
+										{
+											"id": 91,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 188,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 97,
+							"name": "colType",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 98,
+									"name": "colType",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the column type for the specified column.\n`col` can be either an index or a name.",
+										"returns": "the column type.\n"
+									},
+									"parameters": [
+										{
+											"id": 99,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 224,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 75,
+							"name": "export",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 76,
+									"name": "export",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Exports to an object literal"
+									},
+									"type": {
+										"type": "reference",
+										"name": "DataSet",
+										"id": 43
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 120,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 106,
+							"name": "filter",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 107,
+									"name": "filter",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "filters this data set and returns a new data set with a\nshallow copy of rows that pass the `condition`.\nSee {@link DataFilters DataFilters} for rules and examples on how to construct conditions.",
+										"returns": "a new Data object with rows that pass the filter\n"
+									},
+									"parameters": [
+										{
+											"id": 108,
+											"name": "condition",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "filters"
+											},
+											"type": {
+												"type": "reference",
+												"name": "Condition",
+												"id": 9
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Data",
+										"id": 56
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 286,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 100,
+							"name": "findDomain",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "findDomain",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "modifies `domain` to include all values in column `col`.\nIf no `col` is specified, the range of data indexes is returned.",
+										"returns": "the updated domain\n"
+									},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "optional; the column name or index"
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										},
+										{
+											"id": 103,
+											"name": "domain",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "optional; the Domain range to update"
+											},
+											"type": {
+												"type": "reference",
+												"name": "Domain",
+												"id": 149
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Domain",
+										"id": 149
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 236,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 131,
+							"name": "findType",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 132,
+									"name": "findType",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"returns": "the type ('number', 'date', 'percent', 'nominal', 'currency') corresponding to the sample\n",
+										"tags": [
+											{
+												"tag": "description",
+												"text": "determines the data type. Supported types are\n```\n'date':    sample represents a Date, either as a Date object or a String\n'number':  sample represents a number\n'percent': sample represents a percentage (special case of a real number)\n'nominal': sample represents a nominal (ordinal or categorical) value\n```"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 133,
+											"name": "val",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the value to bve typed."
+											},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 477,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 128,
+							"name": "findTypes",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 129,
+									"name": "findTypes",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Determines the type of data in `col`. An array of counts is created for all\nencountered types, sorted by descending frequency. THe most likely type in position 0\nof the array is returned.",
+										"returns": "the most likely type of data in `col`.\n"
+									},
+									"parameters": [
+										{
+											"id": 130,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the index of the column to be typed."
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 445,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 79,
+							"name": "getColumn",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 80,
+									"name": "getColumn",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Returns the values in the specified column as a new array."
+									},
+									"parameters": [
+										{
+											"id": 81,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the column to return.\n"
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "DataVal",
+											"id": 151
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 138,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 77,
+							"name": "getData",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 78,
+									"name": "getData",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "returns the 2D array underlying the data base."
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "DataRow",
+											"id": 152
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 130,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 120,
+							"name": "getMeta",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 121,
+									"name": "getMeta",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 122,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "MetaStruct",
+										"id": 50
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 411,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 70,
+							"name": "getName",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 71,
+									"name": "getName",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"returns": "the `name` field for this data base, if any\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 104,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 72,
+							"name": "import",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 73,
+									"name": "import",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Imports data from an object literal `data`"
+									},
+									"parameters": [
+										{
+											"id": 74,
+											"name": "data",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the data set to import\n"
+											},
+											"type": {
+												"type": "reference",
+												"name": "DataSet",
+												"id": 43
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 112,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 113,
+							"name": "map",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 114,
+									"name": "map",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": " Maps one or more columns in each rows of values based\non the result of the `mapFn`, which behaves similarly to the Array.map() method.\nTwo modes are supported:",
+										"text": "## Array Mode\nIf `col` is omitted, the `mapFn` is passed the column arrays per row as parameter.\nThis allows for complex mapping combining conditions across multiple columns.\n```\ndata.map(function(values){\n   values[1] = values[3] * values[5];\n   return values;\n});\n```\nBe sure to return the `values` array as a result.\n\n## Column mode\nIf `col` is specified, either as index or by column name, the respective column value is passed\ninto `mapFn`, along with the row index and the entire row array. This allows for simple mapping.\n```\ndata.map('Price', function(value, i, values) {\n   return value * 2;\n});\n```",
+										"returns": "a new Data object containing the mapping.\n"
+									},
+									"parameters": [
+										{
+											"id": 115,
+											"name": "mapFn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "a function to implement the mapping,\ncalled on each row of the data set in turn as `mapFn(val, i, c, rows)`, where\n- `val`: the column value in the current row\n- `c`: the column index in the current row\n- `i`: the row index\n- `rows`: the rows being iterated over\n`    *\nfollows the same specifications as the function passed to Array.map().<br>\nFor column mode, some predefined map functions can be invoked by providing a\nrespective string instead of a function. The following functions are defined:\n <table>\n <tr><td>'noop'</td><td>replace value with itself, performing no operation.</td></tr>\n <tr><td>'cumulate'</td><td>replace value with the cumulative sum of values up to the current element.</td></tr>\n </table>\n"
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"name": "mapFn",
+														"id": 115
+													},
+													{
+														"type": "reference",
+														"name": "mapRowFn",
+														"id": 166
+													}
+												]
+											}
+										},
+										{
+											"id": 116,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "the data column, or columns, to apply the mapping to."
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Data",
+										"id": 56
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 371,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 123,
+							"name": "setData",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 124,
+									"name": "setData",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "sets `data` to the existing data set. If data has previously been set,\n`data` will be added to the end of the list if all `names`  match those of the\nexisting set."
+									},
+									"parameters": [
+										{
+											"id": 125,
+											"name": "data",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the data to add"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "DataRow",
+													"id": 152
+												}
+											}
+										},
+										{
+											"id": 126,
+											"name": "names",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "an array of names that match the columns"
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										},
+										{
+											"id": 127,
+											"name": "autoType",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "unless set to false, the method will attempt to determine the\ntype of data and automatically cast data points to their correct value\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											},
+											"defaultValue": "true"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 427,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 109,
+							"name": "sort",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 110,
+									"name": "sort",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"returns": "the Data object in order to allow for chaining.\n",
+										"tags": [
+											{
+												"tag": "description",
+												"text": "Sorts the rows of values based on the result of the `sortFn`,\nwhich behaves similarly to the Array.sort method.\nTwo modes are supported:\n# Array Mode\nIf `col` is omitted, the column arrays are passed as samples into the `sortFn`.\nThis allows for complex sorts, combining conditions across multiple columns.\n```\ndata.sort((row1, row2) => row1[5] - row2[5] );\n```\n# Column mode\nIf `col` is specified, either as index or by column name, the respective column value is passed\ninto `sortFn`. This allows filtering for simple conditions.<br>\n**The specified column will be automatically cast prior to sorting**<br>\n`data.sort('Date', function(val1, val2) { return val1 - val2; });`"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 111,
+											"name": "sortFn",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "a function to implement the conditions,\nfollows the same specifications as the function passed to Array.sort().\nSome predefined sort function can be invoked by providing a\nrespective string instead of a function. The following functions are defined:\n<table>\n<tr><td>'`ascending`'</td><td>sort in ascending order.</td></tr>\n<tr><td>'`descending`'</td><td>sort in decending order.</td></tr>\n</table>"
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"name": "sortFn",
+														"id": 111
+													}
+												]
+											}
+										},
+										{
+											"id": 112,
+											"name": "col",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "optional; the data column to use for sorting."
+											},
+											"type": {
+												"type": "reference",
+												"name": "ColumnReference",
+												"id": 150
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Data",
+										"id": 56
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 316,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 137,
+							"name": "toDate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPrivate": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 138,
+									"name": "toDate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"returns": "a new Date object parsed from `str`.",
+										"tags": [
+											{
+												"tag": "description",
+												"text": "returns a new Date object parsed from `str` and corrects for a difference in\ninterpreting centuries between webkit and mozilla in converting strings to Dates:\nThe string \"15/7/03\" will convert to Jul 15 1903 in Mozilla and July 15 2003 in Webkit.\nIf `limitYear` is not specified this method uses 1970 as the decision date:\nyears 00-69 will be interpreted as 2000-2069, years 70-99 as 1970-1999.\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 139,
+											"name": "val",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the string to convert to a date"
+											},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										},
+										{
+											"id": 140,
+											"name": "limitYear",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "the year below which the century is corrected. Defaults to 1970."
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											},
+											"defaultValue": "1970"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Date"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 525,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 63,
+							"name": "toDataSet",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"signatures": [
+								{
+									"id": 64,
+									"name": "toDataSet",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "translates a structure of form\n`[{<key>:value, ...}, ...]` into a `Data` set."
+									},
+									"parameters": [
+										{
+											"id": 65,
+											"name": "data",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {},
+											"type": {
+												"type": "reference",
+												"name": "DataLiteralSet",
+												"id": 153
+											}
+										},
+										{
+											"id": 66,
+											"name": "name",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"text": "\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataSet",
+										"id": 43
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 89,
+									"character": 27
+								}
+							]
+						},
+						{
+							"id": 57,
+							"name": "type",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {
+								"isStatic": true,
+								"isExported": true,
+								"isPublic": true
+							},
+							"children": [
+								{
+									"id": 61,
+									"name": "currency",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "currency values. Currently support6ed are values ofg the format '$dd[,ddd]'"
+									},
+									"sources": [
+										{
+											"fileName": "Data.ts",
+											"line": 77,
+											"character": 16
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"currency\""
+								},
+								{
+									"id": 60,
+									"name": "date",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "date values"
+									},
+									"sources": [
+										{
+											"fileName": "Data.ts",
+											"line": 75,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"date\""
+								},
+								{
+									"id": 59,
+									"name": "name",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "nominal values, represented by arbitrary words"
+									},
+									"sources": [
+										{
+											"fileName": "Data.ts",
+											"line": 73,
+											"character": 12
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"name\""
+								},
+								{
+									"id": 58,
+									"name": "number",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "numeric values"
+									},
+									"sources": [
+										{
+											"fileName": "Data.ts",
+											"line": 71,
+											"character": 14
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"number\""
+								},
+								{
+									"id": 62,
+									"name": "percent",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "percent values: 'd%'"
+									},
+									"sources": [
+										{
+											"fileName": "Data.ts",
+											"line": 79,
+											"character": 15
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"percent\""
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										61,
+										60,
+										59,
+										58,
+										62
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 69,
+									"character": 22
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								67
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								117,
+								118,
+								119
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								134,
+								104,
+								141,
+								82,
+								85,
+								92,
+								95,
+								89,
+								97,
+								75,
+								106,
+								100,
+								131,
+								128,
+								79,
+								77,
+								120,
+								70,
+								72,
+								113,
+								123,
+								109,
+								137,
+								63
+							]
+						},
+						{
+							"title": "Object literals",
+							"kind": 2097152,
+							"children": [
+								57
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 65,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 43,
+					"name": "DataSet",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "a JSON format data set, using arrays of names and rows"
+					},
+					"children": [
+						{
+							"id": 45,
+							"name": "colNames",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "an array of column names. Each name matches the column with the same index in DataRow"
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 36,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 44,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"comment": {
+								"shortText": "an optional name for the data set"
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 34,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 46,
+							"name": "rows",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "rows of data"
+							},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 38,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "DataRow",
+									"id": 152
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								45,
+								44,
+								46
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 32,
+							"character": 24
+						}
+					]
+				},
+				{
+					"id": 50,
+					"name": "MetaStruct",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 53,
+							"name": "accessed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 49,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 54,
+							"name": "cast",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 50,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 52,
+							"name": "column",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 48,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 51,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 47,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 55,
+							"name": "types",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 51,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "TypeStruct",
+									"id": 47
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								53,
+								54,
+								52,
+								51,
+								55
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 46,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 47,
+					"name": "TypeStruct",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 49,
+							"name": "count",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 44,
+									"character": 42
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 48,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 44,
+									"character": 27
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								49,
+								48
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 44,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 150,
+					"name": "ColumnReference",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a Column Reference, either as column name or index in the {@link Data.DataRow `DataRow`} array"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 23,
+							"character": 27
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							}
+						]
+					}
+				},
+				{
+					"id": 153,
+					"name": "DataLiteralSet",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "a JSON format data set, using an array of {name:value, ...} literals"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 42,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Array",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "any"
+							}
+						]
+					}
+				},
+				{
+					"id": 152,
+					"name": "DataRow",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "a single row of column values"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 29,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "DataVal",
+							"id": 151
+						}
+					}
+				},
+				{
+					"id": 151,
+					"name": "DataVal",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "a generic data value type, used in the {@link Data.DataRow `DataRow`} array"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 26,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "reference",
+								"name": "Date"
+							}
+						]
+					}
+				},
+				{
+					"id": 147,
+					"name": "DateDomain",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a Date domain that includes all values of a column"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 14,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "tuple",
+						"elements": [
+							{
+								"type": "reference",
+								"name": "Date"
+							},
+							{
+								"type": "reference",
+								"name": "Date"
+							}
+						]
+					}
+				},
+				{
+					"id": 149,
+					"name": "Domain",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a generic domain that can be any of the typed domains."
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 20,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "NumDomain",
+								"id": 146
+							},
+							{
+								"type": "reference",
+								"name": "DateDomain",
+								"id": 147
+							},
+							{
+								"type": "reference",
+								"name": "NameDomain",
+								"id": 148
+							}
+						]
+					}
+				},
+				{
+					"id": 148,
+					"name": "NameDomain",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a categorical domain that includes all values of a column"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 17,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				},
+				{
+					"id": 146,
+					"name": "NumDomain",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a numeric domain that includes all values of a column"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 11,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "tuple",
+						"elements": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						]
+					}
+				},
+				{
+					"id": 145,
+					"name": "NumRange",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "defines a [min-max] range"
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 8,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "tuple",
+						"elements": [
+							{
+								"type": "intrinsic",
+								"name": "number"
+							},
+							{
+								"type": "intrinsic",
+								"name": "number"
+							}
+						]
+					}
+				},
+				{
+					"id": 172,
+					"name": "initFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 57,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 173,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 174,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 175,
+											"name": "colVal",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										},
+										{
+											"id": 176,
+											"name": "colIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 177,
+											"name": "row",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataRow",
+												"id": 152
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 57,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 159,
+					"name": "mapFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 55,
+							"character": 17
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 160,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 162,
+											"name": "colVal",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										},
+										{
+											"id": 163,
+											"name": "colIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 164,
+											"name": "rowIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 165,
+											"name": "rows",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "DataRow",
+													"id": 152
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 55,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 166,
+					"name": "mapRowFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 56,
+							"character": 20
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 167,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 168,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 169,
+											"name": "row",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataRow",
+												"id": 152
+											}
+										},
+										{
+											"id": 170,
+											"name": "rowIndex",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 171,
+											"name": "rows",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"name": "DataRow",
+													"id": 152
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "DataRow",
+										"id": 152
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 56,
+									"character": 22
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 154,
+					"name": "sortFn",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "Data.ts",
+							"line": 54,
+							"character": 18
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 155,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 156,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 157,
+											"name": "x",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 158,
+											"name": "y",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Data.ts",
+									"line": 54,
+									"character": 22
+								}
+							]
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						56
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						43,
+						50,
+						47
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						150,
+						153,
+						152,
+						151,
+						147,
+						149,
+						148,
+						146,
+						145,
+						172,
+						159,
+						166,
+						154
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Data.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "\"DataFilters\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsDatab/src/DataFilters.ts",
+			"comment": {
+				"shortText": "Use the {@link filter `filter`} function to executes a queries on a {@link Data `Data`} object.\nEach row in the data is checked and those for which `conditions` holds true are returned as a new `Data` object.",
+				"text": "# Condition construction\n\n### General Condition\n```\nCondition =\n   IndexCondition            -> conditions on the row index\n|| RecursiveCondition        -> (set of) conditions on column values\n```\n\n### IndexCondition\n```\nIndexCondition =\n   rowIndex:number           -> true if row index matches\n```\n\n### RecursiveCondition\n```\nRecursiveCondition =\n   OrCondition               -> OR: true if any compound condition is true\n|| AndCondition              -> AND: true if all compound conditions are true\n\nOrCondition =                -> OR: true if\n   AndCondition[]               -> any of the AndConditions are true\n|| IndexCondition[]             -> any of thr IndexConditions are true\n\nAndCondition =               -> AND: true if\n   SetAndCondition              -> all SetAndConditions are true\n|| TermAndCondition             -> or if all TermAndConditions are true\n\nSetAndCondition = {          -> AND: true if all sub-conditions are true\n   'or':  RecursiveCondition    -> true if any RecursiveCondition is true\n|| 'and': RecursiveCondition    -> true if all RecursiveCondition are true\n|| 'not': RecursiveCondition    -> true if the condition is false\n\nTermAndCondition = {         -> Terminal AND: true if all terminal sub-conditions are true\n   colDesc:colValue             -> true if colValue matches\n|| colDesc:[colValue, ...]      -> true if any of the colValues match\n|| colDesc:function(value,row)  -> true if function returns true\n}\n\ncolDesc = either column name or index\n```\n\n### Practical Tips\n```\n   {'or': [recurCond, ...]}    -> OR, same as [recurCond, ...]\n|| {'or': {SetCond, ...}}      -> OR, same as [SetCond, ...]\n|| {'and': [recurCond, ...]}   -> AND, true if all recurCond are true\n|| {'and': {SetCond, ...}}     -> AND, same as {SetCond, ...}\n|| {'not': {SetCond, ...}}     -> NAND: true if the SetCond are true\n|| {'not': [recurCond, ...]}   -> NOR: true if any of the recurCond are true\n```\n\n# Example\n<example height=1000px>\n<file name=\"script.js\">\nconst colNames = ['Name', 'Value', 'Start', 'End'];\nconst rows = [\n  ['Harry', '100', '3/1/14', '11/20/14'],\n  ['Mary', '1500', '7/1/14',  '9/30/14'],\n  ['Peter', '400', '5/20/14', '4/30/15'],\n  ['Jane', '700', '11/13/14', '8/15/15']\n]\nconst data = new hsdatab.Data({colNames:colNames, rows:rows});\n\nqueries = [\n  ['0', undefined,                           'undefined query => pass all'],\n  ['1', [],                                  'empty OR:  []   => fail all'],\n  ['2', {},                                  'empty AND: {}   => pass all'],\n  ['3', 1,                                   '2nd row: pass row 1'],\n  ['4', [1,3],                               '2nd+4th: pass rows: 1 and 3'],\n  ['5', {Name:\"Jane\"},                       'Name is Jane'],\n  ['6', {1:1500},                            'Column 2 is 1500'],\n  ['7', {Name:[\"Peter\", \"Jane\"]},            'Name is Peter or Jane'],\n  ['8', [{Name:\"Peter\"}, {Value:1500}],      'Name is Peter or Value is 1500'],\n  ['9', {or:{Name:\"Peter\", Value:1500}},     'OR:  same as 8:'],\n  ['A', {or:[{Name:\"Peter\"}, {Value:1500}]}, 'OR: [{Name is Peter}, {Value is 1500}]'],\n  ['B', {Name:\"Peter\", Value:400},           'Name is Peter and Value is 400'],\n  ['C', {and:{Name:\"Peter\", Value:400}},     'AND: {Name is Peter, Value is 400}'],\n  ['D', {and:{Name:\"Peter\", Value:1500}},    'AND: {Name is Peter, Value is 1500}'],\n  ['E', {and:[{Name:\"Peter\"}, {Value:400}]}, 'AND:[{Name is Peter}, {Value is 400}]'],\n  ['F', {and:[{Name:\"Peter\"}, {Value:1500}]},'AND:[{Name is Peter}, {Value is 1500}]'],\n  ['G', {not:{Name:\"Peter\", Value:400}},     'NAND: not {Name is Peter and Value is 400}'],\n  ['H', {not:{Name:\"Peter\", Value:1500}},    'NAND: not {Name is Peter and Value is 1500}'],\n  ['I', {not:[{Name:\"Peter\"}, {Value:1500}]},'NOR: not [{Name is Peter} or {Value is 1500}]'],\n  ['J', {Name:(v) => v.length===4},          'Name has 4 letters']\n];\n\nm.mount(root, {\n  view:() => m('', [\n      m('h3', 'Given the data set:'),\n      m('table#data', [\n          m('tr', colNames.map(n => m('th', n))),\n          ...rows.map(row => m('tr', [m('td', row[0]),m('td', row[1]),m('td', row[2].toDateString()),m('td', row[3].toDateString())]))\n      ]),\n      m('h3', 'The following queries yield:'),\n      m('table', [\n          m('tr', [m('th','#'), m('th','Query'), m('th',\"Live Result, by 'Name' field\")]),\n          ...queries.map(q => {\n              const result = data.filter(q[1]).getColumn('Name').join(', ');\n              return m('tr', [m('td',`${q[0]}:`), m('td',`${q[2]}`), m('td',`[ ${result} ]`)]);\n          })\n      ])\n  ])\n});\n</file>\n<file name='style.css'>\n  $exampleID { height: 600px; }\n  #data th { width:15%; }\n  table {\n      font-size: 10pt;\n      margin-left: 10px;\n  }\n</file>\n</example>\n"
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "SetAndCondition",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 4,
+							"name": "and",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "DataFilters.ts",
+									"line": 140,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RecursiveCondition",
+								"id": 11
+							}
+						},
+						{
+							"id": 5,
+							"name": "not",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "DataFilters.ts",
+									"line": 141,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RecursiveCondition",
+								"id": 11
+							}
+						},
+						{
+							"id": 3,
+							"name": "or",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "DataFilters.ts",
+									"line": 139,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "RecursiveCondition",
+								"id": 11
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								4,
+								5,
+								3
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 138,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 6,
+					"name": "TermAndCondition",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"indexSignature": {
+						"id": 7,
+						"name": "__index",
+						"kind": 8192,
+						"kindString": "Index signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 8,
+								"name": "colDesc",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						],
+						"type": {
+							"type": "union",
+							"types": [
+								{
+									"type": "reference",
+									"name": "DataVal",
+									"id": 151
+								},
+								{
+									"type": "array",
+									"elementType": {
+										"type": "reference",
+										"name": "DataVal",
+										"id": 151
+									}
+								},
+								{
+									"type": "reference",
+									"name": "TermConditionFunction",
+									"id": 14
+								}
+							]
+						}
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 144,
+							"character": 33
+						}
+					]
+				},
+				{
+					"id": 13,
+					"name": "AndCondition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 136,
+							"character": 24
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "SetAndCondition",
+								"id": 2
+							},
+							{
+								"type": "reference",
+								"name": "TermAndCondition",
+								"id": 6
+							}
+						]
+					}
+				},
+				{
+					"id": 9,
+					"name": "Condition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 129,
+							"character": 21
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "IndexCondition",
+								"id": 10
+							},
+							{
+								"type": "reference",
+								"name": "RecursiveCondition",
+								"id": 11
+							}
+						]
+					}
+				},
+				{
+					"id": 10,
+					"name": "IndexCondition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "true if row index matches the number(s)"
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 132,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 12,
+					"name": "OrCondition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 135,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "AndCondition",
+									"id": 13
+								}
+							},
+							{
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"name": "IndexCondition",
+									"id": 10
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": 11,
+					"name": "RecursiveCondition",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 134,
+							"character": 30
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "AndCondition",
+								"id": 13
+							},
+							{
+								"type": "reference",
+								"name": "OrCondition",
+								"id": 12
+							}
+						]
+					}
+				},
+				{
+					"id": 14,
+					"name": "TermConditionFunction",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {
+						"isExported": true
+					},
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 152,
+							"character": 33
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 15,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 16,
+									"name": "__call",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 17,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataVal",
+												"id": 151
+											}
+										},
+										{
+											"id": 18,
+											"name": "row",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "DataRow",
+												"id": 152
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "DataFilters.ts",
+									"line": 152,
+									"character": 35
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 38,
+					"name": "filter",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 39,
+							"name": "filter",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "filters a `Data` object for the given `Condition`s and returns a new `Data` object with those rows for which\n`cond` holds true.",
+								"returns": "a new `Data` object with the filtered rows\n"
+							},
+							"parameters": [
+								{
+									"id": 40,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the `Data` object to filter"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Data",
+										"id": 56
+									}
+								},
+								{
+									"id": 41,
+									"name": "cond",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the complex condition to test against"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Condition",
+										"id": 9
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Data",
+								"id": 56
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 235,
+							"character": 22
+						}
+					]
+				},
+				{
+					"id": 28,
+					"name": "resolveCondition",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 29,
+							"name": "resolveCondition",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "applies `condition` to a row of data and returns `true` if the row passes."
+							},
+							"parameters": [
+								{
+									"id": 30,
+									"name": "condition",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the complex condition to test against"
+									},
+									"type": {
+										"type": "reference",
+										"name": "Condition",
+										"id": 9
+									}
+								},
+								{
+									"id": 31,
+									"name": "row",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the row values"
+									},
+									"type": {
+										"type": "reference",
+										"name": "DataRow",
+										"id": 152
+									}
+								},
+								{
+									"id": 32,
+									"name": "r",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"text": "the row index in the data set"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 33,
+									"name": "colNumber",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 34,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 35,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 36,
+															"name": "name",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "DataFilters.ts",
+													"line": 180,
+													"character": 80
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 37,
+									"name": "and",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"text": "\n"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 180,
+							"character": 25
+						}
+					]
+				},
+				{
+					"id": 19,
+					"name": "resolveTerminalCondition",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 20,
+							"name": "resolveTerminalCondition",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 21,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 22,
+									"name": "val",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 23,
+									"name": "row",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "DataRow",
+										"id": 152
+									}
+								},
+								{
+									"id": 24,
+									"name": "colNumber",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 25,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 26,
+													"name": "__call",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 27,
+															"name": "name",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"sources": [
+												{
+													"fileName": "DataFilters.ts",
+													"line": 154,
+													"character": 79
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "DataFilters.ts",
+							"line": 154,
+							"character": 33
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2,
+						6
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						13,
+						9,
+						10,
+						12,
+						11,
+						14
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						38,
+						28,
+						19
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "DataFilters.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 178,
+			"name": "\"index\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsDatab/src/index.ts",
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 179,
+			"name": "\"overview\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsDatab/src/overview.ts",
+			"comment": {
+				"shortText": "# hsDatab",
+				"text": "Helpful Scripts framework-independent data management functions.\n[`[Github page]`](https://github.com/HelpfulScripts/hsDatab)\n[`[Coverage Info]`](./data/src/hsDatab/coverage/)\n___\n\n**hsDatab** provides a JavaScript-based data management and query mechanism.\nData is managed in a simple in-memory database that holds data in rows of columns.\nIt autodetermines the types of data held in each column, along with the\ndomain range for each column of data.\nComplex filters can be applied by defining {@link DataFilters `Condition`}s using a simple query object structure.\n\n## Data Types\nsupported {@link Data.Data.type data types} include\n- **number**: numeric values\n- **name**: nominal values, represented by arbitrary words\n- **date**: date values\n- **currency**: Currently supported: '$dd[,ddd]'\n- **percent**: 'd%'\n\n## Data Class\nThe fundamental object in this library is {@link Data.Data `Data`},\na simple row-column based database object,\nfeaturing named columns, sorting, mapping and filtering functions.\n\n## Example\n<example height=500>\n<file name=\"script.js\">\nconst colNames = ['Name', 'Value', 'Start', 'End'];\nconst rows = [\n  ['Harry', '100', '3/1/14', '11/20/14'],\n  ['Mary', '1500', '7/1/14',  '9/30/14'],\n  ['Peter', '400', '5/20/14', '4/30/15'],\n  ['Jane', '700', '11/13/14', '8/15/15']\n]\nconst data = new hsdatab.Data({colNames:colNames, rows:rows});\n\nquery = {Name:[\"Peter\", \"Jane\"]};\nconst result = data.filter(query);\n\nm.mount(root, {\n  view:() => m('', [\n      m('h3', 'Given the data set:'),\n      m('pre',\n      m('table#data', [\n          m('tr', colNames.map(n => m('th', n))),\n          ...rows.map(row => m('tr', [\n             m('td', row[0]),\n             m('td', row[1]),\n             m('td', `${row[2].getMonth()+1}/${row[2].getDate()}/${row[2].getFullYear()}`),\n             m('td', `${row[3].getMonth()+1}/${row[3].getDate()}/${row[3].getFullYear()}`)\n         ]))\n      ])),\n      m('h3', 'The column types and domains are'),\n      m('pre', m('table',\n                 m('tr', m('th', 'Column'),   m('th', 'Type'),   m('th', 'Domain')),\n                 m('tr', m('td', '\"Name\":'),  m('td', data.colType(\"Name\")),   m('td', data.findDomain(\"Name\").join(', '))),\n                 m('tr', m('td', '\"Value\":'), m('td', data.colType(\"Value\")),  m('td', data.findDomain(\"Value\").join(' - '))),\n                 m('tr', m('td', '\"Start\":'), m('td', data.colType(\"Start\")),  m('td', data.findDomain(\"Start\").map(d => d.toDateString()).join(' - '))),\n                 m('tr', m('td', '\"Stop\":'),  m('td', data.colType(\"End\")),    m('td', data.findDomain(\"End\").map(d => d.toDateString()).join(' - ')))\n      )),\n      m('h3', 'The query:'),\n      m('code', '{Name:[\"Peter\", \"Jane\"]}'),\n      m('h3', 'yields results with \"Name\"'),\n      m('code', result.getColumn('Name').join(', '))\n  ])\n});\n</file>\n<file name='style.css'>\n  $exampleID { height: 600px; }\n  #data th { width:15%; }\n  #data  { font-size: 11pt; }\n</file>\n</example>\n"
+			},
+			"sources": [
+				{
+					"fileName": "overview.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "External modules",
+			"kind": 1,
+			"children": [
+				42,
+				1,
+				178,
+				179
+			]
+		}
+	]
+}
