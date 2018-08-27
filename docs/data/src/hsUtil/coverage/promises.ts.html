@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>25/25</span>
+        <span class='fraction'>28/29</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">75% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>13/13</span>
+        <span class='fraction'>13/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.15% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>22/22</span>
+        <span class='fraction'>25/26</span>
       </div>
     </div>
     <p class="quiet">
@@ -154,7 +154,12 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,6 +217,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,6 +226,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,6 +241,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -307,7 +317,7 @@ export function delay(ms:number)   {
 }
 &nbsp;
 /**
- * @description ensures that a functions in a sequence are not executed faster than a preset minimum delay.
+ * @description ensures that function calls in a sequence are not executed faster than a preset minimum delay.
  * 
  * **Usage:** 
  * ```
@@ -320,6 +330,7 @@ export function delay(ms:number)   {
 export class Pace {
     private pace:number;    // the pace of calls in ms
     private waitUntil = 0;  // the earliest time for the next call
+    private waitCount = 0;  // number of calls currently in queue waiting
 &nbsp;
     /**
      * @param delay the minimum number of milliseconds between executions of 
@@ -328,6 +339,8 @@ export class Pace {
     constructor(pace=100) {
         this.pace = pace+5; // add 5ms margin. delay() may trigger a millisecond or two early
     }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    getWaitCount</span>() { <span class="cstat-no" title="statement not covered" >return this.waitCount; </span>}
 &nbsp;
     /**
      * adds the function to the queue. After an appropriate time has passed, 
@@ -343,7 +356,9 @@ export class Pace {
         } else {
             const diff = this.waitUntil - addTime;
             this.waitUntil += this.pace + 5;
+            this.waitCount++;
             return Promise.resolve().then(delay(diff)).then(() =&gt; {
+                this.waitCount--;
                 return fn(Date.now()-addTime);
             });
         }

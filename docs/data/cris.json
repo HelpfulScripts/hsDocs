@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "hsDocs",
+	"name": "cris",
 	"kind": 0,
 	"flags": {},
 	"children": [
@@ -15,7 +15,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/CRIS/src/CRISrequest.ts",
 			"children": [
 				{
-					"id": 4,
+					"id": 5,
 					"name": "response",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -25,21 +25,21 @@
 					"sources": [
 						{
 							"fileName": "CRISrequest.ts",
-							"line": 7,
+							"line": 10,
 							"character": 20
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 5,
+							"id": 6,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 7,
+									"id": 8,
 									"name": "body",
 									"kind": 32,
 									"kindString": "Variable",
@@ -47,7 +47,7 @@
 									"sources": [
 										{
 											"fileName": "CRISrequest.ts",
-											"line": 9,
+											"line": 12,
 											"character": 8
 										}
 									],
@@ -57,7 +57,7 @@
 									}
 								},
 								{
-									"id": 6,
+									"id": 7,
 									"name": "response",
 									"kind": 32,
 									"kindString": "Variable",
@@ -65,7 +65,7 @@
 									"sources": [
 										{
 											"fileName": "CRISrequest.ts",
-											"line": 8,
+											"line": 11,
 											"character": 12
 										}
 									],
@@ -80,15 +80,15 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										7,
-										6
+										8,
+										7
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "CRISrequest.ts",
-									"line": 7,
+									"line": 10,
 									"character": 22
 								}
 							]
@@ -127,7 +127,7 @@
 					"sources": [
 						{
 							"fileName": "CRISrequest.ts",
-							"line": 5,
+							"line": 7,
 							"character": 10
 						}
 					],
@@ -135,10 +135,73 @@
 						"type": "reference",
 						"name": "Pace"
 					},
-					"defaultValue": " new Pace(1000)"
+					"defaultValue": " new Pace(300)"
 				},
 				{
-					"id": 16,
+					"id": 10,
+					"name": "queueCount",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "CRISrequest.ts",
+							"line": 16,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "0"
+				},
+				{
+					"id": 9,
+					"name": "reqCount",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isLet": true
+					},
+					"sources": [
+						{
+							"fileName": "CRISrequest.ts",
+							"line": 15,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "0"
+				},
+				{
+					"id": 4,
+					"name": "token",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "CRISrequest.ts",
+							"line": 8,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "stringLiteral",
+						"value": "eyJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiQTEyOEtXIn0.vADQgca2YoQmZdZ5CM8PiEOCTGXN2KrS.dR_FEuV_Hl1H7Y36.JSGYniDFsSP-Rl4rD4pjCNNmpo5sDBlesQvomyizB6-EnSLwCvwz1bHsUcqAVRz2yZqLbO1TVzh2YPosfEH-IbKU75kymf15afe5yX8QOuyNbwpF9ZODeOSDCCsI2TJEsBwtBg1TjRwfzF62bCva8jvKjc5n3Mqfv2EYMRoZsVWTjQkI7vLifesE06kb8mrnoMxJlAqZ6-1NRtileKtmNOgFHPEMwhqwyptu9Tw_muz-tPMcQg.ZFsf8ic85dQ9z7t5LRjQdQ"
+					},
+					"defaultValue": "\"eyJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiQTEyOEtXIn0.vADQgca2YoQmZdZ5CM8PiEOCTGXN2KrS.dR_FEuV_Hl1H7Y36.JSGYniDFsSP-Rl4rD4pjCNNmpo5sDBlesQvomyizB6-EnSLwCvwz1bHsUcqAVRz2yZqLbO1TVzh2YPosfEH-IbKU75kymf15afe5yX8QOuyNbwpF9ZODeOSDCCsI2TJEsBwtBg1TjRwfzF62bCva8jvKjc5n3Mqfv2EYMRoZsVWTjQkI7vLifesE06kb8mrnoMxJlAqZ6-1NRtileKtmNOgFHPEMwhqwyptu9Tw_muz-tPMcQg.ZFsf8ic85dQ9z7t5LRjQdQ\""
+				},
+				{
+					"id": 19,
 					"name": "get",
 					"kind": 64,
 					"kindString": "Function",
@@ -147,14 +210,14 @@
 					},
 					"signatures": [
 						{
-							"id": 17,
+							"id": 20,
 							"name": "get",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 18,
+									"id": 21,
 									"name": "module",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -165,7 +228,7 @@
 									}
 								},
 								{
-									"id": 19,
+									"id": 22,
 									"name": "apiCall",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -176,7 +239,7 @@
 									}
 								},
 								{
-									"id": 20,
+									"id": 23,
 									"name": "useCached",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -198,7 +261,7 @@
 											{
 												"type": "reference",
 												"name": "response",
-												"id": 4
+												"id": 5
 											},
 											{
 												"type": "reference",
@@ -213,25 +276,95 @@
 					"sources": [
 						{
 							"fileName": "CRISrequest.ts",
-							"line": 43,
+							"line": 53,
 							"character": 19
 						}
 					]
 				},
 				{
-					"id": 13,
+					"id": 16,
 					"name": "getOffline",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 14,
+							"id": 17,
 							"name": "getOffline",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
+								{
+									"id": 18,
+									"name": "fname",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "CRISrequest.ts",
+							"line": 48,
+							"character": 19
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "getOnline",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isExported": true
+					},
+					"signatures": [
+						{
+							"id": 12,
+							"name": "getOnline",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 13,
+									"name": "module",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 14,
+									"name": "apiCall",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
 								{
 									"id": 15,
 									"name": "fname",
@@ -259,77 +392,7 @@
 					"sources": [
 						{
 							"fileName": "CRISrequest.ts",
-							"line": 38,
-							"character": 19
-						}
-					]
-				},
-				{
-					"id": 8,
-					"name": "getOnline",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {
-						"isExported": true
-					},
-					"signatures": [
-						{
-							"id": 9,
-							"name": "getOnline",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 10,
-									"name": "module",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 11,
-									"name": "apiCall",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 12,
-									"name": "fname",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
-							}
-						}
-					],
-					"sources": [
-						{
-							"fileName": "CRISrequest.ts",
-							"line": 12,
+							"line": 18,
 							"character": 25
 						}
 					]
@@ -340,7 +403,7 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						4
+						5
 					]
 				},
 				{
@@ -348,16 +411,19 @@
 					"kind": 32,
 					"children": [
 						2,
-						3
+						3,
+						10,
+						9,
+						4
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
+						19,
 						16,
-						13,
-						8
+						11
 					]
 				}
 			],
@@ -370,7 +436,7 @@
 			]
 		},
 		{
-			"id": 21,
+			"id": 24,
 			"name": "\"extract\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -380,7 +446,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/CRIS/src/extract.ts",
 			"children": [
 				{
-					"id": 22,
+					"id": 25,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -401,7 +467,7 @@
 					"defaultValue": " newLog('extract')"
 				},
 				{
-					"id": 26,
+					"id": 29,
 					"name": "getRTCNAcontributions",
 					"kind": 64,
 					"kindString": "Function",
@@ -410,14 +476,14 @@
 					},
 					"signatures": [
 						{
-							"id": 27,
+							"id": 30,
 							"name": "getRTCNAcontributions",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 28,
+									"id": 31,
 									"name": "rtcContributions",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -443,7 +509,7 @@
 					]
 				},
 				{
-					"id": 23,
+					"id": 26,
 					"name": "rateExtract",
 					"kind": 64,
 					"kindString": "Function",
@@ -452,14 +518,14 @@
 					},
 					"signatures": [
 						{
-							"id": 24,
+							"id": 27,
 							"name": "rateExtract",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 25,
+									"id": 28,
 									"name": "resp",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -493,15 +559,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						22
+						25
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						26,
-						23
+						29,
+						26
 					]
 				}
 			],
@@ -514,7 +580,7 @@
 			]
 		},
 		{
-			"id": 29,
+			"id": 32,
 			"name": "\"main\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -524,7 +590,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsNode/CRIS/src/main.ts",
 			"children": [
 				{
-					"id": 36,
+					"id": 39,
 					"name": "COFIs",
 					"kind": 32,
 					"kindString": "Variable",
@@ -534,7 +600,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 10,
+							"line": 21,
 							"character": 9
 						}
 					],
@@ -544,7 +610,7 @@
 					}
 				},
 				{
-					"id": 35,
+					"id": 38,
 					"name": "SPs",
 					"kind": 32,
 					"kindString": "Variable",
@@ -554,7 +620,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 9,
+							"line": 20,
 							"character": 7
 						}
 					],
@@ -564,7 +630,7 @@
 					}
 				},
 				{
-					"id": 31,
+					"id": 34,
 					"name": "activities",
 					"kind": 32,
 					"kindString": "Variable",
@@ -574,7 +640,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 6,
+							"line": 17,
 							"character": 16
 						}
 					],
@@ -588,7 +654,7 @@
 					"defaultValue": " []"
 				},
 				{
-					"id": 37,
+					"id": 40,
 					"name": "currentYear",
 					"kind": 32,
 					"kindString": "Variable",
@@ -598,7 +664,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 11,
+							"line": 22,
 							"character": 17
 						}
 					],
@@ -609,7 +675,7 @@
 					"defaultValue": "2018"
 				},
 				{
-					"id": 30,
+					"id": 33,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -619,7 +685,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 2,
+							"line": 13,
 							"character": 56
 						}
 					],
@@ -630,7 +696,7 @@
 					"defaultValue": " newLog('main')"
 				},
 				{
-					"id": 33,
+					"id": 36,
 					"name": "rtcContributions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -640,14 +706,14 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 8,
+							"line": 19,
 							"character": 22
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 34,
+							"id": 37,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
@@ -656,7 +722,7 @@
 					}
 				},
 				{
-					"id": 32,
+					"id": 35,
 					"name": "validActivities",
 					"kind": 32,
 					"kindString": "Variable",
@@ -666,7 +732,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 7,
+							"line": 18,
 							"character": 21
 						}
 					],
@@ -680,14 +746,14 @@
 					"defaultValue": " []"
 				},
 				{
-					"id": 45,
+					"id": 46,
 					"name": "get",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 46,
+							"id": 47,
 							"name": "get",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -697,7 +763,7 @@
 							},
 							"parameters": [
 								{
-									"id": 47,
+									"id": 48,
 									"name": "module",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -708,7 +774,7 @@
 									}
 								},
 								{
-									"id": 48,
+									"id": 49,
 									"name": "apiCall",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -719,7 +785,7 @@
 									}
 								},
 								{
-									"id": 49,
+									"id": 50,
 									"name": "useCached",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -740,20 +806,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 46,
+							"line": 47,
 							"character": 12
 						}
 					]
 				},
 				{
-					"id": 38,
+					"id": 41,
 					"name": "getBasicData",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 39,
+							"id": 42,
 							"name": "getBasicData",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -772,14 +838,14 @@
 											{
 												"type": "reflection",
 												"declaration": {
-													"id": 40,
+													"id": 43,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 42,
+															"id": 45,
 															"name": "body",
 															"kind": 32,
 															"kindString": "Variable",
@@ -787,7 +853,7 @@
 															"sources": [
 																{
 																	"fileName": "CRISrequest.ts",
-																	"line": 9,
+																	"line": 12,
 																	"character": 8
 																}
 															],
@@ -797,7 +863,7 @@
 															}
 														},
 														{
-															"id": 41,
+															"id": 44,
 															"name": "response",
 															"kind": 32,
 															"kindString": "Variable",
@@ -805,7 +871,7 @@
 															"sources": [
 																{
 																	"fileName": "CRISrequest.ts",
-																	"line": 8,
+																	"line": 11,
 																	"character": 12
 																}
 															],
@@ -820,8 +886,8 @@
 															"title": "Variables",
 															"kind": 32,
 															"children": [
-																42,
-																41
+																45,
+																44
 															]
 														}
 													]
@@ -836,20 +902,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 24,
+							"line": 34,
 							"character": 21
 						}
 					]
 				},
 				{
-					"id": 52,
+					"id": 55,
 					"name": "getCOFIactivities",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 53,
+							"id": 56,
 							"name": "getCOFIactivities",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -872,20 +938,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 58,
+							"line": 68,
 							"character": 26
 						}
 					]
 				},
 				{
-					"id": 62,
+					"id": 65,
 					"name": "getCurrentYearActivities",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 63,
+							"id": 66,
 							"name": "getCurrentYearActivities",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -905,27 +971,27 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 93,
+							"line": 106,
 							"character": 33
 						}
 					]
 				},
 				{
-					"id": 64,
+					"id": 67,
 					"name": "getCurrentYearActivity",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 65,
+							"id": 68,
 							"name": "getCurrentYearActivity",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 66,
+									"id": 69,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -936,7 +1002,7 @@
 									}
 								},
 								{
-									"id": 67,
+									"id": 70,
 									"name": "yr",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -962,20 +1028,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 102,
+							"line": 115,
 							"character": 31
 						}
 					]
 				},
 				{
-					"id": 50,
+					"id": 53,
 					"name": "getSPactivities",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 51,
+							"id": 54,
 							"name": "getSPactivities",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -995,20 +1061,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 50,
+							"line": 60,
 							"character": 24
 						}
 					]
 				},
 				{
-					"id": 43,
+					"id": 51,
 					"name": "getSPsAndCOFIs",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 44,
+							"id": 52,
 							"name": "getSPsAndCOFIs",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1031,20 +1097,20 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 36,
+							"line": 51,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 57,
+					"id": 60,
 					"name": "getValidActivities",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 58,
+							"id": 61,
 							"name": "getValidActivities",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1064,27 +1130,27 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 71,
+							"line": 81,
 							"character": 27
 						}
 					]
 				},
 				{
-					"id": 59,
+					"id": 62,
 					"name": "getValidActivity",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 60,
+							"id": 63,
 							"name": "getValidActivity",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 61,
+									"id": 64,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1110,27 +1176,27 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 77,
+							"line": 87,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 54,
+					"id": 57,
 					"name": "searchByCoFi",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 55,
+							"id": 58,
 							"name": "searchByCoFi",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 56,
+									"id": 59,
 									"name": "cofi",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1156,7 +1222,7 @@
 					"sources": [
 						{
 							"fileName": "main.ts",
-							"line": 64,
+							"line": 74,
 							"character": 21
 						}
 					]
@@ -1167,29 +1233,29 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						36,
-						35,
-						31,
-						37,
-						30,
+						39,
+						38,
+						34,
+						40,
 						33,
-						32
+						36,
+						35
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						45,
-						38,
-						52,
+						46,
+						41,
+						55,
+						65,
+						67,
+						53,
+						51,
+						60,
 						62,
-						64,
-						50,
-						43,
-						57,
-						59,
-						54
+						57
 					]
 				}
 			],
@@ -1208,8 +1274,8 @@
 			"kind": 1,
 			"children": [
 				1,
-				21,
-				29
+				24,
+				32
 			]
 		}
 	]
