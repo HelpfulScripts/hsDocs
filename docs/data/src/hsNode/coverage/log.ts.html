@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">77.78% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/9</span>
+        <span class='fraction'>10/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,16 +35,16 @@
         <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">77.78% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/9</span>
+        <span class='fraction'>8/10</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,7 +81,9 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,6 +103,9 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,8 +120,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Logging convenience functions.
  * ## Usage
  * This module extends the [hsUtil.log](https://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/hsUtil.log) logging module
@@ -133,25 +137,27 @@
  * 
  */
 &nbsp;
-import * as util    from 'hsutil';
-import * as fsUtil  from './fsUtil';
-import * as path    from 'path';
+export { LogType }              from 'hsutil';
+import { log as uLog, LogType } from 'hsutil';  export const log:LogType = uLog('', node_logToFile, node_pathExists);
+import { dirname, normalize}    from 'path';
+import { pathExists }           from './fsUtil';
+import { appendFile }           from './fsUtil';
+&nbsp;
 &nbsp;
 &nbsp;
 function node_pathExists(file:string):Promise&lt;boolean&gt; {
-    const dir = path.dirname(path.normalize(file));
-    return fsUtil.pathExists(dir);
+    const dir = dirname(normalize(file));
+    return pathExists(dir);
 }
 &nbsp;
 function node_logToFile(filename:string, msg:string):Promise&lt;string&gt; {
-    return fsUtil.appendFile(filename, msg+'\n')
+    return appendFile(filename, msg+'\n')
     .catch(<span class="fstat-no" title="function not covered" >e </span>=&gt; { 
 <span class="cstat-no" title="statement not covered" >        console.log(`error appending '${msg}' to file ${log.logFile()} | ${filename}: ${e}`); </span>
 <span class="cstat-no" title="statement not covered" >        return msg;</span>
     });
 }
-&nbsp;
-export const log = util.log('', node_logToFile, node_pathExists);</pre></td></tr>
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

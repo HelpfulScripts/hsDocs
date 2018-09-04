@@ -1,14 +1,15 @@
 hsDocs 
 ========
 [![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs) 
-[![Build status](https://ci.appveyor.com/api/projects/status/wrxskwwprsl41a59?svg=true)](https://ci.appveyor.com/project/HelpfulScripts/hsdocs)
+[![Build Status](https://travis-ci.org/HelpfulScripts/hsDocs.svg?branch=master)](https://travis-ci.org/HelpfulScripts/hsDocs)
+[![Coverage Status](https://coveralls.io/repos/github/HelpfulScripts/hsDocs/badge.svg?branch=master)](https://coveralls.io/github/HelpfulScripts/hsDocs?branch=master)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/) 
 [![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)
 
 Helpful Scripts code documentation tool.
 
 **hsDocs**  is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.
-It renders JSON documentation files, as created by [typedoc](http://typedoc.org), into html pages that can be viewed via browser. [This example](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) shows the rendered docset for the hsDoc code itself.
+It renders JSON documentation files, as created by [typedoc](http://typedoc.org), into html pages that can be viewed via browser. [This example](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0) shows the rendered docset for the hsDoc code itself.
 
 ## Creating the Documentation DocSet
 Follow the instruction for `typedoc` in commenting the code and set the `json` option to create a 
@@ -52,7 +53,7 @@ To add a new docset,
 2. edit `./data/index.json` to add a reference to the new `json`file (`myLib.json` in the typedoc config example above).
 3. reload the browser. The new docset should appear as a tab across the top
 
-Please see the [docs](https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0) for further documentation and examples
+Please see the [docs](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0) for further documentation and examples
 
 Please report any issues and provide feedback.
  

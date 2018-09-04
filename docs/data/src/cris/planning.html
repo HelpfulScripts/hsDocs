@@ -1,0 +1,88 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding-top:5px; }
+            br  { margin:0; padding:0; }
+            .line { margin: 0 5px 0 0; padding-right: 5px; color:#999; background-color:#eef;  }
+            comment { color: #080;} module { color: #804;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px; line-height: 1.2em; 
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/planning.ts</h1>
+                <div class='listing'><code><span id=1 class="line">&nbsp;&nbsp;&nbsp;1</span><comment>/**<br>
+<span id=2 class="line">&nbsp;&nbsp;&nbsp;2</span>&nbsp;*&nbsp;Get&nbsp;Token&nbsp;at&nbsp;`https://rb-cris.bosch.com/swagger/#/`&nbsp;via&nbsp;`POST&nbsp;/apptokens`<br>
+<span id=3 class="line">&nbsp;&nbsp;&nbsp;3</span>&nbsp;*&nbsp;```<br>
+<span id=4 class="line">&nbsp;&nbsp;&nbsp;4</span>&nbsp;*&nbsp;{<br>
+<span id=5 class="line">&nbsp;&nbsp;&nbsp;5</span>&nbsp;*&nbsp;&nbsp;&nbsp;"name":&nbsp;"test",<br>
+<span id=6 class="line">&nbsp;&nbsp;&nbsp;6</span>&nbsp;*&nbsp;&nbsp;&nbsp;"expirationDays":&nbsp;180<br>
+<span id=7 class="line">&nbsp;&nbsp;&nbsp;7</span>&nbsp;*&nbsp;}<br>
+<span id=8 class="line">&nbsp;&nbsp;&nbsp;8</span>&nbsp;*&nbsp;```<br>
+<span id=9 class="line">&nbsp;&nbsp;&nbsp;9</span>&nbsp;*&nbsp;Execute&nbsp;as&nbsp;`node&nbsp;./bin/main`<br>
+<span id=10 class="line">&nbsp;&nbsp;10</span>&nbsp;*/</comment><br>
+<span id=11 class="line">&nbsp;&nbsp;11</span><br>
+<span id=12 class="line">&nbsp;&nbsp;12</span>import&nbsp;*&nbsp;as&nbsp;CRIS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./CRISrequest';<br>
+<span id=13 class="line">&nbsp;&nbsp;13</span>import&nbsp;{&nbsp;log&nbsp;as&nbsp;gLog,&nbsp;fs&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'hsnode';&nbsp;const&nbsp;log&nbsp;=&nbsp;gLog('main');<br>
+<span id=14 class="line">&nbsp;&nbsp;14</span>import&nbsp;{&nbsp;getRTCNAcontributions}&nbsp;from&nbsp;'./extract';<br>
+<span id=15 class="line">&nbsp;&nbsp;15</span>import&nbsp;{&nbsp;getSPsAndCOFIs}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;'./basics';<br>
+<span id=16 class="line">&nbsp;&nbsp;16</span><br>
+<span id=17 class="line">&nbsp;&nbsp;17</span>const&nbsp;activities:any[]&nbsp;=&nbsp;[];<br>
+<span id=18 class="line">&nbsp;&nbsp;18</span>let&nbsp;SPs:any;<br>
+<span id=19 class="line">&nbsp;&nbsp;19</span>let&nbsp;COFIs:any;<br>
+<span id=20 class="line">&nbsp;&nbsp;20</span>let&nbsp;currentYear&nbsp;=&nbsp;2018;<br>
+<span id=21 class="line">&nbsp;&nbsp;21</span>const&nbsp;rtcContributions&nbsp;=&nbsp;{&nbsp;};<br>
+<span id=22 class="line">&nbsp;&nbsp;22</span><br>
+<span id=23 class="line">&nbsp;&nbsp;23</span>export&nbsp;function&nbsp;getPlanning(yr:number)&nbsp;{<br>
+<span id=24 class="line">&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;currentYear&nbsp;=&nbsp;yr;<br>
+<span id=25 class="line">&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;log.info(`getting&nbsp;${currentYear}&nbsp;planning`);<br>
+<span id=26 class="line">&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;planningSteps().catch(log.error);<br>
+<span id=27 class="line">&nbsp;&nbsp;27</span>}<br>
+<span id=28 class="line">&nbsp;&nbsp;28</span><br>
+<span id=29 class="line">&nbsp;&nbsp;29</span>async&nbsp;function&nbsp;planningSteps():Promise<void>&nbsp;{<br>
+<span id=30 class="line">&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;[SPs,&nbsp;COFIs]&nbsp;=&nbsp;await&nbsp;getSPsAndCOFIs();<br>
+<span id=31 class="line">&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;getSPplanning();<br>
+<span id=32 class="line">&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;getCOFIplanning();<br>
+<span id=33 class="line">&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;fs.writeJsonFile('./_data/plannings.json',&nbsp;activities);<br>
+<span id=34 class="line">&nbsp;&nbsp;34</span>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;getValidActivities();<br>
+<span id=35 class="line">&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;getRTCNAcontributions(rtcContributions,&nbsp;currentYear);<br>
+<span id=36 class="line">&nbsp;&nbsp;36</span>}<br>
+<span id=37 class="line">&nbsp;&nbsp;37</span><br>
+<span id=38 class="line">&nbsp;&nbsp;38</span>async&nbsp;function&nbsp;getSPplanning():Promise<void>&nbsp;{<br>
+<span id=39 class="line">&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;activities.push(...await&nbsp;CRIS.get('planact',&nbsp;'planact/planact-numbers?q=SP'));<br>
+<span id=40 class="line">&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;log.info(`SPs:&nbsp;${activities.length}&nbsp;planned&nbsp;activities`);&nbsp;&nbsp;<br>
+<span id=41 class="line">&nbsp;&nbsp;41</span>}<br>
+<span id=42 class="line">&nbsp;&nbsp;42</span><br>
+<span id=43 class="line">&nbsp;&nbsp;43</span>async&nbsp;function&nbsp;getCOFIplanning():Promise<void>&nbsp;{<br>
+<span id=44 class="line">&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Promise.all(COFIs.filter((cf:any)=>cf.name.length===2).map(searchByCoFi));<br>
+<span id=45 class="line">&nbsp;&nbsp;45</span>}<br>
+<span id=46 class="line">&nbsp;&nbsp;46</span><br>
+<span id=47 class="line">&nbsp;&nbsp;47</span>async&nbsp;function&nbsp;searchByCoFi(cofi:any):Promise<void>&nbsp;{<br>
+<span id=48 class="line">&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;resp&nbsp;=&nbsp;await&nbsp;CRIS.get('planact',&nbsp;`planact/planact-numbers?q=${cofi.name}`);<br>
+<span id=49 class="line">&nbsp;&nbsp;49</span>&nbsp;&nbsp;&nbsp;&nbsp;activities.push(...resp.filter?&nbsp;resp&nbsp;:&nbsp;[]);<br>
+<span id=50 class="line">&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;log.info(`${cofi.name}:&nbsp;${activities.length}&nbsp;planned&nbsp;activities`);<br>
+<span id=51 class="line">&nbsp;&nbsp;51</span>}<br>
+<span id=52 class="line">&nbsp;&nbsp;52</span><br>
+<span id=53 class="line">&nbsp;&nbsp;53</span>async&nbsp;function&nbsp;getValidActivities():Promise<any>&nbsp;{<br>
+<span id=54 class="line">&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;log.info('get&nbsp;activities...');<br>
+<span id=55 class="line">&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;Promise.all(activities.map(getValidActivity));<br>
+<span id=56 class="line">&nbsp;&nbsp;56</span>}<br>
+<span id=57 class="line">&nbsp;&nbsp;57</span><br>
+<span id=58 class="line">&nbsp;&nbsp;58</span>async&nbsp;function&nbsp;getValidActivity(a:any):Promise<any>&nbsp;{<br>
+<span id=59 class="line">&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;folder&nbsp;=&nbsp;`${a.name}&nbsp;${a.id}`;<br>
+<span id=60 class="line">&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;[activity,&nbsp;deptCont,&nbsp;capCosts,&nbsp;matCosts]&nbsp;=&nbsp;await&nbsp;Promise.all([<br>
+<span id=61 class="line">&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRIS.get('planact',&nbsp;`planact/${a.id}/current-version`),<br>
+<span id=62 class="line">&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRIS.get('planact',&nbsp;`planact/${a.id}/department-contributions`),<br>
+<span id=63 class="line">&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRIS.get('planact',&nbsp;`planact/${a.id}/costplan/capacity-costs`),<br>
+<span id=64 class="line">&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRIS.get('planact',&nbsp;`planact/${a.id}/costplan/material-costs`)<br>
+<span id=65 class="line">&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
+<span id=66 class="line">&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;fs.writeJsonFile(`./_data/plannings/${folder}/content.json`,&nbsp;activity);<br>
+<span id=67 class="line">&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;fs.writeJsonFile(`./_data/plannings/${folder}/department-contributions.json`,&nbsp;deptCont);<br>
+<span id=68 class="line">&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;fs.writeJsonFile(`./_data/plannings/${folder}/capacity-costs.json`,&nbsp;capCosts);<br>
+<span id=69 class="line">&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;fs.writeJsonFile(`./_data/plannings/${folder}/material-costs.json`,&nbsp;matCosts);<br>
+<span id=70 class="line">&nbsp;&nbsp;70</span>}<br>
+<span id=71 class="line">&nbsp;&nbsp;71</span><br></code></div>
+                </body>
+            
