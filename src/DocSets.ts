@@ -22,7 +22,7 @@ const FILE:string = './data/index.json';
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList = <{set:string[], index:{}, docs:[string]}>{set:[], index:{}, docs:[]};
+    private static gList = <{set:string[], index:{}, docs:[string]}>{set:<string[]>[], index:{}, docs:<string[]>[]};
     private static gTitle: string;
 
     /**
