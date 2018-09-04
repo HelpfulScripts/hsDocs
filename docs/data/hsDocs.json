@@ -134,7 +134,7 @@
 									]
 								}
 							},
-							"defaultValue": " <{set:string[], index:{}, docs:[string]}>{set:[], index:{}, docs:[]}"
+							"defaultValue": " <{set:string[], index:{}, docs:[string]}>{set:<string[]>[], index:{}, docs:<string[]>[]}"
 						},
 						{
 							"id": 8,

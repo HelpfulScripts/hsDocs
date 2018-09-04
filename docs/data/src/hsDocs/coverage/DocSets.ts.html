@@ -380,7 +380,7 @@ const FILE:string = './data/index.json';
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList = &lt;{set:string[], index:{}, docs:[string]}&gt;{set:[], index:{}, docs:[]};
+    private static gList = &lt;{set:string[], index:{}, docs:[string]}&gt;{set:&lt;string[]&gt;[], index:{}, docs:&lt;string[]&gt;[]};
     private static gTitle: string;
 &nbsp;
     /**
@@ -455,7 +455,7 @@ export class DocSets {
  * @param dir the directory to read from
  * @param file the `json` file to load as docset
  */
-<span class="fstat-no" title="function not covered" >function loadDocSet(</span>dir:string, file:string):Promise&lt;void&gt; {
+function <span class="fstat-no" title="function not covered" >loadDocSet(</span>dir:string, file:string):Promise&lt;void&gt; {
 <span class="cstat-no" title="statement not covered" >    return m.request({ method: "GET", url: dir+file })</span>
         .then(<span class="fstat-no" title="function not covered" >(r</span>:any) =&gt; {
 // console.log('received ' + dir+file);
@@ -471,15 +471,15 @@ export class DocSets {
  * @param index the index in which to register the entries
  * @param lib the docset name, used for name validation
  */
-<span class="fstat-no" title="function not covered" >function recursiveIndex(</span>content:any, index:any, lib:string, path=<span class="branch-0 cbranch-no" title="branch not covered" >'')</span> {
-<span class="fstat-no" title="function not covered" >    function getNewPath(</span>content:any) {
+function <span class="fstat-no" title="function not covered" >recursiveIndex(</span>content:any, index:any, lib:string, path=<span class="branch-0 cbranch-no" title="branch not covered" >'')</span> {
+    function <span class="fstat-no" title="function not covered" >getNewPath(</span>content:any) {
 <span class="cstat-no" title="statement not covered" >        content.name = content.name.replace(/["'](.+)["']|(.+)/g, "$1$2"); </span> // remove quotes 
         const elName  = <span class="cstat-no" title="statement not covered" >content.name.match(/([^\/]+)$/)[1];</span>         // name = part after last /
 <span class="cstat-no" title="statement not covered" >        content.name = elName;</span>
 <span class="cstat-no" title="statement not covered" >        return content.fullPath = (path==='')? elName : `${path}.${elName}`;</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function markIfModule(</span>content:any) {
+    function <span class="fstat-no" title="function not covered" >markIfModule(</span>content:any) {
 <span class="cstat-no" title="statement not covered" >        if (content.comment &amp;&amp; content.comment.tags) {</span>
 <span class="cstat-no" title="statement not covered" >            content.comment.tags.forEach(<span class="fstat-no" title="function not covered" >(t</span>ag:any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (tag.tag === 'module') {</span>

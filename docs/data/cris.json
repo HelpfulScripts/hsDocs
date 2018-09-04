@@ -968,7 +968,7 @@
 						"type": "reference",
 						"name": "Pace"
 					},
-					"defaultValue": " new Pace(300)"
+					"defaultValue": " new Pace(100)"
 				},
 				{
 					"id": 64,

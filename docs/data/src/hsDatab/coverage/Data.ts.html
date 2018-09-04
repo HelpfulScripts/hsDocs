@@ -1412,7 +1412,7 @@ export class Data {
      * @return the updated domain
      */
     public findDomain(col?:ColumnReference, domain?:Domain):Domain {
-        if (domain===undefined) { domain = &lt;NumDomain&gt;[]; }
+        if (domain===undefined) { domain = &lt;Domain&gt;[]; }
         if (col === undefined) { // use array index as domain
             domain[0] = 0;
             domain[1] = this.data.length-1;

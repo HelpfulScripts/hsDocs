@@ -1086,7 +1086,7 @@
 																	"sources": [
 																		{
 																			"fileName": "log.ts",
-																			"line": 242,
+																			"line": 244,
 																			"character": 22
 																		}
 																	],
@@ -1106,7 +1106,7 @@
 																	"sources": [
 																		{
 																			"fileName": "log.ts",
-																			"line": 242,
+																			"line": 244,
 																			"character": 39
 																		}
 																	],
@@ -1126,7 +1126,7 @@
 																	"sources": [
 																		{
 																			"fileName": "log.ts",
-																			"line": 242,
+																			"line": 244,
 																			"character": 54
 																		}
 																	],
@@ -1150,7 +1150,7 @@
 															"sources": [
 																{
 																	"fileName": "log.ts",
-																	"line": 242,
+																	"line": 244,
 																	"character": 15
 																}
 															]
@@ -1167,7 +1167,7 @@
 									"sources": [
 										{
 											"fileName": "log.ts",
-											"line": 242,
+											"line": 244,
 											"character": 10
 										}
 									]
@@ -1324,7 +1324,7 @@
 											"kindString": "Call signature",
 											"flags": {},
 											"comment": {
-												"shortText": "sets the format string to use for logging. If no parameter is specified,\nthe function returns the currently set format string. The preset is '%YYYY%MM%DD %hh:%mm:%ss.%jjj'\nFor supported formats see {@link date date}.",
+												"shortText": "sets the format string to use for logging. If no parameter is specified,\nthe function returns the currently set format string. The preset is '%YYYY%MM%DD %hh:%mm:%ss.%jjj'\nFor supported formats see {@link date date}.\nUsage\n- `format(null)` sets the format to `defDateFormat`\n- `format()` returns the current format without changing it.",
 												"returns": "the currently set format string\n"
 											},
 											"parameters": [
@@ -1337,7 +1337,7 @@
 														"isOptional": true
 													},
 													"comment": {
-														"text": "optional format string to use;\n- `format(null)` sets the format to `defDateFormat`\n- `format()` returns the current format without changing it."
+														"text": "optional format string to use;"
 													},
 													"type": {
 														"type": "intrinsic",
@@ -1354,7 +1354,7 @@
 									"sources": [
 										{
 											"fileName": "log.ts",
-											"line": 225,
+											"line": 227,
 											"character": 10
 										}
 									]
@@ -1485,7 +1485,7 @@
 									"sources": [
 										{
 											"fileName": "log.ts",
-											"line": 250,
+											"line": 252,
 											"character": 11
 										}
 									]
@@ -1504,8 +1504,8 @@
 											"kindString": "Call signature",
 											"flags": {},
 											"comment": {
-												"shortText": "sets the reporting level according to `newLevel`.\nValid values are {@link hsNode.log.DEBUG DEBUG}, {@link hsNode.log.INFO INFO},\n{@link hsNode.log.WARN WARN}, {@link hsNode.log.ERROR ERROR}, or `null`.\nSubsequent reporting calls will be filtered such that only calls with an importance\nat least the same as `newLevel` will be written to the log.",
-												"text": "By default, `newLevel` sets the reporting level for the module only, and takes precedence over\nany global level setting. Providing `null` as level value passes precedence back to the global setting.\\\nTHis allows for simple per-module settings, for example in debugging scenarios.",
+												"shortText": "sets the reporting level according to `newLevel`.\nValid values are {@link hsNode.log.DEBUG DEBUG}, {@link hsNode.log.INFO INFO},\n{@link hsNode.log.WARN WARN}, {@link hsNode.log.ERROR ERROR}, or `null`.\nSubsequent reporting calls will be filtered such that only calls with an importance\nat least the same as `newLevel` will be written to the log.<p>",
+												"text": "By default, `newLevel` sets the reporting level for the module only, and takes precedence over\nany global level setting. Providing `null` as level value passes precedence back to the global setting.\nThis allows for simple per-module settings, for example in debugging scenarios.",
 												"returns": "the new reporting level (DEBUG, INFO, ERROR)\n"
 											},
 											"parameters": [
@@ -1534,7 +1534,7 @@
 														"isOptional": true
 													},
 													"comment": {
-														"text": "if true, sets the global reporting level for all modules."
+														"text": "defaults to `false`. If `true`, sets the global reporting level for all modules."
 													},
 													"type": {
 														"type": "intrinsic",
@@ -1570,7 +1570,7 @@
 											"kindString": "Call signature",
 											"flags": {},
 											"comment": {
-												"shortText": "sets a new logfile name template. Logfiles are created using this template\nat the time of each log entry call. If the file exists, the log entry will be appended.\nThis is a global setting that affects reporting in all modules.",
+												"shortText": "sets a new logfile name template. Logfiles are created using this template\nat the time of each log entry call. If the file exists, the log entry will be appended.\nThis is a global setting that affects reporting in all modules.\nUsage:\n- `logFile()`: return the current logfile name\n- `logFile(null)`: disable log file\n- `logFile('')`: set default log file template `log-%YYYY-%MM-%DD.txt`\n- `logFile('log%D/%M/%Y.log')`: set new log file template",
 												"returns": "promise to return the current logfile, or `undefined` if loggimng is disabled.\n"
 											},
 											"parameters": [
@@ -1583,7 +1583,7 @@
 														"isOptional": true
 													},
 													"comment": {
-														"text": "a template to use for log file names. Options for calling:\n- `logFile()`: return current logfile template without changing the template\n- `logFile(null)`: disable log file\n- `logFile('')`: set default log file template `log-%YYYY-%MM-%DD.txt`\n- `logFile('log%D/%M/%Y.log')`: set new log file template"
+														"text": "a template to use for log file names. Options for calling:"
 													},
 													"type": {
 														"type": "intrinsic",
@@ -1606,7 +1606,7 @@
 									"sources": [
 										{
 											"fileName": "log.ts",
-											"line": 214,
+											"line": 215,
 											"character": 11
 										}
 									]
@@ -1738,7 +1738,7 @@
 									"sources": [
 										{
 											"fileName": "log.ts",
-											"line": 232,
+											"line": 234,
 											"character": 10
 										}
 									]
@@ -1861,7 +1861,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 253,
+							"line": 255,
 							"character": 12
 						}
 					],
@@ -1919,7 +1919,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 253,
+									"line": 255,
 									"character": 14
 								}
 							]
@@ -1935,7 +1935,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 254,
+							"line": 256,
 							"character": 11
 						}
 					],
@@ -1982,7 +1982,7 @@
 							"sources": [
 								{
 									"fileName": "log.ts",
-									"line": 254,
+									"line": 256,
 									"character": 14
 								}
 							]
@@ -2217,7 +2217,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 261,
+							"line": 263,
 							"character": 16
 						}
 					],
@@ -2288,7 +2288,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 263,
+							"line": 265,
 							"character": 15
 						}
 					]
@@ -2345,7 +2345,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 256,
+							"line": 258,
 							"character": 24
 						}
 					]
@@ -2391,7 +2391,7 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 257,
+							"line": 259,
 							"character": 25
 						}
 					]
