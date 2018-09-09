@@ -727,7 +727,7 @@ export class HsConfig {
          * }
          * &lt;/code&gt;&lt;/pre&gt;
          */
-<span class="fstat-no" title="function not covered" >        function decodeRoute(</span>route:any) {
+        function <span class="fstat-no" title="function not covered" >decodeRoute(</span>route:any) {
             const rp:string[] = <span class="cstat-no" title="statement not covered" >route.params = [];</span>
 <span class="cstat-no" title="statement not covered" >            route.paths.map(<span class="fstat-no" title="function not covered" >(p</span>0:string) =&gt; {</span>
                 const params = <span class="cstat-no" title="statement not covered" >p0.match(/:(.+?)\b/g);</span>
@@ -763,7 +763,7 @@ export class HsConfig {
             return result;
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function prepareRoutes(</span>content:any) {
+        function <span class="fstat-no" title="function not covered" >prepareRoutes(</span>content:any) {
             const cr = <span class="cstat-no" title="statement not covered" >content.root;</span>
             class Router {
 <span class="fstat-no" title="function not covered" >                view</span>(node:Vnode) { 

@@ -623,18 +623,18 @@ import { Ticks,
          ScaleCfg }     from './AxesTypes';
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered" >function addTickNumber(</span>t:TickDefs, v:number) { 
+function <span class="fstat-no" title="function not covered" >addTickNumber(</span>t:TickDefs, v:number) { 
 <span class="cstat-no" title="statement not covered" >    t.labels.push({ pos: v, text: ''+Math.round(v*1000000)/1000000 }); </span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function addTickDate(</span>t:TickDefs, v:Date, fmt:string) { 
+function <span class="fstat-no" title="function not covered" >addTickDate(</span>t:TickDefs, v:Date, fmt:string) { 
 <span class="cstat-no" title="statement not covered" >    t.labels.push({ pos: v.getTime(), text:date(fmt, v) }); </span>
 }
 &nbsp;
 &nbsp;
 /** calculate major and minor ticks on a lionear scale. The first and last tick will be smaller and larger than the provided domain. */
-<span class="fstat-no" title="function not covered" >function linScaleTickMarks(</span>dom:NumRange, ticks:Ticks, numTicks:number) {
-<span class="fstat-no" title="function not covered" >    function addTicks(</span>unit:number, ticks:TickDefs):number {
+function <span class="fstat-no" title="function not covered" >linScaleTickMarks(</span>dom:NumRange, ticks:Ticks, numTicks:number) {
+    function <span class="fstat-no" title="function not covered" >addTicks(</span>unit:number, ticks:TickDefs):number {
         let exp = <span class="cstat-no" title="statement not covered" >Math.pow(10, Math.floor(Math.log10(unit)));</span>
 <span class="cstat-no" title="statement not covered" >        unit = Math.floor(unit / exp)*exp;</span>
         const min = <span class="cstat-no" title="statement not covered" >Math.floor(dom[0]/unit)*unit;</span>
@@ -646,7 +646,7 @@ import { Ticks,
 <span class="cstat-no" title="statement not covered" >    addTicks(majorUnit / numTicks, ticks.minor);</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function percentScaleTickMarks(</span>dom:NumRange, ticks:Ticks, numTicks:number) {
+function <span class="fstat-no" title="function not covered" >percentScaleTickMarks(</span>dom:NumRange, ticks:Ticks, numTicks:number) {
     const formatPercent = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(m</span>:TickLabel) =&gt; <span class="cstat-no" title="statement not covered" >m.text = `${Math.round(m.pos)*100}%`;</span></span>
 <span class="cstat-no" title="statement not covered" >    linScaleTickMarks(dom, ticks, numTicks);</span>
 <span class="cstat-no" title="statement not covered" >    ticks.major.labels.forEach(formatPercent);</span>
@@ -654,7 +654,7 @@ import { Ticks,
 //    addMinMaxTicks(dom, ticks);
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function logScaleTickMarks(</span>dom:NumRange, ticks:Ticks) {
+function <span class="fstat-no" title="function not covered" >logScaleTickMarks(</span>dom:NumRange, ticks:Ticks) {
 <span class="cstat-no" title="statement not covered" >    dom[0] = Math.max(dom[0], 1e-20);</span>
 <span class="cstat-no" title="statement not covered" >    dom[1] = Math.max(dom[1], 1e-20);</span>
     let dif = <span class="cstat-no" title="statement not covered" >Math.pow(10, Math.floor(Math.log10(dom[1] - dom[0])));</span>
@@ -687,8 +687,8 @@ const tickCategories = [
     [10,0,0,0], [5,0,0,0], [2,0,0,0], [1,0,0,0], [0,6,0,0], [0,3,0,0], [0,1,0,0], [0,0,7,0], [0,0,1,0], [0,0,0,4], [0,0,0,1]
 ];
 &nbsp;
-<span class="fstat-no" title="function not covered" >function dateScaleTickMarks(</span>dom:Domain, ticks:Ticks, fmt=<span class="branch-0 cbranch-no" title="branch not covered" >'%MM/%DD/%YY')</span> {
-<span class="fstat-no" title="function not covered" >    function addDates(</span>i:number, tickDefs:TickDefs) {
+function <span class="fstat-no" title="function not covered" >dateScaleTickMarks(</span>dom:Domain, ticks:Ticks, fmt=<span class="branch-0 cbranch-no" title="branch not covered" >'%MM/%DD/%YY')</span> {
+    function <span class="fstat-no" title="function not covered" >addDates(</span>i:number, tickDefs:TickDefs) {
         const createDate = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>dx:number) =&gt; <span class="cstat-no" title="statement not covered" >new Date(</span></span>
             Math.floor(
    /* yr*/  dateDom[idx].getFullYear()/modYr)*modYr + (idx?incYr:0),
@@ -730,9 +730,9 @@ const tickCategories = [
 }
 &nbsp;
 /** calculates major tick label domain values */
-<span class="fstat-no" title="function not covered" >function createTickLabels(</span>type:string, domain:Domain, numTicks:number, fmt:string):Ticks {
+function <span class="fstat-no" title="function not covered" >createTickLabels(</span>type:string, domain:Domain, numTicks:number, fmt:string):Ticks {
     const sort = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>:TickLabel,b:TickLabel) =&gt; <span class="cstat-no" title="statement not covered" >a.pos-b.pos;</span></span>
-<span class="fstat-no" title="function not covered" >    function sortTicks() { </span>
+    function <span class="fstat-no" title="function not covered" >sortTicks(</span>) { 
 <span class="cstat-no" title="statement not covered" >        ticks.minor.labels.sort(sort); <span class="cstat-no" title="statement not covered" ></span>ticks.major.labels.sort(sort); </span>
     };
     const dom:NumRange = <span class="cstat-no" title="statement not covered" >[&lt;number&gt;domain[0], &lt;number&gt;domain[1]];</span>
@@ -838,7 +838,7 @@ export class Scale {
      * Calculates major and minor tick marks in domain coordinates
      */
     public <span class="fstat-no" title="function not covered" >ticks</span>(numTicks:number=<span class="branch-0 cbranch-no" title="branch not covered" >4)</span>:Ticks   { 
-<span class="fstat-no" title="function not covered" >        function marksFromLabels(</span>ticks:Ticks, type:string) {
+        function <span class="fstat-no" title="function not covered" >marksFromLabels(</span>ticks:Ticks, type:string) {
 <span class="cstat-no" title="statement not covered" >            switch(type) {</span>
                 case Axes.type.nominal: 
                 case Axes.type.index:   

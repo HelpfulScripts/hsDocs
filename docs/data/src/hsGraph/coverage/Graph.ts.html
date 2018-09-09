@@ -961,7 +961,7 @@ export interface GraphConfig extends GraphBaseCfg {
  * Creates a deep copy of `def`, taking fields present in `update` to supercede the default value.
  * @param def contains the default setting for each parameter
  */
-<span class="fstat-no" title="function not covered" >function copy(</span>def:any):any {
+function <span class="fstat-no" title="function not covered" >copy(</span>def:any):any {
     let result:any = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    Object.keys(def).map(<span class="fstat-no" title="function not covered" >(k</span>:string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (typeof def[k] === 'object' &amp;&amp; !Array.isArray(def[k]) &amp;&amp; def[k]!==null) {</span>
@@ -1133,7 +1133,7 @@ export interface CfgFn { (cfg:Config):void; }
      */
 <span class="fstat-no" title="function not covered" >    adjustMargins</span>(cfg:Config) {
         const cfgm = <span class="cstat-no" title="statement not covered" >cfg.graph.margin;</span>
-<span class="fstat-no" title="function not covered" >        function getBBox(</span>css: string) {
+        function <span class="fstat-no" title="function not covered" >getBBox(</span>css: string) {
             const elems = <span class="cstat-no" title="statement not covered" >document.getElementsByClassName(css);</span>
             const box = <span class="cstat-no" title="statement not covered" >Array.prototype.map.call(elems, <span class="fstat-no" title="function not covered" >(e</span>:any)=&gt;<span class="cstat-no" title="statement not covered" >e.getBBox())</span>;</span>
 <span class="cstat-no" title="statement not covered" >            if(box &amp;&amp; box[0]) { </span>

@@ -1003,7 +1003,7 @@ import { SVGElem,
  * @param cross the domain value where the axis crosses. Either 'min', 'max', or a numeric domain value
  * @param scale the Scale object for the perpendicular axis.
  */
-<span class="fstat-no" title="function not covered" >function getCrossAt(</span>cross:string|number, scale:Scale):number {
+function <span class="fstat-no" title="function not covered" >getCrossAt(</span>cross:string|number, scale:Scale):number {
     let crossesAt:number;
 <span class="cstat-no" title="statement not covered" >    switch (cross) {</span>
         case 'min': <span class="cstat-no" title="statement not covered" >crossesAt = &lt;number&gt;scale.domain()[0]; <span class="cstat-no" title="statement not covered" ></span>break;</span>
@@ -1112,13 +1112,13 @@ export class Axes extends SVGElem {
     * previously configured components.
     */
 <span class="fstat-no" title="function not covered" >    static</span> defaultConfig(cfg:Config) {
-<span class="fstat-no" title="function not covered" >        function scaleCfg():ScaleCfg {</span>
+        function <span class="fstat-no" title="function not covered" >scaleCfg(</span>):ScaleCfg {
 <span class="cstat-no" title="statement not covered" >            return {                             // axis scaling information</span>
                 type: Axes.type.linear,         //    scale type
                 domain:&lt;Domain&gt;['auto', 'auto']  //    min/max of domain; 'auto', or a domain value
             };
         }
-<span class="fstat-no" title="function not covered" >        function labelCfg(</span>primary:boolean, x:boolean, major:boolean):LabelCfg {
+        function <span class="fstat-no" title="function not covered" >labelCfg(</span>primary:boolean, x:boolean, major:boolean):LabelCfg {
 <span class="cstat-no" title="statement not covered" >            return { </span>
                 visible: major, text: '',
                 xpos: x? TextHAlign.middle : (primary? TextHAlign.end : TextHAlign.start),
@@ -1127,13 +1127,13 @@ export class Axes extends SVGElem {
                 vOffset: x? (primary? 0.7 : -0.7) : 0
             }; 
         }
-<span class="fstat-no" title="function not covered" >        function markCfg(</span>primary: boolean, major:boolean):MarkCfg {
+        function <span class="fstat-no" title="function not covered" >markCfg(</span>primary: boolean, major:boolean):MarkCfg {
 <span class="cstat-no" title="statement not covered" >            return { </span>
                 visible: major, 
                 length: (primary? 1 : -1) * (major? 10 : 5) 
             };
         }
-<span class="fstat-no" title="function not covered" >        function titleCfg(</span>primary:boolean, x:boolean):LabelCfg {
+        function <span class="fstat-no" title="function not covered" >titleCfg(</span>primary:boolean, x:boolean):LabelCfg {
 <span class="cstat-no" title="statement not covered" >            return {</span>
                 visible: true,  text: (x? 'x' : 'y') + (primary? '' : '2'),    
                 xpos:  x? TextHAlign.end : (primary? TextHAlign.middle : TextHAlign.start),          
@@ -1142,7 +1142,7 @@ export class Axes extends SVGElem {
                 vOffset: x? (primary? 0.4 : -1.2) : (primary? -0.5 : 0.7)       
             };
         }
-<span class="fstat-no" title="function not covered" >        function axisCfg(</span>primary:boolean, x:boolean):AxisCfg {
+        function <span class="fstat-no" title="function not covered" >axisCfg(</span>primary:boolean, x:boolean):AxisCfg {
 <span class="cstat-no" title="statement not covered" >            return {</span>
                 visible:    primary? true : false, 
                 crossesAt:  primary?'min':'max', 

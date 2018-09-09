@@ -1504,9 +1504,9 @@
 											"kindString": "Call signature",
 											"flags": {},
 											"comment": {
-												"shortText": "sets the reporting level according to `newLevel`.\nValid values are {@link hsNode.log.DEBUG DEBUG}, {@link hsNode.log.INFO INFO},\n{@link hsNode.log.WARN WARN}, {@link hsNode.log.ERROR ERROR}, or `null`.\nSubsequent reporting calls will be filtered such that only calls with an importance\nat least the same as `newLevel` will be written to the log.<p>",
+												"shortText": "sets the reporting level according to `newLevel`.\nValid values are {@link log.DEBUG log.DEBUG}, {@link log.INFO log.INFO},\n{@link log.WARN log.WARN}, {@link log.ERROR log.ERROR}, or `null`.\nSubsequent reporting calls will be filtered such that only calls with an importance\nat least the same as `newLevel` will be written to the log.<br>",
 												"text": "By default, `newLevel` sets the reporting level for the module only, and takes precedence over\nany global level setting. Providing `null` as level value passes precedence back to the global setting.\nThis allows for simple per-module settings, for example in debugging scenarios.",
-												"returns": "the new reporting level (DEBUG, INFO, ERROR)\n"
+												"returns": "the new reporting level (DEBUG, INFO, WARN, ERROR)\n"
 											},
 											"parameters": [
 												{

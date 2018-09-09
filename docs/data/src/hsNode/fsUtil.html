@@ -160,7 +160,7 @@
 <span id=145 class="line">&nbsp;145</span>export&nbsp;function&nbsp;mkdirs(thePath:string):Promise<string>&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;<br>
 <span id=146 class="line">&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;p&nbsp;=&nbsp;path.normalize(path.resolve(process.cwd(),thePath));<br>
 <span id=147 class="line">&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(p.indexOf(process.cwd())===0)&nbsp;{&nbsp;//&nbsp;-->&nbsp;thePath&nbsp;is&nbsp;local&nbsp;to&nbsp;current&nbsp;working&nbsp;directory<br>
-<span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;r&nbsp;=&nbsp;path.dirname(p.substr(process.cwd().length+1));<br>
+<span id=148 class="line">&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;r&nbsp;=&nbsp;p.substr(process.cwd().length+1);<br>
 <span id=149 class="line">&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;dirs&nbsp;=&nbsp;r.split('/');<br>
 <span id=150 class="line">&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;create&nbsp;complete&nbsp;successive&nbsp;subdirs&nbsp;from&nbsp;the&nbsp;split<br>
 <span id=151 class="line">&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dirs&nbsp;=&nbsp;dirs.map((dir,&nbsp;i)&nbsp;=>&nbsp;'./'+dirs.slice(0,i+1).join('/'));<br>
@@ -266,7 +266,7 @@
 <span id=251 class="line">&nbsp;251</span>export&nbsp;function&nbsp;writeFile(thePath:string,&nbsp;content:string,&nbsp;isText:boolean=true):Promise<string>&nbsp;{<br>
 <span id=252 class="line">&nbsp;252</span>	return&nbsp;new&nbsp;Promise((resolve,&nbsp;reject)&nbsp;=>&nbsp;{<br>
 <span id=253 class="line">&nbsp;253</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;encoding:any&nbsp;=&nbsp;isText?&nbsp;'utf8'&nbsp;:&nbsp;{encoding:&nbsp;null};<br>
-<span id=254 class="line">&nbsp;254</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mkdirs(thePath)<br>
+<span id=254 class="line">&nbsp;254</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mkdirs(path.dirname(thePath))<br>
 <span id=255 class="line">&nbsp;255</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(()&nbsp;=>&nbsp;fs.writeFile(thePath,&nbsp;content,&nbsp;encoding,&nbsp;(err:any)&nbsp;=>&nbsp;<br>
 <span id=256 class="line">&nbsp;256</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;err?&nbsp;reject(err)&nbsp;:&nbsp;resolve(thePath))<br>
 <span id=257 class="line">&nbsp;257</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;).catch(err&nbsp;=>&nbsp;log.error(`mkdirs&nbsp;failed&nbsp;in&nbsp;writeFile&nbsp;for&nbsp;'${thePath}':&nbsp;${err}`));<br>
