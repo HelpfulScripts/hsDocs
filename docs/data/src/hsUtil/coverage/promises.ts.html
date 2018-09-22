@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">96.55% </span>
+        <span class="strong">93.94% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/29</span>
+        <span class='fraction'>31/33</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">75% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>3/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.86% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>13/14</span>
+        <span class='fraction'>14/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">96.15% </span>
+        <span class="strong">93.1% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>25/26</span>
+        <span class='fraction'>27/29</span>
       </div>
     </div>
     <p class="quiet">
@@ -159,7 +159,10 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,9 +199,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,6 +219,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,6 +232,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -238,16 +243,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -328,9 +334,10 @@ export function delay(ms:number)   {
  * ```
  */
 export class Pace {
-    private pace:number;    // the pace of calls in ms
-    private waitUntil = 0;  // the earliest time for the next call
-    private waitCount = 0;  // number of calls currently in queue waiting
+    private pace:number;      // the pace of calls in ms
+    private waitUntil   = 0;  // the earliest time for the next call
+    private waitCount   = 0;  // number of calls currently in queue waiting
+    private beingCalled = 0;  // registered functiuons that have been called , but have not resolved yet.
 &nbsp;
     /**
      * @param delay the minimum number of milliseconds between executions of 
@@ -340,7 +347,8 @@ export class Pace {
         this.pace = pace+5; // add 5ms margin. delay() may trigger a millisecond or two early
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    getWaitCount</span>() { <span class="cstat-no" title="statement not covered" >return this.waitCount; </span>}
+<span class="fstat-no" title="function not covered" >    getWaitCount</span>()    { <span class="cstat-no" title="statement not covered" >return this.waitCount; </span>}
+<span class="fstat-no" title="function not covered" >    getCallingCount</span>() { <span class="cstat-no" title="statement not covered" >return this.beingCalled; </span>}
 &nbsp;
     /**
      * adds the function to the queue. After an appropriate time has passed, 
@@ -350,18 +358,19 @@ export class Pace {
      */
     add(fn: (msSinceAdding:number) =&gt; any):Promise&lt;any&gt; {
         const addTime = Date.now();
-        if (this.waitUntil &lt; addTime) {
-            this.waitUntil = addTime + this.pace;
-            return Promise.resolve(fn(Date.now()-addTime));
-        } else {
-            const diff = this.waitUntil - addTime;
-            this.waitUntil += this.pace + 5;
-            this.waitCount++;
-            return Promise.resolve().then(delay(diff)).then(() =&gt; {
-                this.waitCount--;
-                return fn(Date.now()-addTime);
-            });
-        }
+        if (this.waitUntil &lt; addTime) { this.waitUntil = addTime; }
+        const diff = this.waitUntil - addTime;
+        this.waitUntil += this.pace + 5;
+        this.waitCount++;
+        return delay(diff)().then(() =&gt; {
+            this.waitCount--;
+            this.beingCalled++;
+            return fn(Date.now()-addTime);
+        })
+        .then((ret:any) =&gt; {
+            this.beingCalled--;
+            return ret;
+        });
     }
 }
 &nbsp;
