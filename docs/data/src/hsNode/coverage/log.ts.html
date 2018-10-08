@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/12</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/10</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
     <p class="quiet">
@@ -106,7 +106,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -114,10 +114,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
@@ -138,12 +138,12 @@
  */
 &nbsp;
 export { LogType }              from 'hsutil';
-import { log as uLog, LogType } from 'hsutil';  export const log:LogType = uLog('', node_logToFile, node_pathExists);
+import { log as uLog, LogType } from 'hsutil';
 import { dirname, normalize}    from 'path';
 import { pathExists }           from './fsUtil';
 import { appendFile }           from './fsUtil';
 &nbsp;
-&nbsp;
+export const log:LogType = uLog('', node_logToFile, node_pathExists);
 &nbsp;
 function node_pathExists(file:string):Promise&lt;boolean&gt; {
     const dir = dirname(normalize(file));
@@ -151,11 +151,11 @@ function node_pathExists(file:string):Promise&lt;boolean&gt; {
 }
 &nbsp;
 function node_logToFile(filename:string, msg:string):Promise&lt;string&gt; {
-    return appendFile(filename, msg+'\n')
-    .catch(<span class="fstat-no" title="function not covered" >e </span>=&gt; { 
-<span class="cstat-no" title="statement not covered" >        console.log(`error appending '${msg}' to file ${log.logFile()} | ${filename}: ${e}`); </span>
-<span class="cstat-no" title="statement not covered" >        return msg;</span>
-    });
+    return appendFile(filename, msg+'\n');
+    // .catch(e =&gt; { 
+    //     console.log(`error appending '${msg}' to file ${log.logFile()} | ${filename}: ${e}`); 
+    //     return msg;
+    // });
 }
 &nbsp;</pre></td></tr>
 </table></pre>

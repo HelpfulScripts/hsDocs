@@ -850,7 +850,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -909,7 +909,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -1010,7 +1010,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -1337,7 +1337,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -3764,7 +3764,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -3823,7 +3823,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -3924,7 +3924,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -4251,7 +4251,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "string"
+														"name": "any"
 													}
 												},
 												{
@@ -4703,7 +4703,7 @@
 					"sources": [
 						{
 							"fileName": "httpUtil.ts",
-							"line": 199,
+							"line": 201,
 							"character": 23
 						}
 					]
@@ -4786,7 +4786,7 @@
 					"sources": [
 						{
 							"fileName": "httpUtil.ts",
-							"line": 214,
+							"line": 216,
 							"character": 23
 						}
 					]
@@ -4834,7 +4834,7 @@
 					"sources": [
 						{
 							"fileName": "httpUtil.ts",
-							"line": 248,
+							"line": 250,
 							"character": 24
 						}
 					]
@@ -4927,8 +4927,8 @@
 					"sources": [
 						{
 							"fileName": "log.ts",
-							"line": 19,
-							"character": 64
+							"line": 24,
+							"character": 16
 						}
 					],
 					"type": {
