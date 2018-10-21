@@ -13,10 +13,10 @@ It renders JSON documentation files, as created by [typedoc](http://typedoc.org)
 
 ## Usage
 1. Create a web-app directory to serve the docsets from. As an example, 
-see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/docs), 
+see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 which serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)
 
-2. Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/docs), 
+2. Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 or create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:
 ```
 <html>
@@ -31,7 +31,7 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 
 2. Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
 (`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from
-[Github](https://github.com/HelpfulScripts/hsDocs/docs) into the directory and 
+[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and 
 modify `index.html` as follows:
 ```
 <html>
@@ -92,13 +92,6 @@ typedoc: {
     }
 }
 ```
-
-## Hosting the docs
-Install `hsDocs`from npm (see above), then copy and host the entire folder in your favorite web server.
-To add a new docset, 
-1. copy the docset's `json` file created by `typedoc` into the `data` folder of the hsDocs directory
-2. edit `./data/index.json` to add a reference to the new `json`file (`myLib.json` in the typedoc config example above).
-3. reload the browser. The new docset should appear as a tab across the top
 
 Please see the [docs](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0) for further documentation and examples
 

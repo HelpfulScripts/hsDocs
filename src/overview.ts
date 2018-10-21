@@ -11,41 +11,47 @@ It renders JSON documentation files as created by [typedoc](http://typedoc.org).
 
 ## Usage
 1. Create a web-app directory to serve the docsets from. As an example, 
-see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/docs), 
+see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 which serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)
 
-2. Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/docs), 
+2. Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 or create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:
-<code>
+```
 <html>
-<head><link href="https://helpfulscripts.github.io/hsDocs/hsDocs.css" rel="stylesheet" /></head>
-<body class='hs-layout-fill'><script src="https://helpfulscripts.github.io/hsDocs/hsDocs.min.js"></script></body>
+   <head>
+      <link href="https://helpfulscripts.github.io/hsDocs/hsDocs.css" rel="stylesheet" />
+   </head>
+   <body class='hs-layout-fill'>
+      <script src="https://helpfulscripts.github.io/hsDocs/hsDocs.min.js"></script>
+    </body>
 </html>
-</code>
+```
 
-2'. Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
+2. Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
 (`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from
-[Github](https://github.com/HelpfulScripts/hsDocs/docs) into the directory and 
+[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and 
 modify `index.html` as follows:
-<code>
+```
 <html>
-<head><link href="hsDocs.css" rel="stylesheet" /></head>
-<body class='hs-layout-fill'><script src="./hsDocs.min.js"></script></body>
+   <head><link href="hsDocs.css" rel="stylesheet" /></head>
+   <body class='hs-layout-fill'>
+      <script src="./hsDocs.min.js"></script>
+   </body>
 </html>
-</code>
+```
 
-3. Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's .json.
+3. Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json` .
 See below for creating the docset.
 
 4. Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
-<code>
-{
-    "docs": [
+```
+{   "docs": [
         "hsDocs.json",
         ...
     ],
     "title": "HS Libraries"   // will be displayed at the top left corner
-}</code>
+}
+```
 
 5. Point a browser to the web-app directory
 
