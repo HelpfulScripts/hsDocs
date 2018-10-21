@@ -1,5 +1,5 @@
-const thedocs = 'hey!';
+import { example } from './MainExample';
 
-test('dummy test', ()=>{
-    expect(thedocs).toBeDefined();
+test('example', ()=>{
+    expect(example).toBeDefined();
 });

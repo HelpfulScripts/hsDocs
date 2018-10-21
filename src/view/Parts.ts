@@ -2,7 +2,7 @@ import { m, Vnode} from 'hslayout';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
 
-const SourceBase = 'src/'; 
+const SourceBase = 'data/src/'; 
 
 
 // TODO: sort flags in array to garantee sequence of printing

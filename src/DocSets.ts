@@ -45,8 +45,17 @@ export class DocSets {
      * @return a promise to load the index set
      */
     public static loadList(file?:string):Promise<void> {
-        file = file || FILE;   
-        return DocSets.loadIndexSet(file); 
+        file = file;   
+        let i = file.lastIndexOf('/');
+        const dir = file.substring(0,i+1);
+        return m.request({ method: "GET", url: file || FILE})
+        .then((result:any) => {
+            DocSets.gTitle = result.title;
+            DocSets.gList.docs = result.docs;
+            return Promise.all(result.docs.map((f:string) => loadDocSet(dir, f)));            
+        })
+        .catch(console.log);
+
     }
 
     /**
@@ -54,42 +63,15 @@ export class DocSets {
      * When called without parameters, a `string[lib]` of available docSets is returned.
      * When called with only `lib` specified, the corresponding docSet overview is returned.
      * @param lib specifies the docset to scan. 
-     * @param id specifies the element within the docSet, either by its id number, or by its path
+     * @param id specifies the element within the docSet, either by its id number, or by its fully qualified path, 
+     * e.g. 'hsDocs.DocSets.DocSets.add' 
      */
     public static get(lib?:string, id:number|string=0) { 
-        if (lib) {
-            if (DocSets.gList.index[lib]) { 
-                return DocSets.gList.index[lib][id+'']; 
-            } else {
-                return DocSets.gList.set; 
-            }
-        } else {
-            return DocSets.gList.set; 
-        }
+        return (lib && DocSets.gList.index[lib])?
+            DocSets.gList.index[lib][id+'']
+          : DocSets.gList.set; 
     }
-
-    /**
-     * Loads `index.json` from the directory specified in `dir`.
-     * Each entry in the index is interpreted as a docset and loaded.
-     * @param dir the directory to read from
-     * @param file the index file to read
-     */
-    private static loadIndexSet(file:string):Promise<void> { 
-        return m.request({ method: "GET", url: file })
-            .then((result:any) =>  {
-//console.log('received index');
-                DocSets.gTitle = result.title;
-                DocSets.gList.docs = result.docs;
-                let i = file.lastIndexOf('/');
-                const dir = file.substring(0,i+1);
-                return Promise.all(result.docs.map((f:string) => loadDocSet(dir, f)));            
-            })
-            .catch(console.log);
-    }
-
-
-    public static title() { return DocSets.gTitle; }
-};
+}
 
 /**
  * Loads a docset specified by file from the directory `dir`. 

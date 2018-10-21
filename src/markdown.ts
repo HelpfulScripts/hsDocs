@@ -43,6 +43,10 @@ export function markDown(text:string, short:boolean=false, currentRoute:string =
  * @return the comment with substituted links 
  */
 function substituteLinks(comment:string, currentRoute:string):string {
+    /**
+     * searches for pattern '/...'
+     * @param route 
+     */
     function deconstructRoute(route:string) {
         let lib, mod;
         route.replace(/\/([^\/.]*)\/([^\/\s]*$)/gi, (match, ...args) => {

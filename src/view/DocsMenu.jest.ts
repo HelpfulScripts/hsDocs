@@ -1,5 +1,5 @@
-const thedocs = 'hey!';
+import { DocsMenu } from './DocsMenu';
 
 test('dummy test', ()=>{
-    expect(thedocs).toBeDefined();
+    expect(DocsMenu).toBeDefined();
 });

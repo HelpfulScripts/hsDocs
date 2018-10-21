@@ -1,5 +1,9 @@
-const thedocs = 'hey!';
+import { commentLong, comment } from './MainComment';
 
-test('dummy test', ()=>{
-    expect(thedocs).toBeDefined();
+test('comment', ()=>{
+    expect(comment).toBeDefined();
+});
+
+test('commentLong', ()=>{
+    expect(commentLong).toBeDefined();
 });

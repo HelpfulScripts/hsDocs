@@ -1,5 +1,5 @@
-const thedocs = 'hey!';
+import { LeftNav } from './LeftNav';
 
-test('dummy test', ()=>{
-    expect(thedocs).toBeDefined();
+test('LeftNav', ()=>{
+    expect(LeftNav).toBeDefined();
 });
