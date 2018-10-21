@@ -7,7 +7,7 @@
     "typescript",
     "typedoc"
   ],
-  "description": "Helpful Scripts documentation utility for Typescript projects",
+  "description": "Helpful Scripts API documentation viewer for Typescript projects",
   "homepage": "https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0",
   "author": {
     "name": "masterscripter",
