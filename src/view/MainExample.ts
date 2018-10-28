@@ -112,7 +112,7 @@ const gInitialized:{string?:CommentDescriptor} = {};
 /**
  * creates the example configuration, generates the DOM hook, and sets up the example execution.
  * `example` takes a context map of the form `{ name:module, ...}` containing libraries to be used 
- * withibn the example, and returns a function that can be used in calls to `string.replace`. 
+ * within the example, and returns a function that can be used in calls to `string.replace`. 
  * See the following example:
  * <code><pre>
  * import * as layout from "layout";

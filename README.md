@@ -12,11 +12,11 @@ Helpful Scripts code documentation tool.
 It renders JSON documentation files, as created by [typedoc](http://typedoc.org), into html pages that can be viewed via browser. [This example](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0) shows the rendered docset for the hsDoc code itself.
 
 ## Usage
-1. Create a web-app directory to serve the docsets from. As an example, 
+1 - Create a web-app directory to serve the docsets from. As an example, 
 see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 which serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)
 
-2. Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
+2a - Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 or create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:
 ```
 <html>
@@ -29,10 +29,9 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 </html>
 ```
 
-2. Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
+2b - Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
 (`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from
-[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and 
-modify `index.html` as follows:
+[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and modify `index.html` as follows:
 ```
 <html>
    <head><link href="hsDocs.css" rel="stylesheet" /></head>
@@ -42,10 +41,10 @@ modify `index.html` as follows:
 </html>
 ```
 
-3. Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json` .
+3 - Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json` .
 See below for creating the docset.
 
-4. Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
+4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
 ```
 {   "docs": [
         "hsDocs.json",
@@ -55,7 +54,10 @@ See below for creating the docset.
 }
 ```
 
-5. Point a browser to the web-app directory
+5 - optioonally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it. 
+These are created by the command `grunt sourceCode` in the `docs/data/src/` folder of your project.
+
+6 - Point a browser to the web-app directory
 
 
 ## Creating the Documentation DocSet

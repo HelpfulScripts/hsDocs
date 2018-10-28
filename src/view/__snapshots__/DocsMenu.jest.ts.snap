@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DocsMenu should match snapshot 1`] = `
+<div>
+  <div
+    class="hs-layout  "
+  >
+    <div
+      class="hs-menu "
+      style=""
+    >
+      <div
+        class="hs-layout  hs-column-layout "
+      >
+        <div
+          class="hs-layout  "
+          style="top: 0%; bottom: 0%; left: 0%; right: 50%; width: auto;"
+        >
+          <div
+            class="hs-selectable  hs-selected"
+          >
+            hsUtil
+          </div>
+        </div>
+        <div
+          class="hs-layout  "
+          style="top: 0%; bottom: 0%; left: 50%; right: 0%; width: auto;"
+        >
+          <div
+            class="hs-selectable  "
+          >
+            hsDocs
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

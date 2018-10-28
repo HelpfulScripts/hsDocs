@@ -81,10 +81,7 @@ export class DocSets {
  */
 function loadDocSet(dir:string, file:string):Promise<void> {
     return m.request({ method: "GET", url: dir+file })
-        .then((r:any) => {
-// console.log('received ' + dir+file);
-            DocSets.add(r, file);
-        })
+        .then((r:any) => DocSets.add(r, file))
         .catch(console.log);
 }
 

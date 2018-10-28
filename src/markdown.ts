@@ -5,6 +5,7 @@ import { m }  from 'hslayout';
  * process a markdown comment string and returns the equivalent html syntax. 
  * @param text the comment to markdown
  * @param short if true, only the first paragraph is returned
+ * @param currentRoute current route, defaults to mithril's last route
  * @return the marked down comment
  */
 export function markDown(text:string, short:boolean=false, currentRoute:string = m.route.get()):string {
@@ -40,6 +41,7 @@ export function markDown(text:string, short:boolean=false, currentRoute:string =
  * - '{@link hsDocs:DocSets.DocSets.add the `adds` function}' --> {@link hsDocs:DocSets.DocSets.add the `adds` function}
  * 
  * @param comment the comment in which to replace the links
+ * @param currentRoute the current route - part after #!
  * @return the comment with substituted links 
  */
 function substituteLinks(comment:string, currentRoute:string):string {
