@@ -166,9 +166,9 @@
   overflow: hidden;
   height: 0%;
   max-height: 0%;
-  transition: height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
 }
-.hs-collapsible-expanded.hs-collapsible-content {
+.hs-collapsible-expanded .hs-collapsible-content {
   height: auto;
   max-height: 100%;
 }
@@ -294,43 +294,6 @@
   border-bottom-left-radius: 6px;
 }
 .hs-radio-buttons > .hs-layout > :last-child > .hs-selectable {
-  border-right: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-.hs-options-buttons {
-  position: relative;
-  margin: 0px;
-  box-sizing: border-box;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: transparent;
-  height: 30px;
-}
-.hs-options-buttons .hs-selectable {
-  position: relative;
-  margin: 0px;
-  box-sizing: border-box;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 30px;
-  background: linear-gradient(to bottom, #eee, #dde);
-}
-.hs-options-buttons .hs-selectable.hs-selected {
-  background: initial;
-  background-color: #48f;
-  font-weight: bold;
-  color: white;
-}
-.hs-options-buttons > .hs-layout > :first-child > .hs-selectable {
-  border-left: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
-.hs-options-buttons > .hs-layout > :last-child > .hs-selectable {
   border-right: none;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
