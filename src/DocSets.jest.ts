@@ -1,6 +1,5 @@
 import { DocSets } from './DocSets';
-// import { log } from 'hsnode';
-import { fs } from 'hsnode';
+const fs = require('fs');
 
 import { m } from 'hslayout';
 
@@ -15,7 +14,15 @@ m.request = (req: any) => {
     if (req.url === 'mylist.json') {
         return Promise.resolve(set);
     } else {
-        return fs.readJsonFile(`${__dirname}/example/${req.url}`);
+        return new Promise((resolve:(data:any)=>void, reject:(err:any)=>void) => {
+            fs.readFile(`${__dirname}/example/${req.url}`, 'utf8', (err:any, data:any) => {
+                if (err) { throw err; }
+                else { resolve(data); }
+            });
+        })
+        .then((data:any) => (typeof data === 'string')? JSON.parse(data) : data)
+        .catch(console.log)
+        ;
     }
 };
 

@@ -31,7 +31,7 @@ const mdl2 = {
 m.route.get = () => '/api/hsDocs/0';
 
 describe('comment', () => {
-    let c1, c2, c3;
+    let c1:any, c2:any, c3:any;
 
     beforeAll((done) => {
         c1 = comment(mdl);
@@ -61,7 +61,7 @@ describe('comment', () => {
 });
 
 describe('commentLong', () => {
-    let c;
+    let c:any;
 
     beforeAll((done) => {
         c = commentLong(mdl);

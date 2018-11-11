@@ -1,6 +1,5 @@
 import { DocsMenu } from './DocsMenu';
 import { m }        from "hslayout";
-import { log }      from 'hsnode';
 
 const sets = {
     "docs": [
@@ -23,8 +22,8 @@ const set1 = {
         "flags": {},
         "originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/Checksum.ts",
         "comment": {},
-        "groups": [],
-        "sources": []
+        "groups": <any[]>[],
+        "sources": <any[]>[]
     }]
 };
 
@@ -40,14 +39,13 @@ const set2 = {
         "kindString": "External module",
         "flags": {},
         "originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsLibs/standalone/hsUtil/src/Checksum.ts",
-        "comment": {},
-        "groups": [],
-        "sources": []
+        "comment": <any>{},
+        "groups": <any[]>[],
+        "sources": <any[]>[]
     }]
 };
 
 m.request = (req: any) => {
-    log.debug(`requesting ${req.url}`);
     let result;
     if (req.url === 'mylist.json') {
         result = sets;

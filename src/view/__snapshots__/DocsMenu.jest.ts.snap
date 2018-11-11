@@ -17,7 +17,7 @@ exports[`DocsMenu should match snapshot 1`] = `
           style="top: 0%; bottom: 0%; left: 0%; right: 50%; width: auto;"
         >
           <div
-            class="hs-selectable  hs-selected"
+            class="hs-selectable  "
           >
             hsUtil
           </div>
