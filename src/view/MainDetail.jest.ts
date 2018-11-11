@@ -31,7 +31,7 @@ m.request = (req: any) => {
 const root:any = window.document.createElement("body");
 
 
-describe('MaiDetail', () => {
+describe('MainDetail', () => {
     describe('overview', () => {
         beforeAll((done) => { 
             m.route.get = () => '/api/hsDocs/0';

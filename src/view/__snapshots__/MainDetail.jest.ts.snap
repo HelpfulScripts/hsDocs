@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MaiDetail hsDocs.DocSets matches snapshot 1`] = `
+exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
 <body>
   <div
     class="hs-layout  "
@@ -729,7 +729,7 @@ starting with the root entry.
 </body>
 `;
 
-exports[`MaiDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
+exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
 <body>
   <div
     class="hs-layout  "
@@ -1089,7 +1089,7 @@ exports[`MaiDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
 </body>
 `;
 
-exports[`MaiDetail overview matches snapshot 1`] = `
+exports[`MainDetail overview matches snapshot 1`] = `
 <body>
   <div
     class="hs-layout  "
@@ -1930,6 +1930,7 @@ and sets up a mithril
             
           </div>
           <div>
+            
             
             
           </div>
