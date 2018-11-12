@@ -1,4 +1,5 @@
 import { DocsMenu } from './DocsMenu';
+import { DocSets }  from '../DocSets'; 
 import { m }        from "hslayout";
 
 const sets = {
@@ -61,13 +62,13 @@ m.request = (req: any) => {
 const root:any = window.document.createElement("div");
 
 describe('DocsMenu', () => {
-    beforeAll((done) => { 
+    beforeAll(async (done) => { 
+        await DocSets.loadList("mylist.json");
         m.mount(root, { view: () => { return m(DocsMenu, {docSet:"mylist.json"});} }); 
         setTimeout(done, 200);
     });
 
-    it('should match snapshot', (done)=>{
-        expect(root).toMatchSnapshot();
-        done();
-    });
+    it('should match snapshot', () =>
+        expect(root).toMatchSnapshot()
+    );
 });

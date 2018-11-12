@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.86% </span>
+        <span class="strong">93.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>13/14</span>
+        <span class='fraction'>14/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">66.67% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.86% </span>
+        <span class="strong">93.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>13/14</span>
+        <span class='fraction'>14/15</span>
       </div>
     </div>
   </div>
@@ -81,7 +81,8 @@
 36
 37
 38
-39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+39
+40</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -106,10 +107,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,7 +136,7 @@ import { Menu, SelectorDesc }   from 'hswidget';
  *   `docSet` field of the `node.attrs` parameter. If none is specified, the 
  *   default is used as specified in the {@link hsDocs:DocSets.FILE DocSets FILE} setting.
  * - DocsMenu retrieves all available docSets via {@link hsDocs:DocSets.DocSets.get DocSets.get}.
- * - DocsMenu creates a `SelectorDesc` structure with a {@link hsWidget:hsSelector.SelectorDesc.changed `changed`} callback that initiates a route change 
+ * - DocsMenu creates a `SelectorDesc` structure with a {@link hsWidget:hsSelector.SelectorDesc.clicked `clicked`} callback that initiates a route change 
  *   to the selected docSet
  */
 export class DocsMenu extends Layout {
@@ -143,13 +145,14 @@ export class DocsMenu extends Layout {
     private getDesc(attrs:any):SelectorDesc { 
         if (this.docSet !== attrs.docSet) {
             this.docSet = attrs.docSet;
-            DocSets.loadList(attrs.docSet);
+            DocSets.loadList(attrs.docSet)
+            .then(() =&gt; m.redraw);
         }
         const items = DocSets.get(); 
         return {
             items: items.map((c:string) =&gt; c),
             defaultItem: (attrs.route &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >attrs.route.lib)</span>? <span class="branch-0 cbranch-no" title="branch not covered" >attrs.route.lib </span>: items[0],
-            changed: <span class="fstat-no" title="function not covered" >(i</span>tem:string) =&gt; <span class="cstat-no" title="statement not covered" >m.route.set('/api/:lib/0', {lib:item})</span>
+            clicked: <span class="fstat-no" title="function not covered" >(i</span>tem:string) =&gt; <span class="cstat-no" title="statement not covered" >m.route.set('/api/:lib/0', {lib:item})</span>
         };
     }
 &nbsp;

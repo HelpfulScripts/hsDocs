@@ -1,6 +1,7 @@
 import { m, Vnode} from 'hslayout';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
+import { log as _log }  from 'hsutil';  const log = _log('Parts');
 
 const SourceBase = 'data/src/'; 
 
@@ -181,8 +182,8 @@ export function type(t:any, lib:string) {
                                         rflRes = 'UNKNOWN';
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
-            default: console.log('unknown type '+ tt.type);
-                     console.log(t);
+            default: log.warn('unknown type '+ tt.type);
+                     log.warn(log.inspect(t,3));
                      return t.type;
         }
     }
@@ -193,7 +194,7 @@ export function type(t:any, lib:string) {
            m('span.hs-item-sig-type', _type(t.type)),
            defaultVal(t, lib)
         ]);
-    } catch(e) { console.log(e); console.log(e.trace); }
+    } catch(e) { log.error(e); log.error(e.trace); }
 }
 
 export function makeID(section:string, mdl:any) {

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.71% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>89/96</span>
+        <span class='fraction'>91/98</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">81.18% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>19/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.45% </span>
+        <span class="strong">95.51% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>84/88</span>
+        <span class='fraction'>85/89</span>
       </div>
     </div>
   </div>
@@ -245,7 +245,9 @@
 200
 201
 202
-203</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+203
+204</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -450,6 +452,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { m, Vnode} from 'hslayout';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
+import { log as _log }  from 'hsutil';  const log = _log('Parts');
 &nbsp;
 const SourceBase = 'data/src/'; 
 &nbsp;
@@ -630,8 +633,8 @@ export function type(t:any, lib:string) {
 <span class="cstat-no" title="statement not covered" >                                        rflRes = 'UNKNOWN';</span>
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
-            default: console.log('unknown type '+ tt.type);
-                     console.log(t);
+            default: log.warn('unknown type '+ tt.type);
+                     log.warn(log.inspect(t,3));
                      return t.type;
         }
     }
@@ -642,7 +645,7 @@ export function type(t:any, lib:string) {
            m('span.hs-item-sig-type', _type(t.type)),
            defaultVal(t, lib)
         ]);
-    } catch(e) { <span class="cstat-no" title="statement not covered" >console.log(e); <span class="cstat-no" title="statement not covered" ></span>console.log(e.trace); </span>}
+    } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(e); <span class="cstat-no" title="statement not covered" ></span>log.error(e.trace); </span>}
 }
 &nbsp;
 export function makeID(section:string, mdl:any) {

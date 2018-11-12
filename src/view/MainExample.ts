@@ -176,7 +176,7 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         desc:<SelectorDesc>{ 
             items:<string[]>[],
             selectedItem: 'js',
-            changed: () => addExample(IDs)   // called when source menu changes
+            clicked: () => addExample(IDs)   // called when source menu changes
                         .then(executeScript) 
                         .catch(executeError),
             size: ["50px"]
@@ -205,7 +205,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
     let item = IDs.activeSrcPage || 'js';
     const root = document.getElementById(IDs.exampleID);
 
-    IDs.desc.changed = (newItem:string) => {
+    IDs.desc.clicked = (newItem:string) => {
         item = IDs.activeSrcPage = newItem;
     };
 

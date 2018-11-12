@@ -775,7 +775,7 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         desc:&lt;SelectorDesc&gt;{ 
             items:&lt;string[]&gt;[],
             selectedItem: 'js',
-            changed: <span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >addExample(IDs)   // called when source menu changes</span>
+            clicked: <span class="fstat-no" title="function not covered" >() </span>=&gt; <span class="cstat-no" title="statement not covered" >addExample(IDs)   // called when source menu changes</span>
                         .then(executeScript) 
                         .catch(executeError),
             size: ["50px"]
@@ -804,7 +804,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
     let item = IDs.activeSrcPage || 'js';
     const root = document.getElementById(IDs.exampleID);
 &nbsp;
-    IDs.desc.changed = <span class="fstat-no" title="function not covered" >(n</span>ewItem:string) =&gt; {
+    IDs.desc.clicked = <span class="fstat-no" title="function not covered" >(n</span>ewItem:string) =&gt; {
 <span class="cstat-no" title="statement not covered" >        item = IDs.activeSrcPage = newItem;</span>
     };
 &nbsp;

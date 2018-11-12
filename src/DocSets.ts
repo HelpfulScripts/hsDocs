@@ -55,7 +55,6 @@ export class DocSets {
             return Promise.all(result.docs.map((f:string) => loadDocSet(dir, f)));            
         })
         .catch(console.log);
-
     }
 
     /**

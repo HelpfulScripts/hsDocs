@@ -13,7 +13,7 @@ import { Menu, SelectorDesc }   from 'hswidget';
  *   `docSet` field of the `node.attrs` parameter. If none is specified, the 
  *   default is used as specified in the {@link hsDocs:DocSets.FILE DocSets FILE} setting.
  * - DocsMenu retrieves all available docSets via {@link hsDocs:DocSets.DocSets.get DocSets.get}.
- * - DocsMenu creates a `SelectorDesc` structure with a {@link hsWidget:hsSelector.SelectorDesc.changed `changed`} callback that initiates a route change 
+ * - DocsMenu creates a `SelectorDesc` structure with a {@link hsWidget:hsSelector.SelectorDesc.clicked `clicked`} callback that initiates a route change 
  *   to the selected docSet
  */
 export class DocsMenu extends Layout {
@@ -22,13 +22,14 @@ export class DocsMenu extends Layout {
     private getDesc(attrs:any):SelectorDesc { 
         if (this.docSet !== attrs.docSet) {
             this.docSet = attrs.docSet;
-            DocSets.loadList(attrs.docSet);
+            DocSets.loadList(attrs.docSet)
+            .then(() => m.redraw);
         }
         const items = DocSets.get(); 
         return {
             items: items.map((c:string) => c),
             defaultItem: (attrs.route && attrs.route.lib)? attrs.route.lib : items[0],
-            changed: (item:string) => m.route.set('/api/:lib/0', {lib:item})
+            clicked: (item:string) => m.route.set('/api/:lib/0', {lib:item})
         };
     }
 
