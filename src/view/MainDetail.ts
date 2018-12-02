@@ -14,11 +14,8 @@ import { flags, sourceLink,
  */
 export class MainDetail extends Layout { 
     getComponents(node:Vnode): Vnode {
-        let lib, field;
-        if (node.attrs.route) {
-            lib = node.attrs.route.lib;
-            field = node.attrs.route.field;
-        }
+        const lib =  m.route.param('lib');
+        const field = m.route.param('field');
         node.attrs.route = undefined;
 
         let result = getOverview(lib, field) || itemDoc(DocSets.get(lib, field) || ''); 

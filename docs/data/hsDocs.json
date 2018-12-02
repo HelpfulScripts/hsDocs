@@ -618,7 +618,7 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 13,
+							"line": 15,
 							"character": 18
 						}
 					],
@@ -639,7 +639,7 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 14,
+							"line": 16,
 							"character": 18
 						}
 					],
@@ -660,7 +660,7 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 16,
+							"line": 18,
 							"character": 14
 						}
 					],
@@ -681,7 +681,7 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 15,
+							"line": 17,
 							"character": 14
 						}
 					],
@@ -702,7 +702,7 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 12,
+							"line": 14,
 							"character": 17
 						}
 					],
@@ -713,7 +713,7 @@
 					"defaultValue": "\"30px\""
 				},
 				{
-					"id": 367,
+					"id": 365,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -722,7 +722,7 @@
 					},
 					"signatures": [
 						{
-							"id": 368,
+							"id": 366,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -736,14 +736,14 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 59,
+							"line": 52,
 							"character": 20
 						}
 					]
 				},
 				{
 					"id": 332,
-					"name": "myConfig",
+					"name": "myConfig2",
 					"kind": 2097152,
 					"kindString": "Object literal",
 					"flags": {
@@ -751,661 +751,197 @@
 					},
 					"children": [
 						{
-							"id": 333,
-							"name": "Layout",
+							"id": 343,
+							"name": "body",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 336,
-									"name": "content",
-									"kind": 32,
-									"kindString": "Variable",
+									"id": 344,
+									"name": "Layout",
+									"kind": 2097152,
+									"kindString": "Object literal",
 									"flags": {},
-									"sources": [
+									"children": [
 										{
-											"fileName": "Site.ts",
-											"line": 22,
-											"character": 15
+											"id": 345,
+											"name": "columns",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 32,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " [LeftNavWidth, \"fill\"]"
+										},
+										{
+											"id": 346,
+											"name": "content",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 33,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " ['leftnav', 'mainDetail']"
 										}
 									],
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "union",
-											"types": [
-												{
-													"type": "reflection",
-													"declaration": {
-														"id": 337,
-														"name": "__type",
-														"kind": 65536,
-														"kindString": "Type literal",
-														"flags": {},
-														"children": [
-															{
-																"id": 338,
-																"name": "Layout",
-																"kind": 2097152,
-																"kindString": "Object literal",
-																"flags": {},
-																"children": [
-																	{
-																		"id": 339,
-																		"name": "columns",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 24,
-																				"character": 23
-																			}
-																		],
-																		"type": {
-																			"type": "array",
-																			"elementType": {
-																				"type": "intrinsic",
-																				"name": "string"
-																			}
-																		},
-																		"defaultValue": " [LeftNavWidth, \"fill\"]"
-																	},
-																	{
-																		"id": 341,
-																		"name": "content",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 26,
-																				"character": 23
-																			}
-																		],
-																		"type": {
-																			"type": "array",
-																			"elementType": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "reflection",
-																						"declaration": {
-																							"id": 342,
-																							"name": "__type",
-																							"kind": 65536,
-																							"kindString": "Type literal",
-																							"flags": {},
-																							"children": [
-																								{
-																									"id": 343,
-																									"name": "Layout",
-																									"kind": 2097152,
-																									"kindString": "Object literal",
-																									"flags": {},
-																									"children": [
-																										{
-																											"id": 345,
-																											"name": "content",
-																											"kind": 32,
-																											"kindString": "Variable",
-																											"flags": {},
-																											"sources": [
-																												{
-																													"fileName": "Site.ts",
-																													"line": 29,
-																													"character": 31
-																												}
-																											],
-																											"type": {
-																												"type": "intrinsic",
-																												"name": "string"
-																											},
-																											"defaultValue": " SiteName"
-																										},
-																										{
-																											"id": 344,
-																											"name": "css",
-																											"kind": 32,
-																											"kindString": "Variable",
-																											"flags": {},
-																											"sources": [
-																												{
-																													"fileName": "Site.ts",
-																													"line": 28,
-																													"character": 27
-																												}
-																											],
-																											"type": {
-																												"type": "intrinsic",
-																												"name": "string"
-																											},
-																											"defaultValue": "\".hs-site-title\""
-																										},
-																										{
-																											"id": 346,
-																											"name": "href",
-																											"kind": 32,
-																											"kindString": "Variable",
-																											"flags": {},
-																											"sources": [
-																												{
-																													"fileName": "Site.ts",
-																													"line": 30,
-																													"character": 28
-																												}
-																											],
-																											"type": {
-																												"type": "intrinsic",
-																												"name": "string"
-																											},
-																											"defaultValue": " SiteLink"
-																										}
-																									],
-																									"groups": [
-																										{
-																											"title": "Variables",
-																											"kind": 32,
-																											"children": [
-																												345,
-																												344,
-																												346
-																											]
-																										}
-																									],
-																									"sources": [
-																										{
-																											"fileName": "Site.ts",
-																											"line": 27,
-																											"character": 28
-																										}
-																									],
-																									"type": {
-																										"type": "intrinsic",
-																										"name": "object"
-																									}
-																								}
-																							],
-																							"groups": [
-																								{
-																									"title": "Object literals",
-																									"kind": 2097152,
-																									"children": [
-																										343
-																									]
-																								}
-																							]
-																						}
-																					},
-																					{
-																						"type": "reflection",
-																						"declaration": {
-																							"id": 347,
-																							"name": "__type",
-																							"kind": 65536,
-																							"kindString": "Type literal",
-																							"flags": {},
-																							"children": [
-																								{
-																									"id": 348,
-																									"name": "DocsMenu",
-																									"kind": 2097152,
-																									"kindString": "Object literal",
-																									"flags": {},
-																									"children": [
-																										{
-																											"id": 349,
-																											"name": "docSet",
-																											"kind": 32,
-																											"kindString": "Variable",
-																											"flags": {},
-																											"sources": [
-																												{
-																													"fileName": "Site.ts",
-																													"line": 32,
-																													"character": 43
-																												}
-																											],
-																											"type": {
-																												"type": "intrinsic",
-																												"name": "string"
-																											},
-																											"defaultValue": "\"./data/index.json\""
-																										}
-																									],
-																									"groups": [
-																										{
-																											"title": "Variables",
-																											"kind": 32,
-																											"children": [
-																												349
-																											]
-																										}
-																									],
-																									"sources": [
-																										{
-																											"fileName": "Site.ts",
-																											"line": 32,
-																											"character": 30
-																										}
-																									],
-																									"type": {
-																										"type": "intrinsic",
-																										"name": "object"
-																									}
-																								}
-																							],
-																							"groups": [
-																								{
-																									"title": "Object literals",
-																									"kind": 2097152,
-																									"children": [
-																										348
-																									]
-																								}
-																							]
-																						}
-																					}
-																				]
-																			}
-																		},
-																		"defaultValue": " [\n                    { Layout:    { \n                        css: '.hs-site-title',\n                        content: SiteName, \n                        href: SiteLink \n                    }},\n                    { DocsMenu:    { docSet:\"./data/index.json\"}}\n                ]"
-																	},
-																	{
-																		"id": 340,
-																		"name": "css",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 25,
-																				"character": 19
-																			}
-																		],
-																		"type": {
-																			"type": "intrinsic",
-																			"name": "string"
-																		},
-																		"defaultValue": "\".hs-site-header\""
-																	}
-																],
-																"groups": [
-																	{
-																		"title": "Variables",
-																		"kind": 32,
-																		"children": [
-																			339,
-																			341,
-																			340
-																		]
-																	}
-																],
-																"sources": [
-																	{
-																		"fileName": "Site.ts",
-																		"line": 23,
-																		"character": 18
-																	}
-																],
-																"type": {
-																	"type": "intrinsic",
-																	"name": "object"
-																}
-															}
-														],
-														"groups": [
-															{
-																"title": "Object literals",
-																"kind": 2097152,
-																"children": [
-																	338
-																]
-															}
-														]
-													}
-												},
-												{
-													"type": "reflection",
-													"declaration": {
-														"id": 350,
-														"name": "__type",
-														"kind": 65536,
-														"kindString": "Type literal",
-														"flags": {},
-														"children": [
-															{
-																"id": 351,
-																"name": "Layout",
-																"kind": 2097152,
-																"kindString": "Object literal",
-																"flags": {},
-																"children": [
-																	{
-																		"id": 352,
-																		"name": "columns",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 36,
-																				"character": 23
-																			}
-																		],
-																		"type": {
-																			"type": "array",
-																			"elementType": {
-																				"type": "intrinsic",
-																				"name": "string"
-																			}
-																		},
-																		"defaultValue": " [LeftNavWidth, \"fill\"]"
-																	},
-																	{
-																		"id": 353,
-																		"name": "content",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 37,
-																				"character": 23
-																			}
-																		],
-																		"type": {
-																			"type": "array",
-																			"elementType": {
-																				"type": "union",
-																				"types": [
-																					{
-																						"type": "reflection",
-																						"declaration": {
-																							"id": 354,
-																							"name": "__type",
-																							"kind": 65536,
-																							"kindString": "Type literal",
-																							"flags": {},
-																							"children": [
-																								{
-																									"id": 355,
-																									"name": "LeftNav",
-																									"kind": 32,
-																									"kindString": "Variable",
-																									"flags": {},
-																									"sources": [
-																										{
-																											"fileName": "Site.ts",
-																											"line": 38,
-																											"character": 29
-																										}
-																									],
-																									"type": {
-																										"type": "reflection",
-																										"declaration": {
-																											"id": 356,
-																											"name": "__type",
-																											"kind": 65536,
-																											"kindString": "Type literal",
-																											"flags": {}
-																										}
-																									}
-																								}
-																							],
-																							"groups": [
-																								{
-																									"title": "Variables",
-																									"kind": 32,
-																									"children": [
-																										355
-																									]
-																								}
-																							]
-																						}
-																					},
-																					{
-																						"type": "reflection",
-																						"declaration": {
-																							"id": 357,
-																							"name": "__type",
-																							"kind": 65536,
-																							"kindString": "Type literal",
-																							"flags": {},
-																							"children": [
-																								{
-																									"id": 358,
-																									"name": "MainDetail",
-																									"kind": 32,
-																									"kindString": "Variable",
-																									"flags": {},
-																									"sources": [
-																										{
-																											"fileName": "Site.ts",
-																											"line": 39,
-																											"character": 32
-																										}
-																									],
-																									"type": {
-																										"type": "reflection",
-																										"declaration": {
-																											"id": 359,
-																											"name": "__type",
-																											"kind": 65536,
-																											"kindString": "Type literal",
-																											"flags": {}
-																										}
-																									}
-																								}
-																							],
-																							"groups": [
-																								{
-																									"title": "Variables",
-																									"kind": 32,
-																									"children": [
-																										358
-																									]
-																								}
-																							]
-																						}
-																					}
-																				]
-																			}
-																		},
-																		"defaultValue": " [\n                    { LeftNav:    {}},\n                    { MainDetail: {}}\n                ]"
-																	}
-																],
-																"groups": [
-																	{
-																		"title": "Variables",
-																		"kind": 32,
-																		"children": [
-																			352,
-																			353
-																		]
-																	}
-																],
-																"sources": [
-																	{
-																		"fileName": "Site.ts",
-																		"line": 35,
-																		"character": 18
-																	}
-																],
-																"type": {
-																	"type": "intrinsic",
-																	"name": "object"
-																}
-															}
-														],
-														"groups": [
-															{
-																"title": "Object literals",
-																"kind": 2097152,
-																"children": [
-																	351
-																]
-															}
-														]
-													}
-												},
-												{
-													"type": "reflection",
-													"declaration": {
-														"id": 360,
-														"name": "__type",
-														"kind": 65536,
-														"kindString": "Type literal",
-														"flags": {},
-														"children": [
-															{
-																"id": 361,
-																"name": "Layout",
-																"kind": 2097152,
-																"kindString": "Object literal",
-																"flags": {},
-																"children": [
-																	{
-																		"id": 363,
-																		"name": "content",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 44,
-																				"character": 23
-																			}
-																		],
-																		"type": {
-																			"type": "intrinsic",
-																			"name": "string"
-																		},
-																		"defaultValue": "\"(c) Helpful Scripts\""
-																	},
-																	{
-																		"id": 362,
-																		"name": "css",
-																		"kind": 32,
-																		"kindString": "Variable",
-																		"flags": {},
-																		"sources": [
-																			{
-																				"fileName": "Site.ts",
-																				"line": 43,
-																				"character": 19
-																			}
-																		],
-																		"type": {
-																			"type": "intrinsic",
-																			"name": "string"
-																		},
-																		"defaultValue": "\".hs-site-footer\""
-																	}
-																],
-																"groups": [
-																	{
-																		"title": "Variables",
-																		"kind": 32,
-																		"children": [
-																			363,
-																			362
-																		]
-																	}
-																],
-																"sources": [
-																	{
-																		"fileName": "Site.ts",
-																		"line": 42,
-																		"character": 20
-																	}
-																],
-																"type": {
-																	"type": "intrinsic",
-																	"name": "object"
-																}
-															}
-														],
-														"groups": [
-															{
-																"title": "Object literals",
-																"kind": 2097152,
-																"children": [
-																	361
-																]
-															}
-														]
-													}
-												}
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												345,
+												346
 											]
 										}
-									},
-									"defaultValue": " [{\n            Layout:{ // top row\n                columns: [LeftNavWidth, \"fill\"],\n                css: '.hs-site-header',\n                content: [\n                    { Layout:    { \n                        css: '.hs-site-title',\n                        content: SiteName, \n                        href: SiteLink \n                    }},\n                    { DocsMenu:    { docSet:\"./data/index.json\"}}\n                ]                \n            }},{\n            Layout:{ // main part\n                columns: [LeftNavWidth, \"fill\"], \n                content: [\n                    { LeftNav:    {}},\n                    { MainDetail: {}}\n                ]                \n            }},\n            { Layout: { // footer\n                css: '.hs-site-footer',\n                content: '(c) Helpful Scripts'\n            }}\n        ]"
-								},
-								{
-									"id": 335,
-									"name": "css",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
+									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 21,
-											"character": 11
+											"line": 31,
+											"character": 18
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\".hs-site\""
-								},
-								{
-									"id": 334,
-									"name": "rows",
-									"kind": 32,
-									"kindString": "Variable",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "Site.ts",
-											"line": 20,
-											"character": 12
-										}
-									],
-									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "string"
-										}
-									},
-									"defaultValue": "  [TitleHeight, \"fill\", FooterHeight]"
+										"name": "object"
+									}
 								}
 							],
 							"groups": [
 								{
-									"title": "Variables",
-									"kind": 32,
+									"title": "Object literals",
+									"kind": 2097152,
 									"children": [
-										336,
-										335,
-										334
+										344
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 19,
+									"line": 31,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 347,
+							"name": "footer",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 348,
+									"name": "Layout",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 350,
+											"name": "content",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 37,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"(c) Helpful Scripts\""
+										},
+										{
+											"id": 349,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 36,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hs-site-footer\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												350,
+												349
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Site.ts",
+											"line": 35,
+											"character": 19
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										348
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 35,
 									"character": 10
 								}
 							],
@@ -1415,52 +951,158 @@
 							}
 						},
 						{
-							"id": 364,
-							"name": "route",
+							"id": 338,
+							"name": "header",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 365,
-									"name": "default",
-									"kind": 32,
-									"kindString": "Variable",
+									"id": 339,
+									"name": "Layout",
+									"kind": 2097152,
+									"kindString": "Object literal",
 									"flags": {},
+									"children": [
+										{
+											"id": 340,
+											"name": "columns",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 27,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " [LeftNavWidth, \"fill\"]"
+										},
+										{
+											"id": 342,
+											"name": "content",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 29,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " ['title', 'menu']"
+										},
+										{
+											"id": 341,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 28,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hs-site-header\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												340,
+												342,
+												341
+											]
+										}
+									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 49,
-											"character": 15
+											"line": 26,
+											"character": 20
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\"/api\""
-								},
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
 								{
-									"id": 366,
-									"name": "paths",
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										339
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 26,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 359,
+							"name": "leftnav",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 360,
+									"name": "LeftNav",
 									"kind": 32,
 									"kindString": "Variable",
 									"flags": {},
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 50,
-											"character": 13
+											"line": 47,
+											"character": 24
 										}
 									],
 									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "string"
+										"type": "reflection",
+										"declaration": {
+											"id": 361,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
 										}
-									},
-									"defaultValue": " [\n            '/api',             // defines `http://localhost/#!/api/\n            '/api/:lib',        // defines `http://localhost/#!/api/:hsLib\n            '/api/:lib/:field'  // defines `http://localhost/#!/api/:hsLib/:id        \n        ]"
+									}
 								}
 							],
 							"groups": [
@@ -1468,8 +1110,60 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										365,
-										366
+										360
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 47,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 362,
+							"name": "mainDetail",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 363,
+									"name": "MainDetail",
+									"kind": 32,
+									"kindString": "Variable",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "Site.ts",
+											"line": 48,
+											"character": 27
+										}
+									],
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 364,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {}
+										}
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Variables",
+									"kind": 32,
+									"children": [
+										363
 									]
 								}
 							],
@@ -1477,6 +1171,323 @@
 								{
 									"fileName": "Site.ts",
 									"line": 48,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 356,
+							"name": "menu",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 357,
+									"name": "DocsMenu",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 358,
+											"name": "docSet",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 45,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\"./data/index.json\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												358
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Site.ts",
+											"line": 44,
+											"character": 20
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										357
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 44,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 333,
+							"name": "root",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 334,
+									"name": "Layout",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 337,
+											"name": "content",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 24,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " ['header', 'body', 'footer']"
+										},
+										{
+											"id": 336,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 23,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hs-site\""
+										},
+										{
+											"id": 335,
+											"name": "rows",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 22,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": "  [TitleHeight, \"fill\", FooterHeight]"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												337,
+												336,
+												335
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Site.ts",
+											"line": 21,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										334
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 21,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "object"
+							}
+						},
+						{
+							"id": 351,
+							"name": "title",
+							"kind": 2097152,
+							"kindString": "Object literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 352,
+									"name": "Layout",
+									"kind": 2097152,
+									"kindString": "Object literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 354,
+											"name": "content",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 41,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": " SiteName"
+										},
+										{
+											"id": 353,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 40,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hs-site-title\""
+										},
+										{
+											"id": 355,
+											"name": "href",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 42,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": " SiteLink"
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												354,
+												353,
+												355
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Site.ts",
+											"line": 39,
+											"character": 18
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "object"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Object literals",
+									"kind": 2097152,
+									"children": [
+										352
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "Site.ts",
+									"line": 39,
 									"character": 9
 								}
 							],
@@ -1491,16 +1502,22 @@
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
+								343,
+								347,
+								338,
+								359,
+								362,
+								356,
 								333,
-								364
+								351
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 18,
-							"character": 14
+							"line": 20,
+							"character": 15
 						}
 					],
 					"type": {
@@ -1525,7 +1542,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						367
+						365
 					]
 				},
 				{
@@ -1545,7 +1562,7 @@
 			]
 		},
 		{
-			"id": 369,
+			"id": 367,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1763,7 +1780,7 @@
 			]
 		},
 		{
-			"id": 370,
+			"id": 368,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1942,7 +1959,7 @@
 							"sources": [
 								{
 									"fileName": "view/DocsMenu.ts",
-									"line": 36,
+									"line": 37,
 									"character": 17
 								}
 							],
@@ -2399,7 +2416,7 @@
 					"sources": [
 						{
 							"fileName": "view/LeftNav.ts",
-							"line": 107,
+							"line": 103,
 							"character": 16
 						}
 					]
@@ -2462,7 +2479,7 @@
 					"sources": [
 						{
 							"fileName": "view/LeftNav.ts",
-							"line": 145,
+							"line": 141,
 							"character": 24
 						}
 					]
@@ -2519,7 +2536,7 @@
 					"sources": [
 						{
 							"fileName": "view/LeftNav.ts",
-							"line": 30,
+							"line": 26,
 							"character": 16
 						}
 					]
@@ -2545,7 +2562,7 @@
 							"sources": [
 								{
 									"fileName": "view/LeftNav.ts",
-									"line": 96,
+									"line": 92,
 									"character": 9
 								}
 							],
@@ -2564,7 +2581,7 @@
 							"sources": [
 								{
 									"fileName": "view/LeftNav.ts",
-									"line": 95,
+									"line": 91,
 									"character": 12
 								}
 							],
@@ -2588,7 +2605,7 @@
 					"sources": [
 						{
 							"fileName": "view/LeftNav.ts",
-							"line": 94,
+							"line": 90,
 							"character": 19
 						}
 					],
@@ -3377,7 +3394,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 35,
+							"line": 32,
 							"character": 20
 						}
 					]
@@ -3432,7 +3449,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 158,
+							"line": 155,
 							"character": 18
 						}
 					]
@@ -3483,7 +3500,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 143,
+							"line": 140,
 							"character": 23
 						}
 					]
@@ -3529,7 +3546,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 49,
+							"line": 46,
 							"character": 16
 						}
 					]
@@ -3602,7 +3619,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 99,
+							"line": 96,
 							"character": 15
 						}
 					]
@@ -3653,7 +3670,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 78,
+							"line": 75,
 							"character": 16
 						}
 					]
@@ -3699,7 +3716,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 62,
+							"line": 59,
 							"character": 20
 						}
 					]
@@ -3753,7 +3770,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 93,
+							"line": 90,
 							"character": 18
 						}
 					]
@@ -3813,7 +3830,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 74,
+							"line": 71,
 							"character": 14
 						}
 					]
@@ -6558,9 +6575,9 @@
 			"children": [
 				1,
 				326,
-				369,
+				367,
 				183,
-				370,
+				368,
 				31,
 				155,
 				249,

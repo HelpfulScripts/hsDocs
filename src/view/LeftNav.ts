@@ -15,12 +15,8 @@ import { libLink } from './Parts';
  */
 export class LeftNav extends Layout {
     getComponents(node: Vnode): Vnode {
-        let lib:string;
-        let field:string;
-        if (node.attrs && node.attrs.route) {
-            lib = node.attrs.route.lib;
-            field = node.attrs.route.field;
-        }
+        let lib = m.route.param('lib');
+        let field = m.route.param('field');
         const docSet = DocSets.get(lib, 0) || {name:'unknown', id:0};
         return m('.hs-left', [m('.hs-left-nav', navList(docSet, field))]);
     } 
