@@ -28,6 +28,19 @@ m.request = (req: any) => {
     }
 };
 
+const route = {
+    field: '0',
+    lib: 'hsDocs'
+};
+
+m.route.param = (name:string) => {
+    if (name==='field') { return route.field; }
+    if (name==='lib')   { return route.lib; }
+    return '';
+};
+
+
+
 const root:any = window.document.createElement("body");
 
 
@@ -37,7 +50,8 @@ describe('MainDetail', () => {
             m.route.get = () => '/api/hsDocs/0';
             DocSets.loadList('mylist.json')
             .then(() => {
-                m.mount(root, { view: () => { return m(MainDetail, { route:{lib: 'hsDocs', field:'0'}});} }); 
+                route.field = '0';
+                m.mount(root, { view: () => { return m(MainDetail, {});} }); 
                 setTimeout(done, 200);
                 m.redraw();
             });
@@ -59,7 +73,8 @@ describe('MainDetail', () => {
             m.route.get = () => '/api/hsDocs/hsDocs.DocSets';
             DocSets.loadList('mylist.json')
             .then(() => {
-                m.mount(root, { view: () => { return m(MainDetail, { route:{lib: 'hsDocs', field:'hsDocs.DocSets'}});} }); 
+                route.field = 'hsDocs.DocSets';
+                m.mount(root, { view: () => { return m(MainDetail, { });} }); 
                 setTimeout(done, 200);
                 m.redraw();
             });
@@ -81,7 +96,8 @@ describe('MainDetail', () => {
             m.route.get = () => '/api/hsDocs/hsDocs.DocSets.DocSets.add';
             DocSets.loadList('mylist.json')
             .then(() => {
-                m.mount(root, { view: () => { return m(MainDetail, { route:{lib: 'hsDocs', field:'hsDocs.DocSets.DocSets.add'}});} }); 
+                route.field = 'hsDocs.DocSets.DocSets.add';
+                m.mount(root, { view: () => { return m(MainDetail, { });} }); 
                 setTimeout(done, 200);
                 m.redraw();
             });

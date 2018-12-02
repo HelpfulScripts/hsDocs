@@ -27,6 +27,12 @@ m.request = (req: any) => {
     }
 };
 
+m.route.param = (name:string) => {
+    if (name==='field') { return '0'; }
+    if (name==='lib')   { return 'hsDocs'; }
+    return '';
+};
+
 const root:any = window.document.createElement("body");
 
 
@@ -35,8 +41,10 @@ describe('LeftNav', () => {
         DocSets.loadList('mylist.json')
         .then(() => {
             m.mount(root, { view: () => { return m(LeftNav, { route:{lib: 'hsDocs', field:'0'}});} }); 
-            setTimeout(done, 200);
-            m.redraw();
+            setTimeout(() => {
+                m.redraw();
+                done();
+            }, 500);
         });
     });
 
