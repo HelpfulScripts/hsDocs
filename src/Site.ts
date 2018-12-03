@@ -52,7 +52,8 @@ const myConfig2 = {
 export function init() {
     const Router = {
         view: (node:Vnode) =>
-            m(Config, Object.assign({source: myConfig2, context: [hslayout, header, left, main]}, node.attrs))
+            m(Config, Object.assign({source: myConfig2, context: [hslayout, header, left, main]}, 
+                                    {route: {field:m.route.param('field'), lib:m.route.param('lib')}}))
     };
     m.route(document.body, '/api', { 
         '/api':             Router,
