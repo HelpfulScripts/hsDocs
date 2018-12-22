@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.64% </span>
+        <span class="strong">62.5% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>45/73</span>
+        <span class='fraction'>45/72</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>11/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">64.71% </span>
+        <span class="strong">65.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>44/68</span>
+        <span class='fraction'>44/67</span>
       </div>
     </div>
   </div>
@@ -557,7 +557,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -834,7 +834,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function <span class="fstat-no" title="function not covered" >executeScript(</span>IDs:CommentDescriptor) {
     const root = <span class="cstat-no" title="statement not covered" >document.getElementById(IDs.menuID);</span>
 <span class="cstat-no" title="statement not covered" >    if (root) {</span>
-<span class="cstat-no" title="statement not covered" >        console.log(`root found for menuID ${IDs.menuID}`);</span>
+        // console.log(`root found for menuID ${IDs.menuID}`);
 <span class="cstat-no" title="statement not covered" >        try { <span class="cstat-no" title="statement not covered" >IDs.executeScript(root); </span>}</span>
         catch(e) { 
 <span class="cstat-no" title="statement not covered" >            console.log("error executing script: " + e); </span>

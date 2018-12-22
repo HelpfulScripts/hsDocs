@@ -258,8 +258,8 @@
 <p id=235 class="line"><span>&nbsp;235</span>function&nbsp;executeScript(IDs:CommentDescriptor)&nbsp;{</p>
 <p id=236 class="line"><span>&nbsp;236</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;root&nbsp;=&nbsp;document.getElementById(IDs.menuID);</p>
 <p id=237 class="line"><span>&nbsp;237</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(root)&nbsp;{</p>
-<p id=238 class="line"><span>&nbsp;238</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`root&nbsp;found&nbsp;for&nbsp;menuID&nbsp;${IDs.menuID}`);</p>
-<p id=239 class="line"><span>&nbsp;239</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;IDs.executeScript(root);&nbsp;}</p>
+<p id=238 class="line"><span>&nbsp;238</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;console.log(`root&nbsp;found&nbsp;for&nbsp;menuID&nbsp;${IDs.menuID}`);</comment></p>
+<p id=239 class="line"><span>&nbsp;239</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;IDs.executeScript(root);&nbsp;}</p>
 <p id=240 class="line"><span>&nbsp;240</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(e)&nbsp;{&nbsp;</p>
 <p id=241 class="line"><span>&nbsp;241</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<quote>"error&nbsp;executing&nbsp;script:&nbsp;"</quote>&nbsp;+&nbsp;e);&nbsp;</p>
 <p id=242 class="line"><span>&nbsp;242</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(IDs.executeSource);</p>

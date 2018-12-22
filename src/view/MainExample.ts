@@ -235,7 +235,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
     if (root) {
-        console.log(`root found for menuID ${IDs.menuID}`);
+        // console.log(`root found for menuID ${IDs.menuID}`);
         try { IDs.executeScript(root); }
         catch(e) { 
             console.log("error executing script: " + e); 

@@ -5252,7 +5252,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "any"
+														"name": "string"
 													}
 												},
 												{
@@ -5311,7 +5311,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "any"
+														"name": "string"
 													}
 												},
 												{
@@ -5412,7 +5412,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "any"
+														"name": "string"
 													}
 												},
 												{
@@ -5739,7 +5739,7 @@
 													"flags": {},
 													"type": {
 														"type": "intrinsic",
-														"name": "any"
+														"name": "string"
 													}
 												},
 												{
