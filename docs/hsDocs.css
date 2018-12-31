@@ -104,18 +104,18 @@
   width: 0;
   height: 0;
   display: inline-block;
-  border-left: 7px solid #666;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  border-left: 6px solid #666;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   padding-right: 3px;
 }
 .hs-collapsible-arrow-down {
   width: 0;
   height: 0;
   display: inline-block;
-  border-left: 7px solid #666;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  border-left: 6px solid #666;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   padding-right: 3px;
   transform: rotate(90deg);
 }
@@ -123,9 +123,9 @@
   width: 0;
   height: 0;
   display: inline-block;
-  border-left: 7px solid #666;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  border-left: 6px solid #666;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   padding-right: 3px;
   transform: rotate(-90deg);
 }
@@ -133,9 +133,9 @@
   width: 0;
   height: 0;
   display: inline-block;
-  border-left: 7px solid #666;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+  border-left: 6px solid #666;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
   padding-right: 3px;
   transform: rotate(180deg);
 }
@@ -149,19 +149,18 @@
   position: absolute;
   margin-right: auto;
   left: 3px;
-  top: 3.5px;
+  top: 3px;
 }
 .hs-collapsible-title div.hs-collapsible-pre + div {
-  margin-left: 13px;
+  margin-left: 12px;
 }
 .hs-collapsible-title div.hs-collapsible-post {
   position: absolute;
   margin-left: auto;
   right: 3px;
-  top: 3.5px;
+  top: 3px;
 }
 .hs-collapsible-content {
-  left: 5px;
   position: relative;
   overflow: hidden;
   height: 0%;
