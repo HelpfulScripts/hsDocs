@@ -14,13 +14,11 @@ import { Config }   from 'hslayout';
 const TitleHeight   = '30px'; 
 const FooterHeight  = '10px';  
 const LeftNavWidth  = '200px';
-const SiteName      = 'HSDocs'; 
-const SiteLink      = 'https://github.com/HelpfulScripts/hsDocs';
 
 const myConfig2 = {
     root: { Layout: { // whole page
         rows:  [TitleHeight, "fill", FooterHeight],
-        css: '.hs-site',
+        css: '.hs-site-main',
         content: ['header', 'body', 'footer'] 
     }},
     header: { Layout:{ // top row
@@ -38,8 +36,8 @@ const myConfig2 = {
     }},
     title: {Layout:    { 
         css: '.hs-site-title',
-        content: SiteName, 
-        href: SiteLink 
+        content: 'HSDocs', 
+        href: 'https://github.com/HelpfulScripts/hsDocs' 
     }},
     menu: { DocsMenu:    { 
         docSet:"./data/index.json"

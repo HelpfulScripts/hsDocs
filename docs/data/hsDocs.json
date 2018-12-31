@@ -650,48 +650,6 @@
 					"defaultValue": "\"200px\""
 				},
 				{
-					"id": 331,
-					"name": "SiteLink",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "Site.ts",
-							"line": 18,
-							"character": 14
-						}
-					],
-					"type": {
-						"type": "stringLiteral",
-						"value": "https://github.com/HelpfulScripts/hsDocs"
-					},
-					"defaultValue": "\"https://github.com/HelpfulScripts/hsDocs\""
-				},
-				{
-					"id": 330,
-					"name": "SiteName",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "Site.ts",
-							"line": 17,
-							"character": 14
-						}
-					],
-					"type": {
-						"type": "stringLiteral",
-						"value": "HSDocs"
-					},
-					"defaultValue": "\"HSDocs\""
-				},
-				{
 					"id": 327,
 					"name": "TitleHeight",
 					"kind": 32,
@@ -713,7 +671,7 @@
 					"defaultValue": "\"30px\""
 				},
 				{
-					"id": 365,
+					"id": 363,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -722,7 +680,7 @@
 					},
 					"signatures": [
 						{
-							"id": 366,
+							"id": 364,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -736,13 +694,13 @@
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 52,
+							"line": 50,
 							"character": 20
 						}
 					]
 				},
 				{
-					"id": 332,
+					"id": 330,
 					"name": "myConfig2",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -751,21 +709,21 @@
 					},
 					"children": [
 						{
-							"id": 343,
+							"id": 341,
 							"name": "body",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 344,
+									"id": 342,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 345,
+											"id": 343,
 											"name": "columns",
 											"kind": 32,
 											"kindString": "Variable",
@@ -773,7 +731,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 32,
+													"line": 30,
 													"character": 15
 												}
 											],
@@ -787,7 +745,7 @@
 											"defaultValue": " [LeftNavWidth, \"fill\"]"
 										},
 										{
-											"id": 346,
+											"id": 344,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -795,7 +753,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 33,
+													"line": 31,
 													"character": 15
 												}
 											],
@@ -814,15 +772,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												345,
-												346
+												343,
+												344
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 31,
+											"line": 29,
 											"character": 18
 										}
 									],
@@ -837,14 +795,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										344
+										342
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 31,
+									"line": 29,
 									"character": 8
 								}
 							],
@@ -854,21 +812,21 @@
 							}
 						},
 						{
-							"id": 347,
+							"id": 345,
 							"name": "footer",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 348,
+									"id": 346,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 350,
+											"id": 348,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -876,7 +834,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 37,
+													"line": 35,
 													"character": 15
 												}
 											],
@@ -887,7 +845,7 @@
 											"defaultValue": "\"(c) Helpful Scripts\""
 										},
 										{
-											"id": 349,
+											"id": 347,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -895,7 +853,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 36,
+													"line": 34,
 													"character": 11
 												}
 											],
@@ -911,15 +869,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												350,
-												349
+												348,
+												347
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 35,
+											"line": 33,
 											"character": 19
 										}
 									],
@@ -934,14 +892,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										348
+										346
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 35,
+									"line": 33,
 									"character": 10
 								}
 							],
@@ -951,22 +909,44 @@
 							}
 						},
 						{
-							"id": 338,
+							"id": 336,
 							"name": "header",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 339,
+									"id": 337,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 340,
+											"id": 338,
 											"name": "columns",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Site.ts",
+													"line": 25,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											"defaultValue": " [LeftNavWidth, \"fill\"]"
+										},
+										{
+											"id": 340,
+											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
 											"flags": {},
@@ -984,32 +964,10 @@
 													"name": "string"
 												}
 											},
-											"defaultValue": " [LeftNavWidth, \"fill\"]"
-										},
-										{
-											"id": 342,
-											"name": "content",
-											"kind": 32,
-											"kindString": "Variable",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "Site.ts",
-													"line": 29,
-													"character": 15
-												}
-											],
-											"type": {
-												"type": "array",
-												"elementType": {
-													"type": "intrinsic",
-													"name": "string"
-												}
-											},
 											"defaultValue": " ['title', 'menu']"
 										},
 										{
-											"id": 341,
+											"id": 339,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1017,7 +975,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 28,
+													"line": 26,
 													"character": 11
 												}
 											],
@@ -1033,16 +991,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
+												338,
 												340,
-												342,
-												341
+												339
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 26,
+											"line": 24,
 											"character": 20
 										}
 									],
@@ -1057,14 +1015,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										339
+										337
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 26,
+									"line": 24,
 									"character": 10
 								}
 							],
@@ -1074,14 +1032,14 @@
 							}
 						},
 						{
-							"id": 359,
+							"id": 357,
 							"name": "leftnav",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 360,
+									"id": 358,
 									"name": "LeftNav",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1089,14 +1047,14 @@
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 47,
+											"line": 45,
 											"character": 24
 										}
 									],
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 361,
+											"id": 359,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1110,14 +1068,14 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										360
+										358
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 47,
+									"line": 45,
 									"character": 11
 								}
 							],
@@ -1127,14 +1085,14 @@
 							}
 						},
 						{
-							"id": 362,
+							"id": 360,
 							"name": "mainDetail",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 363,
+									"id": 361,
 									"name": "MainDetail",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1142,14 +1100,14 @@
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 48,
+											"line": 46,
 											"character": 27
 										}
 									],
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 364,
+											"id": 362,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1163,14 +1121,14 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										363
+										361
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 48,
+									"line": 46,
 									"character": 14
 								}
 							],
@@ -1180,21 +1138,21 @@
 							}
 						},
 						{
-							"id": 356,
+							"id": 354,
 							"name": "menu",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 357,
+									"id": 355,
 									"name": "DocsMenu",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 358,
+											"id": 356,
 											"name": "docSet",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1202,7 +1160,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 45,
+													"line": 43,
 													"character": 14
 												}
 											],
@@ -1218,14 +1176,14 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												358
+												356
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 44,
+											"line": 42,
 											"character": 20
 										}
 									],
@@ -1240,14 +1198,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										357
+										355
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 44,
+									"line": 42,
 									"character": 8
 								}
 							],
@@ -1257,21 +1215,21 @@
 							}
 						},
 						{
-							"id": 333,
+							"id": 331,
 							"name": "root",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 334,
+									"id": 332,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 337,
+											"id": 335,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1279,7 +1237,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 24,
+													"line": 22,
 													"character": 15
 												}
 											],
@@ -1293,7 +1251,7 @@
 											"defaultValue": " ['header', 'body', 'footer']"
 										},
 										{
-											"id": 336,
+											"id": 334,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1301,7 +1259,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 23,
+													"line": 21,
 													"character": 11
 												}
 											],
@@ -1309,10 +1267,10 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": "\".hs-site\""
+											"defaultValue": "\".hs-site-main\""
 										},
 										{
-											"id": 335,
+											"id": 333,
 											"name": "rows",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1320,7 +1278,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 22,
+													"line": 20,
 													"character": 12
 												}
 											],
@@ -1339,16 +1297,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												337,
-												336,
-												335
+												335,
+												334,
+												333
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 21,
+											"line": 19,
 											"character": 18
 										}
 									],
@@ -1363,14 +1321,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										334
+										332
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 21,
+									"line": 19,
 									"character": 8
 								}
 							],
@@ -1380,21 +1338,21 @@
 							}
 						},
 						{
-							"id": 351,
+							"id": 349,
 							"name": "title",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 352,
+									"id": 350,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 354,
+											"id": 352,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1402,7 +1360,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 41,
+													"line": 39,
 													"character": 15
 												}
 											],
@@ -1410,10 +1368,10 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": " SiteName"
+											"defaultValue": "\"HSDocs\""
 										},
 										{
-											"id": 353,
+											"id": 351,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1421,7 +1379,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 40,
+													"line": 38,
 													"character": 11
 												}
 											],
@@ -1432,7 +1390,7 @@
 											"defaultValue": "\".hs-site-title\""
 										},
 										{
-											"id": 355,
+											"id": 353,
 											"name": "href",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1440,7 +1398,7 @@
 											"sources": [
 												{
 													"fileName": "Site.ts",
-													"line": 42,
+													"line": 40,
 													"character": 12
 												}
 											],
@@ -1448,7 +1406,7 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": " SiteLink"
+											"defaultValue": "\"https://github.com/HelpfulScripts/hsDocs\""
 										}
 									],
 									"groups": [
@@ -1456,16 +1414,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												354,
-												353,
-												355
+												352,
+												351,
+												353
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "Site.ts",
-											"line": 39,
+											"line": 37,
 											"character": 18
 										}
 									],
@@ -1480,14 +1438,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										352
+										350
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "Site.ts",
-									"line": 39,
+									"line": 37,
 									"character": 9
 								}
 							],
@@ -1502,21 +1460,21 @@
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								343,
-								347,
-								338,
-								359,
-								362,
-								356,
-								333,
-								351
+								341,
+								345,
+								336,
+								357,
+								360,
+								354,
+								331,
+								349
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "Site.ts",
-							"line": 20,
+							"line": 18,
 							"character": 15
 						}
 					],
@@ -1533,8 +1491,6 @@
 					"children": [
 						328,
 						329,
-						331,
-						330,
 						327
 					]
 				},
@@ -1542,14 +1498,14 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						365
+						363
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						332
+						330
 					]
 				}
 			],
@@ -1562,7 +1518,7 @@
 			]
 		},
 		{
-			"id": 367,
+			"id": 365,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1780,7 +1736,7 @@
 			]
 		},
 		{
-			"id": 368,
+			"id": 366,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -6575,9 +6531,9 @@
 			"children": [
 				1,
 				326,
-				367,
+				365,
 				183,
-				368,
+				366,
 				31,
 				155,
 				249,
