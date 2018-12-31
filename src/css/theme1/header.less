@@ -1,0 +1,28 @@
+.hs-site-header {   // the top bar of the site
+//     border-bottom: 1px solid @BorderColor;
+
+
+    .hs-site-title {    // the left Header in the top bar
+        padding: 5px 10px;  
+        border-bottom: 1px solid @BorderColor;
+    }
+
+    @hdrTabColor: lighten(@BorderColor, 15%);
+    @ItemBorder: 0.5px solid white;
+    @Transparent: rgba(255, 255, 255, 0);
+
+    .hs-menu { 
+        .hs-selectable {   // name menu item in hs-modules-title
+            border-left: @ItemBorder;
+            border-right: @Transparent;
+            border-bottom: 1px solid @BorderColor;
+        }
+        .hs-selected {
+            border-bottom: 1px solid white;
+        }
+    }
+
+    .hs-selected + .hs-selectable {
+    }
+
+}
