@@ -1,0 +1,80 @@
+@bg-example: #eed;
+@bg-source:  #dde;
+@menuItemBorder: 1px solid rgb(240, 30, 30); 
+@windowHeight: 300px;
+@LayoutSpacing: 1px solid white; 
+
+.hs-layout-spacing {
+    .hs-column-layout > .hs-layout {
+        border-left: @LayoutSpacing; 
+        border-right: @LayoutSpacing; 
+        &:first-of-type { border-left: 0; }  
+        &:last-of-type { border-right: 0; }  
+    } 
+    .hs-row-layout > .hs-layout {
+        border-top: @LayoutSpacing;
+        border-bottom: @LayoutSpacing;
+        &:first-of-type { border-top: 0; }  
+        &:last-of-type { border-bottom: 0; }  
+    } 
+}
+
+example { 
+    display:block;
+    height: @windowHeight;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+
+    .hs-selectable {
+        border-bottom:0;
+        height:100%;
+    }
+     
+    .hs-execution { 
+        .hs-layout-spacing;
+        background-color: @bg-example; 
+        div { margin: 0px; }
+        .hs-leaf { padding: 5px; } 
+
+        .hs-white {    // white background for example execution
+            position: absolute;
+            background-color:white;
+            padding-left: 5px;          // start content 5px in
+            left: 5px;                  // show 5px left border
+            top: 0;
+            bottom:0;
+            right: 0;
+        }
+    }
+
+    .hs-source {
+        .hs-menu .hs-layout {
+            background-color: white;
+            .hs-layout  {
+                background-color: @bg-source;
+            }
+        }
+        .hs-source-main {
+            background-color: @bg-source;  
+            font-size: 12px;
+        }
+
+        .hs-selected  { 
+            background-color: @bg-source; 
+        }
+    } 
+
+    pre { padding-left: 10px; }
+
+    &>.hs-column-layout{
+        &>.hs-layout:last-child {
+            border-left: 3px solid white;
+        }
+    }
+    code, pre {
+        background-color:transparent;
+        color:black;
+        line-height: 18px;
+    }    
+}
