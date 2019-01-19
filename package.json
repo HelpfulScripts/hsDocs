@@ -8,7 +8,7 @@
     "typedoc"
   ],
   "description": "Helpful Scripts API documentation viewer for Typescript projects",
-  "homepage": "https://helpfulscripts.github.io/hsDocs/indexGH.html#!/api/hsDocs/0",
+  "homepage": "https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0",
   "author": {
     "name": "masterscripter",
     "email": "helpfulscripts@gmail.com"
