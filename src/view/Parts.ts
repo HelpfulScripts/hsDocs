@@ -127,7 +127,7 @@ export function signature(s:any, mdl:any): Vnode {
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-            default:
+            default: log.warn(`unexpected kindString ${mdl.kindString}`);
         }
     }
     return m('span.hs-item-signature', sig);
