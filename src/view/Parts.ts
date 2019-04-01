@@ -18,6 +18,8 @@ export function flags(mdl:any, ignore:string[]=[]) {
         isConstructorProperty:  'constructorProperty',
         isAbstract:             'abstract',
         isConst:                'const',
+        isLet:                  'let',
+        isVar:                  'var',
         isStatic:               'static',
         isOptional:             'optional'
     };
