@@ -800,6 +800,18 @@ th {
   font-weight: bold;
   color: #222;
 }
+.hs-item-let-flag {
+  color: #44f;
+  padding: 10px 0.4em 10px 0em;
+  font-weight: bold;
+  color: #222;
+}
+.hs-item-var-flag {
+  color: #44f;
+  padding: 10px 0.4em 10px 0em;
+  font-weight: bold;
+  color: #222;
+}
 .hs-item-constructorProperty-flag {
   color: #44f;
   padding: 10px 0.4em 10px 0em;
@@ -885,7 +897,7 @@ th {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 0.9em;
-  padding: 5px 0px 10px 0px;
+  padding: 5px 0px 10px 20px;
 }
 .hs-item-comment h1 {
   margin-top: 1.3em;
