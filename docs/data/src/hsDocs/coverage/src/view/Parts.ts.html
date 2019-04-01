@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.86% </span>
+        <span class="strong">92.93% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>91/98</span>
+        <span class='fraction'>92/99</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">81.18% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>19/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.51% </span>
+        <span class="strong">95.56% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>85/89</span>
+        <span class='fraction'>86/90</span>
       </div>
     </div>
   </div>
@@ -375,7 +375,7 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -578,7 +578,7 @@ export function signature(s:any, mdl:any): Vnode {
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-            default:
+            default: log.warn(`unexpected kindString ${mdl.kindString}`);
         }
     }
     return m('span.hs-item-signature', sig);

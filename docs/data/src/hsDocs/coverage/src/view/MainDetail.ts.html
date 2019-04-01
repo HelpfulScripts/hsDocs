@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.23% </span>
+        <span class="strong">85.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>58/65</span>
+        <span class='fraction'>58/68</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.26% </span>
+        <span class="strong">72% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>36/46</span>
+        <span class='fraction'>36/50</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">88.46% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>23/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.66% </span>
+        <span class="strong">85.25% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>52/58</span>
+        <span class='fraction'>52/61</span>
       </div>
     </div>
   </div>
@@ -204,7 +204,10 @@
 159
 160
 161
-162</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+162
+163
+164
+165</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -288,6 +291,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -449,6 +455,9 @@ function members(mdl:any, sig:any): Vnode {
         ]);
     } else <span class="missing-if-branch" title="else path not taken" >E</span>if (mdl.parameters) {
         return m('.hs-item-members', parameter(mdl.parameters, mdl.lib));
+    } else <span class="cstat-no" title="statement not covered" >if (mdl.type &amp;&amp; mdl.type.declaration) {</span>
+<span class="cstat-no" title="statement not covered" >        mdl.type.declaration.lib = mdl.lib;</span>
+<span class="cstat-no" title="statement not covered" >        return members(mdl.type.declaration, sig);</span>
     } else {
 <span class="cstat-no" title="statement not covered" >        return m('.hs-item-members');</span>
     }
