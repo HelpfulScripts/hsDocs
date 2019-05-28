@@ -161,14 +161,14 @@ console.log('>>>>>>>>>>>');
 async function addAndExecute(IDs:CommentDescriptor, wait:number) {
     try {
         await addExample(IDs);
-        await delay(1)
+        await delay(1);
         await executeScript(IDs);
     } catch(e) { executeError(e); }    
 }
 
 async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     const libNames = Object.keys(modules);
-    const libs = await Promise.all(libNames.map(name => modules[name]))
+    const libs = await Promise.all(libNames.map(name => modules[name]));
     try {
         const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
         IDs.executeScript = (root:any) => scriptFn(root, ...libs);

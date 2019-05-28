@@ -184,14 +184,14 @@
 <p id=161 class="line"><span>&nbsp;161</span>async&nbsp;function&nbsp;addAndExecute(IDs:CommentDescriptor,&nbsp;wait:number)&nbsp;{</p>
 <p id=162 class="line"><span>&nbsp;162</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{</p>
 <p id=163 class="line"><span>&nbsp;163</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;addExample(IDs);</p>
-<p id=164 class="line"><span>&nbsp;164</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;delay(1)</p>
+<p id=164 class="line"><span>&nbsp;164</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;delay(1);</p>
 <p id=165 class="line"><span>&nbsp;165</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;executeScript(IDs);</p>
 <p id=166 class="line"><span>&nbsp;166</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch(e)&nbsp;{&nbsp;executeError(e);&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p id=167 class="line"><span>&nbsp;167</span>}</p>
 <p id=168 class="line"><span>&nbsp;168</span></p>
 <p id=169 class="line"><span>&nbsp;169</span>async&nbsp;function&nbsp;createExecuteScript(IDs:CommentDescriptor,&nbsp;exmpl:string):&nbsp;Promise<boolean>&nbsp;{</p>
 <p id=170 class="line"><span>&nbsp;170</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;libNames&nbsp;=&nbsp;Object.keys(modules);</p>
-<p id=171 class="line"><span>&nbsp;171</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;libs&nbsp;=&nbsp;await&nbsp;Promise.all(libNames.map(name&nbsp;=>&nbsp;modules[name]))</p>
+<p id=171 class="line"><span>&nbsp;171</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;libs&nbsp;=&nbsp;await&nbsp;Promise.all(libNames.map(name&nbsp;=>&nbsp;modules[name]));</p>
 <p id=172 class="line"><span>&nbsp;172</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{</p>
 <p id=173 class="line"><span>&nbsp;173</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;scriptFn&nbsp;=&nbsp;new&nbsp;Function(<quote>'root'</quote>,&nbsp;...libNames,&nbsp;getCommentDescriptor(IDs,&nbsp;exmpl));&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p id=174 class="line"><span>&nbsp;174</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.executeScript&nbsp;=&nbsp;(root:any)&nbsp;=>&nbsp;scriptFn(root,&nbsp;...libs);</p>
