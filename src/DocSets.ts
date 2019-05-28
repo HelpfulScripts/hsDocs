@@ -7,7 +7,7 @@
  */
 
 /** */
-import { m }    from 'hslayout';
+import { m }    from '../node_modules/hslayout/index.js';
 
 /**
  * the default location for the index .json files, relative to the web page:
