@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.93% </span>
+        <span class="strong">92% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>92/99</span>
+        <span class='fraction'>92/100</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">81.18% </span>
+        <span class="strong">80.23% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>69/85</span>
+        <span class='fraction'>69/86</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90.48% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>19/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.56% </span>
+        <span class="strong">94.51% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>86/90</span>
+        <span class='fraction'>86/91</span>
       </div>
     </div>
   </div>
@@ -248,7 +248,8 @@
 203
 204
 205
-206</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+206
+207</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -373,6 +374,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -453,10 +455,10 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { m, Vnode} from 'hslayout';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { m, Vnode} from '../../node_modules/hslayout/index.js';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
-import { log as _log }  from 'hsutil';  const log = _log('Parts');
+import { log as _log }  from '../../node_modules/hsutil/index.js';  const log = _log('Parts');
 &nbsp;
 const SourceBase = 'data/src/'; 
 &nbsp;
@@ -578,6 +580,7 @@ export function signature(s:any, mdl:any): Vnode {
             ]));
         }
         switch (mdl.kindString) {
+<span class="branch-0 cbranch-no" title="branch not covered" >            case undefined: <span class="cstat-no" title="statement not covered" >break;</span></span>
             case 'Method':
             case 'Function': 
             case 'Constructor': 

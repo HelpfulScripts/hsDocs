@@ -3,7 +3,7 @@
  */
 
 /** */
-import { m, Vnode } from 'hslayout';
+import { m, Vnode } from '../../node_modules/hslayout/index.js';
 import { markDown } from '../markdown';
 import { example }  from './MainExample';
 

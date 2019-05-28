@@ -595,7 +595,7 @@
 			]
 		},
 		{
-			"id": 326,
+			"id": 328,
 			"name": "\"Site\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -608,7 +608,7 @@
 			},
 			"children": [
 				{
-					"id": 328,
+					"id": 330,
 					"name": "FooterHeight",
 					"kind": 32,
 					"kindString": "Variable",
@@ -629,7 +629,7 @@
 					"defaultValue": "\"10px\""
 				},
 				{
-					"id": 329,
+					"id": 331,
 					"name": "LeftNavWidth",
 					"kind": 32,
 					"kindString": "Variable",
@@ -650,7 +650,7 @@
 					"defaultValue": "\"200px\""
 				},
 				{
-					"id": 327,
+					"id": 329,
 					"name": "TitleHeight",
 					"kind": 32,
 					"kindString": "Variable",
@@ -671,7 +671,7 @@
 					"defaultValue": "\"30px\""
 				},
 				{
-					"id": 363,
+					"id": 365,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -680,7 +680,7 @@
 					},
 					"signatures": [
 						{
-							"id": 364,
+							"id": 366,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -700,7 +700,7 @@
 					]
 				},
 				{
-					"id": 330,
+					"id": 332,
 					"name": "myConfig2",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -709,21 +709,21 @@
 					},
 					"children": [
 						{
-							"id": 341,
+							"id": 343,
 							"name": "body",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 342,
+									"id": 344,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 343,
+											"id": 345,
 											"name": "columns",
 											"kind": 32,
 											"kindString": "Variable",
@@ -745,7 +745,7 @@
 											"defaultValue": " [LeftNavWidth, \"fill\"]"
 										},
 										{
-											"id": 344,
+											"id": 346,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -772,8 +772,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												343,
-												344
+												345,
+												346
 											]
 										}
 									],
@@ -795,7 +795,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										342
+										344
 									]
 								}
 							],
@@ -812,21 +812,21 @@
 							}
 						},
 						{
-							"id": 345,
+							"id": 347,
 							"name": "footer",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 346,
+									"id": 348,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 348,
+											"id": 350,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -845,7 +845,7 @@
 											"defaultValue": "\"(c) Helpful Scripts\""
 										},
 										{
-											"id": 347,
+											"id": 349,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -869,8 +869,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												348,
-												347
+												350,
+												349
 											]
 										}
 									],
@@ -892,7 +892,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										346
+										348
 									]
 								}
 							],
@@ -909,21 +909,21 @@
 							}
 						},
 						{
-							"id": 336,
+							"id": 338,
 							"name": "header",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 337,
+									"id": 339,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 338,
+											"id": 340,
 											"name": "columns",
 											"kind": 32,
 											"kindString": "Variable",
@@ -945,7 +945,7 @@
 											"defaultValue": " [LeftNavWidth, \"fill\"]"
 										},
 										{
-											"id": 340,
+											"id": 342,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -967,7 +967,7 @@
 											"defaultValue": " ['title', 'menu']"
 										},
 										{
-											"id": 339,
+											"id": 341,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -991,9 +991,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												338,
 												340,
-												339
+												342,
+												341
 											]
 										}
 									],
@@ -1015,7 +1015,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										337
+										339
 									]
 								}
 							],
@@ -1032,14 +1032,14 @@
 							}
 						},
 						{
-							"id": 357,
+							"id": 359,
 							"name": "leftnav",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 358,
+									"id": 360,
 									"name": "LeftNav",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1054,7 +1054,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 359,
+											"id": 361,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1068,7 +1068,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										358
+										360
 									]
 								}
 							],
@@ -1085,14 +1085,14 @@
 							}
 						},
 						{
-							"id": 360,
+							"id": 362,
 							"name": "mainDetail",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 361,
+									"id": 363,
 									"name": "MainDetail",
 									"kind": 32,
 									"kindString": "Variable",
@@ -1107,7 +1107,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 362,
+											"id": 364,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1121,7 +1121,7 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										361
+										363
 									]
 								}
 							],
@@ -1138,21 +1138,21 @@
 							}
 						},
 						{
-							"id": 354,
+							"id": 356,
 							"name": "menu",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 355,
+									"id": 357,
 									"name": "DocsMenu",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 356,
+											"id": 358,
 											"name": "docSet",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1176,7 +1176,7 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												356
+												358
 											]
 										}
 									],
@@ -1198,7 +1198,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										355
+										357
 									]
 								}
 							],
@@ -1215,21 +1215,21 @@
 							}
 						},
 						{
-							"id": 331,
+							"id": 333,
 							"name": "root",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 332,
+									"id": 334,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 335,
+											"id": 337,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1251,7 +1251,7 @@
 											"defaultValue": " ['header', 'body', 'footer']"
 										},
 										{
-											"id": 334,
+											"id": 336,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1270,7 +1270,7 @@
 											"defaultValue": "\".hs-site-main\""
 										},
 										{
-											"id": 333,
+											"id": 335,
 											"name": "rows",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1297,9 +1297,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												335,
-												334,
-												333
+												337,
+												336,
+												335
 											]
 										}
 									],
@@ -1321,7 +1321,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										332
+										334
 									]
 								}
 							],
@@ -1338,21 +1338,21 @@
 							}
 						},
 						{
-							"id": 349,
+							"id": 351,
 							"name": "title",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 350,
+									"id": 352,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 352,
+											"id": 354,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1371,7 +1371,7 @@
 											"defaultValue": "\"HSDocs\""
 										},
 										{
-											"id": 351,
+											"id": 353,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1390,7 +1390,7 @@
 											"defaultValue": "\".hs-site-title\""
 										},
 										{
-											"id": 353,
+											"id": 355,
 											"name": "href",
 											"kind": 32,
 											"kindString": "Variable",
@@ -1414,9 +1414,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												352,
-												351,
-												353
+												354,
+												353,
+												355
 											]
 										}
 									],
@@ -1438,7 +1438,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										350
+										352
 									]
 								}
 							],
@@ -1460,14 +1460,14 @@
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								341,
-								345,
-								336,
-								357,
-								360,
-								354,
-								331,
-								349
+								343,
+								347,
+								338,
+								359,
+								362,
+								356,
+								333,
+								351
 							]
 						}
 					],
@@ -1489,23 +1489,23 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						328,
-						329,
-						327
+						330,
+						331,
+						329
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						363
+						365
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						330
+						332
 					]
 				}
 			],
@@ -1518,7 +1518,7 @@
 			]
 		},
 		{
-			"id": 365,
+			"id": 367,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -1736,7 +1736,7 @@
 			]
 		},
 		{
-			"id": 366,
+			"id": 368,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2605,7 +2605,7 @@
 			]
 		},
 		{
-			"id": 249,
+			"id": 251,
 			"name": "\"view/MainComment\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2618,7 +2618,7 @@
 			},
 			"children": [
 				{
-					"id": 253,
+					"id": 255,
 					"name": "comment",
 					"kind": 64,
 					"kindString": "Function",
@@ -2627,7 +2627,7 @@
 					},
 					"signatures": [
 						{
-							"id": 254,
+							"id": 256,
 							"name": "comment",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2638,7 +2638,7 @@
 							},
 							"parameters": [
 								{
-									"id": 255,
+									"id": 257,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2652,7 +2652,7 @@
 									}
 								},
 								{
-									"id": 256,
+									"id": 258,
 									"name": "short",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2682,7 +2682,7 @@
 					]
 				},
 				{
-					"id": 250,
+					"id": 252,
 					"name": "commentLong",
 					"kind": 64,
 					"kindString": "Function",
@@ -2691,7 +2691,7 @@
 					},
 					"signatures": [
 						{
-							"id": 251,
+							"id": 253,
 							"name": "commentLong",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2702,7 +2702,7 @@
 							},
 							"parameters": [
 								{
-									"id": 252,
+									"id": 254,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2731,21 +2731,21 @@
 					]
 				},
 				{
-					"id": 265,
+					"id": 267,
 					"name": "commentRemainder",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 266,
+							"id": 268,
 							"name": "commentRemainder",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 267,
+									"id": 269,
 									"name": "comment",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2780,21 +2780,21 @@
 					]
 				},
 				{
-					"id": 271,
+					"id": 273,
 					"name": "mainCommentParams",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 272,
+							"id": 274,
 							"name": "mainCommentParams",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 273,
+									"id": 275,
 									"name": "params",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2820,21 +2820,21 @@
 					]
 				},
 				{
-					"id": 268,
+					"id": 270,
 					"name": "otherCommentTags",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 269,
+							"id": 271,
 							"name": "otherCommentTags",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 270,
+									"id": 272,
 									"name": "comment",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2869,14 +2869,14 @@
 					]
 				},
 				{
-					"id": 274,
+					"id": 276,
 					"name": "prettifyCode",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 275,
+							"id": 277,
 							"name": "prettifyCode",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2886,7 +2886,7 @@
 							},
 							"parameters": [
 								{
-									"id": 276,
+									"id": 278,
 									"name": "comment",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2900,7 +2900,7 @@
 									}
 								},
 								{
-									"id": 277,
+									"id": 279,
 									"name": "short",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2929,14 +2929,14 @@
 					]
 				},
 				{
-					"id": 261,
+					"id": 263,
 					"name": "returns",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 262,
+							"id": 264,
 							"name": "returns",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2946,7 +2946,7 @@
 							},
 							"parameters": [
 								{
-									"id": 263,
+									"id": 265,
 									"name": "comment",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2957,7 +2957,7 @@
 									}
 								},
 								{
-									"id": 264,
+									"id": 266,
 									"name": "short",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2983,14 +2983,14 @@
 					]
 				},
 				{
-					"id": 257,
+					"id": 259,
 					"name": "textOrShortTextOrDescription",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 258,
+							"id": 260,
 							"name": "textOrShortTextOrDescription",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3000,7 +3000,7 @@
 							},
 							"parameters": [
 								{
-									"id": 259,
+									"id": 261,
 									"name": "comment",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3014,7 +3014,7 @@
 									}
 								},
 								{
-									"id": 260,
+									"id": 262,
 									"name": "short",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3048,14 +3048,14 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						253,
-						250,
-						265,
-						271,
-						268,
-						274,
-						261,
-						257
+						255,
+						252,
+						267,
+						273,
+						270,
+						276,
+						263,
+						259
 					]
 				}
 			],
@@ -3068,7 +3068,7 @@
 			]
 		},
 		{
-			"id": 278,
+			"id": 280,
 			"name": "\"view/MainDetail\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3078,7 +3078,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainDetail.ts",
 			"children": [
 				{
-					"id": 279,
+					"id": 281,
 					"name": "MainDetail",
 					"kind": 128,
 					"kindString": "Class",
@@ -3090,7 +3090,7 @@
 					},
 					"children": [
 						{
-							"id": 283,
+							"id": 285,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3114,7 +3114,7 @@
 							}
 						},
 						{
-							"id": 284,
+							"id": 286,
 							"name": "getCSS",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3124,14 +3124,14 @@
 							},
 							"signatures": [
 								{
-									"id": 285,
+									"id": 287,
 									"name": "getCSS",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 286,
+											"id": 288,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3165,7 +3165,7 @@
 							}
 						},
 						{
-							"id": 280,
+							"id": 282,
 							"name": "getComponents",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3174,14 +3174,14 @@
 							},
 							"signatures": [
 								{
-									"id": 281,
+									"id": 283,
 									"name": "getComponents",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 282,
+											"id": 284,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3215,7 +3215,7 @@
 							}
 						},
 						{
-							"id": 287,
+							"id": 289,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3224,14 +3224,14 @@
 							},
 							"signatures": [
 								{
-									"id": 288,
+									"id": 290,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 289,
+											"id": 291,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3270,16 +3270,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								283
+								285
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								284,
-								280,
-								287
+								286,
+								282,
+								289
 							]
 						}
 					],
@@ -3298,14 +3298,14 @@
 					]
 				},
 				{
-					"id": 290,
+					"id": 292,
 					"name": "getOverview",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 291,
+							"id": 293,
 							"name": "getOverview",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3316,7 +3316,7 @@
 							},
 							"parameters": [
 								{
-									"id": 292,
+									"id": 294,
 									"name": "lib",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3327,7 +3327,7 @@
 									}
 								},
 								{
-									"id": 293,
+									"id": 295,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3356,21 +3356,21 @@
 					]
 				},
 				{
-					"id": 322,
+					"id": 324,
 					"name": "itemChild",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 323,
+							"id": 325,
 							"name": "itemChild",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 324,
+									"id": 326,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3381,7 +3381,7 @@
 									}
 								},
 								{
-									"id": 325,
+									"id": 327,
 									"name": "sig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3411,21 +3411,21 @@
 					]
 				},
 				{
-					"id": 318,
+					"id": 320,
 					"name": "itemDescriptor",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 319,
+							"id": 321,
 							"name": "itemDescriptor",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 320,
+									"id": 322,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3436,7 +3436,7 @@
 									}
 								},
 								{
-									"id": 321,
+									"id": 323,
 									"name": "sig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3462,14 +3462,14 @@
 					]
 				},
 				{
-					"id": 294,
+					"id": 296,
 					"name": "itemDoc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 295,
+							"id": 297,
 							"name": "itemDoc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3479,7 +3479,7 @@
 							},
 							"parameters": [
 								{
-									"id": 296,
+									"id": 298,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3508,21 +3508,21 @@
 					]
 				},
 				{
-					"id": 312,
+					"id": 314,
 					"name": "member",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 313,
+							"id": 315,
 							"name": "member",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 314,
+									"id": 316,
 									"name": "group",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3533,7 +3533,7 @@
 									}
 								},
 								{
-									"id": 315,
+									"id": 317,
 									"name": "lib",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3544,7 +3544,7 @@
 									}
 								},
 								{
-									"id": 316,
+									"id": 318,
 									"name": "statc",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3555,7 +3555,7 @@
 									}
 								},
 								{
-									"id": 317,
+									"id": 319,
 									"name": "publc",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3581,21 +3581,21 @@
 					]
 				},
 				{
-					"id": 304,
+					"id": 306,
 					"name": "members",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 305,
+							"id": 307,
 							"name": "members",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 306,
+									"id": 308,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3606,7 +3606,7 @@
 									}
 								},
 								{
-									"id": 307,
+									"id": 309,
 									"name": "sig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3632,14 +3632,14 @@
 					]
 				},
 				{
-					"id": 297,
+					"id": 299,
 					"name": "overviewDoc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 298,
+							"id": 300,
 							"name": "overviewDoc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3649,7 +3649,7 @@
 							},
 							"parameters": [
 								{
-									"id": 299,
+									"id": 301,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3678,21 +3678,21 @@
 					]
 				},
 				{
-					"id": 308,
+					"id": 310,
 					"name": "parameter",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 309,
+							"id": 311,
 							"name": "parameter",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 310,
+									"id": 312,
 									"name": "g",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3706,7 +3706,7 @@
 									}
 								},
 								{
-									"id": 311,
+									"id": 313,
 									"name": "lib",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3732,14 +3732,14 @@
 					]
 				},
 				{
-					"id": 300,
+					"id": 302,
 					"name": "title",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 301,
+							"id": 303,
 							"name": "title",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3749,7 +3749,7 @@
 							},
 							"parameters": [
 								{
-									"id": 302,
+									"id": 304,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3763,7 +3763,7 @@
 									}
 								},
 								{
-									"id": 303,
+									"id": 305,
 									"name": "sig",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3797,22 +3797,22 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						279
+						281
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						290,
-						322,
-						318,
-						294,
-						312,
-						304,
-						297,
-						308,
-						300
+						292,
+						324,
+						320,
+						296,
+						314,
+						306,
+						299,
+						310,
+						302
 					]
 				}
 			],
@@ -3857,7 +3857,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 104,
+									"line": 105,
 									"character": 17
 								}
 							],
@@ -3877,7 +3877,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 100,
+									"line": 101,
 									"character": 9
 								}
 							],
@@ -3901,7 +3901,7 @@
 											"sources": [
 												{
 													"fileName": "view/MainExample.ts",
-													"line": 100,
+													"line": 101,
 													"character": 19
 												}
 											],
@@ -3923,7 +3923,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 100,
+											"line": 101,
 											"character": 11
 										}
 									]
@@ -3939,7 +3939,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 99,
+									"line": 100,
 									"character": 8
 								}
 							],
@@ -3957,7 +3957,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 97,
+									"line": 98,
 									"character": 13
 								}
 							],
@@ -3977,7 +3977,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 102,
+									"line": 103,
 									"character": 17
 								}
 							],
@@ -4018,7 +4018,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 102,
+											"line": 103,
 											"character": 19
 										}
 									]
@@ -4036,7 +4036,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 103,
+									"line": 104,
 									"character": 17
 								}
 							],
@@ -4054,7 +4054,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 98,
+									"line": 99,
 									"character": 10
 								}
 							],
@@ -4072,7 +4072,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 101,
+									"line": 102,
 									"character": 9
 								}
 							],
@@ -4096,7 +4096,7 @@
 											"sources": [
 												{
 													"fileName": "view/MainExample.ts",
-													"line": 101,
+													"line": 102,
 													"character": 19
 												}
 											],
@@ -4118,7 +4118,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 101,
+											"line": 102,
 											"character": 10
 										}
 									]
@@ -4145,13 +4145,13 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 96,
+							"line": 97,
 							"character": 27
 						}
 					]
 				},
 				{
-					"id": 218,
+					"id": 216,
 					"name": "gInitialized",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4164,21 +4164,21 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 110,
+							"line": 111,
 							"character": 18
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 219,
+							"id": 217,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 220,
+									"id": 218,
 									"name": "string",
 									"kind": 32,
 									"kindString": "Variable",
@@ -4188,7 +4188,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 110,
+											"line": 111,
 											"character": 26
 										}
 									],
@@ -4204,14 +4204,14 @@
 									"title": "Variables",
 									"kind": 32,
 									"children": [
-										220
+										218
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 110,
+									"line": 111,
 									"character": 19
 								}
 							]
@@ -4219,14 +4219,72 @@
 					}
 				},
 				{
-					"id": 233,
+					"id": 222,
+					"name": "addAndExecute",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 223,
+							"name": "addAndExecute",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 224,
+									"name": "IDs",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "CommentDescriptor",
+										"id": 195
+									}
+								},
+								{
+									"id": 225,
+									"name": "wait",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Promise",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								]
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "view/MainExample.ts",
+							"line": 161,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 235,
 					"name": "addExample",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 234,
+							"id": 236,
 							"name": "addExample",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4236,7 +4294,7 @@
 							},
 							"parameters": [
 								{
-									"id": 235,
+									"id": 237,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4264,20 +4322,20 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 195,
-							"character": 19
+							"line": 209,
+							"character": 25
 						}
 					]
 				},
 				{
-					"id": 236,
+					"id": 238,
 					"name": "addExampleStructure",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 237,
+							"id": 239,
 							"name": "addExampleStructure",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4287,7 +4345,7 @@
 							},
 							"parameters": [
 								{
-									"id": 238,
+									"id": 240,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4303,36 +4361,35 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "CommentDescriptor",
-								"id": 195
+								"type": "intrinsic",
+								"name": "void"
 							}
 						}
 					],
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 204,
+							"line": 220,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 224,
+					"id": 226,
 					"name": "createExecuteScript",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 225,
+							"id": 227,
 							"name": "createExecuteScript",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 226,
+									"id": 228,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4344,7 +4401,7 @@
 									}
 								},
 								{
-									"id": 227,
+									"id": 229,
 									"name": "exmpl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4370,13 +4427,13 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 153,
-							"character": 28
+							"line": 169,
+							"character": 34
 						}
 					]
 				},
 				{
-					"id": 221,
+					"id": 219,
 					"name": "example",
 					"kind": 64,
 					"kindString": "Function",
@@ -4385,7 +4442,7 @@
 					},
 					"signatures": [
 						{
-							"id": 222,
+							"id": 220,
 							"name": "example",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4395,7 +4452,7 @@
 							},
 							"parameters": [
 								{
-									"id": 223,
+									"id": 221,
 									"name": "exmpl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4418,27 +4475,27 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 126,
+							"line": 127,
 							"character": 23
 						}
 					]
 				},
 				{
-					"id": 242,
+					"id": 244,
 					"name": "executeError",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 243,
+							"id": 245,
 							"name": "executeError",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 244,
+									"id": 246,
 									"name": "e",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4458,20 +4515,20 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 252,
+							"line": 267,
 							"character": 21
 						}
 					]
 				},
 				{
-					"id": 239,
+					"id": 241,
 					"name": "executeScript",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 240,
+							"id": 242,
 							"name": "executeScript",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4481,7 +4538,7 @@
 							},
 							"parameters": [
 								{
-									"id": 241,
+									"id": 243,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4506,20 +4563,20 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 235,
+							"line": 250,
 							"character": 22
 						}
 					]
 				},
 				{
-					"id": 245,
+					"id": 247,
 					"name": "getCommentDescriptor",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 246,
+							"id": 248,
 							"name": "getCommentDescriptor",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4530,7 +4587,7 @@
 							},
 							"parameters": [
 								{
-									"id": 247,
+									"id": 249,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4545,7 +4602,7 @@
 									}
 								},
 								{
-									"id": 248,
+									"id": 250,
 									"name": "example",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4568,20 +4625,20 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 263,
+							"line": 278,
 							"character": 29
 						}
 					]
 				},
 				{
-					"id": 231,
+					"id": 233,
 					"name": "getNewID",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 232,
+							"id": 234,
 							"name": "getNewID",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4598,20 +4655,20 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 190,
+							"line": 204,
 							"character": 17
 						}
 					]
 				},
 				{
-					"id": 228,
+					"id": 230,
 					"name": "initDesc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 229,
+							"id": 231,
 							"name": "initDesc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4621,7 +4678,7 @@
 							},
 							"parameters": [
 								{
-									"id": 230,
+									"id": 232,
 									"name": "IDs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4643,7 +4700,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 172,
+							"line": 186,
 							"character": 17
 						}
 					]
@@ -4658,56 +4715,6 @@
 					},
 					"children": [
 						{
-							"id": 216,
-							"name": "hsdatab",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "view/MainExample.ts",
-									"line": 89,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hsdatab/index\""
-									}
-								]
-							},
-							"defaultValue": "    import(/* webpackChunkName: \"hsdatab\" */  'hsdatab')"
-						},
-						{
-							"id": 217,
-							"name": "hsgraph",
-							"kind": 32,
-							"kindString": "Variable",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "view/MainExample.ts",
-									"line": 90,
-									"character": 11
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hsgraph/index\""
-									}
-								]
-							},
-							"defaultValue": "    import(/* webpackChunkName: \"hsgraph\" */  'hsgraph')"
-						},
-						{
 							"id": 214,
 							"name": "hslayout",
 							"kind": 32,
@@ -4716,7 +4723,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 87,
+									"line": 88,
 									"character": 12
 								}
 							],
@@ -4741,7 +4748,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 86,
+									"line": 87,
 									"character": 10
 								}
 							],
@@ -4766,7 +4773,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 88,
+									"line": 89,
 									"character": 12
 								}
 							],
@@ -4791,7 +4798,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 85,
+									"line": 86,
 									"character": 5
 								}
 							],
@@ -4813,8 +4820,6 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								216,
-								217,
 								214,
 								213,
 								215,
@@ -4825,7 +4830,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 84,
+							"line": 85,
 							"character": 13
 						}
 					],
@@ -4847,22 +4852,23 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						218
+						216
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
+						222,
+						235,
+						238,
+						226,
+						219,
+						244,
+						241,
+						247,
 						233,
-						236,
-						224,
-						221,
-						242,
-						239,
-						245,
-						231,
-						228
+						230
 					]
 				},
 				{
@@ -4924,7 +4930,7 @@
 						{
 							"fileName": "view/Parts.ts",
 							"line": 4,
-							"character": 49
+							"character": 77
 						}
 					],
 					"type": {
@@ -5817,7 +5823,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 141,
+							"line": 142,
 							"character": 26
 						}
 					]
@@ -6238,7 +6244,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 202,
+							"line": 203,
 							"character": 22
 						}
 					]
@@ -6389,7 +6395,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 150,
+							"line": 151,
 							"character": 20
 						}
 					]
@@ -6530,14 +6536,14 @@
 			"kind": 1,
 			"children": [
 				1,
-				326,
-				365,
+				328,
+				367,
 				183,
-				366,
+				368,
 				31,
 				155,
-				249,
-				278,
+				251,
+				280,
 				194,
 				53,
 				47

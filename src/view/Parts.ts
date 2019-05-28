@@ -1,7 +1,7 @@
-import { m, Vnode} from 'hslayout';
+import { m, Vnode} from '../../node_modules/hslayout/index.js';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
-import { log as _log }  from 'hsutil';  const log = _log('Parts');
+import { log as _log }  from '../../node_modules/hsutil/index.js';  const log = _log('Parts');
 
 const SourceBase = 'data/src/'; 
 
@@ -123,6 +123,7 @@ export function signature(s:any, mdl:any): Vnode {
             ]));
         }
         switch (mdl.kindString) {
+            case undefined: break;
             case 'Method':
             case 'Function': 
             case 'Constructor': 

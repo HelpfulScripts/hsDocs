@@ -1,5 +1,5 @@
 const showdown  = require('showdown');
-import { m }  from 'hslayout';
+import { m }  from '../node_modules/hslayout/index.js';
 
 /**
  * process a markdown comment string and returns the equivalent html syntax. 

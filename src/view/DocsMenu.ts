@@ -1,6 +1,6 @@
-import { m, Vnode, Layout }     from 'hslayout';
+import { m, Vnode, Layout }     from '../../node_modules/hslayout/index.js';
 import { DocSets }              from '../DocSets'; 
-import { Menu, SelectorDesc }   from 'hswidget';
+import { Menu, SelectorDesc }   from '../../node_modules/hswidget/index.js';
  
 /**
  * Creates the title menu for selecting between the different docsets.

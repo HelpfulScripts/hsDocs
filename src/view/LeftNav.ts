@@ -3,9 +3,9 @@
  */
 
 /** */
-import { m, Vnode}  from 'hslayout';
-import { Layout }from 'hslayout';
-import { Collapsible }from 'hswidget';
+import { m, Vnode}  from '../../node_modules/hslayout/index.js';
+import { Layout }from '../../node_modules/hslayout/index.js';
+import { Collapsible }from '../../node_modules/hswidget/index.js';
 import { DocSets } from '../DocSets'; 
 import { libLink } from './Parts'; 
 
