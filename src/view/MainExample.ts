@@ -80,7 +80,7 @@ import { Layout }               from '../../node_modules/hslayout/index.js';
 import { shortCheckSum }        from '../../node_modules/hsutil/index.js'; 
 import { delay }                from '../../node_modules/hsutil/index.js'; 
 import * as hsutil              from '../../node_modules/hsutil/index.js';
-import { sourceLink } from './Parts';
+// import { sourceLink } from './Parts';
 
 const modules = {
     m:          Promise.resolve(m),
