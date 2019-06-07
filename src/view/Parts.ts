@@ -127,6 +127,9 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Method':
             case 'Function': 
             case 'Constructor': 
+            case 'External module': 
+            case 'Class': 
+            case 'Variable': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
