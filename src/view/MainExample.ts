@@ -72,23 +72,22 @@
  */
 
 /** */
-import { m }                    from '../../node_modules/hslayout/index.js';
-import { Menu, SelectorDesc }   from '../../node_modules/hswidget/index.js';
-import * as hswidget            from '../../node_modules/hswidget/index.js';
-import * as hslayout            from '../../node_modules/hslayout/index.js';
-import { Layout }               from '../../node_modules/hslayout/index.js';
-import { shortCheckSum }        from '../../node_modules/hsutil/index.js'; 
-import { delay }                from '../../node_modules/hsutil/index.js'; 
-import * as hsutil              from '../../node_modules/hsutil/index.js';
-// import { sourceLink } from './Parts';
+import { m }                    from 'hslayout';
+import { Menu, SelectorDesc }   from 'hswidget';
+import * as hswidget            from 'hswidget';
+import * as hslayout            from 'hslayout';
+import { Layout }               from 'hslayout';
+import { shortCheckSum }        from 'hsutil'; 
+import { delay }                from 'hsutil'; 
+import * as hsutil              from 'hsutil';
 
 const modules = {
     m:          Promise.resolve(m),
-    hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   '../../node_modules/hsutil/index.js'),
-    hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ '../../node_modules/hslayout/index.js'),
-    hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ '../../node_modules/hswidget/index.js'),
-    // hsdatab:    import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
-    // hsgraph:    import(/* webpackChunkName: "hsgraph" */  'hsgraph')
+    hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   'hsutil'),
+    hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ 'hslayout'),
+    hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ 'hswidget'),
+    hsdatab:    import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
+    hsgraph:    import(/* webpackChunkName: "hsgraph" */  'hsgraph')
 };
 
 /**
@@ -129,20 +128,14 @@ export function example(exmpl:string) {
     let IDs = gInitialized[instance]; 
     if (!IDs) {
         IDs = gInitialized[instance] = initDesc(IDs);
-        IDs.attrs = {};
         IDs.executeSource = exmpl;
         createExecuteScript(IDs, exmpl);
     }
-    if (!document.getElementById(IDs.menuID)) { addAndExecute(IDs, 1); }
-
-console.log(`decoding example ${IDs.attrs}`);
-    if (IDs.attrs.libs) {
-        let libs = IDs.attrs.libs.match(/\[(.*)\]/g);
-console.log(`example libs: ${libs}`);
-        libs = libs.split(',').map((lib:string) => lib.trim())
-            .map((lib:string) => modules[lib] = import(/* webpackChunkName: "[request]" */lib));
+    if (!document.getElementById(IDs.menuID)) { 
+        addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
     }
-    const frameHeight = IDs.attrs.height || '300px';
+
+    const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
     const wrapWithID = (css:string) => css==='$exampleID'? `#${IDs.exampleID}`: `#${IDs.menuID} ${css}`;
 
     // prefix css selectors with ID of main execution area to sandbox the scope
@@ -154,30 +147,23 @@ console.log(`example libs: ${libs}`);
                     IDs.pages['css'].replace(/(^|})\s*?(\S*?)\s*?{/gi,    // otherwise wrap each css statement
                         (x:string, ...args:any[]) => x.replace(args[1], wrapWithID(args[1]))
     );
-console.log('>>>>>>>>>>>');
     return `<style>${style}</style><example id=${IDs.exampleID} style="height:${frameHeight}" class="hs-layout-frame"></example>`;
 }
 
-async function addAndExecute(IDs:CommentDescriptor, wait:number) {
-    try {
-        await addExample(IDs);
-        await delay(1);
-        await executeScript(IDs);
-    } catch(e) { executeError(e); }    
-}
-
-async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
+function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     const libNames = Object.keys(modules);
-    const libs = await Promise.all(libNames.map(name => modules[name]));
-    try {
-        const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
-        IDs.executeScript = (root:any) => scriptFn(root, ...libs);
-        return true;
-    }
-    catch(e) { 
-        console.log('creating script:' + e); 
-        return false;
-    } 
+    return Promise.all(libNames.map(name => modules[name]))
+    .then((libs) => {
+        try {
+            const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
+            IDs.executeScript = (root:any) => scriptFn(root, ...libs);
+            return true;
+        }
+        catch(e) { 
+            console.log('creating script:' + e); 
+            return false;
+        } 
+    });
 }
 
 /**
@@ -206,10 +192,8 @@ function getNewID():string {
 }
 
 /** asynchronously adds the example structure on the page and then executed the script. */
-async function addExample(IDs:CommentDescriptor):Promise<CommentDescriptor> {
-    await addExampleStructure(IDs);
-    await delay(1); 
-    return IDs;
+function addExample(IDs:CommentDescriptor):Promise<CommentDescriptor> {
+    return Promise.resolve(IDs).then(addExampleStructure).then(delay(1)); 
 }
 
 /**
@@ -217,7 +201,7 @@ async function addExample(IDs:CommentDescriptor):Promise<CommentDescriptor> {
  * mount the menu and execute the script function provided in `IDs`. 
  * @param IDs the `CommentDescriptor` to execute on. 
  */
-function addExampleStructure(IDs:CommentDescriptor) { 
+function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor { 
     let item = IDs.activeSrcPage || 'js';
     const root = document.getElementById(IDs.exampleID);
 
@@ -241,6 +225,7 @@ function addExampleStructure(IDs:CommentDescriptor) {
             })
         ]})
     });
+    return IDs;
 }
 
 /**
@@ -278,10 +263,9 @@ function executeError(e:any) {
 function getCommentDescriptor(IDs:CommentDescriptor, example:string):string {
     let result = '';
     let attrs = example.match(/<example\s(\S*?)(\s|>)/i);
- console.log(`attrs: ${attrs}`);    
     if (attrs && attrs[1]) { 
         const at = attrs[1].split('=');
-        IDs.attrs[at[0]] =  at[1];
+        IDs.attrs =  {[at[0]]: at[1]};
     }
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
