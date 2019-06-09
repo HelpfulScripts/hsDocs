@@ -132,7 +132,11 @@ export function example(exmpl:string) {
         createExecuteScript(IDs, exmpl);
     }
     if (!document.getElementById(IDs.menuID)) { 
-        addExample(IDs).then(delay(1)).then(executeScript).catch(executeError);
+        Promise.resolve(IDs) 
+            .then(addExampleStructure)
+            .then(delay(1))
+            .then(executeScript)
+            .catch(executeError);
     }
 
     const frameHeight = (IDs.attrs? IDs.attrs.height : undefined) || '300px';
@@ -150,20 +154,20 @@ export function example(exmpl:string) {
     return `<style>${style}</style><example id=${IDs.exampleID} style="height:${frameHeight}" class="hs-layout-frame"></example>`;
 }
 
-function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
+async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     const libNames = Object.keys(modules);
-    return Promise.all(libNames.map(name => modules[name]))
-    .then((libs) => {
+    async function create() {
         try {
+            const libs = await Promise.all(libNames.map(async name => await modules[name]));
             const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
             IDs.executeScript = (root:any) => scriptFn(root, ...libs);
             return true;
-        }
-        catch(e) { 
+        } catch(e) { 
             console.log('creating script:' + e); 
             return false;
         } 
-    });
+    }
+    return await create();
 }
 
 /**
@@ -176,9 +180,14 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         desc:<SelectorDesc>{ 
             items:<string[]>[],
             selectedItem: 'js',
-            clicked: () => addExample(IDs)   // called when source menu changes
-                        .then(executeScript) 
-                        .catch(executeError),
+            clicked: async () => {
+                try {
+                    addExampleStructure(IDs);   // called when source menu changes
+                    await delay(1)();
+                    await executeScript(IDs);
+                } 
+                catch(e) { executeError(e); }
+            },
             size: ["50px"]
         },
         pages:{},
@@ -189,11 +198,6 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
 /** creates a new random example ID for each call. */
 function getNewID():string { 
     return 'hs'+Math.floor(1000000*Math.random());
-}
-
-/** asynchronously adds the example structure on the page and then executed the script. */
-function addExample(IDs:CommentDescriptor):Promise<CommentDescriptor> {
-    return Promise.resolve(IDs).then(addExampleStructure).then(delay(1)); 
 }
 
 /**
@@ -213,7 +217,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
         columns: ["50%"],
         content: [
             m(Layout, {
-                content: m('.hs-layout .hs-execution', {id:IDs.menuID}, 'placeholder')
+                content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div', 'placeholder'))
             }),
             m(Layout, {
                 rows:["30px", "fill"],

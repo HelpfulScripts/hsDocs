@@ -176,7 +176,8 @@
 131
 132
 133
-134</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+134
+135</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -272,6 +273,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3110x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3110x</span>
 <span class="cline-any cline-yes">3110x</span>
 <span class="cline-any cline-yes">3110x</span>
@@ -405,7 +407,8 @@ function loadDocSet(dir:string, file:string):Promise&lt;void&gt; {
 function recursiveIndex(content:any, index:any, lib:string, path='') {
     function getNewPath(content:any) {
         content.name = content.name.replace(/["'](.+)["']|(.+)/g, "$1$2");  // remove quotes 
-        const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
+        // const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
+        const elName  = content.name.replace(/\//g, '.');         // "a/b" =&gt; "a.b" /
         content.name = elName;
         return content.fullPath = (path==='')? elName : `${path}.${elName}`;
     }

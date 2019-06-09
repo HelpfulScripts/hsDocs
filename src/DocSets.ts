@@ -94,7 +94,8 @@ function loadDocSet(dir:string, file:string):Promise<void> {
 function recursiveIndex(content:any, index:any, lib:string, path='') {
     function getNewPath(content:any) {
         content.name = content.name.replace(/["'](.+)["']|(.+)/g, "$1$2");  // remove quotes 
-        const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
+        // const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
+        const elName  = content.name.replace(/\//g, '.');         // "a/b" => "a.b" /
         content.name = elName;
         return content.fullPath = (path==='')? elName : `${path}.${elName}`;
     }

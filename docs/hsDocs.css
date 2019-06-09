@@ -1215,7 +1215,7 @@ example .hs-source .hs-source-main {
   font-size: 12px;
 }
 example .hs-source .hs-selected {
-  background-color: #dde;
+  background-color: #d3d3e9;
 }
 example pre {
   padding-left: 10px;

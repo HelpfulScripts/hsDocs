@@ -100,7 +100,7 @@ export function sourceLink(mdl:any) {
  */
 export function libLink(css:string, lib:string, id:string, name:string) {
     return m(css, { href:`/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
-};
+}
 
 /**
  * creates a function or method signature
@@ -130,10 +130,12 @@ export function signature(s:any, mdl:any): Vnode {
             case 'External module': 
             case 'Class': 
             case 'Variable': 
+            case 'Type alias': 
+            case 'Interface': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-            default: log.warn(`unexpected kindString ${mdl.kindString}`);
+            default: log.warn(`unexpected kindString '${mdl.kindString}'`);
         }
     }
     return m('span.hs-item-signature', sig);
@@ -153,7 +155,8 @@ export function defaultVal(s:any, lib:string): Vnode {
 
 export function type(t:any, lib:string) {
     function _type(tt:any):any {
-        switch (tt.type) {
+        if (!tt) { return ''; }
+        else { switch (tt.type) {
             case undefined:         return '';
             case 'array':           return m('span.hs-item-type-array', ['Array<', _type(tt.elementType), '>']);
                                     
@@ -191,7 +194,7 @@ export function type(t:any, lib:string) {
             default: log.warn('unknown type '+ tt.type);
                      log.warn(log.inspect(t,3));
                      return t.type;
-        }
+        }}
     }
 
     try {

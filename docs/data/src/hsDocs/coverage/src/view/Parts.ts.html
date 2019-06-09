@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92% </span>
+        <span class="strong">91.18% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>92/100</span>
+        <span class='fraction'>93/102</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.9% </span>
+        <span class="strong">80.65% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>72/89</span>
+        <span class='fraction'>75/93</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90.48% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>19/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.51% </span>
+        <span class="strong">94.57% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>86/91</span>
+        <span class='fraction'>87/92</span>
       </div>
     </div>
   </div>
@@ -252,7 +252,10 @@
 207
 208
 209
-210</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+210
+211
+212
+213</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -384,6 +387,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -407,6 +412,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -563,7 +569,7 @@ export function sourceLink(mdl:any) {
  */
 export function libLink(css:string, lib:string, id:string, name:string) {
     return m(css, { href:`/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
-};
+}
 &nbsp;
 /**
  * creates a function or method signature
@@ -593,10 +599,12 @@ export function signature(s:any, mdl:any): Vnode {
             case 'External module': 
             case 'Class': 
             case 'Variable': 
+            case 'Type alias': 
+            case 'Interface': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-            default: log.warn(`unexpected kindString ${mdl.kindString}`);
+            default: log.warn(`unexpected kindString '${mdl.kindString}'`);
         }
     }
     return m('span.hs-item-signature', sig);
@@ -616,7 +624,8 @@ export function defaultVal(s:any, lib:string): Vnode {
 &nbsp;
 export function type(t:any, lib:string) {
     function _type(tt:any):any {
-        switch (tt.type) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!tt) { <span class="cstat-no" title="statement not covered" >return ''; </span>}
+        else { switch (tt.type) {
             case undefined:         return '';
             case 'array':           return m('span.hs-item-type-array', ['Array&lt;', _type(tt.elementType), '&gt;']);
                                     
@@ -654,7 +663,7 @@ export function type(t:any, lib:string) {
             default: log.warn('unknown type '+ tt.type);
                      log.warn(log.inspect(t,3));
                      return t.type;
-        }
+        }}
     }
 &nbsp;
     try {
