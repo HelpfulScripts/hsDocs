@@ -1028,7 +1028,7 @@ Object {
             Object {
               "_state": undefined,
               "attrs": Object {
-                "href": "/api/hsDocs/hsDocs.MainExample.modules.hsdatab",
+                "href": "/api/hsDocs/hsDocs.view.MainExample.modules.hsdatab",
                 "oncreate": [Function],
                 "onupdate": [Function],
               },

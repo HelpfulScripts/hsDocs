@@ -231,9 +231,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.DocsMenu"
+                  href="#!/api/hsDocs/hsDocs.view.DocsMenu"
                 >
-                  DocsMenu
+                  view.DocsMenu
                 </a>
               </div>
               <div />
@@ -254,7 +254,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.DocsMenu.DocsMenu"
+                      href="#!/api/hsDocs/hsDocs.view.DocsMenu.DocsMenu"
                     >
                       DocsMenu
                     </a>
@@ -275,9 +275,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.LeftNav"
+                  href="#!/api/hsDocs/hsDocs.view.LeftNav"
                 >
-                  LeftNav
+                  view.LeftNav
                 </a>
               </div>
               <div />
@@ -298,7 +298,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.LeftNav.LeftNav"
+                      href="#!/api/hsDocs/hsDocs.view.LeftNav.LeftNav"
                     >
                       LeftNav
                     </a>
@@ -318,7 +318,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.LeftNav.entries"
+                      href="#!/api/hsDocs/hsDocs.view.LeftNav.entries"
                     >
                       entries
                     </a>
@@ -327,7 +327,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.LeftNav.exportAscending"
+                      href="#!/api/hsDocs/hsDocs.view.LeftNav.exportAscending"
                     >
                       exportAscending
                     </a>
@@ -336,7 +336,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.LeftNav.navList"
+                      href="#!/api/hsDocs/hsDocs.view.LeftNav.navList"
                     >
                       navList
                     </a>
@@ -356,7 +356,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.LeftNav.ignoreModules"
+                      href="#!/api/hsDocs/hsDocs.view.LeftNav.ignoreModules"
                     >
                       ignoreModules
                     </a>
@@ -377,9 +377,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.MainComment"
+                  href="#!/api/hsDocs/hsDocs.view.MainComment"
                 >
-                  MainComment
+                  view.MainComment
                 </a>
               </div>
               <div />
@@ -400,7 +400,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.MainComment.comment"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.comment"
                     >
                       comment
                     </a>
@@ -409,7 +409,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.MainComment.commentLong"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.commentLong"
                     >
                       commentLong
                     </a>
@@ -418,7 +418,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.commentRemainder"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.commentRemainder"
                     >
                       commentRemainder
                     </a>
@@ -427,7 +427,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.mainCommentParams"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.mainCommentParams"
                     >
                       mainCommentParams
                     </a>
@@ -436,7 +436,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.otherCommentTags"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.otherCommentTags"
                     >
                       otherCommentTags
                     </a>
@@ -445,7 +445,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.prettifyCode"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.prettifyCode"
                     >
                       prettifyCode
                     </a>
@@ -454,7 +454,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.returns"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.returns"
                     >
                       returns
                     </a>
@@ -463,7 +463,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainComment.textOrShortTextOrDescription"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.textOrShortTextOrDescription"
                     >
                       textOrShortTextOrDescription
                     </a>
@@ -484,9 +484,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.MainDetail"
+                  href="#!/api/hsDocs/hsDocs.view.MainDetail"
                 >
-                  MainDetail
+                  view.MainDetail
                 </a>
               </div>
               <div />
@@ -507,7 +507,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.MainDetail.MainDetail"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.MainDetail"
                     >
                       MainDetail
                     </a>
@@ -527,7 +527,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.getOverview"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.getOverview"
                     >
                       getOverview
                     </a>
@@ -536,7 +536,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.itemChild"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.itemChild"
                     >
                       itemChild
                     </a>
@@ -545,7 +545,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.itemDescriptor"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.itemDescriptor"
                     >
                       itemDescriptor
                     </a>
@@ -554,7 +554,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.itemDoc"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.itemDoc"
                     >
                       itemDoc
                     </a>
@@ -563,7 +563,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.member"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.member"
                     >
                       member
                     </a>
@@ -572,7 +572,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.members"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.members"
                     >
                       members
                     </a>
@@ -581,7 +581,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.overviewDoc"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.overviewDoc"
                     >
                       overviewDoc
                     </a>
@@ -590,7 +590,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.parameter"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.parameter"
                     >
                       parameter
                     </a>
@@ -599,7 +599,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainDetail.title"
+                      href="#!/api/hsDocs/hsDocs.view.MainDetail.title"
                     >
                       title
                     </a>
@@ -620,9 +620,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.MainExample"
+                  href="#!/api/hsDocs/hsDocs.view.MainExample"
                 >
-                  MainExample
+                  view.MainExample
                 </a>
               </div>
               <div />
@@ -643,7 +643,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.CommentDescriptor"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.CommentDescriptor"
                     >
                       CommentDescriptor
                     </a>
@@ -666,7 +666,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.MainExample.example"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.example"
                     >
                       example
                     </a>
@@ -675,7 +675,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.addExample"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.addExample"
                     >
                       addExample
                     </a>
@@ -684,7 +684,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.addExampleStructure"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.addExampleStructure"
                     >
                       addExampleStructure
                     </a>
@@ -693,7 +693,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.createExecuteScript"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.createExecuteScript"
                     >
                       createExecuteScript
                     </a>
@@ -702,7 +702,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.executeError"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.executeError"
                     >
                       executeError
                     </a>
@@ -711,7 +711,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.executeScript"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.executeScript"
                     >
                       executeScript
                     </a>
@@ -720,7 +720,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.getCommentDescriptor"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.getCommentDescriptor"
                     >
                       getCommentDescriptor
                     </a>
@@ -729,7 +729,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.getNewID"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.getNewID"
                     >
                       getNewID
                     </a>
@@ -738,7 +738,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.initDesc"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.initDesc"
                     >
                       initDesc
                     </a>
@@ -758,7 +758,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.MainExample.modules"
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.modules"
                     >
                       modules
                     </a>
@@ -779,9 +779,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.Parts"
+                  href="#!/api/hsDocs/hsDocs.view.Parts"
                 >
-                  Parts
+                  view.Parts
                 </a>
               </div>
               <div />
@@ -805,7 +805,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.kindString"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.kindString"
                     >
                       kindString
                     </a>
@@ -814,7 +814,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.defaultVal"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.defaultVal"
                     >
                       defaultVal
                     </a>
@@ -823,7 +823,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.extensionOf"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.extensionOf"
                     >
                       extensionOf
                     </a>
@@ -832,7 +832,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.flags"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.flags"
                     >
                       flags
                     </a>
@@ -841,7 +841,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.inheritedFrom"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.inheritedFrom"
                     >
                       inheritedFrom
                     </a>
@@ -850,7 +850,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.itemName"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.itemName"
                     >
                       itemName
                     </a>
@@ -859,7 +859,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.itemTooltip"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.itemTooltip"
                     >
                       itemTooltip
                     </a>
@@ -868,7 +868,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.libLink"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.libLink"
                     >
                       libLink
                     </a>
@@ -877,7 +877,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.makeID"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.makeID"
                     >
                       makeID
                     </a>
@@ -886,7 +886,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.signature"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.signature"
                     >
                       signature
                     </a>
@@ -895,7 +895,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.sourceLink"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.sourceLink"
                     >
                       sourceLink
                     </a>
@@ -904,7 +904,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Parts.type"
+                      href="#!/api/hsDocs/hsDocs.view.Parts.type"
                     >
                       type
                     </a>
@@ -925,9 +925,9 @@ exports[`LeftNav shoud match snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.Tooltip"
+                  href="#!/api/hsDocs/hsDocs.view.Tooltip"
                 >
-                  Tooltip
+                  view.Tooltip
                 </a>
               </div>
               <div />
@@ -948,7 +948,7 @@ exports[`LeftNav shoud match snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Tooltip.tooltip"
+                      href="#!/api/hsDocs/hsDocs.view.Tooltip.tooltip"
                     >
                       tooltip
                     </a>
