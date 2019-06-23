@@ -1,7 +1,7 @@
-import { m, Vnode} from '../../node_modules/hslayout/index.js';
+import { m, Vnode} from 'hslayout';
 import { tooltip } from './Tooltip';
 import { DocSets } from '../DocSets'; 
-import { log as _log }  from '../../node_modules/hsutil/';  const log = _log('Parts');
+import { log as _log }  from 'hsutil';  const log = _log('Parts');
 
 const SourceBase = 'data/src/'; 
 
@@ -133,6 +133,7 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Type alias': 
             case 'Interface': 
             case 'Parameter': 
+            case 'Property': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;

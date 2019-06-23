@@ -1,7 +1,7 @@
-import { m, Vnode, Layout }     from '../../node_modules/hslayout/index.js';
+import { m, Vnode, Layout }     from 'hslayout';
 import { DocSets }              from '../DocSets'; 
-import { Menu, SelectorDesc }   from '../../node_modules/hswidget/index.js';
-import { log as gLog }          from '../../node_modules/hsutil/index'; const log = gLog('DocsMenu');
+import { Menu, SelectorDesc }   from 'hswidget';
+import { log as gLog }          from 'hsutil'; const log = gLog('DocsMenu');
  
 /**
  * Creates the title menu for selecting between the different docsets.

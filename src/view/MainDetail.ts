@@ -1,5 +1,5 @@
-import { m, Vnode}              from '../../node_modules/hslayout/index.js';
-import { Layout }               from '../../node_modules/hslayout/index.js';
+import { m, Vnode}              from 'hslayout';
+import { Layout }               from 'hslayout';
 import { DocSets }              from '../DocSets'; 
 import { comment, commentLong } from './MainComment';
 import { flags, sourceLink, 

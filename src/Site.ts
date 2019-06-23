@@ -3,13 +3,13 @@
  */
 
 /** */
-import * as hslayout  from '../node_modules/hslayout/index.js';
+import * as hslayout  from 'hslayout';
 import * as header  from './view/DocsMenu';
 import * as left    from './view/LeftNav';
 import * as main    from './view/MainDetail';
 
-import {m, Vnode}   from '../node_modules/hslayout/index.js';
-import { Config }   from '../node_modules/hslayout/index.js';
+import {m, Vnode}   from 'hslayout';
+import { Config }   from 'hslayout';
 
 const TitleHeight   = '30px'; 
 const FooterHeight  = '10px';  

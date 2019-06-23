@@ -7,8 +7,8 @@
  */
 
 /** */
-import { m }            from '../node_modules/hslayout/index.js';
-import { log as gLog }  from '../node_modules/hsutil/index'; const log = gLog('DocsSets');
+import { m }            from 'hslayout';
+import { log as gLog }  from 'hsutil'; const log = gLog('DocsSets');
 
 const DOCDIR:string = './data/';
 
@@ -95,13 +95,13 @@ export class DocSets {
         let i = file.lastIndexOf('/');
         const dir = file.substring(0,i+1);
         
-        console.log('loading docs dir');
         let found = false;
         if (!found) { found = await getIndexFile(file); }
         if (!found) { found = await getDirJSONs(dir); }
         if (!found) { found = await getDirJSONs(DOCDIR); }
         log.debug(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
-        await Promise.all(DocSets.gList.docs.map(async (f:string) => await loadDocSet(dir, f)));            
+        await Promise.all(DocSets.gList.docs.map(async (f:string) => await loadDocSet(dir, f)))
+        .catch(log.error);            
     }
 
     /**
@@ -125,10 +125,10 @@ export class DocSets {
  * @param dir the directory to read from
  * @param file the `json` file to load as docset
  */
-function loadDocSet(dir:string, file:string):Promise<void> {
-    return m.request({ method: "GET", url: dir+file })
-        .then((r:any) => DocSets.add(r, file))
-        .catch(console.log);
+async function loadDocSet(dir:string, file:string):Promise<void> {
+    log.info(`loading ${dir+file}`);
+    const r = await m.request({ method: "GET", url: dir+file });
+    DocSets.add(r, file);
 }
 
 /**
