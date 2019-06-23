@@ -1,6 +1,7 @@
 import { m, Vnode, Layout }     from '../../node_modules/hslayout/index.js';
 import { DocSets }              from '../DocSets'; 
 import { Menu, SelectorDesc }   from '../../node_modules/hswidget/index.js';
+import { log as gLog }          from '../../node_modules/hsutil/index'; const log = gLog('DocsMenu');
  
 /**
  * Creates the title menu for selecting between the different docsets.
@@ -23,7 +24,8 @@ export class DocsMenu extends Layout {
         if (this.docSet !== attrs.docSet) {
             this.docSet = attrs.docSet;
             DocSets.loadList(attrs.docSet)
-            .then(() => m.redraw);
+            .then(() => m.redraw)
+            .catch(log.error);
         }
         const items = DocSets.get(); 
         return {

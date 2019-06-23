@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">91.18% </span>
+        <span class="strong">90.2% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>93/102</span>
+        <span class='fraction'>92/102</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.65% </span>
+        <span class="strong">79.79% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>75/93</span>
+        <span class='fraction'>75/94</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90.48% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>19/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.57% </span>
+        <span class="strong">93.48% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>87/92</span>
+        <span class='fraction'>86/92</span>
       </div>
     </div>
   </div>
@@ -255,7 +255,8 @@
 210
 211
 212
-213</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+213
+214</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -389,10 +390,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -601,10 +603,11 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Variable': 
             case 'Type alias': 
             case 'Interface': 
+            case 'Parameter': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-            default: log.warn(`unexpected kindString '${mdl.kindString}'`);
+<span class="branch-10 cbranch-no" title="branch not covered" >            default: <span class="cstat-no" title="statement not covered" >log.warn(`unexpected kindString '${mdl.kindString}'`);</span></span>
         }
     }
     return m('span.hs-item-signature', sig);
@@ -661,7 +664,7 @@ export function type(t:any, lib:string) {
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
             default: log.warn('unknown type '+ tt.type);
-                     log.warn(log.inspect(t,3));
+                     log.debug(log.inspect(t,3));
                      return t.type;
         }}
     }
