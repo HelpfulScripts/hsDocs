@@ -80,14 +80,16 @@ import { Layout }               from 'hslayout';
 import { shortCheckSum }        from 'hsutil'; 
 import { delay }                from 'hsutil'; 
 import * as hsutil              from 'hsutil';
+import * as hsdatab             from 'hsdatab';
+import * as hsgraph             from 'hsgraph';
 
 const modules = {
     m:          Promise.resolve(m),
     hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   'hsutil'),
     hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ 'hslayout'),
     hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ 'hswidget'),
-    hsdatab:    import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
-    hsgraph:    import(/* webpackChunkName: "hsgraph" */  'hsgraph')
+    hsdatab:    Promise.resolve(hsdatab), // import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
+    hsgraph:    Promise.resolve(hsgraph), // import(/* webpackChunkName: "hsgraph" */  'hsgraph')
 };
 
 /**
