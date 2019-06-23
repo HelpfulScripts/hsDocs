@@ -15,7 +15,7 @@ const set = {
 m.request = (req: any) => {
     if (req.url === 'mylist.json') {
         return Promise.resolve(set);
-    } else {
+    } else if(req.url.endsWith('.json')) {
         return new Promise((resolve:(data:any)=>void, reject:(err:any)=>void) => {
             fs.readFile(`${__dirname}/../example/${req.url}`, 'utf8', (err:any, data:any) => {
                 if (err) { throw err; }
@@ -25,6 +25,8 @@ m.request = (req: any) => {
         .then((data:any) => (typeof data === 'string')? JSON.parse(data) : data)
         .catch(console.log)
         ;
+    } else {
+        return Promise.resolve('dir');
     }
 };
 
