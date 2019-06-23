@@ -132,6 +132,7 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Variable': 
             case 'Type alias': 
             case 'Interface': 
+            case 'Parameter': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
@@ -192,7 +193,7 @@ export function type(t:any, lib:string) {
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
             default: log.warn('unknown type '+ tt.type);
-                     log.warn(log.inspect(t,3));
+                     log.debug(log.inspect(t,3));
                      return t.type;
         }}
     }
