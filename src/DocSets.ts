@@ -7,7 +7,10 @@
  */
 
 /** */
-import { m }    from '../node_modules/hslayout/index.js';
+import { m }            from '../node_modules/hslayout/index.js';
+import { log as gLog }  from '../node_modules/hsutil/index'; const log = gLog('DocsSets');
+
+const DOCDIR:string = './data/';
 
 /**
  * the default location for the index .json files, relative to the web page:
@@ -15,6 +18,15 @@ import { m }    from '../node_modules/hslayout/index.js';
  */
 const FILE:string = './data/index.json';
 
+function matchAll(str:string, re:RegExp): string[] {
+    const result:string[] = [];
+    let partial:string[];
+    while ((partial = re.exec(str)) !== null) {
+        result.push(partial[1]);
+        log.debug(log.inspect(partial));
+    }
+    return result;
+}
 
 /**
  * DocSets object. Keeps a list of registered docsets and 
@@ -22,7 +34,7 @@ const FILE:string = './data/index.json';
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList = <{set:string[], index:{}, docs:[string]}>{set:<string[]>[], index:{}, docs:<string[]>[]};
+    private static gList = <{set:string[], index:{}, docs:string[]}>{set:<string[]>[], index:{}, docs:<string[]>[]};
     private static gTitle: string;
 
     /**
@@ -44,17 +56,52 @@ export class DocSets {
      * read from the index file specified by {@link DocSets.FILE `FILE`}.
      * @return a promise to load the index set
      */
-    public static loadList(file?:string):Promise<void> {
+    public static async loadList(file?:string):Promise<void> {
+        async function getIndexFile(url:string):Promise<boolean> {
+            if (!url) { return false; }
+            try {
+                const result = await m.request({ method: "GET", url: file});
+                DocSets.gTitle = result.title;
+                DocSets.gList.docs = result.docs;
+                log.info(`found index file ${url}`);
+                return true;
+            } catch(e) {
+                return false;
+            }
+        }
+        async function getDirJSONs(url:string):Promise<boolean> {
+            let result = false;
+            await m.request({ method: "GET", url: url, 
+                // catch extract to avoid attempt to deserialize
+                extract: async (xhr:any, options:any) => { 
+                    const matches = matchAll(xhr.responseText, /<a href="(\S*?.json)">/g);  // all *.json references
+                    // check if index.jon exists:
+                    const index = matches.filter(m => m==='index.json')[0];
+                    const jsons = matches.filter(m => !m.startsWith('index'));
+
+                    if (index) { 
+                        result = await getIndexFile(index); 
+                    } else if (jsons.length) {
+                        log.info(`found dir list in ${url}`);
+                        DocSets.gTitle = '';
+                        DocSets.gList.docs = jsons;
+                        result = true;
+                    }
+                }
+            });
+            return result;
+        }
         file = file;   
         let i = file.lastIndexOf('/');
         const dir = file.substring(0,i+1);
-        return m.request({ method: "GET", url: file || FILE})
-        .then((result:any) => {
-            DocSets.gTitle = result.title;
-            DocSets.gList.docs = result.docs;
-            return Promise.all(result.docs.map((f:string) => loadDocSet(dir, f)));            
-        })
-        .catch(console.log);
+        
+        console.log('loading docs dir');
+        let found = false;
+        if (!found) { found = await getIndexFile(file); }
+        if (!found) { found = await getDirJSONs(dir); }
+        if (!found) { found = await getDirJSONs(DOCDIR); }
+        log.debug(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
+        await Promise.all(DocSets.gList.docs.map(async (f:string) => await loadDocSet(dir, f)));            
     }
 
     /**
