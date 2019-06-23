@@ -440,7 +440,7 @@
 						{
 							"fileName": "DocSets.ts",
 							"line": 11,
-							"character": 70
+							"character": 48
 						}
 					],
 					"type": {
@@ -511,7 +511,7 @@
 						{
 							"fileName": "DocSets.ts",
 							"line": 128,
-							"character": 19
+							"character": 25
 						}
 					]
 				},
@@ -2161,7 +2161,7 @@
 						{
 							"fileName": "view/DocsMenu.ts",
 							"line": 4,
-							"character": 81
+							"character": 56
 						}
 					],
 					"type": {
@@ -3982,7 +3982,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 104,
+									"line": 106,
 									"character": 17
 								}
 							],
@@ -4002,7 +4002,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 100,
+									"line": 102,
 									"character": 9
 								}
 							],
@@ -4026,7 +4026,7 @@
 											"sources": [
 												{
 													"fileName": "view/MainExample.ts",
-													"line": 100,
+													"line": 102,
 													"character": 19
 												}
 											],
@@ -4048,7 +4048,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 100,
+											"line": 102,
 											"character": 11
 										}
 									]
@@ -4064,7 +4064,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 99,
+									"line": 101,
 									"character": 8
 								}
 							],
@@ -4082,7 +4082,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 97,
+									"line": 99,
 									"character": 13
 								}
 							],
@@ -4102,7 +4102,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 102,
+									"line": 104,
 									"character": 17
 								}
 							],
@@ -4143,7 +4143,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 102,
+											"line": 104,
 											"character": 19
 										}
 									]
@@ -4161,7 +4161,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 103,
+									"line": 105,
 									"character": 17
 								}
 							],
@@ -4179,7 +4179,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 98,
+									"line": 100,
 									"character": 10
 								}
 							],
@@ -4197,7 +4197,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 101,
+									"line": 103,
 									"character": 9
 								}
 							],
@@ -4221,7 +4221,7 @@
 											"sources": [
 												{
 													"fileName": "view/MainExample.ts",
-													"line": 101,
+													"line": 103,
 													"character": 19
 												}
 											],
@@ -4243,7 +4243,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 101,
+											"line": 103,
 											"character": 10
 										}
 									]
@@ -4270,7 +4270,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 96,
+							"line": 98,
 							"character": 27
 						}
 					]
@@ -4289,7 +4289,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 110,
+							"line": 112,
 							"character": 18
 						}
 					],
@@ -4313,7 +4313,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 110,
+											"line": 112,
 											"character": 26
 										}
 									],
@@ -4336,7 +4336,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 110,
+									"line": 112,
 									"character": 19
 								}
 							]
@@ -4386,7 +4386,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 208,
+							"line": 210,
 							"character": 28
 						}
 					]
@@ -4444,7 +4444,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 157,
+							"line": 159,
 							"character": 34
 						}
 					]
@@ -4492,7 +4492,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 126,
+							"line": 128,
 							"character": 23
 						}
 					]
@@ -4532,7 +4532,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 256,
+							"line": 258,
 							"character": 21
 						}
 					]
@@ -4580,7 +4580,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 239,
+							"line": 241,
 							"character": 22
 						}
 					]
@@ -4642,7 +4642,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 267,
+							"line": 269,
 							"character": 29
 						}
 					]
@@ -4672,7 +4672,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 199,
+							"line": 201,
 							"character": 17
 						}
 					]
@@ -4717,7 +4717,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 176,
+							"line": 178,
 							"character": 17
 						}
 					]
@@ -4740,7 +4740,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 89,
+									"line": 91,
 									"character": 11
 								}
 							],
@@ -4754,7 +4754,7 @@
 									}
 								]
 							},
-							"defaultValue": "    import(/* webpackChunkName: \"hsdatab\" */  'hsdatab')"
+							"defaultValue": "    Promise.resolve(hsdatab)"
 						},
 						{
 							"id": 170,
@@ -4765,7 +4765,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 90,
+									"line": 92,
 									"character": 11
 								}
 							],
@@ -4779,7 +4779,7 @@
 									}
 								]
 							},
-							"defaultValue": "    import(/* webpackChunkName: \"hsgraph\" */  'hsgraph')"
+							"defaultValue": "    Promise.resolve(hsgraph)"
 						},
 						{
 							"id": 167,
@@ -4790,7 +4790,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 87,
+									"line": 89,
 									"character": 12
 								}
 							],
@@ -4815,7 +4815,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 86,
+									"line": 88,
 									"character": 10
 								}
 							],
@@ -4840,7 +4840,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 88,
+									"line": 90,
 									"character": 12
 								}
 							],
@@ -4865,7 +4865,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 85,
+									"line": 87,
 									"character": 5
 								}
 							],
@@ -4899,7 +4899,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 84,
+							"line": 86,
 							"character": 13
 						}
 					],
@@ -4997,7 +4997,7 @@
 						{
 							"fileName": "view/Parts.ts",
 							"line": 4,
-							"character": 69
+							"character": 49
 						}
 					],
 					"type": {
@@ -5057,7 +5057,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 148,
+							"line": 149,
 							"character": 26
 						}
 					]
@@ -5478,7 +5478,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 210,
+							"line": 211,
 							"character": 22
 						}
 					]
@@ -5629,7 +5629,7 @@
 					"sources": [
 						{
 							"fileName": "view/Parts.ts",
-							"line": 157,
+							"line": 158,
 							"character": 20
 						}
 					]
