@@ -489,7 +489,7 @@ export class DocSets {
 <span class="cstat-no" title="statement not covered" >                    if (index) { </span>
 <span class="cstat-no" title="statement not covered" >                        result = await getIndexFile(index); </span>
                     } else <span class="cstat-no" title="statement not covered" >if (jsons.length) {</span>
-<span class="cstat-no" title="statement not covered" >                        log.info(`found dir list ${url}`);</span>
+<span class="cstat-no" title="statement not covered" >                        log.info(`found dir list in ${url}`);</span>
 <span class="cstat-no" title="statement not covered" >                        DocSets.gTitle = '';</span>
 <span class="cstat-no" title="statement not covered" >                        DocSets.gList.docs = jsons;</span>
 <span class="cstat-no" title="statement not covered" >                        result = true;</span>
@@ -507,7 +507,7 @@ export class DocSets {
         <span class="missing-if-branch" title="else path not taken" >E</span>if (!found) { found = await getIndexFile(file); }
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!found) { <span class="cstat-no" title="statement not covered" >found = await getDirJSONs(dir); </span>}
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!found) { <span class="cstat-no" title="statement not covered" >found = await getDirJSONs(DOCDIR); </span>}
-        log.info(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
+        log.debug(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
         await Promise.all(DocSets.gList.docs.map(async (f:string) =&gt; await loadDocSet(dir, f)));            
     }
 &nbsp;
