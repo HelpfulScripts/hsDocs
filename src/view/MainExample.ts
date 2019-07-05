@@ -22,18 +22,46 @@
  * </code> 
  * 
  * ### Scripts 
- * Scripts are expected to mount a `mithril Vnode` on a root DOM element using `m.mount` or `m.render`. 
- * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
- * main hsDocs site menu and navigation.
+ * Scripts are intended to be live examples for explaining some concept of the module are contained in. 
  * 
  * hsDocs internally uses the [global `Function` object][Function] to parse and execute the script. 
- * Thus the script has access only to global objects and to objects provided
- * as parameters in the `Function` constructor. hsDocs currently provides the following namespaces as parameters
+ * Thus the script runs in the global scope and has access to global objects. A number of additional objects are provided
+ * as parameters in the `Function` constructor and are thus available to the script. 
+ * hsDocs currently provides the following namespaces as parameters
  * for use in the scripts:
  * - **m**: the `Mithril` m function    
  * - **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.
  * - **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.
  * - additionally, the parameter **root** is provided as the DOM element to mount to.
+ * 
+ * Scripts can manipulate any of the provided objects. 
+ * #### Using Mithril:
+ * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
+ * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
+ * main hsDocs site menu and navigation.
+ * ```
+ * m.mount(root, { view:() => m('div', 'content')});
+ * ```
+ * #### Using d3:
+ * ```
+ * const base = d3.select(cfg.root);
+ *  const svg = base.append('svg')
+ *     .classed('baseSVG', true)
+ *     .attr('height', '100%')
+ *     .attr('width', '100%')
+ *     .attr('preserveAspectRatio', 'xMinYMin meet');
+ * ```
+ * 
+ * #### Configuring the `example`
+ * The &lt;example&gt accepts additional arguments to configure the example:
+ * - height=<numper>px   the height of the example box; defaults to 300
+ * - libs={<export name>:<path>}   a list of additional libraries to load. `export name` is the symbol exported by the library.
+ * This symbol will be available to the script. The main intent is to load the library being documented so that its features 
+ * can be illustrated by the example script.
+ * For example:
+ * ```
+ * &lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&gt
+ * ```
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -94,7 +122,7 @@ const modules = {
 interface Attribute {
     height?: string;
     libs?: {
-        [name:string]: string
+        [name:string]: string;
     };
 }
 
@@ -102,7 +130,7 @@ interface Attribute {
  * describes an executable comment example
  */
 interface CommentDescriptor { 
-    created:   boolean,                 // indicates if all dynamic modules are loaded
+    created:   boolean;                 // indicates if all dynamic modules are loaded
     exampleID: string;                  // example tag ID
     menuID:    string;                  // menu tag ID
     desc:   SelectorDesc;               // menu items
@@ -330,7 +358,7 @@ async function loadScript(path:string) {
     const content = await m.request({ method: "GET", url: path, extract: async (xhr:any, options:any) => { 
         log.info(`script ${path}: ${xhr.responseText.length}`);
         return xhr.responseText;
-     }})
+     }});
     const s = document.createElement('script');
     s.type = 'text/javascript';
     const code = content;
