@@ -134,6 +134,7 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Interface': 
             case 'Parameter': 
             case 'Property': 
+            case 'Object literal': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
