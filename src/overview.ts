@@ -99,7 +99,7 @@ Examples:
 
 ### Mithril Code Examples
  * `hsDocs` supports creating inline code examples in comment sections as explained 
- * in the {@link hsDocs:MainExample MainExample overview}.
+ * in the {@link hsDocs:view.MainExample MainExample overview}.
  * <example>
  * <file name="script.js">
  * let tl = [10, 10];
