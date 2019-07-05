@@ -1,8 +1,8 @@
 /**
- * Comment sections may contain code examples that are placed within &lt;example&gt; tags.
+ * Comment sections may contain code examples that demonstrate code behaviour and usage.
  * 
- * `hsDocs` will interpret and execute Javascript instructions within a &lt;`file name='script.js'`&gt; tag.
- * and stylesheet instructions with a &lt;`file name='style.css'`&gt; tag, as in following example:
+ * `hsDocs` will interpret and execute Javascript instructions within a `<file name='script.js'>` tag.
+ * and stylesheet instructions with a &lt;`file name='style.css'`&gt; tag, as in following example (also see Example below):
  * <code>
  *     &lt;example&gt; 
  *     <file name='script.js'>
@@ -22,9 +22,10 @@
  * </code> 
  * 
  * ### Scripts 
- * Scripts are intended to be live examples for explaining some concept of the module are contained in. 
+ * Scripts are enclosed by `<file name='script.js'>` and `</file>` tags and are intended to be live examples for 
+ * explaining some concept of the module are contained in. 
  * 
- * hsDocs internally uses the [global `Function` object][Function] to parse and execute the script. 
+ * hsDocs internally uses the [global Function object][Function] to parse and execute the script. 
  * Thus the script runs in the global scope and has access to global objects. A number of additional objects are provided
  * as parameters in the `Function` constructor and are thus available to the script. 
  * hsDocs currently provides the following namespaces as parameters
@@ -32,9 +33,9 @@
  * - **m**: the `Mithril` m function    
  * - **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.
  * - **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.
- * - additionally, the parameter **root** is provided as the DOM element to mount to.
+ * - **root**: the DOM element to attach content to.
  * 
- * Scripts can manipulate any of the provided objects. 
+ * Scripts can use and manipulate any of the provided objects. 
  * #### Using Mithril:
  * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
  * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
@@ -44,7 +45,7 @@
  * ```
  * #### Using d3:
  * ```
- * const base = d3.select(cfg.root);
+ * const base = d3.select(root);
  *  const svg = base.append('svg')
  *     .classed('baseSVG', true)
  *     .attr('height', '100%')
@@ -53,15 +54,15 @@
  * ```
  * 
  * #### Configuring the `example`
- * The &lt;example&gt accepts additional arguments to configure the example:
+ * The `&lt;example&gt` accepts additional arguments to configure the example:
  * - height=<numper>px   the height of the example box; defaults to 300
  * - libs={<export name>:<path>}   a list of additional libraries to load. `export name` is the symbol exported by the library.
  * This symbol will be available to the script. The main intent is to load the library being documented so that its features 
  * can be illustrated by the example script.
  * For example:
- * ```
+ * <code>
  * &lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&gt
- * ```
+ * </code>
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -80,8 +81,8 @@
  *         css:'.myExample', 
  *         columns:[], 
  *         content:[
- *             'third line',
- *             'fourth line'
+ *             'left column',
+ *             'right column'
  *         ]
  *     })
  * });
@@ -285,7 +286,7 @@ function executeScript(IDs:CommentDescriptor) {
             log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
         }
     } else {
-        log.error(`root not found for menuID ${IDs.menuID}`);
+        // log.error(`root not found for menuID ${IDs.menuID}`);
     }
     m.redraw();
     return IDs;

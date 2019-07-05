@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.14% </span>
+        <span class="strong">44.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/111</span>
+        <span class='fraction'>49/110</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">35.29% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>8/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46% </span>
+        <span class="strong">46.46% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/100</span>
+        <span class='fraction'>46/99</span>
       </div>
     </div>
   </div>
@@ -386,7 +386,65 @@
 341
 342
 343
-344</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -645,7 +703,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -730,10 +788,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Comment sections may contain code examples that are placed within &amp;lt;example&amp;gt; tags.
+ * Comment sections may contain code examples that demonstrate code behaviour and usage.
  * 
- * `hsDocs` will interpret and execute Javascript instructions within a &amp;lt;`file name='script.js'`&amp;gt; tag.
- * and stylesheet instructions with a &amp;lt;`file name='style.css'`&amp;gt; tag, as in following example:
+ * `hsDocs` will interpret and execute Javascript instructions within a `&lt;file name='script.js'&gt;` tag.
+ * and stylesheet instructions with a &amp;lt;`file name='style.css'`&amp;gt; tag, as in following example (also see Example below):
  * &lt;code&gt;
  *     &amp;lt;example&amp;gt; 
  *     &lt;file name='script.js'&gt;
@@ -753,18 +811,47 @@
  * &lt;/code&gt; 
  * 
  * ### Scripts 
- * Scripts are expected to mount a `mithril Vnode` on a root DOM element using `m.mount` or `m.render`. 
- * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
- * main hsDocs site menu and navigation.
+ * Scripts are enclosed by `&lt;file name='script.js'&gt;` and `&lt;/file&gt;` tags and are intended to be live examples for 
+ * explaining some concept of the module are contained in. 
  * 
- * hsDocs internally uses the [global `Function` object][Function] to parse and execute the script. 
- * Thus the script has access only to global objects and to objects provided
- * as parameters in the `Function` constructor. hsDocs currently provides the following namespaces as parameters
+ * hsDocs internally uses the [global Function object][Function] to parse and execute the script. 
+ * Thus the script runs in the global scope and has access to global objects. A number of additional objects are provided
+ * as parameters in the `Function` constructor and are thus available to the script. 
+ * hsDocs currently provides the following namespaces as parameters
  * for use in the scripts:
  * - **m**: the `Mithril` m function    
  * - **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.
  * - **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.
- * - additionally, the parameter **root** is provided as the DOM element to mount to.
+ * - **root**: the DOM element to attach content to.
+ * 
+ * Scripts can use and manipulate any of the provided objects. 
+ * #### Using Mithril:
+ * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
+ * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
+ * main hsDocs site menu and navigation.
+ * ```
+ * m.mount(root, { view:() =&gt; m('div', 'content')});
+ * ```
+ * #### Using d3:
+ * ```
+ * const base = d3.select(root);
+ *  const svg = base.append('svg')
+ *     .classed('baseSVG', true)
+ *     .attr('height', '100%')
+ *     .attr('width', '100%')
+ *     .attr('preserveAspectRatio', 'xMinYMin meet');
+ * ```
+ * 
+ * #### Configuring the `example`
+ * The `&amp;lt;example&amp;gt` accepts additional arguments to configure the example:
+ * - height=&lt;numper&gt;px   the height of the example box; defaults to 300
+ * - libs={&lt;export name&gt;:&lt;path&gt;}   a list of additional libraries to load. `export name` is the symbol exported by the library.
+ * This symbol will be available to the script. The main intent is to load the library being documented so that its features 
+ * can be illustrated by the example script.
+ * For example:
+ * &lt;code&gt;
+ * &amp;lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&amp;gt
+ * &lt;/code&gt;
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -783,8 +870,8 @@
  *         css:'.myExample', 
  *         columns:[], 
  *         content:[
- *             'third line',
- *             'fourth line'
+ *             'left column',
+ *             'right column'
  *         ]
  *     })
  * });
@@ -825,7 +912,7 @@ const modules = {
 interface Attribute {
     height?: string;
     libs?: {
-        [name:string]: string
+        [name:string]: string;
     };
 }
 &nbsp;
@@ -833,7 +920,7 @@ interface Attribute {
  * describes an executable comment example
  */
 interface CommentDescriptor { 
-    created:   boolean,                 // indicates if all dynamic modules are loaded
+    created:   boolean;                 // indicates if all dynamic modules are loaded
     exampleID: string;                  // example tag ID
     menuID:    string;                  // menu tag ID
     desc:   SelectorDesc;               // menu items
@@ -988,7 +1075,7 @@ function <span class="fstat-no" title="function not covered" >executeScript(</sp
 <span class="cstat-no" title="statement not covered" >            log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); </span>
         }
     } else {
-<span class="cstat-no" title="statement not covered" >        log.error(`root not found for menuID ${IDs.menuID}`);</span>
+        // log.error(`root not found for menuID ${IDs.menuID}`);
     }
 <span class="cstat-no" title="statement not covered" >    m.redraw();</span>
 <span class="cstat-no" title="statement not covered" >    return IDs;</span>
@@ -1061,7 +1148,7 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
     const content = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: path, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > { </span></span></span>
 <span class="cstat-no" title="statement not covered" >        log.info(`script ${path}: ${xhr.responseText.length}`);</span>
 <span class="cstat-no" title="statement not covered" >        return xhr.responseText;</span>
-     }})
+     }});
     const s = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>
 <span class="cstat-no" title="statement not covered" >    s.type = 'text/javascript';</span>
     const code = <span class="cstat-no" title="statement not covered" >content;</span>

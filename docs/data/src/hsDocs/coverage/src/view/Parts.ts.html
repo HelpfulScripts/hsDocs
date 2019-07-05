@@ -25,9 +25,9 @@
         <span class='fraction'>92/102</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">80.21% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>76/95</span>
+        <span class='fraction'>77/96</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90.48% </span>
@@ -257,7 +257,8 @@
 212
 213
 214
-215</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+215
+216</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -383,6 +384,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -607,10 +609,11 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Interface': 
             case 'Parameter': 
             case 'Property': 
+            case 'Object literal': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));
                 break;
-<span class="branch-11 cbranch-no" title="branch not covered" >            default: <span class="cstat-no" title="statement not covered" >log.warn(`unexpected kindString '${mdl.kindString}'`);</span></span>
+<span class="branch-12 cbranch-no" title="branch not covered" >            default: <span class="cstat-no" title="statement not covered" >log.warn(`unexpected kindString '${mdl.kindString}'`);</span></span>
         }
     }
     return m('span.hs-item-signature', sig);
