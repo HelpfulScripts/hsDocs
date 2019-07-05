@@ -114,6 +114,9 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
                 },
                 { expand:true, cwd: './src/docs',       // project-specific docs index*.html
                     src:['index*.html'], dest:'docs' 
+                },
+                { expand:true, cwd: './',       // project-specific docs index*.html
+                    src:[`${lib}.css*`], dest:'docs' 
                 }
             ]},
             example:{ expand:true, cwd: 'src/example', 
