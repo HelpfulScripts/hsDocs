@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.88% </span>
+        <span class="strong">40.83% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/117</span>
+        <span class='fraction'>49/120</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>8/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.1% </span>
+        <span class="strong">43.81% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/102</span>
+        <span class='fraction'>46/105</span>
       </div>
     </div>
   </div>
@@ -440,7 +440,10 @@
 395
 396
 397
-398</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+398
+399
+400
+401</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -824,7 +827,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1216,12 +1222,15 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
         `https://helpfulscripts.github.io/${path}/${path}.js`
     ];
     let content:any;
-<span class="cstat-no" title="statement not covered" >    await Promise.resolve(paths.some(<span class="fstat-no" title="function not covered" >async (p</span>, i) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
-<span class="cstat-no" title="statement not covered" >        if (i===0 &amp;&amp; path.indexOf('/')&lt;0) { <span class="cstat-no" title="statement not covered" >return false; </span>} </span>// don't attempt `path` if it is unstructured
-<span class="cstat-no" title="statement not covered" >        content = await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > <span class="cstat-no" title="statement not covered" ></span>xhr </span></span>});</span>
-<span class="cstat-no" title="statement not covered" >        if (content.status === 200) { <span class="cstat-no" title="statement not covered" >return true; </span>}</span>
-        else { <span class="cstat-no" title="statement not covered" >log.warn(`${content.status}: ${paths[0]}`); </span>}
-    }));
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        await Promise.resolve(paths.some(<span class="fstat-no" title="function not covered" >async (p</span>, i) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+<span class="cstat-no" title="statement not covered" >            if (i===0 &amp;&amp; path.indexOf('/')&lt;0) { <span class="cstat-no" title="statement not covered" >return false; </span>} </span>// don't attempt `path` if it is unstructured
+<span class="cstat-no" title="statement not covered" >            log.info(`loading lib from ${p}`);</span>
+<span class="cstat-no" title="statement not covered" >            content = await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > <span class="cstat-no" title="statement not covered" ></span>xhr </span></span>});</span>
+<span class="cstat-no" title="statement not covered" >            if (content.status === 200) { <span class="cstat-no" title="statement not covered" >return true; </span>}</span>
+            else { <span class="cstat-no" title="statement not covered" >log.warn(`${content.status}: ${paths[0]}`); </span>}
+        }));
+    } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}: ${e}`);}</span>
     
     // add script
     const s = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>

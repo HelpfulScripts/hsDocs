@@ -377,12 +377,15 @@ async function loadScript(path:string) {
         `https://helpfulscripts.github.io/${path}/${path}.js`
     ];
     let content:any;
-    await Promise.resolve(paths.some(async (p, i) => {
-        if (i===0 && path.indexOf('/')<0) { return false; } // don't attempt `path` if it is unstructured
-        content = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
-        if (content.status === 200) { return true; }
-        else { log.warn(`${content.status}: ${paths[0]}`); }
-    }));
+    try {
+        await Promise.resolve(paths.some(async (p, i) => {
+            if (i===0 && path.indexOf('/')<0) { return false; } // don't attempt `path` if it is unstructured
+            log.info(`loading lib from ${p}`);
+            content = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
+            if (content.status === 200) { return true; }
+            else { log.warn(`${content.status}: ${paths[0]}`); }
+        }));
+    } catch(e) { log.error(`loading lib ${path}: ${e}`);}
     
     // add script
     const s = document.createElement('script');
