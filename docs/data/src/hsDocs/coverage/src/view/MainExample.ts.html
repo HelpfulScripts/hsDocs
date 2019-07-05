@@ -1153,7 +1153,7 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
     const content = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: path, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > { </span></span></span>
 <span class="cstat-no" title="statement not covered" >        log.info(`script ${path}: ${xhr.responseText.length}`);</span>
-<span class="cstat-no" title="statement not covered" >        if (xhr.responseText.indexOf('&lt;h1&gt;404&lt;/h1&gt;')&gt;0) {</span>
+<span class="cstat-no" title="statement not covered" >        if (xhr.status === 404) {</span>
 <span class="cstat-no" title="statement not covered" >            log.warn(`404: ${path}`);</span>
         }
 <span class="cstat-no" title="statement not covered" >        return xhr.responseText;</span>

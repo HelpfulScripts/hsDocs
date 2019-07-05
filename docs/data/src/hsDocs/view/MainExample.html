@@ -381,7 +381,7 @@
 <p id=358 class="line"><span>&nbsp;358</span>async&nbsp;function&nbsp;loadScript(path:string)&nbsp;{</p>
 <p id=359 class="line"><span>&nbsp;359</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;"</quote>GET",&nbsp;url:&nbsp;path,&nbsp;extract:&nbsp;async&nbsp;(xhr:any,&nbsp;options:any)&nbsp;=>&nbsp;{&nbsp;</p>
 <p id=360 class="line"><span>&nbsp;360</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`script&nbsp;${path}:&nbsp;${xhr.responseText.length}`);</p>
-<p id=361 class="line"><span>&nbsp;361</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(xhr.responseText.indexOf('</quote><h1>404</h1><quote>')>0)&nbsp;{</p>
+<p id=361 class="line"><span>&nbsp;361</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(xhr.status&nbsp;===&nbsp;404)&nbsp;{</p>
 <p id=362 class="line"><span>&nbsp;362</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.warn(`404:&nbsp;${path}`);</p>
 <p id=363 class="line"><span>&nbsp;363</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=364 class="line"><span>&nbsp;364</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;xhr.responseText;</p>
