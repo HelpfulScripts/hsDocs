@@ -381,18 +381,21 @@
 <p id=358 class="line"><span>&nbsp;358</span>async&nbsp;function&nbsp;loadScript(path:string)&nbsp;{</p>
 <p id=359 class="line"><span>&nbsp;359</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;"</quote>GET",&nbsp;url:&nbsp;path,&nbsp;extract:&nbsp;async&nbsp;(xhr:any,&nbsp;options:any)&nbsp;=>&nbsp;{&nbsp;</p>
 <p id=360 class="line"><span>&nbsp;360</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`script&nbsp;${path}:&nbsp;${xhr.responseText.length}`);</p>
-<p id=361 class="line"><span>&nbsp;361</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;xhr.responseText;</p>
-<p id=362 class="line"><span>&nbsp;362</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}});</p>
-<p id=363 class="line"><span>&nbsp;363</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;s&nbsp;=&nbsp;document.createElement('</quote>script<quote>');</p>
-<p id=364 class="line"><span>&nbsp;364</span>&nbsp;&nbsp;&nbsp;&nbsp;s.type&nbsp;=&nbsp;'</quote>text/javascript';</p>
-<p id=365 class="line"><span>&nbsp;365</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;code&nbsp;=&nbsp;content;</p>
-<p id=366 class="line"><span>&nbsp;366</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{</p>
-<p id=367 class="line"><span>&nbsp;367</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.appendChild(document.createTextNode(code));</p>
-<p id=368 class="line"><span>&nbsp;368</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{</p>
-<p id=369 class="line"><span>&nbsp;369</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.text&nbsp;=&nbsp;code;</p>
-<p id=370 class="line"><span>&nbsp;370</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{</p>
-<p id=371 class="line"><span>&nbsp;371</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(s);</p>
-<p id=372 class="line"><span>&nbsp;372</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p id=373 class="line"><span>&nbsp;373</span>}</p></code></div>
+<p id=361 class="line"><span>&nbsp;361</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(xhr.responseText.indexOf('</quote><h1>404</h1><quote>')>0)&nbsp;{</p>
+<p id=362 class="line"><span>&nbsp;362</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.warn(`404:&nbsp;${path}`);</p>
+<p id=363 class="line"><span>&nbsp;363</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=364 class="line"><span>&nbsp;364</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;xhr.responseText;</p>
+<p id=365 class="line"><span>&nbsp;365</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}});</p>
+<p id=366 class="line"><span>&nbsp;366</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;s&nbsp;=&nbsp;document.createElement('</quote>script<quote>');</p>
+<p id=367 class="line"><span>&nbsp;367</span>&nbsp;&nbsp;&nbsp;&nbsp;s.type&nbsp;=&nbsp;'</quote>text/javascript';</p>
+<p id=368 class="line"><span>&nbsp;368</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;code&nbsp;=&nbsp;content;</p>
+<p id=369 class="line"><span>&nbsp;369</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{</p>
+<p id=370 class="line"><span>&nbsp;370</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.appendChild(document.createTextNode(code));</p>
+<p id=371 class="line"><span>&nbsp;371</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{</p>
+<p id=372 class="line"><span>&nbsp;372</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.text&nbsp;=&nbsp;code;</p>
+<p id=373 class="line"><span>&nbsp;373</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{</p>
+<p id=374 class="line"><span>&nbsp;374</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(s);</p>
+<p id=375 class="line"><span>&nbsp;375</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=376 class="line"><span>&nbsp;376</span>}</p></code></div>
                 </body>
             

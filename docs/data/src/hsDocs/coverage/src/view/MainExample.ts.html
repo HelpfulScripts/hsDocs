@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.55% </span>
+        <span class="strong">43.75% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/110</span>
+        <span class='fraction'>49/112</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.29% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>12/34</span>
+        <span class='fraction'>12/36</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30.77% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>8/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.46% </span>
+        <span class="strong">45.54% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/99</span>
+        <span class='fraction'>46/101</span>
       </div>
     </div>
   </div>
@@ -415,7 +415,10 @@
 370
 371
 372
-373</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+373
+374
+375
+376</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -775,6 +778,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1147,6 +1153,9 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
     const content = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: path, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > { </span></span></span>
 <span class="cstat-no" title="statement not covered" >        log.info(`script ${path}: ${xhr.responseText.length}`);</span>
+<span class="cstat-no" title="statement not covered" >        if (xhr.responseText.indexOf('&lt;h1&gt;404&lt;/h1&gt;')&gt;0) {</span>
+<span class="cstat-no" title="statement not covered" >            log.warn(`404: ${path}`);</span>
+        }
 <span class="cstat-no" title="statement not covered" >        return xhr.responseText;</span>
      }});
     const s = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>

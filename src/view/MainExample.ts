@@ -358,6 +358,9 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
 async function loadScript(path:string) {
     const content = await m.request({ method: "GET", url: path, extract: async (xhr:any, options:any) => { 
         log.info(`script ${path}: ${xhr.responseText.length}`);
+        if (xhr.responseText.indexOf('<h1>404</h1>')>0) {
+            log.warn(`404: ${path}`);
+        }
         return xhr.responseText;
      }});
     const s = document.createElement('script');
