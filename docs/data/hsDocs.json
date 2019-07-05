@@ -3960,7 +3960,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
 			"comment": {
 				"shortText": "Comment sections may contain code examples that demonstrate code behaviour and usage.",
-				"text": "`hsDocs` will interpret and execute Javascript instructions within a `<file name='script.js'>` tag.\nand stylesheet instructions with a &lt;`file name='style.css'`&gt; tag, as in following example (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m(hslayout.Layout, { columns:[],\n            content:['first line','second line')]\n        })\n    });\n    </file>\n\n    <file name='style.css'>\n    .hsLeaf {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags and are intended to be live examples for\nexplaining some concept of the module are contained in.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional objects are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following namespaces as parameters\nfor use in the scripts:\n- **m**: the `Mithril` m function\n- **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.\n- **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nScripts can use and manipulate any of the provided objects.\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using d3:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n#### Configuring the `example`\nThe `&lt;example&gt` accepts additional arguments to configure the example:\n- height=<numper>px   the height of the example box; defaults to 300\n- libs={<export name>:<path>}   a list of additional libraries to load. `export name` is the symbol exported by the library.\nThis symbol will be available to the script. The main intent is to load the library being documented so that its features\ncan be illustrated by the example script.\nFor example:\n<code>\n&lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&gt\n</code>\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hslayout.Layout, {\n        css:'.myExample',\n        columns:[],\n        content:[\n            'left column',\n            'right column'\n        ]\n    })\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.hs-layout {\n    margin:0;\n}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
+				"text": "`hsDocs` will interpret and execute Javascript instructions within a `<file name='script.js'>` tag.\nand stylesheet instructions with a &lt;`file name='style.css'`&gt; tag, as in following example (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m(hslayout.Layout, { columns:[],\n            content:['first line','second line')]\n        })\n    });\n    </file>\n\n    <file name='style.css'>\n    .hsLeaf {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags and are intended to be live examples for\nexplaining some concept of the module are contained in.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional objects are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following namespaces as parameters\nfor use in the scripts:\n- **m**: the `Mithril` m function\n- **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.\n- **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nScripts can use and manipulate any of the provided objects.\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using d3:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n#### Configuring the `example`\nThe `&lt;example&gt` accepts additional arguments to configure the example:\n- height=<numper>px   the height of the example box; defaults to 300\n- libs={<export name>:<path>}   a list of additional libraries to load. `export name` is the symbol exported by the library.\nThis symbol will be available to the script. The main intent is to load the library being documented so that its features\ncan be illustrated by the example script.\nFor example:\n<code>\n&lt;example height=500px libs={hsGraphd3:'hsGraphd3',d3:'https://d3js.org/d3.v5.min.js'}&gt\n</code>\nIf `path` is a module nane (e.g. 'hsDocs'),\nthis involves the following attempts\nat resolving the library path:\n1. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page.\n2. load from 'https://helpfulscripts.github.io/<path>/<path>.js'\nIf `path` is structured, i.e. contains '/', it is requested as is.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hslayout.Layout, {\n        css:'.myExample',\n        columns:[],\n        content:[\n            'left column',\n            'right column'\n        ]\n    })\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.hs-layout {\n    margin:0;\n}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
 			},
 			"children": [
 				{
@@ -3981,7 +3981,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 124,
+									"line": 130,
 									"character": 10
 								}
 							],
@@ -4001,7 +4001,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 125,
+									"line": 131,
 									"character": 8
 								}
 							],
@@ -4040,7 +4040,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 125,
+											"line": 131,
 											"character": 10
 										}
 									]
@@ -4061,7 +4061,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 123,
+							"line": 129,
 							"character": 19
 						}
 					]
@@ -4085,7 +4085,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 142,
+									"line": 148,
 									"character": 17
 								}
 							],
@@ -4105,7 +4105,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 138,
+									"line": 144,
 									"character": 9
 								}
 							],
@@ -4124,7 +4124,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 134,
+									"line": 140,
 									"character": 11
 								}
 							],
@@ -4142,7 +4142,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 137,
+									"line": 143,
 									"character": 8
 								}
 							],
@@ -4160,7 +4160,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 135,
+									"line": 141,
 									"character": 13
 								}
 							],
@@ -4180,7 +4180,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 141,
+									"line": 147,
 									"character": 17
 								}
 							],
@@ -4198,7 +4198,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 136,
+									"line": 142,
 									"character": 10
 								}
 							],
@@ -4216,7 +4216,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 139,
+									"line": 145,
 									"character": 9
 								}
 							],
@@ -4240,7 +4240,7 @@
 											"sources": [
 												{
 													"fileName": "view/MainExample.ts",
-													"line": 139,
+													"line": 145,
 													"character": 19
 												}
 											],
@@ -4262,7 +4262,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 139,
+											"line": 145,
 											"character": 10
 										}
 									]
@@ -4280,7 +4280,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 140,
+									"line": 146,
 									"character": 13
 								}
 							],
@@ -4321,7 +4321,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 140,
+											"line": 146,
 											"character": 15
 										}
 									]
@@ -4349,7 +4349,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 133,
+							"line": 139,
 							"character": 27
 						}
 					]
@@ -4368,7 +4368,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 148,
+							"line": 154,
 							"character": 18
 						}
 					],
@@ -4392,7 +4392,7 @@
 									"sources": [
 										{
 											"fileName": "view/MainExample.ts",
-											"line": 148,
+											"line": 154,
 											"character": 26
 										}
 									],
@@ -4415,7 +4415,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 148,
+									"line": 154,
 									"character": 19
 								}
 							]
@@ -4433,7 +4433,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 327,
+							"line": 333,
 							"character": 23
 						}
 					],
@@ -4453,7 +4453,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 111,
+							"line": 117,
 							"character": 57
 						}
 					],
@@ -4506,7 +4506,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 246,
+							"line": 252,
 							"character": 28
 						}
 					]
@@ -4564,7 +4564,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 194,
+							"line": 200,
 							"character": 34
 						}
 					]
@@ -4633,7 +4633,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 329,
+							"line": 335,
 							"character": 26
 						}
 					]
@@ -4681,7 +4681,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 164,
+							"line": 170,
 							"character": 23
 						}
 					]
@@ -4721,7 +4721,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 295,
+							"line": 301,
 							"character": 21
 						}
 					]
@@ -4769,7 +4769,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 279,
+							"line": 285,
 							"character": 22
 						}
 					]
@@ -4837,7 +4837,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 305,
+							"line": 311,
 							"character": 35
 						}
 					]
@@ -4867,7 +4867,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 237,
+							"line": 243,
 							"character": 17
 						}
 					]
@@ -4912,7 +4912,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 213,
+							"line": 219,
 							"character": 17
 						}
 					]
@@ -4930,6 +4930,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "attempts to load a library for the specified `path`. If `path` is a module nane (e.g. 'hsDocs'),\nthis involves the following attempts\nat resolving the library path:\n1. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page.\n2. load from 'https://helpfulscripts.github.io/<path>/<path>.js'\nIf `path` is structured, i.e. contains '/', it is requested as is."
+							},
 							"parameters": [
 								{
 									"id": 211,
@@ -4937,6 +4940,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "module name, such as 'hsDocs'\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -4958,7 +4964,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 358,
+							"line": 373,
 							"character": 25
 						}
 					]
@@ -4981,7 +4987,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 119,
+									"line": 125,
 									"character": 12
 								}
 							],
@@ -5006,7 +5012,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 118,
+									"line": 124,
 									"character": 10
 								}
 							],
@@ -5031,7 +5037,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 120,
+									"line": 126,
 									"character": 12
 								}
 							],
@@ -5056,7 +5062,7 @@
 							"sources": [
 								{
 									"fileName": "view/MainExample.ts",
-									"line": 117,
+									"line": 123,
 									"character": 5
 								}
 							],
@@ -5088,7 +5094,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 116,
+							"line": 122,
 							"character": 13
 						}
 					],

@@ -61,8 +61,14 @@
  * can be illustrated by the example script.
  * For example:
  * <code>
- * &lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&gt
+ * &lt;example height=500px libs={hsGraphd3:'hsGraphd3',d3:'https://d3js.org/d3.v5.min.js'}&gt
  * </code>
+ * If `path` is a module nane (e.g. 'hsDocs'), 
+ * this involves the following attempts
+ * at resolving the library path:
+ * 1. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page.
+ * 2. load from 'https://helpfulscripts.github.io/<path>/<path>.js'
+ * If `path` is structured, i.e. contains '/', it is requested as is. 
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -355,17 +361,33 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
     }
 }
 
+/**
+ * attempts to load a library for the specified `path`. If `path` is a module nane (e.g. 'hsDocs'), 
+ * this involves the following attempts
+ * at resolving the library path:
+ * 1. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page.
+ * 2. load from 'https://helpfulscripts.github.io/<path>/<path>.js'
+ * If `path` is structured, i.e. contains '/', it is requested as is. 
+ * @param path module name, such as 'hsDocs'
+ */
 async function loadScript(path:string) {
-    const content = await m.request({ method: "GET", url: path, extract: async (xhr:any, options:any) => { 
-        log.info(`script ${path}: ${xhr.responseText.length}`);
-        if (xhr.status === 404) {
-            log.warn(`404: ${path}`);
-        }
-        return xhr.responseText;
-     }});
+    const paths = [
+        path,
+        `node_modules/${path.toLowerCase()}/${path}.js`,
+        `https://helpfulscripts.github.io/${path}/${path}.js`
+    ];
+    let content:any;
+    await Promise.resolve(paths.some(async (p, i) => {
+        if (i===0 && path.indexOf('/')<0) { return false; } // don't attempt `path` if it is unstructured
+        content = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
+        if (content.status === 200) { return true; }
+        else { log.warn(`${content.status}: ${paths[0]}`); }
+    }));
+    
+    // add script
     const s = document.createElement('script');
     s.type = 'text/javascript';
-    const code = content;
+    const code = content.responseText;
     try {
         s.appendChild(document.createTextNode(code));
     } catch (e) {

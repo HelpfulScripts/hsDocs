@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">43.75% </span>
+        <span class="strong">41.88% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/112</span>
+        <span class='fraction'>49/117</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">30% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>12/36</span>
+        <span class='fraction'>12/40</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.77% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>8/26</span>
+        <span class='fraction'>8/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.54% </span>
+        <span class="strong">45.1% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/101</span>
+        <span class='fraction'>46/102</span>
       </div>
     </div>
   </div>
@@ -418,7 +418,35 @@
 373
 374
 375
-376</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -776,12 +804,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -856,8 +900,14 @@
  * can be illustrated by the example script.
  * For example:
  * &lt;code&gt;
- * &amp;lt;example height=500px libs={hsGraphd3:'node_modules/hsgraphd3/hsGraphd3.js',d3:'https://d3js.org/d3.v5.min.js'}&amp;gt
+ * &amp;lt;example height=500px libs={hsGraphd3:'hsGraphd3',d3:'https://d3js.org/d3.v5.min.js'}&amp;gt
  * &lt;/code&gt;
+ * If `path` is a module nane (e.g. 'hsDocs'), 
+ * this involves the following attempts
+ * at resolving the library path:
+ * 1. load from 'node_modules/&lt;path.toLowerCase()&gt;/&lt;path&gt;.js, relative to the current web page.
+ * 2. load from 'https://helpfulscripts.github.io/&lt;path&gt;/&lt;path&gt;.js'
+ * If `path` is structured, i.e. contains '/', it is requested as is. 
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -1150,17 +1200,33 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
     }
 }
 &nbsp;
+/**
+ * attempts to load a library for the specified `path`. If `path` is a module nane (e.g. 'hsDocs'), 
+ * this involves the following attempts
+ * at resolving the library path:
+ * 1. load from 'node_modules/&lt;path.toLowerCase()&gt;/&lt;path&gt;.js, relative to the current web page.
+ * 2. load from 'https://helpfulscripts.github.io/&lt;path&gt;/&lt;path&gt;.js'
+ * If `path` is structured, i.e. contains '/', it is requested as is. 
+ * @param path module name, such as 'hsDocs'
+ */
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
-    const content = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: path, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > { </span></span></span>
-<span class="cstat-no" title="statement not covered" >        log.info(`script ${path}: ${xhr.responseText.length}`);</span>
-<span class="cstat-no" title="statement not covered" >        if (xhr.status === 404) {</span>
-<span class="cstat-no" title="statement not covered" >            log.warn(`404: ${path}`);</span>
-        }
-<span class="cstat-no" title="statement not covered" >        return xhr.responseText;</span>
-     }});
+    const paths = <span class="cstat-no" title="statement not covered" >[</span>
+        path,
+        `node_modules/${path.toLowerCase()}/${path}.js`,
+        `https://helpfulscripts.github.io/${path}/${path}.js`
+    ];
+    let content:any;
+<span class="cstat-no" title="statement not covered" >    await Promise.resolve(paths.some(<span class="fstat-no" title="function not covered" >async (p</span>, i) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+<span class="cstat-no" title="statement not covered" >        if (i===0 &amp;&amp; path.indexOf('/')&lt;0) { <span class="cstat-no" title="statement not covered" >return false; </span>} </span>// don't attempt `path` if it is unstructured
+<span class="cstat-no" title="statement not covered" >        content = await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > <span class="cstat-no" title="statement not covered" ></span>xhr </span></span>});</span>
+<span class="cstat-no" title="statement not covered" >        if (content.status === 200) { <span class="cstat-no" title="statement not covered" >return true; </span>}</span>
+        else { <span class="cstat-no" title="statement not covered" >log.warn(`${content.status}: ${paths[0]}`); </span>}
+    }));
+    
+    // add script
     const s = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>
 <span class="cstat-no" title="statement not covered" >    s.type = 'text/javascript';</span>
-    const code = <span class="cstat-no" title="statement not covered" >content;</span>
+    const code = <span class="cstat-no" title="statement not covered" >content.responseText;</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >        s.appendChild(document.createTextNode(code));</span>
     } catch (e) {
