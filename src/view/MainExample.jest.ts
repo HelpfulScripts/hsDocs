@@ -25,7 +25,7 @@ describe('example', () => {
         expect(example).toBeDefined();
     });
 
-    it('matches snapshot', () => {
-        expect(example(exmp)).toMatch(/<style><\/style><example id=hs\d* style=\"height:300px\" class=\"hs-layout-frame\"><\/example>/gm);
+    it('matches snapshot', async () => {
+        expect(await example(exmp)).toMatch(/<style><\/style><example id=hs\d* style=\"height:300px\" class=\"hs-layout-frame\"><\/example>/gm);
     });
 });

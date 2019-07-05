@@ -90,7 +90,7 @@ function commentRemainder(comment:any):string|Vnode {
                 default: return m('.hs-item-comment-special', [
                     m('span.hs-item-comment-tag', tag), 
                     m('span.hs-item-comment-text', comment[tag])
-                ]);;
+                ]);
             }
     }));
 }

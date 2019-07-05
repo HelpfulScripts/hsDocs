@@ -79,6 +79,7 @@ import * as hslayout            from 'hslayout';
 import { Layout }               from 'hslayout';
 import { shortCheckSum }        from 'hsutil'; 
 import { delay }                from 'hsutil'; 
+import { log as _log }          from 'hsutil';  const log = _log('MainExample');
 import * as hsutil              from 'hsutil';
 import * as hsdatab             from 'hsdatab';
 import * as hsgraph             from 'hsgraph';
@@ -88,20 +89,26 @@ const modules = {
     hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   'hsutil'),
     hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ 'hslayout'),
     hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ 'hswidget'),
-    hsdatab:    Promise.resolve(hsdatab), // import(/* webpackChunkName: "hsdatab" */  'hsdatab'),
-    hsgraph:    Promise.resolve(hsgraph), // import(/* webpackChunkName: "hsgraph" */  'hsgraph')
 };
+
+interface Attribute {
+    height?: string;
+    libs?: {
+        [name:string]: string
+    };
+}
 
 /**
  * describes an executable comment example
  */
 interface CommentDescriptor { 
+    created:   boolean,                 // indicates if all dynamic modules are loaded
     exampleID: string;                  // example tag ID
     menuID:    string;                  // menu tag ID
     desc:   SelectorDesc;               // menu items
-    attrs?: {string?:string};           // <example attr=value>
+    attrs?: Attribute;                  // <example attr=value>
     pages:  {string?:string};           // page content for each menu item
-    executeScript?: (root:any) => void; // the example code to execute
+    runScript?: (root:any) => void; // the example code to execute
     executeSource?: '';                 // the source code to execute
     activeSrcPage:string;               // the active page for the source display
 }
@@ -134,9 +141,8 @@ export function example(exmpl:string) {
         createExecuteScript(IDs, exmpl);
     }
     if (!document.getElementById(IDs.menuID)) { 
-        Promise.resolve(IDs) 
-            .then(addExampleStructure)
-            .then(delay(1))
+        addExampleStructure(IDs);
+        delay(1)(IDs)
             .then(executeScript)
             .catch(executeError);
     }
@@ -158,18 +164,18 @@ export function example(exmpl:string) {
 
 async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     const libNames = Object.keys(modules);
-    async function create() {
-        try {
-            const libs = await Promise.all(libNames.map(async name => await modules[name]));
-            const scriptFn = new Function('root', ...libNames, getCommentDescriptor(IDs, exmpl));    
-            IDs.executeScript = (root:any) => scriptFn(root, ...libs);
-            return true;
-        } catch(e) { 
-            console.log('creating script:' + e); 
-            return false;
-        } 
-    }
-    return await create();
+    try {
+        const libs = await Promise.all(libNames.map(async name => await modules[name]));
+        const desc = await getCommentDescriptor(IDs, exmpl);
+        const scriptFn = new Function('root', ...libNames, desc);    
+        IDs.runScript = (root:any) => scriptFn(root, ...libs);
+        log.info('example function ready');
+        IDs.created = true;
+        return true;
+    } catch(e) { 
+        log.error(`creating script: ${e}`); 
+        return false;
+    } 
 }
 
 /**
@@ -177,6 +183,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
  */
 function initDesc(IDs:CommentDescriptor):CommentDescriptor {
     return {
+        created:    false,
         exampleID:  getNewID(),    // example tag ID
         menuID:     getNewID(),    // main execution area tag ID
         desc:<SelectorDesc>{ 
@@ -215,22 +222,24 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
         item = IDs.activeSrcPage = newItem;
     };
 
-    m.mount(root, {view: () => m(Layout, { 
-        columns: ["50%"],
-        content: [
-            m(Layout, {
-                content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div', 'placeholder'))
-            }),
-            m(Layout, {
-                rows:["30px", "fill"],
-                css: '.hs-source',
-                content:[
-                    m(Menu, {desc: IDs.desc, size:['50px'] }),
-                    m(Layout, { content: m('.hs-layout .hs-source-main', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))})
-                ]
-            })
-        ]})
-    });
+    if (root && IDs.created) {
+        m.mount(root, {view: () => m(Layout, { 
+            columns: ["50%"],
+            content: [
+                m(Layout, {
+                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div', 'placeholder'))
+                }),
+                m(Layout, {
+                    rows:["30px", "fill"],
+                    css: '.hs-source',
+                    content:[
+                        m(Menu, {desc: IDs.desc, size:['50px'] }),
+                        m(Layout, { content: m('.hs-layout .hs-source-main', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))})
+                    ]
+                })
+            ]})
+        });
+    }
     return IDs;
 }
 
@@ -240,24 +249,22 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
  */
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
-    if (root) {
-        // console.log(`root found for menuID ${IDs.menuID}`);
-        try { IDs.executeScript(root); }
+    if (root && IDs.created) {
+        // log.info(`root found for menuID ${IDs.menuID}`);
+        log.info('running example script');
+        try { IDs.runScript(root); }
         catch(e) { 
-            console.log("error executing script: " + e); 
-            console.log(IDs.executeSource);
-            console.log(e.stack);
+            log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
         }
     } else {
-        console.log(`root not found for menuID ${IDs.menuID}`);
+        log.error(`root not found for menuID ${IDs.menuID}`);
     }
     m.redraw();
     return IDs;
 }
 
 function executeError(e:any) {
-    console.log('rejection executing script:');
-    console.log(e);
+    log.error(`rejection executing script:\n${e}`);
 }
  
 /**
@@ -266,12 +273,17 @@ function executeError(e:any) {
  * @param example the example string, including <example> tag
  * @return the script to execute, as a string
  */
-function getCommentDescriptor(IDs:CommentDescriptor, example:string):string {
+async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promise<string> {
     let result = '';
-    let attrs = example.match(/<example\s(\S*?)(\s|>)/i);
+    
+    // let attrs = example.match(/<example\s(\S*?)(\s|>)/gi);
+    let attrs = example.match(/<example\s([\s\S]*?)>/); // capture all parameters to `example`
     if (attrs && attrs[1]) { 
-        const at = attrs[1].split('=');
-        IDs.attrs =  {[at[0]]: at[1]};
+        await Promise.all(attrs[1].split(' ').map(async att => {
+            const cmd = att.split('=');
+            await decodeAttrs(IDs, cmd[0].trim().toLowerCase(), cmd[1].trim());
+            log.debug(`found attrs:\n ${log.inspect(IDs.attrs, 5)}`);
+        }));
     }
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
@@ -281,4 +293,52 @@ function getCommentDescriptor(IDs:CommentDescriptor, example:string):string {
         return result;
     });
     return IDs.pages['js'];
+}
+
+declare const hsGraphd3:any;
+
+async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
+    IDs.attrs = IDs.attrs || {};
+    switch(cmd) {
+        case 'height': IDs.attrs['height'] = val; break;
+        case 'libs':    // {graph:'/node_modules/hsgraphd3/index.js'}
+            if (val.startsWith('{') && val.endsWith('}')) {
+                IDs.attrs['libs'] = {};
+                const list = val.slice(1, -1);
+                await Promise.all(list.split(',').map(async lib => {
+                    const colon = lib.indexOf(':');
+                    // const libDesc = lib.slice(0,colon);
+                    // if (libDesc.length !== 2) {
+                    //     log.warn(`expected format 'lib:path', found '${lib}'`);
+                    // }
+                    // const name = libDesc[0].trim();
+                    // let path = libDesc[1].trim().replace(/['"]/g, '');
+                    const name = lib.slice(0,colon).trim();
+                    const path = lib.slice(colon+1).trim().replace(/['"]/g, '');
+                    IDs.attrs.libs[name] = path;
+                    log.info(`lib: ${name}: ${path}`);
+                    await loadScript(path);
+                    modules[name] = Promise.resolve(path);
+                }));
+            } else {
+                log.warn(`expected libs to have form '{lib:path}', found '${val}'`);
+            }
+    }
+}
+
+async function loadScript(path:string) {
+    const content = await m.request({ method: "GET", url: path, extract: async (xhr:any, options:any) => { 
+        log.info(`script ${path}: ${xhr.responseText.length}`);
+        return xhr.responseText;
+     }})
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const code = content;
+    try {
+        s.appendChild(document.createTextNode(code));
+    } catch (e) {
+        s.text = code;
+    } finally {
+        document.body.appendChild(s);
+    }
 }
