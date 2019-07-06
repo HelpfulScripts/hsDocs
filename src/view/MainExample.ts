@@ -200,15 +200,17 @@ export function example(exmpl:string) {
 async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     const libNames = Object.keys(modules);
     try {
-        const libs = await Promise.all(libNames.map(async name => await modules[name]));
-        const desc = await getCommentDescriptor(IDs, exmpl);
-        const scriptFn = new Function('root', ...libNames, desc);    
-        IDs.runScript = (root:any) => scriptFn(root, ...libs);
+        IDs.runScript = async (root:any) => {
+            const libs = await Promise.all(libNames.map(async name => await modules[name]));
+            const desc = await getCommentDescriptor(IDs, exmpl);
+            const scriptFn = new Function('root', ...libNames, desc);    
+            scriptFn(root, ...libs);
+        }
         log.info('example function ready');
         IDs.created = true;
         return true;
     } catch(e) { 
-        log.error(`creating script: ${e}`); 
+        log.error(`creating script: ${e}\n${e.stack()}`); 
         return false;
     } 
 }
@@ -376,10 +378,9 @@ async function loadScript(path:string) {
         return m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
     }
 
-    function add(text:string) {
+    function add(code:string) {
         const s = document.createElement('script');
         s.type = 'text/javascript';
-        const code = text;
         try {
             s.appendChild(document.createTextNode(code));
         } catch (e) {
