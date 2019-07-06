@@ -371,31 +371,37 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
  * @param path module name, such as 'hsDocs'
  */
 async function loadScript(path:string) {
+    async function load(p:string) {
+        const result = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
+        if (result.status !== 200) { log.warn(`${result.status}: ${p}`); }
+        return result;
+    }
+
+    function add(text:string) {
+        const s = document.createElement('script');
+        s.type = 'text/javascript';
+        const code = text;
+        try {
+            s.appendChild(document.createTextNode(code));
+        } catch (e) {
+            s.text = code;
+        } finally {
+            document.body.appendChild(s);
+        }
+    }
+
     const paths = [
-        path,
         `node_modules/${path.toLowerCase()}/${path}.js`,
         `https://helpfulscripts.github.io/${path}/${path}.js`
     ];
     let content:any;
     try {
-        await Promise.resolve(paths.some(async (p, i) => {
-            if (i===0 && path.indexOf('/')<0) { return false; } // don't attempt `path` if it is unstructured
-            log.info(`loading lib from ${p}`);
-            content = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
-            if (content.status === 200) { return true; }
-            else { log.warn(`${content.status}: ${paths[0]}`); }
-        }));
+        if (path.indexOf('/')>=0) { // if structured: call as is
+            content = await load(path);
+        } else {
+            content = await load(paths[0]);
+            if (content.status !== 200) { content = await load(paths[1]); }
+        }
     } catch(e) { log.error(`loading lib ${path}: ${e}`);}
-    
-    // add script
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    const code = content.responseText;
-    try {
-        s.appendChild(document.createTextNode(code));
-    } catch (e) {
-        s.text = code;
-    } finally {
-        document.body.appendChild(s);
-    }
+    add(content.responseText);
 }
