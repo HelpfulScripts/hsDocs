@@ -372,11 +372,7 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
  */
 async function loadScript(path:string) {
     function load(p:string) {
-        let result:any = {};
-        m.request({ method: "GET", url: p, extract: (xhr:any) => result = xhr })
-        .catch((e:any) => log.warn(`catch ${result.status}: ${p}\n${log.inspect(e, 5)}`));
-        if (result.status !== 200) { log.warn(`${result.status}: ${p}`); }
-        return result;
+        return m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
     }
 
     function add(text:string) {
@@ -401,8 +397,8 @@ async function loadScript(path:string) {
         if (path.indexOf('/')>=0) { // if structured: call as is
             content = await load(path);
         } else {
-            content = await load(paths[0]);
-            if (content.status !== 200) { content = await load(paths[1]); }
+            try { content = await load(paths[0]); }
+            catch(e) {content = await load(paths[1]); }
         }
     } catch(e) { log.error(`loading lib ${path}`);}
     add(content.responseText);
