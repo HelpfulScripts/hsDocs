@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.83% </span>
+        <span class="strong">40.16% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/120</span>
+        <span class='fraction'>49/122</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>12/40</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">29.63% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>8/27</span>
+        <span class='fraction'>8/28</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.99% </span>
+        <span class="strong">42.2% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/107</span>
+        <span class='fraction'>46/109</span>
       </div>
     </div>
   </div>
@@ -449,7 +449,9 @@
 404
 405
 406
-407</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+407
+408
+409</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -823,6 +825,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1228,8 +1232,10 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
  * @param path module name, such as 'hsDocs'
  */
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
-    async function <span class="fstat-no" title="function not covered" >load(</span>p:string) {
-        const result = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >(x</span>hr:any) =&gt; <span class="cstat-no" title="statement not covered" >xhr </span>});</span>
+    function <span class="fstat-no" title="function not covered" >load(</span>p:string) {
+        let result:any = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >        m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >(x</span>hr:any) =&gt; <span class="cstat-no" title="statement not covered" >result = xhr </span>})</span>
+        .catch(<span class="fstat-no" title="function not covered" >(e</span>:any) =&gt; <span class="cstat-no" title="statement not covered" >log.warn(`catch ${result.status}: ${p}\n${log.inspect(e, 5)}`))</span>;
 <span class="cstat-no" title="statement not covered" >        if (result.status !== 200) { <span class="cstat-no" title="statement not covered" >log.warn(`${result.status}: ${p}`); </span>}</span>
 <span class="cstat-no" title="statement not covered" >        return result;</span>
     }
@@ -1259,7 +1265,7 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
 <span class="cstat-no" title="statement not covered" >            content = await load(paths[0]);</span>
 <span class="cstat-no" title="statement not covered" >            if (content.status !== 200) { <span class="cstat-no" title="statement not covered" >content = await load(paths[1]); </span>}</span>
         }
-    } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}: ${e}`);}</span>
+    } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}`);}</span>
 <span class="cstat-no" title="statement not covered" >    add(content.responseText);</span>
 }</pre></td></tr>
 </table></pre>

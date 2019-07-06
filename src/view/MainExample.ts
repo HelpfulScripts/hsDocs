@@ -371,8 +371,10 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
  * @param path module name, such as 'hsDocs'
  */
 async function loadScript(path:string) {
-    async function load(p:string) {
-        const result = await m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
+    function load(p:string) {
+        let result:any = {};
+        m.request({ method: "GET", url: p, extract: (xhr:any) => result = xhr })
+        .catch((e:any) => log.warn(`catch ${result.status}: ${p}\n${log.inspect(e, 5)}`));
         if (result.status !== 200) { log.warn(`${result.status}: ${p}`); }
         return result;
     }
@@ -402,6 +404,6 @@ async function loadScript(path:string) {
             content = await load(paths[0]);
             if (content.status !== 200) { content = await load(paths[1]); }
         }
-    } catch(e) { log.error(`loading lib ${path}: ${e}`);}
+    } catch(e) { log.error(`loading lib ${path}`);}
     add(content.responseText);
 }
