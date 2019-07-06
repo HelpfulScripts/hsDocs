@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.88% </span>
+        <span class="strong">41.18% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/117</span>
+        <span class='fraction'>49/119</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">33.33% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>8/27</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">43.81% </span>
+        <span class="strong">42.59% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>46/105</span>
+        <span class='fraction'>46/108</span>
       </div>
     </div>
   </div>
@@ -447,7 +447,13 @@
 402
 403
 404
-405</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+405
+406
+407
+408
+409
+410
+411</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -822,32 +828,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1225,6 +1237,7 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
  */
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
     function <span class="fstat-no" title="function not covered" >load(</span>p:string) {
+<span class="cstat-no" title="statement not covered" >        log.info(`loading lib ${p}`);</span>
 <span class="cstat-no" title="statement not covered" >        return m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >(x</span>hr:any) =&gt; <span class="cstat-no" title="statement not covered" >xhr </span>});</span>
     }
 &nbsp;
@@ -1250,8 +1263,13 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
 <span class="cstat-no" title="statement not covered" >        if (path.indexOf('/')&gt;=0) { // if structured: call as is</span>
 <span class="cstat-no" title="statement not covered" >            content = await load(path);</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            try { <span class="cstat-no" title="statement not covered" >content = await load(paths[0]); </span>}</span>
-            catch(e) {<span class="cstat-no" title="statement not covered" >content = await load(paths[1]); </span>}
+<span class="cstat-no" title="statement not covered" >            try { </span>
+<span class="cstat-no" title="statement not covered" >                content = await load(paths[0]); </span>
+            } catch(e) { <span class="cstat-no" title="statement not covered" >try {</span>
+<span class="cstat-no" title="statement not covered" >                content = await load(paths[1]); </span>
+            } catch(e) { 
+&nbsp;
+            }}
         }
     } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}`);}</span>
 <span class="cstat-no" title="statement not covered" >    add(content.responseText);</span>
