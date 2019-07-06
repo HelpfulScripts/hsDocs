@@ -395,7 +395,7 @@
 <p id=372 class="line"><span>&nbsp;372</span><comment>&nbsp;*/</comment></p>
 <p id=373 class="line"><span>&nbsp;373</span>async&nbsp;function&nbsp;loadScript(path:string)&nbsp;{</p>
 <p id=374 class="line"><span>&nbsp;374</span>&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;function&nbsp;load(p:string)&nbsp;{</p>
-<p id=375 class="line"><span>&nbsp;375</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;result&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;"</quote>GET",&nbsp;url:&nbsp;p,&nbsp;extract:&nbsp;async&nbsp;(xhr:any,&nbsp;options:any)&nbsp;=>&nbsp;xhr&nbsp;});</p>
+<p id=375 class="line"><span>&nbsp;375</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;result&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;"</quote>GET",&nbsp;url:&nbsp;p,&nbsp;extract:&nbsp;(xhr:any)&nbsp;=>&nbsp;xhr&nbsp;});</p>
 <p id=376 class="line"><span>&nbsp;376</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(result.status&nbsp;!==&nbsp;200)&nbsp;{&nbsp;log.warn(`${result.status}:&nbsp;${p}`);&nbsp;}</p>
 <p id=377 class="line"><span>&nbsp;377</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</p>
 <p id=378 class="line"><span>&nbsp;378</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>

@@ -372,7 +372,7 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
  */
 async function loadScript(path:string) {
     async function load(p:string) {
-        const result = await m.request({ method: "GET", url: p, extract: async (xhr:any, options:any) => xhr });
+        const result = await m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
         if (result.status !== 200) { log.warn(`${result.status}: ${p}`); }
         return result;
     }

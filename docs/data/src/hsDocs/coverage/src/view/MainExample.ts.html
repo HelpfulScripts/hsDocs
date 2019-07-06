@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.5% </span>
+        <span class="strong">40.83% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>49/121</span>
+        <span class='fraction'>49/120</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -30,9 +30,9 @@
         <span class='fraction'>12/40</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">28.57% </span>
+        <span class="strong">29.63% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>8/28</span>
+        <span class='fraction'>8/27</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">42.99% </span>
@@ -1229,7 +1229,7 @@ async function <span class="fstat-no" title="function not covered" >decodeAttrs(
  */
 async function <span class="fstat-no" title="function not covered" >loadScript(</span>path:string) {
     async function <span class="fstat-no" title="function not covered" >load(</span>p:string) {
-        const result = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >async (x</span>hr:any, options:any) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > <span class="cstat-no" title="statement not covered" ></span>xhr </span></span>});</span>
+        const result = <span class="cstat-no" title="statement not covered" >await m.request({ method: "GET", url: p, extract: <span class="fstat-no" title="function not covered" >(x</span>hr:any) =&gt; <span class="cstat-no" title="statement not covered" >xhr </span>});</span>
 <span class="cstat-no" title="statement not covered" >        if (result.status !== 200) { <span class="cstat-no" title="statement not covered" >log.warn(`${result.status}: ${p}`); </span>}</span>
 <span class="cstat-no" title="statement not covered" >        return result;</span>
     }
