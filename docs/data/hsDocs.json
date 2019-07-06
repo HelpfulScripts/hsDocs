@@ -4506,7 +4506,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 254,
+							"line": 255,
 							"character": 28
 						}
 					]
@@ -4769,7 +4769,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 287,
+							"line": 288,
 							"character": 22
 						}
 					]
@@ -4867,7 +4867,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 245,
+							"line": 246,
 							"character": 17
 						}
 					]
@@ -4912,7 +4912,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 221,
+							"line": 222,
 							"character": 17
 						}
 					]
@@ -4955,7 +4955,7 @@
 								"typeArguments": [
 									{
 										"type": "intrinsic",
-										"name": "void"
+										"name": "any"
 									}
 								]
 							}
@@ -4964,7 +4964,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 374,
+							"line": 370,
 							"character": 25
 						}
 					]
@@ -4980,7 +4980,7 @@
 					"children": [
 						{
 							"id": 173,
-							"name": "hslayout",
+							"name": "hsLayout",
 							"kind": 32,
 							"kindString": "Variable",
 							"flags": {},
@@ -4993,19 +4993,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/index\""
-									}
-								]
+								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/index\""
 							},
-							"defaultValue": "   Promise.resolve(hslayout)"
+							"defaultValue": "   hslayout"
 						},
 						{
 							"id": 172,
-							"name": "hsutil",
+							"name": "hsUtil",
 							"kind": 32,
 							"kindString": "Variable",
 							"flags": {},
@@ -5018,19 +5012,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hsutil/index\""
-									}
-								]
+								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hsutil/index\""
 							},
-							"defaultValue": "     Promise.resolve(hsutil)"
+							"defaultValue": "     hsutil"
 						},
 						{
 							"id": 174,
-							"name": "hswidget",
+							"name": "hsWidget",
 							"kind": 32,
 							"kindString": "Variable",
 							"flags": {},
@@ -5043,15 +5031,9 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hswidget/index\""
-									}
-								]
+								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hswidget/index\""
 							},
-							"defaultValue": "   Promise.resolve(hswidget)"
+							"defaultValue": "   hswidget"
 						},
 						{
 							"id": 171,
@@ -5067,16 +5049,10 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"name": "Promise",
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								]
+								"type": "intrinsic",
+								"name": "any"
 							},
-							"defaultValue": "          Promise.resolve(m)"
+							"defaultValue": "          m"
 						}
 					],
 					"groups": [

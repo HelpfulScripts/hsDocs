@@ -7,7 +7,7 @@
  *     &lt;example&gt; 
  *     <file name='script.js'>
  *     m.mount(root, { 
- *         view:() => m(hslayout.Layout, { columns:[], 
+ *         view:() => m(hsLayout.Layout, { columns:[], 
  *             content:['first line','second line')]
  *         })
  *     });
@@ -83,7 +83,7 @@
  * <example>
  * <file name='script.js'>
  * m.mount(root, { 
- *     view:() => m(hslayout.Layout, {
+ *     view:() => m(hsLayout.Layout, {
  *         css:'.myExample', 
  *         columns:[], 
  *         content:[
@@ -120,10 +120,10 @@ import * as hsdatab             from 'hsdatab';
 import * as hsgraph             from 'hsgraph';
 
 const modules = {
-    m:          Promise.resolve(m),
-    hsutil:     Promise.resolve(hsutil), //import(/* webpackChunkName: "hsutil" */   'hsutil'),
-    hslayout:   Promise.resolve(hslayout), //import(/* webpackChunkName: "hslayout" */ 'hslayout'),
-    hswidget:   Promise.resolve(hswidget), //import(/* webpackChunkName: "hswidget" */ 'hswidget'),
+    m:          m,
+    hsUtil:     hsutil, 
+    hsLayout:   hslayout, 
+    hsWidget:   hswidget
 };
 
 interface Attribute {
@@ -198,14 +198,15 @@ export function example(exmpl:string) {
 }
 
 async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
-    const libNames = Object.keys(modules);
     try {
-        IDs.runScript = async (root:any) => {
-            const libs = await Promise.all(libNames.map(async name => await modules[name]));
-            const desc = await getCommentDescriptor(IDs, exmpl);
+        const desc = await getCommentDescriptor(IDs, exmpl);
+        IDs.runScript = (root:any) => {
+            const libNames = Object.keys(modules);
+            const libs = libNames.map(name => modules[name]);
             const scriptFn = new Function('root', ...libNames, desc);    
+            log.info('running example script');
             scriptFn(root, ...libs);
-        }
+        };
         log.info('example function ready');
         IDs.created = true;
         return true;
@@ -287,7 +288,6 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
     if (root && IDs.created) {
-        log.info('running example script');
         try { IDs.runScript(root); }
         catch(e) { 
             log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
@@ -343,18 +343,14 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
                 const list = val.slice(1, -1);
                 await Promise.all(list.split(',').map(async lib => {
                     const colon = lib.indexOf(':');
-                    // const libDesc = lib.slice(0,colon);
-                    // if (libDesc.length !== 2) {
-                    //     log.warn(`expected format 'lib:path', found '${lib}'`);
-                    // }
-                    // const name = libDesc[0].trim();
-                    // let path = libDesc[1].trim().replace(/['"]/g, '');
                     const name = lib.slice(0,colon).trim();
                     const path = lib.slice(colon+1).trim().replace(/['"]/g, '');
                     IDs.attrs.libs[name] = path;
-                    log.debug(`lib: ${name}: ${path}`);
-                    await loadScript(path);
-                    modules[name] = Promise.resolve(path);
+                    if (!modules[name]) {
+                        log.info(`loading lib: ${name}: ${path}`);
+                        const content = await loadScript(path);
+                        if (content) { modules[name] = content[name]; }
+                    }
                 }));
             } else {
                 log.warn(`expected libs to have form '{lib:path}', found '${val}'`);
@@ -374,18 +370,6 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
 async function loadScript(path:string) {
     const load = (p:string) => m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
 
-    function add(code:string) {
-        const s = document.createElement('script');
-        s.type = 'text/javascript';
-        try {
-            s.appendChild(document.createTextNode(code));
-        } catch (e) {
-            s.text = code;
-        } finally {
-            document.body.appendChild(s);
-        }
-    }
-
     const paths = [
         `node_modules/${path.toLowerCase()}/${path}.js`,
         `https://helpfulscripts.github.io/${path}/${path}.js`
@@ -404,5 +388,14 @@ async function loadScript(path:string) {
             }}
         }
     } catch(e) { log.error(`loading lib ${path}`);}
-    add(content.responseText);
+    log.info(`loaded ${path}, creating library`);
+    try { 
+        let lib:any = {};
+        new Function(content.responseText).bind(lib)();
+        return lib;
+    } catch(e) {
+        log.error(`JSON.parse: ${path}: ${e}`);
+        return undefined;
+    }
+    // add(content.responseText);
 }
