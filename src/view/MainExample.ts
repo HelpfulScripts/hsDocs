@@ -287,7 +287,6 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
     if (root && IDs.created) {
-        // log.info(`root found for menuID ${IDs.menuID}`);
         log.info('running example script');
         try { IDs.runScript(root); }
         catch(e) { 
@@ -353,7 +352,7 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
                     const name = lib.slice(0,colon).trim();
                     const path = lib.slice(colon+1).trim().replace(/['"]/g, '');
                     IDs.attrs.libs[name] = path;
-                    log.info(`lib: ${name}: ${path}`);
+                    log.debug(`lib: ${name}: ${path}`);
                     await loadScript(path);
                     modules[name] = Promise.resolve(path);
                 }));
@@ -373,10 +372,7 @@ async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
  * @param path module name, such as 'hsDocs'
  */
 async function loadScript(path:string) {
-    function load(p:string) {
-        log.info(`loading lib ${p}`);
-        return m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
-    }
+    const load = (p:string) => m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
 
     function add(code:string) {
         const s = document.createElement('script');
