@@ -149,7 +149,7 @@
 <p id=126 class="line"><span>&nbsp;126</span><comment>&nbsp;*&nbsp;@param&nbsp;file&nbsp;the&nbsp;`json`&nbsp;file&nbsp;to&nbsp;load&nbsp;as&nbsp;docset</comment></p>
 <p id=127 class="line"><span>&nbsp;127</span><comment>&nbsp;*/</comment></p>
 <p id=128 class="line"><span>&nbsp;128</span>async&nbsp;function&nbsp;loadDocSet(dir:string,&nbsp;file:string):Promise<void>&nbsp;{</p>
-<p id=129 class="line"><span>&nbsp;129</span>&nbsp;&nbsp;&nbsp;&nbsp;log.info(`loading&nbsp;${dir+file}`);</p>
+<p id=129 class="line"><span>&nbsp;129</span>&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`loading&nbsp;${dir+file}`);</p>
 <p id=130 class="line"><span>&nbsp;130</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;r&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;<quote>"GET"</quote>,&nbsp;url:&nbsp;dir+file&nbsp;});</p>
 <p id=131 class="line"><span>&nbsp;131</span>&nbsp;&nbsp;&nbsp;&nbsp;DocSets.add(r,&nbsp;file);</p>
 <p id=132 class="line"><span>&nbsp;132</span>}</p>

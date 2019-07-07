@@ -200,12 +200,17 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
         const desc = await getCommentDescriptor(IDs, exmpl);
         IDs.runScript = (root:any) => {
             const libNames = Object.keys(modules);
-            const libs = libNames.map(name => modules[name]);
-            const scriptFn = new Function('root', ...libNames, desc);    
-            log.info('running example script');
-            scriptFn(root, ...libs);
+            const missingLibs = IDs.attrs.libs.map(l => l.sym).filter(l => libNames.indexOf(l)<0);
+            if (missingLibs.length > 0) {
+                log.info(`expected modules to be loaded: ${missingLibs.join(', ')}`);
+            } else {
+                const libs = libNames.map(name => modules[name]);
+                const scriptFn = new Function('root', ...libNames, desc);    
+                log.info('running example script');
+                scriptFn(root, ...libs);
+            }
         };
-        log.info('example function ready');
+        log.debug('example function ready');
         IDs.created = true;
         return true;
     } catch(e) { 
@@ -316,8 +321,8 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
         IDs.attrs = findTokens(IDs, attrs[1]);
         if (IDs.attrs.libs) {
             await Promise.all(IDs.attrs.libs.map(async l => {
-                log.info(`loading lib: ${l.sym}: ${l.path}`);
-                const content = await loadScript(l.path);
+                log.debug(`loading lib: ${l.sym}: ${l.path}`);
+                const content = await loadScript(l.sym, l.path);
                 if (content) { modules[l.sym] = content[l.sym]; }
             }));
         }
@@ -353,7 +358,7 @@ function findTokens(IDs:CommentDescriptor, str:string) {
                 }
         }
     });
-    log.info(`${str} --> \n${log.inspect(attrs,5)}`);
+    log.debug(`${str} --> \n${log.inspect(attrs,5)}`);
     return attrs;
 }
 
@@ -367,7 +372,7 @@ function findTokens(IDs:CommentDescriptor, str:string) {
  * If `path` is structured, i.e. contains '/', it is requested as is. 
  * @param path module name, such as 'hsDocs'
  */
-async function loadScript(path:string) {
+async function loadScript(sym:string, path:string) {
     const load = (p:string) => m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
 
     const paths = [
@@ -376,25 +381,29 @@ async function loadScript(path:string) {
     ];
     let content:any;
     try {
-        if (path.indexOf('/')>=0) { // if structured: call as is
+        if (path.indexOf('/')>=0) {     // if structured: call as is
             content = await load(path);
-        } else {
-            let i=0;
-            while(i<=paths.length) {
+        } else {                        // else try other paths
+            for (let i=0; i<=paths.length; i++) {
                 try { 
                     content = await load(paths[i]); 
                     break;
                 }
-                catch(e) { i++; }
+                catch(e) {}
             }
             log.debug(`${path} ${content?'found':'not found'}`);
         }
     } catch(e) { log.error(`loading lib ${path}`);}
-    log.info(`loaded ${path}, creating library`);
     try { 
-        let lib:any = {};
-        new Function(content.responseText).bind(lib)();
-        return lib;
+        const code:string = content.responseText;
+        if (code.startsWith('this["')) {
+            let lib:any = {};
+            log.info(`loaded ${path}, creating library`);
+            new Function(code).bind(lib)();
+            return lib;
+        } else {
+            log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);
+        }
     } catch(e) {
         log.error(`JSON.parse: ${path}: ${e}`);
         return undefined;

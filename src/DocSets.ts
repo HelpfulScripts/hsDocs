@@ -126,7 +126,7 @@ export class DocSets {
  * @param file the `json` file to load as docset
  */
 async function loadDocSet(dir:string, file:string):Promise<void> {
-    log.info(`loading ${dir+file}`);
+    log.debug(`loading ${dir+file}`);
     const r = await m.request({ method: "GET", url: dir+file });
     DocSets.add(r, file);
 }
