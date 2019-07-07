@@ -53,13 +53,10 @@ See below for creating the docset.
 }
 ```
 
-5 - optioonally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it. 
+5 - optionally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it. 
 These are created by the command `grunt sourceCode` in the `docs/data/src/` folder of your project.
 
 6 - Point a browser to the web-app directory
-
-
-
 
 ## Creating the Documentation DocSet
 Follow the instruction for `typedoc` in commenting the code and set the `json` option to create a 
@@ -71,8 +68,10 @@ For this to work, `typedoc` requires the file to have two separate comment entri
 If the second comment is missing, `typedoc` will not generate a comment in the DocSet.
 
 DocSets are shown as menu tabs across the top of the window. To include a DocSet in the menu, ensure that the 
-corresponding documentation `.json` file is copied into the `data` folder inside the `hsDocs` staging location 
-for the http server. Then edit the `index.json` file to include the documentation file name in the "docs" section. 
+corresponding documentation `<DocSet>.json` file is copied into the `data` folder inside the folder that holds the serving html file.
+Then edit the `index.json` file to include the documentation file name in the "docs" section. If no `index.json` file is found, 
+`hsDocs` will attempt to load a directory listing of the `data` file and include all encountered `*.json` files as DocSet. 
+This requires enabling the http server to provide a directory listing for the `data` folder.
 
 ### Modules
 Each source file is considered to be a `module`. Modules are shown in the left-hand overview panel of the main `hsDocs` window.

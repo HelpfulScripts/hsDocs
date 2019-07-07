@@ -454,7 +454,27 @@
 409
 410
 411
-412</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -866,10 +886,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Comment sections may contain code examples that demonstrate code behaviour and usage.
+ * Comment sections may contain code examples that are intended to be live demonstrations for 
+ * explaining some concept of the module are contained in. 
  * 
- * `hsDocs` will interpret and execute Javascript instructions within a `&lt;file name='script.js'&gt;` tag.
- * and stylesheet instructions with a &amp;lt;`file name='style.css'`&amp;gt; tag, as in following example (also see Example below):
+ * `hsDocs` will interpret comment sections between `&lt;example&gt;` and `&lt;/example&gt;`
+ * tags as code examples. Inside a code example, `&lt;file name='script.js'&gt;` tags contain a script to be executed, 
+ * and `&lt;file name='style.css'&gt;` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):
  * &lt;code&gt;
  *     &amp;lt;example&amp;gt; 
  *     &lt;file name='script.js'&gt;
@@ -889,20 +911,23 @@
  * &lt;/code&gt; 
  * 
  * ### Scripts 
- * Scripts are enclosed by `&lt;file name='script.js'&gt;` and `&lt;/file&gt;` tags and are intended to be live examples for 
- * explaining some concept of the module are contained in. 
+ * Scripts are enclosed by `&lt;file name='script.js'&gt;` and `&lt;/file&gt;` tags. 
  * 
  * hsDocs internally uses the [global Function object][Function] to parse and execute the script. 
- * Thus the script runs in the global scope and has access to global objects. A number of additional objects are provided
+ * Thus the script runs in the global scope and has access to global objects. A number of additional modules are provided
  * as parameters in the `Function` constructor and are thus available to the script. 
- * hsDocs currently provides the following namespaces as parameters
- * for use in the scripts:
- * - **m**: the `Mithril` m function    
- * - **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.
- * - **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.
+ * hsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:
+ * - **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function    
+ * - **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library, 
+ * providing functions to layout the browser window.
+ * - **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library, 
+ * providing various UI widget functions.
  * - **root**: the DOM element to attach content to.
  * 
- * Scripts can use and manipulate any of the provided objects. 
+ * Additional Scripts can loaded - see `Configuring the example` below. 
+ * 
+ * The script can access and manipulate any of the provided libraries
+ * via their namespace, for example as in `m(hsLayout.Layout,{})`
  * #### Using Mithril:
  * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
  * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
@@ -920,22 +945,27 @@
  *     .attr('preserveAspectRatio', 'xMinYMin meet');
  * ```
  * 
- * #### Configuring the `example`
- * The `&amp;lt;example&amp;gt` accepts additional arguments to configure the example:
- * - height=&lt;numper&gt;px   the height of the example box; defaults to 300
- * - libs={&lt;export name&gt;:&lt;path&gt;}   a list of additional libraries to load. `export name` is the symbol exported by the library.
- * This symbol will be available to the script. The main intent is to load the library being documented so that its features 
- * can be illustrated by the example script.
+ * ### Configuring the `example`
+ * The `&lt;example&gt;` accepts additional arguments to configure the example:
+ * 
+ * #### Height of the `example` panel
+ * To change the default panel height of 300px, set the `height=&lt;numper&gt;px` argument.
+ * 
+ * #### Module injection
+ * Additional module libraries can be injected by adding the argument `libs={&lt;export name&gt;:&lt;path&gt;[,...]}`.
+ * `hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`. 
  * For example:
  * &lt;code&gt;
- * &amp;lt;example height=500px libs={hsGraphd3:'hsGraphd3',d3:'https://d3js.org/d3.v5.min.js'}&amp;gt
+ * &lt;example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}&gt;
  * &lt;/code&gt;
- * If `path` is a module nane (e.g. 'hsDocs'), 
- * this involves the following attempts
- * at resolving the library path:
- * 1. load from 'node_modules/&lt;path.toLowerCase()&gt;/&lt;path&gt;.js, relative to the current web page.
- * 2. load from 'https://helpfulscripts.github.io/&lt;path&gt;/&lt;path&gt;.js'
- * If `path` is structured, i.e. contains '/', it is requested as is. 
+ * The following rules apply in resolving `path`:
+ * 1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.
+ * 2. load from 'node_modules/&lt;path.toLowerCase()&gt;/&lt;path&gt;.js, relative to the current web page. 
+ * This is useful to maintain libraries installed via `npm` locally on the server.
+ * 3. load from 'https://helpfulscripts.github.io/&lt;path&gt;/&lt;path&gt;.js'. Provided as a convenience to access `helpfulscript` modules ;)
+ *  
+ * To be recognized as injectable module, libraries need to follow the convention of `webPacks` 
+ * [`output.libraryTarget: "this"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -1161,7 +1191,7 @@ function <span class="fstat-no" title="function not covered" >executeScript(</sp
 <span class="cstat-no" title="statement not covered" >    if (root &amp;&amp; IDs.created) {</span>
 <span class="cstat-no" title="statement not covered" >        try { <span class="cstat-no" title="statement not covered" >IDs.runScript(root); </span>}</span>
         catch(e) { 
-<span class="cstat-no" title="statement not covered" >            log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); </span>
+<span class="cstat-no" title="statement not covered" >            log.error(`executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); </span>
         }
     } else {
         // log.error(`root not found for menuID ${IDs.menuID}`);
@@ -1261,14 +1291,14 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
     } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}`);}</span>
 <span class="cstat-no" title="statement not covered" >    try { </span>
         const code:string = <span class="cstat-no" title="statement not covered" >content.responseText;</span>
-<span class="cstat-no" title="statement not covered" >        if (code.startsWith('this["')) {</span>
             let lib:any = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >            log.info(`loaded ${path}, creating library`);</span>
 <span class="cstat-no" title="statement not covered" >            new Function(code).bind(lib)();</span>
-<span class="cstat-no" title="statement not covered" >            return lib;</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >            log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);</span>
-        }
+<span class="cstat-no" title="statement not covered" >            if (lib) {</span>
+<span class="cstat-no" title="statement not covered" >                return lib;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);</span>
+            }
     } catch(e) {
 <span class="cstat-no" title="statement not covered" >        log.error(`JSON.parse: ${path}: ${e}`);</span>
 <span class="cstat-no" title="statement not covered" >        return undefined;</span>

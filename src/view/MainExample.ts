@@ -1,8 +1,10 @@
 /**
- * Comment sections may contain code examples that demonstrate code behaviour and usage.
+ * Comment sections may contain code examples that are intended to be live demonstrations for 
+ * explaining some concept of the module are contained in. 
  * 
- * `hsDocs` will interpret and execute Javascript instructions within a `<file name='script.js'>` tag.
- * and stylesheet instructions with a &lt;`file name='style.css'`&gt; tag, as in following example (also see Example below):
+ * `hsDocs` will interpret comment sections between `<example>` and `</example>`
+ * tags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed, 
+ * and `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):
  * <code>
  *     &lt;example&gt; 
  *     <file name='script.js'>
@@ -22,20 +24,23 @@
  * </code> 
  * 
  * ### Scripts 
- * Scripts are enclosed by `<file name='script.js'>` and `</file>` tags and are intended to be live examples for 
- * explaining some concept of the module are contained in. 
+ * Scripts are enclosed by `<file name='script.js'>` and `</file>` tags. 
  * 
  * hsDocs internally uses the [global Function object][Function] to parse and execute the script. 
- * Thus the script runs in the global scope and has access to global objects. A number of additional objects are provided
+ * Thus the script runs in the global scope and has access to global objects. A number of additional modules are provided
  * as parameters in the `Function` constructor and are thus available to the script. 
- * hsDocs currently provides the following namespaces as parameters
- * for use in the scripts:
- * - **m**: the `Mithril` m function    
- * - **layout**: the {@link hsLayout: `hsLayout`} namespace, providing functions to layout the browser window.
- * - **widget**: the {@link hsGraph: `hsGraph`} namespace, providing various UI widget functions.
+ * hsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:
+ * - **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function    
+ * - **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library, 
+ * providing functions to layout the browser window.
+ * - **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library, 
+ * providing various UI widget functions.
  * - **root**: the DOM element to attach content to.
  * 
- * Scripts can use and manipulate any of the provided objects. 
+ * Additional Scripts can loaded - see `Configuring the example` below. 
+ * 
+ * The script can access and manipulate any of the provided libraries
+ * via their namespace, for example as in `m(hsLayout.Layout,{})`
  * #### Using Mithril:
  * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
  * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
@@ -53,22 +58,27 @@
  *     .attr('preserveAspectRatio', 'xMinYMin meet');
  * ```
  * 
- * #### Configuring the `example`
- * The `&lt;example&gt` accepts additional arguments to configure the example:
- * - height=<numper>px   the height of the example box; defaults to 300
- * - libs={<export name>:<path>}   a list of additional libraries to load. `export name` is the symbol exported by the library.
- * This symbol will be available to the script. The main intent is to load the library being documented so that its features 
- * can be illustrated by the example script.
+ * ### Configuring the `example`
+ * The `<example>` accepts additional arguments to configure the example:
+ * 
+ * #### Height of the `example` panel
+ * To change the default panel height of 300px, set the `height=<numper>px` argument.
+ * 
+ * #### Module injection
+ * Additional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.
+ * `hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`. 
  * For example:
  * <code>
- * &lt;example height=500px libs={hsGraphd3:'hsGraphd3',d3:'https://d3js.org/d3.v5.min.js'}&gt
+ * <example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>
  * </code>
- * If `path` is a module nane (e.g. 'hsDocs'), 
- * this involves the following attempts
- * at resolving the library path:
- * 1. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page.
- * 2. load from 'https://helpfulscripts.github.io/<path>/<path>.js'
- * If `path` is structured, i.e. contains '/', it is requested as is. 
+ * The following rules apply in resolving `path`:
+ * 1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.
+ * 2. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page. 
+ * This is useful to maintain libraries installed via `npm` locally on the server.
+ * 3. load from 'https://helpfulscripts.github.io/<path>/<path>.js'. Provided as a convenience to access `helpfulscript` modules ;)
+ *  
+ * To be recognized as injectable module, libraries need to follow the convention of `webPacks` 
+ * [`output.libraryTarget: "this"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
  * 
@@ -294,7 +304,7 @@ function executeScript(IDs:CommentDescriptor) {
     if (root && IDs.created) {
         try { IDs.runScript(root); }
         catch(e) { 
-            log.error(`error executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
+            log.error(`executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
         }
     } else {
         // log.error(`root not found for menuID ${IDs.menuID}`);
@@ -394,14 +404,14 @@ async function loadScript(sym:string, path:string) {
     } catch(e) { log.error(`loading lib ${path}`);}
     try { 
         const code:string = content.responseText;
-        if (code.startsWith('this["')) {
             let lib:any = {};
             log.info(`loaded ${path}, creating library`);
             new Function(code).bind(lib)();
-            return lib;
-        } else {
-            log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);
-        }
+            if (lib) {
+                return lib;
+            } else {
+                log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);
+            }
     } catch(e) {
         log.error(`JSON.parse: ${path}: ${e}`);
         return undefined;
