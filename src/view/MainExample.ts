@@ -241,7 +241,8 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
             size: ["50px"]
         },
         pages:{},
-        activeSrcPage: undefined
+        activeSrcPage: undefined,
+        attrs: {libs:[]}
     };
 }
 
@@ -318,8 +319,8 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     // let attrs = example.match(/<example\s(\S*?)(\s|>)/gi);
     let attrs = example.match(/<example\s([\s\S]*?)>/); // capture all parameters to `example`
     if (attrs && attrs[1]) { 
-        IDs.attrs = findTokens(IDs, attrs[1]);
-        if (IDs.attrs.libs) {
+        findTokens(IDs, attrs[1]);
+        if (IDs.attrs.libs.length>0) {
             await Promise.all(IDs.attrs.libs.map(async l => {
                 log.debug(`loading lib: ${l.sym}: ${l.path}`);
                 const content = await loadScript(l.sym, l.path);
@@ -346,20 +347,17 @@ function findTokens(IDs:CommentDescriptor, str:string) {
     while(r = reg.exec(str)) {
         results.push({key:r[2], val:r[3]});
     }
-    const attrs:Attribute = {};
     results.map(kv => {
         switch (kv.key) {
-            case 'height': attrs['height'] = kv.val; break;       
+            case 'height': IDs.attrs['height'] = kv.val; break;       
             case 'libs':    // {graph:'/node_modules/hsgraphd3/index.js'}
                 const ligreg = new RegExp(/((\w+?)\s*:\s*([^\s,}]+))/g);
-                if (!attrs.libs) { attrs.libs = []; }
                 while(r = ligreg.exec(kv.val)) {
-                    attrs.libs.push({sym:r[2],path:r[3].replace(/['"]/g, '')});
+                    IDs.attrs.libs.push({sym:r[2],path:r[3].replace(/['"]/g, '')});
                 }
         }
     });
-    log.debug(`${str} --> \n${log.inspect(attrs,5)}`);
-    return attrs;
+    log.debug(`${str} --> \n${log.inspect(IDs.attrs,5)}`);
 }
 
 
