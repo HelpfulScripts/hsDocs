@@ -128,9 +128,7 @@ const modules = {
 
 interface Attribute {
     height?: string;
-    libs?: {
-        [name:string]: string;
-    };
+    libs?: {sym:string, path:string}[];
 }
 
 /**
@@ -211,7 +209,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
         IDs.created = true;
         return true;
     } catch(e) { 
-        log.error(`creating script: ${e}\n${e.stack()}`); 
+        log.error(`creating script: ${e}\n${e.stack}`); 
         return false;
     } 
 }
@@ -315,11 +313,15 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     // let attrs = example.match(/<example\s(\S*?)(\s|>)/gi);
     let attrs = example.match(/<example\s([\s\S]*?)>/); // capture all parameters to `example`
     if (attrs && attrs[1]) { 
-        await Promise.all(attrs[1].split(' ').map(async att => {
-            const cmd = att.split('=');
-            await decodeAttrs(IDs, cmd[0].trim().toLowerCase(), cmd[1].trim());
-            log.debug(`found attrs:\n ${log.inspect(IDs.attrs, 5)}`);
-        }));
+        IDs.attrs = findTokens(IDs, attrs[1]);
+        if (IDs.attrs.libs) {
+            await Promise.all(IDs.attrs.libs.map(async l => {
+                log.info(`loading lib: ${l.sym}: ${l.path}`);
+                const content = await loadScript(l.path);
+                if (content) { modules[l.sym] = content[l.sym]; }
+            }));
+        }
+        log.debug(`found attrs:\n ${log.inspect(IDs.attrs, 5)}`);
     }
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
@@ -331,32 +333,30 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     return IDs.pages['js'];
 }
 
-declare const hsGraphd3:any;
-
-async function decodeAttrs(IDs:CommentDescriptor, cmd:string, val:string) {
-    IDs.attrs = IDs.attrs || {};
-    switch(cmd) {
-        case 'height': IDs.attrs['height'] = val; break;
-        case 'libs':    // {graph:'/node_modules/hsgraphd3/index.js'}
-            if (val.startsWith('{') && val.endsWith('}')) {
-                IDs.attrs['libs'] = {};
-                const list = val.slice(1, -1);
-                await Promise.all(list.split(',').map(async lib => {
-                    const colon = lib.indexOf(':');
-                    const name = lib.slice(0,colon).trim();
-                    const path = lib.slice(colon+1).trim().replace(/['"]/g, '');
-                    IDs.attrs.libs[name] = path;
-                    if (!modules[name]) {
-                        log.info(`loading lib: ${name}: ${path}`);
-                        const content = await loadScript(path);
-                        if (content) { modules[name] = content[name]; }
-                    }
-                }));
-            } else {
-                log.warn(`expected libs to have form '{lib:path}', found '${val}'`);
-            }
+function findTokens(IDs:CommentDescriptor, str:string) {
+    const results = [];
+    // find 'key=value' and 'key={value}' statements
+    const reg = new RegExp(/((\w+?)\s*?=\s*?([^\s{},]+|{[\s\S]+?}))/g);
+    let r;
+    while(r = reg.exec(str)) {
+        results.push({key:r[2], val:r[3]});
     }
+    const attrs:Attribute = {};
+    results.map(kv => {
+        switch (kv.key) {
+            case 'height': attrs['height'] = kv.val; break;       
+            case 'libs':    // {graph:'/node_modules/hsgraphd3/index.js'}
+                const ligreg = new RegExp(/((\w+?)\s*:\s*([^\s,}]+))/g);
+                if (!attrs.libs) { attrs.libs = []; }
+                while(r = ligreg.exec(kv.val)) {
+                    attrs.libs.push({sym:r[2],path:r[3].replace(/['"]/g, '')});
+                }
+        }
+    });
+    log.info(`${str} --> \n${log.inspect(attrs,5)}`);
+    return attrs;
 }
+
 
 /**
  * attempts to load a library for the specified `path`. If `path` is a module nane (e.g. 'hsDocs'), 
@@ -379,13 +379,15 @@ async function loadScript(path:string) {
         if (path.indexOf('/')>=0) { // if structured: call as is
             content = await load(path);
         } else {
-            try { 
-                content = await load(paths[0]); 
-            } catch(e) { try {
-                content = await load(paths[1]); 
-            } catch(e) { 
-
-            }}
+            let i=0;
+            while(i<=paths.length) {
+                try { 
+                    content = await load(paths[i]); 
+                    break;
+                }
+                catch(e) { i++; }
+            }
+            log.debug(`${path} ${content?'found':'not found'}`);
         }
     } catch(e) { log.error(`loading lib ${path}`);}
     log.info(`loaded ${path}, creating library`);
@@ -399,3 +401,4 @@ async function loadScript(path:string) {
     }
     // add(content.responseText);
 }
+
