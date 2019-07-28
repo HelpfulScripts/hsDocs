@@ -70,14 +70,17 @@
  * For example:
  * <code>
  * <example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>
+ * ...in the script:
+ *    new hsGraph.Graph();
+ *    d3.slect('');
  * </code>
  * The following rules apply in resolving `path`:
  * 1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.
- * 2. load from 'node_modules/<path.toLowerCase()>/<path>.js, relative to the current web page. 
+ * 2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page. 
  * This is useful to maintain libraries installed via `npm` locally on the server.
- * 3. load from 'https://helpfulscripts.github.io/<path>/<path>.js'. Provided as a convenience to access `helpfulscript` modules ;)
+ * 3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)
  *  
- * To be recognized as injectable module, libraries need to follow the convention of `webPacks` 
+ * To be recognized as injectable module, libraries need to follow the convention of `webPack's` 
  * [`output.libraryTarget: "this"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.
  * 
  * [Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
@@ -126,8 +129,6 @@ import { shortCheckSum }        from 'hsutil';
 import { delay }                from 'hsutil'; 
 import { log as _log }          from 'hsutil';  const log = _log('MainExample');
 import * as hsutil              from 'hsutil';
-import * as hsdatab             from 'hsdatab';
-import * as hsgraph             from 'hsgraph';
 
 const modules = {
     m:          m,
