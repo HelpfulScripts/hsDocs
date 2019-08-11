@@ -35,8 +35,8 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isStatic": true,
 								"isPrivate": true,
+								"isStatic": true,
 								"isExported": true
 							},
 							"comment": {
@@ -140,8 +140,8 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isStatic": true,
 								"isPrivate": true,
+								"isStatic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -162,9 +162,9 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
+								"isPublic": true,
 								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -226,9 +226,9 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
+								"isPublic": true,
 								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -302,9 +302,9 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
+								"isPublic": true,
 								"isStatic": true,
-								"isExported": true,
-								"isPublic": true
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -1926,8 +1926,8 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true,
-								"isProtected": true
+								"isProtected": true,
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -2250,8 +2250,8 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true,
-								"isProtected": true
+								"isProtected": true,
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -3244,8 +3244,8 @@
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
-								"isExported": true,
-								"isProtected": true
+								"isProtected": true,
+								"isExported": true
 							},
 							"signatures": [
 								{
@@ -4659,7 +4659,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 317,
+							"line": 319,
 							"character": 21
 						}
 					]
@@ -4759,7 +4759,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 353,
+							"line": 355,
 							"character": 19
 						}
 					]
@@ -4827,7 +4827,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 327,
+							"line": 329,
 							"character": 35
 						}
 					]
@@ -4965,7 +4965,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainExample.ts",
-							"line": 384,
+							"line": 386,
 							"character": 25
 						}
 					]

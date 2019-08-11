@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.2% </span>
+        <span class="strong">34.65% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>44/125</span>
+        <span class='fraction'>44/127</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">38.05% </span>
+        <span class="strong">37.72% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>43/113</span>
+        <span class='fraction'>43/114</span>
       </div>
     </div>
   </div>
@@ -465,7 +465,9 @@
 420
 421
 422
-423</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+423
+424
+425</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -769,6 +771,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1169,7 +1173,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
             columns: ["50%"],
             content: [
                 m(Layout, {
-                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div', 'placeholder'))
+                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div.placeholder', 'placeholder'))
                 }),
                 m(Layout, {
                     rows:["30px", "fill"],
@@ -1192,6 +1196,8 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function <span class="fstat-no" title="function not covered" >executeScript(</span>IDs:CommentDescriptor) {
     const root = <span class="cstat-no" title="statement not covered" >document.getElementById(IDs.menuID);</span>
 <span class="cstat-no" title="statement not covered" >    if (root &amp;&amp; IDs.created) {</span>
+        // root.querySelectorAll('.placeholder').forEach(d =&gt; root.removeChild(d));
+<span class="cstat-no" title="statement not covered" >        while (root.children.length&gt;0) { <span class="cstat-no" title="statement not covered" >root.removeChild(root.children[0]); </span>}</span>
 <span class="cstat-no" title="statement not covered" >        try { <span class="cstat-no" title="statement not covered" >IDs.runScript(root); </span>}</span>
         catch(e) { 
 <span class="cstat-no" title="statement not covered" >            log.error(`executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); </span>
@@ -1204,7 +1210,7 @@ function <span class="fstat-no" title="function not covered" >executeScript(</sp
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >executeError(</span>e:any) {
-<span class="cstat-no" title="statement not covered" >    log.error(`rejection executing script:\n${e}`);</span>
+<span class="cstat-no" title="statement not covered" >    log.error(`rejection executing script:\n${e}\n${e.stack}`);</span>
 }
  
 /**

@@ -280,7 +280,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
             columns: ["50%"],
             content: [
                 m(Layout, {
-                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div', 'placeholder'))
+                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div.placeholder', 'placeholder'))
                 }),
                 m(Layout, {
                     rows:["30px", "fill"],
@@ -303,6 +303,8 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 function executeScript(IDs:CommentDescriptor) {
     const root = document.getElementById(IDs.menuID);
     if (root && IDs.created) {
+        // root.querySelectorAll('.placeholder').forEach(d => root.removeChild(d));
+        while (root.children.length>0) { root.removeChild(root.children[0]); }
         try { IDs.runScript(root); }
         catch(e) { 
             log.error(`executing script: ${e}\n${IDs.executeSource}\n${e.stack}`); 
@@ -315,7 +317,7 @@ function executeScript(IDs:CommentDescriptor) {
 }
 
 function executeError(e:any) {
-    log.error(`rejection executing script:\n${e}`);
+    log.error(`rejection executing script:\n${e}\n${e.stack}`);
 }
  
 /**
