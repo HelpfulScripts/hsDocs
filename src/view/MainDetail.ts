@@ -48,7 +48,7 @@ function itemDoc(mdl:any) {
     return m('.hs-item-doc', [
         title(mdl, sig),
         commentLong(sig),
-        members(sig, sig)
+        members(mdl, sig)
     ]);
 }
 
@@ -75,10 +75,10 @@ function title(mdl:any, sig:any): Vnode {
 function members(mdl:any, sig:any): Vnode {
     if (mdl.groups) {
         return m('.hs-item-members', [
-            ...mdl.groups.map((g:any) => member(g, mdl.lib, true, true)),
-            ...mdl.groups.map((g:any) => member(g, mdl.lib, true, false)),
-            ...mdl.groups.map((g:any) => member(g, mdl.lib, false, true)),
-            ...mdl.groups.map((g:any) => member(g, mdl.lib, false, false))
+            ...mdl.groups.map((g:any) => member(g, mdl.lib, true, true)),   // static public
+            ...mdl.groups.map((g:any) => member(g, mdl.lib, true, false)),  // static protected and private
+            ...mdl.groups.map((g:any) => member(g, mdl.lib, false, true)),  // instance public
+            ...mdl.groups.map((g:any) => member(g, mdl.lib, false, false))  // instance protected and private
         ]);
     } else if (mdl.parameters) {
         return m('.hs-item-members', parameter(mdl.parameters, mdl.lib));
@@ -140,6 +140,11 @@ function member(group:any, lib:string, statc:boolean, publc: boolean): Vnode {
     return m(`.hs-item-member ${statc?'.hs-item-static':''} ${publc?'.hs-item-public':''}`, content.concat(inherited));
 }
 
+/**
+ * prints the descriptor line for a specified signature.
+ * @param mdl 
+ * @param sig 
+ */
 function itemDescriptor(mdl:any, sig:any):Vnode {
     try { return m('.hs-item-desc', [ 
             flags(mdl),

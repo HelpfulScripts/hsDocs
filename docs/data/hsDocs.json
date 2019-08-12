@@ -3530,7 +3530,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 158,
+							"line": 163,
 							"character": 18
 						}
 					]
@@ -3548,6 +3548,9 @@
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
+							"comment": {
+								"shortText": "prints the descriptor line for a specified signature."
+							},
 							"parameters": [
 								{
 									"id": 282,
@@ -3555,6 +3558,7 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {},
 									"type": {
 										"type": "intrinsic",
 										"name": "any"
@@ -3566,6 +3570,9 @@
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
+									"comment": {
+										"text": "\n"
+									},
 									"type": {
 										"type": "intrinsic",
 										"name": "any"
@@ -3581,7 +3588,7 @@
 					"sources": [
 						{
 							"fileName": "view/MainDetail.ts",
-							"line": 143,
+							"line": 148,
 							"character": 23
 						}
 					]
