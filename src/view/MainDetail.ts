@@ -114,7 +114,7 @@ function member(group:any, lib:string, statc:boolean, publc: boolean): Vnode {
         'Accessors':        '.hs-item-accessors'        
     };
     const fn = groupMap[group.title] || '.hs-item-unknown-member';
-    const isPublic = (flags:any) => flags.isPublic || (flags.isExported && !flags.isPrivate);
+    const isPublic = (flags:any) => flags.isPublic || (flags.isExported && !flags.isPrivate && !flags.isProtected);
 
     const content = group.children
         .map(resolve)

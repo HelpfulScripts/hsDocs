@@ -137,7 +137,7 @@
 <p id=114 class="line"><span>&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<quote>'Accessors'</quote>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<quote>'.hs-item-accessors'</quote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p id=115 class="line"><span>&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;};</p>
 <p id=116 class="line"><span>&nbsp;116</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;fn&nbsp;=&nbsp;groupMap[group.title]&nbsp;||&nbsp;<quote>'.hs-item-unknown-member'</quote>;</p>
-<p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;isPublic&nbsp;=&nbsp;(flags:any)&nbsp;=>&nbsp;flags.isPublic&nbsp;||&nbsp;(flags.isExported&nbsp;&&&nbsp;!flags.isPrivate);</p>
+<p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;isPublic&nbsp;=&nbsp;(flags:any)&nbsp;=>&nbsp;flags.isPublic&nbsp;||&nbsp;(flags.isExported&nbsp;&&&nbsp;!flags.isPrivate&nbsp;&&&nbsp;!flags.isProtected);</p>
 <p id=118 class="line"><span>&nbsp;118</span></p>
 <p id=119 class="line"><span>&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;group.children</p>
 <p id=120 class="line"><span>&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map(resolve)</p>
