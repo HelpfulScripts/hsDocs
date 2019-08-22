@@ -61,7 +61,7 @@
   "dependencies": {
     "@types/mithril": "^1.1.12",
     "hslayout": "*",
-    "mithril": "^1.1.6",
+    "mithril": "^2.0.2",
     "showdown": "^1.8.6",
     "hswidget": "*",
     "hsutil": "*"
