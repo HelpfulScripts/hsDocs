@@ -6,7 +6,10 @@ import { flags, sourceLink,
          signature, type, 
          extensionOf, inheritedFrom,
          kindString, itemName, 
-         makeID }               from './Parts'; 
+         makeID, 
+         implementationOf,
+         extendedBy,
+         implementedBy}      from './Parts'; 
 
 
 /**
@@ -64,7 +67,8 @@ function overviewDoc(mdl:any) {
 }
 
 /**
- * renders the title of the main panel
+ * renders the title of the main panel.
+ * ![title image](data/title.png)
  * @param mdl the module to document 
  * @param sig a signature of the module, or the the module itself
  */
@@ -110,6 +114,7 @@ function member(group:any, lib:string, statc:boolean, publc: boolean): Vnode {
         'Variables':        '.hs-item-variable',
         'Object literals':  '.hs-item-object-literal',
         'Properties':       '.hs-item-property',
+        'Enumerations':     '.hs-item-enumration',
         'Type aliases':     '.hs-item-alias',          
         'Accessors':        '.hs-item-accessors'        
     };
@@ -153,8 +158,11 @@ function itemDescriptor(mdl:any, sig:any):Vnode {
             signature(sig, mdl),
             type(sig,  mdl.lib),
             extensionOf(mdl),
+            implementationOf(mdl),
             inheritedFrom(mdl),
-            sourceLink(mdl)
+            sourceLink(mdl),
+            extendedBy(mdl),
+            implementedBy(mdl)
         ]);
     }
     catch(e) { console.log(e); console.log(mdl); }

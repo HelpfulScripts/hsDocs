@@ -54,7 +54,43 @@ export function extensionOf(mdl:any) {
         m('span', mdl.extendedTypes.map((t:any, i:number) =>
             m('span.hs-item-extension', [
                 libLink('a', mdl.lib, DocSets.get(mdl.lib, t.id).fullPath, t.name),
-                mdl.extendedTypes.map.length>(i+1)? ', ': ''
+                mdl.extendedTypes.length>(i+1)? ', ': ''
+            ])
+        )),
+    ]);
+}
+
+export function implementationOf(mdl:any) {
+    return !mdl.implementedTypes? undefined : m('span.hs-item-implementations', [
+        m('span.hs-item-implements', 'implements'),
+        m('span', mdl.implementedTypes.map((t:any, i:number) =>
+            m('span.hs-item-extension', [
+                libLink('a', mdl.lib, DocSets.get(mdl.lib, t.id).fullPath, t.name),
+                mdl.implementedTypes.length>(i+1)? ', ': ''
+            ])
+        )),
+    ]);
+}
+
+export function extendedBy(mdl:any) {
+    return !mdl.extendedBy? undefined : m('div.hs-item-extensions',[
+        m('span.hs-item-extendedby', 'extended by'),
+        m('span', mdl.extendedBy.map((t:any, i:number) =>
+            m('span.hs-item-extendedby', [
+                libLink('a', mdl.lib, DocSets.get(mdl.lib, t.id).fullPath, t.name),
+                mdl.extendedBy.length>(i+1)? ', ': ''
+            ])
+        )),
+    ]);
+}
+
+export function implementedBy(mdl:any) {
+    return !mdl.implementedBy? undefined : m('div.hs-item-implementations',[
+        m('span.hs-item-implementedby', 'implemented by'),
+        m('span', mdl.implementedBy.map((t:any, i:number) =>
+            m('span.hs-item-implementedby', [
+                libLink('a', mdl.lib, DocSets.get(mdl.lib, t.id).fullPath, t.name),
+                mdl.implementedBy.length>(i+1)? ', ': ''
             ])
         )),
     ]);

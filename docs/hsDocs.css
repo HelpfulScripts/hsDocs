@@ -842,6 +842,21 @@ th {
 .hs-item-extension {
   padding: 10px 0.4em 10px 0em;
 }
+.hs-item-implementations {
+  padding: 10px 0.4em 10px 0em;
+  font-style: italic;
+}
+.hs-item-implements {
+  padding: 10px 0.4em 10px 0em;
+}
+.hs-item-extendedby {
+  padding: 10px 0.4em 10px 0em;
+  font-size: 80%;
+}
+.hs-item-implementedby {
+  padding: 10px 0.4em 10px 0em;
+  font-size: 80%;
+}
 .hs-item-unknown-kind {
   color: #f44;
 }
