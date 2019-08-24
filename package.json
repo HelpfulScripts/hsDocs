@@ -60,10 +60,10 @@
   },
   "dependencies": {
     "@types/mithril": "^1.1.12",
-    "hslayout": "*",
+    "hslayout": "2.4.7",
     "mithril": "^1.1.6",
     "showdown": "^1.8.6",
-    "hswidget": "*",
+    "hswidget": "2.3.11",
     "hsutil": "*"
   }
 }
