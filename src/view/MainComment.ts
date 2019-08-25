@@ -61,7 +61,13 @@ function textOrShortTextOrDescription(comment:any, short:boolean):Vnode {
     let text = (comment.shortText || '');
     if (comment.text) { text += '\n'+ (comment.text || ''); }
     if (comment.tags) {
-        comment.tags.map((tag:any) => {if (tag.tag==='description') { text = tag.text;}} );
+        comment.tags.map((tag:any) => {
+            switch (tag.tag) {
+                case 'shortText':
+                case 'description': text = `${text}\n${tag.text}`; break;
+                case 'param': text = `${text}\n- **${tag.param}**: ${tag.text}`; break;
+            }
+        });
     }
     // search for pattern <example...<file...</example>
     text = text.replace(/<example[^<]*?(<file[\S\s]*?)<\/example>/gi, short? '' : example);

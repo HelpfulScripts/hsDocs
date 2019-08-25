@@ -143,9 +143,8 @@ export function libLink(css:string, lib:string, id:string, name:string) {
  */
 export function signature(s:any, mdl:any): Vnode {
     const comma = (i:number) => (i>0)? ', ': '';
-    function optional(flags: any) {
-        return (flags && flags.isOptional)? '.hs-item-optional' : '';
-    }
+    const optional = (flags:any) => (flags && flags.isOptional)? '.hs-item-optional' : '';
+if (s.type && s.type.declaration && s.type.declaration.indexSignature) { console.log(s);}
 
     let sig = [];
     if (s) {
@@ -156,7 +155,7 @@ export function signature(s:any, mdl:any): Vnode {
                     m(`span.hs-item-name${optional(p.flags)}`, p.name),
                     type(p, mdl.lib)
                 ])
-            ]));
+            ]));            
         }
         switch (mdl.kindString) {
             case undefined: break;

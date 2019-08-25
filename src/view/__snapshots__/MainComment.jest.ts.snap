@@ -449,7 +449,8 @@ Object {
         Object {
           "_state": undefined,
           "attrs": undefined,
-          "children": "<p>other tag",
+          "children": "<p>comment
+other tag",
           "dom": undefined,
           "domSize": undefined,
           "events": undefined,

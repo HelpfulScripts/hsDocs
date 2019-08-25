@@ -86,6 +86,8 @@ function members(mdl:any, sig:any): Vnode {
         ]);
     } else if (mdl.parameters) {
         return m('.hs-item-members', parameter(mdl.parameters, mdl.lib));
+    } else if (mdl.signatures) {
+        return m('.hs-item-members', mdl.signatures.map((s:any) => parameter(s.parameters, mdl.lib)));
     } else if (mdl.type && mdl.type.declaration) {
         mdl.type.declaration.lib = mdl.lib;
         return members(mdl.type.declaration, sig);
