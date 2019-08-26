@@ -142,35 +142,45 @@ export function libLink(css:string, lib:string, id:string, name:string) {
  * creates a function or method signature
  */
 export function signature(s:any, mdl:any): Vnode {
+    function params(s:any) {
+        return s.parameters.map((p:any, i:number) => m('span', [
+            comma(i),
+            m('span.hs-item-sig-param', [
+                m(`span.hs-item-name${optional(p.flags)}`, p.name),
+                type(p, mdl.lib)
+            ])
+        ]));
+    }
     const comma = (i:number) => (i>0)? ', ': '';
     const optional = (flags:any) => (flags && flags.isOptional)? '.hs-item-optional' : '';
-if (s.type && s.type.declaration && s.type.declaration.indexSignature) { console.log(s);}
 
     let sig = [];
     if (s) {
-        if (s.parameters) {
-            sig = s.parameters.map((p:any, i:number) => m('span', [
-                comma(i),
-                m('span.hs-item-sig-param', [
-                    m(`span.hs-item-name${optional(p.flags)}`, p.name),
-                    type(p, mdl.lib)
-                ])
-            ]));            
+        if (s.parameters) { sig = params(s); }     
+        else if (s.type && s.type.declaration && s.type.declaration.indexSignature) {
+            sig = s.type.declaration.indexSignature.map((isig:any) => m('span', params(isig)));
+        }
+        else if (s.type && s.type.declaration && s.type.declaration.signatures) {
+            sig = s.type.declaration.signatures.map((isig:any) => m('span', params(isig)));
         }
         switch (mdl.kindString) {
-            case undefined: break;
-            case 'Method':
-            case 'Function': 
-            case 'Constructor': 
-            case 'External module': 
-            case 'Class': 
+            // unmodified:
             case 'Variable': 
-            case 'Type alias': 
-            case 'Interface': 
             case 'Parameter': 
             case 'Property': 
+            case 'Type alias': 
+            case 'Interface': 
+            case 'Class': 
+            case 'External module': 
             case 'Enumeration': 
             case 'Enumeration member': 
+                break;
+            // enclose in (...):
+            case undefined: break;
+            case 'Method':
+            case 'Accessor':
+            case 'Function': 
+            case 'Constructor': 
             case 'Object literal': 
                 sig.unshift(m('span.hs-item-name', '('));
                 sig.push(m('span.hs-item-name', ')'));

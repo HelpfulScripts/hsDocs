@@ -43,18 +43,7 @@ exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
             </span>
             <span
               class="hs-item-signature"
-            >
-              <span
-                class="hs-item-name"
-              >
-                (
-              </span>
-              <span
-                class="hs-item-name"
-              >
-                )
-              </span>
-            </span>
+            />
             <span>
               
             </span>
@@ -181,18 +170,7 @@ Processing occurs in these steps:
                 </span>
                 <span
                   class="hs-item-signature"
-                >
-                  <span
-                    class="hs-item-name"
-                  >
-                    (
-                  </span>
-                  <span
-                    class="hs-item-name"
-                  >
-                    )
-                  </span>
-                </span>
+                />
                 <span>
                   
                 </span>
@@ -287,18 +265,7 @@ provides access to elements of each docset.
                 </span>
                 <span
                   class="hs-item-signature"
-                >
-                  <span
-                    class="hs-item-name"
-                  >
-                    (
-                  </span>
-                  <span
-                    class="hs-item-name"
-                  >
-                    )
-                  </span>
-                </span>
+                />
                 <span>
                   <span
                     class="hs-item-name"
@@ -990,18 +957,7 @@ exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
                 </span>
                 <span
                   class="hs-item-signature"
-                >
-                  <span
-                    class="hs-item-name"
-                  >
-                    (
-                  </span>
-                  <span
-                    class="hs-item-name"
-                  >
-                    )
-                  </span>
-                </span>
+                />
                 <span>
                   <span
                     class="hs-item-name"
@@ -1076,18 +1032,7 @@ exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
                 </span>
                 <span
                   class="hs-item-signature"
-                >
-                  <span
-                    class="hs-item-name"
-                  >
-                    (
-                  </span>
-                  <span
-                    class="hs-item-name"
-                  >
-                    )
-                  </span>
-                </span>
+                />
                 <span>
                   <span
                     class="hs-item-name"

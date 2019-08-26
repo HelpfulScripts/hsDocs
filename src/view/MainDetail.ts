@@ -1,6 +1,6 @@
 import { m, Vnode}              from 'hslayout';
 import { Layout }               from 'hslayout';
-import { DocSets }              from '../DocSets'; 
+import { DocSets, json }              from '../DocSets'; 
 import { comment, commentLong } from './MainComment';
 import { flags, sourceLink, 
          signature, type, 
@@ -9,7 +9,8 @@ import { flags, sourceLink,
          makeID, 
          implementationOf,
          extendedBy,
-         implementedBy}      from './Parts'; 
+         implementedBy}         from './Parts'; 
+// import { testNode }             from '../Types';
 
 
 /**
@@ -47,6 +48,13 @@ function getOverview(lib:string, mdl:string):Vnode {
  * @param mdl the module to document on the main panel
  */
 function itemDoc(mdl:any) {
+    // if (mdl.name) { 
+    //     console.log(`testing itemDoc ${mdl.name}: ${testNode(mdl)} tests run`);
+    // } else {
+    //     console.log('itemDoc:');
+    //     console.log(mdl);
+    //     mdl.map((m:any) => console.log(`testing itemDoc ${m.name}: ${testNode(m)} tests run`));
+    // }
     const sig = mdl.signatures? mdl.signatures[0] : mdl;
     return m('.hs-item-doc', [
         title(mdl, sig),
@@ -59,7 +67,14 @@ function itemDoc(mdl:any) {
  * Creates documentation for the project overview in the main panel
  * @param mdl the module to document on the main panel
  */
-function overviewDoc(mdl:any) {
+function overviewDoc(mdl:string[] | json) {
+    // if (mdl.name) { 
+    //     console.log(`testing overviewDoc ${mdl.name}: ${testNode(mdl)} tests run`);
+    // } else {
+    //     console.log('overviewDoc:');
+    //     console.log(mdl);
+    //     mdl.map((m:string) => DocSets.get(m, 0)).map((m:json) => console.log(`testing overviewDoc ${m.name}: ${testNode(m)} tests run in lib ${m}`));
+    // }
     const sig = mdl.signatures? mdl.signatures[0] : mdl;
     return m('.hs-item-doc', [
         commentLong(sig),
@@ -107,18 +122,19 @@ function member(group:any, lib:string, statc:boolean, publc: boolean): Vnode {
     const directChildren    = ((mdl:any) => !mdl['inheritedFrom']);
     const inheritedChildren = ((mdl:any) =>  mdl['inheritedFrom']);
     const groupMap = {
-        'External modules': '.hs-item-external-module',
-        'Constructors':     '.hs-item-constructor',
-        'Classes':          '.hs-item-class',          
-        'Interfaces':       '.hs-item-interface',          
-        'Functions':        '.hs-item-function',          
-        'Methods':          '.hs-item-method',          
-        'Variables':        '.hs-item-variable',
-        'Object literals':  '.hs-item-object-literal',
-        'Properties':       '.hs-item-property',
-        'Enumerations':     '.hs-item-enumration',
-        'Type aliases':     '.hs-item-alias',          
-        'Accessors':        '.hs-item-accessors'        
+        'External modules':     '.hs-item-external-module',
+        'Constructors':         '.hs-item-constructor',
+        'Classes':              '.hs-item-class',          
+        'Interfaces':           '.hs-item-interface',          
+        'Functions':            '.hs-item-function',          
+        'Methods':              '.hs-item-method',          
+        'Variables':            '.hs-item-variable',
+        'Object literals':      '.hs-item-object-literal',
+        'Properties':           '.hs-item-property',
+        'Enumerations':         '.hs-item-enumration',
+        'Enumeration members':  '.hs-item-enumration',
+        'Type aliases':         '.hs-item-alias',          
+        'Accessors':            '.hs-item-accessors'        
     };
     const fn = groupMap[group.title] || '.hs-item-unknown-member';
     const isPublic = (flags:any) => flags.isPublic || (flags.isExported && !flags.isPrivate && !flags.isProtected);

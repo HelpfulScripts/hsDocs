@@ -2,7 +2,8 @@ import { m, Vnode, Layout }     from 'hslayout';
 import { DocSets }              from '../DocSets'; 
 import { Menu, SelectorDesc }   from 'hswidget';
 import { log as gLog }          from 'hsutil'; const log = gLog('DocsMenu');
- 
+import { testNode }             from '../Types';
+
 /**
  * Creates the title menu for selecting between the different docsets.
  * Instantiate the DocsMenu via a standard `mithril` call:```
@@ -24,7 +25,14 @@ export class DocsMenu extends Layout {
         if (this.docSet !== attrs.docSet) {
             this.docSet = attrs.docSet;
             DocSets.loadList(attrs.docSet)
-            .then(() => m.redraw)
+            .then(() => {
+                m.redraw();
+                console.log('getDesc:');
+                DocSets.get().map((set:string) => {
+                    const mdl = DocSets.get(set);
+                    console.log(`testing getDesc ${mdl.name}: ${testNode(mdl)} tests run`);            
+                });
+            })
             .catch(log.error);
         }
         const items = DocSets.get(); 

@@ -18,6 +18,19 @@ const DOCDIR:string = './data/';
  */
 const FILE:string = './data/index.json';
 
+export type json = any;
+
+export interface List {
+    set:    string[];
+    index:  {[id:string]:json};
+    docs:   string[];
+}
+
+interface Tag {
+    tag: 'module';
+    text: string;
+}
+
 function matchAll(str:string, re:RegExp): string[] {
     const result:string[] = [];
     let partial:string[];
@@ -34,7 +47,7 @@ function matchAll(str:string, re:RegExp): string[] {
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList = <{set:string[], index:{}, docs:string[]}>{set:<string[]>[], index:{}, docs:<string[]>[]};
+    private static gList:List = {set:<string[]>[], index:{}, docs:<string[]>[]};
     private static gTitle: string;
 
     /**
@@ -42,7 +55,7 @@ export class DocSets {
      * @param content the docSet content to add. 
      * @param file the file name from which the content was read. 
      */
-    public static add(content:any, file:string) {
+    public static add(content:json, file:string):void {
         const lib = content.name;
         const i = DocSets.gList.docs.indexOf(file);
         DocSets.gList.set[i] = lib;
@@ -112,7 +125,7 @@ export class DocSets {
      * @param id specifies the element within the docSet, either by its id number, or by its fully qualified path, 
      * e.g. 'hsDocs.DocSets.DocSets.add' 
      */
-    public static get(lib?:string, id:number|string=0) { 
+    public static get(lib?:string, id:number|string=0):string[] | json { 
         return (lib && DocSets.gList.index[lib])?
             DocSets.gList.index[lib][id+'']
           : DocSets.gList.set; 
@@ -127,7 +140,7 @@ export class DocSets {
  */
 async function loadDocSet(dir:string, file:string):Promise<void> {
     log.debug(`loading ${dir+file}`);
-    const r = await m.request({ method: "GET", url: dir+file });
+    const r:json = await m.request({ method: "GET", url: dir+file });
     DocSets.add(r, file);
 }
 
@@ -138,8 +151,8 @@ async function loadDocSet(dir:string, file:string):Promise<void> {
  * @param index the index in which to register the entries
  * @param lib the docset name, used for name validation
  */
-function recursiveIndex(content:any, index:any, lib:string, path='') {
-    function getNewPath(content:any) {
+function recursiveIndex(content:json, index:List, lib:string, path='') {
+    function getNewPath(content:json) {
         content.name = content.name.replace(/["'](.+)["']|(.+)/g, "$1$2");  // remove quotes 
         // const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
         const elName  = content.name.replace(/\//g, '.');         // "a/b" => "a.b" /
@@ -147,9 +160,9 @@ function recursiveIndex(content:any, index:any, lib:string, path='') {
         return content.fullPath = (path==='')? elName : `${path}.${elName}`;
     }
 
-    function markIfModule(content:any) {
+    function markIfModule(content:json) {
         if (content.comment && content.comment.tags) {
-            content.comment.tags.forEach((tag:any) => {
+            content.comment.tags.forEach((tag:Tag) => {
                 if (tag.tag === 'module') {
                     content.innerModule = tag.text.trim();
                 }
@@ -166,16 +179,16 @@ function recursiveIndex(content:any, index:any, lib:string, path='') {
         if (newPath.length>0) { index[newPath] = content; }
 
         if (content.children) {
-            content.children.map((c:any) => recursiveIndex(c, index, lib, newPath));
+            content.children.map((c:json) => recursiveIndex(c, index, lib, newPath));
         }
         if (content.signatures) {
-            content.signatures.map((c:any) => recursiveIndex(c, index, lib, newPath));
+            content.signatures.map((c:json) => recursiveIndex(c, index, lib, newPath));
         }
         if (content.parameters) {
-            content.parameters.map((c:any) => recursiveIndex(c, index, lib, newPath));
+            content.parameters.map((c:json) => recursiveIndex(c, index, lib, newPath));
         }
         if (content.type && content.type.declaration && content.type.declaration.children) {
-            content.type.declaration.children.map((c:any) => recursiveIndex(c, index, lib, newPath));
+            content.type.declaration.children.map((c:json) => recursiveIndex(c, index, lib, newPath));
         }
     }
 }
