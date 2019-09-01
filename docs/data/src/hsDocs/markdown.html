@@ -1,0 +1,115 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding:0; }
+            br  { margin:0; padding:0; }
+            .line { 
+                white-space: nowrap;
+                height:16px; 
+            }
+            .line>span { 
+                display:inline-block; background-color:#eef; height:100%; 
+                margin: 0 5px 0 0; padding-right: 5px; color:#999;   
+            }
+            comment {color: #080;} module {color: #804;} 
+            quote {color: #008;} comment>quote {color: #080;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px;  
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/markdown.ts</h1>
+                <div class='listing'><code><p id=1 class="line"><span>&nbsp;&nbsp;&nbsp;1</span>const&nbsp;showdown&nbsp;&nbsp;=&nbsp;require(<quote>'showdown'</quote>);</p>
+<p id=2 class="line"><span>&nbsp;&nbsp;&nbsp;2</span>import&nbsp;{&nbsp;m&nbsp;}&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
+<p id=3 class="line"><span>&nbsp;&nbsp;&nbsp;3</span></p>
+<p id=4 class="line"><span>&nbsp;&nbsp;&nbsp;4</span><comment>/**</comment></p>
+<p id=5 class="line"><span>&nbsp;&nbsp;&nbsp;5</span><comment>&nbsp;*&nbsp;process&nbsp;a&nbsp;markdown&nbsp;comment&nbsp;string&nbsp;and&nbsp;returns&nbsp;the&nbsp;equivalent&nbsp;html&nbsp;syntax.&nbsp;</comment></p>
+<p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span><comment>&nbsp;*&nbsp;@param&nbsp;text&nbsp;the&nbsp;comment&nbsp;to&nbsp;markdown</comment></p>
+<p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span><comment>&nbsp;*&nbsp;@param&nbsp;short&nbsp;if&nbsp;true,&nbsp;only&nbsp;the&nbsp;first&nbsp;paragraph&nbsp;is&nbsp;returned</comment></p>
+<p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span><comment>&nbsp;*&nbsp;@param&nbsp;currentRoute&nbsp;current&nbsp;route,&nbsp;defaults&nbsp;to&nbsp;mithril<quote>'s&nbsp;last&nbsp;route</comment></p>
+<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span><comment>&nbsp;*&nbsp;@return&nbsp;the&nbsp;marked&nbsp;down&nbsp;comment</comment></p>
+<p id=10 class="line"><span>&nbsp;&nbsp;10</span><comment>&nbsp;*/</comment></p>
+<p id=11 class="line"><span>&nbsp;&nbsp;11</span>export&nbsp;function&nbsp;markDown(text:string,&nbsp;short:boolean=false,&nbsp;currentRoute:string&nbsp;=&nbsp;m.route.get()):string&nbsp;{</p>
+<p id=12 class="line"><span>&nbsp;&nbsp;12</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;converter&nbsp;=&nbsp;new&nbsp;showdown.Converter({</p>
+<p id=13 class="line"><span>&nbsp;&nbsp;13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tables:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true,&nbsp;&nbsp;&nbsp;<comment>//&nbsp;enables&nbsp;|...|&nbsp;style&nbsp;tables;&nbsp;requires&nbsp;2nd&nbsp;|---|&nbsp;line</comment></p>
+<p id=14 class="line"><span>&nbsp;&nbsp;14</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ghCompatibleHeaderId:&nbsp;&nbsp;&nbsp;true,&nbsp;&nbsp;&nbsp;<comment>//&nbsp;github-style&nbsp;dash-separated&nbsp;header&nbsp;IDs</comment></p>
+<p id=15 class="line"><span>&nbsp;&nbsp;15</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smartIndentationFix:&nbsp;&nbsp;&nbsp;&nbsp;true,&nbsp;&nbsp;&nbsp;<comment>//&nbsp;fixes&nbsp;ES6&nbsp;template&nbsp;indentations</comment></p>
+<p id=16 class="line"><span>&nbsp;&nbsp;16</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;takslists:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true,&nbsp;&nbsp;&nbsp;<comment>//&nbsp;enable&nbsp;-&nbsp;[&nbsp;]&nbsp;task;&nbsp;doesn'</quote>t&nbsp;seem&nbsp;to&nbsp;work.</comment></p>
+<p id=17 class="line"><span>&nbsp;&nbsp;17</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strikethrough:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;enables&nbsp;~~text~~</comment></p>
+<p id=18 class="line"><span>&nbsp;&nbsp;18</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+<p id=19 class="line"><span>&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;(!text)?&nbsp;<quote>''</quote>&nbsp;:&nbsp;converter.makeHtml(text);</p>
+<p id=20 class="line"><span>&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(short)&nbsp;{</p>
+<p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;i&nbsp;=&nbsp;result.indexOf(<quote>'</p>'</quote>);</p>
+<p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i>0)&nbsp;{&nbsp;result&nbsp;=&nbsp;result.substring(0,&nbsp;i);&nbsp;}</p>
+<p id=23 class="line"><span>&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;substituteLinks(result,&nbsp;currentRoute);</p>
+<p id=25 class="line"><span>&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</p>
+<p id=26 class="line"><span>&nbsp;&nbsp;26</span>}</p>
+<p id=27 class="line"><span>&nbsp;&nbsp;27</span></p>
+<p id=28 class="line"><span>&nbsp;&nbsp;28</span><comment>/**</comment></p>
+<p id=29 class="line"><span>&nbsp;&nbsp;29</span><comment>&nbsp;*&nbsp;replaces&nbsp;link&nbsp;statements&nbsp;in&nbsp;the&nbsp;comment&nbsp;with&nbsp;hyperlink&nbsp;references.</comment></p>
+<p id=30 class="line"><span>&nbsp;&nbsp;30</span><comment>&nbsp;*&nbsp;The&nbsp;format&nbsp;of&nbsp;a&nbsp;link&nbsp;statement&nbsp;is&nbsp;<quote>"{@link&nbsp;*docset*:*path*&nbsp;linked&nbsp;text}"</quote>,&nbsp;where</comment></p>
+<p id=31 class="line"><span>&nbsp;&nbsp;31</span><comment>&nbsp;*&nbsp;-&nbsp;*docset*&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;docset</comment></p>
+<p id=32 class="line"><span>&nbsp;&nbsp;32</span><comment>&nbsp;*&nbsp;-&nbsp;*path*&nbsp;is&nbsp;the&nbsp;structural&nbsp;path&nbsp;of&nbsp;a&nbsp;component&nbsp;with&nbsp;steps&nbsp;on&nbsp;the&nbsp;path&nbsp;separated&nbsp;by&nbsp;a&nbsp;period,</comment></p>
+<p id=33 class="line"><span>&nbsp;&nbsp;33</span><comment>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;following&nbsp;the&nbsp;pattern&nbsp;*module*.*entity*.*member*&nbsp;with</comment></p>
+<p id=34 class="line"><span>&nbsp;&nbsp;34</span><comment>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;*module*&nbsp;=&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;module&nbsp;file</comment></p>
+<p id=35 class="line"><span>&nbsp;&nbsp;35</span><comment>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;*entity*&nbsp;=&nbsp;[*class*&nbsp;|&nbsp;*function*&nbsp;|&nbsp;*variable*]</comment></p>
+<p id=36 class="line"><span>&nbsp;&nbsp;36</span><comment>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;*member*&nbsp;=&nbsp;[*method*&nbsp;|&nbsp;*variable*]</comment></p>
+<p id=37 class="line"><span>&nbsp;&nbsp;37</span><comment>&nbsp;*&nbsp;-&nbsp;if&nbsp;*path*&nbsp;is&nbsp;omittied,&nbsp;or&nbsp;is&nbsp;`overview`,&nbsp;the&nbsp;library&nbsp;overview&nbsp;will&nbsp;be&nbsp;shown.</comment></p>
+<p id=38 class="line"><span>&nbsp;&nbsp;38</span><comment>&nbsp;*&nbsp;&nbsp;&nbsp;</comment></p>
+<p id=39 class="line"><span>&nbsp;&nbsp;39</span><comment>&nbsp;*&nbsp;Examples:&nbsp;</comment></p>
+<p id=40 class="line"><span>&nbsp;&nbsp;40</span><comment>&nbsp;*&nbsp;-&nbsp;<quote>'{@link&nbsp;hsDocs:&nbsp;Doc&nbsp;Overview}'</quote>&nbsp;->&nbsp;{@link&nbsp;hsDocs:&nbsp;Doc&nbsp;Overview}</comment></p>
+<p id=41 class="line"><span>&nbsp;&nbsp;41</span><comment>&nbsp;*&nbsp;-&nbsp;<quote>'{@link&nbsp;hsDocs:DocSets.DocSets.add&nbsp;the&nbsp;`adds`&nbsp;function}'</quote>&nbsp;-->&nbsp;{@link&nbsp;hsDocs:DocSets.DocSets.add&nbsp;the&nbsp;`adds`&nbsp;function}</comment></p>
+<p id=42 class="line"><span>&nbsp;&nbsp;42</span><comment>&nbsp;*&nbsp;</comment></p>
+<p id=43 class="line"><span>&nbsp;&nbsp;43</span><comment>&nbsp;*&nbsp;@param&nbsp;comment&nbsp;the&nbsp;comment&nbsp;in&nbsp;which&nbsp;to&nbsp;replace&nbsp;the&nbsp;links</comment></p>
+<p id=44 class="line"><span>&nbsp;&nbsp;44</span><comment>&nbsp;*&nbsp;@param&nbsp;currentRoute&nbsp;the&nbsp;current&nbsp;route&nbsp;-&nbsp;part&nbsp;after&nbsp;#!</comment></p>
+<p id=45 class="line"><span>&nbsp;&nbsp;45</span><comment>&nbsp;*&nbsp;@return&nbsp;the&nbsp;comment&nbsp;with&nbsp;substituted&nbsp;links&nbsp;</comment></p>
+<p id=46 class="line"><span>&nbsp;&nbsp;46</span><comment>&nbsp;*/</comment></p>
+<p id=47 class="line"><span>&nbsp;&nbsp;47</span>function&nbsp;substituteLinks(comment:string,&nbsp;currentRoute:string):string&nbsp;{</p>
+<p id=48 class="line"><span>&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**</comment></p>
+<p id=49 class="line"><span>&nbsp;&nbsp;49</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;searches&nbsp;for&nbsp;pattern&nbsp;<quote>'/...'</quote></comment></p>
+<p id=50 class="line"><span>&nbsp;&nbsp;50</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;route&nbsp;</comment></p>
+<p id=51 class="line"><span>&nbsp;&nbsp;51</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment></p>
+<p id=52 class="line"><span>&nbsp;&nbsp;52</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;deconstructRoute(route:string)&nbsp;{</p>
+<p id=53 class="line"><span>&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;lib,&nbsp;mod;</p>
+<p id=54 class="line"><span>&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route.replace(/\/([^\/.]*)\/([^\/\s]*$)/gi,&nbsp;(match,&nbsp;...args)&nbsp;=>&nbsp;{</p>
+<p id=55 class="line"><span>&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib&nbsp;=&nbsp;args[0];</p>
+<p id=56 class="line"><span>&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mod&nbsp;=&nbsp;args[1];</p>
+<p id=57 class="line"><span>&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;<quote>''</quote>;</p>
+<p id=58 class="line"><span>&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;</p>
+<p id=59 class="line"><span>&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[lib,&nbsp;mod];</p>
+<p id=60 class="line"><span>&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=61 class="line"><span>&nbsp;&nbsp;61</span></p>
+<p id=62 class="line"><span>&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;getLibMod(path:string)&nbsp;{</p>
+<p id=63 class="line"><span>&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;lib,&nbsp;mod,&nbsp;frag;&nbsp;</p>
+<p id=64 class="line"><span>&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(path.indexOf(<quote>':'</quote>)>0)&nbsp;{</p>
+<p id=65 class="line"><span>&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[lib,&nbsp;mod]&nbsp;=&nbsp;path.split(<quote>':'</quote>);</p>
+<p id=66 class="line"><span>&nbsp;&nbsp;66</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;&nbsp;{</p>
+<p id=67 class="line"><span>&nbsp;&nbsp;67</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib&nbsp;=&nbsp;defLib;</p>
+<p id=68 class="line"><span>&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mod&nbsp;=&nbsp;path;</p>
+<p id=69 class="line"><span>&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=70 class="line"><span>&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(mod.indexOf(<quote>'#'</quote>)>0)&nbsp;{</p>
+<p id=71 class="line"><span>&nbsp;&nbsp;71</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[mod,&nbsp;frag]&nbsp;=&nbsp;mod.split(<quote>'#'</quote>);</p>
+<p id=72 class="line"><span>&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[lib,&nbsp;mod,&nbsp;frag];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p id=74 class="line"><span>&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=75 class="line"><span>&nbsp;&nbsp;75</span></p>
+<p id=76 class="line"><span>&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;[defLib]&nbsp;=&nbsp;deconstructRoute(currentRoute);</p>
+<p id=77 class="line"><span>&nbsp;&nbsp;77</span></p>
+<p id=78 class="line"><span>&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;regex:&nbsp;requires&nbsp;whitespace&nbsp;before&nbsp;{@link;&nbsp;otherwise&nbsp;treated&nbsp;as&nbsp;quoted&nbsp;<quote>'{@link...}'</quote></comment></p>
+<p id=79 class="line"><span>&nbsp;&nbsp;79</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;comment&nbsp;=&nbsp;comment.replace(/\s{@link&nbsp;([\S]*)\s*([^}]+)}/gi,&nbsp;(match,&nbsp;...args)&nbsp;=>&nbsp;{</p>
+<p id=80 class="line"><span>&nbsp;&nbsp;80</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;path&nbsp;=&nbsp;args[0];</p>
+<p id=81 class="line"><span>&nbsp;&nbsp;81</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;text&nbsp;=&nbsp;args[1];</p>
+<p id=82 class="line"><span>&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;[lib,&nbsp;module]&nbsp;=&nbsp;getLibMod(path);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p id=83 class="line"><span>&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(module&nbsp;===&nbsp;<quote>''</quote>&nbsp;||&nbsp;module&nbsp;===&nbsp;<quote>'0'</quote>&nbsp;||&nbsp;module&nbsp;===&nbsp;<quote>'overview'</quote>)?</p>
+<p id=84 class="line"><span>&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;<a&nbsp;href=<quote>"#!/api/${lib}/0"</quote>>${text}</a>`&nbsp;:</p>
+<p id=85 class="line"><span>&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;<a&nbsp;href=<quote>"#!/api/${lib}/${lib}.${module}"</quote>>${text}</a>`;</p>
+<p id=86 class="line"><span>&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+<p id=87 class="line"><span>&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;comment;</p>
+<p id=88 class="line"><span>&nbsp;&nbsp;88</span></p>
+<p id=89 class="line"><span>&nbsp;&nbsp;89</span>}</p>
+<p id=90 class="line"><span>&nbsp;&nbsp;90</span></p></code></div>
+                </body>
+            

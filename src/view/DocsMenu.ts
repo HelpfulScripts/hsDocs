@@ -2,7 +2,7 @@ import { m, Vnode, Layout }     from 'hslayout';
 import { DocSets }              from '../DocSets'; 
 import { Menu, SelectorDesc }   from 'hswidget';
 import { log as gLog }          from 'hsutil'; const log = gLog('DocsMenu');
-import { testNode }             from '../Types';
+import { testNode, reportCounts }             from '../Types';
 
 /**
  * Creates the title menu for selecting between the different docsets.
@@ -32,6 +32,7 @@ export class DocsMenu extends Layout {
                     const mdl = DocSets.get(set);
                     console.log(`testing getDesc ${mdl.name}: ${testNode(mdl)} tests run`);            
                 });
+                reportCounts();
             })
             .catch(log.error);
         }

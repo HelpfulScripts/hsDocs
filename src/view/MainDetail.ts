@@ -10,7 +10,6 @@ import { flags, sourceLink,
          implementationOf,
          extendedBy,
          implementedBy}         from './Parts'; 
-// import { testNode }             from '../Types';
 
 
 /**
@@ -48,13 +47,6 @@ function getOverview(lib:string, mdl:string):Vnode {
  * @param mdl the module to document on the main panel
  */
 function itemDoc(mdl:any) {
-    // if (mdl.name) { 
-    //     console.log(`testing itemDoc ${mdl.name}: ${testNode(mdl)} tests run`);
-    // } else {
-    //     console.log('itemDoc:');
-    //     console.log(mdl);
-    //     mdl.map((m:any) => console.log(`testing itemDoc ${m.name}: ${testNode(m)} tests run`));
-    // }
     const sig = mdl.signatures? mdl.signatures[0] : mdl;
     return m('.hs-item-doc', [
         title(mdl, sig),
@@ -68,13 +60,6 @@ function itemDoc(mdl:any) {
  * @param mdl the module to document on the main panel
  */
 function overviewDoc(mdl:string[] | json) {
-    // if (mdl.name) { 
-    //     console.log(`testing overviewDoc ${mdl.name}: ${testNode(mdl)} tests run`);
-    // } else {
-    //     console.log('overviewDoc:');
-    //     console.log(mdl);
-    //     mdl.map((m:string) => DocSets.get(m, 0)).map((m:json) => console.log(`testing overviewDoc ${m.name}: ${testNode(m)} tests run in lib ${m}`));
-    // }
     const sig = mdl.signatures? mdl.signatures[0] : mdl;
     return m('.hs-item-doc', [
         commentLong(sig),

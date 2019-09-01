@@ -1,0 +1,175 @@
+
+                <html><style>body { overflow:hidden;}
+            h1 { font-family: Arial, sans-serif; font-size: 24px; color: #44a; }
+            p { margin:0; padding:0; }
+            br  { margin:0; padding:0; }
+            .line { 
+                white-space: nowrap;
+                height:16px; 
+            }
+            .line>span { 
+                display:inline-block; background-color:#eef; height:100%; 
+                margin: 0 5px 0 0; padding-right: 5px; color:#999;   
+            }
+            comment {color: #080;} module {color: #804;} 
+            quote {color: #008;} comment>quote {color: #080;}
+            .listing { margin: 10px; border: 1px solid #ccc; 
+                    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+                    font-size: 14px;  
+                    overflow:scroll;
+                    height:90%;
+            }
+            code { padding: 5px 0;}</style></html><body>
+                <h1>src/view/LeftNav.ts</h1>
+                <div class='listing'><code><p id=1 class="line"><span>&nbsp;&nbsp;&nbsp;1</span><comment>/**</comment></p>
+<p id=2 class="line"><span>&nbsp;&nbsp;&nbsp;2</span><comment>&nbsp;*&nbsp;LeftNav:&nbsp;Responsible&nbsp;for&nbsp;constructing&nbsp;the&nbsp;left-hand&nbsp;navigation&nbsp;pane.&nbsp;</comment></p>
+<p id=3 class="line"><span>&nbsp;&nbsp;&nbsp;3</span><comment>&nbsp;*/</comment></p>
+<p id=4 class="line"><span>&nbsp;&nbsp;&nbsp;4</span></p>
+<p id=5 class="line"><span>&nbsp;&nbsp;&nbsp;5</span><comment>/**&nbsp;*/</comment></p>
+<p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span>import&nbsp;{&nbsp;m,&nbsp;Vnode}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
+<p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>import&nbsp;{&nbsp;Layout&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
+<p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;Collapsible&nbsp;}&nbsp;&nbsp;from&nbsp;<quote>'hswidget'</quote>;</p>
+<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;DocSets&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../DocSets'</quote>;&nbsp;</p>
+<p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;libLink&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./Parts'</quote>;&nbsp;</p>
+<p id=11 class="line"><span>&nbsp;&nbsp;11</span></p>
+<p id=12 class="line"><span>&nbsp;&nbsp;12</span></p>
+<p id=13 class="line"><span>&nbsp;&nbsp;13</span><comment>/**</comment></p>
+<p id=14 class="line"><span>&nbsp;&nbsp;14</span><comment>&nbsp;*&nbsp;Constructs&nbsp;the&nbsp;left-hand&nbsp;navigation&nbsp;pane</comment></p>
+<p id=15 class="line"><span>&nbsp;&nbsp;15</span><comment>&nbsp;*/</comment></p>
+<p id=16 class="line"><span>&nbsp;&nbsp;16</span>export&nbsp;class&nbsp;LeftNav&nbsp;extends&nbsp;Layout&nbsp;{</p>
+<p id=17 class="line"><span>&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:&nbsp;Vnode):&nbsp;Vnode&nbsp;{</p>
+<p id=18 class="line"><span>&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;lib&nbsp;=&nbsp;m.route.param(<quote>'lib'</quote>);</p>
+<p id=19 class="line"><span>&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;field&nbsp;=&nbsp;m.route.param(<quote>'field'</quote>);</p>
+<p id=20 class="line"><span>&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;docSet&nbsp;=&nbsp;DocSets.get(lib,&nbsp;0)&nbsp;||&nbsp;{name:<quote>'unknown'</quote>,&nbsp;id:0};</p>
+<p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(<quote>'.hs-left'</quote>,&nbsp;[m(<quote>'.hs-left-nav'</quote>,&nbsp;navList(docSet,&nbsp;field))]);</p>
+<p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</p>
+<p id=23 class="line"><span>&nbsp;&nbsp;23</span>}</p>
+<p id=24 class="line"><span>&nbsp;&nbsp;24</span></p>
+<p id=25 class="line"><span>&nbsp;&nbsp;25</span><comment>/**&nbsp;creates&nbsp;the&nbsp;list&nbsp;if&nbsp;modules&nbsp;(`*.ts`&nbsp;files)&nbsp;*/</comment></p>
+<p id=26 class="line"><span>&nbsp;&nbsp;26</span>function&nbsp;navList(docSet:any,&nbsp;field:string):Vnode[]&nbsp;{</p>
+<p id=27 class="line"><span>&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**&nbsp;*/</comment></p>
+<p id=28 class="line"><span>&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;collectModules(docSet:any)&nbsp;{</p>
+<p id=29 class="line"><span>&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;modulesByName&nbsp;=&nbsp;{};</p>
+<p id=30 class="line"><span>&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docSet.modules&nbsp;=&nbsp;[];</p>
+<p id=31 class="line"><span>&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(docSet.children)&nbsp;{</p>
+<p id=32 class="line"><span>&nbsp;&nbsp;32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docSet.children.forEach((c:any)&nbsp;=>&nbsp;{</p>
+<p id=33 class="line"><span>&nbsp;&nbsp;33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;don<quote>'t&nbsp;show&nbsp;modules&nbsp;from&nbsp;other&nbsp;projects&nbsp;(isExternal&nbsp;flag)&nbsp;or&nbsp;modules&nbsp;on&nbsp;the&nbsp;ignore&nbsp;list</comment></p>
+<p id=34 class="line"><span>&nbsp;&nbsp;34</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!(c.flags&nbsp;&&&nbsp;c.flags.isExternal)&nbsp;&&&nbsp;!ignoreModules[c.name])&nbsp;{</p>
+<p id=35 class="line"><span>&nbsp;&nbsp;35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;name&nbsp;=&nbsp;c.innerModule?&nbsp;c.innerModule&nbsp;:&nbsp;c.name;</p>
+<p id=36 class="line"><span>&nbsp;&nbsp;36</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;module&nbsp;=&nbsp;modulesByName[name];</p>
+<p id=37 class="line"><span>&nbsp;&nbsp;37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!module)&nbsp;{&nbsp;&nbsp;<comment>//&nbsp;new&nbsp;module</comment></p>
+<p id=38 class="line"><span>&nbsp;&nbsp;38</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docSet.modules.push(module&nbsp;=&nbsp;modulesByName[name]&nbsp;=&nbsp;{&nbsp;</p>
+<p id=39 class="line"><span>&nbsp;&nbsp;39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;name,</p>
+<p id=40 class="line"><span>&nbsp;&nbsp;40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib:&nbsp;docSet.lib,</p>
+<p id=41 class="line"><span>&nbsp;&nbsp;41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullPath:&nbsp;docSet.fullPath&nbsp;+&nbsp;'</quote>.<quote>'+&nbsp;name,</p>
+<p id=42 class="line"><span>&nbsp;&nbsp;42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groups:[]</p>
+<p id=43 class="line"><span>&nbsp;&nbsp;43</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+<p id=44 class="line"><span>&nbsp;&nbsp;44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=45 class="line"><span>&nbsp;&nbsp;45</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;get&nbsp;existing&nbsp;module&nbsp;groups</comment></p>
+<p id=46 class="line"><span>&nbsp;&nbsp;46</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;groups&nbsp;=&nbsp;{};</p>
+<p id=47 class="line"><span>&nbsp;&nbsp;47</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.groups.forEach((g:any)&nbsp;=>&nbsp;groups[g.title]&nbsp;=&nbsp;g);&nbsp;</p>
+<p id=48 class="line"><span>&nbsp;&nbsp;48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;for&nbsp;each&nbsp;group&nbsp;in&nbsp;child:</comment></p>
+<p id=49 class="line"><span>&nbsp;&nbsp;49</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(c.groups)&nbsp;{&nbsp;c.groups.forEach((g:any)&nbsp;=>&nbsp;{</p>
+<p id=50 class="line"><span>&nbsp;&nbsp;50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;group&nbsp;=&nbsp;groups[g.title];&nbsp;<comment>//&nbsp;get&nbsp;existing&nbsp;</comment></p>
+<p id=51 class="line"><span>&nbsp;&nbsp;51</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!group)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;&nbsp;else&nbsp;create&nbsp;new</comment></p>
+<p id=52 class="line"><span>&nbsp;&nbsp;52</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group&nbsp;=&nbsp;groups[g.title]&nbsp;=&nbsp;{</p>
+<p id=53 class="line"><span>&nbsp;&nbsp;53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children:[],</p>
+<p id=54 class="line"><span>&nbsp;&nbsp;54</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kind:&nbsp;g.kind,</p>
+<p id=55 class="line"><span>&nbsp;&nbsp;55</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;g.title</p>
+<p id=56 class="line"><span>&nbsp;&nbsp;56</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</p>
+<p id=57 class="line"><span>&nbsp;&nbsp;57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.groups.push(group);</p>
+<p id=58 class="line"><span>&nbsp;&nbsp;58</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=59 class="line"><span>&nbsp;&nbsp;59</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group.children&nbsp;=&nbsp;group.children.concat(g.children);</p>
+<p id=60 class="line"><span>&nbsp;&nbsp;60</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});}</p>
+<p id=61 class="line"><span>&nbsp;&nbsp;61</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=62 class="line"><span>&nbsp;&nbsp;62</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+<p id=63 class="line"><span>&nbsp;&nbsp;63</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=64 class="line"><span>&nbsp;&nbsp;64</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=65 class="line"><span>&nbsp;&nbsp;65</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**&nbsp;</comment></p>
+<p id=66 class="line"><span>&nbsp;&nbsp;66</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;processes&nbsp;a&nbsp;module,&nbsp;i.e.&nbsp;a&nbsp;`.ts`&nbsp;file.</comment></p>
+<p id=67 class="line"><span>&nbsp;&nbsp;67</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment></p>
+<p id=68 class="line"><span>&nbsp;&nbsp;68</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;externalModule(mdl:any)&nbsp;{</p>
+<p id=69 class="line"><span>&nbsp;&nbsp;69</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;selected&nbsp;=&nbsp;false;</p>
+<p id=70 class="line"><span>&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(field==='</quote><quote>'+mdl.id&nbsp;||&nbsp;field.indexOf(mdl.fullPath)&nbsp;===&nbsp;0)&nbsp;{&nbsp;selected=true;&nbsp;}</p>
+<p id=71 class="line"><span>&nbsp;&nbsp;71</span></p>
+<p id=72 class="line"><span>&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(Collapsible,&nbsp;{css:`.hs-left-nav-module`,&nbsp;preArrow:&nbsp;true,&nbsp;isExpanded:selected,&nbsp;components:[</p>
+<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(`${selected?'</quote>.hs-left-nav-selected<quote>':'</quote><quote>'}`,&nbsp;libLink(`a.hs-left-nav-module-name&nbsp;`,&nbsp;mdl.lib,&nbsp;mdl.fullPath,&nbsp;mdl.name)),</p>
+<p id=74 class="line"><span>&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!mdl.groups?&nbsp;undefined&nbsp;:&nbsp;mdl.groups.map((g:any)&nbsp;=>&nbsp;entries(g,&nbsp;mdl,&nbsp;field))</p>
+<p id=75 class="line"><span>&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]});</p>
+<p id=76 class="line"><span>&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=77 class="line"><span>&nbsp;&nbsp;77</span></p>
+<p id=78 class="line"><span>&nbsp;&nbsp;78</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(docSet.kind&nbsp;===&nbsp;0)&nbsp;{&nbsp;<comment>//&nbsp;External&nbsp;DocSets</comment></p>
+<p id=79 class="line"><span>&nbsp;&nbsp;79</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collectModules(docSet);</p>
+<p id=80 class="line"><span>&nbsp;&nbsp;80</span><comment>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;modules&nbsp;=&nbsp;docSet.children?&nbsp;docSet.children.map(externalModule)&nbsp;:&nbsp;['</quote>no&nbsp;children<quote>'];</comment></p>
+<p id=81 class="line"><span>&nbsp;&nbsp;81</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;modules&nbsp;=&nbsp;docSet.modules.map(externalModule);</p>
+<p id=82 class="line"><span>&nbsp;&nbsp;82</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modules.unshift(m('</quote>.hs-left-nav-header<quote>',&nbsp;'</quote>Modules<quote>'));</p>
+<p id=83 class="line"><span>&nbsp;&nbsp;83</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[m('</quote>.hs-left-nav-content<quote>',&nbsp;modules)];</p>
+<p id=84 class="line"><span>&nbsp;&nbsp;84</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=85 class="line"><span>&nbsp;&nbsp;85</span>}</p>
+<p id=86 class="line"><span>&nbsp;&nbsp;86</span></p>
+<p id=87 class="line"><span>&nbsp;&nbsp;87</span><comment>/**</comment></p>
+<p id=88 class="line"><span>&nbsp;&nbsp;88</span><comment>&nbsp;*&nbsp;modules&nbsp;to&nbsp;ignore&nbsp;in&nbsp;the&nbsp;list</comment></p>
+<p id=89 class="line"><span>&nbsp;&nbsp;89</span><comment>&nbsp;*/</comment></p>
+<p id=90 class="line"><span>&nbsp;&nbsp;90</span>const&nbsp;ignoreModules&nbsp;=&nbsp;{</p>
+<p id=91 class="line"><span>&nbsp;&nbsp;91</span>&nbsp;&nbsp;&nbsp;&nbsp;overview:&nbsp;&nbsp;&nbsp;true,&nbsp;&nbsp;&nbsp;<comment>//&nbsp;the&nbsp;project&nbsp;overview.ts&nbsp;file</comment></p>
+<p id=92 class="line"><span>&nbsp;&nbsp;92</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;index:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;the&nbsp;index.ts&nbsp;file</comment></p>
+<p id=93 class="line"><span>&nbsp;&nbsp;93</span><comment></comment>};</p>
+<p id=94 class="line"><span>&nbsp;&nbsp;94</span></p>
+<p id=95 class="line"><span>&nbsp;&nbsp;95</span><comment>//const&nbsp;expanded:&nbsp;{string?:boolean}&nbsp;=&nbsp;{};</comment></p>
+<p id=96 class="line"><span>&nbsp;&nbsp;96</span><comment></comment></p>
+<p id=97 class="line"><span>&nbsp;&nbsp;97</span><comment>/**</comment></p>
+<p id=98 class="line"><span>&nbsp;&nbsp;98</span><comment>&nbsp;*&nbsp;processes&nbsp;a&nbsp;group&nbsp;of&nbsp;entries,&nbsp;e.g.&nbsp;Variables,&nbsp;Functions,&nbsp;or&nbsp;Classes.</comment></p>
+<p id=99 class="line"><span>&nbsp;&nbsp;99</span><comment>&nbsp;*&nbsp;@param&nbsp;group&nbsp;the&nbsp;group&nbsp;structure&nbsp;within&nbsp;the&nbsp;docset</comment></p>
+<p id=100 class="line"><span>&nbsp;100</span><comment>&nbsp;*&nbsp;@param&nbsp;mdl&nbsp;the&nbsp;entire&nbsp;module&nbsp;docset</comment></p>
+<p id=101 class="line"><span>&nbsp;101</span><comment>&nbsp;*&nbsp;@param&nbsp;field&nbsp;the&nbsp;field&nbsp;ID&nbsp;to&nbsp;be&nbsp;displayed&nbsp;on&nbsp;the&nbsp;main&nbsp;panel</comment></p>
+<p id=102 class="line"><span>&nbsp;102</span><comment>&nbsp;*/</comment></p>
+<p id=103 class="line"><span>&nbsp;103</span>function&nbsp;entries(group:any,&nbsp;mdl:any,&nbsp;field:string)&nbsp;{</p>
+<p id=104 class="line"><span>&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;moduleGet(c:any)&nbsp;{</p>
+<p id=105 class="line"><span>&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DocSets.get(mdl.lib,&nbsp;c);</p>
+<p id=106 class="line"><span>&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=107 class="line"><span>&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**</comment></p>
+<p id=108 class="line"><span>&nbsp;108</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;processes&nbsp;one&nbsp;entry&nbsp;within&nbsp;a&nbsp;group,&nbsp;e.g.&nbsp;one&nbsp;variable,&nbsp;function,&nbsp;or&nbsp;class.</comment></p>
+<p id=109 class="line"><span>&nbsp;109</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</comment></p>
+<p id=110 class="line"><span>&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;entry(mod:any)&nbsp;{&nbsp;</p>
+<p id=111 class="line"><span>&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;selected&nbsp;=&nbsp;(field==='</quote><quote>'+mod.id&nbsp;||&nbsp;field===mod.fullPath)?&nbsp;'</quote>.hs-left-nav-selected<quote>'&nbsp;:&nbsp;'</quote><quote>';</p>
+<p id=112 class="line"><span>&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;exported&nbsp;=&nbsp;(mod.flags&nbsp;&&&nbsp;mod.flags.isExported);</p>
+<p id=113 class="line"><span>&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;statik&nbsp;&nbsp;&nbsp;=&nbsp;(mod.flags&nbsp;&&&nbsp;mod.flags.isStatic);</p>
+<p id=114 class="line"><span>&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;css&nbsp;=&nbsp;`a.hs-left-nav-entry&nbsp;${selected}&nbsp;${exported?'</quote>.hs-left-nav-exported<quote>'&nbsp;:&nbsp;'</quote><quote>'}`;</p>
+<p id=115 class="line"><span>&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(!exported&nbsp;&&&nbsp;group.title==='</quote>Variables<quote>')?&nbsp;'</quote><quote>'&nbsp;:&nbsp;&nbsp;&nbsp;<comment>//&nbsp;ignore&nbsp;local&nbsp;module&nbsp;variables</comment></p>
+<p id=116 class="line"><span>&nbsp;116</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('</quote><quote>',&nbsp;[</p>
+<p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statik?&nbsp;'</quote>static<quote>':&nbsp;'</quote><quote>',</p>
+<p id=118 class="line"><span>&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libLink(css,&nbsp;mod.lib,&nbsp;mod.fullPath,&nbsp;mod.name)</p>
+<p id=119 class="line"><span>&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);</p>
+<p id=120 class="line"><span>&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=121 class="line"><span>&nbsp;121</span></p>
+<p id=122 class="line"><span>&nbsp;122</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;empty(mod:any)&nbsp;{&nbsp;return&nbsp;mod&nbsp;!==&nbsp;'</quote><quote>';&nbsp;}</p>
+<p id=123 class="line"><span>&nbsp;123</span></p>
+<p id=124 class="line"><span>&nbsp;124</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;grp&nbsp;=&nbsp;[];</p>
+<p id=125 class="line"><span>&nbsp;125</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(group&nbsp;&&&nbsp;group.children)&nbsp;{</p>
+<p id=126 class="line"><span>&nbsp;126</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grp&nbsp;=&nbsp;group.children</p>
+<p id=127 class="line"><span>&nbsp;127</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map(moduleGet)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;replace&nbsp;id&nbsp;reference&nbsp;by&nbsp;module</comment></p>
+<p id=128 class="line"><span>&nbsp;128</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.sort(exportAscending)&nbsp;&nbsp;<comment>//&nbsp;sort:&nbsp;exported&nbsp;first,&nbsp;then&nbsp;alphabetically</comment></p>
+<p id=129 class="line"><span>&nbsp;129</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map(entry)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;replace&nbsp;module&nbsp;by&nbsp;vnode&nbsp;structure</comment></p>
+<p id=130 class="line"><span>&nbsp;130</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.filter(empty);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;filter&nbsp;empty&nbsp;elements</comment></p>
+<p id=131 class="line"><span>&nbsp;131</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(grp.length&nbsp;>&nbsp;0)&nbsp;{&nbsp;<comment>//&nbsp;add&nbsp;an&nbsp;entries&nbsp;header&nbsp;if&nbsp;there&nbsp;are&nbsp;elements</comment></p>
+<p id=132 class="line"><span>&nbsp;132</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grp.unshift(m('</quote>.hs-left-nav-header<quote>',&nbsp;group.title));</p>
+<p id=133 class="line"><span>&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=134 class="line"><span>&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=135 class="line"><span>&nbsp;135</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(grp.length&nbsp;>&nbsp;1)?&nbsp;m(`.hs-left-nav-entries`,&nbsp;grp)&nbsp;:&nbsp;'</quote>';</p>
+<p id=136 class="line"><span>&nbsp;136</span>}</p>
+<p id=137 class="line"><span>&nbsp;137</span></p>
+<p id=138 class="line"><span>&nbsp;138</span><comment>/**</comment></p>
+<p id=139 class="line"><span>&nbsp;139</span><comment>&nbsp;*&nbsp;sorting&nbsp;function:&nbsp;sort&nbsp;first&nbsp;by&nbsp;exported&nbsp;status,&nbsp;then&nbsp;alphabetically.</comment></p>
+<p id=140 class="line"><span>&nbsp;140</span><comment>&nbsp;*/</comment></p>
+<p id=141 class="line"><span>&nbsp;141</span>function&nbsp;exportAscending(a:any,&nbsp;b:any):boolean|number&nbsp;{</p>
+<p id=142 class="line"><span>&nbsp;142</span>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(a.flags&nbsp;&&&nbsp;b.flags)&nbsp;{</p>
+<p id=143 class="line"><span>&nbsp;143</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(a.flags.isExported&nbsp;&&&nbsp;b.flags.isExported)&nbsp;{&nbsp;return&nbsp;a.name&nbsp;>&nbsp;b.name;&nbsp;}</p>
+<p id=144 class="line"><span>&nbsp;144</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;if&nbsp;(a.flags.isExported)&nbsp;{&nbsp;return&nbsp;-1;&nbsp;}</p>
+<p id=145 class="line"><span>&nbsp;145</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;if&nbsp;(b.flags.isExported)&nbsp;{&nbsp;return&nbsp;1;&nbsp;}</p>
+<p id=146 class="line"><span>&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{&nbsp;return&nbsp;a.name&nbsp;>&nbsp;b.name;&nbsp;}</p>
+<p id=147 class="line"><span>&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;return&nbsp;a.name&nbsp;>&nbsp;b.name;&nbsp;}</p>
+<p id=148 class="line"><span>&nbsp;148</span>}</p>
+<p id=149 class="line"><span>&nbsp;149</span></p>
+<p id=150 class="line"><span>&nbsp;150</span></p></code></div>
+                </body>
+            
