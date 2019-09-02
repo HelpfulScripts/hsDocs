@@ -21,11 +21,17 @@ const exmp = `
 `;
 
 describe('example', () => {
+    let x:any;
+    beforeAll(async(done) => {
+        x = await example(exmp);
+        done();
+    });
     it('should exist', ()=>{
         expect(example).toBeDefined();
     });
 
-    it('matches snapshot', async () => {
-        expect(await example(exmp)).toMatch(/<style><\/style><example id=hs\d* style=\"height:300px\" class=\"hs-layout-frame\"><\/example>/gm);
+    it('matches snapshot', (done) => {
+        expect(x).toMatch(/<style><\/style><example id=hs\d* style=\"height:300px\" class=\"hs-layout-frame\"><\/example>/gm);
+        done();
     });
 });

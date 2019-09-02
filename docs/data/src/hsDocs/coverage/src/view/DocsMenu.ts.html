@@ -130,8 +130,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,11 +148,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { m, Vnode, Layout }     from 'hslayout';
-import { DocSets }              from '../DocSets'; 
-import { Menu, SelectorDesc }   from 'hswidget';
-import { log as gLog }          from 'hsutil'; const log = gLog('DocsMenu');
-import { testNode, reportCounts }             from '../Types';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { m, Vnode, Layout }         from 'hslayout';
+import { DocSets }                  from '../DocSets'; 
+import { Menu, SelectorDesc }       from 'hswidget';
+import { log as gLog }              from 'hsutil'; const log = gLog('DocsMenu');
+import { testNode }                 from '../Types';
 &nbsp;
 /**
  * Creates the title menu for selecting between the different docsets.
@@ -180,9 +180,9 @@ export class DocsMenu extends Layout {
                 // console.log('getDesc:');
                 DocSets.get().map((set:string) =&gt; {
                     const mdl = DocSets.get(set);
-                    console.log(`testing getDesc ${mdl.name}: ${testNode(mdl)} tests run`);            
+                    const counts = testNode(mdl);
+                    console.log(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
                 });
-                reportCounts();
             })
             .catch(log.error);
         }

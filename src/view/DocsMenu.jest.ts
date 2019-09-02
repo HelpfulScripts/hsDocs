@@ -73,4 +73,12 @@ describe('DocsMenu', () => {
         expect(root).toMatchSnapshot();
         done();
     });
+
+    // it ('should respond to click', (done) => {
+    //     const menuItem = root.vnodes[0].instance.instance.children[0].instance.children[0].instance.children[1].instance.children[0];
+    //     menuItem.events.onclick('hsDocs');
+    //    setTimeout(()=>{
+    //        console.log(menuItem);
+    //    }, 100); 
+    // });
 });
