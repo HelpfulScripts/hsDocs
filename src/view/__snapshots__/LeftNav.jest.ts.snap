@@ -1,10 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LeftNav shoud match snapshot 1`] = `
+exports[`LeftNav overview matches snapshot 1`] = `
 <body>
   <div
     class="hs-layout  "
-    route="[object Object]"
   >
     <div
       class="hs-left"

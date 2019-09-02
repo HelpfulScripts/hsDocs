@@ -2,13 +2,11 @@
 
 exports[`parts extensionOf creates 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-extensions",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-extends",
       },
@@ -18,27 +16,23 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "extends",
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-extension",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
-                "href": "/api/hsDocs/hsDocs.Site.SiteName",
-                "oncreate": [Function],
-                "onupdate": [Function],
+                "href": "#!/api/hsDocs/hsDocs.Site.SiteName",
+                "oncreate": undefined,
+                "onupdate": undefined,
               },
               "children": undefined,
               "dom": undefined,
@@ -46,13 +40,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "a",
               "text": "id275",
             },
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": "",
               "dom": undefined,
@@ -60,7 +52,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
@@ -71,7 +62,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -82,7 +72,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
@@ -93,7 +82,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -102,13 +90,11 @@ Object {
 
 exports[`parts flags creates 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-flags",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-export-flag",
       },
@@ -118,13 +104,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "export",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-external-flag",
       },
@@ -134,13 +118,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "external",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-public-flag",
       },
@@ -150,13 +132,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "public",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-constructorProperty-flag",
       },
@@ -166,13 +146,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "constructorProperty",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-abstract-flag",
       },
@@ -182,13 +160,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "abstract",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-const-flag",
       },
@@ -198,13 +174,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "const",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-static-flag",
       },
@@ -214,13 +188,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "static",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-optional-flag",
       },
@@ -230,13 +202,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "optional",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-unknown-flag",
       },
@@ -246,7 +216,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "isUndefined",
@@ -257,7 +226,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -266,13 +234,11 @@ Object {
 
 exports[`parts flags creates ignoring const 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-flags",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-export-flag",
       },
@@ -282,13 +248,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "export",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-external-flag",
       },
@@ -298,13 +262,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "external",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-public-flag",
       },
@@ -314,13 +276,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "public",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-constructorProperty-flag",
       },
@@ -330,13 +290,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "constructorProperty",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-abstract-flag",
       },
@@ -346,13 +304,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "abstract",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-ignore-flag",
       },
@@ -362,13 +318,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-static-flag",
       },
@@ -378,13 +332,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "static",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-optional-flag",
       },
@@ -394,13 +346,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "optional",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-unknown-flag",
       },
@@ -410,7 +360,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "isUndefined",
@@ -421,7 +370,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -430,13 +378,11 @@ Object {
 
 exports[`parts flags creates ignoring export 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-flags",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-ignore-flag",
       },
@@ -446,13 +392,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-external-flag",
       },
@@ -462,13 +406,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "external",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-public-flag",
       },
@@ -478,13 +420,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "public",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-constructorProperty-flag",
       },
@@ -494,13 +434,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "constructorProperty",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-abstract-flag",
       },
@@ -510,13 +448,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "abstract",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-const-flag",
       },
@@ -526,13 +462,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "const",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-static-flag",
       },
@@ -542,13 +476,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "static",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-optional-flag",
       },
@@ -558,13 +490,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "optional",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-unknown-flag",
       },
@@ -574,7 +504,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "isUndefined",
@@ -585,7 +514,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -594,7 +522,6 @@ Object {
 
 exports[`parts flags creates missing flags 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-flags",
   },
@@ -604,7 +531,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -613,31 +539,27 @@ Object {
 
 exports[`parts inheritedFrom creates 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-inherited-from",
   },
   "children": Array [
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": undefined,
       "dom": undefined,
       "domSize": undefined,
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": "inherited from ",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
-        "href": "/api/hsDocs/hsDocs.Site",
-        "oncreate": [Function],
-        "onupdate": [Function],
+        "href": "#!/api/hsDocs/hsDocs.Site",
+        "oncreate": undefined,
+        "onupdate": undefined,
       },
       "children": undefined,
       "dom": undefined,
@@ -645,7 +567,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "a",
       "text": "Site",
@@ -656,7 +577,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -665,20 +585,17 @@ Object {
 
 exports[`parts itemTooltip creates 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-name",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-tooltip",
         "href": "#",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "test",
           "dom": undefined,
@@ -686,13 +603,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-tooltip-bottom",
           },
@@ -702,7 +617,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": "class name and then some",
@@ -713,7 +627,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
@@ -724,7 +637,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -733,11 +645,9 @@ Object {
 
 exports[`parts type creates array 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -747,25 +657,21 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-array",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": "Array<",
               "dom": undefined,
@@ -773,13 +679,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
             },
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": "",
               "dom": undefined,
@@ -787,13 +691,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
             },
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": ">",
               "dom": undefined,
@@ -801,7 +703,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
@@ -812,7 +713,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -823,19 +723,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -844,11 +742,9 @@ Object {
 
 exports[`parts type creates default 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -858,13 +754,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
         "declaration": Object {
@@ -884,19 +778,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -905,11 +797,9 @@ Object {
 
 exports[`parts type creates instrinct 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -919,39 +809,34 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-instrinct",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
-                "href": "/api/hsDocs/undefined",
-                "oncreate": [Function],
-                "onupdate": [Function],
+                "href": "#!/api/hsDocs/undefined",
+                "oncreate": undefined,
+                "onupdate": undefined,
               },
               "children": Array [
-                undefined,
+                null,
               ],
               "dom": undefined,
               "domSize": undefined,
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": undefined,
@@ -962,7 +847,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -973,19 +857,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -994,11 +876,9 @@ Object {
 
 exports[`parts type creates reference 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -1008,29 +888,25 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-reference",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
-                "href": "/api/hsDocs/hsDocs.view.MainExample.modules.hsdatab",
-                "oncreate": [Function],
-                "onupdate": [Function],
+                "href": "#!/api/hsDocs/hsDocs.view.MainExample.modules.hsdatab",
+                "oncreate": undefined,
+                "onupdate": undefined,
               },
               "children": undefined,
               "dom": undefined,
@@ -1038,7 +914,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "a",
               "text": "hsdatab",
@@ -1049,7 +924,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -1060,19 +934,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -1081,11 +953,9 @@ Object {
 
 exports[`parts type creates reflection 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -1095,31 +965,26 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-reflection",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-reflection",
               },
               "children": Array [
                 Object {
-                  "_state": undefined,
                   "attrs": undefined,
                   "children": "{ ",
                   "dom": undefined,
@@ -1127,13 +992,11 @@ Object {
                   "events": undefined,
                   "instance": undefined,
                   "key": undefined,
-                  "skip": false,
                   "state": undefined,
                   "tag": "#",
                   "text": undefined,
                 },
                 Object {
-                  "_state": undefined,
                   "attrs": undefined,
                   "children": " }",
                   "dom": undefined,
@@ -1141,7 +1004,6 @@ Object {
                   "events": undefined,
                   "instance": undefined,
                   "key": undefined,
-                  "skip": false,
                   "state": undefined,
                   "tag": "#",
                   "text": undefined,
@@ -1152,7 +1014,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": undefined,
@@ -1163,7 +1024,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -1174,19 +1034,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -1195,11 +1053,9 @@ Object {
 
 exports[`parts type creates stringLiteral 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -1209,19 +1065,16 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-string-literal",
           },
@@ -1231,7 +1084,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": "stringLiteral",
@@ -1242,19 +1094,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -1263,11 +1113,9 @@ Object {
 
 exports[`parts type creates tuple 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -1277,25 +1125,21 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-tuple",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": "[ ",
               "dom": undefined,
@@ -1303,18 +1147,15 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
             },
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": Array [
-                undefined,
+                null,
                 Object {
-                  "_state": undefined,
                   "attrs": undefined,
                   "children": "",
                   "dom": undefined,
@@ -1322,7 +1163,6 @@ Object {
                   "events": undefined,
                   "instance": undefined,
                   "key": undefined,
-                  "skip": false,
                   "state": undefined,
                   "tag": "#",
                   "text": undefined,
@@ -1333,13 +1173,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "[",
               "text": undefined,
             },
             Object {
-              "_state": undefined,
               "attrs": undefined,
               "children": " ]",
               "dom": undefined,
@@ -1347,7 +1185,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "#",
               "text": undefined,
@@ -1358,7 +1195,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -1369,19 +1205,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,
@@ -1390,11 +1224,9 @@ Object {
 
 exports[`parts type creates union 1`] = `
 Object {
-  "_state": undefined,
-  "attrs": undefined,
+  "attrs": null,
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-name",
       },
@@ -1404,19 +1236,16 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": ":",
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-sig-type",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-type-union",
           },
@@ -1426,7 +1255,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "span",
           "text": undefined,
@@ -1437,19 +1265,17 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "span",
       "text": undefined,
     },
-    undefined,
+    null,
   ],
   "dom": undefined,
   "domSize": undefined,
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "span",
   "text": undefined,

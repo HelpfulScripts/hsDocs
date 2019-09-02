@@ -27,7 +27,7 @@ export class DocsMenu extends Layout {
             DocSets.loadList(attrs.docSet)
             .then(() => {
                 m.redraw();
-                console.log('getDesc:');
+                // console.log('getDesc:');
                 DocSets.get().map((set:string) => {
                     const mdl = DocSets.get(set);
                     console.log(`testing getDesc ${mdl.name}: ${testNode(mdl)} tests run`);            

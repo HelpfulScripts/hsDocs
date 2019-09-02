@@ -2,19 +2,16 @@
 
 exports[`comment should translate comment, not short 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-comment",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-desc",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "<p>short example comment.</p>
 <pre><code>    # complete comment
@@ -28,7 +25,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "<",
           "text": undefined,
@@ -39,23 +35,19 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-comment-special",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-tag",
               },
@@ -65,13 +57,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "description2",
             },
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-text",
               },
@@ -81,7 +71,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "other tag",
@@ -92,19 +81,16 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "div",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-comment-special",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-tag",
               },
@@ -114,13 +100,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "other",
             },
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-text",
               },
@@ -130,7 +114,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": undefined,
@@ -141,7 +124,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "div",
           "text": undefined,
@@ -152,25 +134,21 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-params",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-comment-param",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-tag",
               },
@@ -180,13 +158,11 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "undefined:",
             },
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-text",
               },
@@ -196,7 +172,6 @@ Object {
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "",
@@ -207,7 +182,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "div",
           "text": undefined,
@@ -218,13 +192,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-return",
       },
@@ -234,17 +206,14 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": "",
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -252,13 +221,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -266,13 +233,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -280,7 +245,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
@@ -291,7 +255,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
@@ -302,7 +265,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "div",
   "text": undefined,
@@ -311,19 +273,16 @@ Object {
 
 exports[`comment should translate comment, short 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-comment",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-desc",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "<p>short example comment.",
           "dom": undefined,
@@ -331,7 +290,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "<",
           "text": undefined,
@@ -342,13 +300,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-return",
       },
@@ -358,17 +314,14 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": "",
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -376,13 +329,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -390,13 +341,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -404,7 +353,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
@@ -415,7 +363,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
@@ -426,7 +373,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "div",
   "text": undefined,
@@ -435,19 +381,16 @@ Object {
 
 exports[`comment should translate description comment 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-comment",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-desc",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "<p>comment
 other tag",
@@ -456,7 +399,6 @@ other tag",
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "<",
           "text": undefined,
@@ -467,13 +409,11 @@ other tag",
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-return",
       },
@@ -483,17 +423,14 @@ other tag",
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": "",
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -501,13 +438,11 @@ other tag",
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -515,19 +450,16 @@ other tag",
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": Object {
             "className": "hs-item-comment-special",
           },
           "children": Array [
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-tag",
               },
@@ -537,13 +469,11 @@ other tag",
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
               "text": "special",
             },
             Object {
-              "_state": undefined,
               "attrs": Object {
                 "className": "hs-item-comment-text",
               },
@@ -553,10 +483,9 @@ other tag",
               "events": undefined,
               "instance": undefined,
               "key": undefined,
-              "skip": false,
               "state": undefined,
               "tag": "span",
-              "text": 0,
+              "text": "0",
             },
           ],
           "dom": undefined,
@@ -564,7 +493,6 @@ other tag",
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "div",
           "text": undefined,
@@ -575,7 +503,6 @@ other tag",
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
@@ -586,7 +513,6 @@ other tag",
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "div",
   "text": undefined,
@@ -595,19 +521,16 @@ other tag",
 
 exports[`commentLong should translate commentLong 1`] = `
 Object {
-  "_state": undefined,
   "attrs": Object {
     "className": "hs-item-comment",
   },
   "children": Array [
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-desc",
       },
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "<p>short example comment.</p>
 <pre><code>    # complete comment
@@ -621,7 +544,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "<",
           "text": undefined,
@@ -632,13 +554,11 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
     },
     Object {
-      "_state": undefined,
       "attrs": Object {
         "className": "hs-item-comment-return",
       },
@@ -648,17 +568,14 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": "",
     },
     Object {
-      "_state": undefined,
-      "attrs": undefined,
+      "attrs": null,
       "children": Array [
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -666,13 +583,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -680,13 +595,11 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
         },
         Object {
-          "_state": undefined,
           "attrs": undefined,
           "children": "",
           "dom": undefined,
@@ -694,7 +607,6 @@ Object {
           "events": undefined,
           "instance": undefined,
           "key": undefined,
-          "skip": false,
           "state": undefined,
           "tag": "#",
           "text": undefined,
@@ -705,7 +617,6 @@ Object {
       "events": undefined,
       "instance": undefined,
       "key": undefined,
-      "skip": false,
       "state": undefined,
       "tag": "div",
       "text": undefined,
@@ -716,7 +627,6 @@ Object {
   "events": undefined,
   "instance": undefined,
   "key": undefined,
-  "skip": false,
   "state": undefined,
   "tag": "div",
   "text": undefined,

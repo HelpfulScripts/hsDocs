@@ -707,7 +707,7 @@ export function sourceLink(mdl:any) {
  * @param name the name on which to formt he link
  */
 export function libLink(css:string, lib:string, id:string, name:string) {
-    return m(css, { href:`/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+    return m(css, { href:`#!/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
 }
 &nbsp;
 /**

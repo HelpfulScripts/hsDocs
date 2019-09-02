@@ -6,8 +6,8 @@ hsDocs
 [![Build Status](https://travis-ci.org/HelpfulScripts/hsDocs.svg?branch=master)](https://travis-ci.org/HelpfulScripts/hsDocs)
 [![Dependencies Status](https://david-dm.org/helpfulscripts/hsdocs.svg)](https://david-dm.org/helpfulscripts/hsdocs)
 [![Coverage Status](https://coveralls.io/repos/github/HelpfulScripts/hsDocs/badge.svg?branch=master)](https://coveralls.io/github/HelpfulScripts/hsDocs?branch=master)
-[![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)
 [![Known Vulnerabilities](https://snyk.io/test/github/HelpfulScripts/hsDocs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/HelpfulScripts/hsDocs?targetFile=package.json)
+[![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)
 
 Helpful Scripts code documentation tool.
 

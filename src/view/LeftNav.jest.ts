@@ -29,36 +29,42 @@ m.request = (req: any) => {
     }
 };
 
+const route = {
+    field: '0',
+    lib: 'hsDocs'
+};
+
 m.route.param = (name:string) => {
-    if (name==='field') { return '0'; }
-    if (name==='lib')   { return 'hsDocs'; }
+    if (name==='field') { return route.field; }
+    if (name==='lib')   { return route.lib; }
     return '';
 };
+
 
 const root:any = window.document.createElement("body");
 
 
 describe('LeftNav', () => {
-    beforeAll((done) => { 
-        DocSets.loadList('mylist.json')
-        .then(() => {
-            m.mount(root, { view: () => { return m(LeftNav, { route:{lib: 'hsDocs', field:'0'}});} }); 
-            setTimeout(() => {
+    describe('overview', () => {
+        beforeAll((done) => { 
+            m.route.get = () => '/api/hsDocs/0';
+            DocSets.loadList('mylist.json')
+            .then(() => {
+                route.field = '0';
+                m.mount(root, { view: () => { return m(LeftNav, {});} }); 
+                setTimeout(done, 200);
                 m.redraw();
-                done();
-            }, 500);
+            });
+        });
+    
+        it('exists', (done)=>{
+            expect(LeftNav).toBeDefined();
+            done();
+        });
+    
+        it('matches snapshot', (done)=>{
+            expect(root).toMatchSnapshot();
+            done();
         });
     });
-
-    it('should exist', (done)=>{
-        expect(LeftNav).toBeDefined();
-        done();
-    });
-
-    it('shoud match snapshot', (done) => {
-        expect(root).toMatchSnapshot();
-        done();
-    });
 });
-
-

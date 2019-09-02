@@ -11,7 +11,6 @@ const set = {
     "title": "HS Libraries"
 };
 
-
 m.request = (req: any) => {
     if (req.url === 'mylist.json') {
         return Promise.resolve(set);
@@ -40,7 +39,6 @@ m.route.param = (name:string) => {
     if (name==='lib')   { return route.lib; }
     return '';
 };
-
 
 
 const root:any = window.document.createElement("body");
