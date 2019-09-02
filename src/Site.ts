@@ -8,10 +8,6 @@ import * as header  from './view/DocsMenu';
 import * as left    from './view/LeftNav';
 import * as main    from './view/MainDetail';
 
-// import { Layout }   from 'hslayout';
-// import { m } from 'hslayout';
-// import { Config }   from 'hslayout';
-
 const TitleHeight   = '30px'; 
 const FooterHeight  = '10px';  
 const LeftNavWidth  = '200px';
