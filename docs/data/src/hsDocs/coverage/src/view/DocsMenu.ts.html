@@ -96,8 +96,7 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -126,7 +125,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -177,11 +175,10 @@ export class DocsMenu extends Layout {
             DocSets.loadList(attrs.docSet)
             .then(() =&gt; {
                 m.redraw();
-                // console.log('getDesc:');
                 DocSets.get().map((set:string) =&gt; {
                     const mdl = DocSets.get(set);
                     const counts = testNode(mdl);
-                    console.log(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
+                    log.debug(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
                 });
             })
             .catch(log.error);

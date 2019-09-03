@@ -27,11 +27,10 @@ export class DocsMenu extends Layout {
             DocSets.loadList(attrs.docSet)
             .then(() => {
                 m.redraw();
-                // console.log('getDesc:');
                 DocSets.get().map((set:string) => {
                     const mdl = DocSets.get(set);
                     const counts = testNode(mdl);
-                    console.log(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
+                    log.debug(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
                 });
             })
             .catch(log.error);
