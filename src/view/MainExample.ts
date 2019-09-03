@@ -405,18 +405,20 @@ async function loadScript(sym:string, path:string) {
             log.debug(`${path} ${content?'found':'not found'}`);
         }
     } catch(e) { log.error(`loading lib ${path}`);}
+    let code:string;
     try { 
-        const code:string = content.responseText;
-            let lib:any = {};
-            log.info(`loaded ${path}, creating library`);
-            new Function(code).bind(lib)();
-            if (lib) {
-                return lib;
-            } else {
-                log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);
-            }
+        code = content.responseText;
+        let lib:any = {};
+        log.info(`loaded ${path}, creating library`);
+        new Function(code).bind(lib)();
+        if (lib) {
+            return lib;
+        } else {
+            log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);
+        }
     } catch(e) {
         log.error(`JSON.parse: ${path}: ${e}`);
+        log.error(code);
         return undefined;
     }
     // add(content.responseText);

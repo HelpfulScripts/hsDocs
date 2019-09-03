@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">34.38% </span>
+        <span class="strong">34.11% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>44/128</span>
+        <span class='fraction'>44/129</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">30% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.72% </span>
+        <span class="strong">37.39% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>43/114</span>
+        <span class='fraction'>43/115</span>
       </div>
     </div>
     <p class="quiet">
@@ -470,7 +470,9 @@
 <a name='L422'></a><a href='#L422'>422</a>
 <a name='L423'></a><a href='#L423'>423</a>
 <a name='L424'></a><a href='#L424'>424</a>
-<a name='L425'></a><a href='#L425'>425</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -877,6 +879,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -888,6 +891,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1301,18 +1305,20 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
 <span class="cstat-no" title="statement not covered" >            log.debug(`${path} ${content?'found':'not found'}`);</span>
         }
     } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}`);}</span>
+    let code:string;
 <span class="cstat-no" title="statement not covered" >    try { </span>
-        const code:string = <span class="cstat-no" title="statement not covered" >content.responseText;</span>
-            let lib:any = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >            log.info(`loaded ${path}, creating library`);</span>
-<span class="cstat-no" title="statement not covered" >            new Function(code).bind(lib)();</span>
-<span class="cstat-no" title="statement not covered" >            if (lib) {</span>
-<span class="cstat-no" title="statement not covered" >                return lib;</span>
-            } else {
-<span class="cstat-no" title="statement not covered" >                log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);</span>
-            }
+<span class="cstat-no" title="statement not covered" >        code = content.responseText;</span>
+        let lib:any = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >        log.info(`loaded ${path}, creating library`);</span>
+<span class="cstat-no" title="statement not covered" >        new Function(code).bind(lib)();</span>
+<span class="cstat-no" title="statement not covered" >        if (lib) {</span>
+<span class="cstat-no" title="statement not covered" >            return lib;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            log.warn(`wrong lib format for ${sym}: ${code.slice(0, 20)}..., should be 'this["${sym}"] = ...`);</span>
+        }
     } catch(e) {
 <span class="cstat-no" title="statement not covered" >        log.error(`JSON.parse: ${path}: ${e}`);</span>
+<span class="cstat-no" title="statement not covered" >        log.error(code);</span>
 <span class="cstat-no" title="statement not covered" >        return undefined;</span>
     }
     // add(content.responseText);
