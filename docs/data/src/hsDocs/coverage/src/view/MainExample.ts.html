@@ -1302,7 +1302,7 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
                 }
                 catch(e) {}
             }
-<span class="cstat-no" title="statement not covered" >            log.debug(`${path} ${content?'found':'not found'}`);</span>
+<span class="cstat-no" title="statement not covered" >            log.info(`${path} ${content?'found':'not found'}`);</span>
         }
     } catch(e) { <span class="cstat-no" title="statement not covered" >log.error(`loading lib ${path}`);}</span>
     let code:string;

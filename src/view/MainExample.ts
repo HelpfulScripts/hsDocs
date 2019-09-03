@@ -402,7 +402,7 @@ async function loadScript(sym:string, path:string) {
                 }
                 catch(e) {}
             }
-            log.debug(`${path} ${content?'found':'not found'}`);
+            log.info(`${path} ${content?'found':'not found'}`);
         }
     } catch(e) { log.error(`loading lib ${path}`);}
     let code:string;
