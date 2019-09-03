@@ -88,7 +88,7 @@ This encourages to separate code into files without cluttering the overview.
 
 ### Linking across the docsets
 Links to items across the docsets can be placed via a link directive: 
-- "{@link [*docset*:]*module*.*item* linked text}", 
+- `{@link [docset:]module.item` linked text`}`, 
 
 where
  - *docset* optional; the name of the docset. If omitted, a link within the current docSet will be created
