@@ -98,10 +98,10 @@ where
  - *linked text* is displayed with a link to path within module
 
 Examples:
-- '{@link overview this hsDocs overview}' -> {@link overview this hsDocs overview}
-- '{@link hsDocs: this hsDocs overview}' -> {@link hsDocs: this hsDocs overview}
-- '{@link hsDocs:DocSets.DocSets.add the `add` function}' --> {@link hsDocs:DocSets.DocSets.add the `add` function}
-- '{@link DocSets.DocSets.add the `add` function}' --> {@link DocSets.DocSets.add the `add` function}
+- `{@link overview` this hsDocs overview`}` -> {@link overview this hsDocs overview}
+- `{@link hsDocs:` this hsDocs overview`}` -> {@link hsDocs: this hsDocs overview}
+- `{@link hsDocs:DocSets.DocSets.add` the `add` function`}` -> {@link hsDocs:DocSets.DocSets.add the `add` function}
+- `{@link DocSets.DocSets.add` the `add` function`}` -> {@link DocSets.DocSets.add the `add` function}
 
 
 ### Mithril Code Examples
@@ -111,15 +111,12 @@ Examples:
  * <file name="script.js">
  * let tl = [10, 10];
  * 
- * const rnd = () => Math.floor(80*Math.random());
- * 
- * function click() { tl = tl.map(i => rnd()); }
- * 
  * m.mount(root, {
  *     view: () => m('.myBlock', {
- *         onclick:click, 
+ *         onclick:() => tl = tl.map(i => Math.floor(80*Math.random())), 
  *         style:`top:${tl[0]}%; left:${tl[1]}%;`
- *     }, m('', 'click me'))})
+ *     }, m('', 'click me'))
+ * })
  * </file>
  * <file name="style.css">
  * .myBlock {

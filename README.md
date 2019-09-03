@@ -57,7 +57,7 @@ See below for creating the docset.
 }
 ```
 
-5 - optioonally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it. 
+5 - optionally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it. 
 These are created by the command `grunt sourceCode` in the `docs/data/src/` folder of your project.
 
 6 - Point a browser to the web-app directory
@@ -75,6 +75,7 @@ If the second comment is missing, `typedoc` will not generate a comment in the D
 DocSets are shown as menu tabs across the top of the window. To include a DocSet in the menu, ensure that the 
 corresponding documentation `.json` file is copied into the `data` folder inside the `hsDocs` staging location 
 for the http server. Then edit the `index.json` file to include the documentation file name in the "docs" section. 
+See [hsDocs/docs/data](https://github.com/HelpfulScripts/hsDocs/tree/master/docs/data) fro an example.
 
 ## Installation
 Install `hsDocs` from `npm` the standard way:
