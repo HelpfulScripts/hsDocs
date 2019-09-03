@@ -398,7 +398,7 @@ async function loadScript(sym:string, path:string) {
             for (let i=0; i<=paths.length; i++) {
                 try { 
                     content = await load(paths[i]); 
-                    break;
+                    if (content.status === 200) { break; }
                 }
                 catch(e) {}
             }

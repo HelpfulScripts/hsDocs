@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">34.11% </span>
+        <span class="strong">33.85% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>44/129</span>
+        <span class='fraction'>44/130</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>12/40</span>
+        <span class='fraction'>12/42</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">23.08% </span>
@@ -1298,7 +1298,7 @@ async function <span class="fstat-no" title="function not covered" >loadScript(<
 <span class="cstat-no" title="statement not covered" >            for (let i=<span class="cstat-no" title="statement not covered" >0;</span> i&lt;=paths.length; i++) {</span>
 <span class="cstat-no" title="statement not covered" >                try { </span>
 <span class="cstat-no" title="statement not covered" >                    content = await load(paths[i]); </span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered" >                    if (content.status === 200) { <span class="cstat-no" title="statement not covered" >break; </span>}</span>
                 }
                 catch(e) {}
             }
