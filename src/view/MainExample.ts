@@ -397,6 +397,7 @@ async function loadScript(sym:string, path:string) {
         } else {                        // else try other paths
             for (let i=0; i<=paths.length; i++) {
                 try { 
+                    path = paths[i];
                     content = await load(paths[i]); 
                     if (content.status === 200) { break; }
                 }
