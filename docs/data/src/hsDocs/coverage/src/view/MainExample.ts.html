@@ -1119,7 +1119,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
             } else {
                 const libs = <span class="cstat-no" title="statement not covered" >libNames.map(<span class="fstat-no" title="function not covered" >name </span>=&gt; <span class="cstat-no" title="statement not covered" >modules[name])</span>;</span>
                 const scriptFn = <span class="cstat-no" title="statement not covered" >new Function('root', ...libNames, desc);    </span>
-<span class="cstat-no" title="statement not covered" >                log.info('running example script');</span>
+<span class="cstat-no" title="statement not covered" >                log.info(`running example script with modules '${libNames.join(', ')}'`);</span>
 <span class="cstat-no" title="statement not covered" >                scriptFn(root, ...libs);</span>
             }
         };

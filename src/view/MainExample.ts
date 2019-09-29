@@ -217,7 +217,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
             } else {
                 const libs = libNames.map(name => modules[name]);
                 const scriptFn = new Function('root', ...libNames, desc);    
-                log.info('running example script');
+                log.info(`running example script with modules '${libNames.join(', ')}'`);
                 scriptFn(root, ...libs);
             }
         };

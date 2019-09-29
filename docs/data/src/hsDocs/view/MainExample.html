@@ -240,7 +240,7 @@
 <p id=217 class="line"><span>&nbsp;217</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</p>
 <p id=218 class="line"><span>&nbsp;218</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;libs&nbsp;=&nbsp;libNames.map(name&nbsp;=>&nbsp;modules[name]);</p>
 <p id=219 class="line"><span>&nbsp;219</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;scriptFn&nbsp;=&nbsp;new&nbsp;Function('</quote>root<quote>',&nbsp;...libNames,&nbsp;desc);&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p id=220 class="line"><span>&nbsp;220</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info('</quote>running&nbsp;example&nbsp;script<quote>');</p>
+<p id=220 class="line"><span>&nbsp;220</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`running&nbsp;example&nbsp;script&nbsp;with&nbsp;modules&nbsp;'</quote>${libNames.join(<quote>',&nbsp;'</quote>)}<quote>'`);</p>
 <p id=221 class="line"><span>&nbsp;221</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scriptFn(root,&nbsp;...libs);</p>
 <p id=222 class="line"><span>&nbsp;222</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=223 class="line"><span>&nbsp;223</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</p>
