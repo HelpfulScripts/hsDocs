@@ -571,6 +571,9 @@ body {
   color: #448;
   font-weight: bold;
 }
+a.hs-site-title {
+  text-decoration: none;
+}
 th {
   text-align: left;
 }
@@ -656,16 +659,16 @@ th {
   left: 0%;
   margin-top: 5px;
 }
-.hs-site-header .hs-site-title {
+.hs-site-title {
   padding: 5px 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #000;
 }
-.hs-site-header .hs-menu .hs-selectable {
+.hs-menu .hs-selectable {
   border-left: 0.5px solid white;
   border-right: rgba(255, 255, 255, 0);
   border-bottom: 1px solid #ccc;
 }
-.hs-site-header .hs-menu .hs-selected {
+.hs-menu .hs-selected {
   border-bottom: 1px solid white;
 }
 .hs-left {
@@ -726,7 +729,7 @@ th {
   padding-right: 5px;
   text-align: right;
   font-style: italic;
-  background-color: #eef;
+  background-color: #f0f0e8;
 }
 .hs-left .hs-left-nav-entries {
   border-top: 1px solid #ccc;
@@ -1246,8 +1249,10 @@ example pre {
   line-height: 18px;
 }
 .hs-site-footer {
-  font-size: 50%;
+  font-size: 60%;
   color: #888;
+  padding-left: 10px;
+  background-color: #f0f0f0;
 }
 body {
   font-family: Arial, sans-serif;
@@ -1256,8 +1261,11 @@ body {
 .hs-site-main {
   background-color: #fff;
 }
+.hs-site-main > .hs-layout:first-child > .hs-row-layout > .hs-layout {
+  overflow: hidden;
+}
 .hs-indent {
   margin-left: 5px;
   margin-right: 5px;
 }
-/*# sourceMappingURL=./hsDocs.css.map */
+/*# sourceMappingURL=./bin/hsDocs.css.map */

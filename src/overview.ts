@@ -15,7 +15,7 @@ Helpful Scripts code documentation viewer.
 
 ___
 hsDocs.js is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.
-It renders JSON documentation files as created by [typedoc](http://typedoc.org).
+It provides a browser rendering of JSON documentation files as created by [typedoc](http://typedoc.org).
 
 ## Usage
 1 - Create a web-app directory to serve the docsets from. As an example, 

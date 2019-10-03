@@ -571,6 +571,9 @@ body {
   color: #448;
   font-weight: bold;
 }
+a.hs-site-title {
+  text-decoration: none;
+}
 th {
   text-align: left;
 }
@@ -726,7 +729,7 @@ th {
   padding-right: 5px;
   text-align: right;
   font-style: italic;
-  background-color: #eef;
+  background-color: #f0f0e8;
 }
 .hs-left .hs-left-nav-entries {
   border-top: 1px solid #ccc;
@@ -1246,8 +1249,9 @@ example pre {
   line-height: 18px;
 }
 .hs-site-footer {
-  font-size: 50%;
+  font-size: 60%;
   color: #888;
+  padding-left: 10px;
 }
 body {
   font-family: Arial, sans-serif;
