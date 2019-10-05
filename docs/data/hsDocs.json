@@ -6028,8 +6028,8 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 3,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 6,
 									"character": 9
 								}
 							],
@@ -6083,8 +6083,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 5,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 8,
 									"character": 20
 								}
 							],
@@ -6226,8 +6226,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 7,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 10,
 									"character": 8
 								}
 							],
@@ -6268,6 +6268,12 @@
 						{
 							"type": "reference",
 							"name": "Layout"
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Component"
 						}
 					]
 				},
@@ -6352,8 +6358,8 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 3,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 6,
 									"character": 9
 								}
 							],
@@ -6407,8 +6413,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 5,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 8,
 									"character": 20
 								}
 							],
@@ -6507,8 +6513,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 7,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 10,
 									"character": 8
 								}
 							],
@@ -6547,6 +6553,12 @@
 						{
 							"type": "reference",
 							"name": "Layout"
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Component"
 						}
 					]
 				},
@@ -7346,8 +7358,8 @@
 							},
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 3,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 6,
 									"character": 9
 								}
 							],
@@ -7401,8 +7413,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 5,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 8,
 									"character": 20
 								}
 							],
@@ -7501,8 +7513,8 @@
 							],
 							"sources": [
 								{
-									"fileName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
-									"line": 7,
+									"fileName": "/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/view/Layout.d.ts",
+									"line": 10,
 									"character": 8
 								}
 							],
@@ -7541,6 +7553,12 @@
 						{
 							"type": "reference",
 							"name": "Layout"
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"name": "Component"
 						}
 					]
 				},
@@ -9136,7 +9154,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hslayout/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/index\""
 							},
 							"defaultValue": "   hslayout"
 						},
@@ -9155,7 +9173,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hsutil/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hsutil/index\""
 							},
 							"defaultValue": "     hsutil"
 						},
@@ -9174,7 +9192,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/node_modules/hswidget/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/index\""
 							},
 							"defaultValue": "   hswidget"
 						},
