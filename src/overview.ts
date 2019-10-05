@@ -2,7 +2,7 @@
 # hsDocs
 
 Helpful Scripts code documentation viewer. 
-[`[Coverage Info]`](./data/src/hsDocs/coverage/)
+<a href="./data/src/hsDocs/coverage/" target="_blank">[Coverage Info]</a>
 
 [![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs)
 [![GitHub](https://img.shields.io/badge/GitHub-hsDocs-blue.svg)](https://github.com/helpfulscripts/hsdocs)
