@@ -154,7 +154,7 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
         less: {
             options: {
                 sourceMap: true,
-                sourceMapURL: '<%= lib %>.map.css'
+                sourceMapURL: '<%= lib %>.css.map'
             },
             css: {
                 files: [{
