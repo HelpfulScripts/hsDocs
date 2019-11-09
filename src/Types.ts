@@ -27,14 +27,17 @@ interface DocKindNameID extends DocID {
 
 export interface DocBaseNode extends DocKindNameID {
     kindString?:        string;
-	flags:              DocNodeFlags;
+    flags:              DocNodeFlags;
+    type:               DocTypeOperator;
 }
 
 interface DocElementType extends DocKindNameID {
     elementType?:   DocNameType;
 }
 
-interface DocSignature extends DocBaseNode {
+interface DocSignature extends DocKindNameID {
+    kindString?:        string;
+    flags:              DocNodeFlags;
     type:               DocType;
     comment?:           DocComment;
     parameters?:        DocNode[];
@@ -66,6 +69,7 @@ interface DocType extends DocTypeNameID {
     typeArguments?: DocType[];
     types?:         DocType[];
     value?:         string;
+    constraint:     DocConstraint;
 }
 
 interface DocNodeFlags {
@@ -123,6 +127,7 @@ interface DocInheritedFrom extends DocTypeNameID {
 }
 
 interface DocExtendedTypes extends DocTypeNameID {
+    typeArguments: DocTypeNameID[];
 }
 
 interface DocExtendedBy extends DocTypeNameID {
@@ -137,6 +142,20 @@ interface DocImplementedTypes extends DocTypeNameID {
 interface DocImplementedBy extends DocTypeNameID {
 }
 
+interface DocTypeOperator {
+    type: string;
+    name: string;
+    operator: string;
+    target: DocNameType;
+}
+
+interface DocConstraint {
+    type: string;
+    name: string;
+    operator: string;
+    constraint: DocTypeOperator;
+    target: DocNameType;
+}
 
 //-----------------
 
@@ -177,7 +196,7 @@ export function testFullNode(node:DocNode, name=''):number {
             case 'implementedTypes':return node.implementedTypes.map(t => testTypeNameID(t, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'implementedBy':   return node.implementedBy.map(t => testTypeNameID(t, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'extendedBy':      return node.extendedBy.map(e => testTypeNameID(e, node,`${name}-${k}`)).reduce(accumulate, 0);
-            case 'extendedTypes':   return node.extendedTypes.map(t =>testTypeNameID(t, node,`${name}-${k}`)).reduce(accumulate, 0);
+            case 'extendedTypes':   return node.extendedTypes.map(t =>testExtendedTypes(t, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'children':        return node.children.map(c => testFullNode(c, `${name}-${c.name}`)).reduce(accumulate, 0);
             case 'groups':          return node.groups.map(c => testReference(c, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'signatures':      return node.signatures.map(c => testSignature(c, node, `${name}-${k}`)).reduce(accumulate, 0);
@@ -211,7 +230,7 @@ function testSignature(test:DocSignature, node: DocNode, name: string):number {
             case 'overwrites':      return testTypeNameID(test.overwrites, node,`${name}-${k}`);
             case 'implementationOf':return testTypeNameID(test.implementationOf, node,`${name}-${k}`);
             case 'typeParameter':   return test.typeParameter.map(is => testBaseNode(is, node, `${name}-${k}`)).reduce(accumulate, 0);
-            default: log.warn(`testNameType found unknown key '${k}' for path '${name}'`);
+            default: log.warn(`testSignature found unknown key '${k}' for path '${name}'`);
         }
         return -1;
     }).reduce(accumulate, 0);
@@ -221,18 +240,34 @@ function testBaseNode(test:DocBaseNode, node: DocNode, name: string):number {
     return Object.getOwnPropertyNames(test).map(k => {
         use('DocBaseNode', k);
         switch (k) {
-            case 'id':              return testNumber(k, test.id, node, node.name);
-            case 'name':            return testString(k, test.name, node,`${name}-${k}`);
-            case 'kind':            return testNumber(k, test.kind, node,`${name}-${k}`);
-            case 'kindString':      return testString(k, test.kindString, node,`${name}-${k}`);
-            case 'flags':           return testFlags(test.flags, node,`${name}-${k}`);
+            case 'id':          return testNumber(k, test.id, node, node.name);
+            case 'name':        return testString(k, test.name, node,`${name}-${k}`);
+            case 'kind':        return testNumber(k, test.kind, node,`${name}-${k}`);
+            case 'kindString':  return testString(k, test.kindString, node,`${name}-${k}`);
+            case 'flags':       return testFlags(test.flags, node,`${name}-${k}`);
+            case 'type':        return testTypeOperator(test.type, node, `${name}-${k}`);
             default: log.warn(`testBaseNode found unknown key '${k}' for path '${name}'`);
+            log.info(log.inspect(test, null));
         }
         return -1;
     }).reduce(accumulate, 0);
 }
 
 
+function testTypeOperator(test:DocTypeOperator, node: DocNode, name: string):number {
+    return Object.getOwnPropertyNames(test).map(k => {
+        use('DocTypeOperator', k);
+        switch (k) {
+            case 'type':    return testString(k, test.type, node,`${name}-${k}`);
+            case 'name':    return testString(k, test.name, node,`${name}-${k}`);
+            case 'operator':return testString(k, test.operator, node,`${name}-${k}`);
+            case 'target':  return testNameType(test.target, node, name);
+            default: log.warn(`testTypeOperator found unknown key '${k}' for path '${name}'`);
+                     log.info(log.inspect(test, null));
+        }
+        return -1;
+    }).reduce(accumulate, 0);
+}
 
 function testNameType(test:DocNameType, node: DocNode, name: string):number {
     return Object.getOwnPropertyNames(test).map(k => {
@@ -254,6 +289,22 @@ function testTypeNameID(test:DocTypeNameID, node: DocNode, name: string):number 
             case 'name':    return testString(k, test.name, node,`${name}-${k}`);
             case 'id':      return testNumber(k, test.id, node,`${name}-${k}`);
             default: log.warn(`testTypeNameID found unknown key '${k}' for path '${name}'`);
+                     log.info(log.inspect(test, null));
+        }
+        return -1;
+    }).reduce(accumulate, 0);
+}
+
+function testExtendedTypes(test:DocExtendedTypes, node: DocNode, name: string):number {
+    return Object.getOwnPropertyNames(test).map(k => {
+        use('DocTypeNameID', k);
+        switch (k) {
+            case 'type':    return testString(k, test.type, node,`${name}-${k}`);
+            case 'name':    return testString(k, test.name, node,`${name}-${k}`);
+            case 'id':      return testNumber(k, test.id, node,`${name}-${k}`);
+            case 'typeArguments': return test.typeArguments.map(c => testNameType(c, node, `${name}-${k}`)).reduce(accumulate, 0); 
+            default: log.warn(`testExtendedTypes found unknown key '${k}' for path '${name}'`);
+                     log.info(log.inspect(test, null));
         }
         return -1;
     }).reduce(accumulate, 0);
@@ -320,12 +371,30 @@ function testType(test:DocType, node: DocNode, name: string):number {
             case 'elements':        return test.elements.map(t => testTypeNameID(t, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'typeArguments':   return test.typeArguments.map(t => testType(t, node,`${name}-${k}`)).reduce(accumulate, 0);
             case 'types':           return test.types.map((t:DocType) => testType(t, node,`${name}-${k}`)).reduce(accumulate, 0);
+            case 'constraint':      return testConstraint(test.constraint, node, `${name}-${k}`);
             default: log.warn(`testType found unknown key '${k}' for path '${name}'`);
+                     log.info(log.inspect(test, null));
         }
         return -1;
     }).reduce(accumulate, 0);
 }
 
+
+function testConstraint(test:DocConstraint, node: DocNode, name: string):number {
+    return Object.getOwnPropertyNames(test).map(k => {
+        use('DocNameType', k);
+        switch (k) {
+            case 'type':        return testString(k, test.type, node,`${name}-${k}`);
+            case 'name':        return testString(k, test.name, node,`${name}-${k}`);
+            case 'constraint':  return testTypeOperator(test.constraint, node,`${name}-${k}`);
+            case 'operator':    return testString(k, test.operator, node,`${name}-${k}`); 
+            case 'target':      return testNameType(test.target, node, name);
+            default: log.warn(`testConstraint found unknown key '${k}' for path '${name}'`);
+                     log.info(log.inspect(test, null));
+        }
+        return -1;
+    }).reduce(accumulate, 0);
+}
 function testReference(test:DocReference, node:DocNode, name: string):number {
     return Object.getOwnPropertyNames(test).map(k => {
         use('DocReference', k);
@@ -351,6 +420,8 @@ function testTag(test:DocTag, node:DocNode, name: string):number {
         return -1;
     }).reduce(accumulate, 0);
 }
+
+
 
 // function testArguments(test:DocTypeArguments, node:DocNode, name: string):number {
 //     return Object.getOwnPropertyNames(test).map(k => {

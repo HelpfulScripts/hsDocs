@@ -761,18 +761,23 @@ Object {
     Object {
       "attrs": Object {
         "className": "hs-item-sig-type",
-        "declaration": Object {
-          "children": Array [],
-        },
-        "elementType": Object {},
-        "elements": Array [
-          Object {},
-        ],
-        "id": 161,
-        "type": "bogus",
-        "types": Array [],
       },
-      "children": Array [],
+      "children": Array [
+        Object {
+          "attrs": Object {
+            "className": "error",
+          },
+          "children": undefined,
+          "dom": undefined,
+          "domSize": undefined,
+          "events": undefined,
+          "instance": undefined,
+          "key": undefined,
+          "state": undefined,
+          "tag": "span",
+          "text": "bogus",
+        },
+      ],
       "dom": undefined,
       "domSize": undefined,
       "events": undefined,

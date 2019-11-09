@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.83% </span>
+        <span class="strong">85.12% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>103/120</span>
+        <span class='fraction'>103/121</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.55% </span>
+        <span class="strong">72.58% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>89/121</span>
+        <span class='fraction'>90/124</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">76.67% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>23/30</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.62% </span>
+        <span class="strong">88.79% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>95/106</span>
+        <span class='fraction'>95/107</span>
       </div>
     </div>
     <p class="quiet">
@@ -308,7 +308,15 @@
 <a name='L260'></a><a href='#L260'>260</a>
 <a name='L261'></a><a href='#L261'>261</a>
 <a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -411,6 +419,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -526,6 +541,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -550,7 +567,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -670,12 +686,19 @@ export function implementedBy(mdl:any) {
 &nbsp;
 export function inheritedFrom(mdl:any) {
     if (mdl.inheritedFrom) {
-        let parent = DocSets.get(mdl.lib, mdl.inheritedFrom.id);
-        parent = DocSets.get(mdl.lib, parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')));
-        return m('span.hs-item-inherited-from', [
-            m('span', 'inherited from '),
-            libLink('a', parent.lib, parent.fullPath, parent.name)
-        ]);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (mdl.inheritedFrom.id) {
+            let parent = DocSets.get(mdl.lib, mdl.inheritedFrom.id);
+            parent = DocSets.get(mdl.lib, parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')));
+            return m('span.hs-item-inherited-from', [
+                m('span', 'inherited from '),
+                libLink('a', parent.lib, parent.fullPath, parent.name)
+            ]);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return m('span.hs-item-inherited-from', [</span>
+                m('span', 'inherited from '),
+                m('span', mdl.inheritedFrom.name)
+            ]);
+        }
     } else {
         return m('span.hs-item-inherited-from', undefined);
     }
@@ -787,6 +810,8 @@ export function type(t:any, lib:string) {
                                         ...tt.elements.map((e:any, i:number) =&gt; [i&gt;0?<span class="branch-0 cbranch-no" title="branch not covered" >', ':</span>undefined, _type(e)]),
                                         ' ]'
                                     ]);
+<span class="branch-3 cbranch-no" title="branch not covered" >            case 'typeParameter': </span>  // found in d3.js
+                                    // log.warn(`found 'typeParameter', lib=${lib}, structure:\n${log.inspect(tt, 1)}`);
             case 'intrinsic':
             case 'instrinct':       return m('span.hs-item-type-instrinct', tt.id? libLink('span', lib, tt.fullPath, tt.name) : tt.name); 
             case 'stringLiteral':   return m('span.hs-item-type-string-literal', tt.type); 
@@ -814,8 +839,7 @@ export function type(t:any, lib:string) {
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
             default: log.warn('unknown type '+ tt.type);
-                     log.debug(log.inspect(t,3));
-                     return t.type;
+                     return m('span.error', tt.type);
         }}
     }
 &nbsp;

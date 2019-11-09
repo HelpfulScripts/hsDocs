@@ -98,12 +98,19 @@ export function implementedBy(mdl:any) {
 
 export function inheritedFrom(mdl:any) {
     if (mdl.inheritedFrom) {
-        let parent = DocSets.get(mdl.lib, mdl.inheritedFrom.id);
-        parent = DocSets.get(mdl.lib, parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')));
-        return m('span.hs-item-inherited-from', [
-            m('span', 'inherited from '),
-            libLink('a', parent.lib, parent.fullPath, parent.name)
-        ]);
+        if (mdl.inheritedFrom.id) {
+            let parent = DocSets.get(mdl.lib, mdl.inheritedFrom.id);
+            parent = DocSets.get(mdl.lib, parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')));
+            return m('span.hs-item-inherited-from', [
+                m('span', 'inherited from '),
+                libLink('a', parent.lib, parent.fullPath, parent.name)
+            ]);
+        } else {
+            return m('span.hs-item-inherited-from', [
+                m('span', 'inherited from '),
+                m('span', mdl.inheritedFrom.name)
+            ]);
+        }
     } else {
         return m('span.hs-item-inherited-from', undefined);
     }
@@ -215,6 +222,8 @@ export function type(t:any, lib:string) {
                                         ...tt.elements.map((e:any, i:number) => [i>0?', ':undefined, _type(e)]),
                                         ' ]'
                                     ]);
+            case 'typeParameter':   // found in d3.js
+                                    // log.warn(`found 'typeParameter', lib=${lib}, structure:\n${log.inspect(tt, 1)}`);
             case 'intrinsic':
             case 'instrinct':       return m('span.hs-item-type-instrinct', tt.id? libLink('span', lib, tt.fullPath, tt.name) : tt.name); 
             case 'stringLiteral':   return m('span.hs-item-type-string-literal', tt.type); 
@@ -242,8 +251,7 @@ export function type(t:any, lib:string) {
                                     }
                                     return m('span.hs-item-type-reflection', rflRes);
             default: log.warn('unknown type '+ tt.type);
-                     log.debug(log.inspect(t,3));
-                     return t.type;
+                     return m('span.error', tt.type);
         }}
     }
 
