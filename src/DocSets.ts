@@ -9,7 +9,6 @@
 /** */
 import { m }            from 'hslayout';
 import { log as gLog }  from 'hsutil'; const log = gLog('DocsSets');
-
 const DOCDIR:string = './data/';
 
 /**
@@ -114,7 +113,7 @@ export class DocSets {
         if (!found) { found = await getDirJSONs(DOCDIR); }
         log.debug(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
         await Promise.all(DocSets.gList.docs.map(async (f:string) => await loadDocSet(dir, f)))
-        .catch(log.error);            
+        .catch(log.error);        
     }
 
     /**

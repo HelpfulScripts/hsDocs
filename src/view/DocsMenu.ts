@@ -2,7 +2,10 @@ import { m, Vnode, Layout }         from 'hslayout';
 import { DocSets }                  from '../DocSets'; 
 import { Menu, SelectorDesc }       from 'hswidget';
 import { log as gLog }              from 'hsutil'; const log = gLog('DocsMenu');
-import { testNode }                 from '../Types';
+import { DocsNode }                 from '../Types2';
+// import { testNode }   from '../Types';
+// import { scanModule }               from '../ScanModule';
+// import { reportModuleTypes }        from '../ScanModule';
 
 /**
  * Creates the title menu for selecting between the different docsets.
@@ -29,11 +32,13 @@ export class DocsMenu extends Layout {
                 m.redraw();
                 DocSets.get().map((set:string) => {
                     const mdl = DocSets.get(set);
-                    const counts = testNode(mdl);
-                    log.debug(`testing getDesc ${mdl.name}: ${log.inspect(counts)} tests run`);            
+                    DocsNode.traverse(mdl);
                 });
             })
-            .catch(log.error);
+            .catch(e => {
+                log.error(e.message);
+                log.error(e);
+            });
         }
         const items = DocSets.get(); 
         return {

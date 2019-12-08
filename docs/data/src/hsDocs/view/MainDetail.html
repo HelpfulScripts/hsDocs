@@ -45,7 +45,7 @@
 <p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.attrs.route&nbsp;=&nbsp;undefined;</p>
 <p id=23 class="line"><span>&nbsp;&nbsp;23</span></p>
 <p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;getOverview(lib,&nbsp;field)&nbsp;||&nbsp;itemDoc(DocSets.get(lib,&nbsp;field)&nbsp;||&nbsp;<quote>''</quote>);&nbsp;</p>
-<p id=25 class="line"><span>&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(<quote>'.hs-main-detail'</quote>,&nbsp;[result]);&nbsp;</p>
+<p id=25 class="line"><span>&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(<quote>'.hs-main-detail'</quote>,&nbsp;[result&nbsp;||&nbsp;`no&nbsp;content&nbsp;for&nbsp;lib&nbsp;${lib}&nbsp;and&nbsp;field&nbsp;${field}`]);&nbsp;</p>
 <p id=26 class="line"><span>&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=27 class="line"><span>&nbsp;&nbsp;27</span>}</p>
 <p id=28 class="line"><span>&nbsp;&nbsp;28</span></p>

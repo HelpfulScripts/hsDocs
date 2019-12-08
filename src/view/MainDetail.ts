@@ -22,7 +22,7 @@ export class MainDetail extends Layout {
         node.attrs.route = undefined;
 
         let result = getOverview(lib, field) || itemDoc(DocSets.get(lib, field) || ''); 
-        return m('.hs-main-detail', [result]); 
+        return m('.hs-main-detail', [result || `no content for lib ${lib} and field ${field}`]); 
     }
 }
 

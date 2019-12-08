@@ -344,9 +344,9 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     }
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
-        const content = args[2].trim(); // the part between <file> and </file>
-        IDs.desc.items.push(args[1]);   // record available extensions, i.e. 'js', 'html', etc 
-        IDs.pages[args[1]] = content;   // associate the content with the extension
+        const content = args[2].trim();         // the part between <file> and </file>
+        IDs.desc.items.push(args[1]);           // record available extensions, i.e. 'js', 'html', etc 
+        IDs.pages[args[1]] = content.trim();    // associate the content with the extension
         return result;
     });
     return IDs.pages['js'];

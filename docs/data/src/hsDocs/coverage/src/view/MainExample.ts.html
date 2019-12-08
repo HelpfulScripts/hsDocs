@@ -1246,9 +1246,9 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     }
     example.replace(/&lt;file[\s]*name=[\S]*?\.([\s\S]*?)['|"]&gt;([\S\s]*?)&lt;\/file&gt;/gi, <span class="fstat-no" title="function not covered" >function(t</span>ext:string) {
         const args = <span class="cstat-no" title="statement not covered" >[...arguments];</span>
-        const content = <span class="cstat-no" title="statement not covered" >args[2].trim();</span> // the part between &lt;file&gt; and &lt;/file&gt;
-<span class="cstat-no" title="statement not covered" >        IDs.desc.items.push(args[1]); </span>  // record available extensions, i.e. 'js', 'html', etc 
-<span class="cstat-no" title="statement not covered" >        IDs.pages[args[1]] = content; </span>  // associate the content with the extension
+        const content = <span class="cstat-no" title="statement not covered" >args[2].trim();</span>         // the part between &lt;file&gt; and &lt;/file&gt;
+<span class="cstat-no" title="statement not covered" >        IDs.desc.items.push(args[1]); </span>          // record available extensions, i.e. 'js', 'html', etc 
+<span class="cstat-no" title="statement not covered" >        IDs.pages[args[1]] = content.trim(); </span>   // associate the content with the extension
 <span class="cstat-no" title="statement not covered" >        return result;</span>
     });
     return IDs.pages['js'];

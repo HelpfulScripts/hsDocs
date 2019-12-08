@@ -36,6 +36,7 @@ export function flags(mdl:any, ignore:string[]=[]) {
 }
 
 export function kindString(mdl:any) {
+    const kind = (mdl.kindString==='Accessor')? (mdl.getAccessor? 'get accessor' : (mdl.setAccessor? 'set accessor' : '')) : mdl.kindString;
     return m('span.hs-item-kind', mdl.kindString);
 }
 
@@ -169,6 +170,8 @@ export function signature(s:any, mdl:any): Vnode {
         }
         else if (s.type && s.type.declaration && s.type.declaration.signatures) {
             sig = s.type.declaration.signatures.map((isig:any) => m('span', params(isig)));
+        } else if (mdl.kindString === 'Accessor' && mdl.setSignature) {
+            sig = mdl.setSignature.map((sig:any) => m('span', type(sig.type, mdl.lib)));
         }
         switch (mdl.kindString) {
             // unmodified:
@@ -179,6 +182,7 @@ export function signature(s:any, mdl:any): Vnode {
             case 'Interface': 
             case 'Class': 
             case 'External module': 
+            case 'Module': 
             case 'Enumeration': 
             case 'Enumeration member': 
                 break;

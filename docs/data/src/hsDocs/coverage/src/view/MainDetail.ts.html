@@ -25,9 +25,9 @@
         <span class='fraction'>60/71</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">71.7% </span>
+        <span class="strong">70.91% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>38/53</span>
+        <span class='fraction'>39/55</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">88.89% </span>
@@ -430,7 +430,7 @@ export class MainDetail extends Layout {
         node.attrs.route = undefined;
 &nbsp;
         let result = getOverview(lib, field) || itemDoc(DocSets.get(lib, field) || <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>; 
-        return m('.hs-main-detail', [result]); 
+        return m('.hs-main-detail', [result || <span class="branch-1 cbranch-no" title="branch not covered" >`no content for lib ${lib} and field ${field}`]</span>); 
     }
 }
 &nbsp;

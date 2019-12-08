@@ -367,9 +367,9 @@
 <p id=344 class="line"><span>&nbsp;344</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=345 class="line"><span>&nbsp;345</span>&nbsp;&nbsp;&nbsp;&nbsp;example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['</quote>|<quote>"]>([\S\s]*?)<\/file>/gi,&nbsp;function(text:string)&nbsp;{</p>
 <p id=346 class="line"><span>&nbsp;346</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;args&nbsp;=&nbsp;[...arguments];</p>
-<p id=347 class="line"><span>&nbsp;347</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;args[2].trim();&nbsp;<comment>//&nbsp;the&nbsp;part&nbsp;between&nbsp;<file>&nbsp;and&nbsp;</file></comment></p>
-<p id=348 class="line"><span>&nbsp;348</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.desc.items.push(args[1]);&nbsp;&nbsp;&nbsp;<comment>//&nbsp;record&nbsp;available&nbsp;extensions,&nbsp;i.e.&nbsp;<quote>'js'</quote>,&nbsp;<quote>'html'</quote>,&nbsp;etc&nbsp;</comment></p>
-<p id=349 class="line"><span>&nbsp;349</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.pages[args[1]]&nbsp;=&nbsp;content;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;associate&nbsp;the&nbsp;content&nbsp;with&nbsp;the&nbsp;extension</comment></p>
+<p id=347 class="line"><span>&nbsp;347</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;args[2].trim();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;the&nbsp;part&nbsp;between&nbsp;<file>&nbsp;and&nbsp;</file></comment></p>
+<p id=348 class="line"><span>&nbsp;348</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.desc.items.push(args[1]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;record&nbsp;available&nbsp;extensions,&nbsp;i.e.&nbsp;<quote>'js'</quote>,&nbsp;<quote>'html'</quote>,&nbsp;etc&nbsp;</comment></p>
+<p id=349 class="line"><span>&nbsp;349</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.pages[args[1]]&nbsp;=&nbsp;content.trim();&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;associate&nbsp;the&nbsp;content&nbsp;with&nbsp;the&nbsp;extension</comment></p>
 <p id=350 class="line"><span>&nbsp;350</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</p>
 <p id=351 class="line"><span>&nbsp;351</span>&nbsp;&nbsp;&nbsp;&nbsp;});</p>
 <p id=352 class="line"><span>&nbsp;352</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;IDs.pages[<quote>'js'</quote>];</p>
