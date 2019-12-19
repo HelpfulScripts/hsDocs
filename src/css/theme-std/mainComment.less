@@ -1,9 +1,9 @@
 @headingColor: #336;
 
-.hs-item-comment { // applies to main comment on item
+.hsdocs_comment { // applies to main comment on item
     .hs-indent;
     font-size: 0.9em;
-    padding: 5px 0px 10px 20px; 
+    padding: 0px 0px 10px 20px; 
 //    border-bottom: 1px solid #ccc;
     h1 {
         margin-top: 1.3em;
@@ -34,11 +34,12 @@
     }
 }
 
-.hs-item-comment-special {  // special comment tag, e.g. @ngdoc
+.hsdocs_comment_remainder {  // special comment tag, e.g. @ngdoc
     margin: 4px 0;
     line-height: 1.6em;
     font-size: 1em;
-    .hs-item-comment-tag {      // tag for special comment tag, e.g. @ngdoc
+    background-color: #fcc;
+    .hsdocs_comment_return_tag {      // tag for special comment tag, e.g. @ngdoc
         font-size: 0.9em;
         background-color: #eee;
         border: 1px solid #aae;
@@ -47,13 +48,13 @@
         margin-right:10px;
         &:after { content: ':'}
     }
-    .hs-item-comment-text {     // text for special comment tag, e.g. @ngdoc
+    .hsdocs_comment_return_text {     // text for special comment tag, e.g. @ngdoc
     }
 }
 
-.hs-item-comment-desc {     // text for normal comment
+.hsdocs_comment_desc {     // text for normal comment
     line-height: 1.3em;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 10px;
     li, p {
         margin:5px 0 0 0;
@@ -77,29 +78,29 @@
     border-radius: 5px;
 }
 
-.hs-item-comment-return {     // text for normal comment
+hsdocs_comment_return {     // text for normal comment
     .hs-item-comment-param;
     margin-top: 0px;
 }
 
-.hs-item-comment-tag {      // tag for special comment tag, e.g. @ngdoc
+.hsdocs_comment_return_tag {      // tag for special comment tag, e.g. @ngdoc
     padding:3px 5px;
     font-weight: bold;
     font-size: 1.1em;
     color: #000;
-    .hs-item-comment-return & {     // text for normal comment
+    hsdocs_comment_return & {     // text for normal comment
         color: #00A;
-        .hs-item-public & {     // text for normal comment
+        hsdocs_flag_public & {     // text for normal comment
             color: #060;
         }
     }
 }
-.hs-item-comment-text {     // text for special comment tag, e.g. @ngdoc
+.hsdocs_comment_return_text {     // text for special comment tag, e.g. @ngdoc
     padding:3px 5px;
     color: #000;
-    .hs-item-comment-return & {     // text for normal comment
+    hsdocs_comment_return & {     // text for normal comment
         color: #00A;
-        .hs-item-public & {     // text for normal comment
+        hsdocs_flag_public & {     // text for normal comment
             color: #060;
         }
     }

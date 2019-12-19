@@ -30,7 +30,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.DocSets"
                 >
                   DocSets
@@ -62,6 +62,26 @@ exports[`LeftNav overview matches snapshot 1`] = `
                 </div>
               </div>
               <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Type aliases
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.DocSets.json"
+                    >
+                      json
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
                 
               </div>
               <div>
@@ -86,9 +106,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.DocSets.recursiveIndex"
+                      href="#!/api/hsDocs/hsDocs.DocSets.matchAll"
                     >
-                      recursiveIndex
+                      matchAll
                     </a>
                   </div>
                 </div>
@@ -106,7 +126,782 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
+                  href="#!/api/hsDocs/hsDocs.Flags"
+                >
+                  Flags
+                </a>
+              </div>
+              <div />
+            </div>
+            <div
+              class="hs-collapsible-content "
+            >
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Interfaces
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.Flags"
+                    >
+                      Flags
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Variables
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsNone"
+                    >
+                      flagsNone
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Functions
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsClass"
+                    >
+                      flagsClass
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsConstLet"
+                    >
+                      flagsConstLet
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsDisplay"
+                    >
+                      flagsDisplay
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsExported"
+                    >
+                      flagsExported
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Flags.flagsPublic"
+                    >
+                      flagsPublic
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hs-collapsible  hs-left-nav-module"
+          >
+            <div
+              class="hs-collapsible-title"
+            >
+              <div
+                class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              />
+              <div>
+                <a
+                  class="hs-left-nav-module-name"
+                  href="#!/api/hsDocs/hsDocs.Nodes"
+                >
+                  Nodes
+                </a>
+              </div>
+              <div />
+            </div>
+            <div
+              class="hs-collapsible-content "
+            >
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Classes
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsBaseNode"
+                    >
+                      DocsBaseNode
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsGetSignature"
+                    >
+                      DocsGetSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsIndexSignature"
+                    >
+                      DocsIndexSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsNode"
+                    >
+                      DocsNode
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsParameter"
+                    >
+                      DocsParameter
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSetSignature"
+                    >
+                      DocsSetSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsModule"
+                    >
+                      DocsModule
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsAccessors"
+                    >
+                      DocsAccessors
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsProperty"
+                    >
+                      DocsProperty
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsExternalModule"
+                    >
+                      DocsExternalModule
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumerationMember"
+                    >
+                      DocsEnumerationMember
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumeration"
+                    >
+                      DocsEnumeration
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsCallSignature"
+                    >
+                      DocsCallSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsClass"
+                    >
+                      DocsClass
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsConstructorSignature"
+                    >
+                      DocsConstructorSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsConstructor"
+                    >
+                      DocsConstructor
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsStructured"
+                    >
+                      DocsStructured
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsObjectLiteral"
+                    >
+                      DocsObjectLiteral
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsFunction"
+                    >
+                      DocsFunction
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsMethod"
+                    >
+                      DocsMethod
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsInterface"
+                    >
+                      DocsInterface
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsRoot"
+                    >
+                      DocsRoot
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSourced"
+                    >
+                      DocsSourced
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsTypeAlias"
+                    >
+                      DocsTypeAlias
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsTypeLiteral"
+                    >
+                      DocsTypeLiteral
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsTypeParameter"
+                    >
+                      DocsTypeParameter
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsUnknown"
+                    >
+                      DocsUnknown
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsVariable"
+                    >
+                      DocsVariable
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsWithDefault"
+                    >
+                      DocsWithDefault
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Interfaces
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsGroup"
+                    >
+                      DocsGroup
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsParamaterized"
+                    >
+                      DocsParamaterized
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSource"
+                    >
+                      DocsSource
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Type aliases
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSignature"
+                    >
+                      DocsSignature
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Functions
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.isExpected"
+                    >
+                      isExpected
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.isNotIgnored"
+                    >
+                      isNotIgnored
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Object literals
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Nodes.groupKindTitle"
+                    >
+                      groupKindTitle
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hs-collapsible  hs-left-nav-module"
+          >
+            <div
+              class="hs-collapsible-title"
+            >
+              <div
+                class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              />
+              <div>
+                <a
+                  class="hs-left-nav-module-name"
+                  href="#!/api/hsDocs/hsDocs.NodesDisplay"
+                >
+                  NodesDisplay
+                </a>
+              </div>
+              <div />
+            </div>
+            <div
+              class="hs-collapsible-content "
+            >
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Classes
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.DocsComment"
+                    >
+                      DocsComment
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Interfaces
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.Tag"
+                    >
+                      Tag
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Functions
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.commentLong"
+                    >
+                      commentLong
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.titleArr"
+                    >
+                      titleArr
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.title"
+                    >
+                      title
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.libLink"
+                    >
+                      libLink
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.members"
+                    >
+                      members
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.inlineTitle"
+                    >
+                      inlineTitle
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mSignature"
+                    >
+                      mSignature
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mFlags"
+                    >
+                      mFlags
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.itemChild"
+                    >
+                      itemChild
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mExtensionOf"
+                    >
+                      mExtensionOf
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mExtendedBy"
+                    >
+                      mExtendedBy
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mImplementationOf"
+                    >
+                      mImplementationOf
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mImplementedBy"
+                    >
+                      mImplementedBy
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mInheritedFrom"
+                    >
+                      mInheritedFrom
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mItemName"
+                    >
+                      mItemName
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mKindString"
+                    >
+                      mKindString
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mSourceLink"
+                    >
+                      mSourceLink
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mType"
+                    >
+                      mType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.member2"
+                    >
+                      member2
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hs-collapsible  hs-left-nav-module"
+          >
+            <div
+              class="hs-collapsible-title"
+            >
+              <div
+                class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              />
+              <div>
+                <a
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.Site"
                 >
                   Site
@@ -117,9 +912,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
             <div
               class="hs-collapsible-content "
             >
-              <div>
-                
-              </div>
               <div>
                 <div
                   class="hs-left-nav-entries"
@@ -153,9 +945,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Site.myConfig"
+                      href="#!/api/hsDocs/hsDocs.Site.design"
                     >
-                      myConfig
+                      design
                     </a>
                   </div>
                 </div>
@@ -173,7 +965,289 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
+                  href="#!/api/hsDocs/hsDocs.Types"
+                >
+                  Types
+                </a>
+              </div>
+              <div />
+            </div>
+            <div
+              class="hs-collapsible-content "
+            >
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Classes
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Types.DocsType"
+                    >
+                      DocsType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsTupleType"
+                    >
+                      DocsTupleType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsArrayType"
+                    >
+                      DocsArrayType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsIntrinsicType"
+                    >
+                      DocsIntrinsicType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsReferenceType"
+                    >
+                      DocsReferenceType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsReflectionType"
+                    >
+                      DocsReflectionType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsStringLiteralType"
+                    >
+                      DocsStringLiteralType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsTypeOperatorType"
+                    >
+                      DocsTypeOperatorType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsTypeParameterType"
+                    >
+                      DocsTypeParameterType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsUnionType"
+                    >
+                      DocsUnionType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsUnknownType"
+                    >
+                      DocsUnknownType
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Interfaces
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Types.DocsNamedType"
+                    >
+                      DocsNamedType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.Types.DocsReferenceIdType"
+                    >
+                      DocsReferenceIdType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsGenericType"
+                    >
+                      DocsGenericType
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                
+              </div>
+            </div>
+          </div>
+          <div
+            class="hs-collapsible  hs-left-nav-module"
+          >
+            <div
+              class="hs-collapsible-title"
+            >
+              <div
+                class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              />
+              <div>
+                <a
+                  class="hs-left-nav-module-name"
+                  href="#!/api/hsDocs/hsDocs.deprecated_Comment"
+                >
+                  deprecated_Comment
+                </a>
+              </div>
+              <div />
+            </div>
+            <div
+              class="hs-collapsible-content "
+            >
+              <div>
+                <div
+                  class="hs-left-nav-entries"
+                >
+                  <div
+                    class="hs-left-nav-header"
+                  >
+                    Functions
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.comment"
+                    >
+                      comment
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.commentShort"
+                    >
+                      commentShort
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.commentRemainder"
+                    >
+                      commentRemainder
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.mainCommentParams"
+                    >
+                      mainCommentParams
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.otherCommentTags"
+                    >
+                      otherCommentTags
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.prettifyCode"
+                    >
+                      prettifyCode
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.returns"
+                    >
+                      returns
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.textOrShortTextOrDescription"
+                    >
+                      textOrShortTextOrDescription
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hs-collapsible  hs-left-nav-module"
+          >
+            <div
+              class="hs-collapsible-title"
+            >
+              <div
+                class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              />
+              <div>
+                <a
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.markdown"
                 >
                   markdown
@@ -229,7 +1303,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.DocsMenu"
                 >
                   view.DocsMenu
@@ -260,6 +1334,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   </div>
                 </div>
               </div>
+              <div>
+                
+              </div>
             </div>
           </div>
           <div
@@ -273,7 +1350,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.LeftNav"
                 >
                   view.LeftNav
@@ -375,7 +1452,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.MainComment"
                 >
                   view.MainComment
@@ -416,6 +1493,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   <div>
                     
                     <a
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.view.MainComment.prettifyCode"
+                    >
+                      prettifyCode
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
                       class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.view.MainComment.commentRemainder"
                     >
@@ -438,15 +1524,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.view.MainComment.otherCommentTags"
                     >
                       otherCommentTags
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.prettifyCode"
-                    >
-                      prettifyCode
                     </a>
                   </div>
                   <div>
@@ -482,7 +1559,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.MainDetail"
                 >
                   view.MainDetail
@@ -514,6 +1591,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                 </div>
               </div>
               <div>
+                
+              </div>
+              <div>
                 <div
                   class="hs-left-nav-entries"
                 >
@@ -535,72 +1615,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.itemChild"
-                    >
-                      itemChild
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.itemDescriptor"
-                    >
-                      itemDescriptor
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.view.MainDetail.itemDoc"
                     >
                       itemDoc
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.member"
-                    >
-                      member
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.members"
-                    >
-                      members
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.overviewDoc"
-                    >
-                      overviewDoc
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.parameter"
-                    >
-                      parameter
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainDetail.title"
-                    >
-                      title
                     </a>
                   </div>
                 </div>
@@ -618,7 +1635,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.MainExample"
                 >
                   view.MainExample
@@ -637,6 +1654,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     class="hs-left-nav-header"
                   >
                     Interfaces
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.Attribute"
+                    >
+                      Attribute
+                    </a>
                   </div>
                   <div>
                     
@@ -668,15 +1694,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.view.MainExample.example"
                     >
                       example
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainExample.addExample"
-                    >
-                      addExample
                     </a>
                   </div>
                   <div>
@@ -719,6 +1736,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.findTokens"
+                    >
+                      findTokens
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.view.MainExample.getCommentDescriptor"
                     >
                       getCommentDescriptor
@@ -740,6 +1766,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.view.MainExample.initDesc"
                     >
                       initDesc
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.view.MainExample.loadScript"
+                    >
+                      loadScript
                     </a>
                   </div>
                 </div>
@@ -777,153 +1812,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
               />
               <div>
                 <a
-                  class="hs-left-nav-module-name "
-                  href="#!/api/hsDocs/hsDocs.view.Parts"
-                >
-                  view.Parts
-                </a>
-              </div>
-              <div />
-            </div>
-            <div
-              class="hs-collapsible-content "
-            >
-              <div>
-                
-              </div>
-              <div>
-                <div
-                  class="hs-left-nav-entries"
-                >
-                  <div
-                    class="hs-left-nav-header"
-                  >
-                    Functions
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.kindString"
-                    >
-                      kindString
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.defaultVal"
-                    >
-                      defaultVal
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.extensionOf"
-                    >
-                      extensionOf
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.flags"
-                    >
-                      flags
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.inheritedFrom"
-                    >
-                      inheritedFrom
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.itemName"
-                    >
-                      itemName
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.itemTooltip"
-                    >
-                      itemTooltip
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.libLink"
-                    >
-                      libLink
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.makeID"
-                    >
-                      makeID
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.signature"
-                    >
-                      signature
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.sourceLink"
-                    >
-                      sourceLink
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.Parts.type"
-                    >
-                      type
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="hs-collapsible  hs-left-nav-module"
-          >
-            <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name "
+                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.view.Tooltip"
                 >
                   view.Tooltip

@@ -29,8 +29,8 @@
 <p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span>import&nbsp;{&nbsp;m,&nbsp;Vnode}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
 <p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>import&nbsp;{&nbsp;Layout&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
 <p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;Collapsible&nbsp;}&nbsp;&nbsp;from&nbsp;<quote>'hswidget'</quote>;</p>
-<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;DocSets&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../DocSets'</quote>;&nbsp;</p>
-<p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;libLink&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./Parts'</quote>;&nbsp;</p>
+<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;libLink&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../NodesDisplay'</quote>;&nbsp;</p>
+<p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;DocSets&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../DocSets'</quote>;</p>
 <p id=11 class="line"><span>&nbsp;&nbsp;11</span></p>
 <p id=12 class="line"><span>&nbsp;&nbsp;12</span></p>
 <p id=13 class="line"><span>&nbsp;&nbsp;13</span><comment>/**</comment></p>
@@ -40,7 +40,7 @@
 <p id=17 class="line"><span>&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;getComponents(node:&nbsp;Vnode):&nbsp;Vnode&nbsp;{</p>
 <p id=18 class="line"><span>&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;lib&nbsp;=&nbsp;m.route.param(<quote>'lib'</quote>);</p>
 <p id=19 class="line"><span>&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;field&nbsp;=&nbsp;m.route.param(<quote>'field'</quote>);</p>
-<p id=20 class="line"><span>&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;docSet&nbsp;=&nbsp;DocSets.get(lib,&nbsp;0)&nbsp;||&nbsp;{name:<quote>'unknown'</quote>,&nbsp;id:0};</p>
+<p id=20 class="line"><span>&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;docSet&nbsp;=&nbsp;DocSets.getNode(0,&nbsp;lib)&nbsp;||&nbsp;{name:<quote>'unknown'</quote>,&nbsp;id:0};</p>
 <p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(<quote>'.hs-left'</quote>,&nbsp;[m(<quote>'.hs-left-nav'</quote>,&nbsp;navList(docSet,&nbsp;field))]);</p>
 <p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</p>
 <p id=23 class="line"><span>&nbsp;&nbsp;23</span>}</p>
@@ -93,7 +93,7 @@
 <p id=70 class="line"><span>&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(field==='</quote><quote>'+mdl.id&nbsp;||&nbsp;field.indexOf(mdl.fullPath)&nbsp;===&nbsp;0)&nbsp;{&nbsp;selected=true;&nbsp;}</p>
 <p id=71 class="line"><span>&nbsp;&nbsp;71</span></p>
 <p id=72 class="line"><span>&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(Collapsible,&nbsp;{css:`.hs-left-nav-module`,&nbsp;preArrow:&nbsp;true,&nbsp;isExpanded:selected,&nbsp;components:[</p>
-<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(`${selected?'</quote>.hs-left-nav-selected<quote>':'</quote><quote>'}`,&nbsp;libLink(`a.hs-left-nav-module-name&nbsp;`,&nbsp;mdl.lib,&nbsp;mdl.fullPath,&nbsp;mdl.name)),</p>
+<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(`${selected?'</quote>.hs-left-nav-selected<quote>':'</quote><quote>'}`,&nbsp;libLink(mdl.lib,&nbsp;mdl.fullPath,&nbsp;mdl.name,&nbsp;`.hs-left-nav-module-name`)),</p>
 <p id=74 class="line"><span>&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!mdl.groups?&nbsp;undefined&nbsp;:&nbsp;mdl.groups.map((g:any)&nbsp;=>&nbsp;entries(g,&nbsp;mdl,&nbsp;field))</p>
 <p id=75 class="line"><span>&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]});</p>
 <p id=76 class="line"><span>&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
@@ -125,7 +125,7 @@
 <p id=102 class="line"><span>&nbsp;102</span><comment>&nbsp;*/</comment></p>
 <p id=103 class="line"><span>&nbsp;103</span>function&nbsp;entries(group:any,&nbsp;mdl:any,&nbsp;field:string)&nbsp;{</p>
 <p id=104 class="line"><span>&nbsp;104</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;moduleGet(c:any)&nbsp;{</p>
-<p id=105 class="line"><span>&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DocSets.get(mdl.lib,&nbsp;c);</p>
+<p id=105 class="line"><span>&nbsp;105</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DocSets.getNode(c,&nbsp;mdl.lib);</p>
 <p id=106 class="line"><span>&nbsp;106</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=107 class="line"><span>&nbsp;107</span>&nbsp;&nbsp;&nbsp;&nbsp;<comment>/**</comment></p>
 <p id=108 class="line"><span>&nbsp;108</span><comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;processes&nbsp;one&nbsp;entry&nbsp;within&nbsp;a&nbsp;group,&nbsp;e.g.&nbsp;one&nbsp;variable,&nbsp;function,&nbsp;or&nbsp;class.</comment></p>
@@ -133,12 +133,12 @@
 <p id=110 class="line"><span>&nbsp;110</span>&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;entry(mod:any)&nbsp;{&nbsp;</p>
 <p id=111 class="line"><span>&nbsp;111</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;selected&nbsp;=&nbsp;(field==='</quote><quote>'+mod.id&nbsp;||&nbsp;field===mod.fullPath)?&nbsp;'</quote>.hs-left-nav-selected<quote>'&nbsp;:&nbsp;'</quote><quote>';</p>
 <p id=112 class="line"><span>&nbsp;112</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;exported&nbsp;=&nbsp;(mod.flags&nbsp;&&&nbsp;mod.flags.isExported);</p>
-<p id=113 class="line"><span>&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;statik&nbsp;&nbsp;&nbsp;=&nbsp;(mod.flags&nbsp;&&&nbsp;mod.flags.isStatic);</p>
-<p id=114 class="line"><span>&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;css&nbsp;=&nbsp;`a.hs-left-nav-entry&nbsp;${selected}&nbsp;${exported?'</quote>.hs-left-nav-exported<quote>'&nbsp;:&nbsp;'</quote><quote>'}`;</p>
+<p id=113 class="line"><span>&nbsp;113</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;isStatic&nbsp;=&nbsp;(mod.flags&nbsp;&&&nbsp;mod.flags.isStatic);</p>
+<p id=114 class="line"><span>&nbsp;114</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;css&nbsp;=&nbsp;`.hs-left-nav-entry&nbsp;${selected}&nbsp;${exported?'</quote>.hs-left-nav-exported<quote>'&nbsp;:&nbsp;'</quote><quote>'}`;</p>
 <p id=115 class="line"><span>&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(!exported&nbsp;&&&nbsp;group.title==='</quote>Variables<quote>')?&nbsp;'</quote><quote>'&nbsp;:&nbsp;&nbsp;&nbsp;<comment>//&nbsp;ignore&nbsp;local&nbsp;module&nbsp;variables</comment></p>
 <p id=116 class="line"><span>&nbsp;116</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('</quote><quote>',&nbsp;[</p>
-<p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statik?&nbsp;'</quote>static<quote>':&nbsp;'</quote><quote>',</p>
-<p id=118 class="line"><span>&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libLink(css,&nbsp;mod.lib,&nbsp;mod.fullPath,&nbsp;mod.name)</p>
+<p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isStatic?&nbsp;'</quote>static<quote>':&nbsp;'</quote><quote>',</p>
+<p id=118 class="line"><span>&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libLink(mod.lib,&nbsp;mod.fullPath,&nbsp;mod.name,&nbsp;css)</p>
 <p id=119 class="line"><span>&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);</p>
 <p id=120 class="line"><span>&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=121 class="line"><span>&nbsp;121</span></p>

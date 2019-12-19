@@ -1,163 +1,174 @@
-.hs-item-padding {
-    padding: 10px 0.4em 10px 0em;  
+.hsdocs_padding {
+    padding: 10px 0.4em 2px 0em;  
 }
 
 @TitleBackground: #eef;
 @TitleBorder: darken(@TitleBackground, 5%);
 
-.hs-item-title {    // applies to the title row
+.hsdocs_title {    // applies to the title row
     background-color: @TitleBackground;
-    border-top: 1px solid @TitleBorder;
-    border-bottom: 1px solid @TitleBorder;
-    margin-top: 5px;
-    .hs-item-padding;
+    // border-top: 1px solid @TitleBorder;
+    // border-bottom: 1px solid @TitleBorder;
+    // margin-top: 5px;
+    .hsdocs_padding;
     padding-left: 5px;
 }
 
-.hs-item-name {
+.hsdocs_itemname {
     font-weight: bold;
     color: #008;
     font-size: 1.1em;
 }
 
-.hs-item-unknown-type {
+.hsdocs_type_unknown {
     color: #f44;
 }
 
 
 
-.hs-item-flag {
+.hsdocs_flag {
     color: #44f;
-    .hs-item-padding
+    .hsdocs_padding
 }
 
-.hs-item-export-flag {
-    .hs-item-flag;
+.hsdocs_flag_export {
+    .hsdocs_flag;
 }
 
-.hs-item-public-flag {
-    .hs-item-flag;
+.hsdocs_flag_public {
+    .hsdocs_flag;
     color: #484;
 }
 
-.hs-item-private-flag {
-    .hs-item-flag;
+.hsdocs_flag_private {
+    .hsdocs_flag;
     color: #844;
 }
 
-.hs-item-protected-flag {
-    .hs-item-flag;
+.hsdocs_flag_protected {
+    .hsdocs_flag;
     color: #884;
 }
 
-.hs-item-static-flag {
-    .hs-item-flag;
+.hsdocs_flag_static {
+    .hsdocs_flag;
     color: #888;
 }
 
-.hs-item-abstract-flag {
-    .hs-item-flag;
+.hsdocs_flag_abstract {
+    .hsdocs_flag;
     color: #888;
 }
 
-.hs-item-const-flag {
-    .hs-item-flag;
+.hsdocs_flag_const {
+    .hsdocs_flag;
     font-weight: bold;
     color: #222;
 }
 
-.hs-item-let-flag {
-    .hs-item-flag;
+.hsdocs_flag_let {
+    .hsdocs_flag;
     font-weight: bold;
     color: #222;
 }
 
-.hs-item-var-flag {
-    .hs-item-flag;
+.hsdocs_flag_var {
+    .hsdocs_flag;
     font-weight: bold;
     color: #222;
 }
 
-.hs-item-constructorProperty-flag {
-    .hs-item-flag;
+.hsdocs_flag_constructorProperty {
+    .hsdocs_flag;
     color: #848;
 }
 
-.hs-item-optional-flag {
-    .hs-item-flag;
+.hsdocs_flag_optional {
+    .hsdocs_flag;
     color: #aaa;
 }
 
-.hs-item-unknown-flag {
-    .hs-item-flag;
+.hsdocs_flag_unknown {
+    .hsdocs_flag;
     color: #f44;
     font-weight: bold;
 }
 
-.hs-item-ignore-flag {
+.hsdocs_flag_ignore {
+    .hsdocs_flag;
 }
 
-.hs-item-kind {
+.hsdocs_flag_optional {
+    &:after { 
+        content: '?'; 
+        font-style: italic;
+        font-weight:bold;
+    }
+}
+
+
+
+.hsdocs_kind {
     font-style: italic;
-    .hs-item-padding;
+    .hsdocs_padding;
 }
 
 
-.hs-item-extends {
-    .hs-item-padding;
+.hsdocs_extends {
+    .hsdocs_padding;
     padding-left: 0.3em;
 }
 
-.hs-item-extensions {
-    .hs-item-padding;
+.hsdocs_extensionOf {
+    .hsdocs_padding;
 }
 
-.hs-item-extension {
-    .hs-item-padding;
+.hsdocs_extensionType {
+    .hsdocs_padding;
 }
 
-.hs-item-implementations {
-    .hs-item-padding;
+.hsdocs_implementationsOf {
+    .hsdocs_padding;
     font-style: italic;
 }
 
-.hs-item-implements { 
-    .hs-item-padding;
+.hsdocs_implements { 
+    .hsdocs_padding;
 }
 
-.hs-item-extendedby {
-    .hs-item-padding;
-    font-size: 80%;
+.hsdocs_extended_by {
+    .hsdocs_padding;
+    // font-size: 80%;
 }
 
-.hs-item-implementedby {
-    .hs-item-padding;
-    font-size: 80%;
+.hsdocs_implemented_by {
+    .hsdocs_padding;
+    // font-size: 80%;
 }
 
-.hs-item-unknown-kind {
+.hsdocs_type_unknown {
     color: #f44;
 }
 
-.hs-item-signature {
+.hsdocs_signature {
     font-size: 1em;
-    .hs-item-name {
+    .hsdocs_itemname {
         padding:0;
     }
 }
 
 @ItemBorderRadius: 4px;
 
-.hs-item-default {
+.hsdocs_type_default {
     font-size: 90%;
-    background-color: #fff;
+    // background-color: #fff;
     padding: 2px;
     border-radius: @ItemBorderRadius;
 //    font-style: italic;
     font-weight: bold;
 }
 
-.hs-item-sig-type {
+.hsdocs_type {
     border-radius: @ItemBorderRadius;
     background-color: #ddb;
     padding:  2px 4px;
@@ -167,37 +178,27 @@
     :link {
         text-decoration: none;
     }
-    .hs-item-reflection {
-    }
 }
 
-.hs-item-type-instrinct {
+.hsdocs_type_instrinct {
     font-style: italic;
     color: #800;
 }
 
-.hs-item-optional {
-    &:after { 
-        content: '?'; 
-        font-style: italic;
-        font-weight:bold;
-    }
-}
-
-.hs-item-sig-param {
+.hsdocs_signature_param {
     margin: 0 2px;
-    .hs-item-name {
+    .hsdocs_itemname {
         color: #008;
         font-size: 1em;
         font-weight:normal;
     }
 }
 
-.hs-item-member-source {
+.hsdocs_source {
     float:right;
-    padding: 10px 0em;  
+    padding: 0px 0em;  
     margin-right: 10px;
     bottom: 3px;
-    font-size: 0.7em;
+    font-size: 0.8rem;
 }
 

@@ -21,32 +21,9 @@ export function commentLong(mdl:any):Vnode {
         content.push(returns(mdl.comment, false));
         content.push(commentRemainder(mdl.comment));
     }
-    return m('.hs-item-comment', content);
+    return m('.hsdocs_comment', content);
 }
 
-/**
- * Shortended comment processing. This form is used to report on subitems below the main panel item.
- * If `short` is true, only the first paragraph of the main comment will be returned. Otherwise, 
- * this function creates a full comment including an inline list of parameters and the return value
- * @param mdl the module to scan for comments
- * @param short if true, only the first paragraph of the main comment is processed.
- * @return a vnode representing the comment entries
- */
-export function comment(mdl:any, short=false):Vnode {
-    let content:any[] = [];
-    if (mdl.comment) {
-        content.push(textOrShortTextOrDescription(mdl.comment, short));
-        if (!short) {
-            content.push(otherCommentTags(mdl.comment));
-            if (mdl.parameters) {
-                content = content.concat(mainCommentParams(mdl.parameters));
-            }
-        }
-        content.push(returns(mdl.comment, false));
-        content.push(commentRemainder(mdl.comment));
-    }
-    return m('.hs-item-comment', content);
-} 
 
 /**
  * Report the item's description. This can come in different forms that are all handled here:
@@ -71,7 +48,7 @@ function textOrShortTextOrDescription(comment:any, short:boolean):Vnode {
     }
     // search for pattern <example...<file...</example>
     text = text.replace(/<example[^<]*?(<file[\S\s]*?)<\/example>/gi, short? '' : example);
-    return m('.hs-item-comment-desc', prettifyCode(text, short));
+    return m('.hsdocs_comment_desc', prettifyCode(text, short));
 }
 
 /**
@@ -79,9 +56,9 @@ function textOrShortTextOrDescription(comment:any, short:boolean):Vnode {
  */
 function returns(comment:any, short:boolean):Vnode {
     let text = comment.returns;
-    return m('.hs-item-comment-return', !text? '': [            
-        m('span.hs-item-comment-tag', 'returns:'), 
-        m('span.hs-item-comment-text', text)
+    return m('hsdocs_comment_return', !text? '': [            
+        m('span.hsdocs_comment_return_tag', 'returns:'), 
+        m('span.hsdocs_comment_return_text', text)
     ]);
 }
 
@@ -94,36 +71,15 @@ function commentRemainder(comment:any):string|Vnode {
                 case 'description': // already handled
                 case 'returns':     // already handled
                         return '';
-                default: return m('.hs-item-comment-special', [
-                    m('span.hs-item-comment-tag', tag), 
-                    m('span.hs-item-comment-text', comment[tag])
+                default: return m('.hsdocs_comment_remainder', [
+                    m('span.hsdocs_comment_return_tag', tag), 
+                    m('span.hsdocs_comment_return_text', comment[tag])
                 ]);
             }
     }));
 }
 
-function otherCommentTags(comment:any):string|Vnode {
-    return m('', !comment.tags? [] : comment.tags.map((tag:any) => {
-        switch(tag.tag) {
-            case 'description': return ''; // skip since already handled
-            default: return m('.hs-item-comment-special', [
-                m('span.hs-item-comment-tag', tag.tag), 
-                m('span.hs-item-comment-text', tag.text)
-            ]);
-        }
-    }));
-}
 
-function mainCommentParams(params:any):Vnode {
-    return m('.hs-item-comment-params',  params.map((par:any) =>
-        m('.hs-item-comment-param', [
-            m('span.hs-item-comment-tag', par.name+':'), 
-            m('span.hs-item-comment-text', !par.comment? '' :
-                ((par.defaultValue!==undefined)? `[default: ${par.defaultValue}] ` : '') + par.comment.text
-            )
-        ])
-    ));
-}
 
 /**
  * finds segments of `<code>...</code>` in `comment` and replaces them with a prettified version.
@@ -135,8 +91,7 @@ function mainCommentParams(params:any):Vnode {
  * @param comment the comment comment 
  * @param short only return the first paragraph
  */
-function prettifyCode(comment:string, short:boolean):Vnode { 
-//    const indentSpaces = 2;
+export function prettifyCode(comment:string, short:boolean):Vnode { 
     let result = comment;
 
     function braceIndenting(text:string): string {

@@ -1,4 +1,4 @@
-import { commentLong, comment } from './MainComment';
+import { commentLong } from './MainComment';
 import { m } from 'hslayout';
 
 
@@ -29,36 +29,6 @@ const mdl2 = {
 };
 
 m.route.get = () => '/api/hsDocs/0';
-
-describe('comment', () => {
-    let c1:any, c2:any, c3:any;
-
-    beforeAll((done) => {
-        c1 = comment(mdl);
-        c2 = comment(mdl, true);
-        c3 = comment(mdl2, true);
-        setTimeout(done, 100);
-    });
-
-    it('should exist', ()=> {
-        expect(comment).toBeDefined();
-    });
-
-    it('should translate comment, not short', (done) => {
-        expect(c1).toMatchSnapshot();
-        done();
-    });
-
-    it('should translate comment, short', (done) => {
-        expect(c2).toMatchSnapshot();
-        done();
-    });
-
-    it('should translate description comment', (done) => {
-        expect(c3).toMatchSnapshot();
-        done();
-    });
-});
 
 describe('commentLong', () => {
     let c:any;

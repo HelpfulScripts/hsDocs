@@ -6,8 +6,8 @@
 import { m, Vnode}      from 'hslayout';
 import { Layout }       from 'hslayout';
 import { Collapsible }  from 'hswidget';
-import { DocSets }      from '../DocSets'; 
-import { libLink }      from './Parts'; 
+import { libLink }      from '../NodesDisplay'; 
+import { DocSets }      from '../DocSets';
 
 
 /**
@@ -17,7 +17,7 @@ export class LeftNav extends Layout {
     getComponents(node: Vnode): Vnode {
         let lib = m.route.param('lib');
         let field = m.route.param('field');
-        const docSet = DocSets.get(lib, 0) || {name:'unknown', id:0};
+        const docSet = DocSets.getNode(0, lib) || {name:'unknown', id:0};
         return m('.hs-left', [m('.hs-left-nav', navList(docSet, field))]);
     } 
 }
@@ -70,7 +70,7 @@ function navList(docSet:any, field:string):Vnode[] {
         if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { selected=true; }
 
         return m(Collapsible, {css:`.hs-left-nav-module`, preArrow: true, isExpanded:selected, components:[
-            m(`${selected?'.hs-left-nav-selected':''}`, libLink(`a.hs-left-nav-module-name `, mdl.lib, mdl.fullPath, mdl.name)),
+            m(`${selected?'.hs-left-nav-selected':''}`, libLink(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
             !mdl.groups? undefined : mdl.groups.map((g:any) => entries(g, mdl, field))
         ]});
     }
@@ -102,7 +102,7 @@ const ignoreModules = {
  */
 function entries(group:any, mdl:any, field:string) {
     function moduleGet(c:any) {
-        return DocSets.get(mdl.lib, c);
+        return DocSets.getNode(c, mdl.lib);
     }
     /**
      * processes one entry within a group, e.g. one variable, function, or class.
@@ -110,12 +110,12 @@ function entries(group:any, mdl:any, field:string) {
     function entry(mod:any) { 
         const selected = (field===''+mod.id || field===mod.fullPath)? '.hs-left-nav-selected' : '';
         const exported = (mod.flags && mod.flags.isExported);
-        const statik   = (mod.flags && mod.flags.isStatic);
-        const css = `a.hs-left-nav-entry ${selected} ${exported?'.hs-left-nav-exported' : ''}`;
+        const isStatic = (mod.flags && mod.flags.isStatic);
+        const css = `.hs-left-nav-entry ${selected} ${exported?'.hs-left-nav-exported' : ''}`;
         return (!exported && group.title==='Variables')? '' :   // ignore local module variables
             m('', [
-                statik? 'static': '',
-                libLink(css, mod.lib, mod.fullPath, mod.name)
+                isStatic? 'static': '',
+                libLink(mod.lib, mod.fullPath, mod.name, css)
             ]);
     }
 

@@ -39,34 +39,29 @@ describe('DocSets', () => {
     });
 
     it('shoud have docSet', () => {
-        expect(DocSets.get()).toHaveLength(1);
-        expect(DocSets.get()[0]).toBe('hsDocs');
+        expect(DocSets.getLibs()).toHaveLength(1);
+        expect(DocSets.getLibs()[0]).toBe('hsDocs');
     });
 
-    it('shoud return docSets for invalid lib', () =>{
-        expect(DocSets.get('uhoh')).toHaveLength(1);
-        expect(DocSets.get()[0]).toBe('hsDocs');
+    it('shoud have 7 children for DocSets', () => {
+        const node = DocSets.getNode('hsDocs.DocSets', 'hsDocs');
+        expect(node.getName()).toEqual('DocSets');
+        expect(node.fullPath).toEqual('hsDocs.DocSets');
+        expect(node.children).toHaveLength(7);
     });
 
-    it('shoud have 12 children', () =>
-        expect(DocSets.get('hsDocs').children.length).toBe(12)
-    );
-
-    it('shoud have element 1', () => {
-        const elem = DocSets.get('hsDocs', 'hsDocs.DocSets');
-        expect(elem.name).toEqual('DocSets');
-        expect(elem.fullPath).toEqual('hsDocs.DocSets');
-        expect(elem.children).toHaveLength(4);
-        expect(elem.children[0].name).toEqual('DocSets');
-        expect(elem.children[1].name).toEqual('FILE');
+    it('shoud have element 1 for DocSets', () => {
+        const node = DocSets.getNode('hsDocs.DocSets', 'hsDocs');
+        expect(node.children[0].getName()).toEqual('DocSets');
+        expect(node.children[1].getName()).toEqual('json');
     });
 
     it('shoud have element 10', () => {
-        const elem = DocSets.get('hsDocs', 'hsDocs.DocSets.DocSets.add');
-        expect(elem.name).toEqual('add');
-        expect(elem.fullPath).toEqual('hsDocs.DocSets.DocSets.add');
-        expect(elem.signatures[0].parameters).toHaveLength(2);
-        expect(DocSets.get('hsDocs', elem.id).name).toEqual('add');
+        const node = DocSets.getNode('hsDocs.DocSets.DocSets.addDocSet', 'hsDocs', );
+        expect(node.getName()).toEqual('addDocSet');
+        expect(node.fullPath).toEqual('hsDocs.DocSets.DocSets.addDocSet');
+        expect(node.getSignatures()[0].parameters).toHaveLength(2);
+        expect(DocSets.getNode(node.id, 'hsDocs').getName()).toEqual('addDocSet');
     });
 });
 

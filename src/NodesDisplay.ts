@@ -1,0 +1,407 @@
+/**
+ * 
+ */
+
+ /** */
+import { m, Vnode}              from 'hslayout';
+import { log as _log }          from 'hsutil'; const log = _log('NodesDisplay');
+import { DocsNode, DocsSignature }             from './Nodes';
+import { DocsParameter }        from './Nodes';
+import { DocSets }              from './DocSets';
+import { DocsParamaterized }    from './Nodes';
+import { flagsDisplay, Flags }  from './Flags';
+import { DocsReferenceIdType }  from './Types';
+import { DocsNamedType }        from './Types';
+import { json }                 from './DocSets';
+import { example }              from './view/MainExample';
+import { prettifyCode }         from './view/MainComment';
+
+
+const SourceBase = 'data/src/'; 
+
+interface Tag {
+    tag: string;
+    text: 'string';
+    param: string;
+}
+
+
+/**
+ * creates a library link on the specified `name`. 
+ * The link points to `/api/<lib>/<id>`
+ * @param css the css tag selector to use
+ * @param cls the css class selector to use
+ * @param lib the lib string to point to
+ * @param id the id number to point to
+ * @param name the name on which to formt he link
+ */
+export function libLink(lib:string, id:string|number, name:string, css=''):Vnode {
+    return m(`a${css}`, { href:`#!/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+}
+
+export class DocsComment {
+    shortText?: string;
+    returns?: string;
+    text?: string;
+    tags?: Tag[];
+
+    constructor(comment:json) {
+        this.shortText = comment.shortText;
+        this.returns = comment.returns;
+        this.text = comment.text;
+        this.tags = comment.tags || [];
+    }
+
+    getDescription(short: boolean) {
+        let text = (this.shortText || '');
+        if (this.text) { text += '\n'+ (this.text || ''); }
+        this.tags.map((tag:Tag) => {
+            switch (tag.tag) {
+                case 'shortText':
+                case 'description': text = `${text}\n${tag.text}`; break;
+                case 'param': text = `${text}\n- **${tag.param}**: ${tag.text}`; break;
+            }
+        });
+        // search for pattern <example...<file...</example>
+        text = short? '' : text.replace(/<example[^<]*?(<file[\S\s]*?)<\/example>/gi, example);
+        return m('.hsdocs_comment_desc', prettifyCode(text, short));
+    }
+    
+    getReturns(short: boolean) {
+        let text = this.returns;
+        return !text? '': m('hsdocs_comment_return', [            
+            m('span.hsdocs_comment_return_tag', 'returns:'), 
+            m('span.hsdocs_comment_return_text', text)
+        ]);
+    }
+
+    getCommentRemainder() {
+        return m('', Object.getOwnPropertyNames(this).map((tag:string) => {
+            switch(tag) {
+                case 'tags':        // already handled
+                case 'shortText':   // already handled
+                case 'text':        // already handled
+                case 'description': // already handled
+                case 'returns':     // already handled
+                        return '';
+                default: return m('.hsdocs_comment_remainder', [
+                    m('span.hsdocs_comment_return_tag', tag), 
+                    m('span.hsdocs_comment_return_text', this[tag])
+                ]);
+            }
+        }));
+    }
+}
+
+export function title(node:DocsNode):Vnode {
+    let desc:Vnode = '';
+    try { desc = [ 
+        mFlags(node),
+        mKindString(node),
+        mItemName(node),
+        mSignature(node),
+        m('span.hsdocs_title_colon',': '), 
+        mType(node),
+        mExtensionOf(node),
+        mImplementationOf(node),
+        mInheritedFrom(node),
+        mSourceLink(node),
+        mExtendedBy(node),
+        mImplementedBy(node)
+        ];
+    }
+    catch(e) { 
+        log.error(e.message); 
+        log.error(e.stack); 
+        log.error(`creating title #${node.id} for ${node.kindString}`); 
+    }
+    return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, desc); 
+}
+
+export function titleArr(node:DocsNode):Vnode {
+    let desc:Vnode = '';
+    try { desc = [ 
+        mFlags(node),
+        mKindString(node),
+        mItemName(node),
+        mSignature(node),
+        m('span.hsdocs_title_colon',': '), 
+        mType(node),
+        mExtensionOf(node),
+        mImplementationOf(node),
+        mInheritedFrom(node),
+        mSourceLink(node),
+        // mExtendedBy(node),
+        // mImplementedBy(node)
+        ];
+    }
+    catch(e) { 
+        log.error(e.message); 
+        log.error(e.stack); 
+        log.error(`creating title #${node.id} for ${node.kindString}`); 
+    }
+    return m('span', desc); 
+}
+
+export function inlineTitle(node:DocsNode):Vnode {
+    let desc:Vnode = '';
+    try { desc = [ 
+        mFlags(node),
+        mKindString(node),
+        mSignature(node),
+        m('span.hsdocs_title_arrow',' => '), 
+        mType(node)
+        ];
+    }
+    catch(e) { 
+        log.error(e.message); 
+        log.error(e.stack); 
+        log.error(`creating title #${node.id} for ${node.kindString}`); 
+    }
+    return m('span.hsdocs_title_inline', desc); 
+}
+
+function mFlags(node:DocsNode):Vnode {
+    return m('span.hsdocs_flags', flagsDisplay(node));
+}
+
+function mKindString(node:DocsNode):Vnode {
+    const kind = node.kindPrint;
+    return kind===''? '' : m('span.hsdocs_kind', node.getSignature? 'get ' : (node.setSignature? 'set ' : kind));
+}
+
+function mItemName(node:DocsNode):Vnode {
+    return m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLink(node.lib, node.fullPath, node.getName()));
+}
+
+function mSignature(node:DocsNode):Vnode {
+    const optional = (flags:any) => (flags && flags.isOptional)? '.hsdocs_flag_optional' : '';
+    const params = (s:DocsParamaterized):Vnode[] => 
+        !s.parameters? undefined : s.parameters.map((p:DocsParameter, i:number) => m('span', [
+            (i>0)? ', ': '',
+            m('span.hsdocs_signature_param', [
+                m(`span.hsdocs_itemname${optional(p.flags)}`, p.getName()),
+                m('span.hsdocs_colon', ':'),
+                mType(p)
+            ])
+        ]));
+    const sigText = (s:DocsParamaterized) => {
+        let result:Vnode[];
+        if (s.type && s.type.declaration) {
+            const dec = s.type.declaration;
+            const sig = dec.indexSignature || dec.getSignatures();
+            if (sig) {
+                result = sig.map((isig:DocsSignature) => params(isig));
+            }
+        }
+        result = params(s);
+        if (result) {
+            result.unshift(m('span.hsdocs_itemname', ' ('));
+            result.push(m('span.hsdocs_itemname', ')'));
+        }
+        return result;
+    };
+
+    const sigs:DocsParamaterized[] = node.getSignatures();
+    return m('span.hsdocs_signatures', !sigs? sigText(node) : sigs.map(s =>  m('span.hsdocs_signature', sigText(s))));
+}
+
+function mType(node:DocsNode):Vnode {
+    if (!node.type) { 
+        if (node.getSignatures()) { 
+            return mType(node.getSignatures()[0]);
+        } else {
+            return m('span', ''); 
+        }
+    }
+    if (!node.type.mType) {
+        log.warn(``);
+    }
+    try {
+        return m('span', [
+            m('span.hsdocs_type', node.type.mType()),
+            !node.defaultValue? undefined : m('span.hsdocs_type_default', 
+                ` = ${node.defaultValue.replace(/{/gi, '{ ').replace(/}/gi, ' }')}`)
+         ]);
+     } catch(e) { log.error(e); log.error(e.trace); }     
+}
+
+function mExtensionOf(node:DocsNode):Vnode {
+    const types = node.extendedTypes;
+    return m('span.hsdocs_extensionOf', !types? undefined : [
+        m('span.hsdocs_extends', 'extends'),
+        m('span', types.map((t:DocsReferenceIdType, i:number) =>
+            m('span.hsdocs_extensionType', [(i>0)?', ' : '',
+                libLink(node.lib, (DocSets.getNode(t.id, node.lib)||{fullPath:''}).fullPath||'', t.name),
+            ])
+        )),
+    ]);
+}
+
+function mImplementationOf(node:DocsNode):Vnode {
+    return !node.implementedTypes? undefined : m('span.hsdocs_implementationsOf', [
+        m('span.hsdocs_implements', 'implements'),
+        m('span', node.implementedTypes.map((t:DocsNamedType, i:number) =>
+            m('span.hsdocs_implementationType', [ (i>0)?', ' : '',
+                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
+            ])
+        )),
+    ]);
+}
+
+function mInheritedFrom(node:DocsNode):Vnode {
+    if (node.inheritedFrom) {
+        if (node.inheritedFrom.id) {
+            let parent = DocSets.getNode(node.inheritedFrom.id, node.lib);
+            parent = DocSets.getNode(parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')), node.lib);
+            return m('span.hsdocs_inheritedFrom', [
+                m('span', 'inherited from '),
+                libLink(parent.lib, parent.fullPath, parent.getName())
+            ]);
+        } else {
+            return m('span.hsdocs_inheritedFrom', [
+                m('span', 'inherited from '),
+                m('span', node.inheritedFrom.getName())
+            ]);
+        }
+    } else {
+        return m('span.hsdocs_inheritedFrom', undefined);
+    }
+}
+
+function mSourceLink(node:DocsNode):Vnode {
+    const source = node.sources? node.sources[0] : undefined;
+    if (source) {
+        let file = (source.fileName || '').replace('.ts', '.html');
+        const index = file.indexOf(node.lib);
+        if (index>0) {
+            file = file.substr(index); // only consider links within the docSet (everything after the lib name)
+        }
+        return m('span.hsdocs_source',  
+            m('a', { href:`${SourceBase}${node.lib}/${file}#${Math.max(0,source.line-5)}`, target:"_blank"}, '[source]')
+        );
+    } else {
+        return m('span.hsdocs_source', '');
+    }
+}
+
+function mExtendedBy(node:DocsNode):Vnode {
+    return !node.extendedBy? undefined : m('div.hsdocs_extendedBy',[
+        m('span.hsdocs_extended_by', 'extended by'),
+        m('span', node.extendedBy.map((t:any, i:number) =>
+            m('span.hsdocs_extendedby_type', [(i>0)?', ' : '',
+                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
+            ])
+        )),
+    ]);
+}
+
+function mImplementedBy(node:DocsNode):Vnode {
+    return !node.implementedBy? undefined : m('div.hsdocs_implementedBy',[
+        m('span.hsdocs_implemented_by', 'implemented by'),
+        m('span', node.implementedBy.map((t:any, i:number) =>
+            m('span.hsdocs_implementedby_type', [(i>0)?', ' : '',
+                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
+                // node.implementedBy.length>(i+1)? ', ': ''
+            ])
+        )),
+    ]);
+}
+
+
+export function commentLong(node:DocsNode):Vnode {
+    let content:any[] = [];
+    if (node.comment) {
+        content.push(node.comment.getDescription(false));
+        content.push(node.comment.getReturns(false));
+        content.push(node.comment.getCommentRemainder());
+    } else if (node.getSignatures() && node.getSignatures()[0]) {
+        return commentLong(node.getSignatures()[0]);
+    }
+    return content.length? m('.hsdocs_comment', content) : undefined;    
+}
+
+interface TestFunction {
+    (n:DocsNode): boolean;
+}
+interface Access {
+    text: {true:string; false:string;};
+    fn: TestFunction;
+}
+export function members(node:DocsNode):Vnode {
+    const not        = (fn:TestFunction) => (n:DocsNode) => !fn(n);
+    const isStatic   = (n:DocsNode) => n.flags.isStatic === true;
+    const isExported = (n:DocsNode) => n.flags.isExported === true;
+    const isPublic   = (n:DocsNode) => (n.flags.isPublic || (!n.flags.isPrivate && !n.flags.isProtected)) === true;
+
+    const access:Access = {
+        text: {true:'Public', false:'Protected or Private'},
+        fn: isPublic
+    };
+    const grp = node.groups;
+    const filterChildren = (cs:[string,DocsNode[]][], filters:((n:DocsNode)=>boolean)[]):[string,DocsNode[]][] => {
+        if (filters.length===0) { return cs; }
+        const remaining = filters.slice(1);
+        return [
+            ...filterChildren(cs.map(m => [m[0], m[1].filter(filters[0])]), remaining),
+            ...filterChildren(cs.map(m => [m[0], m[1].filter(not(filters[0]))]), remaining)
+        ].filter(m => m[1].length);
+    };
+    if (grp) {
+        const children:[string,DocsNode[]][] = grp.map(g => [g.title, g.children.map(id => DocSets.getNode(id, node.lib))]);
+        const sorts = [isPublic, isStatic];
+        if (node.kindString==='External module') {
+            sorts[0] = isExported;
+            access.text = {true:'Exported', false:'Internal'};
+            access.fn = isExported;
+        }
+        const _members = filterChildren(children, sorts);
+        return m('.hsdocs_members', _members.map(m => member(m[1], m[0], access)));
+
+    } else if (node.parameters) {
+        return m('.hsdocs_members', node.parameters);
+
+    // } else if (node.getSignatures()) {
+    //     return m('.hsdocs_members', node.getSignatures().map((s:DocsParamaterized) => s.parameters));
+    
+    } else if (node.type && node.type.declaration) {
+        node.type.declaration.lib = node.lib;
+        return m('.hsdocs_members', node.type.declaration.members());
+
+    }
+    return m('.hsdocs_members');
+}
+
+function member(nodes:DocsNode[], title:string, access:Access): Vnode {
+    const directChildren    = ((node:DocsNode) => !node.inheritedFrom);
+    const inheritedChildren = ((node:DocsNode) =>  node.inheritedFrom);
+    const [css, flagText]   = nodes.length? getFlagText(nodes[0], access) : ['',''];
+
+    const content:Vnode[] = nodes.filter(directChildren)
+        .map((c:DocsNode) => m('.hsdocs_node', {id:c.fullPath}, itemChild(c)));
+    const inherited:Vnode[] = nodes.filter(inheritedChildren)
+        .map((c:DocsNode) => m('.hsdocs_node .hsdocs_node_inherited', {id:c.fullPath}, itemChild(c)));
+    if (inherited.length>0) {
+        inherited.unshift(m('div.hsdocs_member_title', `${flagText} Inherited ${title}`));
+    }
+    if (content.length>0) {
+        content.unshift(m('div.hsdocs_member_title', `${flagText} ${title}`));
+    }
+    const members:DocsNode[] = content.concat(inherited);
+    return !members.length? '' : m(`.hsdocs_member ${css}`, members);
+}
+
+function itemChild(node:DocsNode): Vnode[] {
+    return node.getSignatures()? 
+        node.getSignatures().map((s:DocsNode) => 
+            m('.hsdocs_child', [titleArr(node), s.commentLong()])
+        )
+      : m('.hsdocs_child', [titleArr(node), node.commentLong()]);
+}
+
+function getFlagText(n:DocsNode, access:Access) {
+    const f = n.flags;
+    const select = access.fn(n);
+    const css = `${f.isStatic?'.hsdocs_flag_static' : ''} ${select?'hsdocs_flag_public' : ''}`;
+    return [css, `${access.text[''+select]} ${f.isStatic? 'Static' : ''}`];
+}

@@ -9,6 +9,8 @@
 /** */
 import { m }            from 'hslayout';
 import { log as gLog }  from 'hsutil'; const log = gLog('DocsSets');
+import { DocsNode }     from './Nodes';
+
 const DOCDIR:string = './data/';
 
 /**
@@ -19,16 +21,16 @@ const FILE:string = './data/index.json';
 
 export type json = any;
 
-export interface List {
-    set:    string[];
-    index:  {[id:string]:json};
-    docs:   string[];
-}
+// export interface List {
+//     // set:    string[];
+//     index:  {[id:string]:json};
+//     // docs:   string[];
+// }
 
-interface Tag {
-    tag: 'module';
-    text: string;
-}
+// interface Tag {
+//     tag: 'module';
+//     text: string;
+// }
 
 function matchAll(str:string, re:RegExp): string[] {
     const result:string[] = [];
@@ -46,20 +48,60 @@ function matchAll(str:string, re:RegExp): string[] {
  */
 export class DocSets { 
     /** Contains references to the docsets and all elements per docset, accessible per ID. */
-    private static gList:List = {set:<string[]>[], index:{}, docs:<string[]>[]};
-    private static gTitle: string;
+    // private static gList:List = {index:{}};
+
+    private static libs:string[] = [];
+    private static docs:string[] = [];
+
+    /** an optional title for the set of DocSets loaded, as specified in the `index.json` file. */
+    private static gTitle: string = '';
+    
+    static nodeCount = 0;
+    private static nodeList = <{[id:string]: DocsNode}>{};
+    
+    static addNode(mdl:json, node:DocsNode) {
+        const id = mdl.id;
+        const lib =  mdl.lib;
+        DocSets.nodeList[`${lib}.${id}`] = node;
+        DocSets.nodeList[mdl.fullPath] = node;
+// if (mdl.fullPath.indexOf('hsDocs.DocSets')>=0) { log.info(`added node ${id}: '${mdl.fullPath}'`); }
+        DocSets.nodeCount++;
+    }
+
 
     /**
-     * Adds the docset in `content` to the `gList` at the position of `file` in `DocSets.gList.docs`.
+     * Adds the docset in `content` to the `gList` at the position of `file` in `DocSets.docs`.
      * @param content the docSet content to add. 
      * @param file the file name from which the content was read. 
      */
-    public static add(content:json, file:string):void {
+    public static addDocSet(content:json, file:string):void {
         const lib = content.name;
-        const i = DocSets.gList.docs.indexOf(file);
-        DocSets.gList.set[i] = lib;
-        DocSets.gList.index[lib] = {};
-        recursiveIndex(content, DocSets.gList.index[lib], lib);
+        const i = DocSets.docs.indexOf(file);
+        DocSets.libs[i] = lib;
+        const root = DocsNode.traverse(content, lib);
+        log.info(`traversed '${root.fullPath}'`);
+    }
+    
+    static getNode(id:string|number, lib:string):DocsNode {
+        const key = ((typeof id === 'number') || (parseInt(''+id, 10)>=0))? `${lib}.${id}` : id;
+        // log.info(`getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
+        if (DocSets.nodeList.length && !DocSets.nodeList[key]) { 
+            log.warn(`did not find node for key '${key}' (id=${id}, lib=${lib})`); 
+            log.warn(new Error().stack);
+        }
+        return DocSets.nodeList[key]; 
+    }
+    
+    /**
+     * returns the specified documentation element.
+     * When called without parameters, a `string[lib]` of available docSets is returned.
+     * When called with only `lib` specified, the corresponding docSet overview is returned.
+     * @param lib specifies the docset to scan. 
+     * @param id specifies the element within the docSet, either by its id number, or by its fully qualified path, 
+     * e.g. 'hsDocs.DocSets.DocSets.add' 
+     */
+    public static getLibs():string[]{ 
+        return DocSets.libs; 
     }
 
     /**
@@ -69,41 +111,45 @@ export class DocSets {
      * @return a promise to load the index set
      */
     public static async loadList(file?:string):Promise<void> {
+        /** load an `index.json` file that contains references to the DocSets to load. */
         async function getIndexFile(url:string):Promise<boolean> {
             if (!url) { return false; }
             try {
                 const result = await m.request({ method: "GET", url: file});
                 DocSets.gTitle = result.title;
-                DocSets.gList.docs = result.docs;
+                DocSets.docs = result.docs;
                 log.info(`found index file ${url}`);
                 return true;
             } catch(e) {
                 return false;
             }
         }
+        /** 
+         * get all `jsons` in a directory specified by `url`. 
+         * If the directory contains an `index.json`, calls `getIndexFile` on that file's url.
+         */
         async function getDirJSONs(url:string):Promise<boolean> {
             let result = false;
             await m.request({ method: "GET", url: url, 
                 // catch extract to avoid attempt to deserialize
                 extract: async (xhr:any, options:any) => { 
-                    const matches = matchAll(xhr.responseText, /<a href="(\S*?.json)">/g);  // all *.json references
+                    const jsons = matchAll(xhr.responseText, /<a href="(\S*?.json)">/g);  // all *.json references
                     // check if index.jon exists:
-                    const index = matches.filter(m => m==='index.json')[0];
-                    const jsons = matches.filter(m => !m.startsWith('index'));
+                    const index = jsons.filter(m => m==='index.json')[0];
+                    // const jsons = matches.filter(m => !m.startsWith('index'));
 
                     if (index) { 
                         result = await getIndexFile(index); 
                     } else if (jsons.length) {
                         log.info(`found dir list in ${url}`);
                         DocSets.gTitle = '';
-                        DocSets.gList.docs = jsons;
+                        DocSets.docs = jsons;
                         result = true;
                     }
                 }
             });
             return result;
         }
-        file = file;   
         let i = file.lastIndexOf('/');
         const dir = file.substring(0,i+1);
         
@@ -111,23 +157,10 @@ export class DocSets {
         if (!found) { found = await getIndexFile(file); }
         if (!found) { found = await getDirJSONs(dir); }
         if (!found) { found = await getDirJSONs(DOCDIR); }
-        log.debug(`found ${DocSets.gList.docs.length} dos sets: ${log.inspect(DocSets.gList.docs, 5)}`);
-        await Promise.all(DocSets.gList.docs.map(async (f:string) => await loadDocSet(dir, f)))
-        .catch(log.error);        
-    }
-
-    /**
-     * returns the specified documentation element.
-     * When called without parameters, a `string[lib]` of available docSets is returned.
-     * When called with only `lib` specified, the corresponding docSet overview is returned.
-     * @param lib specifies the docset to scan. 
-     * @param id specifies the element within the docSet, either by its id number, or by its fully qualified path, 
-     * e.g. 'hsDocs.DocSets.DocSets.add' 
-     */
-    public static get(lib?:string, id:number|string=0):string[] | json { 
-        return (lib && DocSets.gList.index[lib])?
-            DocSets.gList.index[lib][id+'']
-          : DocSets.gList.set; 
+        log.debug(`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, 5)}`);
+        await Promise.all(DocSets.docs.map(async (f:string) => await loadDocSet(dir, f))).catch(log.error);        
+        log.info(`found ${DocSets.nodeCount} DocNodes`);
+        m.redraw();
     }
 }
 
@@ -140,54 +173,6 @@ export class DocSets {
 async function loadDocSet(dir:string, file:string):Promise<void> {
     log.debug(`loading ${dir+file}`);
     const r:json = await m.request({ method: "GET", url: dir+file });
-    DocSets.add(r, file);
+    DocSets.addDocSet(r, file);
 }
 
-/**
- * recurses through the docset and registers all `children` entries of an entry by id,
- * starting with the root entry.
- * @param content the docset object literal to traverse
- * @param index the index in which to register the entries
- * @param lib the docset name, used for name validation
- */
-function recursiveIndex(content:json, index:List, lib:string, path='') {
-    function getNewPath(content:json) {
-        content.name = content.name.replace(/["'](.+)["']|(.+)/g, "$1$2");  // remove quotes 
-        // const elName  = content.name.match(/([^\/]+)$/)[1];         // name = part after last /
-        const elName  = content.name.replace(/\//g, '.');         // "a/b" => "a.b" /
-        content.name = elName;
-        return content.fullPath = (path==='')? elName : `${path}.${elName}`;
-    }
-
-    function markIfModule(content:json) {
-        if (content.comment && content.comment.tags) {
-            content.comment.tags.forEach((tag:Tag) => {
-                if (tag.tag === 'module') {
-                    content.innerModule = tag.text.trim();
-                }
-            });
-        }
-    }
-    content.lib = lib;
-    if (typeof content === 'object' && content.name) {
-        const newPath = getNewPath(content);
-
-        markIfModule(content);
-
-        index[content.id+''] = content;
-        if (newPath.length>0) { index[newPath] = content; }
-
-        if (content.children) {
-            content.children.map((c:json) => recursiveIndex(c, index, lib, newPath));
-        }
-        if (content.signatures) {
-            content.signatures.map((c:json) => recursiveIndex(c, index, lib, newPath));
-        }
-        if (content.parameters) {
-            content.parameters.map((c:json) => recursiveIndex(c, index, lib, newPath));
-        }
-        if (content.type && content.type.declaration && content.type.declaration.children) {
-            content.type.declaration.children.map((c:json) => recursiveIndex(c, index, lib, newPath));
-        }
-    }
-}

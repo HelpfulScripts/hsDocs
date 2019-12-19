@@ -1,10 +1,19 @@
 
 
-.hs-main-detail { // the main information window on the right
+.hsdocs_main { // the main information window on the right
     border-left: 1px solid @BorderColor;
 }
 
-.hs-item-doc {      // applies to entire main item pane
+.hsdocs_main_overview {      // applies to entire main item pane
+    &>.hsdocs_title {
+        font-size: 1.25em;
+        background-color: @TitleBackground;
+        border-top: 1px solid @TitleBorder;
+        border-bottom: 1px solid @TitleBorder;
+        margin-top: 5px;
+        padding: 10px 0.4em 10px 0em;  
+        padding-left: 5px;
+    }
 }
 
 //----------- debug formats
@@ -13,7 +22,7 @@
     margin-top:50px;  
 }
 
-.hs-item-members {
+.hsdocs_members {
     font-size: 1em;
 }
 
@@ -25,9 +34,9 @@
 @StaticTitleColor: #600;
 @Transparent: rgba(255, 255, 255, 0);
 
-.hs-item-member-title {
+.hsdocs_member_title {
     background-color: @Background;
-    font-size: 1.3em;
+    font-size: 130%;
     font-weight:bold;
     padding: 5px 0 5px 0;
     margin: 4px 0;
@@ -40,78 +49,78 @@
     padding-left: 0.5em;
 }
 
-.hs-item-variable {
+.hsdocs_node_variable {
     background: linear-gradient(to bottom, @Background @BgStop , @Transparent); 
-    .hs-item-title & {
+    .hsdocs_title & {
         background-image: none;
     }
 }
 
-.hs-item-member {
+.hsdocs_member {
 //    border-top: 1px solid #f8f8f8;
     @ChildBackground: @Background; 
-    &.hs-item-public {
-        .hs-item-member-title {
+    &hsdocs_flag_public {
+        .hsdocs_member_title {
             background-color: @PublicBackground;
             color: @PublicTitleColor;
         }
-        .hs-item-variable {
+        .hsdocs_node_variable {
             background: linear-gradient(to bottom, @PublicBackground @BgStop, @Transparent); 
         }
     }
-    &.hs-item-static {
-        .hs-item-member-title {
+    &.hsdocs_flag_static {
+        .hsdocs_member_title {
             background-color: @StaticBackground;
             color: @StaticTitleColor;
         }
-        .hs-item-variable {
+        .hsdocs_node_variable {
             background: linear-gradient(to bottom, @StaticBackground @BgStop, @Transparent); 
         }
     }
 }
 
-.hs-item-child {
+.hsdocs_node {
     padding: 4px 0 10px 0px;  
     font-size: 1em;
 }
 
 
-.hs-item-member-type {
+.hsdocs_member-type {
     display: inline;
 }
 
 
 
-.hs-item-external-module    { .hs-item-child; }
-.hs-item-module             { .hs-item-child; }
-.hs-item-class              { .hs-item-child; }
-.hs-item-interface          { .hs-item-child; }
-.hs-item-constructor        { .hs-item-child; }
-.hs-item-alias              { .hs-item-child; }
-.hs-item-property           { .hs-item-child; }
-.hs-item-accessors          { .hs-item-child; }
-.hs-item-parameter          { .hs-item-child; }
-.hs-item-object-literal     { .hs-item-child; }
-.hs-item-variable           { .hs-item-child; }
-.hs-item-method             { .hs-item-child; }
-.hs-item-function           { .hs-item-child; }
+.hsdocs_node_externalModule    { .hsdocs_node; }
+.hs-item-module             { .hsdocs_node; }
+.hsdocs_node_class              { .hsdocs_node; }
+.hsdocs_node_interface          { .hsdocs_node; }
+.hsdocs_node_constructor        { .hsdocs_node; }
+.hsdocs_node_typeAlias              { .hsdocs_node; }
+.hsdocs_node_property           { .hsdocs_node; }
+.hsdocs_node_accessors          { .hsdocs_node; }
+.hsdocs_node_parameter          { .hsdocs_node; }
+.hsdocs_node_objectLiteral     { .hsdocs_node; }
+.hsdocs_node_variable           { .hsdocs_node; }
+.hsdocs_node_method             { .hsdocs_node; }
+.hsdocs_node_function           { .hsdocs_node; }
 
 @InheritedBackground: #f8f8f8;
-.hs-item-inherited {
+.hsdocs_node_inherited {
     background-color: @InheritedBackground;
     font-size: 80%;
     color: #444;
-    &.hs-item-member-title {
+    &.hsdocs_member_title {
         background-color: @TitleBackground;
         font-size: 100%;
     }
-    .hs-item-inherited-from {
+    .hsdocs_inheritedFrom {
         font-style: italic;
     }
 }
 
-.hs-item-unknown-member {
-    .hs-item-child;
+.hsdocs_node_unknown {
+    .hsdocs_node;
     background-color: #f00;
     color: #fff;
     font-weight: bold;
