@@ -91,7 +91,7 @@ class DocsUnknownType extends DocsType {
         super(mdlType, node);
         this.name = mdlType.name;
     }
-    mType() { return m('span.hsdocs_type_unknown', 'unknwon type'); }
+    mType() { return m('span.hsdocs_type_unknown', 'unknown type'); }
 }
 
 class DocsStringLiteralType extends DocsType {
