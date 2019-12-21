@@ -1,0 +1,75 @@
+
+//----- entire page
+.hsdocs_main {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+//----- first level
+.hsdocs_title {
+    padding-left: 5px;
+}
+
+.hsdocs_head_comment {
+    padding-left: 5px;
+}
+
+.hsdocs_members {
+    padding-left: 5px;
+}
+
+
+//----- details level
+
+.hsdocs_source {
+    float:right;
+}
+
+
+._flag_shape() {
+    padding: 2px 3px;
+    border-radius: 3px;
+    margin: 1px 1px;
+}
+
+.hsdocs_child {
+    .hsdocs_flag_export     { ._flag_shape; }
+    .hsdocs_flag_public     { ._flag_shape; }
+    .hsdocs_flag_private    { ._flag_shape; }
+    .hsdocs_flag_protected  { ._flag_shape; }
+    .hsdocs_flag_static     { ._flag_shape; }
+    .hsdocs_flag_abstract   { ._flag_shape; }
+    .hsdocs_flag_const      { ._flag_shape; }
+    .hsdocs_flag_let        { ._flag_shape; }
+    .hsdocs_flag_var        { ._flag_shape; }
+    .hsdocs_flag_optional   { ._flag_shape; }
+    .hsdocs_flag_unknown    { ._flag_shape; }
+    .hsdocs_flag_ignore     { ._flag_shape; }
+    .hsdocs_flag_constructorProperty { ._flag_shape; }
+    .hsdocs_flag_optional {
+        ._flag_shape;
+        &:after { 
+            content: '?'; 
+            font-style: italic;
+            font-weight:bold;
+        }
+    }
+}
+
+
+.hsdocs_node {
+
+}
+
+.hsdocs_node_class              { .hsdocs_node; }
+.hsdocs_node_interface          { .hsdocs_node; }
+.hsdocs_node_constructor        { .hsdocs_node; }
+.hsdocs_node_externalModule     { .hsdocs_node; }
+.hsdocs_node_typeAlias          { .hsdocs_node; }
+.hsdocs_node_property           { .hsdocs_node; }
+.hsdocs_node_accessors          { .hsdocs_node; }
+.hsdocs_node_parameter          { .hsdocs_node; }
+.hsdocs_node_objectLiteral      { .hsdocs_node; }
+.hsdocs_node_variable           { .hsdocs_node; }
+.hsdocs_node_method             { .hsdocs_node; }
+.hsdocs_node_function           { .hsdocs_node; }

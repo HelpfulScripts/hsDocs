@@ -14,7 +14,7 @@ import { DocsReferenceIdType }  from './Types';
 import { DocsNamedType }        from './Types';
 import { json }                 from './DocSets';
 import { example }              from './view/MainExample';
-import { prettifyCode }         from './view/MainComment';
+import { markDown }             from './markdown';
 
 
 const SourceBase = 'data/src/'; 
@@ -52,6 +52,14 @@ export class DocsComment {
         this.tags = comment.tags || [];
     }
 
+    /**
+     * Report the item's description. This can come in different forms that are all handled here:
+     * - comment.shortText: <description>
+     * - comment.text: <description>
+     * - comment.tags[{tag:'description}, text:<description>]
+     * Any resulting comment will be translated from markdown to html and returned as a `Vnode`.
+     * @param short boolean; if true, only the first paragraph of the description will be returned
+     */
     getDescription(short: boolean) {
         let text = (this.shortText || '');
         if (this.text) { text += '\n'+ (this.text || ''); }
@@ -67,9 +75,12 @@ export class DocsComment {
         return m('.hsdocs_comment_desc', prettifyCode(text, short));
     }
     
+    /**
+     * creates the `returns` message for a function or method.
+     */
     getReturns(short: boolean) {
         let text = this.returns;
-        return !text? '': m('hsdocs_comment_return', [            
+        return !text? '': m('span.hsdocs_comment_return', [            
             m('span.hsdocs_comment_return_tag', 'returns:'), 
             m('span.hsdocs_comment_return_text', text)
         ]);
@@ -309,6 +320,13 @@ function mImplementedBy(node:DocsNode):Vnode {
 }
 
 
+/**
+ * Main comment processing. The result appears directly below the title in the main panel.
+ * Function parameters are not reported in short form here since it is assumed they will be listed 
+ * individually below the main comment
+ * @param node the module to scan for comments
+ * @return a vnode representing the comment entries
+ */
 export function commentLong(node:DocsNode):Vnode {
     let content:any[] = [];
     if (node.comment) {
@@ -404,4 +422,40 @@ function getFlagText(n:DocsNode, access:Access) {
     const select = access.fn(n);
     const css = `${f.isStatic?'.hsdocs_flag_static' : ''} ${select?'hsdocs_flag_public' : ''}`;
     return [css, `${access.text[''+select]} ${f.isStatic? 'Static' : ''}`];
+}
+
+/**
+ * finds segments of `<code>...</code>` in `comment` and replaces them with a prettified version.
+ * Currently the function performs operations in this sequence:
+ * - add indentation for brackets {...}
+ * - wrap the &lt;code&gt;...&lt;/code&gt; part within &lt;pre&gt;...&lt;/pre&gt; brackets
+ * - apply markdown syntax
+ * - wrap results in a trusted mithril node
+ * @param comment the comment comment 
+ * @param short only return the first paragraph
+ */
+function prettifyCode(comment:string, short:boolean):Vnode { 
+    let result = comment;
+
+    function braceIndenting(text:string): string {
+        let indent = 0;
+        const result = text
+            .substring(6, text.length-7)    // remove <code> and </code>
+            .trim()
+            .replace(/(<)/g, '&lt;').replace(/(>)/g, '&gt;')
+            .split('\n')
+            .map((l:string) => {
+                let oldIndent = indent;
+                let k = l.trim();
+                indent += Math.max(-1, Math.min(1, k.split('{').length - k.split('}').length)); 
+                indent += Math.max(-1, Math.min(1, k.split('[').length - k.split(']').length)); 
+                return '<span class="hs-code-indent"></span>'.repeat(((indent < oldIndent)?indent:oldIndent)) + k;
+            })
+            .join('\n')
+            .trim();
+        return '<pre><code>' + result + '</code></pre>';
+    }
+
+    result = result.replace(/<code>([\S\s]*?)<\/code>/gi, braceIndenting);
+    return m.trust(markDown(result, short, m.route.get()));
 }

@@ -79,8 +79,9 @@
     border-radius: 5px;
 }
 
-hsdocs_comment_return {     // text for normal comment
+.hsdocs_comment_return {     // text for normal comment
     .hs-item-comment-param;
+    padding: 5px 0px;
     margin-top: 0px;
 }
 
@@ -89,7 +90,7 @@ hsdocs_comment_return {     // text for normal comment
     font-weight: bold;
     font-size: 1.1em;
     color: #000;
-    hsdocs_comment_return & {     // text for normal comment
+    .hsdocs_comment_return & {     // text for normal comment
         color: #00A;
         hsdocs_flag_public & {     // text for normal comment
             color: #060;
@@ -99,7 +100,7 @@ hsdocs_comment_return {     // text for normal comment
 .hsdocs_comment_return_text {     // text for special comment tag, e.g. @ngdoc
     padding:3px 5px;
     color: #000;
-    hsdocs_comment_return & {     // text for normal comment
+    .hsdocs_comment_return & {     // text for normal comment
         color: #00A;
         hsdocs_flag_public & {     // text for normal comment
             color: #060;

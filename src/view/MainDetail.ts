@@ -6,7 +6,6 @@
 import { log as _log }          from 'hsutil'; const log = _log('MainDetail');
 import { m, Vnode}              from 'hslayout';
 import { Layout }               from 'hslayout';
-import { commentLong }          from './MainComment';
 import { DocsNode }             from '../Nodes';
 import { DocSets }              from '../DocSets';
 
@@ -35,7 +34,7 @@ export class MainDetail extends Layout {
  * @return Vnode containing the overview file, or `undefined`
  */
 function getOverview(node:DocsNode):Vnode {
-    return node? m('div.hsdocs_head', commentLong(node.getSignatures()? node.getSignatures()[0] : node)) : 'overview unavailable';
+    return node? m('div.hsdocs_head_comment', (node.getSignatures()? node.getSignatures()[0] : node).commentLong()) : 'overview unavailable';
 }
 
 /**
@@ -46,7 +45,7 @@ function itemDoc(node:DocsNode) {
     // log.info(`get itemDoc '${node? node.fullPath : 'node undefined'}'`);
     return !node? 'no item' : [
         node.title(), 
-        m('div.hsdocs_head', node.commentLong()),
+        m('div.hsdocs_head_comment', node.commentLong()),
         node.members()
     ];
 }

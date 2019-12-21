@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">47.89% </span>
+        <span class="strong">46.58% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>34/71</span>
+        <span class='fraction'>34/73</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">29.03% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>10/31</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">48.44% </span>
+        <span class="strong">46.27% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>31/64</span>
+        <span class='fraction'>31/67</span>
       </div>
     </div>
     <p class="quiet">
@@ -246,7 +246,10 @@
 <a name='L198'></a><a href='#L198'>198</a>
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
-<a name='L201'></a><a href='#L201'>201</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -326,6 +329,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -526,10 +532,13 @@ class DocsReferenceType extends DocsType {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    mType(</span>) {
-        let refRes = <span class="cstat-no" title="statement not covered" >this.id? libLink(this.node.lib, this.id, this.name) : this.name;</span>
-<span class="cstat-no" title="statement not covered" >        if (this.typeArguments.length) { <span class="cstat-no" title="statement not covered" >refRes += '&lt;'+ this.typeArguments.map(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.mType())</span>.join(', ') + '&gt;'; </span>}</span>
-        // return m('span.hsdocs_type_reference', refRes);        
-<span class="cstat-no" title="statement not covered" >        return refRes;        </span>
+        let refRes = <span class="cstat-no" title="statement not covered" >[this.id? libLink(this.node.lib, this.id, this.name) : this.name];</span>
+<span class="cstat-no" title="statement not covered" >        if (this.typeArguments.length) { </span>
+<span class="cstat-no" title="statement not covered" >            refRes.push('&lt;');</span>
+<span class="cstat-no" title="statement not covered" >            refRes.push(...this.typeArguments.map(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.mType())</span>);</span>
+<span class="cstat-no" title="statement not covered" >            refRes.push('&gt;'); </span>
+        }
+<span class="cstat-no" title="statement not covered" >        return m('span.hsdocs_type_reference', refRes);        </span>
     }
 }
 &nbsp;

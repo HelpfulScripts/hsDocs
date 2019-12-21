@@ -1,0 +1,60 @@
+//----- entire page
+.hsdocs_main {
+    background-color: #f8f8f8;
+    color: @mainTextColor;
+}
+
+//----- first level
+.hsdocs_title {
+    background-color: #ccf;
+    font-size: 1.2em;
+}
+
+// .hsdocs_head_comment {
+
+// }
+
+// .hsdocs_members {
+
+// }
+
+
+//----- details level
+
+
+.hsdocs_source {
+    :link { text-decoration: inherit; }
+    font-size: 0.8rem;
+}
+
+.flag_color(@color: #444) { // paren's prevent output in css
+    background-color: @color;
+    color: screen(@color, #ddd);
+}
+
+.hsdocs_child {
+    .hsdocs_flag_export     { .flag_color(#262); }
+    .hsdocs_flag_public     { .flag_color(#448); }
+    .hsdocs_flag_private    { .flag_color(#844); }
+    .hsdocs_flag_protected  { .flag_color(#884); }
+    .hsdocs_flag_static     { .flag_color(#888); }
+    .hsdocs_flag_abstract   { .flag_color(#888); }
+    .hsdocs_flag_const      { .flag_color(#222); }
+    .hsdocs_flag_let        { .flag_color(#222); }
+    .hsdocs_flag_var        { .flag_color(#222); }
+    .hsdocs_flag_unknown    { 
+        .flag_color(#f44); 
+        font-weight: bold; 
+    }
+    .hsdocs_flag_ignore     { .flag_color(); }
+    .hsdocs_flag_constructorProperty { .flag_color(#848); }
+    .hsdocs_flag_optional {
+        .flag_color(); 
+        &:after { 
+            content: '?'; 
+            font-style: italic;
+            font-weight:bold;
+        }
+    }
+}
+

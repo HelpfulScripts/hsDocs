@@ -78,10 +78,13 @@ class DocsReferenceType extends DocsType {
     }
 
     mType() {
-        let refRes = this.id? libLink(this.node.lib, this.id, this.name) : this.name;
-        if (this.typeArguments.length) { refRes += '<'+ this.typeArguments.map(t => t.mType()).join(', ') + '>'; }
-        // return m('span.hsdocs_type_reference', refRes);        
-        return refRes;        
+        let refRes = [this.id? libLink(this.node.lib, this.id, this.name) : this.name];
+        if (this.typeArguments.length) { 
+            refRes.push('<');
+            refRes.push(...this.typeArguments.map(t => t.mType()));
+            refRes.push('>'); 
+        }
+        return m('span.hsdocs_type_reference', refRes);        
     }
 }
 
