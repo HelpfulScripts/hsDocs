@@ -1,0 +1,1853 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
+<body>
+  <div
+    class="hs-layout  "
+  >
+    <div
+      class="hsdocs_main"
+    >
+      <div
+        class="hsdocs_title"
+        id="title_docsets"
+      >
+        <span
+          class="hsdocs_flags"
+        >
+          <span
+            class="hsdocs_flag_export"
+          >
+            export
+          </span>
+        </span>
+        <span
+          class="hsdocs_kind"
+        >
+          module
+        </span>
+        <span
+          class="hsdocs_itemname"
+        >
+          <a
+            href="#!/api/hsDocs/hsDocs.DocSets"
+          >
+            DocSets
+          </a>
+        </span>
+        <span
+          class="hsdocs_signatures"
+        />
+        <span
+          class="hsdocs_title_colon"
+        >
+          : 
+        </span>
+        <span>
+          
+        </span>
+        <span
+          class="hsdocs_extensionOf"
+        />
+        <span
+          class="hsdocs_inheritedFrom"
+        />
+        <span
+          class="hsdocs_source"
+        >
+          <a
+            href="data/src/hsDocs/DocSets.html#0"
+            target="_blank"
+          >
+            [source]
+          </a>
+        </span>
+      </div>
+      <div
+        class="hsdocs_head_comment"
+      >
+        <div
+          class="hsdocs_comment"
+        >
+          <div
+            class="hsdocs_comment_desc"
+          >
+            <p>
+              DocSets.ts. Loads the doc.json files to process and display as documentation.
+Processing occurs in these steps:
+            </p>
+            
+
+            <ol>
+              
+
+              <li>
+                Load the index.json file that contains a list of doc.json files to load, one for each library to show
+              </li>
+              
+
+              <li>
+                Load each doc.json file, which describes a library
+              </li>
+              
+
+              <li>
+                Call DocSets.add to add the library name to the registry and create an index of entries for the library
+              </li>
+              
+
+            </ol>
+          </div>
+          
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+      <div
+        class="hsdocs_members"
+      >
+        <div
+          class="hsdocs_member  hsdocs_flag_public"
+        >
+          <div
+            class="hsdocs_member_title"
+          >
+            Exported Classes
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.DocSets"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                >
+                  <span
+                    class="hsdocs_flag_export"
+                  >
+                    export
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_kind"
+                >
+                  class
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.DocSets"
+                  >
+                    DocSets
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                />
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#44"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+              <div
+                class="hsdocs_comment"
+              >
+                <div
+                  class="hsdocs_comment_desc"
+                >
+                  <p>
+                    DocSets object. Keeps a list of registered docsets and
+provides access to elements of each docset.
+                  </p>
+                </div>
+                
+                <div>
+                  
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_member  hsdocs_flag_public"
+        >
+          <div
+            class="hsdocs_member_title"
+          >
+            Exported Type aliases
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.json"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                >
+                  <span
+                    class="hsdocs_flag_export"
+                  >
+                    export
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_kind"
+                >
+                  type
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.json"
+                  >
+                    json
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                />
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_intrinsic"
+                    >
+                      any
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#17"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_member "
+        >
+          <div
+            class="hsdocs_member_title"
+          >
+            Internal Variables
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.DOCDIR"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                >
+                  <span
+                    class="hsdocs_flag_const"
+                  >
+                    const
+                  </span>
+                </span>
+                
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.DOCDIR"
+                  >
+                    DOCDIR
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                />
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_intrinsic"
+                    >
+                      string
+                    </span>
+                  </span>
+                  <span
+                    class="hsdocs_type_default"
+                  >
+                     = "./data/"
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#9"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.FILE"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                >
+                  <span
+                    class="hsdocs_flag_const"
+                  >
+                    const
+                  </span>
+                </span>
+                
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.FILE"
+                  >
+                    FILE
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                />
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_intrinsic"
+                    >
+                      string
+                    </span>
+                  </span>
+                  <span
+                    class="hsdocs_type_default"
+                  >
+                     = "./data/index.json"
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#15"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+              <div
+                class="hsdocs_comment"
+              >
+                <div
+                  class="hsdocs_comment_desc"
+                >
+                  <p>
+                    the default location for the index .json files, relative to the web page:
+
+                    <code>
+                      './data/index.json'
+                    </code>
+                  </p>
+                </div>
+                
+                <div>
+                  
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.log"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                >
+                  <span
+                    class="hsdocs_flag_const"
+                  >
+                    const
+                  </span>
+                </span>
+                
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.log"
+                  >
+                    log
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                />
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_reference"
+                    >
+                      LogType
+                    </span>
+                  </span>
+                  <span
+                    class="hsdocs_type_default"
+                  >
+                     =  gLog('DocsSets')
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#6"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_member "
+        >
+          <div
+            class="hsdocs_member_title"
+          >
+            Internal Functions
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.loadDocSet"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                />
+                <span
+                  class="hsdocs_kind"
+                >
+                  function
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.loadDocSet"
+                  >
+                    loadDocSet
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                >
+                  <span
+                    class="hsdocs_signature"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                       (
+                    </span>
+                    <span>
+                      
+                      <span
+                        class="hsdocs_signature_param"
+                      >
+                        <span
+                          class="hsdocs_itemname"
+                        >
+                          dir
+                        </span>
+                        <span
+                          class="hsdocs_colon"
+                        >
+                          :
+                        </span>
+                        <span>
+                          <span
+                            class="hsdocs_type"
+                          >
+                            <span
+                              class="hsdocs_type_intrinsic"
+                            >
+                              string
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      , 
+                      <span
+                        class="hsdocs_signature_param"
+                      >
+                        <span
+                          class="hsdocs_itemname"
+                        >
+                          file
+                        </span>
+                        <span
+                          class="hsdocs_colon"
+                        >
+                          :
+                        </span>
+                        <span>
+                          <span
+                            class="hsdocs_type"
+                          >
+                            <span
+                              class="hsdocs_type_intrinsic"
+                            >
+                              string
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      )
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_reference"
+                    >
+                      Promise
+                      &lt;
+                      <span
+                        class="hsdocs_type_intrinsic"
+                      >
+                        void
+                      </span>
+                      &gt;
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#168"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+              <div
+                class="hsdocs_comment"
+              >
+                <div
+                  class="hsdocs_comment_desc"
+                >
+                  <p>
+                    Loads a docset specified by file from the directory 
+                    <code>
+                      dir
+                    </code>
+                    .
+Once received, the docset is registered in 
+                    <code>
+                      modules
+                    </code>
+                     via the 
+                    <code>
+                      add
+                    </code>
+                     method.
+                  </p>
+                </div>
+                
+                <div>
+                  
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="hsdocs_node"
+            id="hsDocs.DocSets.matchAll"
+          >
+            <div
+              class="hsdocs_child"
+            >
+              <span>
+                <span
+                  class="hsdocs_flags"
+                />
+                <span
+                  class="hsdocs_kind"
+                >
+                  function
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  <a
+                    href="#!/api/hsDocs/hsDocs.DocSets.matchAll"
+                  >
+                    matchAll
+                  </a>
+                </span>
+                <span
+                  class="hsdocs_signatures"
+                >
+                  <span
+                    class="hsdocs_signature"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                       (
+                    </span>
+                    <span>
+                      
+                      <span
+                        class="hsdocs_signature_param"
+                      >
+                        <span
+                          class="hsdocs_itemname"
+                        >
+                          str
+                        </span>
+                        <span
+                          class="hsdocs_colon"
+                        >
+                          :
+                        </span>
+                        <span>
+                          <span
+                            class="hsdocs_type"
+                          >
+                            <span
+                              class="hsdocs_type_intrinsic"
+                            >
+                              string
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      , 
+                      <span
+                        class="hsdocs_signature_param"
+                      >
+                        <span
+                          class="hsdocs_itemname"
+                        >
+                          re
+                        </span>
+                        <span
+                          class="hsdocs_colon"
+                        >
+                          :
+                        </span>
+                        <span>
+                          <span
+                            class="hsdocs_type"
+                          >
+                            <span
+                              class="hsdocs_type_reference"
+                            >
+                              RegExp
+                            </span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      )
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_title_colon"
+                >
+                  : 
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_type"
+                  >
+                    <span
+                      class="hsdocs_type_array"
+                    >
+                      Array&lt;
+                      <span
+                        class="hsdocs_type_intrinsic"
+                      >
+                        string
+                      </span>
+                      &gt;
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_extensionOf"
+                />
+                <span
+                  class="hsdocs_inheritedFrom"
+                />
+                <span
+                  class="hsdocs_source"
+                >
+                  <a
+                    href="data/src/hsDocs/DocSets.html#30"
+                    target="_blank"
+                  >
+                    [source]
+                  </a>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
+<body>
+  <div
+    class="hs-layout  "
+  >
+    <div
+      class="hsdocs_main"
+    >
+      no item
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MainDetail overview matches snapshot 1`] = `
+<body>
+  <div
+    class="hs-layout  "
+  >
+    <div
+      class="hsdocs_main"
+    >
+      <div
+        class="hsdocs_head_comment"
+      >
+        <div
+          class="hsdocs_comment"
+        >
+          <div
+            class="hsdocs_comment_desc"
+          >
+            <h1
+              id="hsdocs"
+            >
+              hsDocs
+            </h1>
+            
+
+            <p>
+              Helpful Scripts code documentation viewer.
+
+              <a
+                href="./data/src/hsDocs/coverage/"
+                target="_blank"
+              >
+                [Coverage Info]
+              </a>
+            </p>
+            
+
+            <p>
+              <a
+                href="https://badge.fury.io/js/hsdocs"
+              >
+                <img
+                  alt="npm version"
+                  src="https://badge.fury.io/js/hsdocs.svg"
+                />
+              </a>
+              
+
+              <a
+                href="https://github.com/helpfulscripts/hsdocs"
+              >
+                <img
+                  alt="GitHub"
+                  src="https://img.shields.io/badge/GitHub-hsDocs-blue.svg"
+                />
+              </a>
+              
+
+              <a
+                href="https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0"
+              >
+                <img
+                  alt="docs"
+                  src="https://img.shields.io/badge/hsDocs-hsDocs-blue.svg"
+                />
+              </a>
+              
+
+              <a
+                href="https://travis-ci.org/HelpfulScripts/hsDocs"
+              >
+                <img
+                  alt="Build Status"
+                  src="https://travis-ci.org/HelpfulScripts/hsDocs.svg?branch=master"
+                />
+              </a>
+              
+
+              <a
+                href="https://david-dm.org/helpfulscripts/hsdocs"
+              >
+                <img
+                  alt="Dependencies Status"
+                  src="https://david-dm.org/helpfulscripts/hsdocs.svg"
+                />
+              </a>
+              
+
+              <a
+                href="https://coveralls.io/github/HelpfulScripts/hsDocs?branch=master"
+              >
+                <img
+                  alt="Coverage Status"
+                  src="https://coveralls.io/repos/github/HelpfulScripts/hsDocs/badge.svg?branch=master"
+                />
+              </a>
+              
+
+              <a
+                href="https://snyk.io/test/github/HelpfulScripts/hsDocs?targetFile=package.json"
+              >
+                <img
+                  alt="Known Vulnerabilities"
+                  src="https://snyk.io/test/github/HelpfulScripts/hsDocs/badge.svg?targetFile=package.json"
+                />
+              </a>
+              
+
+              <a
+                href="https://www.npmjs.com/package/hsdocs"
+              >
+                <img
+                  alt="NPM License"
+                  src="https://img.shields.io/badge/license-MIT-brightgreen.svg"
+                />
+              </a>
+            </p>
+            
+
+            <hr />
+            
+
+            <p>
+              hsDocs.js is a code documentation viewer for 
+              <a
+                href="https://www.typescriptlang.org"
+              >
+                Typescript
+              </a>
+               projects.
+It provides a browser rendering of JSON documentation files as created by 
+              <a
+                href="http://typedoc.org"
+              >
+                typedoc
+              </a>
+              .
+            </p>
+            
+
+            <h2
+              id="usage"
+            >
+              Usage
+            </h2>
+            
+
+            <p>
+              1 - Create a web-app directory to serve the docsets from. As an example,
+see the 
+              <code>
+                docs
+              </code>
+               folder in this project's 
+              <a
+                href="https://github.com/HelpfulScripts/hsDocs/tree/master/docs"
+              >
+                Github page
+              </a>
+              ,
+which serves the 
+              <a
+                href="https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0"
+              >
+                Github IO pages for this project
+              </a>
+            </p>
+            
+
+            <p>
+              2a - Copy the 
+              <code>
+                index.html
+              </code>
+               file from 
+              <a
+                href="https://github.com/HelpfulScripts/hsDocs/tree/master/docs"
+              >
+                Github
+              </a>
+              ,
+or create a new 
+              <strong>
+                <code>
+                  index.html
+                </code>
+              </strong>
+               as follows. This will use the 
+              <code>
+                GitHub
+              </code>
+              -hosted version of 
+              <code>
+                hsDocs
+              </code>
+              :
+            </p>
+            
+
+            <pre>
+              <code
+                class="html language-html"
+              >
+                &lt;html&gt;
+&lt;head&gt;
+&lt;link href="https://helpfulscripts.github.io/hsDocs/hsDocs.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body class='hs-layout-fill'&gt;
+&lt;script src="https://helpfulscripts.github.io/hsDocs/hsDocs.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+              </code>
+            </pre>
+            
+
+            <p>
+              2b - Alternatively you can use a self-hosted hsDocs version. Copy the 
+              <code>
+                hsDocs
+              </code>
+               runtimes
+(
+              <code>
+                hsDocs.js
+              </code>
+              , 
+              <code>
+                hsDocs.min.js
+              </code>
+              , 
+              <code>
+                hsDocs.css
+              </code>
+              , 
+              <code>
+                hsDocs.css.map
+              </code>
+              ) from
+
+              <a
+                href="https://github.com/HelpfulScripts/hsDocs/tree/master/docs"
+              >
+                Github
+              </a>
+               into the directory and modify 
+              <code>
+                index.html
+              </code>
+               as follows:
+            </p>
+            
+
+            <pre>
+              <code
+                class="html language-html"
+              >
+                &lt;html&gt;
+&lt;head&gt;&lt;link href="hsDocs.css" rel="stylesheet" /&gt;&lt;/head&gt;
+&lt;body class='hs-layout-fill'&gt;
+&lt;script src="./hsDocs.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+              </code>
+            </pre>
+            
+
+            <p>
+              3 - Create a subdirectory 
+              <strong>
+                <code>
+                  data
+                </code>
+              </strong>
+               and copy the docsets into it, for example 
+              <strong>
+                <code>
+                  hsDocs.json
+                </code>
+              </strong>
+               or your project's 
+              <code>
+                .json
+              </code>
+               .
+See below for creating the docset.
+            </p>
+            
+
+            <p>
+              4 - Create a list of docsets to render in a new file 
+              <strong>
+                <code>
+                  index.json
+                </code>
+              </strong>
+               inside 
+              <strong>
+                <code>
+                  data
+                </code>
+              </strong>
+              :
+            </p>
+            
+
+            <pre>
+              <code
+                class="json language-json"
+              >
+                {
+"docs": [
+"hsDocs.json",
+...
+],
+"title": "HS Libraries"   // will be displayed at the top left corner
+}
+
+              </code>
+            </pre>
+            
+
+            <p>
+              5 - optionally, create a 
+              <code>
+                src
+              </code>
+               folder inside the 
+              <code>
+                data
+              </code>
+               folder and copy the 
+              <code>
+                html
+              </code>
+              -ified source files into it.
+These are created by the command 
+              <code>
+                grunt sourceCode
+              </code>
+               in the 
+              <code>
+                docs/data/src/
+              </code>
+               folder of your project.
+            </p>
+            
+
+            <p>
+              6 - Point a browser to the web-app directory
+            </p>
+            
+
+            <h2
+              id="creating-the-documentation-docset"
+            >
+              Creating the Documentation DocSet
+            </h2>
+            
+
+            <p>
+              Follow the instruction for 
+              <code>
+                typedoc
+              </code>
+               in commenting the code and set the 
+              <code>
+                json
+              </code>
+               option to create a
+json file containing the documentation. See the Configuration section below for details.
+            </p>
+            
+
+            <p>
+              In addition to the documented source files, 
+              <code>
+                hsDocs
+              </code>
+               recognizes a special 
+              <strong>
+                <code>
+                  overview.ts
+                </code>
+              </strong>
+               file
+that will be displayed as a project overview.
+For this to work, 
+              <code>
+                typedoc
+              </code>
+               requires the file to have two separate comment entries.
+If the second comment is missing, 
+              <code>
+                typedoc
+              </code>
+               will not generate a comment in the DocSet.
+            </p>
+            
+
+            <p>
+              DocSets are shown as menu tabs across the top of the window. To include a DocSet in the menu, ensure that the
+corresponding documentation 
+              <code>
+                &lt;DocSet&gt;.json
+              </code>
+               file is copied into the 
+              <code>
+                data
+              </code>
+               folder inside the folder that holds the serving html file.
+Then edit the 
+              <code>
+                index.json
+              </code>
+               file to include the documentation file name in the "docs" section. If no 
+              <code>
+                index.json
+              </code>
+               file is found,
+
+              <code>
+                hsDocs
+              </code>
+               will attempt to load a directory listing of the 
+              <code>
+                data
+              </code>
+               file and include all encountered 
+              <code>
+                *.json
+              </code>
+               files as DocSet.
+This requires enabling the http server to provide a directory listing for the 
+              <code>
+                data
+              </code>
+               folder.
+            </p>
+            
+
+            <h3
+              id="modules"
+            >
+              Modules
+            </h3>
+            
+
+            <p>
+              Each source file is considered to be a 
+              <code>
+                module
+              </code>
+              . Modules are shown in the left-hand overview panel of the main 
+              <code>
+                hsDocs
+              </code>
+               window.
+Alternatively, a 
+              <code>
+                @module
+              </code>
+               statement in the summary comment at the top of a file will create, or add to, a module of the specified name.
+This encourages to separate code into files without cluttering the overview.
+            </p>
+            
+
+            <h3
+              id="linking-across-the-docsets"
+            >
+              Linking across the docsets
+            </h3>
+            
+
+            <p>
+              Links to items across the docsets can be placed via a link directive:
+            </p>
+            
+
+            <ul>
+              
+
+              <li>
+                <code>
+                  {@link [docset:]module.item
+                </code>
+                 linked text
+                <code>
+                  }
+                </code>
+                ,
+              </li>
+              
+
+            </ul>
+            
+
+            <p>
+              where
+            </p>
+            
+
+            <ul>
+              
+
+              <li>
+                <em>
+                  docset
+                </em>
+                 optional; the name of the docset. If omitted, a link within the current docSet will be created
+              </li>
+              
+
+              <li>
+                <em>
+                  module
+                </em>
+                 is name of the module to link to;
+if 
+                <em>
+                  module
+                </em>
+                 is 
+                <code>
+                  overview
+                </code>
+                , or unspecified, the link will point to the docset overview page.
+              </li>
+              
+
+              <li>
+                <em>
+                  item
+                </em>
+                 is the name, or period-separated path, of the item within the module.
+              </li>
+              
+
+              <li>
+                <em>
+                  linked text
+                </em>
+                 is displayed with a link to path within module
+              </li>
+              
+
+            </ul>
+            
+
+            <p>
+              Examples:
+            </p>
+            
+
+            <ul>
+              
+
+              <li>
+                <code>
+                  {@link overview
+                </code>
+                 this hsDocs overview
+                <code>
+                  }
+                </code>
+                 -&gt; 
+                <a
+                  href="#!/api/hsDocs/0"
+                >
+                  this hsDocs overview
+                </a>
+              </li>
+              
+
+              <li>
+                <code>
+                  {@link hsDocs:
+                </code>
+                 this hsDocs overview
+                <code>
+                  }
+                </code>
+                 -&gt; 
+                <a
+                  href="#!/api/hsDocs/0"
+                >
+                  this hsDocs overview
+                </a>
+              </li>
+              
+
+              <li>
+                <code>
+                  {@link hsDocs:DocSets.DocSets.add
+                </code>
+                 the 
+                <code>
+                  add
+                </code>
+                 function
+                <code>
+                  }
+                </code>
+                 -&gt; 
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.DocSets.add"
+                >
+                  the 
+                  <code>
+                    add
+                  </code>
+                   function
+                </a>
+              </li>
+              
+
+              <li>
+                <code>
+                  {@link DocSets.DocSets.add
+                </code>
+                 the 
+                <code>
+                  add
+                </code>
+                 function
+                <code>
+                  }
+                </code>
+                 -&gt; 
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.DocSets.add"
+                >
+                  the 
+                  <code>
+                    add
+                  </code>
+                   function
+                </a>
+              </li>
+              
+
+            </ul>
+            
+
+            <h3
+              id="mithril-code-examples"
+            >
+              Mithril Code Examples
+            </h3>
+            
+
+            <p>
+              <code>
+                hsDocs
+              </code>
+               supports creating inline code examples in comment sections as explained
+in the 
+              <a
+                href="#!/api/hsDocs/hsDocs.view.MainExample"
+              >
+                MainExample overview
+              </a>
+              .
+            </p>
+            
+
+            <style>
+              #hs972497 .myBlock {
+    text-align:center;
+    color: white;
+    background-color: red;
+    position:relative;
+    width:  20%;
+    height: 30%;
+}
+.myBlock div {
+    padding-top: 40%;
+}
+            </style>
+            
+
+            <p>
+              <example
+                class="hs-layout-frame"
+                id="hs844716"
+                style="height:300px"
+              />
+            </p>
+            
+
+            <h2
+              id="configuring-typedoc"
+            >
+              Configuring typedoc
+            </h2>
+            
+
+            <p>
+              As an example, we use grunt-typedoc with the following configuration:
+            </p>
+            
+
+            <h3
+              id="tsconfigjson"
+            >
+              tsconfig.json:
+            </h3>
+            
+
+            <p>
+              A 
+              <code>
+                tsconfig.json
+              </code>
+               file seems to be required by typedoc. The file can be empty
+            </p>
+            
+
+            <h3
+              id="gruntfile"
+            >
+              Gruntfile:
+            </h3>
+            
+
+            <pre>
+              <code>
+                module.exports = function(grunt) {
+
+                <span
+                  class="hs-code-indent"
+                />
+                ...
+
+                <span
+                  class="hs-code-indent"
+                />
+                typedoc: {
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                code: {
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                options: {
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                tsconfig: 'typedoc.json',
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                json:   './docs/hsDocs.json',
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                out:    './docs',
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                mode:   'modules',
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                name:   'hsDocs'
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                }
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                src: ['src/*.ts', '!src/*.spec.ts']
+
+                <span
+                  class="hs-code-indent"
+                />
+                <span
+                  class="hs-code-indent"
+                />
+                }
+
+                <span
+                  class="hs-code-indent"
+                />
+                },
+
+                <span
+                  class="hs-code-indent"
+                />
+                
+
+                <span
+                  class="hs-code-indent"
+                />
+                ...
+
+                <span
+                  class="hs-code-indent"
+                />
+                grunt.loadNpmTasks('grunt-typedoc');
+
+                <span
+                  class="hs-code-indent"
+                />
+                ...
+
+                <span
+                  class="hs-code-indent"
+                />
+                grunt.registerTask('doc', ['typedoc']);
+}
+              </code>
+            </pre>
+            
+
+            <h2
+              id="dependencies"
+            >
+              Dependencies
+            </h2>
+            
+
+            <h3
+              id="for-creating-the-docsets"
+            >
+              For creating the docsets:
+            </h3>
+            
+
+            <ul>
+              
+
+              <li>
+                <a
+                  href="http://typedoc.org"
+                >
+                  typedoc
+                </a>
+              </li>
+              
+
+            </ul>
+            
+
+            <h3
+              id="for-rendering-the-docsets"
+            >
+              For rendering the docsets:
+            </h3>
+            
+
+            <ul>
+              
+
+              <li>
+                <a
+                  href="https://mithril.js.org"
+                >
+                  Mithril
+                </a>
+              </li>
+              
+
+              <li>
+                <a
+                  href="https://github.com/showdownjs/showdown"
+                >
+                  showdown
+                </a>
+              </li>
+              
+
+              <li>
+                [hsLayout]
+              </li>
+              
+
+              <li>
+                [webpack]
+              </li>
+              
+
+            </ul>
+            
+
+            <h2
+              id="structural-code-overview"
+            >
+              Structural Code Overview
+            </h2>
+            
+
+            <p>
+              The main entry point for the web-app is index.ts, which initiates loading the docsets
+and sets up a mithril 
+              <a
+                href="#!/api/hsDocs/hsDocs.Router"
+              >
+                router
+              </a>
+            </p>
+          </div>
+          
+          <div>
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

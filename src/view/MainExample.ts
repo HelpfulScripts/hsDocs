@@ -127,7 +127,7 @@ import * as hslayout            from 'hslayout';
 import { Layout }               from 'hslayout';
 import { shortCheckSum }        from 'hsutil'; 
 import { delay }                from 'hsutil'; 
-import { log as _log }          from 'hsutil';  const log = _log('MainExample');
+import { Log }                  from 'hsutil';  const log = new Log('MainExample');
 import * as hsutil              from 'hsutil';
 
 const modules = {

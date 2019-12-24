@@ -3,13 +3,13 @@
  */
 /** */
 
-import { log as _log }          from 'hsutil'; const log = _log('DocTypes');
+import { Log }                  from 'hsutil'; const log = new Log('DocTypes');
 import { DocsNode }             from './Nodes';
 import { DocsIndexSignature }   from './Nodes';
 import { m, Vnode}              from 'hslayout';
 import { libLink }              from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
-import { json } from './DocSets';
+import { json }                 from './DocSets';
 
 interface DocsGenericType {
     type: string;

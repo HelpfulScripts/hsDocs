@@ -8,7 +8,7 @@
 
 /** */
 import { m }            from 'hslayout';
-import { log as gLog }  from 'hsutil'; const log = gLog('DocsSets');
+import { Log }          from 'hsutil'; const log = new Log('DocsSets');
 import { DocsNode }     from './Nodes';
 
 const DOCDIR:string = './data/';

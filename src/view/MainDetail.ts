@@ -3,7 +3,7 @@
  * 
  */
 /** */
-import { log as _log }          from 'hsutil'; const log = _log('MainDetail');
+import { Log }                  from 'hsutil'; const log = new Log('MainDetail');
 import { m, Vnode}              from 'hslayout';
 import { Layout }               from 'hslayout';
 import { DocsNode }             from '../Nodes';

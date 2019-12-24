@@ -5,7 +5,7 @@
 
 /** */
 import { Vnode}                 from 'hslayout';
-import { log as _log }          from 'hsutil'; const log = _log('Nodes');
+import { Log }                  from 'hsutil'; const log = new Log('Nodes');
 import { json }                 from './DocSets';
 import { DocSets }              from './DocSets';
 import { DocsType }             from './Types';
