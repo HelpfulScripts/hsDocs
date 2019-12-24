@@ -4,7 +4,7 @@
 
  /** */
 import { m, Vnode}              from 'hslayout';
-import { log as _log }          from 'hsutil'; const log = _log('NodesDisplay');
+import { Log }                  from 'hsutil'; const log = new Log('NodesDisplay');
 import { DocsNode, DocsSignature }             from './Nodes';
 import { DocsParameter }        from './Nodes';
 import { DocSets }              from './DocSets';
@@ -343,20 +343,15 @@ interface TestFunction {
     (n:DocsNode): boolean;
 }
 interface Access {
-    text: {true:string; false:string;};
-    fn: TestFunction;
+    text: {true:string; false:string;}[];
+    sort: TestFunction[];
+    css: string[];
 }
 export function members(node:DocsNode):Vnode {
     const not        = (fn:TestFunction) => (n:DocsNode) => !fn(n);
     const isStatic   = (n:DocsNode) => n.flags.isStatic === true;
     const isExported = (n:DocsNode) => n.flags.isExported === true;
-    const isPublic   = (n:DocsNode) => (n.flags.isPublic || (!n.flags.isPrivate && !n.flags.isProtected)) === true;
-
-    const access:Access = {
-        text: {true:'Public', false:'Protected or Private'},
-        fn: isPublic
-    };
-    const grp = node.groups;
+    const isPublic   = (n:DocsNode) => (n.flags.isPublic || (!n.flags.isPrivate && !n.flags.isProtected))? true : false;
     const filterChildren = (cs:[string,DocsNode[]][], filters:((n:DocsNode)=>boolean)[]):[string,DocsNode[]][] => {
         if (filters.length===0) { return cs; }
         const remaining = filters.slice(1);
@@ -365,15 +360,25 @@ export function members(node:DocsNode):Vnode {
             ...filterChildren(cs.map(m => [m[0], m[1].filter(not(filters[0]))]), remaining)
         ].filter(m => m[1].length);
     };
+
+    /** flags to sort by */
+    let sorts:((n:DocsNode)=>boolean)[];
+    /** the  */
+    const access:Access = (node.kindString==='External module')? {
+            text: [{true:'Exported', false:'Internal'}, {true:'Static', false: ''}],
+            css: ['.hsdocs_flag_public', '.hsdocs_flag_static'],
+            sort:   [isExported, isStatic]
+        } : {
+            text: [{true:'Public', false:'Protected or Private'}, {true:'Static', false: ''}],
+            sort: [isPublic, isStatic],
+            css: ['.hsdocs_flag_public', '.hsdocs_flag_static'],
+        };
+    
+    const grp = node.groups;
     if (grp) {
         const children:[string,DocsNode[]][] = grp.map(g => [g.title, g.children.map(id => DocSets.getNode(id, node.lib))]);
-        const sorts = [isPublic, isStatic];
-        if (node.kindString==='External module') {
-            sorts[0] = isExported;
-            access.text = {true:'Exported', false:'Internal'};
-            access.fn = isExported;
-        }
-        const _members = filterChildren(children, sorts);
+        // flags to sort by: 
+        const _members = filterChildren(children, access.sort);
         return m('.hsdocs_members', _members.map(m => member(m[1], m[0], access)));
 
     } else if (node.parameters) {
@@ -418,10 +423,12 @@ function itemChild(node:DocsNode): Vnode[] {
 }
 
 function getFlagText(n:DocsNode, access:Access) {
-    const f = n.flags;
-    const select = access.fn(n);
-    const css = `${f.isStatic?'.hsdocs_flag_static' : ''} ${select?'hsdocs_flag_public' : ''}`;
-    return [css, `${access.text[''+select]} ${f.isStatic? 'Static' : ''}`];
+    const select:boolean[] = access.sort.map(f => f(n));
+    const css = select.map((f,i) => f? access.css[i]:'').join(' ').trim();
+    const flagText = select.map((f,i) => access.text[i][''+f]).join(' ').trim();
+    return [css, flagText];
+    // const css = `${f.isStatic?'.hsdocs_flag_static' : ''} ${select?'.hsdocs_flag_public' : ''}`;
+    // return [css, `${access.text[''+select]} ${f.isStatic? 'Static' : ''}`];
 }
 
 /**
