@@ -10,8 +10,14 @@
 .hsdocs_node {
     padding: 4px 0 0px 0px;  
     font-size: 1em;
-    background-color: #f8f8f8;
+    background-color: #f8f8ff;
     border-bottom: 3px solid white;
+    .hsdocs_flag_public>& {
+        background-color: #f8fff8;
+    }
+    .hsdocs_flag_static>& {
+        background-color: #f8f8f0;
+    }
 }
 
 .hsdocs_main { // the main information window on the right
@@ -51,7 +57,9 @@
 }
 
 .hsdocs_member_title {
-    background-color: @Background;
+    background-color: #e0e0ef;
+    .hsdocs_flag_public>& { background-color: #e0e8e0; }
+    .hsdocs_flag_static>& { background-color: #efefe0; }
     font-size: 1em;
     font-weight:bold;
     padding: 5px 0px 5px 5px;
@@ -87,7 +95,7 @@
 
 .hsdocs_member {
 //    border-top: 1px solid #f8f8f8;
-    @ChildBackground: @Background; 
+//  @ChildBackground: @Background; 
     &hsdocs_flag_public {
         .hsdocs_member_title {
             background-color: @PublicBackground;
@@ -96,8 +104,11 @@
         .hsdocs_node_variable {
             background: linear-gradient(to bottom, @PublicBackground @BgStop, @Transparent); 
         }
+        // .hsdocs_nodes {
+        //     background-color: #f0f0f8;
+        // }
     }
-    &.hsdocs_flag_static {
+    .hsdocs_flag_static {
         .hsdocs_member_title {
             background-color: @StaticBackground;
             color: @StaticTitleColor;

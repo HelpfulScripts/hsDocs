@@ -56,7 +56,7 @@ export class DocsType implements DocsReferenceIdType {
         this.node = node;
     }
 
-    mType() { return m('span.hsdocs_type_unknown', 'default type'); }
+    mType(parent:DocsNode) { return m('span.hsdocs_type_unknown', 'default type'); }
 }
 
 class DocsIntrinsicType extends DocsType {
@@ -65,8 +65,8 @@ class DocsIntrinsicType extends DocsType {
         super(mdlType, node);
         this.name = mdlType.name;
     }
-    mType() {
-        return m('span.hsdocs_type_intrinsic', this.id? libLink(this.node.lib, this.id, this.name) : this.name); 
+    mType(parent:DocsNode) {
+        return m('span.hsdocs_type_intrinsic', this.id? libLink(this.node.lib, this.id, this.name) : parent.getName()); 
     }
 }
 
@@ -77,11 +77,11 @@ class DocsReferenceType extends DocsType {
         this.typeArguments = !mdlType.typeArguments? [] : mdlType.typeArguments.map((t:DocsNamedType) => DocsType.makeType(t, node));
     }
 
-    mType() {
+    mType(parent:DocsNode) {
         let refRes = [this.id? libLink(this.node.lib, this.id, this.name) : this.name];
         if (this.typeArguments.length) { 
             refRes.push('<');
-            refRes.push(...this.typeArguments.map(t => t.mType()));
+            refRes.push(...this.typeArguments.map(t => t.mType(parent)));
             refRes.push('>'); 
         }
         return m('span.hsdocs_type_reference', refRes);        
@@ -114,8 +114,8 @@ class DocsArrayType extends DocsType {
         super(mdlType, node);
         this.elementType = DocsType.makeType(mdlType.elementType, node);
     }
-    mType() {
-        return m('span.hsdocs_type_array', ['Array<', this.elementType.mType(), '>']);
+    mType(parent:DocsNode) {
+        return m('span.hsdocs_type_array', ['Array<', this.elementType.mType(parent), '>']);
     }
 }
 
@@ -160,12 +160,12 @@ class DocsReflectionType extends DocsType {
         }
     }
 
-    mType() {
+    mType(parent:DocsNode) {
         const dec = this.declaration;
         const rflRes = !dec? 'UNKNOWN' : 
             dec.children? [
                 '{ ',
-                ...dec.children.map((c:any, i:number) => `${c.name}: ${c.type.mType()}`).join(', '),
+                ...dec.children.map((c:any, i:number) => `${c.name}: ${c.type.mType(parent)}`).join(', '),
                 ' }'
             ] : dec.getSignatures()? [
                 ...dec.getSignatures().map(s => titleArr(s))
@@ -181,10 +181,10 @@ class DocsTupleType extends DocsType {
         super(mdlType, node);
         mdlType.elements.forEach((e:DocsType) => this.elements.push(DocsType.makeType(e, node)));
     }
-    mType() {
+    mType(parent:DocsNode) {
         return m('span.hsdocs_type_tuple', [
             '[ ',
-            ...this.elements.map((e:any, i:number) => [i>0?', ':undefined, e.mType()]),
+            ...this.elements.map((e:any, i:number) => [i>0?', ':undefined, e.mType(parent)]),
             ' ]'
         ]);
     }
@@ -197,7 +197,7 @@ class DocsUnionType extends DocsType {
         mdlType.types.forEach((t:DocsReferenceIdType) => this.types.push(DocsType.makeType(t, node)));
     }
 
-    mType():Vnode {
-        return m('span.hsdocs_type_union', [...this.types.map((t:any, i:number) => m('span', [i>0?' | ':'', t.mType()]))]);
+    mType(parent:DocsNode):Vnode {
+        return m('span.hsdocs_type_union', [...this.types.map((t:any, i:number) => m('span', [i>0?' | ':'', t.mType(parent)]))]);
     }
 }

@@ -324,54 +324,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsModule"
-                    >
-                      DocsModule
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.Nodes.DocsAccessors"
                     >
                       DocsAccessors
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsProperty"
-                    >
-                      DocsProperty
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsExternalModule"
-                    >
-                      DocsExternalModule
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumerationMember"
-                    >
-                      DocsEnumerationMember
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumeration"
-                    >
-                      DocsEnumeration
                     </a>
                   </div>
                   <div>
@@ -396,15 +351,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsConstructorSignature"
-                    >
-                      DocsConstructorSignature
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.Nodes.DocsConstructor"
                     >
                       DocsConstructor
@@ -414,18 +360,36 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsStructured"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsConstructorSignature"
                     >
-                      DocsStructured
+                      DocsConstructorSignature
                     </a>
                   </div>
                   <div>
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsObjectLiteral"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumeration"
                     >
-                      DocsObjectLiteral
+                      DocsEnumeration
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsEnumerationMember"
+                    >
+                      DocsEnumerationMember
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsExternalModule"
+                    >
+                      DocsExternalModule
                     </a>
                   </div>
                   <div>
@@ -441,6 +405,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsInterface"
+                    >
+                      DocsInterface
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.Nodes.DocsMethod"
                     >
                       DocsMethod
@@ -450,9 +423,27 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsInterface"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsModule"
                     >
-                      DocsInterface
+                      DocsModule
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsObjectLiteral"
+                    >
+                      DocsObjectLiteral
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsProperty"
+                    >
+                      DocsProperty
                     </a>
                   </div>
                   <div>
@@ -471,6 +462,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.Nodes.DocsSourced"
                     >
                       DocsSourced
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsStructured"
+                    >
+                      DocsStructured
                     </a>
                   </div>
                   <div>
@@ -728,18 +728,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.titleArr"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.inlineTitle"
                     >
-                      titleArr
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.title"
-                    >
-                      title
+                      inlineTitle
                     </a>
                   </div>
                   <div>
@@ -764,27 +755,18 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.inlineTitle"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.title"
                     >
-                      inlineTitle
+                      title
                     </a>
                   </div>
                   <div>
                     
                     <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mSignature"
+                      class="hs-left-nav-entry   hs-left-nav-exported"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.titleArr"
                     >
-                      mSignature
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mFlags"
-                    >
-                      mFlags
+                      titleArr
                     </a>
                   </div>
                   <div>
@@ -800,6 +782,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mExtendedBy"
+                    >
+                      mExtendedBy
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.NodesDisplay.mExtensionOf"
                     >
                       mExtensionOf
@@ -809,9 +800,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mExtendedBy"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mFlags"
                     >
-                      mExtendedBy
+                      mFlags
                     </a>
                   </div>
                   <div>
@@ -857,6 +848,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.NodesDisplay.mKindString"
                     >
                       mKindString
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.mSignature"
+                    >
+                      mSignature
                     </a>
                   </div>
                   <div>
@@ -998,15 +998,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.Types.DocsTupleType"
-                    >
-                      DocsTupleType
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.Types.DocsArrayType"
                     >
                       DocsArrayType
@@ -1046,6 +1037,15 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.Types.DocsStringLiteralType"
                     >
                       DocsStringLiteralType
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.Types.DocsTupleType"
+                    >
+                      DocsTupleType
                     </a>
                   </div>
                   <div>

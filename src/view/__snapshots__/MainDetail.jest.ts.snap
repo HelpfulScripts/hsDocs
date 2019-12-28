@@ -253,7 +253,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      any
+                      json
                     </span>
                   </span>
                 </span>
@@ -327,7 +327,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      string
+                      DOCDIR
                     </span>
                   </span>
                   <span
@@ -397,7 +397,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      string
+                      FILE
                     </span>
                   </span>
                   <span
@@ -584,7 +584,7 @@ provides access to elements of each docset.
                             <span
                               class="hsdocs_type_intrinsic"
                             >
-                              string
+                              dir
                             </span>
                           </span>
                         </span>
@@ -612,7 +612,7 @@ provides access to elements of each docset.
                             <span
                               class="hsdocs_type_intrinsic"
                             >
-                              string
+                              file
                             </span>
                           </span>
                         </span>
@@ -642,7 +642,7 @@ provides access to elements of each docset.
                       <span
                         class="hsdocs_type_intrinsic"
                       >
-                        void
+                        loadDocSet
                       </span>
                       &gt;
                     </span>
@@ -756,7 +756,7 @@ Once received, the docset is registered in
                             <span
                               class="hsdocs_type_intrinsic"
                             >
-                              string
+                              str
                             </span>
                           </span>
                         </span>
@@ -813,7 +813,7 @@ Once received, the docset is registered in
                       <span
                         class="hsdocs_type_intrinsic"
                       >
-                        string
+                        matchAll
                       </span>
                       &gt;
                     </span>
@@ -1526,7 +1526,7 @@ in the
             
 
             <style>
-              #hs972497 .myBlock {
+              #hs884836 .myBlock {
     text-align:center;
     color: white;
     background-color: red;
@@ -1543,7 +1543,7 @@ in the
             <p>
               <example
                 class="hs-layout-frame"
-                id="hs844716"
+                id="hs336924"
                 style="height:300px"
               />
             </p>

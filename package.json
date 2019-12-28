@@ -23,7 +23,7 @@
     "url": "https://github.com/HelpfulScripts/hsDocs.git"
   },
   "engines": {
-    "node": ">= 10.14.0"
+    "node": ">= 12.14.0"
   },
   "plugins": [
     "plugins/markdown"

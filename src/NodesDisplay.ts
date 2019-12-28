@@ -230,11 +230,13 @@ function mType(node:DocsNode):Vnode {
     }
     try {
         return m('span', [
-            m('span.hsdocs_type', node.type.mType()),
+            m('span.hsdocs_type', node.type.mType(node)),
             !node.defaultValue? undefined : m('span.hsdocs_type_default', 
                 ` = ${node.defaultValue.replace(/{/gi, '{ ').replace(/}/gi, ' }')}`)
          ]);
-     } catch(e) { log.error(e); log.error(e.trace); }     
+     } catch(e) { 
+         log.error(e); log.error(e.trace); 
+    }     
 }
 
 function mExtensionOf(node:DocsNode):Vnode {
@@ -272,7 +274,7 @@ function mInheritedFrom(node:DocsNode):Vnode {
         } else {
             return m('span.hsdocs_inheritedFrom', [
                 m('span', 'inherited from '),
-                m('span', node.inheritedFrom.getName())
+                m('span', node.inheritedFrom.name)
             ]);
         }
     } else {
@@ -415,11 +417,17 @@ function member(nodes:DocsNode[], title:string, access:Access): Vnode {
 }
 
 function itemChild(node:DocsNode): Vnode[] {
-    return node.getSignatures()? 
-        node.getSignatures().map((s:DocsNode) => 
+    if (node.getSignatures()) {
+        return node.getSignatures().map((s:DocsNode) => 
             m('.hsdocs_child', [titleArr(node), s.commentLong()])
-        )
-      : m('.hsdocs_child', [titleArr(node), node.commentLong()]);
+        );
+    } else if (node.commentLong()) {
+        return m('.hsdocs_child', [titleArr(node), node.commentLong()]);
+    } else if (node.inheritedFrom) {
+        return m('.hsdocs_child', node.inheritedFrom.name);
+    } else {
+        return m('.hsdocs_child', titleArr(node));
+    }
 }
 
 function getFlagText(n:DocsNode, access:Access) {

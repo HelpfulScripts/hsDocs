@@ -613,7 +613,7 @@
 .hsdocs_flag_public {
   color: #44f;
   padding: 10px 0.4em 2px 0em;
-  color: #484;
+  color: #242;
 }
 .hsdocs_flag_private {
   color: #44f;
@@ -628,7 +628,7 @@
 .hsdocs_flag_static {
   color: #44f;
   padding: 10px 0.4em 2px 0em;
-  color: #888;
+  color: #666;
 }
 .hsdocs_flag_abstract {
   color: #44f;
@@ -864,8 +864,14 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 .hsdocs_node {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node {
+  background-color: #f8f8f0;
 }
 .hsdocs_main {
   border-left: 1px solid #ccc;
@@ -903,6 +909,12 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
   padding: 5px 0px 5px 5px;
   margin: 4px 0;
 }
+.hsdocs_flag_public > .hsdocs_member_title {
+  background-color: #e0e8e0;
+}
+.hsdocs_flag_static > .hsdocs_member_title {
+  background-color: #efefe0;
+}
 .hsdocs_member_title span {
   margin-left: 5px;
   margin-right: 5px;
@@ -935,11 +947,11 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 .hsdocs_memberhsdocs_flag_public .hsdocs_node_variable {
   background: linear-gradient(to bottom, #e0efe0 30%, rgba(255, 255, 255, 0));
 }
-.hsdocs_member.hsdocs_flag_static .hsdocs_member_title {
+.hsdocs_member .hsdocs_flag_static .hsdocs_member_title {
   background-color: #efefe0;
   color: #600;
 }
-.hsdocs_member.hsdocs_flag_static .hsdocs_node_variable {
+.hsdocs_member .hsdocs_flag_static .hsdocs_node_variable {
   background: linear-gradient(to bottom, #efefe0 30%, rgba(255, 255, 255, 0));
 }
 .hsdocs_member-type {
@@ -948,74 +960,146 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 .hsdocs_node_class {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_class {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_class {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_interface {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_interface {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_interface {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_constructor {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_constructor {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_constructor {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_externalModule {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_externalModule {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_externalModule {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_typeAlias {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_typeAlias {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_typeAlias {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_property {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_property {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_property {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_accessors {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_accessors {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_accessors {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_parameter {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_parameter {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_parameter {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_objectLiteral {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_objectLiteral {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_objectLiteral {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_variable {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_variable {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_variable {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_method {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_method {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_method {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_function {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
+}
+.hsdocs_flag_public > .hsdocs_node_function {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_function {
+  background-color: #f8f8f0;
 }
 .hsdocs_node_inherited {
   background-color: #f8f8f8;
@@ -1032,11 +1116,17 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 .hsdocs_node_unknown {
   padding: 4px 0 0px 0px;
   font-size: 1em;
-  background-color: #f8f8f8;
+  background-color: #f8f8ff;
   border-bottom: 3px solid white;
   background-color: #f00;
   color: #fff;
   font-weight: bold;
+}
+.hsdocs_flag_public > .hsdocs_node_unknown {
+  background-color: #f8fff8;
+}
+.hsdocs_flag_static > .hsdocs_node_unknown {
+  background-color: #f8f8f0;
 }
 pre {
   padding-left: 10px;
