@@ -520,11 +520,11 @@ input.hsedit_label {
   border: 0;
   font-family: inherit;
   font-size: inherit;
-  width: 100%;
 }
 .hsedit_label.default {
   color: #aaa;
   font-style: italic;
+  width: 100px;
 }
 div.hsedit_list_header {
   height: 20px;
@@ -537,6 +537,9 @@ div.hsedit_list_header {
 }
 .hsedit_list_row {
   height: 20px;
+  overflow-x: hidden;
+}
+.hsedit_list_row .hs-layout {
   overflow-x: hidden;
 }
 .hsedit_select {
