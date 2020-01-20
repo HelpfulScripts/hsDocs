@@ -213,18 +213,7 @@
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a>
-<a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a>
-<a name='L178'></a><a href='#L178'>178</a>
-<a name='L179'></a><a href='#L179'>179</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,17 +233,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,8 +259,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -425,17 +403,6 @@ const FILE:string = './data/index.json';
 &nbsp;
 export type json = any;
 &nbsp;
-// export interface List {
-//     // set:    string[];
-//     index:  {[id:string]:json};
-//     // docs:   string[];
-// }
-&nbsp;
-// interface Tag {
-//     tag: 'module';
-//     text: string;
-// }
-&nbsp;
 function <span class="fstat-no" title="function not covered" >matchAll(</span>str:string, re:RegExp): string[] {
     const result:string[] = <span class="cstat-no" title="statement not covered" >[];</span>
     let partial:string[];
@@ -459,11 +426,11 @@ export class DocSets {
 &nbsp;
     /** an optional title for the set of DocSets loaded, as specified in the `index.json` file. */
     private static gTitle: string = '';
-    
-    static nodeCount = 0;
     private static nodeList = &lt;{[id:string]: DocsNode}&gt;{};
     
-    static addNode(mdl:json, node:DocsNode) {
+    public static nodeCount = 0;
+    
+    public static addNode(mdl:json, node:DocsNode) {
         const id = mdl.id;
         const lib =  mdl.lib;
         DocSets.nodeList[`${lib}.${id}`] = node;
@@ -486,7 +453,7 @@ export class DocSets {
         log.info(`traversed '${root.fullPath}'`);
     }
     
-    static getNode(id:string|number, lib:string):DocsNode {
+    public static getNode(id:string|number, lib:string):DocsNode {
         const key = ((typeof id === 'number') || (parseInt(''+id, 10)&gt;=0))? `${lib}.${id}` : id;
         // log.info(`getNode id=${id}, lib=${lib} -&gt; ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
         <span class="missing-if-branch" title="if path not taken" >I</span>if (DocSets.nodeList.length &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!DocSets.nodeList[key])</span> { 

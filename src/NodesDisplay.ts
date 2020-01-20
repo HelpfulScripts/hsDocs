@@ -9,7 +9,7 @@ import { DocsNode, DocsSignature }             from './Nodes';
 import { DocsParameter }        from './Nodes';
 import { DocSets }              from './DocSets';
 import { DocsParamaterized }    from './Nodes';
-import { flagsDisplay, Flags }  from './Flags';
+import { flagsDisplay }         from './Flags';
 import { DocsReferenceIdType }  from './Types';
 import { DocsNamedType }        from './Types';
 import { json }                 from './DocSets';
@@ -35,8 +35,13 @@ interface Tag {
  * @param id the id number to point to
  * @param name the name on which to formt he link
  */
-export function libLink(lib:string, id:string|number, name:string, css=''):Vnode {
-    return m(`a${css}`, { href:`#!/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+export function libLinkByPath(lib:string, path:string, name:string, css=''):Vnode {
+    return m(`a${css}`, { href:`#!/api/${lib}/${path}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+}
+
+function libLinkByID(lib:string, id:string|number, name:string, css=''):Vnode {
+    const path = (DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';
+    return libLinkByPath(lib, path, name, css);
 }
 
 export class DocsComment {
@@ -182,7 +187,7 @@ function mKindString(node:DocsNode):Vnode {
 }
 
 function mItemName(node:DocsNode):Vnode {
-    return m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLink(node.lib, node.fullPath, node.getName()));
+    return m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLinkByPath(node.lib, node.fullPath, node.getName()));
 }
 
 function mSignature(node:DocsNode):Vnode {
@@ -245,7 +250,7 @@ function mExtensionOf(node:DocsNode):Vnode {
         m('span.hsdocs_extends', 'extends'),
         m('span', types.map((t:DocsReferenceIdType, i:number) =>
             m('span.hsdocs_extensionType', [(i>0)?', ' : '',
-                libLink(node.lib, (DocSets.getNode(t.id, node.lib)||{fullPath:''}).fullPath||'', t.name),
+                t.id? libLinkByID(node.lib, t.id, t.name) : t.name,
             ])
         )),
     ]);
@@ -255,9 +260,7 @@ function mImplementationOf(node:DocsNode):Vnode {
     return !node.implementedTypes? undefined : m('span.hsdocs_implementationsOf', [
         m('span.hsdocs_implements', 'implements'),
         m('span', node.implementedTypes.map((t:DocsNamedType, i:number) =>
-            m('span.hsdocs_implementationType', [ (i>0)?', ' : '',
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-            ])
+            m('span.hsdocs_implementationType', [ (i>0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])
         )),
     ]);
 }
@@ -269,7 +272,7 @@ function mInheritedFrom(node:DocsNode):Vnode {
             parent = DocSets.getNode(parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')), node.lib);
             return m('span.hsdocs_inheritedFrom', [
                 m('span', 'inherited from '),
-                libLink(parent.lib, parent.fullPath, parent.getName())
+                libLinkByPath(parent.lib, parent.fullPath, parent.getName())
             ]);
         } else {
             return m('span.hsdocs_inheritedFrom', [
@@ -302,9 +305,7 @@ function mExtendedBy(node:DocsNode):Vnode {
     return !node.extendedBy? undefined : m('div.hsdocs_extendedBy',[
         m('span.hsdocs_extended_by', 'extended by'),
         m('span', node.extendedBy.map((t:any, i:number) =>
-            m('span.hsdocs_extendedby_type', [(i>0)?', ' : '',
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-            ])
+            m('span.hsdocs_extendedby_type', [(i>0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])
         )),
     ]);
 }
@@ -313,10 +314,7 @@ function mImplementedBy(node:DocsNode):Vnode {
     return !node.implementedBy? undefined : m('div.hsdocs_implementedBy',[
         m('span.hsdocs_implemented_by', 'implemented by'),
         m('span', node.implementedBy.map((t:any, i:number) =>
-            m('span.hsdocs_implementedby_type', [(i>0)?', ' : '',
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-                // node.implementedBy.length>(i+1)? ', ': ''
-            ])
+            m('span.hsdocs_implementedby_type', [(i>0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])
         )),
     ]);
 }

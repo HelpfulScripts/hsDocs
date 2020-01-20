@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.98% </span>
+        <span class="strong">42.42% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>55/131</span>
+        <span class='fraction'>56/132</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">40.48% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>10/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.69% </span>
+        <span class="strong">46.15% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>53/116</span>
+        <span class='fraction'>54/117</span>
       </div>
     </div>
     <p class="quiet">
@@ -473,7 +473,12 @@
 <a name='L425'></a><a href='#L425'>425</a>
 <a name='L426'></a><a href='#L426'>426</a>
 <a name='L427'></a><a href='#L427'>427</a>
-<a name='L428'></a><a href='#L428'>428</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -636,6 +641,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -730,11 +745,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1064,6 +1074,16 @@ interface CommentDescriptor {
  */
 const gInitialized:{string?:CommentDescriptor} = {};
 &nbsp;
+/** used to generate unique IDs for examples. */
+let gIDCounter = 100000;
+&nbsp;
+/** creates a new random example ID for each call. */
+function getNewID():string { 
+    // return 'hs'+Math.floor(1000000*Math.random());
+    return 'hs'+gIDCounter++;
+}
+&nbsp;
+&nbsp;
 /**
  * creates the example configuration, generates the DOM hook, and sets up the example execution.
  * `example` takes a context map of the form `{ name:module, ...}` containing libraries to be used 
@@ -1157,11 +1177,6 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         activeSrcPage: undefined,
         attrs: {libs:[]}
     };
-}
-&nbsp;
-/** creates a new random example ID for each call. */
-function getNewID():string { 
-    return 'hs'+Math.floor(1000000*Math.random());
 }
 &nbsp;
 /**

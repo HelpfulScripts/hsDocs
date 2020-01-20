@@ -105,7 +105,7 @@ Examples:
 
 
 ### Mithril Code Examples
- * `hsDocs` supports creating inline code examples in comment sections as explained 
+ * `hsDocs` supports creating  code examples in comment sections as explained 
  * in the {@link hsDocs:view.MainExample MainExample overview}.
  * <example>
  * <file name="script.js">

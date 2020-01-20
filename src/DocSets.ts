@@ -21,17 +21,6 @@ const FILE:string = './data/index.json';
 
 export type json = any;
 
-// export interface List {
-//     // set:    string[];
-//     index:  {[id:string]:json};
-//     // docs:   string[];
-// }
-
-// interface Tag {
-//     tag: 'module';
-//     text: string;
-// }
-
 function matchAll(str:string, re:RegExp): string[] {
     const result:string[] = [];
     let partial:string[];
@@ -55,11 +44,11 @@ export class DocSets {
 
     /** an optional title for the set of DocSets loaded, as specified in the `index.json` file. */
     private static gTitle: string = '';
-    
-    static nodeCount = 0;
     private static nodeList = <{[id:string]: DocsNode}>{};
     
-    static addNode(mdl:json, node:DocsNode) {
+    public static nodeCount = 0;
+    
+    public static addNode(mdl:json, node:DocsNode) {
         const id = mdl.id;
         const lib =  mdl.lib;
         DocSets.nodeList[`${lib}.${id}`] = node;
@@ -82,7 +71,7 @@ export class DocSets {
         log.info(`traversed '${root.fullPath}'`);
     }
     
-    static getNode(id:string|number, lib:string):DocsNode {
+    public static getNode(id:string|number, lib:string):DocsNode {
         const key = ((typeof id === 'number') || (parseInt(''+id, 10)>=0))? `${lib}.${id}` : id;
         // log.info(`getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
         if (DocSets.nodeList.length && !DocSets.nodeList[key]) { 

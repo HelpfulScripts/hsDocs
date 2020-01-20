@@ -6,7 +6,7 @@
 import { m, Vnode}      from 'hslayout';
 import { Layout }       from 'hslayout';
 import { Collapsible }  from 'hswidget';
-import { libLink }      from '../NodesDisplay'; 
+import { libLinkByPath }from '../NodesDisplay'; 
 import { DocSets }      from '../DocSets';
 
 
@@ -70,7 +70,7 @@ function navList(docSet:any, field:string):Vnode[] {
         if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { selected=true; }
 
         return m(Collapsible, {css:`.hs-left-nav-module`, preArrow: true, isExpanded:selected, components:[
-            m(`${selected?'.hs-left-nav-selected':''}`, libLink(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
+            m(`${selected?'.hs-left-nav-selected':''}`, libLinkByPath(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
             !mdl.groups? undefined : mdl.groups.map((g:any) => entries(g, mdl, field))
         ]});
     }
@@ -115,7 +115,7 @@ function entries(group:any, mdl:any, field:string) {
         return (!exported && group.title==='Variables')? '' :   // ignore local module variables
             m('', [
                 isStatic? 'static': '',
-                libLink(mod.lib, mod.fullPath, mod.name, css)
+                libLinkByPath(mod.lib, mod.fullPath, mod.name, css)
             ]);
     }
 

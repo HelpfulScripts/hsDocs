@@ -29,7 +29,7 @@
 <p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span>import&nbsp;{&nbsp;m,&nbsp;Vnode}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
 <p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>import&nbsp;{&nbsp;Layout&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hslayout'</quote>;</p>
 <p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;Collapsible&nbsp;}&nbsp;&nbsp;from&nbsp;<quote>'hswidget'</quote>;</p>
-<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;libLink&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../NodesDisplay'</quote>;&nbsp;</p>
+<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;libLinkByPath&nbsp;}from&nbsp;<quote>'../NodesDisplay'</quote>;&nbsp;</p>
 <p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;DocSets&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'../DocSets'</quote>;</p>
 <p id=11 class="line"><span>&nbsp;&nbsp;11</span></p>
 <p id=12 class="line"><span>&nbsp;&nbsp;12</span></p>
@@ -93,7 +93,7 @@
 <p id=70 class="line"><span>&nbsp;&nbsp;70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(field==='</quote><quote>'+mdl.id&nbsp;||&nbsp;field.indexOf(mdl.fullPath)&nbsp;===&nbsp;0)&nbsp;{&nbsp;selected=true;&nbsp;}</p>
 <p id=71 class="line"><span>&nbsp;&nbsp;71</span></p>
 <p id=72 class="line"><span>&nbsp;&nbsp;72</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(Collapsible,&nbsp;{css:`.hs-left-nav-module`,&nbsp;preArrow:&nbsp;true,&nbsp;isExpanded:selected,&nbsp;components:[</p>
-<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(`${selected?'</quote>.hs-left-nav-selected<quote>':'</quote><quote>'}`,&nbsp;libLink(mdl.lib,&nbsp;mdl.fullPath,&nbsp;mdl.name,&nbsp;`.hs-left-nav-module-name`)),</p>
+<p id=73 class="line"><span>&nbsp;&nbsp;73</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(`${selected?'</quote>.hs-left-nav-selected<quote>':'</quote><quote>'}`,&nbsp;libLinkByPath(mdl.lib,&nbsp;mdl.fullPath,&nbsp;mdl.name,&nbsp;`.hs-left-nav-module-name`)),</p>
 <p id=74 class="line"><span>&nbsp;&nbsp;74</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!mdl.groups?&nbsp;undefined&nbsp;:&nbsp;mdl.groups.map((g:any)&nbsp;=>&nbsp;entries(g,&nbsp;mdl,&nbsp;field))</p>
 <p id=75 class="line"><span>&nbsp;&nbsp;75</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]});</p>
 <p id=76 class="line"><span>&nbsp;&nbsp;76</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
@@ -138,7 +138,7 @@
 <p id=115 class="line"><span>&nbsp;115</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(!exported&nbsp;&&&nbsp;group.title==='</quote>Variables<quote>')?&nbsp;'</quote><quote>'&nbsp;:&nbsp;&nbsp;&nbsp;<comment>//&nbsp;ignore&nbsp;local&nbsp;module&nbsp;variables</comment></p>
 <p id=116 class="line"><span>&nbsp;116</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m('</quote><quote>',&nbsp;[</p>
 <p id=117 class="line"><span>&nbsp;117</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isStatic?&nbsp;'</quote>static<quote>':&nbsp;'</quote><quote>',</p>
-<p id=118 class="line"><span>&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libLink(mod.lib,&nbsp;mod.fullPath,&nbsp;mod.name,&nbsp;css)</p>
+<p id=118 class="line"><span>&nbsp;118</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;libLinkByPath(mod.lib,&nbsp;mod.fullPath,&nbsp;mod.name,&nbsp;css)</p>
 <p id=119 class="line"><span>&nbsp;119</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);</p>
 <p id=120 class="line"><span>&nbsp;120</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=121 class="line"><span>&nbsp;121</span></p>

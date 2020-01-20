@@ -573,8 +573,7 @@
 <a name='L525'></a><a href='#L525'>525</a>
 <a name='L526'></a><a href='#L526'>526</a>
 <a name='L527'></a><a href='#L527'>527</a>
-<a name='L528'></a><a href='#L528'>528</a>
-<a name='L529'></a><a href='#L529'>529</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L528'></a><a href='#L528'>528</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -594,7 +593,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1122,7 +1120,6 @@ import { flagsConstLet }        from './Flags';
 import { flagsClass }           from './Flags';
 import { flagsPublic }          from './Flags';
 import { title }                from './NodesDisplay';
-import { inlineTitle }          from './NodesDisplay';
 import { DocsComment }          from './NodesDisplay';
 import { commentLong }          from './NodesDisplay';
 import { members }              from './NodesDisplay';
@@ -1254,7 +1251,7 @@ export class DocsBaseNode extends DocsNode {
                         <span class="missing-if-branch" title="else path not taken" >E</span>if (this.TYPE &amp;&amp; this.TYPE.indexOf(mdl[f].type)&gt;=0) {
                             this[f] = DocsType.makeType(mdl[f], this);
                         } else {
-<span class="cstat-no" title="statement not covered" >                            log.warn(`${this.lib}: '${this.kindString}' #${mdl.id}: unexpected type '${mdl[f].type}'`);</span>
+<span class="cstat-no" title="statement not covered" >                            log.warn(`${this.lib} #${mdl.id}: unexpected type '${mdl[f].type}' missing in class '${this.kindString}'`);</span>
 <span class="cstat-no" title="statement not covered" >                            DocsNode.errCount++;</span>
                         }
                         break;
@@ -1478,7 +1475,7 @@ class DocsMethod extends DocsSourced implements DocsParamaterized {
 class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
     init() {
         super.init();
-        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection'];
+        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection', 'tuple'];
         this.sources = null;
         this.parameters = null;
         this.inheritedFrom = null;
@@ -1493,7 +1490,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
 export class DocsIndexSignature extends DocsBaseNode {
     init() {
         super.init();
-        this.TYPE = ['array', 'reference', 'union', 'intrinsic'];
+        this.TYPE = ['array', 'reference', 'union', 'intrinsic', 'reflection'];
         this.sources = null;
         this.parameters = [];
         this.kindPrint = 'index signature';

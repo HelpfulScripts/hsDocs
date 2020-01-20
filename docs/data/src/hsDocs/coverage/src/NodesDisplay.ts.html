@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75.13% </span>
+        <span class="strong">74.37% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>148/197</span>
+        <span class='fraction'>148/199</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">54.14% </span>
+        <span class="strong">52.94% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>72/133</span>
+        <span class='fraction'>72/136</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.75% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>50/59</span>
+        <span class='fraction'>50/60</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">74.85% </span>
+        <span class="strong">73.99% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>128/171</span>
+        <span class='fraction'>128/173</span>
       </div>
     </div>
     <p class="quiet">
@@ -520,9 +520,7 @@
 <a name='L472'></a><a href='#L472'>472</a>
 <a name='L473'></a><a href='#L473'>473</a>
 <a name='L474'></a><a href='#L474'>474</a>
-<a name='L475'></a><a href='#L475'>475</a>
-<a name='L476'></a><a href='#L476'>476</a>
-<a name='L477'></a><a href='#L477'>477</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L475'></a><a href='#L475'>475</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -561,6 +559,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">294x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -785,8 +788,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -832,15 +833,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1009,7 +1005,7 @@ import { DocsNode, DocsSignature }             from './Nodes';
 import { DocsParameter }        from './Nodes';
 import { DocSets }              from './DocSets';
 import { DocsParamaterized }    from './Nodes';
-import { flagsDisplay, Flags }  from './Flags';
+import { flagsDisplay }         from './Flags';
 import { DocsReferenceIdType }  from './Types';
 import { DocsNamedType }        from './Types';
 import { json }                 from './DocSets';
@@ -1035,8 +1031,13 @@ interface Tag {
  * @param id the id number to point to
  * @param name the name on which to formt he link
  */
-export function libLink(lib:string, id:string|number, name:string, css=''):Vnode {
-    return m(`a${css}`, { href:`#!/api/${lib}/${id}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+export function libLinkByPath(lib:string, path:string, name:string, css=''):Vnode {
+    return m(`a${css}`, { href:`#!/api/${lib}/${path}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >libLinkByID(</span>lib:string, id:string|number, name:string, css=<span class="branch-0 cbranch-no" title="branch not covered" >'')</span>:Vnode {
+    const path = <span class="cstat-no" title="statement not covered" >(DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';</span>
+<span class="cstat-no" title="statement not covered" >    return libLinkByPath(lib, path, name, css);</span>
 }
 &nbsp;
 export class DocsComment {
@@ -1182,7 +1183,7 @@ function mKindString(node:DocsNode):Vnode {
 }
 &nbsp;
 function mItemName(node:DocsNode):Vnode {
-    return m('span.hsdocs_itemname', !node.fullPath? <span class="branch-0 cbranch-no" title="branch not covered" >node.getName() </span>: libLink(node.lib, node.fullPath, node.getName()));
+    return m('span.hsdocs_itemname', !node.fullPath? <span class="branch-0 cbranch-no" title="branch not covered" >node.getName() </span>: libLinkByPath(node.lib, node.fullPath, node.getName()));
 }
 &nbsp;
 function mSignature(node:DocsNode):Vnode {
@@ -1245,7 +1246,7 @@ function mExtensionOf(node:DocsNode):Vnode {
         m('span.hsdocs_extends', 'extends'),
         m('span', types.map(<span class="fstat-no" title="function not covered" >(t</span>:DocsReferenceIdType, i:number) =&gt;
 <span class="cstat-no" title="statement not covered" >            m('span.hsdocs_extensionType', [(i&gt;0)?', ' : '',</span>
-                libLink(node.lib, (DocSets.getNode(t.id, node.lib)||{fullPath:''}).fullPath||'', t.name),
+                t.id? libLinkByID(node.lib, t.id, t.name) : t.name,
             ])
         )),
     ]);
@@ -1255,9 +1256,7 @@ function mImplementationOf(node:DocsNode):Vnode {
     return !node.implementedTypes? undefined : <span class="branch-1 cbranch-no" title="branch not covered" >m('span.hsdocs_implementationsOf', [</span>
         m('span.hsdocs_implements', 'implements'),
         m('span', node.implementedTypes.map(<span class="fstat-no" title="function not covered" >(t</span>:DocsNamedType, i:number) =&gt;
-<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_implementationType', [ (i&gt;0)?', ' : '',</span>
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-            ])
+<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_implementationType', [ (i&gt;0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])</span>
         )),
     ]);
 }
@@ -1269,7 +1268,7 @@ function mInheritedFrom(node:DocsNode):Vnode {
 <span class="cstat-no" title="statement not covered" >            parent = DocSets.getNode(parent.fullPath.substring(0, parent.fullPath.lastIndexOf('.')), node.lib);</span>
 <span class="cstat-no" title="statement not covered" >            return m('span.hsdocs_inheritedFrom', [</span>
                 m('span', 'inherited from '),
-                libLink(parent.lib, parent.fullPath, parent.getName())
+                libLinkByPath(parent.lib, parent.fullPath, parent.getName())
             ]);
         } else {
 <span class="cstat-no" title="statement not covered" >            return m('span.hsdocs_inheritedFrom', [</span>
@@ -1302,9 +1301,7 @@ function mExtendedBy(node:DocsNode):Vnode {
     return !node.extendedBy? undefined : <span class="branch-1 cbranch-no" title="branch not covered" >m('div.hsdocs_extendedBy',[</span>
         m('span.hsdocs_extended_by', 'extended by'),
         m('span', node.extendedBy.map(<span class="fstat-no" title="function not covered" >(t</span>:any, i:number) =&gt;
-<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_extendedby_type', [(i&gt;0)?', ' : '',</span>
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-            ])
+<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_extendedby_type', [(i&gt;0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])</span>
         )),
     ]);
 }
@@ -1313,10 +1310,7 @@ function mImplementedBy(node:DocsNode):Vnode {
     return !node.implementedBy? undefined : <span class="branch-1 cbranch-no" title="branch not covered" >m('div.hsdocs_implementedBy',[</span>
         m('span.hsdocs_implemented_by', 'implemented by'),
         m('span', node.implementedBy.map(<span class="fstat-no" title="function not covered" >(t</span>:any, i:number) =&gt;
-<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_implementedby_type', [(i&gt;0)?', ' : '',</span>
-                libLink(node.lib, DocSets.getNode(t.id, node.lib).fullPath, t.name),
-                // node.implementedBy.length&gt;(i+1)? ', ': ''
-            ])
+<span class="cstat-no" title="statement not covered" >            m('span.hsdocs_implementedby_type', [(i&gt;0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])</span>
         )),
     ]);
 }

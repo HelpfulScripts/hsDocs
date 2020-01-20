@@ -247,20 +247,16 @@
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
 <a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a>
-<a name='L203'></a><a href='#L203'>203</a>
-<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -459,11 +455,9 @@
 &nbsp;
 import { Log }                  from 'hsutil'; const log = new Log('DocTypes');
 import { DocsNode }             from './Nodes';
-import { DocsIndexSignature }   from './Nodes';
 import { m, Vnode}              from 'hslayout';
-import { libLink }              from './NodesDisplay';
+import { libLinkByPath }        from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
-import { json }                 from './DocSets';
 &nbsp;
 interface DocsGenericType {
     type: string;
@@ -520,7 +514,7 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType(parent:DocsNode) {
-        return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLink(this.node.lib, this.id, this.name) </span>: parent.getName()); 
+        return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: parent.getName()); 
     }
 }
 &nbsp;
@@ -532,7 +526,7 @@ class DocsReferenceType extends DocsType {
     }
 &nbsp;
     mType(parent:DocsNode) {
-        let refRes = [this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLink(this.node.lib, this.id, this.name) </span>: this.name];
+        let refRes = [this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: this.name];
         if (this.typeArguments.length) { 
             refRes.push('&lt;');
             refRes.push(...this.typeArguments.map(t =&gt; t.mType(parent)));

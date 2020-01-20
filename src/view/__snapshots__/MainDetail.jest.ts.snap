@@ -1514,7 +1514,7 @@ if
               <code>
                 hsDocs
               </code>
-               supports creating inline code examples in comment sections as explained
+               supports creating  code examples in comment sections as explained
 in the 
               <a
                 href="#!/api/hsDocs/hsDocs.view.MainExample"
@@ -1526,7 +1526,7 @@ in the
             
 
             <style>
-              #hs884836 .myBlock {
+              #hs100001 .myBlock {
     text-align:center;
     color: white;
     background-color: red;
@@ -1543,7 +1543,7 @@ in the
             <p>
               <example
                 class="hs-layout-frame"
-                id="hs336924"
+                id="hs100000"
                 style="height:300px"
               />
             </p>

@@ -18,7 +18,6 @@ import { flagsConstLet }        from './Flags';
 import { flagsClass }           from './Flags';
 import { flagsPublic }          from './Flags';
 import { title }                from './NodesDisplay';
-import { inlineTitle }          from './NodesDisplay';
 import { DocsComment }          from './NodesDisplay';
 import { commentLong }          from './NodesDisplay';
 import { members }              from './NodesDisplay';
@@ -150,7 +149,7 @@ export class DocsBaseNode extends DocsNode {
                         if (this.TYPE && this.TYPE.indexOf(mdl[f].type)>=0) {
                             this[f] = DocsType.makeType(mdl[f], this);
                         } else {
-                            log.warn(`${this.lib}: '${this.kindString}' #${mdl.id}: unexpected type '${mdl[f].type}'`);
+                            log.warn(`${this.lib} #${mdl.id}: unexpected type '${mdl[f].type}' missing in class '${this.kindString}'`);
                             DocsNode.errCount++;
                         }
                         break;
@@ -374,7 +373,7 @@ class DocsMethod extends DocsSourced implements DocsParamaterized {
 class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
     init() {
         super.init();
-        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection'];
+        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection', 'tuple'];
         this.sources = null;
         this.parameters = null;
         this.inheritedFrom = null;
@@ -389,7 +388,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
 export class DocsIndexSignature extends DocsBaseNode {
     init() {
         super.init();
-        this.TYPE = ['array', 'reference', 'union', 'intrinsic'];
+        this.TYPE = ['array', 'reference', 'union', 'intrinsic', 'reflection'];
         this.sources = null;
         this.parameters = [];
         this.kindPrint = 'index signature';

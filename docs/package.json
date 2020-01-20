@@ -54,8 +54,9 @@
   },
   "dependencies": {
     "hslayout": "*",
-    "hsutil": "*",
+    "hsutil": "^3.0.0",
     "hswidget": "*",
+    "mithril": "^2.0.4",
     "showdown": "^1.9.1"
   }
 }

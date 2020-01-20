@@ -5,11 +5,9 @@
 
 import { Log }                  from 'hsutil'; const log = new Log('DocTypes');
 import { DocsNode }             from './Nodes';
-import { DocsIndexSignature }   from './Nodes';
 import { m, Vnode}              from 'hslayout';
-import { libLink }              from './NodesDisplay';
+import { libLinkByPath }        from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
-import { json }                 from './DocSets';
 
 interface DocsGenericType {
     type: string;
@@ -66,7 +64,7 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType(parent:DocsNode) {
-        return m('span.hsdocs_type_intrinsic', this.id? libLink(this.node.lib, this.id, this.name) : parent.getName()); 
+        return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
     }
 }
 
@@ -78,7 +76,7 @@ class DocsReferenceType extends DocsType {
     }
 
     mType(parent:DocsNode) {
-        let refRes = [this.id? libLink(this.node.lib, this.id, this.name) : this.name];
+        let refRes = [this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : this.name];
         if (this.typeArguments.length) { 
             refRes.push('<');
             refRes.push(...this.typeArguments.map(t => t.mType(parent)));

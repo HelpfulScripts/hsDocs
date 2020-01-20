@@ -162,6 +162,16 @@ interface CommentDescriptor {
  */
 const gInitialized:{string?:CommentDescriptor} = {};
 
+/** used to generate unique IDs for examples. */
+let gIDCounter = 100000;
+
+/** creates a new random example ID for each call. */
+function getNewID():string { 
+    // return 'hs'+Math.floor(1000000*Math.random());
+    return 'hs'+gIDCounter++;
+}
+
+
 /**
  * creates the example configuration, generates the DOM hook, and sets up the example execution.
  * `example` takes a context map of the form `{ name:module, ...}` containing libraries to be used 
@@ -255,11 +265,6 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         activeSrcPage: undefined,
         attrs: {libs:[]}
     };
-}
-
-/** creates a new random example ID for each call. */
-function getNewID():string { 
-    return 'hs'+Math.floor(1000000*Math.random());
 }
 
 /**

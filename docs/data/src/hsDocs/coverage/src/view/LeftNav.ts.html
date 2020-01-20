@@ -352,7 +352,7 @@
 import { m, Vnode}      from 'hslayout';
 import { Layout }       from 'hslayout';
 import { Collapsible }  from 'hswidget';
-import { libLink }      from '../NodesDisplay'; 
+import { libLinkByPath }from '../NodesDisplay'; 
 import { DocSets }      from '../DocSets';
 &nbsp;
 &nbsp;
@@ -416,7 +416,7 @@ function navList(docSet:any, field:string):Vnode[] {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { <span class="cstat-no" title="statement not covered" >selected=true; </span>}
 &nbsp;
         return m(Collapsible, {css:`.hs-left-nav-module`, preArrow: true, isExpanded:selected, components:[
-            m(`${selected?<span class="branch-0 cbranch-no" title="branch not covered" >'.hs-left-nav-selected':</span>''}`, libLink(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
+            m(`${selected?<span class="branch-0 cbranch-no" title="branch not covered" >'.hs-left-nav-selected':</span>''}`, libLinkByPath(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
             !mdl.groups? <span class="branch-0 cbranch-no" title="branch not covered" >undefined </span>: mdl.groups.map((g:any) =&gt; entries(g, mdl, field))
         ]});
     }
@@ -461,7 +461,7 @@ function entries(group:any, mdl:any, field:string) {
         return (!exported &amp;&amp; group.title==='Variables')? '' :   // ignore local module variables
             m('', [
                 isStatic? <span class="branch-0 cbranch-no" title="branch not covered" >'static':</span> '',
-                libLink(mod.lib, mod.fullPath, mod.name, css)
+                libLinkByPath(mod.lib, mod.fullPath, mod.name, css)
             ]);
     }
 &nbsp;
