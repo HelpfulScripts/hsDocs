@@ -437,6 +437,7 @@
 }
 .hs-typeahead-list {
   position: absolute;
+  overflow-x: visible;
   z-index: 9999;
   left: 20px;
   width: 200px;
@@ -449,6 +450,9 @@
 }
 .hs-typeahead-list div:hover {
   text-shadow: 0 0 3px #88f;
+}
+.hs-typeahead-list span {
+  overflow-x: visible;
 }
 .hs-label {
   position: relative;
