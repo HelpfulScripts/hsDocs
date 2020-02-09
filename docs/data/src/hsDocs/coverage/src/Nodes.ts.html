@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.82% </span>
+        <span class="strong">78.91% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>201/255</span>
+        <span class='fraction'>202/256</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">67.35% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>43/57</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.26% </span>
+        <span class="strong">80.34% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>187/233</span>
+        <span class='fraction'>188/234</span>
       </div>
     </div>
     <p class="quiet">
@@ -573,7 +573,8 @@
 <a name='L525'></a><a href='#L525'>525</a>
 <a name='L526'></a><a href='#L526'>526</a>
 <a name='L527'></a><a href='#L527'>527</a>
-<a name='L528'></a><a href='#L528'>528</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -676,7 +677,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">65922x</span>
-<span class="cline-any cline-yes">148809x</span>
+<span class="cline-any cline-yes">148971x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -717,8 +718,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">367257x</span>
-<span class="cline-any cline-yes">367257x</span>
+<span class="cline-any cline-yes">367419x</span>
+<span class="cline-any cline-yes">367419x</span>
 <span class="cline-any cline-yes">218448x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">17631x</span>
@@ -746,7 +747,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">193186x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">148809x</span>
+<span class="cline-any cline-yes">148971x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1062,6 +1063,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">162x</span>
+<span class="cline-any cline-yes">162x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1281,7 +1283,7 @@ export class DocsBaseNode extends DocsNode {
         fields = Object.getOwnPropertyNames(mdl);
         fields.forEach(f =&gt; { // unexpected fields
             <span class="missing-if-branch" title="if path not taken" >I</span>if (this[f]===undefined &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >isNotIgnored(f))</span> {
-<span class="cstat-no" title="statement not covered" >                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],2)}'`);</span>
+<span class="cstat-no" title="statement not covered" >                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],2, '   ', null)}'`);</span>
 <span class="cstat-no" title="statement not covered" >                DocsNode.errCount++;</span>
             }
         });
@@ -1589,6 +1591,7 @@ class DocsObjectLiteral extends DocsStructured implements DocsParamaterized {
             isConst:    false
         }));
         this.parameters = null;
+        this.inheritedFrom = null;
     }
 }
 &nbsp;

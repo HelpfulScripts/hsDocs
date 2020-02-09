@@ -179,7 +179,7 @@ export class DocsBaseNode extends DocsNode {
         fields = Object.getOwnPropertyNames(mdl);
         fields.forEach(f => { // unexpected fields
             if (this[f]===undefined && isNotIgnored(f)) {
-                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],2)}'`);
+                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],2, '   ', null)}'`);
                 DocsNode.errCount++;
             }
         });
@@ -487,6 +487,7 @@ class DocsObjectLiteral extends DocsStructured implements DocsParamaterized {
             isConst:    false
         }));
         this.parameters = null;
+        this.inheritedFrom = null;
     }
 }
 
