@@ -36,7 +36,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   DocSets
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -132,7 +131,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   Flags
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -252,7 +250,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   Nodes
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -658,7 +655,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   NodesDisplay
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -907,7 +903,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   Site
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -971,7 +966,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   Types
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1146,7 +1140,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   deprecated_Comment
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1253,7 +1246,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   markdown
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1309,7 +1301,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.DocsMenu
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1356,7 +1347,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.LeftNav
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1458,7 +1448,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.MainComment
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1565,7 +1554,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.MainDetail
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1641,7 +1629,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.MainExample
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
@@ -1818,7 +1805,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                   view.Tooltip
                 </a>
               </div>
-              <div />
             </div>
             <div
               class="hs-collapsible-content "
