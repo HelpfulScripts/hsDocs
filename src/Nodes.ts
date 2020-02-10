@@ -403,7 +403,8 @@ class DocsConstructorSignature extends DocsBaseNode implements DocsParamaterized
         this.parameters = null;
         this.overwrites = null;
         this.inheritedFrom = null;
-        this.kindPrint = 'constructor signature';
+        this.kindPrint = '';
+        // this.kindPrint = 'constructor signature';
    }
 }
 
@@ -461,7 +462,7 @@ class DocsAccessors extends DocsSourced implements DocsParamaterized {
 
 export class DocsGetSignature extends DocsBaseNode {
     init() {
-        this.kindPrint = 'GET';
+        this.kindPrint = 'get';
         this.sources = undefined;   
         this.TYPE = ['intrinsic', 'reference', 'union', 'array', 'reflection', 'stringLiteral'];
         this.overwrites = null;
@@ -471,7 +472,7 @@ export class DocsGetSignature extends DocsBaseNode {
 
 export class DocsSetSignature extends DocsBaseNode {
     init() {
-        this.kindPrint = 'SET';
+        this.kindPrint = 'set';
         this.sources = undefined; 
         this.parameters = [];  
         this.TYPE = ['intrinsic', 'stringLiteral'];

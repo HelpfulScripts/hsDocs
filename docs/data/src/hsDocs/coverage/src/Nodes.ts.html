@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.91% </span>
+        <span class="strong">78.52% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>202/256</span>
+        <span class='fraction'>201/256</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">67.35% </span>
+        <span class="strong">65.31% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>33/49</span>
+        <span class='fraction'>32/49</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75.44% </span>
+        <span class="strong">73.68% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>43/57</span>
+        <span class='fraction'>42/57</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.34% </span>
+        <span class="strong">79.91% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>188/234</span>
+        <span class='fraction'>187/234</span>
       </div>
     </div>
     <p class="quiet">
@@ -574,7 +574,8 @@
 <a name='L526'></a><a href='#L526'>526</a>
 <a name='L527'></a><a href='#L527'>527</a>
 <a name='L528'></a><a href='#L528'>528</a>
-<a name='L529'></a><a href='#L529'>529</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -663,8 +664,8 @@
 <span class="cline-any cline-yes">22031x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">43x</span>
-<span class="cline-any cline-yes">65x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -958,7 +959,7 @@
 <span class="cline-any cline-yes">3312x</span>
 <span class="cline-any cline-yes">3312x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -980,6 +981,7 @@
 <span class="cline-any cline-yes">378x</span>
 <span class="cline-any cline-yes">378x</span>
 <span class="cline-any cline-yes">378x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1486,7 +1488,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
         this.typeParameter = null;
         this.kindPrint = '';
     }
-    public getName() { return this.name === '__call'? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: this.name; }
+    public <span class="fstat-no" title="function not covered" >getName(</span>) { <span class="cstat-no" title="statement not covered" >return this.name === '__call'? '' : this.name; </span>}
 }
 &nbsp;
 export class DocsIndexSignature extends DocsBaseNode {
@@ -1507,7 +1509,8 @@ class DocsConstructorSignature extends DocsBaseNode implements DocsParamaterized
         this.parameters = null;
         this.overwrites = null;
         this.inheritedFrom = null;
-        this.kindPrint = 'constructor signature';
+        this.kindPrint = '';
+        // this.kindPrint = 'constructor signature';
    }
 }
 &nbsp;
@@ -1565,7 +1568,7 @@ class DocsAccessors extends DocsSourced implements DocsParamaterized {
 &nbsp;
 export class DocsGetSignature extends DocsBaseNode {
 <span class="fstat-no" title="function not covered" >    init(</span>) {
-<span class="cstat-no" title="statement not covered" >        this.kindPrint = 'GET';</span>
+<span class="cstat-no" title="statement not covered" >        this.kindPrint = 'get';</span>
 <span class="cstat-no" title="statement not covered" >        this.sources = undefined;   </span>
 <span class="cstat-no" title="statement not covered" >        this.TYPE = ['intrinsic', 'reference', 'union', 'array', 'reflection', 'stringLiteral'];</span>
 <span class="cstat-no" title="statement not covered" >        this.overwrites = null;</span>
@@ -1575,7 +1578,7 @@ export class DocsGetSignature extends DocsBaseNode {
 &nbsp;
 export class DocsSetSignature extends DocsBaseNode {
 <span class="fstat-no" title="function not covered" >    init(</span>) {
-<span class="cstat-no" title="statement not covered" >        this.kindPrint = 'SET';</span>
+<span class="cstat-no" title="statement not covered" >        this.kindPrint = 'set';</span>
 <span class="cstat-no" title="statement not covered" >        this.sources = undefined; </span>
 <span class="cstat-no" title="statement not covered" >        this.parameters = [];  </span>
 <span class="cstat-no" title="statement not covered" >        this.TYPE = ['intrinsic', 'stringLiteral'];</span>

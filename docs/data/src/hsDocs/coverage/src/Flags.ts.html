@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90.32% </span>
+        <span class="strong">87.88% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/31</span>
+        <span class='fraction'>29/33</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">35.71% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">93.55% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>28/30</span>
+        <span class='fraction'>29/31</span>
       </div>
     </div>
     <p class="quiet">
@@ -132,7 +132,9 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,6 +193,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,6 +217,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,14 +285,15 @@ export function flagsDisplay(mdl:DocsNode):Vnode {
         isStatic:       'static',
         isPrivate:      'private',
         isProtected:    'protected',
-        isPublic:       'public',
+        isPublic:       '',     // 'public' is redundant
         isVar:          'var',
         isConst:        'const',
         isLet:          'let',
-        isOptional:     'optional',
+        isOptional:     '',     // optional represented by '?'
         isAbstract:     'abstract',
         isExternal:     'external',
         isRest:         'rest',
+        isConstructorProperty: 'constructor-property'
     };
     const flags:string[] = Object.keys(mdl.flags);
     const classMember = classMembers.indexOf(mdl.kindString)&gt;=0;
@@ -300,7 +305,8 @@ export function flagsDisplay(mdl:DocsNode):Vnode {
     return !flags? <span class="branch-0 cbranch-no" title="branch not covered" >undefined </span>: flags
         .filter(f =&gt; f!=='isExported' || !classMember)
         .map(f =&gt; {
-            let flag = knownFlags[f] || <span class="branch-1 cbranch-no" title="branch not covered" >'unknown';</span>
+            let flag = knownFlags[f];
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (flag === undefined) { <span class="cstat-no" title="statement not covered" >flag = `unknown-${f}`; </span>}
             return m(`span.hsdocs_flag_${flag}`, flag);
         });
 }

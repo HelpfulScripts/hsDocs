@@ -532,7 +532,6 @@ input.hsedit_label {
   width: 100px;
 }
 div.hsedit_list_header {
-  width: 100%;
   height: 20px;
   background-color: #aca;
   font-weight: bold;
@@ -553,12 +552,6 @@ div.hsedit_list_header {
   background-color: rgba(0, 0, 0, 0.1);
   font-family: inherit;
   font-size: inherit;
-}
-.hsedit_textarea {
-  padding-top: 0px;
-  padding-left: 7px;
-  line-height: 1.5em;
-  width: 100%;
 }
 /*# sourceMappingURL=hsWidget.css.map */
 .hs-site-title {
@@ -715,7 +708,7 @@ div.hsedit_list_header {
   font-weight: bold;
   color: #222;
 }
-.hsdocs_flag_constructorProperty {
+.hsdocs_flag_constructor-property {
   color: #44f;
   padding: 10px 0.4em 2px 0em;
   color: #848;
@@ -749,12 +742,14 @@ div.hsedit_list_header {
   padding-left: 0.3em;
 }
 .hsdocs_extensionOf {
+  font-size: 80%;
   padding: 10px 0.4em 2px 0em;
 }
 .hsdocs_extensionType {
   padding: 10px 0.4em 2px 0em;
 }
 .hsdocs_implementationsOf {
+  font-size: 80%;
   padding: 10px 0.4em 2px 0em;
   font-style: italic;
 }

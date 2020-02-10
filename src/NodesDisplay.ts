@@ -134,12 +134,18 @@ export function title(node:DocsNode):Vnode {
     return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, desc); 
 }
 
-export function titleArr(node:DocsNode):Vnode {
+/**
+ * creates a signature row.
+ * @param node the node for which to generate the signature row.
+ * @param parent optional parent node for use in `mItemName`, used 
+ * when the node has a `signature` array. 
+ */
+export function titleArr(node:DocsNode, parent?:DocsNode):Vnode {
     let desc:Vnode = '';
     try { desc = [ 
-        mFlags(node),
+        mFlags(parent || node),
         mKindString(node),
-        mItemName(node),
+        mItemName(parent || node),
         mSignature(node),
         m('span.hsdocs_title_colon',': '), 
         mType(node),
@@ -225,7 +231,7 @@ function mSignature(node:DocsNode):Vnode {
 function mType(node:DocsNode):Vnode {
     if (!node.type) { 
         if (node.getSignatures()) { 
-            return mType(node.getSignatures()[0]);
+            return m('span', node.getSignatures().map(s => mType(s)));
         } else {
             return m('span', ''); 
         }
@@ -365,13 +371,13 @@ export function members(node:DocsNode):Vnode {
     let sorts:((n:DocsNode)=>boolean)[];
     /** the  */
     const access:Access = (node.kindString==='External module')? {
-            text: [{true:'Exported', false:'Internal'}, {true:'Static', false: ''}],
-            css: ['.hsdocs_flag_public', '.hsdocs_flag_static'],
-            sort:   [isExported, isStatic]
+            text: [{true:'Static', false: ''}, {true:'Exported', false:'Internal'}],
+            css: ['.hsdocs_flag_static', '.hsdocs_flag_public'],
+            sort:   [isStatic, isExported]
         } : {
-            text: [{true:'Public', false:'Protected or Private'}, {true:'Static', false: ''}],
-            sort: [isPublic, isStatic],
-            css: ['.hsdocs_flag_public', '.hsdocs_flag_static'],
+            text: [{true:'Static', false: ''}, {true:'Public', false:'Protected or Private'}],
+            sort: [isStatic, isPublic],
+            css: ['.hsdocs_flag_static', '.hsdocs_flag_public'],
         };
     
     const grp = node.groups;
@@ -417,7 +423,7 @@ function member(nodes:DocsNode[], title:string, access:Access): Vnode {
 function itemChild(node:DocsNode): Vnode[] {
     if (node.getSignatures()) {
         return node.getSignatures().map((s:DocsNode) => 
-            m('.hsdocs_child', [titleArr(node), s.commentLong()])
+            m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), s.commentLong()])
         );
     } else if (node.commentLong()) {
         return m('.hsdocs_child', [titleArr(node), node.commentLong()]);

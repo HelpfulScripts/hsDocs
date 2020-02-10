@@ -253,7 +253,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      json
+                      any
                     </span>
                   </span>
                 </span>
@@ -327,7 +327,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      DOCDIR
+                      string
                     </span>
                   </span>
                   <span
@@ -397,7 +397,7 @@ provides access to elements of each docset.
                     <span
                       class="hsdocs_type_intrinsic"
                     >
-                      FILE
+                      string
                     </span>
                   </span>
                   <span
@@ -531,17 +531,13 @@ provides access to elements of each docset.
             id="hsDocs.DocSets.loadDocSet"
           >
             <div
-              class="hsdocs_child"
+              class="hsdocs_child hsdocs_signature"
             >
               <span>
                 <span
                   class="hsdocs_flags"
                 />
-                <span
-                  class="hsdocs_kind"
-                >
-                  function
-                </span>
+                
                 <span
                   class="hsdocs_itemname"
                 >
@@ -555,74 +551,70 @@ provides access to elements of each docset.
                   class="hsdocs_signatures"
                 >
                   <span
-                    class="hsdocs_signature"
+                    class="hsdocs_itemname"
                   >
+                     (
+                  </span>
+                  <span>
+                    
                     <span
-                      class="hsdocs_itemname"
+                      class="hsdocs_signature_param"
                     >
-                       (
-                    </span>
-                    <span>
-                      
                       <span
-                        class="hsdocs_signature_param"
+                        class="hsdocs_itemname"
                       >
+                        dir
+                      </span>
+                      <span
+                        class="hsdocs_colon"
+                      >
+                        :
+                      </span>
+                      <span>
                         <span
-                          class="hsdocs_itemname"
+                          class="hsdocs_type"
                         >
-                          dir
-                        </span>
-                        <span
-                          class="hsdocs_colon"
-                        >
-                          :
-                        </span>
-                        <span>
                           <span
-                            class="hsdocs_type"
+                            class="hsdocs_type_intrinsic"
                           >
-                            <span
-                              class="hsdocs_type_intrinsic"
-                            >
-                              dir
-                            </span>
+                            string
                           </span>
                         </span>
                       </span>
                     </span>
-                    <span>
-                      , 
+                  </span>
+                  <span>
+                    , 
+                    <span
+                      class="hsdocs_signature_param"
+                    >
                       <span
-                        class="hsdocs_signature_param"
+                        class="hsdocs_itemname"
                       >
+                        file
+                      </span>
+                      <span
+                        class="hsdocs_colon"
+                      >
+                        :
+                      </span>
+                      <span>
                         <span
-                          class="hsdocs_itemname"
+                          class="hsdocs_type"
                         >
-                          file
-                        </span>
-                        <span
-                          class="hsdocs_colon"
-                        >
-                          :
-                        </span>
-                        <span>
                           <span
-                            class="hsdocs_type"
+                            class="hsdocs_type_intrinsic"
                           >
-                            <span
-                              class="hsdocs_type_intrinsic"
-                            >
-                              file
-                            </span>
+                            string
                           </span>
                         </span>
                       </span>
                     </span>
-                    <span
-                      class="hsdocs_itemname"
-                    >
-                      )
-                    </span>
+                  </span>
+                  <span
+                    class="hsdocs_itemname"
+                  >
+                    )
                   </span>
                 </span>
                 <span
@@ -642,7 +634,7 @@ provides access to elements of each docset.
                       <span
                         class="hsdocs_type_intrinsic"
                       >
-                        loadDocSet
+                        void
                       </span>
                       &gt;
                     </span>
@@ -657,12 +649,7 @@ provides access to elements of each docset.
                 <span
                   class="hsdocs_source"
                 >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#168"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
+                  
                 </span>
               </span>
               <div
@@ -703,17 +690,13 @@ Once received, the docset is registered in
             id="hsDocs.DocSets.matchAll"
           >
             <div
-              class="hsdocs_child"
+              class="hsdocs_child hsdocs_signature"
             >
               <span>
                 <span
                   class="hsdocs_flags"
                 />
-                <span
-                  class="hsdocs_kind"
-                >
-                  function
-                </span>
+                
                 <span
                   class="hsdocs_itemname"
                 >
@@ -727,74 +710,70 @@ Once received, the docset is registered in
                   class="hsdocs_signatures"
                 >
                   <span
-                    class="hsdocs_signature"
+                    class="hsdocs_itemname"
                   >
+                     (
+                  </span>
+                  <span>
+                    
                     <span
-                      class="hsdocs_itemname"
+                      class="hsdocs_signature_param"
                     >
-                       (
-                    </span>
-                    <span>
-                      
                       <span
-                        class="hsdocs_signature_param"
+                        class="hsdocs_itemname"
                       >
+                        str
+                      </span>
+                      <span
+                        class="hsdocs_colon"
+                      >
+                        :
+                      </span>
+                      <span>
                         <span
-                          class="hsdocs_itemname"
+                          class="hsdocs_type"
                         >
-                          str
-                        </span>
-                        <span
-                          class="hsdocs_colon"
-                        >
-                          :
-                        </span>
-                        <span>
                           <span
-                            class="hsdocs_type"
+                            class="hsdocs_type_intrinsic"
                           >
-                            <span
-                              class="hsdocs_type_intrinsic"
-                            >
-                              str
-                            </span>
+                            string
                           </span>
                         </span>
                       </span>
                     </span>
-                    <span>
-                      , 
+                  </span>
+                  <span>
+                    , 
+                    <span
+                      class="hsdocs_signature_param"
+                    >
                       <span
-                        class="hsdocs_signature_param"
+                        class="hsdocs_itemname"
                       >
+                        re
+                      </span>
+                      <span
+                        class="hsdocs_colon"
+                      >
+                        :
+                      </span>
+                      <span>
                         <span
-                          class="hsdocs_itemname"
+                          class="hsdocs_type"
                         >
-                          re
-                        </span>
-                        <span
-                          class="hsdocs_colon"
-                        >
-                          :
-                        </span>
-                        <span>
                           <span
-                            class="hsdocs_type"
+                            class="hsdocs_type_reference"
                           >
-                            <span
-                              class="hsdocs_type_reference"
-                            >
-                              RegExp
-                            </span>
+                            RegExp
                           </span>
                         </span>
                       </span>
                     </span>
-                    <span
-                      class="hsdocs_itemname"
-                    >
-                      )
-                    </span>
+                  </span>
+                  <span
+                    class="hsdocs_itemname"
+                  >
+                    )
                   </span>
                 </span>
                 <span
@@ -813,7 +792,7 @@ Once received, the docset is registered in
                       <span
                         class="hsdocs_type_intrinsic"
                       >
-                        matchAll
+                        string
                       </span>
                       &gt;
                     </span>
@@ -828,12 +807,7 @@ Once received, the docset is registered in
                 <span
                   class="hsdocs_source"
                 >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#30"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
+                  
                 </span>
               </span>
             </div>

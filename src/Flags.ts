@@ -61,14 +61,15 @@ export function flagsDisplay(mdl:DocsNode):Vnode {
         isStatic:       'static',
         isPrivate:      'private',
         isProtected:    'protected',
-        isPublic:       'public',
+        isPublic:       '',     // 'public' is redundant
         isVar:          'var',
         isConst:        'const',
         isLet:          'let',
-        isOptional:     'optional',
+        isOptional:     '',     // optional represented by '?'
         isAbstract:     'abstract',
         isExternal:     'external',
         isRest:         'rest',
+        isConstructorProperty: 'constructor-property'
     };
     const flags:string[] = Object.keys(mdl.flags);
     const classMember = classMembers.indexOf(mdl.kindString)>=0;
@@ -80,7 +81,8 @@ export function flagsDisplay(mdl:DocsNode):Vnode {
     return !flags? undefined : flags
         .filter(f => f!=='isExported' || !classMember)
         .map(f => {
-            let flag = knownFlags[f] || 'unknown';
+            let flag = knownFlags[f];
+            if (flag === undefined) { flag = `unknown-${f}`; }
             return m(`span.hsdocs_flag_${flag}`, flag);
         });
 }

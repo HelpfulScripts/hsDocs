@@ -64,7 +64,8 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType(parent:DocsNode) {
-        return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
+        // return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
+        return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : this.name); 
     }
 }
 

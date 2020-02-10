@@ -247,7 +247,8 @@
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
 <a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -311,6 +312,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6885x</span>
 <span class="cline-any cline-yes">6885x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -514,7 +516,8 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType(parent:DocsNode) {
-        return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: parent.getName()); 
+        // return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
+        return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: this.name); 
     }
 }
 &nbsp;
