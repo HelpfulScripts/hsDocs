@@ -6,7 +6,12 @@ const fs = require('fs');
 
 const set = {
     "docs": [
-        "hsDocs.json"
+        "hsDocs.json",
+        "hsGraphD3.json",
+        "hsWidget.json",
+        "hsLayout.json",
+        "hsNode.json",
+        "hsUtil.json"
     ],
     "title": "HS Libraries"
 };
@@ -16,7 +21,7 @@ m.request = (req: any) => {
         return Promise.resolve(set);
     } else if(req.url.endsWith('.json')) {
         return new Promise((resolve:(data:any)=>void, reject:(err:any)=>void) => {
-            fs.readFile(`${__dirname}/../example/${req.url}`, 'utf8', (err:any, data:any) => {
+            fs.readFile(`${__dirname}/../test/${req.url}`, 'utf8', (err:any, data:any) => {
                 if (err) { throw err; }
                 else { resolve(data); }
             });
@@ -31,7 +36,7 @@ m.request = (req: any) => {
 
 const route = {
     field: '0',
-    lib: 'hsDocs'
+    lib: 'hsGraphD3'
 };
 
 m.route.param = (name:string) => {

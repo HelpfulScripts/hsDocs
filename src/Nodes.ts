@@ -276,6 +276,7 @@ class DocsEnumerationMember extends DocsWithDefault {
         super.init();
         this.FLAGS = flagsExported({});
         this.kindPrint = 'enumeration member';
+        this.defaultValue = null;
     }
 }
 

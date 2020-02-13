@@ -109,12 +109,30 @@ export class DocsComment {
     }
 }
 
-export function title(node:DocsNode):Vnode {
-    let desc:Vnode = '';
-    try { desc = [ 
-        mFlags(node),
+export function title(node:DocsNode, parent?:DocsNode):Vnode {
+    if (node.getSignatures()) {
+        return node.getSignatures().map((s:DocsNode) => 
+            m('.hsdocs_child.hsdocs_signature', [title(s, node), s.commentLong()])
+        );
+    }
+    return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, titleElements(node, parent)); 
+}
+
+/**
+ * creates a signature row.
+ * @param node the node for which to generate the signature row.
+ * @param parent optional parent node for use in `mItemName`, used 
+ * when the node has a `signature` array. 
+ */
+export function titleArr(node:DocsNode, parent?:DocsNode):Vnode {
+    return m('span', titleElements(node, parent)); 
+}
+
+function titleElements(node:DocsNode, parent?:DocsNode) {
+    try { return  [ 
+        mFlags(parent || node),
         mKindString(node),
-        mItemName(node),
+        mItemName(parent || node),
         mSignature(node),
         m('span.hsdocs_title_colon',': '), 
         mType(node),
@@ -130,39 +148,8 @@ export function title(node:DocsNode):Vnode {
         log.error(e.message); 
         log.error(e.stack); 
         log.error(`creating title #${node.id} for ${node.kindString}`); 
+        return [m('span.hsdocs_error', e.message)];
     }
-    return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, desc); 
-}
-
-/**
- * creates a signature row.
- * @param node the node for which to generate the signature row.
- * @param parent optional parent node for use in `mItemName`, used 
- * when the node has a `signature` array. 
- */
-export function titleArr(node:DocsNode, parent?:DocsNode):Vnode {
-    let desc:Vnode = '';
-    try { desc = [ 
-        mFlags(parent || node),
-        mKindString(node),
-        mItemName(parent || node),
-        mSignature(node),
-        m('span.hsdocs_title_colon',': '), 
-        mType(node),
-        mExtensionOf(node),
-        mImplementationOf(node),
-        mInheritedFrom(node),
-        mSourceLink(node),
-        // mExtendedBy(node),
-        // mImplementedBy(node)
-        ];
-    }
-    catch(e) { 
-        log.error(e.message); 
-        log.error(e.stack); 
-        log.error(`creating title #${node.id} for ${node.kindString}`); 
-    }
-    return m('span', desc); 
 }
 
 export function inlineTitle(node:DocsNode):Vnode {
@@ -229,11 +216,14 @@ function mSignature(node:DocsNode):Vnode {
 }
 
 function mType(node:DocsNode):Vnode {
+    const defVal = !node.defaultValue? undefined : m('span.hsdocs_type_default', 
+    ` = ${node.defaultValue.replace(/{/gi, '{ ').replace(/}/gi, ' }')}`);
+
     if (!node.type) { 
         if (node.getSignatures()) { 
             return m('span', node.getSignatures().map(s => mType(s)));
         } else {
-            return m('span', ''); 
+            return defVal || m('span', ''); 
         }
     }
     if (!node.type.mType) {
@@ -242,8 +232,7 @@ function mType(node:DocsNode):Vnode {
     try {
         return m('span', [
             m('span.hsdocs_type', node.type.mType(node)),
-            !node.defaultValue? undefined : m('span.hsdocs_type_default', 
-                ` = ${node.defaultValue.replace(/{/gi, '{ ').replace(/}/gi, ' }')}`)
+            defVal
          ]);
      } catch(e) { 
          log.error(e); log.error(e.trace); 

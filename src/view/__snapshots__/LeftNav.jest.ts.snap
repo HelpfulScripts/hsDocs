@@ -560,29 +560,18 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSource"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSignature"
                     >
-                      DocsSource
+                      DocsSignature
                     </a>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="hs-left-nav-entries"
-                >
-                  <div
-                    class="hs-left-nav-header"
-                  >
-                    Type aliases
                   </div>
                   <div>
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSignature"
+                      href="#!/api/hsDocs/hsDocs.Nodes.DocsSource"
                     >
-                      DocsSignature
+                      DocsSource
                     </a>
                   </div>
                 </div>
@@ -696,9 +685,27 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.Access"
+                    >
+                      Access
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.NodesDisplay.Tag"
                     >
                       Tag
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.TestFunction"
+                    >
+                      TestFunction
                     </a>
                   </div>
                 </div>
@@ -737,9 +744,9 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.libLink"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.libLinkByPath"
                     >
-                      libLink
+                      libLinkByPath
                     </a>
                   </div>
                   <div>
@@ -773,9 +780,27 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.getFlagText"
+                    >
+                      getFlagText
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
                       href="#!/api/hsDocs/hsDocs.NodesDisplay.itemChild"
                     >
                       itemChild
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.libLinkByID"
+                    >
+                      libLinkByID
                     </a>
                   </div>
                   <div>
@@ -881,9 +906,18 @@ exports[`LeftNav overview matches snapshot 1`] = `
                     
                     <a
                       class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.NodesDisplay.member2"
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.member"
                     >
-                      member2
+                      member
+                    </a>
+                  </div>
+                  <div>
+                    
+                    <a
+                      class="hs-left-nav-entry  "
+                      href="#!/api/hsDocs/hsDocs.NodesDisplay.prettifyCode"
+                    >
+                      prettifyCode
                     </a>
                   </div>
                 </div>
@@ -1141,113 +1175,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
               <div>
                 <a
                   class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.deprecated_Comment"
-                >
-                  deprecated_Comment
-                </a>
-              </div>
-              <div />
-            </div>
-            <div
-              class="hs-collapsible-content "
-            >
-              <div>
-                <div
-                  class="hs-left-nav-entries"
-                >
-                  <div
-                    class="hs-left-nav-header"
-                  >
-                    Functions
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.comment"
-                    >
-                      comment
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.commentShort"
-                    >
-                      commentShort
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.commentRemainder"
-                    >
-                      commentRemainder
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.mainCommentParams"
-                    >
-                      mainCommentParams
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.otherCommentTags"
-                    >
-                      otherCommentTags
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.prettifyCode"
-                    >
-                      prettifyCode
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.returns"
-                    >
-                      returns
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.deprecated_Comment.textOrShortTextOrDescription"
-                    >
-                      textOrShortTextOrDescription
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="hs-collapsible  hs-left-nav-module"
-          >
-            <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
                   href="#!/api/hsDocs/hsDocs.markdown"
                 >
                   markdown
@@ -1435,113 +1362,6 @@ exports[`LeftNav overview matches snapshot 1`] = `
                       href="#!/api/hsDocs/hsDocs.view.LeftNav.ignoreModules"
                     >
                       ignoreModules
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="hs-collapsible  hs-left-nav-module"
-          >
-            <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.MainComment"
-                >
-                  view.MainComment
-                </a>
-              </div>
-              <div />
-            </div>
-            <div
-              class="hs-collapsible-content "
-            >
-              <div>
-                <div
-                  class="hs-left-nav-entries"
-                >
-                  <div
-                    class="hs-left-nav-header"
-                  >
-                    Functions
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.comment"
-                    >
-                      comment
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.commentLong"
-                    >
-                      commentLong
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry   hs-left-nav-exported"
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.prettifyCode"
-                    >
-                      prettifyCode
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.commentRemainder"
-                    >
-                      commentRemainder
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.mainCommentParams"
-                    >
-                      mainCommentParams
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.otherCommentTags"
-                    >
-                      otherCommentTags
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.returns"
-                    >
-                      returns
-                    </a>
-                  </div>
-                  <div>
-                    
-                    <a
-                      class="hs-left-nav-entry  "
-                      href="#!/api/hsDocs/hsDocs.view.MainComment.textOrShortTextOrDescription"
-                    >
-                      textOrShortTextOrDescription
                     </a>
                   </div>
                 </div>
