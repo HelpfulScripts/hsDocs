@@ -3,13 +3,14 @@
   width: 100%;
   height: 100%;
   display: block;
-  overflow: scroll;
 }
 .hs-layout.hs-column-layout {
+  overflow: scroll;
   position: relative;
   left: 0%;
 }
 .hs-layout.hs-row-layout {
+  overflow: scroll;
   position: relative;
   top: 0%;
 }
@@ -532,6 +533,7 @@ input.hsedit_label {
   width: 100px;
 }
 div.hsedit_list_header {
+  width: 100%;
   height: 20px;
   background-color: #aca;
   font-weight: bold;
@@ -552,6 +554,12 @@ div.hsedit_list_header {
   background-color: rgba(0, 0, 0, 0.1);
   font-family: inherit;
   font-size: inherit;
+}
+.hsedit_textarea {
+  padding-top: 0px;
+  padding-left: 7px;
+  line-height: 1.5em;
+  width: 100%;
 }
 /*# sourceMappingURL=hsWidget.css.map */
 .hs-site-title {
@@ -1308,6 +1316,10 @@ body {
 .hs-site-title {
   color: #448;
   font-weight: bold;
+}
+.hs-site-title > div {
+  padding-top: 5px;
+  padding-left: 10px;
 }
 a.hs-site-title {
   text-decoration: none;
