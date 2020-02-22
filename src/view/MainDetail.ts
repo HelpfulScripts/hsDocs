@@ -23,7 +23,7 @@ export class MainDetail extends Layout {
             (field==='0' || field==='' || field==='overview')? 
                 getOverview(DocSets.getNode(`${lib}.overview`, lib)) : itemDoc(DocSets.getNode(field, lib))
         ); 
-        return m('.hsdocs_main', [result || `no content for lib ${lib} and field ${field}`]); 
+        return m('.hsdocs', [result || `no content for lib ${lib} and field ${field}`]); 
     }
 }
 

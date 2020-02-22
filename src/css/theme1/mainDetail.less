@@ -6,6 +6,10 @@
 @StaticTitleColor: #600;
 @Transparent: rgba(255, 255, 255, 0);
 
+.hsdocs_detail {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 .hsdocs_node {
     padding: 4px 0 0px 0px;  
@@ -20,24 +24,25 @@
     }
 }
 
-.hsdocs_main { // the main information window on the right
+.hsdocs { // the main information window on the right
     border-left: 1px solid @BorderColor;
     font-size: 16px;
+    overflow-y: scroll;
 }
 
 .hsdocs_head_comment {
     padding: 0px 0 0px 5px;
 }
 
-.hsdocs_title {
-    font-size: 1.2em;
-    background-color: @TitleBackground;
-    border-top: 1px solid @TitleBorder;
-    border-bottom: 1px solid @TitleBorder;
-    margin-top: 5px;
-    padding: 10px 0.4em 10px 0em;  
-    padding-left: 5px;
-}
+// .hsdocs_title {
+//     font-size: 1.2em;
+//     // background-color: @TitleBackground;
+//     border-top: 1px solid @TitleBorder;
+//     border-bottom: 1px solid @TitleBorder;
+//     margin-top: 5px;
+//     padding: 10px 0.4em 10px 0em;  
+//     padding-left: 5px;
+// }
 
 .hsdocs_comment {
     // background-color:rgba(255,255,255, 0.8);

@@ -5,12 +5,10 @@
   display: block;
 }
 .hs-layout.hs-column-layout {
-  overflow: scroll;
   position: relative;
   left: 0%;
 }
 .hs-layout.hs-row-layout {
-  overflow: scroll;
   position: relative;
   top: 0%;
 }
@@ -59,6 +57,8 @@
 }
 .hs-layout-frame {
   position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .hs-layout-fill {
   position: relative;
@@ -562,7 +562,7 @@ div.hsedit_list_header {
   width: 100%;
 }
 /*# sourceMappingURL=hsWidget.css.map */
-.hs-site-title {
+.hsdocs_title {
   padding: 5px 10px;
   border-bottom: 1px solid #000;
 }
@@ -573,6 +573,10 @@ div.hsedit_list_header {
 }
 .hs-menu .hs-selected {
   border-bottom: 1px solid white;
+}
+.hsdocs_leftnav {
+  overflow-x: hide;
+  overflow-y: auto;
 }
 .hs-left {
   background-color: #fff;
@@ -653,7 +657,6 @@ div.hsedit_list_header {
   padding: 10px 0.4em 2px 0em;
 }
 .hsdocs_title {
-  background-color: #eef;
   padding: 10px 0.4em 2px 0em;
   padding-left: 5px;
 }
@@ -926,6 +929,10 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
   display: inline-block;
   width: 20px;
 }
+.hsdocs_detail {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .hsdocs_node {
   padding: 4px 0 0px 0px;
   font-size: 1em;
@@ -938,21 +945,13 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 .hsdocs_flag_static > .hsdocs_node {
   background-color: #f8f8f0;
 }
-.hsdocs_main {
+.hsdocs {
   border-left: 1px solid #ccc;
   font-size: 16px;
+  overflow-y: scroll;
 }
 .hsdocs_head_comment {
   padding: 0px 0 0px 5px;
-}
-.hsdocs_title {
-  font-size: 1.2em;
-  background-color: #eef;
-  border-top: 1px solid #d5d5ff;
-  border-bottom: 1px solid #d5d5ff;
-  margin-top: 5px;
-  padding: 10px 0.4em 10px 0em;
-  padding-left: 5px;
 }
 .hsdocs_comment {
   padding-top: 7px;
@@ -1281,7 +1280,8 @@ example .hs-source .hs-menu .hs-layout {
 example .hs-source .hs-menu .hs-layout .hs-layout {
   background-color: #dde;
 }
-example .hs-source .hs-source-main {
+example .hs-source .hsdocs_source_main {
+  overflow: auto;
   background-color: #dde;
   font-size: 12px;
 }
@@ -1300,7 +1300,7 @@ example pre {
   color: black;
   line-height: 18px;
 }
-.hs-site-footer {
+.hsdocs_footer {
   font-size: 60%;
   color: #888;
   padding-left: 10px;
@@ -1313,15 +1313,15 @@ body {
   margin: 0;
   padding: 0;
 }
-.hs-site-title {
+.hsdocs_title {
   color: #448;
   font-weight: bold;
 }
-.hs-site-title > div {
+.hsdocs_title > div {
   padding-top: 5px;
   padding-left: 10px;
 }
-a.hs-site-title {
+a.hsdocs_title {
   text-decoration: none;
 }
 th {
@@ -1412,10 +1412,10 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
-.hs-site-main {
+.hsdocs {
   background-color: #fff;
 }
-.hs-site-main > .hs-layout:first-child > .hs-row-layout > .hs-layout {
+.hsdocs > .hs-layout:first-child > .hs-row-layout > .hs-layout {
   overflow: hidden;
 }
 .hs-indent {

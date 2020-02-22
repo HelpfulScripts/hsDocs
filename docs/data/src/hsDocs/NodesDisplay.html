@@ -154,7 +154,7 @@
 <p id=131 class="line"><span>&nbsp;131</span>function&nbsp;titleElements(node:DocsNode,&nbsp;parent?:DocsNode)&nbsp;{</p>
 <p id=132 class="line"><span>&nbsp;132</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;return&nbsp;&nbsp;[&nbsp;</p>
 <p id=133 class="line"><span>&nbsp;133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mFlags(parent&nbsp;||&nbsp;node),</p>
-<p id=134 class="line"><span>&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mKindString(node),</p>
+<p id=134 class="line"><span>&nbsp;134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mKindString(parent&nbsp;||&nbsp;node),</p>
 <p id=135 class="line"><span>&nbsp;135</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mItemName(parent&nbsp;||&nbsp;node),</p>
 <p id=136 class="line"><span>&nbsp;136</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mSignature(node),</p>
 <p id=137 class="line"><span>&nbsp;137</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(<quote>'span.hsdocs_title_colon'</quote>,<quote>':&nbsp;'</quote>),&nbsp;</p>

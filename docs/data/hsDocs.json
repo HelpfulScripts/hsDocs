@@ -55325,7 +55325,7 @@
 			},
 			"children": [
 				{
-					"id": 2719,
+					"id": 2722,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -55334,7 +55334,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2720,
+							"id": 2723,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -55348,7 +55348,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-							"line": 41,
+							"line": 48,
 							"character": 20
 						}
 					]
@@ -55377,7 +55377,7 @@
 									"flags": {},
 									"children": [
 										{
-											"id": 2696,
+											"id": 2697,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55385,7 +55385,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 19,
+													"line": 20,
 													"character": 15
 												}
 											],
@@ -55400,7 +55400,7 @@
 										},
 										{
 											"id": 2695,
-											"name": "rows",
+											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
 											"flags": {},
@@ -55408,6 +55408,25 @@
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
 													"line": 18,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hsdocs_leftpane\""
+										},
+										{
+											"id": 2696,
+											"name": "rows",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
+													"line": 19,
 													"character": 12
 												}
 											],
@@ -55426,8 +55445,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2696,
-												2695
+												2697,
+												2695,
+												2696
 											]
 										}
 									],
@@ -55466,21 +55486,21 @@
 							}
 						},
 						{
-							"id": 2697,
+							"id": 2698,
 							"name": "Main",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2698,
+									"id": 2699,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2700,
+											"id": 2702,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55488,7 +55508,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 23,
+													"line": 25,
 													"character": 15
 												}
 											],
@@ -55502,7 +55522,26 @@
 											"defaultValue": " [\"menu\", \"mainDetail\"]"
 										},
 										{
-											"id": 2699,
+											"id": 2700,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
+													"line": 23,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hsdocs_left\""
+										},
+										{
+											"id": 2701,
 											"name": "rows",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55510,7 +55549,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 22,
+													"line": 24,
 													"character": 12
 												}
 											],
@@ -55529,15 +55568,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
+												2702,
 												2700,
-												2699
+												2701
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 21,
+											"line": 22,
 											"character": 18
 										}
 									],
@@ -55552,14 +55592,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2698
+										2699
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 21,
+									"line": 22,
 									"character": 8
 								}
 							],
@@ -55569,21 +55609,21 @@
 							}
 						},
 						{
-							"id": 2709,
+							"id": 2711,
 							"name": "footer",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2710,
+									"id": 2712,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2712,
+											"id": 2714,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55591,7 +55631,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 33,
+													"line": 37,
 													"character": 15
 												}
 											],
@@ -55602,7 +55642,7 @@
 											"defaultValue": "\"powered by <i><a href='https://github.com/HelpfulScripts/hsDocs' target='_blank'>hsDocs</a></i>\""
 										},
 										{
-											"id": 2711,
+											"id": 2713,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55610,7 +55650,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 32,
+													"line": 36,
 													"character": 11
 												}
 											],
@@ -55618,7 +55658,7 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": "\".hs-site-footer\""
+											"defaultValue": "\".hsdocs_footer\""
 										}
 									],
 									"groups": [
@@ -55626,15 +55666,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2712,
-												2711
+												2714,
+												2713
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 31,
+											"line": 35,
 											"character": 21
 										}
 									],
@@ -55649,14 +55689,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2710
+										2712
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 31,
+									"line": 35,
 									"character": 10
 								}
 							],
@@ -55666,50 +55706,74 @@
 							}
 						},
 						{
-							"id": 2706,
+							"id": 2708,
 							"name": "leftnav",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2707,
+									"id": 2709,
 									"name": "LeftNav",
-									"kind": 32,
-									"kindString": "Variable",
+									"kind": 2097152,
+									"kindString": "Object literal",
 									"flags": {},
+									"children": [
+										{
+											"id": 2710,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
+													"line": 33,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hsdocs_leftnav\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												2710
+											]
+										}
+									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 30,
+											"line": 32,
 											"character": 23
 										}
 									],
 									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 2708,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intrinsic",
+										"name": "object"
 									}
 								}
 							],
 							"groups": [
 								{
-									"title": "Variables",
-									"kind": 32,
+									"title": "Object literals",
+									"kind": 2097152,
 									"children": [
-										2707
+										2709
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 30,
+									"line": 32,
 									"character": 11
 								}
 							],
@@ -55719,50 +55783,74 @@
 							}
 						},
 						{
-							"id": 2716,
+							"id": 2719,
 							"name": "mainDetail",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2717,
+									"id": 2720,
 									"name": "MainDetail",
-									"kind": 32,
-									"kindString": "Variable",
+									"kind": 2097152,
+									"kindString": "Object literal",
 									"flags": {},
+									"children": [
+										{
+											"id": 2721,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
+													"line": 44,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hsdocs_detail\""
+										}
+									],
+									"groups": [
+										{
+											"title": "Variables",
+											"kind": 32,
+											"children": [
+												2721
+											]
+										}
+									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 38,
+											"line": 43,
 											"character": 29
 										}
 									],
 									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 2718,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {}
-										}
+										"type": "intrinsic",
+										"name": "object"
 									}
 								}
 							],
 							"groups": [
 								{
-									"title": "Variables",
-									"kind": 32,
+									"title": "Object literals",
+									"kind": 2097152,
 									"children": [
-										2717
+										2720
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 38,
+									"line": 43,
 									"character": 14
 								}
 							],
@@ -55772,21 +55860,40 @@
 							}
 						},
 						{
-							"id": 2713,
+							"id": 2715,
 							"name": "menu",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2714,
+									"id": 2716,
 									"name": "DocsMenu",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2715,
+											"id": 2717,
+											"name": "css",
+											"kind": 32,
+											"kindString": "Variable",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
+													"line": 40,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "\".hsdocs_menu\""
+										},
+										{
+											"id": 2718,
 											"name": "docSet",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55794,7 +55901,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 36,
+													"line": 41,
 													"character": 14
 												}
 											],
@@ -55810,14 +55917,15 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2715
+												2717,
+												2718
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 35,
+											"line": 39,
 											"character": 22
 										}
 									],
@@ -55832,14 +55940,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2714
+										2716
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 35,
+									"line": 39,
 									"character": 8
 								}
 							],
@@ -55923,7 +56031,7 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": "\".hs-site-main\""
+											"defaultValue": "\".hsdocs\""
 										}
 									],
 									"groups": [
@@ -55972,21 +56080,21 @@
 							}
 						},
 						{
-							"id": 2701,
+							"id": 2703,
 							"name": "title",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2702,
+									"id": 2704,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2704,
+											"id": 2706,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -55994,7 +56102,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 27,
+													"line": 29,
 													"character": 15
 												}
 											],
@@ -56005,7 +56113,7 @@
 											"defaultValue": "\"hsDocs\""
 										},
 										{
-											"id": 2703,
+											"id": 2705,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -56013,7 +56121,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 26,
+													"line": 28,
 													"character": 11
 												}
 											],
@@ -56021,10 +56129,10 @@
 												"type": "intrinsic",
 												"name": "string"
 											},
-											"defaultValue": "\".hs-site-title\""
+											"defaultValue": "\".hsdocs_title\""
 										},
 										{
-											"id": 2705,
+											"id": 2707,
 											"name": "href",
 											"kind": 32,
 											"kindString": "Variable",
@@ -56032,7 +56140,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-													"line": 28,
+													"line": 30,
 													"character": 12
 												}
 											],
@@ -56048,16 +56156,16 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2704,
-												2703,
-												2705
+												2706,
+												2705,
+												2707
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-											"line": 25,
+											"line": 27,
 											"character": 20
 										}
 									],
@@ -56072,14 +56180,14 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2702
+										2704
 									]
 								}
 							],
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-									"line": 25,
+									"line": 27,
 									"character": 9
 								}
 							],
@@ -56095,13 +56203,13 @@
 							"kind": 2097152,
 							"children": [
 								2693,
-								2697,
-								2709,
-								2706,
-								2716,
-								2713,
+								2698,
+								2711,
+								2708,
+								2719,
+								2715,
 								2688,
-								2701
+								2703
 							]
 						}
 					],
@@ -56123,7 +56231,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2719
+						2722
 					]
 				},
 				{
@@ -61355,7 +61463,7 @@
 			]
 		},
 		{
-			"id": 2721,
+			"id": 2724,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -61573,7 +61681,7 @@
 			]
 		},
 		{
-			"id": 2722,
+			"id": 2725,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -64082,7 +64190,7 @@
 			]
 		},
 		{
-			"id": 2723,
+			"id": 2726,
 			"name": "\"view/Tooltip\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -64092,7 +64200,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/Tooltip.ts",
 			"children": [
 				{
-					"id": 2724,
+					"id": 2727,
 					"name": "tooltip",
 					"kind": 64,
 					"kindString": "Function",
@@ -64101,14 +64209,14 @@
 					},
 					"signatures": [
 						{
-							"id": 2725,
+							"id": 2728,
 							"name": "tooltip",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2726,
+									"id": 2729,
 									"name": "text",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -64119,7 +64227,7 @@
 									}
 								},
 								{
-									"id": 2727,
+									"id": 2730,
 									"name": "tip",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -64130,7 +64238,7 @@
 									}
 								},
 								{
-									"id": 2728,
+									"id": 2731,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -64161,7 +64269,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2724
+						2727
 					]
 				}
 			],
@@ -64185,14 +64293,14 @@
 				106,
 				2686,
 				221,
-				2721,
+				2724,
 				95,
-				2722,
+				2725,
 				2622,
 				2639,
 				2667,
 				30,
-				2723
+				2726
 			]
 		}
 	]

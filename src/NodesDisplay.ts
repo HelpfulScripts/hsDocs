@@ -131,7 +131,7 @@ export function titleArr(node:DocsNode, parent?:DocsNode):Vnode {
 function titleElements(node:DocsNode, parent?:DocsNode) {
     try { return  [ 
         mFlags(parent || node),
-        mKindString(node),
+        mKindString(parent || node),
         mItemName(parent || node),
         mSignature(node),
         m('span.hsdocs_title_colon',': '), 

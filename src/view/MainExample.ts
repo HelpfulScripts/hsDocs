@@ -292,7 +292,7 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
                     css: '.hs-source',
                     content:[
                         m(Menu, {desc: IDs.desc, size:['50px'] }),
-                        m(Layout, { content: m('.hs-layout .hs-source-main', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))})
+                        m(Layout, { content: m('.hs-layout .hsdocs_source_main', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))})
                     ]
                 })
             ]})

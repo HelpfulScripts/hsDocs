@@ -6,7 +6,7 @@ exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
     class="hs-layout  "
   >
     <div
-      class="hsdocs_main"
+      class="hsdocs"
     >
       <div
         class="hsdocs_title"
@@ -537,7 +537,11 @@ provides access to elements of each docset.
                 <span
                   class="hsdocs_flags"
                 />
-                
+                <span
+                  class="hsdocs_kind"
+                >
+                  function
+                </span>
                 <span
                   class="hsdocs_itemname"
                 >
@@ -696,7 +700,11 @@ Once received, the docset is registered in
                 <span
                   class="hsdocs_flags"
                 />
-                
+                <span
+                  class="hsdocs_kind"
+                >
+                  function
+                </span>
                 <span
                   class="hsdocs_itemname"
                 >
@@ -825,7 +833,7 @@ exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
     class="hs-layout  "
   >
     <div
-      class="hsdocs_main"
+      class="hsdocs"
     >
       no item
     </div>
@@ -839,7 +847,7 @@ exports[`MainDetail overview matches snapshot 1`] = `
     class="hs-layout  "
   >
     <div
-      class="hsdocs_main"
+      class="hsdocs"
     >
       <div
         class="hsdocs_head_comment"
