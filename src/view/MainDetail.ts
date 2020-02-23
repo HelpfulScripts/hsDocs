@@ -21,7 +21,8 @@ export class MainDetail extends Layout {
 
         let result = DocSets.nodeCount<=0? '...' :  (
             (field==='0' || field==='' || field==='overview')? 
-                getOverview(DocSets.getNode(`${lib}.overview`, lib)) : itemDoc(DocSets.getNode(field, lib))
+                getOverview(DocSets.getNode(`${lib}.overview`, lib)) 
+              : itemDoc(DocSets.getNode(field, lib))
         ); 
         return m('.hsdocs', [result || `no content for lib ${lib} and field ${field}`]); 
     }
@@ -42,10 +43,9 @@ function getOverview(node:DocsNode):Vnode {
  * @param mdl the module to document on the main panel
  */
 function itemDoc(node:DocsNode) {
-    // log.info(`get itemDoc '${node? node.fullPath : 'node undefined'}'`);
     return !node? 'no item' : [
         node.title(), 
-        m('div.hsdocs_head_comment', node.commentLong()),
+        node.getSignatures()? undefined : m('div.hsdocs_head_comment', node.commentLong()),
         node.members()
     ];
 }

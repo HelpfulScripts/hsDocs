@@ -665,8 +665,8 @@
 <span class="cline-any cline-yes">36944x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">31x</span>
-<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1262,7 +1262,7 @@ export class DocsBaseNode extends DocsNode {
                         }
                         break;
                     case 'comment': 
-                        this[f] = new DocsComment(mdl[f]); break;
+                        this[f] = new DocsComment(mdl[f], this); break;
                     case 'children': 
                         this[f] = mdl.children.map((c:json) =&gt; DocsNode.traverse(c, this.lib, mdl.fullPath)); break;
                     case 'signatures':

@@ -25,9 +25,9 @@
         <span class='fraction'>13/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.33% </span>
+        <span class="strong">70.59% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>11/15</span>
+        <span class='fraction'>12/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -122,6 +122,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,7 +135,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,7 +171,8 @@ export class MainDetail extends Layout {
 &nbsp;
         let result = DocSets.nodeCount&lt;=0? <span class="branch-0 cbranch-no" title="branch not covered" >'...' </span>:  (
             (field==='0' || field==='' || field==='overview')? 
-                getOverview(DocSets.getNode(`${lib}.overview`, lib)) : itemDoc(DocSets.getNode(field, lib))
+                getOverview(DocSets.getNode(`${lib}.overview`, lib)) 
+              : itemDoc(DocSets.getNode(field, lib))
         ); 
         return m('.hsdocs', [result || <span class="branch-1 cbranch-no" title="branch not covered" >`no content for lib ${lib} and field ${field}`]</span>); 
     }
@@ -192,10 +193,9 @@ function getOverview(node:DocsNode):Vnode {
  * @param mdl the module to document on the main panel
  */
 function itemDoc(node:DocsNode) {
-    // log.info(`get itemDoc '${node? node.fullPath : 'node undefined'}'`);
     return !node? 'no item' : [
         node.title(), 
-        m('div.hsdocs_head_comment', node.commentLong()),
+        node.getSignatures()? <span class="branch-0 cbranch-no" title="branch not covered" >undefined </span>: m('div.hsdocs_head_comment', node.commentLong()),
         node.members()
     ];
 }

@@ -575,7 +575,7 @@ div.hsedit_list_header {
   border-bottom: 1px solid white;
 }
 .hsdocs_leftnav {
-  overflow-x: hide;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 .hs-left {
@@ -822,7 +822,7 @@ div.hsedit_list_header {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 0.9em;
-  padding: 0px 0px 10px 10px;
+  padding: 0px 0px 10px 5px;
   margin-left: 0px;
 }
 .hsdocs_comment h1 {
@@ -852,6 +852,34 @@ div.hsedit_list_header {
 .hsdocs_comment pre {
   margin-top: 5px;
 }
+.hsdocs_sig_comment {
+  font-size: 0.9em;
+}
+.hsdocs_comment_params {
+  background-color: #f4f4e0;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.hsdocs_comment_params .hsdocs_params_title {
+  line-height: 1.2em;
+  color: #044;
+  padding: 5px 0 5px 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.hsdocs_comment_param {
+  margin-top: 5px;
+  color: #044;
+  line-height: 1.2em;
+}
+.hsdocs_comment_param .hsdocs_param_name {
+  padding-left: 5px;
+  font-weight: bold;
+  font-style: italic;
+}
+.hsdocs_comment_param .hsdocs_param_comment {
+  padding-left: 5px;
+}
 .hsdocs_comment_remainder {
   margin: 4px 0;
   line-height: 1.6em;
@@ -871,6 +899,7 @@ div.hsedit_list_header {
 }
 .hsdocs_comment_desc {
   line-height: 1.3em;
+  font-size: 0.9em;
   margin-top: 0px;
   margin-bottom: 10px;
 }
@@ -881,10 +910,13 @@ div.hsedit_list_header {
 .hsdocs_comment_desc ul {
   margin: 0 0 10px 0;
 }
+.hsdocs_comment_desc > p {
+  display: inline-block;
+}
 .hs-item-comment-params {
   display: inline-block;
 }
-.hs-item-comment-param {
+.hsdocs_item_comment-param {
   line-height: 1.6em;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -1319,7 +1351,7 @@ body {
 }
 .hsdocs_title > div {
   padding-top: 5px;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 a.hsdocs_title {
   text-decoration: none;

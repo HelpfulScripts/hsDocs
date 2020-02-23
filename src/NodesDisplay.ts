@@ -50,7 +50,7 @@ export class DocsComment {
     text?: string;
     tags?: Tag[];
 
-    constructor(comment:json) {
+    constructor(comment:json, node:DocsNode) {
         this.shortText = comment.shortText;
         this.returns = comment.returns;
         this.text = comment.text;
@@ -77,29 +77,45 @@ export class DocsComment {
         });
         // search for pattern <example...<file...</example>
         text = short? '' : text.replace(/<example[^<]*?(<file[\S\s]*?)<\/example>/gi, example);
-        return m('.hsdocs_comment_desc', prettifyCode(text, short));
+        return m('span.hsdocs_comment_desc', prettifyCode(text, short));
     }
     
     /**
      * creates the `returns` message for a function or method.
      */
-    getReturns(short: boolean) {
+    getParams(params?:DocsParameter[]) {
+        let text = params;
+        return !text? undefined: m('.hsdocs_comment_params', [
+            m('.hsdocs_params_title', 'parameters:'),
+            ...params.map(p => 
+                m('.hsdocs_comment_param',[
+                    m('span.hsdocs_param_name', [p.getName(), ': ']), 
+                    m('span.hsdocs_param_comment', commentLong(p))
+                ]))
+            ]);
+    }
+    
+    /**
+     * creates the `returns` message for a function or method.
+     */
+    getReturns() {
         let text = this.returns;
-        return !text? '': m('span.hsdocs_comment_return', [            
+        return !text? undefined: m('span.hsdocs_comment_return', [            
             m('span.hsdocs_comment_return_tag', 'returns:'), 
             m('span.hsdocs_comment_return_text', text)
         ]);
     }
 
     getCommentRemainder() {
-        return m('', Object.getOwnPropertyNames(this).map((tag:string) => {
+        const tags = Object.getOwnPropertyNames(this);
+        return tags.length===0? undefined : m('', tags.map((tag:string) => {
             switch(tag) {
                 case 'tags':        // already handled
                 case 'shortText':   // already handled
                 case 'text':        // already handled
                 case 'description': // already handled
                 case 'returns':     // already handled
-                        return '';
+                        return undefined;
                 default: return m('.hsdocs_comment_remainder', [
                     m('span.hsdocs_comment_return_tag', tag), 
                     m('span.hsdocs_comment_return_text', this[tag])
@@ -112,7 +128,7 @@ export class DocsComment {
 export function title(node:DocsNode, parent?:DocsNode):Vnode {
     if (node.getSignatures()) {
         return node.getSignatures().map((s:DocsNode) => 
-            m('.hsdocs_child.hsdocs_signature', [title(s, node), s.commentLong()])
+            m('.hsdocs_child.hsdocs_signature', [title(s, node), m('.hsdocs_sig_comment', s.commentLong())])
         );
     }
     return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, titleElements(node, parent)); 
@@ -322,16 +338,17 @@ function mImplementedBy(node:DocsNode):Vnode {
  * @param node the module to scan for comments
  * @return a vnode representing the comment entries
  */
-export function commentLong(node:DocsNode):Vnode {
+export function commentLong(node:DocsNode):Vnode[] {
     let content:any[] = [];
     if (node.comment) {
         content.push(node.comment.getDescription(false));
-        content.push(node.comment.getReturns(false));
+        content.push(node.comment.getParams(node.parameters));
+        content.push(node.comment.getReturns());
         content.push(node.comment.getCommentRemainder());
-    } else if (node.getSignatures() && node.getSignatures()[0]) {
-        return commentLong(node.getSignatures()[0]);
+    } else if (node.getSignatures()) {
+        return node.getSignatures().map(s => commentLong(s));
     }
-    return content.length? m('.hsdocs_comment', content) : undefined;    
+    return content.length? content : undefined;    
 }
 
 interface TestFunction {
@@ -412,10 +429,10 @@ function member(nodes:DocsNode[], title:string, access:Access): Vnode {
 function itemChild(node:DocsNode): Vnode[] {
     if (node.getSignatures()) {
         return node.getSignatures().map((s:DocsNode) => 
-            m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), s.commentLong()])
+            m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), m('.hsdocs_childsig_comment', s.commentLong())])
         );
     } else if (node.commentLong()) {
-        return m('.hsdocs_child', [titleArr(node), node.commentLong()]);
+        return m('.hsdocs_child', [titleArr(node), m('.hsdocs_sig_comment',node.commentLong())]);
     } else if (node.inheritedFrom) {
         return m('.hsdocs_child', node.inheritedFrom.name);
     } else {

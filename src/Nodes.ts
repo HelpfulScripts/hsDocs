@@ -154,7 +154,7 @@ export class DocsBaseNode extends DocsNode {
                         }
                         break;
                     case 'comment': 
-                        this[f] = new DocsComment(mdl[f]); break;
+                        this[f] = new DocsComment(mdl[f], this); break;
                     case 'children': 
                         this[f] = mdl.children.map((c:json) => DocsNode.traverse(c, this.lib, mdl.fullPath)); break;
                     case 'signatures':

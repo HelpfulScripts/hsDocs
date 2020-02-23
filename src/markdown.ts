@@ -85,5 +85,4 @@ function substituteLinks(comment:string, currentRoute:string):string {
                 ` <a href="#!/api/${lib}/${lib}.${module}">${text}</a>`;
     });
     return comment;
-
 }

@@ -66,46 +66,36 @@ exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
       <div
         class="hsdocs_head_comment"
       >
-        <div
-          class="hsdocs_comment"
+        <span
+          class="hsdocs_comment_desc"
         >
-          <div
-            class="hsdocs_comment_desc"
-          >
-            <p>
-              DocSets.ts. Loads the doc.json files to process and display as documentation.
+          <p>
+            DocSets.ts. Loads the doc.json files to process and display as documentation.
 Processing occurs in these steps:
-            </p>
-            
-
-            <ol>
-              
-
-              <li>
-                Load the index.json file that contains a list of doc.json files to load, one for each library to show
-              </li>
-              
-
-              <li>
-                Load each doc.json file, which describes a library
-              </li>
-              
-
-              <li>
-                Call DocSets.add to add the library name to the registry and create an index of entries for the library
-              </li>
-              
-
-            </ol>
-          </div>
+          </p>
           
-          <div>
+
+          <ol>
             
+
+            <li>
+              Load the index.json file that contains a list of doc.json files to load, one for each library to show
+            </li>
             
+
+            <li>
+              Load each doc.json file, which describes a library
+            </li>
             
+
+            <li>
+              Call DocSets.add to add the library name to the registry and create an index of entries for the library
+            </li>
             
-          </div>
-        </div>
+
+          </ol>
+        </span>
+        <div />
       </div>
       <div
         class="hsdocs_members"
@@ -178,23 +168,17 @@ Processing occurs in these steps:
                 </span>
               </span>
               <div
-                class="hsdocs_comment"
+                class="hsdocs_sig_comment"
               >
-                <div
+                <span
                   class="hsdocs_comment_desc"
                 >
                   <p>
                     DocSets object. Keeps a list of registered docsets and
 provides access to elements of each docset.
                   </p>
-                </div>
-                
-                <div>
-                  
-                  
-                  
-                  
-                </div>
+                </span>
+                <div />
               </div>
             </div>
           </div>
@@ -424,9 +408,9 @@ provides access to elements of each docset.
                 </span>
               </span>
               <div
-                class="hsdocs_comment"
+                class="hsdocs_sig_comment"
               >
-                <div
+                <span
                   class="hsdocs_comment_desc"
                 >
                   <p>
@@ -436,14 +420,8 @@ provides access to elements of each docset.
                       './data/index.json'
                     </code>
                   </p>
-                </div>
-                
-                <div>
-                  
-                  
-                  
-                  
-                </div>
+                </span>
+                <div />
               </div>
             </div>
           </div>
@@ -657,9 +635,9 @@ provides access to elements of each docset.
                 </span>
               </span>
               <div
-                class="hsdocs_comment"
+                class="hsdocs_childsig_comment"
               >
-                <div
+                <span
                   class="hsdocs_comment_desc"
                 >
                   <p>
@@ -678,14 +656,65 @@ Once received, the docset is registered in
                     </code>
                      method.
                   </p>
+                </span>
+                <div
+                  class="hsdocs_comment_params"
+                >
+                  <div
+                    class="hsdocs_params_title"
+                  >
+                    parameters:
+                  </div>
+                  <div
+                    class="hsdocs_comment_param"
+                  >
+                    <span
+                      class="hsdocs_param_name"
+                    >
+                      dir
+                      : 
+                    </span>
+                    <span
+                      class="hsdocs_param_comment"
+                    >
+                      <span
+                        class="hsdocs_comment_desc"
+                      >
+                        <p>
+                          the directory to read from
+                        </p>
+                      </span>
+                      <div />
+                    </span>
+                  </div>
+                  <div
+                    class="hsdocs_comment_param"
+                  >
+                    <span
+                      class="hsdocs_param_name"
+                    >
+                      file
+                      : 
+                    </span>
+                    <span
+                      class="hsdocs_param_comment"
+                    >
+                      <span
+                        class="hsdocs_comment_desc"
+                      >
+                        <p>
+                          the 
+                          <code>
+                            json
+                          </code>
+                           file to load as docset
+                        </p>
+                      </span>
+                      <div />
+                    </span>
+                  </div>
                 </div>
-                
-                <div>
-                  
-                  
-                  
-                  
-                </div>
+                <div />
               </div>
             </div>
           </div>
@@ -818,6 +847,9 @@ Once received, the docset is registered in
                   
                 </span>
               </span>
+              <div
+                class="hsdocs_childsig_comment"
+              />
             </div>
           </div>
         </div>
@@ -852,330 +884,320 @@ exports[`MainDetail overview matches snapshot 1`] = `
       <div
         class="hsdocs_head_comment"
       >
-        <div
-          class="hsdocs_comment"
+        <span
+          class="hsdocs_comment_desc"
         >
-          <div
-            class="hsdocs_comment_desc"
+          <h1
+            id="hsgraphd3"
           >
-            <h1
-              id="hsgraphd3"
+            hsGraphD3
+          </h1>
+          
+
+          <p>
+            Helpful Scripts Graph convenience wrapper for D3js.
+
+            <a
+              href="./data/src/hsGraphD3/coverage/"
+              target="_blank"
             >
+              [Coverage Info]
+            </a>
+          </p>
+          
+
+          <p>
+            <a
+              href="https://badge.fury.io/js/hsgraphd3"
+            >
+              <img
+                alt="npm version"
+                src="https://badge.fury.io/js/hsgraphd3.svg"
+              />
+            </a>
+            
+
+            <a
+              href="https://github.com/helpfulscripts/hsgraphd3"
+            >
+              <img
+                alt="GitHub"
+                src="https://img.shields.io/badge/GitHub-hsGraphD3-blue.svg"
+              />
+            </a>
+            
+
+            <a
+              href="https://helpfulscripts.github.io/hsGraphD3/#!/api/hsGraphD3/0"
+            >
+              <img
+                alt="docs"
+                src="https://img.shields.io/badge/hsDocs-hsGraphD3-blue.svg"
+              />
+            </a>
+            
+
+            <a
+              href="https://travis-ci.org/HelpfulScripts/hsGraphD3"
+            >
+              <img
+                alt="Build Status"
+                src="https://travis-ci.org/HelpfulScripts/hsGraphD3.svg?branch=master"
+              />
+            </a>
+            
+
+            <a
+              href="https://david-dm.org/helpfulscripts/hsgraphd3"
+            >
+              <img
+                alt="Dependencies Status"
+                src="https://david-dm.org/helpfulscripts/hsgraphd3.svg"
+              />
+            </a>
+            
+
+            <a
+              href="https://coveralls.io/github/HelpfulScripts/hsGraphD3?branch=master"
+            >
+              <img
+                alt="Coverage Status"
+                src="https://coveralls.io/repos/github/HelpfulScripts/hsGraphD3/badge.svg?branch=master"
+              />
+            </a>
+            
+
+            <a
+              href="https://snyk.io/test/github/HelpfulScripts/hsGraphD3?targetFile=package.json"
+            >
+              <img
+                alt="Known Vulnerabilities"
+                src="https://snyk.io/test/github/HelpfulScripts/hsGraphD3/badge.svg?targetFile=package.json"
+              />
+            </a>
+            
+
+            <a
+              href="https://www.npmjs.com/package/hsgraphd3"
+            >
+              <img
+                alt="NPM License"
+                src="https://img.shields.io/badge/license-MIT-brightgreen.svg"
+              />
+            </a>
+          </p>
+          
+
+          <hr />
+          
+
+          <p>
+            <code>
               hsGraphD3
-            </h1>
-            
-
-            <p>
-              Helpful Scripts Graph convenience wrapper for D3js.
-
-              <a
-                href="./data/src/hsGraphD3/coverage/"
-                target="_blank"
-              >
-                [Coverage Info]
-              </a>
-            </p>
-            
-
-            <p>
-              <a
-                href="https://badge.fury.io/js/hsgraphd3"
-              >
-                <img
-                  alt="npm version"
-                  src="https://badge.fury.io/js/hsgraphd3.svg"
-                />
-              </a>
-              
-
-              <a
-                href="https://github.com/helpfulscripts/hsgraphd3"
-              >
-                <img
-                  alt="GitHub"
-                  src="https://img.shields.io/badge/GitHub-hsGraphD3-blue.svg"
-                />
-              </a>
-              
-
-              <a
-                href="https://helpfulscripts.github.io/hsGraphD3/#!/api/hsGraphD3/0"
-              >
-                <img
-                  alt="docs"
-                  src="https://img.shields.io/badge/hsDocs-hsGraphD3-blue.svg"
-                />
-              </a>
-              
-
-              <a
-                href="https://travis-ci.org/HelpfulScripts/hsGraphD3"
-              >
-                <img
-                  alt="Build Status"
-                  src="https://travis-ci.org/HelpfulScripts/hsGraphD3.svg?branch=master"
-                />
-              </a>
-              
-
-              <a
-                href="https://david-dm.org/helpfulscripts/hsgraphd3"
-              >
-                <img
-                  alt="Dependencies Status"
-                  src="https://david-dm.org/helpfulscripts/hsgraphd3.svg"
-                />
-              </a>
-              
-
-              <a
-                href="https://coveralls.io/github/HelpfulScripts/hsGraphD3?branch=master"
-              >
-                <img
-                  alt="Coverage Status"
-                  src="https://coveralls.io/repos/github/HelpfulScripts/hsGraphD3/badge.svg?branch=master"
-                />
-              </a>
-              
-
-              <a
-                href="https://snyk.io/test/github/HelpfulScripts/hsGraphD3?targetFile=package.json"
-              >
-                <img
-                  alt="Known Vulnerabilities"
-                  src="https://snyk.io/test/github/HelpfulScripts/hsGraphD3/badge.svg?targetFile=package.json"
-                />
-              </a>
-              
-
-              <a
-                href="https://www.npmjs.com/package/hsgraphd3"
-              >
-                <img
-                  alt="NPM License"
-                  src="https://img.shields.io/badge/license-MIT-brightgreen.svg"
-                />
-              </a>
-            </p>
-            
-
-            <hr />
-            
-
-            <p>
-              <code>
-                hsGraphD3
-              </code>
-               provides convienent programmatic shortcuts to plotting data with 
-              <a
-                href="https://d3js.org/"
-              >
-                <code>
-                  D3js
-                </code>
-              </a>
-              .
-            </p>
-            
-
-            <p>
-              See 
-              <a
-                href="#!/api/hsDocs/hsDocs.API"
-              >
-                API
-              </a>
-              .
-            </p>
-            
-
-            <h2
-              id="usage"
+            </code>
+             provides convienent programmatic shortcuts to plotting data with 
+            <a
+              href="https://d3js.org/"
             >
-              Usage
-            </h2>
+              <code>
+                D3js
+              </code>
+            </a>
+            .
+          </p>
+          
+
+          <p>
+            See 
+            <a
+              href="#!/api/hsDocs/hsDocs.API"
+            >
+              API
+            </a>
+            .
+          </p>
+          
+
+          <h2
+            id="usage"
+          >
+            Usage
+          </h2>
+          
+
+          <ol>
             
 
-            <ol>
-              
-
-              <li>
-                create a 
-                <a
-                  href="#!/api/hsDocs/hsDocs.Graph"
-                >
-                  <code>
-                    Graph
-                  </code>
-                </a>
-                 object with a root DOM element to attach to:
-
+            <li>
+              create a 
+              <a
+                href="#!/api/hsDocs/hsDocs.Graph"
+              >
                 <code>
-                  graph = new hsGraphD3.GraphCartesian(root);
+                  Graph
                 </code>
-              </li>
-              
+              </a>
+               object with a root DOM element to attach to:
 
-              <li>
-                add desired series configurations, specifying the type of series, as well as the data to use for the x- and y-axes,
+              <code>
+                graph = new hsGraphD3.GraphCartesian(root);
+              </code>
+            </li>
+            
+
+            <li>
+              add desired series configurations, specifying the type of series, as well as the data to use for the x- and y-axes,
 and other variables, depending on the series type:
 
-                <code>
-                  graph.series.add('area', {x:'time', y:'volume', r:()=&gt;5});
-                </code>
-              </li>
-              
-
-              <li>
-                apply any desired formatting changes to the default:
-
-                <code>
-                  graph.axes.defaults.color = '#88f';
-                </code>
-              </li>
-              
-
-              <li>
-                render the graph for a given data set:
-
-                <code>
-                  graph.render(data);
-                </code>
-              </li>
-              
-
-            </ol>
-            
-
-            <p>
-              To dynamically update the graph to new data, call the 
-              <a
-                href="#!/api/hsDocs/hsDocs.Graph.RenderChain"
-              >
-                <code>
-                  update
-                </code>
-              </a>
-               method.
-See 
-              <a
-                href="#!/api/hsDocs/hsDocs.examples"
-              >
-                examples
-              </a>
-              .
-            </p>
-            
-
-            <h2
-              id="data"
-            >
-              Data
-            </h2>
-            
-
-            <p>
-              Data is provided either in table form
-            </p>
-            
-
-            <pre>
               <code>
-                [
+                graph.series.add('area', {x:'time', y:'volume', r:()=&gt;5});
+              </code>
+            </li>
+            
+
+            <li>
+              apply any desired formatting changes to the default:
+
+              <code>
+                graph.axes.defaults.color = '#88f';
+              </code>
+            </li>
+            
+
+            <li>
+              render the graph for a given data set:
+
+              <code>
+                graph.render(data);
+              </code>
+            </li>
+            
+
+          </ol>
+          
+
+          <p>
+            To dynamically update the graph to new data, call the 
+            <a
+              href="#!/api/hsDocs/hsDocs.Graph.RenderChain"
+            >
+              <code>
+                update
+              </code>
+            </a>
+             method.
+See 
+            <a
+              href="#!/api/hsDocs/hsDocs.examples"
+            >
+              examples
+            </a>
+            .
+          </p>
+          
+
+          <h2
+            id="data"
+          >
+            Data
+          </h2>
+          
+
+          <p>
+            Data is provided either in table form
+          </p>
+          
+
+          <pre>
+            <code>
+              [
    colNames[],
    &lt;number|string|Date&gt;[],
    ...
 ]
 
-              </code>
-            </pre>
-            
+            </code>
+          </pre>
+          
 
-            <p>
-              or in object-literal form
-            </p>
-            
+          <p>
+            or in object-literal form
+          </p>
+          
 
-            <pre>
-              <code>
-                {
+          <pre>
+            <code>
+              {
    name?:  string;
    colNames:  string[];
    rows:   &lt;number|string|Date&gt;[][];
 }
 
-              </code>
-            </pre>
-            
-
-            <h2
-              id="example-1-link-plotsbubble-bubble-chart"
-            >
-              Example 1: 
-              <a
-                href="#!/api/hsDocs/hsDocs.plots.Bubble"
-              >
-                <code>
-                  bubble
-                </code>
-              </a>
-               chart
-            </h2>
-            
-
-            <style />
-            
-
-            <p>
-              <example
-                class="hs-layout-frame"
-                id="hs100000"
-                style="height:200px"
-              />
-            </p>
-            
-
-            <h2
-              id="example-2-link-plotsline-line-vs-link-plotstimeseries-timeseries"
-            >
-              Example 2: 
-              <a
-                href="#!/api/hsDocs/hsDocs.plots.Line"
-              >
-                <code>
-                  line
-                </code>
-              </a>
-               vs. 
-              <a
-                href="#!/api/hsDocs/hsDocs.plots.TimeSeries"
-              >
-                <code>
-                  timeseries
-                </code>
-              </a>
-            </h2>
-            
-
-            <style />
-            
-
-            <p>
-              <example
-                class="hs-layout-frame"
-                id="hs100002"
-                style="height:200px"
-              />
-            </p>
-          </div>
+            </code>
+          </pre>
           
-          <div>
-            
-            
-            
-            
-          </div>
-        </div>
+
+          <h2
+            id="example-1-link-plotsbubble-bubble-chart"
+          >
+            Example 1: 
+            <a
+              href="#!/api/hsDocs/hsDocs.plots.Bubble"
+            >
+              <code>
+                bubble
+              </code>
+            </a>
+             chart
+          </h2>
+          
+
+          <style />
+          
+
+          <p>
+            <example
+              class="hs-layout-frame"
+              id="hs100000"
+              style="height:200px"
+            />
+          </p>
+          
+
+          <h2
+            id="example-2-link-plotsline-line-vs-link-plotstimeseries-timeseries"
+          >
+            Example 2: 
+            <a
+              href="#!/api/hsDocs/hsDocs.plots.Line"
+            >
+              <code>
+                line
+              </code>
+            </a>
+             vs. 
+            <a
+              href="#!/api/hsDocs/hsDocs.plots.TimeSeries"
+            >
+              <code>
+                timeseries
+              </code>
+            </a>
+          </h2>
+          
+
+          <style />
+          
+
+          <p>
+            <example
+              class="hs-layout-frame"
+              id="hs100002"
+              style="height:200px"
+            />
+          </p>
+        </span>
+        <div />
       </div>
     </div>
   </div>
