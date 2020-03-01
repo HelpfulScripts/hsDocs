@@ -24,7 +24,7 @@ which serves the [Github IO pages for this project](https://helpfulscripts.githu
 
 2a - Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
 or create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:
-```html
+```
 <html>
    <head>
       <link href="https://helpfulscripts.github.io/hsDocs/hsDocs.css" rel="stylesheet" />
@@ -38,7 +38,7 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 2b - Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes 
 (`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from
 [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and modify `index.html` as follows:
-```html
+```
 <html>
    <head><link href="hsDocs.css" rel="stylesheet" /></head>
    <body class='hs-layout-fill'>
@@ -51,7 +51,7 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 See below for creating the docset.
 
 4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
-```json
+```
 {   
     "docs": [
         "hsDocs.json",
@@ -169,8 +169,9 @@ A `tsconfig.json` file seems to be required by typedoc. The file can be empty
 ### For rendering the docsets:
 - [Mithril](https://mithril.js.org)
 - [showdown](https://github.com/showdownjs/showdown)
-- [hsLayout]
-- [webpack]
+- [hsLayout](https://github.com/HelpfulScripts/hsLayout)
+- [hsWidget](https://github.com/HelpfulScripts/hsWidget)
+- [webpack](https://webpack.js.org/)
 
 ## Structural Code Overview
 The main entry point for the web-app is index.ts, which initiates loading the docsets 

@@ -1,5 +1,6 @@
 import { MainDetail } from './MainDetail';
 import { m } from 'hslayout';
+import { Log } from 'hsnode'; const log = new Log('MainDetail.jest');
 import { DocSets } from '../DocSets';
 const fs = require('fs');
 
@@ -46,16 +47,16 @@ m.route.param = (name:string) => {
 };
 
 
-const root:any = window.document.createElement("body");
-
-
 describe('MainDetail', () => {
     describe('overview', () => {
+        const root:any = window.document.createElement("body");
         beforeAll((done) => { 
             m.route.get = () => '/api/hsDocs/0';
+            // m.route.get = () => '/api/hsGraphD3/hsGraphD3.plots.Pie.Pie';
             DocSets.loadList('mylist.json')
             .then(() => {
                 route.field = '0';
+                // route.field = 'hsGraphD3.plots.Pie.Pie';
                 m.mount(root, { view: () => { return m(MainDetail, {});} }); 
                 setTimeout(done, 200);
                 m.redraw();
@@ -74,6 +75,7 @@ describe('MainDetail', () => {
     });
 
     describe('hsDocs.DocSets', () => {
+        const root:any = window.document.createElement("body");
         beforeAll((done) => { 
             m.route.get = () => '/api/hsDocs/hsDocs.DocSets';
             DocSets.loadList('mylist.json')
@@ -97,11 +99,37 @@ describe('MainDetail', () => {
     });
 
     describe('hsDocs.DocSets.DocSets.add', () => {
+        const root:any = window.document.createElement("body");
         beforeAll((done) => { 
             m.route.get = () => '/api/hsDocs/hsDocs.DocSets.DocSets.add';
             DocSets.loadList('mylist.json')
             .then(() => {
                 route.field = 'hsDocs.DocSets.DocSets.add';
+                m.mount(root, { view: () => { return m(MainDetail, { });} }); 
+                setTimeout(done, 200);
+                m.redraw();
+            });
+        });
+    
+        it('exists', (done)=>{
+            expect(MainDetail).toBeDefined();
+            done();
+        });
+    
+        it('matches snapshot', (done)=>{
+            expect(root).toMatchSnapshot();
+            done();
+        });
+    });
+
+    describe('hsGraphD3.plots.Pie.Pie', () => {
+        const root:any = window.document.createElement("body");
+        beforeAll((done) => { 
+            m.route.get = () => '/api/hsGraphD3/hsGraphD3.plots.Pie.Pie';
+            DocSets.loadList('mylist.json')
+            .then(() => {
+                route.lib = 'hsGraphD3';
+                route.field = 'hsGraphD3.plots.Pie.Pie';
                 m.mount(root, { view: () => { return m(MainDetail, { });} }); 
                 setTimeout(done, 200);
                 m.redraw();

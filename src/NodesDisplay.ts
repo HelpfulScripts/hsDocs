@@ -40,6 +40,7 @@ export function libLinkByPath(lib:string, path:string, name:string, css=''):Vnod
 }
 
 function libLinkByID(lib:string, id:string|number, name:string, css=''):Vnode {
+// log.info(`libLinkByID ${lib} ${id} ${name}`);
     const path = (DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';
     return libLinkByPath(lib, path, name, css);
 }
@@ -296,16 +297,23 @@ function mInheritedFrom(node:DocsNode):Vnode {
     }
 }
 
+function adjustCase(name:string) {
+    if (name.indexOf('hs') === 0) {
+        return 'hs' + name.slice(2).charAt(0).toUpperCase() + name.slice(3).toLowerCase();
+    }
+    return name;
+}
+
 function mSourceLink(node:DocsNode):Vnode {
     const source = node.sources? node.sources[0] : undefined;
     if (source) {
         let file = (source.fileName || '').replace('.ts', '.html');
         const index = file.indexOf(node.lib);
         if (index>0) {
-            file = file.substr(index); // only consider links within the docSet (everything after the lib name)
+            file = file.substr(index+node.lib.length+5); // only consider links within the docSet (everything after the lib name)
         }
         return m('span.hsdocs_source',  
-            m('a', { href:`${SourceBase}${node.lib}/${file}#${Math.max(0,source.line-5)}`, target:"_blank"}, '[source]')
+            m('a', { href:`${SourceBase}${adjustCase(node.lib)}/${file}#${Math.max(0,source.line-5)}`, target:"_blank"}, '[source]')
         );
     } else {
         return m('span.hsdocs_source', '');

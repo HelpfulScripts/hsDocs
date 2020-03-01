@@ -20,7 +20,7 @@
                     height:90%;
             }
             code { padding: 5px 0;}</style></html><body>
-                <h1>src/view/MainExample.ts</h1>
+                <h1>MainExample.ts</h1>
                 <div class='listing'><code><p id=1 class="line"><span>&nbsp;&nbsp;&nbsp;1</span><comment>/**</comment></p>
 <p id=2 class="line"><span>&nbsp;&nbsp;&nbsp;2</span><comment>&nbsp;*&nbsp;Comment&nbsp;sections&nbsp;may&nbsp;contain&nbsp;code&nbsp;examples&nbsp;that&nbsp;are&nbsp;intended&nbsp;to&nbsp;be&nbsp;live&nbsp;demonstrations&nbsp;for&nbsp;</comment></p>
 <p id=3 class="line"><span>&nbsp;&nbsp;&nbsp;3</span><comment>&nbsp;*&nbsp;explaining&nbsp;some&nbsp;concept&nbsp;of&nbsp;the&nbsp;module&nbsp;are&nbsp;contained&nbsp;in.&nbsp;</comment></p>
@@ -423,7 +423,7 @@
 <p id=400 class="line"><span>&nbsp;400</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(path.indexOf(<quote>'/'</quote>)>=0)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;if&nbsp;structured:&nbsp;call&nbsp;as&nbsp;is</comment></p>
 <p id=401 class="line"><span>&nbsp;401</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;await&nbsp;load(path);</p>
 <p id=402 class="line"><span>&nbsp;402</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;else&nbsp;try&nbsp;other&nbsp;paths</comment></p>
-<p id=403 class="line"><span>&nbsp;403</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(let&nbsp;i=0;&nbsp;i<=paths.length;&nbsp;i++)&nbsp;{</p>
+<p id=403 class="line"><span>&nbsp;403</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(let&nbsp;i=0;&nbsp;i<paths.length;&nbsp;i++)&nbsp;{</p>
 <p id=404 class="line"><span>&nbsp;404</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;</p>
 <p id=405 class="line"><span>&nbsp;405</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;=&nbsp;paths[i];</p>
 <p id=406 class="line"><span>&nbsp;406</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;await&nbsp;load(paths[i]);&nbsp;</p>
@@ -431,8 +431,8 @@
 <p id=408 class="line"><span>&nbsp;408</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=409 class="line"><span>&nbsp;409</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(e)&nbsp;{}</p>
 <p id=410 class="line"><span>&nbsp;410</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p id=411 class="line"><span>&nbsp;411</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`${path}&nbsp;${content?<quote>'found'</quote>:<quote>'not&nbsp;found'</quote>}`);</p>
-<p id=412 class="line"><span>&nbsp;412</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p id=411 class="line"><span>&nbsp;411</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment>//&nbsp;log.info(`${path}&nbsp;of&nbsp;${paths.join(<quote>',&nbsp;'</quote>)}&nbsp;${content?<quote>'found'</quote>:<quote>'not&nbsp;found'</quote>}`);</comment></p>
+<p id=412 class="line"><span>&nbsp;412</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=413 class="line"><span>&nbsp;413</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch(e)&nbsp;{&nbsp;log.error(`loading&nbsp;lib&nbsp;${path}`);}</p>
 <p id=414 class="line"><span>&nbsp;414</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;code:string;</p>
 <p id=415 class="line"><span>&nbsp;415</span>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;</p>

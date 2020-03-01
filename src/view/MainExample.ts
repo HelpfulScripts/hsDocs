@@ -400,7 +400,7 @@ async function loadScript(sym:string, path:string) {
         if (path.indexOf('/')>=0) {     // if structured: call as is
             content = await load(path);
         } else {                        // else try other paths
-            for (let i=0; i<=paths.length; i++) {
+            for (let i=0; i<paths.length; i++) {
                 try { 
                     path = paths[i];
                     content = await load(paths[i]); 
@@ -408,7 +408,7 @@ async function loadScript(sym:string, path:string) {
                 }
                 catch(e) {}
             }
-            log.info(`${path} ${content?'found':'not found'}`);
+            // log.info(`${path} of ${paths.join(', ')} ${content?'found':'not found'}`);
         }
     } catch(e) { log.error(`loading lib ${path}`);}
     let code:string;

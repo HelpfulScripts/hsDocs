@@ -56,7 +56,7 @@ exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
           class="hsdocs_source"
         >
           <a
-            href="data/src/hsDocs/hsDocs/src/DocSets.html#0"
+            href="data/src/hsDocs/DocSets.html#0"
             target="_blank"
           >
             [source]
@@ -160,7 +160,7 @@ Processing occurs in these steps:
                   class="hsdocs_source"
                 >
                   <a
-                    href="data/src/hsDocs/hsDocs/src/DocSets.html#33"
+                    href="data/src/hsDocs/DocSets.html#33"
                     target="_blank"
                   >
                     [source]
@@ -251,7 +251,7 @@ provides access to elements of each docset.
                   class="hsdocs_source"
                 >
                   <a
-                    href="data/src/hsDocs/hsDocs/src/DocSets.html#17"
+                    href="data/src/hsDocs/DocSets.html#17"
                     target="_blank"
                   >
                     [source]
@@ -330,7 +330,7 @@ provides access to elements of each docset.
                   class="hsdocs_source"
                 >
                   <a
-                    href="data/src/hsDocs/hsDocs/src/DocSets.html#9"
+                    href="data/src/hsDocs/DocSets.html#9"
                     target="_blank"
                   >
                     [source]
@@ -400,7 +400,7 @@ provides access to elements of each docset.
                   class="hsdocs_source"
                 >
                   <a
-                    href="data/src/hsDocs/hsDocs/src/DocSets.html#15"
+                    href="data/src/hsDocs/DocSets.html#15"
                     target="_blank"
                   >
                     [source]
@@ -486,7 +486,7 @@ provides access to elements of each docset.
                   class="hsdocs_source"
                 >
                   <a
-                    href="data/src/hsDocs/hsDocs/src/DocSets.html#6"
+                    href="data/src/hsDocs/DocSets.html#6"
                     target="_blank"
                   >
                     [source]
@@ -860,6 +860,20 @@ Once received, the docset is registered in
 `;
 
 exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
+<body>
+  <div
+    class="hs-layout  "
+  >
+    <div
+      class="hsdocs"
+    >
+      no item
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MainDetail hsGraphD3.plots.Pie.Pie matches snapshot 1`] = `
 <body>
   <div
     class="hs-layout  "

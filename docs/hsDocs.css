@@ -1026,15 +1026,15 @@ hsdocs_flag_public .hsdocs_comment_return .hsdocs_comment_return_text {
 }
 .reducedSizeSubTitle {
   padding-top: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .hsdocs_extendedBy {
   padding-top: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .hsdocs_implementedBy {
   padding-top: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .hsdocs_memberhsdocs_flag_public .hsdocs_member_title {
   background-color: #e0efe0;
@@ -1268,6 +1268,8 @@ example .hs-selectable {
   height: 100%;
 }
 example .hs-execution {
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #eed;
 }
 example .hs-execution .hs-column-layout > .hs-layout {
@@ -1305,6 +1307,10 @@ example .hs-execution .hs-white {
   top: 0;
   bottom: 0;
   right: 0;
+}
+example .hs-source {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 example .hs-source .hs-menu .hs-layout {
   background-color: white;
