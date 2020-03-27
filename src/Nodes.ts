@@ -32,7 +32,7 @@ export class DocsNode {
 
     private static makeNode(mdl:json):DocsNode {
         const node = groupKindTitle[mdl.kind];
-        if (!node) { log.warn(`unknown kind ${mdl.kind}`); }
+        if (!node) { log.warn(`unknown kind ${mdl.kindString} (${mdl.kind}) for ${mdl.fullPath}`); }
         else { return new node(mdl); }
     }
     
@@ -77,6 +77,7 @@ export class DocsNode {
     public    setSignature: DocsSetSignature[];
     protected signatures: DocsSignature[];
     public    sources: DocsSource[] = [];
+    public    target:number;
     public    TYPE = <string[]>[];
     public    type: DocsType = null;
     public    typeParameter:DocsTypeParameter[];
@@ -134,7 +135,6 @@ export class DocsBaseNode extends DocsNode {
         this.init();
         this.set(mdl);
         this.setFlags(mdl.flags);
-        // this.mdl = mdl;
     }
 
     init() {
@@ -375,6 +375,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
     init() {
         super.init();
         this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection', 'tuple'];
+        this.FLAGS = flagsPublic(flagsExported({}));
         this.sources = null;
         this.parameters = null;
         this.inheritedFrom = null;
@@ -390,6 +391,7 @@ export class DocsIndexSignature extends DocsBaseNode {
     init() {
         super.init();
         this.TYPE = ['array', 'reference', 'union', 'intrinsic', 'reflection'];
+        this.FLAGS = { isExported:false };
         this.sources = null;
         this.parameters = [];
         this.kindPrint = 'index signature';
@@ -400,6 +402,7 @@ class DocsConstructorSignature extends DocsBaseNode implements DocsParamaterized
     init() {
         super.init();
         this.TYPE = ['reference'];
+        this.FLAGS = { isExported:false };
         this.sources = null;
         this.parameters = null;
         this.overwrites = null;
@@ -412,8 +415,8 @@ class DocsConstructorSignature extends DocsBaseNode implements DocsParamaterized
 export class DocsParameter extends DocsBaseNode {
     init() {
         super.init();
-        this.FLAGS = { isOptional:false, isRest:false };
-        this.TYPE = ['reference', 'intrinsic', 'union', 'array', 'reflection', 'typeParameter'];
+        this.FLAGS = { isOptional:false, isRest:false, isExported:false };
+        this.TYPE = ['reference', 'intrinsic', 'union', 'array', 'reflection', 'typeParameter', 'query'];
         this.sources = null;   //  sources optional
         this.defaultValue = null;
         this.kindPrint = 'parameter';
@@ -423,6 +426,7 @@ export class DocsParameter extends DocsBaseNode {
 class DocsTypeLiteral extends DocsStructured {
     init() {
         super.init();
+        this.FLAGS = { isExported:false };
         this.signatures = null;
         this.indexSignature = null;
         this.sources = null;   //  sources optional
@@ -434,6 +438,7 @@ class DocsTypeParameter extends DocsBaseNode {
     init() {
         super.init();
         this.TYPE = ['typeOperator', 'reference'];
+        this.FLAGS = { isExported:false };
         this.sources = null;   
         this.kindPrint = 'types parameter';
     }
@@ -463,9 +468,10 @@ class DocsAccessors extends DocsSourced implements DocsParamaterized {
 
 export class DocsGetSignature extends DocsBaseNode {
     init() {
+        this.TYPE = ['intrinsic', 'reference', 'union', 'array', 'reflection', 'stringLiteral'];
+        this.FLAGS = { isExported:false };
         this.kindPrint = 'get';
         this.sources = undefined;   
-        this.TYPE = ['intrinsic', 'reference', 'union', 'array', 'reflection', 'stringLiteral'];
         this.overwrites = null;
         this.inheritedFrom = null;
     }
@@ -477,6 +483,7 @@ export class DocsSetSignature extends DocsBaseNode {
         this.sources = undefined; 
         this.parameters = [];  
         this.TYPE = ['intrinsic', 'stringLiteral'];
+        this.FLAGS = { isExported:false };
     }
 }
 
@@ -502,29 +509,44 @@ class DocsTypeAlias extends DocsSourced {
     }
 }
 
+class DocsReference extends DocsBaseNode {
+    init() {
+        super.init();
+        this.FLAGS = { isExported:false };
+        this.TYPE = [];
+        this.kindPrint = 'reference';
+        // optionals:
+        this.sources = undefined;
+        // required:
+        this.target = 0;
+    }
+}
+
 export const groupKindTitle = {
-    0:      DocsRoot,
-    1:      DocsExternalModule,
-    2:      DocsModule,
-    4:      DocsEnumeration,
-    8:      DocsUnknown,
-    16:     DocsEnumerationMember,
-    32:     DocsVariable,
-    64:     DocsFunction,
-    128:    DocsClass,
-    256:    DocsInterface,
-    512:    DocsConstructor,
-    1024:   DocsProperty,
-    2048:   DocsMethod,
-    4096:   DocsCallSignature,
-    8192:   DocsIndexSignature,
-    16384:  DocsConstructorSignature,
-    32768:  DocsParameter,
-    65536:  DocsTypeLiteral,
-    131072: DocsTypeParameter,
-    262144: DocsAccessors,
-    524288: DocsGetSignature,
-    1048576:DocsSetSignature,
-    2097152:DocsObjectLiteral,
-    4194304:DocsTypeAlias
+    0:       DocsRoot,
+    1:       DocsExternalModule,
+    2:       DocsModule,
+    4:       DocsEnumeration,
+    8:       DocsUnknown,
+    16:      DocsEnumerationMember,
+    32:      DocsVariable,
+    64:      DocsFunction,
+    128:     DocsClass,
+    256:     DocsInterface,
+    512:     DocsConstructor,
+    1024:    DocsProperty,
+    2048:    DocsMethod,
+    4096:    DocsCallSignature,
+    8192:    DocsIndexSignature,
+    16384:   DocsConstructorSignature,
+    32768:   DocsParameter,
+    65536:   DocsTypeLiteral,
+    131072:  DocsTypeParameter,
+    262144:  DocsAccessors,
+    524288:  DocsGetSignature,
+    1048576: DocsSetSignature,
+    2097152: DocsObjectLiteral,
+    4194304: DocsTypeAlias,
+
+    16777216:DocsReference
 };

@@ -3,7 +3,7 @@
  */
 /** */
 
-import { Log }                  from 'hsutil'; const log = new Log('DocTypes');
+import { Log }                  from 'hsutil'; const log = new Log('Types');
 import { DocsNode }             from './Nodes';
 import { m, Vnode}              from 'hslayout';
 import { libLinkByPath }        from './NodesDisplay';
@@ -23,6 +23,14 @@ export interface DocsReferenceIdType extends DocsNamedType {
     id: number;
 }
 
+export interface DocsConstrainedType extends DocsNamedType {
+    constraint: {
+        operator: string;
+        type:     string;
+        target:   DocsNamedType;
+    };
+}
+
 
 //------------- Type class definitions -------------------------------------------
 
@@ -38,8 +46,10 @@ export class DocsType implements DocsReferenceIdType {
             case 'union': return new DocsUnionType(mdlType, node);
             case 'typeParameter': return new DocsTypeParameterType(mdlType, node);
             case 'typeOperator': return new DocsTypeOperatorType(mdlType, node);
+            case 'query': return new DocsQueryType(mdlType, node);
+            case 'indexedAccess': return new DocsIndexedAccessType(mdlType, node);
             case 'unknown': return new DocsUnknownType(mdlType, node);
-            default: log.warn(`unknown type '${mdlType.type}' in makeType`);
+            default: log.warn(`unknown type '${mdlType.type}' for ${node.fullPath} in makeType`);
         }
     }
     type: string;
@@ -119,13 +129,15 @@ class DocsArrayType extends DocsType {
 }
 
 class DocsTypeParameterType extends DocsType {
-    constraint: DocsTypeOperatorType;
+    constraint: DocsNamedType|DocsTypeOperatorType;
     constructor(mdlType:DocsGenericType, node:DocsNode) {
         super(mdlType, node);
         this.constraint = mdlType.constraint;
     }
     mType() {
-        return m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
+        return this.constraint.name? 
+            m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
+          : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
     }
 }
 
@@ -198,5 +210,29 @@ class DocsUnionType extends DocsType {
 
     mType(parent:DocsNode):Vnode {
         return m('span.hsdocs_type_union', [...this.types.map((t:any, i:number) => m('span', [i>0?' | ':'', t.mType(parent)]))]);
+    }
+}
+
+class DocsQueryType extends DocsType {
+    queryType:DocsReferenceIdType;
+    constructor(mdlType:DocsGenericType, node:DocsNode) {
+        super(mdlType, node);
+        this.queryType = mdlType.queryType;
+    }
+    mType() {
+        return m('span.hsdocs_type_query', `typeof ${this.queryType.name}`);
+    }
+}
+
+class DocsIndexedAccessType extends DocsType {
+    indexType: DocsConstrainedType;
+    objectType:DocsNamedType;
+    constructor(mdlType:DocsGenericType, node:DocsNode) {
+        super(mdlType, node);
+        this.indexType  = mdlType.indexType;
+        this.objectType = mdlType.objectType;
+    }
+    mType() {
+        return m('span.hsdocs_type_indexed_access', this.objectType.name);
     }
 }
