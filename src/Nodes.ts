@@ -70,7 +70,7 @@ export class DocsNode {
     public    kindString: string = '';
     public    kindPrint: string;
     public    lib:string = null;
-    protected name:string = '';
+    public    name:string = '';
     public    originalName:string;
     public    overwrites: DocsReferenceIdType;
     public    parameters:DocsParameter[];

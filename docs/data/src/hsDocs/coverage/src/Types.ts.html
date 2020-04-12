@@ -25,9 +25,9 @@
         <span class='fraction'>58/82</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">48.57% </span>
+        <span class="strong">45.95% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>17/35</span>
+        <span class='fraction'>17/37</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">54.29% </span>
@@ -284,7 +284,8 @@
 <a name='L236'></a><a href='#L236'>236</a>
 <a name='L237'></a><a href='#L237'>237</a>
 <a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -422,6 +423,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -659,7 +661,8 @@ class DocsTypeParameterType extends DocsType {
         this.constraint = mdlType.constraint;
     }
 <span class="fstat-no" title="function not covered" >    mType(</span>) {
-<span class="cstat-no" title="statement not covered" >        return this.constraint.name? </span>
+<span class="cstat-no" title="statement not covered" >        return !this.constraint? </span>
+            m('span.hsdocs_type_typeparameter', this.name) : this.constraint.name? 
             m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
           : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
     }

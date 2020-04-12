@@ -2163,7 +2163,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -3948,7 +3948,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -5783,7 +5783,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -7549,7 +7549,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -9288,7 +9288,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -11164,7 +11164,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -12930,7 +12930,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -14559,7 +14559,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -16188,7 +16188,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -17927,7 +17927,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -19724,7 +19724,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -21453,7 +21453,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -23151,7 +23151,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -24890,7 +24890,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -26656,7 +26656,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -28165,7 +28165,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -29718,7 +29718,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -31515,7 +31515,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -33213,7 +33213,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -34842,7 +34842,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -36471,7 +36471,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -38131,7 +38131,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -39829,7 +39829,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -41495,7 +41495,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -43161,7 +43161,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -44790,7 +44790,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -46419,7 +46419,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -48048,7 +48048,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -49677,7 +49677,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -51306,7 +51306,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true
+								"isPublic": true
 							},
 							"sources": [
 								{
@@ -53039,7 +53039,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -54600,7 +54600,7 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isProtected": true,
+								"isPublic": true,
 								"isExported": true
 							},
 							"sources": [
@@ -56752,7 +56752,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-									"line": 368,
+									"line": 371,
 									"character": 7
 								}
 							],
@@ -56773,7 +56773,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-									"line": 367,
+									"line": 370,
 									"character": 8
 								}
 							],
@@ -56795,7 +56795,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-									"line": 366,
+									"line": 369,
 									"character": 8
 								}
 							],
@@ -56819,7 +56819,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-														"line": 366,
+														"line": 369,
 														"character": 29
 													}
 												],
@@ -56837,7 +56837,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-														"line": 366,
+														"line": 369,
 														"character": 15
 													}
 												],
@@ -56860,7 +56860,7 @@
 										"sources": [
 											{
 												"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-												"line": 366,
+												"line": 369,
 												"character": 9
 											}
 										]
@@ -56883,7 +56883,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 365,
+							"line": 368,
 							"character": 16
 						}
 					]
@@ -57005,7 +57005,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 362,
+							"line": 365,
 							"character": 22
 						}
 					]
@@ -57087,7 +57087,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 300,
+							"line": 303,
 							"character": 19
 						}
 					]
@@ -57144,7 +57144,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 349,
+							"line": 352,
 							"character": 27
 						}
 					]
@@ -57200,7 +57200,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 451,
+							"line": 454,
 							"character": 20
 						}
 					]
@@ -57291,7 +57291,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 437,
+							"line": 440,
 							"character": 18
 						}
 					]
@@ -57513,7 +57513,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 323,
+							"line": 326,
 							"character": 20
 						}
 					]
@@ -57554,7 +57554,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 259,
+							"line": 262,
 							"character": 21
 						}
 					]
@@ -57636,7 +57636,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 271,
+							"line": 274,
 							"character": 26
 						}
 					]
@@ -57677,7 +57677,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 332,
+							"line": 335,
 							"character": 23
 						}
 					]
@@ -57718,7 +57718,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 280,
+							"line": 283,
 							"character": 23
 						}
 					]
@@ -57882,7 +57882,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 307,
+							"line": 310,
 							"character": 20
 						}
 					]
@@ -57923,7 +57923,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 235,
+							"line": 238,
 							"character": 14
 						}
 					]
@@ -57990,7 +57990,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 418,
+							"line": 421,
 							"character": 15
 						}
 					]
@@ -58037,7 +58037,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 370,
+							"line": 373,
 							"character": 23
 						}
 					]
@@ -58097,7 +58097,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/NodesDisplay.ts",
-							"line": 470,
+							"line": 473,
 							"character": 21
 						}
 					]
@@ -59824,7 +59824,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 229,
+									"line": 230,
 									"character": 29
 								}
 							],
@@ -59895,7 +59895,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 228,
+									"line": 229,
 									"character": 13
 								}
 							],
@@ -59966,7 +59966,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 229,
+									"line": 230,
 									"character": 14
 								}
 							],
@@ -60031,7 +60031,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 235,
+									"line": 236,
 									"character": 9
 								}
 							],
@@ -60201,7 +60201,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 227,
+							"line": 228,
 							"character": 27
 						}
 					],
@@ -60712,7 +60712,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 217,
+									"line": 218,
 									"character": 34
 								}
 							],
@@ -60835,7 +60835,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 217,
+									"line": 218,
 									"character": 13
 								}
 							],
@@ -60900,7 +60900,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 222,
+									"line": 223,
 									"character": 9
 								}
 							],
@@ -61069,7 +61069,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 216,
+							"line": 217,
 							"character": 19
 						}
 					],
@@ -61603,7 +61603,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 157,
+									"line": 158,
 									"character": 43
 								}
 							],
@@ -61786,7 +61786,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 174,
+									"line": 175,
 									"character": 9
 								}
 							],
@@ -61954,7 +61954,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 157,
+							"line": 158,
 							"character": 24
 						}
 					],
@@ -62470,7 +62470,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 190,
+									"line": 191,
 									"character": 30
 								}
 							],
@@ -62513,7 +62513,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 190,
+									"line": 191,
 									"character": 12
 								}
 							],
@@ -62676,7 +62676,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 195,
+									"line": 196,
 									"character": 9
 								}
 							],
@@ -62845,7 +62845,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 189,
+							"line": 190,
 							"character": 19
 						}
 					],
@@ -63389,7 +63389,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 146,
+									"line": 147,
 									"character": 26
 								}
 							],
@@ -63512,7 +63512,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 145,
+									"line": 146,
 									"character": 12
 								}
 							],
@@ -63530,7 +63530,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 146,
+									"line": 147,
 									"character": 10
 								}
 							],
@@ -63595,7 +63595,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 152,
+									"line": 153,
 									"character": 9
 								}
 							],
@@ -63765,7 +63765,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 144,
+							"line": 145,
 							"character": 26
 						}
 					],
@@ -64292,7 +64292,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 205,
+									"line": 206,
 									"character": 38
 								}
 							],
@@ -64443,7 +64443,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 205,
+									"line": 206,
 									"character": 9
 								}
 							],
@@ -64498,7 +64498,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-									"line": 211,
+									"line": 212,
 									"character": 9
 								}
 							],
@@ -64667,7 +64667,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Types.ts",
-							"line": 204,
+							"line": 205,
 							"character": 19
 						}
 					],

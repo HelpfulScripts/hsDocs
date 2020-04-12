@@ -135,7 +135,8 @@ class DocsTypeParameterType extends DocsType {
         this.constraint = mdlType.constraint;
     }
     mType() {
-        return this.constraint.name? 
+        return !this.constraint? 
+            m('span.hsdocs_type_typeparameter', this.name) : this.constraint.name? 
             m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
           : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
     }

@@ -225,6 +225,9 @@ function mSignature(node:DocsNode):Vnode {
             result.unshift(m('span.hsdocs_itemname', ' ('));
             result.push(m('span.hsdocs_itemname', ')'));
         }
+        if (s.typeParameter) {
+            result.unshift(...s.typeParameter.map(t => m('span',` <${t.name}>`)));
+        }
         return result;
     };
 
