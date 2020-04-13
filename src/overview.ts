@@ -104,9 +104,10 @@ Examples:
 - `{@link DocSets.DocSets.add` the `add` function`}` -> {@link DocSets.DocSets.add the `add` function}
 
 
-### Mithril Code Examples
- * `hsDocs` supports creating  code examples in comment sections as explained 
- * in the {@link hsDocs:view.MainExample MainExample overview}.
+### Code Examples
+ * `hsDocs` supports creating live code examples in comment sections as explained 
+ * in the {@link hsDocs:view.MainExample MainExample overview}. The following example 
+ * renders content using [Mithril](https://mithril.js.org/). 
  * <example>
  * <file name="script.js">
  * let tl = [10, 10];
