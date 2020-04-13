@@ -55,7 +55,7 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
     grunt.registerTask('test', ['clean:cov', 'jest', 'copy:coverage', 'cleanupCoverage']); 
     
     //------ Support Tasks
-    grunt.registerTask('run-coveralls', [/*'coveralls:main'*/]);
+    grunt.registerTask('run-coveralls', ['coveralls:main']);
     grunt.registerTask('build-html',    ['copy:buildHTML']);
     grunt.registerTask('build-css',     ['less']);
     // grunt.registerTask('build-example', ['clean:example', 'copy:example', 'ts:example', 'less:example', 'webpack:exampleDev']);
