@@ -78,7 +78,7 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
     grunt.registerTask('dev',           ['buildDev', 'stage']);
     grunt.registerTask('product',       ['buildMin', 'stage']);	
     // grunt.registerTask('travis',        ['build-base', (type === 'node')?'':'webpack:appProd', 'test']); // exlude node-apps from webPack to avoid webpack error
-    grunt.registerTask('travis',        ['build-base', 'test']); // exlude node-apps from webPack to avoid webpack error
+    grunt.registerTask('travis',        ['build-base', 'test', 'run-coveralls']); // exlude node-apps from webPack to avoid webpack error
     grunt.registerTask('help',          ['h']);	
 
     grunt.registerMultiTask('sourceCode', translateSourcesToHTML);  
