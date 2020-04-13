@@ -422,6 +422,7 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
         const token = require('./.codecov.json').token;
         const result = cp.spawnSync(`bash <(curl -s https://codecov.io/bash) -t ${token}`, {stdio: 'inherit', shell:'/bin/bash'});
         console.log(`status: ${result.status}\noutput: ${result.stdout}\nerror: ${result.stderr}`);
+        if (result.stderr) { console.log(`error: ${result.stderr}`); }
     }
 
     function writeIndexJson() {
