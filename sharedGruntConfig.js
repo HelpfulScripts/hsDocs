@@ -294,7 +294,7 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
         coveralls: {
             options: { force: true },
             main: {
-                src: `docs/data/src/${lib}/coverage/lcov.info`
+                src: `docs/data/src/lcov.info`
             }
         },
 

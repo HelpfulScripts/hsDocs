@@ -5,7 +5,8 @@
     "es6",
     "jsdocs",
     "typescript",
-    "typedoc"
+    "typedoc",
+    "API documentation viewer"
   ],
   "description": "Helpful Scripts API documentation viewer for Typescript projects",
   "homepage": "https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0",
