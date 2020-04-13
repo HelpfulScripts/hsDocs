@@ -419,10 +419,13 @@ module.exports = (grunt, dir, dependencies, type, lib) => {
     
     function codecov() {
         const cp = require('child_process');
-        const token = require('./.codecov.json').token;
-        const result = cp.spawnSync(`bash <(curl -s https://codecov.io/bash) -t ${token}`, {stdio: 'inherit', shell:'/bin/bash'});
-        console.log(`status: ${result.status}\noutput: ${result.stdout}\nerror: ${result.stderr}`);
-        if (result.stderr) { console.log(`error: ${result.stderr}`); }
+        const codecov = require('./.codecov.json');
+        if (codecov) {
+            const token = codecov.token;
+            const result = cp.spawnSync(`bash <(curl -s https://codecov.io/bash) -t ${token}`, {stdio: 'inherit', shell:'/bin/bash'});
+            console.log(`status: ${result.status}\noutput: ${result.stdout}\nerror: ${result.stderr}`);
+            if (result.stderr) { console.log(`error: ${result.stderr}`); }
+        }
     }
 
     function writeIndexJson() {
