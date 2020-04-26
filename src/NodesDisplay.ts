@@ -251,11 +251,12 @@ function mType(node:DocsNode):Vnode {
     }
     try {
         return m('span', [
-            m('span.hsdocs_type', node.type.mType(node)),
+            m('span.hsdocs_type', node.type.mType()),
             defVal
          ]);
      } catch(e) { 
-         log.error(e); log.error(e.trace); 
+         log.error(`mType: ${e}`); 
+         log.error(e.trace); 
     }     
 }
 

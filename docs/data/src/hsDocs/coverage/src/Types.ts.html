@@ -25,9 +25,9 @@
         <span class='fraction'>58/82</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">45.95% </span>
+        <span class="strong">43.59% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>17/37</span>
+        <span class='fraction'>17/39</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">54.29% </span>
@@ -590,7 +590,7 @@ export class DocsType implements DocsReferenceIdType {
         this.node = node;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    mType(</span>parent:DocsNode) { <span class="cstat-no" title="statement not covered" >return m('span.hsdocs_type_unknown', 'default type'); </span>}
+<span class="fstat-no" title="function not covered" >    mType(</span>) { <span class="cstat-no" title="statement not covered" >return m('span.hsdocs_type_unknown', 'default type'); </span>}
 }
 &nbsp;
 class DocsIntrinsicType extends DocsType {
@@ -599,7 +599,7 @@ class DocsIntrinsicType extends DocsType {
         super(mdlType, node);
         this.name = mdlType.name;
     }
-    mType(parent:DocsNode) {
+    mType() {
         // return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
         return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: this.name); 
     }
@@ -612,11 +612,11 @@ class DocsReferenceType extends DocsType {
         this.typeArguments = !mdlType.typeArguments? [] : mdlType.typeArguments.map((t:DocsNamedType) =&gt; DocsType.makeType(t, node));
     }
 &nbsp;
-    mType(parent:DocsNode) {
+    mType() {
         let refRes = [this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: this.name];
         if (this.typeArguments.length) { 
             refRes.push('&lt;');
-            refRes.push(...this.typeArguments.map(t =&gt; t.mType(parent)));
+            refRes.push(...this.typeArguments.map(t =&gt; t.mType()));
             refRes.push('&gt;'); 
         }
         return m('span.hsdocs_type_reference', refRes);        
@@ -649,8 +649,8 @@ class DocsArrayType extends DocsType {
         super(mdlType, node);
         this.elementType = DocsType.makeType(mdlType.elementType, node);
     }
-    mType(parent:DocsNode) {
-        return m('span.hsdocs_type_array', ['Array&lt;', this.elementType.mType(parent), '&gt;']);
+    mType() {
+        return m('span.hsdocs_type_array', ['Array&lt;', this.elementType.mType(), '&gt;']);
     }
 }
 &nbsp;
@@ -698,12 +698,12 @@ class DocsReflectionType extends DocsType {
         }
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    mType(</span>parent:DocsNode) {
+<span class="fstat-no" title="function not covered" >    mType(</span>) {
         const dec = <span class="cstat-no" title="statement not covered" >this.declaration;</span>
         const rflRes = <span class="cstat-no" title="statement not covered" >!dec? 'UNKNOWN' : </span>
             dec.children? [
                 '{ ',
-                ...dec.children.map(<span class="fstat-no" title="function not covered" >(c</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >`${c.name}: ${c.type.mType(parent)}`)</span>.join(', '),
+                ...dec.children.map(<span class="fstat-no" title="function not covered" >(c</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >`${c.name}: ${c.type?c.type.mType() : '??type??'}`)</span>.join(', '),
                 ' }'
             ] : dec.getSignatures()? [
                 ...dec.getSignatures().map(<span class="fstat-no" title="function not covered" >s </span>=&gt; <span class="cstat-no" title="statement not covered" >titleArr(s))</span>
@@ -719,10 +719,10 @@ class DocsTupleType extends DocsType {
         super(mdlType, node);
         mdlType.elements.forEach((e:DocsType) =&gt; this.elements.push(DocsType.makeType(e, node)));
     }
-<span class="fstat-no" title="function not covered" >    mType(</span>parent:DocsNode) {
+<span class="fstat-no" title="function not covered" >    mType(</span>) {
 <span class="cstat-no" title="statement not covered" >        return m('span.hsdocs_type_tuple', [</span>
             '[ ',
-            ...this.elements.map(<span class="fstat-no" title="function not covered" >(e</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >[i&gt;0?', ':undefined, e.mType(parent)])</span>,
+            ...this.elements.map(<span class="fstat-no" title="function not covered" >(e</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >[i&gt;0?', ':undefined, e.mType()])</span>,
             ' ]'
         ]);
     }
@@ -735,8 +735,8 @@ class DocsUnionType extends DocsType {
         mdlType.types.forEach((t:DocsReferenceIdType) =&gt; this.types.push(DocsType.makeType(t, node)));
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    mType(</span>parent:DocsNode):Vnode {
-<span class="cstat-no" title="statement not covered" >        return m('span.hsdocs_type_union', [...this.types.map(<span class="fstat-no" title="function not covered" >(t</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >m('span', [i&gt;0?' | ':'', t.mType(parent)]))</span>]);</span>
+<span class="fstat-no" title="function not covered" >    mType(</span>):Vnode {
+<span class="cstat-no" title="statement not covered" >        return m('span.hsdocs_type_union', [...this.types.map(<span class="fstat-no" title="function not covered" >(t</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >m('span', [i&gt;0?' | ':'', t.mType()]))</span>]);</span>
     }
 }
 &nbsp;

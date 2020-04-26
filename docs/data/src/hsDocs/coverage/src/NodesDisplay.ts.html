@@ -35,9 +35,9 @@
         <span class='fraction'>51/68</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70.33% </span>
+        <span class="strong">69.95% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>128/182</span>
+        <span class='fraction'>128/183</span>
       </div>
     </div>
     <p class="quiet">
@@ -543,7 +543,8 @@
 <a name='L495'></a><a href='#L495'>495</a>
 <a name='L496'></a><a href='#L496'>496</a>
 <a name='L497'></a><a href='#L497'>497</a>
-<a name='L498'></a><a href='#L498'>498</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -800,6 +801,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1293,11 +1295,12 @@ function mType(node:DocsNode):Vnode {
     }
     try {
         return m('span', [
-            m('span.hsdocs_type', node.type.mType(node)),
+            m('span.hsdocs_type', node.type.mType()),
             defVal
          ]);
      } catch(e) { 
-<span class="cstat-no" title="statement not covered" >         log.error(e); <span class="cstat-no" title="statement not covered" ></span>log.error(e.trace); </span>
+<span class="cstat-no" title="statement not covered" >         log.error(`mType: ${e}`); </span>
+<span class="cstat-no" title="statement not covered" >         log.error(e.trace); </span>
     }     
 }
 &nbsp;
