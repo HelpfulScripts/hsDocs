@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "hslayout": "2.4.x",
-    "hsutil": "3.0.x",
+    "hsutil": "3.2.x",
     "hswidget": "2.4.x",
     "mithril": "^2.0.4",
     "showdown": "^1.9.1"
