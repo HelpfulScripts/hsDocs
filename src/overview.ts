@@ -62,7 +62,7 @@ See below for more details on creating the docset.
 ```
 {   
     "docs": [
-        "hsDocs.json",
+        "docs.json",
         ...
     ],
     "title": "HS Libraries"   // will be displayed at the top left corner

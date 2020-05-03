@@ -64,7 +64,7 @@ See below for more details on creating the docset.
 Files in the `docs` array are interpreted relative to the `./data` folder unless they are full URLs.
 ```
 {   "docs": [
-        "hsDocs.json",
+        "docs.json",
         "http://helpfulscripts.github.io/hsLayout/data/hsLayout.json",
         ...
     ],
