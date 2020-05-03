@@ -22,10 +22,9 @@ Provides a more compact overview of `Typescript` library documentation as an alt
 
 ## Usage
 1 - Create a web-app directory to serve the docsets from. As an example, 
-see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
-which serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)
+see the [`docs` folder](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) in this project's Github page, which serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)
 
-2a - Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
+2a - Copy the [`index.html` file](https://github.com/HelpfulScripts/hsDocs/tree/master/docs/index.html) from Github into the new directory, 
 or create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:
 ```
 <html>
@@ -50,10 +49,18 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 </html>
 ```
 
-3 - Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json` .
-See below for creating the docset.
+3 - Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json`. Install `typedoc` and run
+```
+typedoc --json docs.json src
+(or: ./node_modules/.bin/typedoc --json docs.json src)
+```
+in your project folder. This assumes `src` is the path to the sources the sources. 
+Then copy `docs.json` into the `<web-app>/data/`.
 
-4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
+See below for more details on creating the docset.
+
+4 - Create a list of docsets to render in a new file **`index.json`** inside **`./data`**.
+Files in the `docs` array are interpreted relative to the `./data` folder unless they are full URLs.
 ```
 {   "docs": [
         "hsDocs.json",
@@ -71,8 +78,6 @@ These are created by the command `grunt sourceCode` in the `docs/data/src/` fold
 
 
 ## Creating the Documentation DocSet
-Install and run `typedoc` in your project folder; e.g. assuming `src` contains the sources:
-   > typedoc --json docs.json src
 Follow the instruction for [`typedoc`](https://typedoc.org/guides/doccomments/) in commenting the code 
 and set the [`json`](https://typedoc.org/guides/options/#json) option to create a 
 json file containing the documentation. See the Configuration section below for details.

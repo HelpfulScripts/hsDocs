@@ -68,7 +68,10 @@ These are created by the command `grunt sourceCode` in the `docs/data/src/` fold
 
 ## Creating the Documentation DocSet
 Install and run `typedoc` in your project folder; e.g. assuming `src` contains the sources:
-   > typedoc --json docs.json src
+```
+typedoc --json docs.json src
+```
+
 Follow the instruction for [`typedoc`](https://typedoc.org/guides/doccomments/) in commenting the code 
 and set the [`json`](https://typedoc.org/guides/options/#json) option to create a 
 json file containing the documentation. See the Configuration section below for details.
