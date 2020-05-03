@@ -67,7 +67,8 @@ These are created by the command `grunt sourceCode` in the `docs/data/src/` fold
 6 - Point a browser to the web-app directory
 
 ## Creating the Documentation DocSet
-Follow the instruction for `typedoc` in commenting the code and set the `json` option to create a 
+Follow the instruction for (`typedoc`)[https://typedoc.org/guides/doccomments/] in commenting the code 
+and set the (`json`)[https://typedoc.org/guides/options/#json] option to create a 
 json file containing the documentation. See the Configuration section below for details.
 
 In addition to the documented source files, `hsDocs` recognizes a special **`overview.ts`** file 
