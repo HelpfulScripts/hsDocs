@@ -459,7 +459,7 @@
 										"isExported": true
 									},
 									"comment": {
-										"shortText": "loads an index set and the docsets it contains from driectory `dir`.",
+										"shortText": "loads an index set and the docsets it contains from directory `dir`.",
 										"returns": "a promise to load the index set\n"
 									},
 									"parameters": [
@@ -639,20 +639,6 @@
 							"parameters": [
 								{
 									"id": 2766,
-									"name": "dir",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"text": "the directory to read from"
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 2767,
 									"name": "file",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -58359,7 +58345,7 @@
 			]
 		},
 		{
-			"id": 2832,
+			"id": 2831,
 			"name": "\"Site\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -58372,7 +58358,7 @@
 			},
 			"children": [
 				{
-					"id": 2868,
+					"id": 2867,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -58381,7 +58367,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2869,
+							"id": 2868,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -58403,7 +58389,7 @@
 					]
 				},
 				{
-					"id": 2833,
+					"id": 2832,
 					"name": "design",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -58412,21 +58398,21 @@
 					},
 					"children": [
 						{
-							"id": 2839,
+							"id": 2838,
 							"name": "LeftPane",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2840,
+									"id": 2839,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2843,
+											"id": 2842,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58448,7 +58434,7 @@
 											"defaultValue": "[\"title\", \"leftnav\", \"footer\"]"
 										},
 										{
-											"id": 2841,
+											"id": 2840,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58467,7 +58453,7 @@
 											"defaultValue": "\".hsdocs_leftpane\""
 										},
 										{
-											"id": 2842,
+											"id": 2841,
 											"name": "rows",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58494,9 +58480,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2843,
-												2841,
-												2842
+												2842,
+												2840,
+												2841
 											]
 										}
 									],
@@ -58518,7 +58504,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2840
+										2839
 									]
 								}
 							],
@@ -58535,21 +58521,21 @@
 							}
 						},
 						{
-							"id": 2844,
+							"id": 2843,
 							"name": "Main",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2845,
+									"id": 2844,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2848,
+											"id": 2847,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58571,7 +58557,7 @@
 											"defaultValue": "[\"menu\", \"mainDetail\"]"
 										},
 										{
-											"id": 2846,
+											"id": 2845,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58590,7 +58576,7 @@
 											"defaultValue": "\".hsdocs_left\""
 										},
 										{
-											"id": 2847,
+											"id": 2846,
 											"name": "rows",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58617,9 +58603,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2848,
-												2846,
-												2847
+												2847,
+												2845,
+												2846
 											]
 										}
 									],
@@ -58641,7 +58627,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2845
+										2844
 									]
 								}
 							],
@@ -58658,21 +58644,21 @@
 							}
 						},
 						{
-							"id": 2857,
+							"id": 2856,
 							"name": "footer",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2858,
+									"id": 2857,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2860,
+											"id": 2859,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58691,7 +58677,7 @@
 											"defaultValue": "\"powered by <i><a href='https://github.com/HelpfulScripts/hsDocs' target='_blank'>hsDocs</a></i>\""
 										},
 										{
-											"id": 2859,
+											"id": 2858,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58715,8 +58701,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2860,
-												2859
+												2859,
+												2858
 											]
 										}
 									],
@@ -58738,7 +58724,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2858
+										2857
 									]
 								}
 							],
@@ -58755,21 +58741,21 @@
 							}
 						},
 						{
-							"id": 2854,
+							"id": 2853,
 							"name": "leftnav",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2855,
+									"id": 2854,
 									"name": "LeftNav",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2856,
+											"id": 2855,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58793,7 +58779,7 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2856
+												2855
 											]
 										}
 									],
@@ -58815,7 +58801,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2855
+										2854
 									]
 								}
 							],
@@ -58832,21 +58818,21 @@
 							}
 						},
 						{
-							"id": 2865,
+							"id": 2864,
 							"name": "mainDetail",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2866,
+									"id": 2865,
 									"name": "MainDetail",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2867,
+											"id": 2866,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58870,7 +58856,7 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2867
+												2866
 											]
 										}
 									],
@@ -58892,7 +58878,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2866
+										2865
 									]
 								}
 							],
@@ -58909,21 +58895,21 @@
 							}
 						},
 						{
-							"id": 2861,
+							"id": 2860,
 							"name": "menu",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2862,
+									"id": 2861,
 									"name": "DocsMenu",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2863,
+											"id": 2862,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58942,7 +58928,7 @@
 											"defaultValue": "\".hsdocs_menu\""
 										},
 										{
-											"id": 2864,
+											"id": 2863,
 											"name": "docSet",
 											"kind": 32,
 											"kindString": "Variable",
@@ -58966,8 +58952,8 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2863,
-												2864
+												2862,
+												2863
 											]
 										}
 									],
@@ -58989,7 +58975,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2862
+										2861
 									]
 								}
 							],
@@ -59006,21 +58992,21 @@
 							}
 						},
 						{
-							"id": 2834,
+							"id": 2833,
 							"name": "root",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2835,
+									"id": 2834,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2836,
+											"id": 2835,
 											"name": "columns",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59042,7 +59028,7 @@
 											"defaultValue": "[\"200px\", \"fill\"]"
 										},
 										{
-											"id": 2838,
+											"id": 2837,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59064,7 +59050,7 @@
 											"defaultValue": "[\"LeftPane\", \"Main\"]"
 										},
 										{
-											"id": 2837,
+											"id": 2836,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59088,9 +59074,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2836,
-												2838,
-												2837
+												2835,
+												2837,
+												2836
 											]
 										}
 									],
@@ -59112,7 +59098,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2835
+										2834
 									]
 								}
 							],
@@ -59129,21 +59115,21 @@
 							}
 						},
 						{
-							"id": 2849,
+							"id": 2848,
 							"name": "title",
 							"kind": 2097152,
 							"kindString": "Object literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 2850,
+									"id": 2849,
 									"name": "Layout",
 									"kind": 2097152,
 									"kindString": "Object literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 2852,
+											"id": 2851,
 											"name": "content",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59162,7 +59148,7 @@
 											"defaultValue": "\"hsDocs\""
 										},
 										{
-											"id": 2851,
+											"id": 2850,
 											"name": "css",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59181,7 +59167,7 @@
 											"defaultValue": "\".hsdocs_title\""
 										},
 										{
-											"id": 2853,
+											"id": 2852,
 											"name": "href",
 											"kind": 32,
 											"kindString": "Variable",
@@ -59205,9 +59191,9 @@
 											"title": "Variables",
 											"kind": 32,
 											"children": [
-												2852,
 												2851,
-												2853
+												2850,
+												2852
 											]
 										}
 									],
@@ -59229,7 +59215,7 @@
 									"title": "Object literals",
 									"kind": 2097152,
 									"children": [
-										2850
+										2849
 									]
 								}
 							],
@@ -59251,14 +59237,14 @@
 							"title": "Object literals",
 							"kind": 2097152,
 							"children": [
-								2839,
-								2844,
-								2857,
-								2854,
-								2865,
-								2861,
-								2834,
-								2849
+								2838,
+								2843,
+								2856,
+								2853,
+								2864,
+								2860,
+								2833,
+								2848
 							]
 						}
 					],
@@ -59280,14 +59266,14 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2868
+						2867
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						2833
+						2832
 					]
 				}
 			],
@@ -65708,7 +65694,7 @@
 			]
 		},
 		{
-			"id": 2870,
+			"id": 2869,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -65934,7 +65920,7 @@
 			]
 		},
 		{
-			"id": 2871,
+			"id": 2870,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -65955,7 +65941,7 @@
 			]
 		},
 		{
-			"id": 2768,
+			"id": 2767,
 			"name": "\"view/DocsMenu\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -65965,7 +65951,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/DocsMenu.ts",
 			"children": [
 				{
-					"id": 2769,
+					"id": 2768,
 					"name": "DocsMenu",
 					"kind": 128,
 					"kindString": "Class",
@@ -65977,7 +65963,7 @@
 					},
 					"children": [
 						{
-							"id": 2770,
+							"id": 2769,
 							"name": "docSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -65998,7 +65984,7 @@
 							"defaultValue": "\"\""
 						},
 						{
-							"id": 2777,
+							"id": 2776,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -66018,12 +66004,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2777,
+								"id": 2776,
 								"name": "Layout.style"
 							}
 						},
 						{
-							"id": 2778,
+							"id": 2777,
 							"name": "getCSS",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66033,7 +66019,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2779,
+									"id": 2778,
 									"name": "getCSS",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66042,7 +66028,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2780,
+											"id": 2779,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66061,7 +66047,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2778,
+										"id": 2777,
 										"name": "Layout.getCSS"
 									}
 								}
@@ -66075,12 +66061,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2778,
+								"id": 2777,
 								"name": "Layout.getCSS"
 							}
 						},
 						{
-							"id": 2774,
+							"id": 2773,
 							"name": "getComponents",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66089,7 +66075,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2775,
+									"id": 2774,
 									"name": "getComponents",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66098,7 +66084,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2776,
+											"id": 2775,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66134,7 +66120,7 @@
 							}
 						},
 						{
-							"id": 2771,
+							"id": 2770,
 							"name": "getDesc",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66144,7 +66130,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2772,
+									"id": 2771,
 									"name": "getDesc",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66153,7 +66139,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2773,
+											"id": 2772,
 											"name": "attrs",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66181,7 +66167,7 @@
 							]
 						},
 						{
-							"id": 2781,
+							"id": 2780,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66190,7 +66176,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2782,
+									"id": 2781,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66199,7 +66185,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2783,
+											"id": 2782,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66218,7 +66204,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2781,
+										"id": 2780,
 										"name": "Layout.view"
 									}
 								}
@@ -66232,7 +66218,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2781,
+								"id": 2780,
 								"name": "Layout.view"
 							}
 						}
@@ -66242,18 +66228,18 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2770,
-								2777
+								2769,
+								2776
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2778,
-								2774,
-								2771,
-								2781
+								2777,
+								2773,
+								2770,
+								2780
 							]
 						}
 					],
@@ -66278,7 +66264,7 @@
 					]
 				},
 				{
-					"id": 2784,
+					"id": 2783,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -66304,14 +66290,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2769
+						2768
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2784
+						2783
 					]
 				}
 			],
@@ -66324,7 +66310,7 @@
 			]
 		},
 		{
-			"id": 2785,
+			"id": 2784,
 			"name": "\"view/LeftNav\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -66337,7 +66323,7 @@
 			},
 			"children": [
 				{
-					"id": 2786,
+					"id": 2785,
 					"name": "LeftNav",
 					"kind": 128,
 					"kindString": "Class",
@@ -66349,7 +66335,7 @@
 					},
 					"children": [
 						{
-							"id": 2790,
+							"id": 2789,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -66369,12 +66355,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2777,
+								"id": 2776,
 								"name": "Layout.style"
 							}
 						},
 						{
-							"id": 2791,
+							"id": 2790,
 							"name": "getCSS",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66384,7 +66370,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2792,
+									"id": 2791,
 									"name": "getCSS",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66393,7 +66379,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2793,
+											"id": 2792,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66412,7 +66398,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2778,
+										"id": 2777,
 										"name": "Layout.getCSS"
 									}
 								}
@@ -66426,12 +66412,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2778,
+								"id": 2777,
 								"name": "Layout.getCSS"
 							}
 						},
 						{
-							"id": 2787,
+							"id": 2786,
 							"name": "getComponents",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66440,7 +66426,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2788,
+									"id": 2787,
 									"name": "getComponents",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66449,7 +66435,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2789,
+											"id": 2788,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66485,7 +66471,7 @@
 							}
 						},
 						{
-							"id": 2794,
+							"id": 2793,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66494,7 +66480,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2795,
+									"id": 2794,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66503,7 +66489,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2796,
+											"id": 2795,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66522,7 +66508,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2781,
+										"id": 2780,
 										"name": "Layout.view"
 									}
 								}
@@ -66536,7 +66522,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2781,
+								"id": 2780,
 								"name": "Layout.view"
 							}
 						}
@@ -66546,16 +66532,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2790
+								2789
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2791,
-								2787,
-								2794
+								2790,
+								2786,
+								2793
 							]
 						}
 					],
@@ -66580,14 +66566,14 @@
 					]
 				},
 				{
-					"id": 2804,
+					"id": 2803,
 					"name": "entries",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2805,
+							"id": 2804,
 							"name": "entries",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -66597,7 +66583,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2806,
+									"id": 2805,
 									"name": "group",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66611,7 +66597,7 @@
 									}
 								},
 								{
-									"id": 2807,
+									"id": 2806,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66625,7 +66611,7 @@
 									}
 								},
 								{
-									"id": 2808,
+									"id": 2807,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66654,14 +66640,14 @@
 					]
 				},
 				{
-					"id": 2809,
+					"id": 2808,
 					"name": "exportAscending",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2810,
+							"id": 2809,
 							"name": "exportAscending",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -66671,7 +66657,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2811,
+									"id": 2810,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66682,7 +66668,7 @@
 									}
 								},
 								{
-									"id": 2812,
+									"id": 2811,
 									"name": "b",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66717,14 +66703,14 @@
 					]
 				},
 				{
-					"id": 2797,
+					"id": 2796,
 					"name": "navList",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2798,
+							"id": 2797,
 							"name": "navList",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -66734,7 +66720,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2799,
+									"id": 2798,
 									"name": "docSet",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66745,7 +66731,7 @@
 									}
 								},
 								{
-									"id": 2800,
+									"id": 2799,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -66774,7 +66760,7 @@
 					]
 				},
 				{
-					"id": 2801,
+					"id": 2800,
 					"name": "ignoreModules",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -66786,7 +66772,7 @@
 					},
 					"children": [
 						{
-							"id": 2803,
+							"id": 2802,
 							"name": "index",
 							"kind": 32,
 							"kindString": "Variable",
@@ -66805,7 +66791,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 2802,
+							"id": 2801,
 							"name": "overview",
 							"kind": 32,
 							"kindString": "Variable",
@@ -66829,8 +66815,8 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								2803,
-								2802
+								2802,
+								2801
 							]
 						}
 					],
@@ -66852,23 +66838,23 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2786
+						2785
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2804,
-						2809,
-						2797
+						2803,
+						2808,
+						2796
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						2801
+						2800
 					]
 				}
 			],
@@ -66881,7 +66867,7 @@
 			]
 		},
 		{
-			"id": 2813,
+			"id": 2812,
 			"name": "\"view/MainDetail\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -66894,7 +66880,7 @@
 			},
 			"children": [
 				{
-					"id": 2814,
+					"id": 2813,
 					"name": "MainDetail",
 					"kind": 128,
 					"kindString": "Class",
@@ -66906,7 +66892,7 @@
 					},
 					"children": [
 						{
-							"id": 2818,
+							"id": 2817,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -66926,12 +66912,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2777,
+								"id": 2776,
 								"name": "Layout.style"
 							}
 						},
 						{
-							"id": 2819,
+							"id": 2818,
 							"name": "getCSS",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66941,7 +66927,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2820,
+									"id": 2819,
 									"name": "getCSS",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66950,7 +66936,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2821,
+											"id": 2820,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66969,7 +66955,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2778,
+										"id": 2777,
 										"name": "Layout.getCSS"
 									}
 								}
@@ -66983,12 +66969,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2778,
+								"id": 2777,
 								"name": "Layout.getCSS"
 							}
 						},
 						{
-							"id": 2815,
+							"id": 2814,
 							"name": "getComponents",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66997,7 +66983,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2816,
+									"id": 2815,
 									"name": "getComponents",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67006,7 +66992,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2817,
+											"id": 2816,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67042,7 +67028,7 @@
 							}
 						},
 						{
-							"id": 2822,
+							"id": 2821,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67051,7 +67037,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2823,
+									"id": 2822,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67060,7 +67046,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2824,
+											"id": 2823,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67079,7 +67065,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2781,
+										"id": 2780,
 										"name": "Layout.view"
 									}
 								}
@@ -67093,7 +67079,7 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2781,
+								"id": 2780,
 								"name": "Layout.view"
 							}
 						}
@@ -67103,16 +67089,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2818
+								2817
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2819,
-								2815,
-								2822
+								2818,
+								2814,
+								2821
 							]
 						}
 					],
@@ -67137,7 +67123,7 @@
 					]
 				},
 				{
-					"id": 2825,
+					"id": 2824,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -67158,14 +67144,14 @@
 					"defaultValue": "new Log('MainDetail')"
 				},
 				{
-					"id": 2826,
+					"id": 2825,
 					"name": "getOverview",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2827,
+							"id": 2826,
 							"name": "getOverview",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -67176,7 +67162,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2828,
+									"id": 2827,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67203,14 +67189,14 @@
 					]
 				},
 				{
-					"id": 2829,
+					"id": 2828,
 					"name": "itemDoc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2830,
+							"id": 2829,
 							"name": "itemDoc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -67220,7 +67206,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2831,
+									"id": 2830,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67264,22 +67250,22 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2814
+						2813
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2825
+						2824
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2826,
-						2829
+						2825,
+						2828
 					]
 				}
 			],
@@ -67301,8 +67287,8 @@
 			},
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
 			"comment": {
-				"shortText": "Comment sections may contain code examples that are intended to be live demonstrations for\nexplaining some concept of the module are contained in.",
-				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m(hsLayout.Layout, { columns:[],\n            content:['first line','second line')]\n        })\n    });\n    </file>\n\n    <file name='style.css'>\n    .hsLeaf {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library,\nproviding functions to layout the browser window.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsLayout.Layout,{})`\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using d3:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsLayout.Layout, {\n        css:'.myExample',\n        columns:[],\n        content:[\n            'left column',\n            'right column'\n        ]\n    })\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.hs-layout {\n    margin:0;\n}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
+				"shortText": "# How to add live code examples\nComment sections may contain code examples that are intended to be live demonstrations for\nexplaining some concept of the module are contained in.",
+				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m(hsLayout.Layout, { columns:[],\n            content:['first line','second line')]\n        })\n    });\n    </file>\n\n    <file name='style.css'>\n    .hsLeaf {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library,\nproviding functions to layout the browser window.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsLayout.Layout,{})`\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using D3js:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsLayout.Layout, {\n        css:'.myExample',\n        columns:[],\n        content:[\n            'left column',\n            'right column'\n        ]\n    })\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.hs-layout {\n    margin:0;\n}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
 			},
 			"children": [
 				{
@@ -67323,7 +67309,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 141,
+									"line": 142,
 									"character": 10
 								}
 							],
@@ -67343,7 +67329,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 142,
+									"line": 143,
 									"character": 8
 								}
 							],
@@ -67367,7 +67353,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 142,
+														"line": 143,
 														"character": 28
 													}
 												],
@@ -67385,7 +67371,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 142,
+														"line": 143,
 														"character": 15
 													}
 												],
@@ -67408,7 +67394,7 @@
 										"sources": [
 											{
 												"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-												"line": 142,
+												"line": 143,
 												"character": 10
 											}
 										]
@@ -67430,7 +67416,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 140,
+							"line": 141,
 							"character": 19
 						}
 					]
@@ -67454,7 +67440,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 157,
+									"line": 158,
 									"character": 17
 								}
 							],
@@ -67474,7 +67460,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 153,
+									"line": 154,
 									"character": 9
 								}
 							],
@@ -67493,7 +67479,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 149,
+									"line": 150,
 									"character": 11
 								}
 							],
@@ -67511,7 +67497,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 152,
+									"line": 153,
 									"character": 8
 								}
 							],
@@ -67529,7 +67515,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 150,
+									"line": 151,
 									"character": 13
 								}
 							],
@@ -67549,7 +67535,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 156,
+									"line": 157,
 									"character": 17
 								}
 							],
@@ -67567,7 +67553,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 151,
+									"line": 152,
 									"character": 10
 								}
 							],
@@ -67585,7 +67571,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 154,
+									"line": 155,
 									"character": 9
 								}
 							],
@@ -67609,7 +67595,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-													"line": 154,
+													"line": 155,
 													"character": 19
 												}
 											],
@@ -67631,7 +67617,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 154,
+											"line": 155,
 											"character": 10
 										}
 									]
@@ -67649,7 +67635,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 155,
+									"line": 156,
 									"character": 13
 								}
 							],
@@ -67690,7 +67676,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 155,
+											"line": 156,
 											"character": 15
 										}
 									]
@@ -67718,7 +67704,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 148,
+							"line": 149,
 							"character": 27
 						}
 					]
@@ -67737,7 +67723,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 166,
+							"line": 167,
 							"character": 14
 						}
 					],
@@ -67761,7 +67747,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 163,
+							"line": 164,
 							"character": 18
 						}
 					],
@@ -67785,7 +67771,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 163,
+											"line": 164,
 											"character": 26
 										}
 									],
@@ -67808,7 +67794,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 163,
+									"line": 164,
 									"character": 19
 								}
 							]
@@ -67826,7 +67812,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 130,
+							"line": 131,
 							"character": 57
 						}
 					],
@@ -67879,7 +67865,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 275,
+							"line": 276,
 							"character": 28
 						}
 					]
@@ -67937,7 +67923,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 219,
+							"line": 220,
 							"character": 34
 						}
 					]
@@ -67989,7 +67975,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 189,
+							"line": 190,
 							"character": 23
 						}
 					]
@@ -68029,7 +68015,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 324,
+							"line": 325,
 							"character": 21
 						}
 					]
@@ -68077,7 +68063,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 308,
+							"line": 309,
 							"character": 22
 						}
 					]
@@ -68129,7 +68115,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 360,
+							"line": 361,
 							"character": 19
 						}
 					]
@@ -68197,7 +68183,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 334,
+							"line": 335,
 							"character": 35
 						}
 					]
@@ -68227,7 +68213,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 169,
+							"line": 170,
 							"character": 17
 						}
 					]
@@ -68272,7 +68258,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 246,
+							"line": 247,
 							"character": 17
 						}
 					]
@@ -68335,7 +68321,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 391,
+							"line": 392,
 							"character": 25
 						}
 					]
@@ -68358,7 +68344,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 136,
+									"line": 137,
 									"character": 12
 								}
 							],
@@ -68377,7 +68363,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 135,
+									"line": 136,
 									"character": 10
 								}
 							],
@@ -68396,7 +68382,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 137,
+									"line": 138,
 									"character": 12
 								}
 							],
@@ -68415,7 +68401,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 134,
+									"line": 135,
 									"character": 5
 								}
 							],
@@ -68441,7 +68427,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 133,
+							"line": 134,
 							"character": 13
 						}
 					],
@@ -68502,7 +68488,7 @@
 			]
 		},
 		{
-			"id": 2872,
+			"id": 2871,
 			"name": "\"view/Tooltip\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -68512,7 +68498,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/Tooltip.ts",
 			"children": [
 				{
-					"id": 2873,
+					"id": 2872,
 					"name": "tooltip",
 					"kind": 64,
 					"kindString": "Function",
@@ -68521,7 +68507,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2874,
+							"id": 2873,
 							"name": "tooltip",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68530,7 +68516,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2875,
+									"id": 2874,
 									"name": "text",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68543,7 +68529,7 @@
 									}
 								},
 								{
-									"id": 2876,
+									"id": 2875,
 									"name": "tip",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68556,7 +68542,7 @@
 									}
 								},
 								{
-									"id": 2877,
+									"id": 2876,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68589,7 +68575,7 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2873
+						2872
 					]
 				}
 			],
@@ -68611,16 +68597,16 @@
 				1,
 				473,
 				106,
-				2832,
+				2831,
 				227,
-				2870,
+				2869,
 				95,
-				2871,
-				2768,
-				2785,
-				2813,
+				2870,
+				2767,
+				2784,
+				2812,
 				30,
-				2872
+				2871
 			]
 		}
 	]

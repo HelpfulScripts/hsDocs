@@ -14,6 +14,14 @@ Helpful Scripts code documentation tool.
 **hsDocs**  is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.
 It renders JSON documentation files, as created by [typedoc](http://typedoc.org), into html pages that can be viewed via browser. [This example](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0) shows the rendered docset for the hsDoc code itself.
 
+## Features
+- Displays `Typescript` library documentation with an overivew of its modules, sorted by classes, interfaces, functions, etc.
+- Accommodates the display of multiple libraries via tabs
+- fully auto-linked entity references, including linked sources; simple linking to entities from within the documentation comments
+- facility to include interactive code examples in the docs
+- Support for library- and module-level overview pages
+
+
 ## Usage
 1 - Create a web-app directory to serve the docsets from. As an example, 
 see the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs), 
@@ -51,6 +59,7 @@ See below for creating the docset.
 ```
 {   "docs": [
         "hsDocs.json",
+        "http://helpfulscripts.github.io/hsLayout/data/hsLayout.json",
         ...
     ],
     "title": "HS Libraries"   // will be displayed at the top left corner

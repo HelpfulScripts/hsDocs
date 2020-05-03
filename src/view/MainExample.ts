@@ -1,4 +1,5 @@
 /**
+ * # How to add live code examples
  * Comment sections may contain code examples that are intended to be live demonstrations for 
  * explaining some concept of the module are contained in. 
  * 
@@ -48,7 +49,7 @@
  * ```
  * m.mount(root, { view:() => m('div', 'content')});
  * ```
- * #### Using d3:
+ * #### Using D3js:
  * ```
  * const base = d3.select(root);
  *  const svg = base.append('svg')

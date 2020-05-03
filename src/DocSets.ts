@@ -94,20 +94,20 @@ export class DocSets {
     }
 
     /**
-     * loads an index set and the docsets it contains from driectory `dir`.
+     * loads an index set and the docsets it contains from directory `dir`.
      * @param file the optional directory to read from. If unspecified, 
      * read from the index file specified by {@link DocSets.FILE `FILE`}.
      * @return a promise to load the index set
      */
     public static async loadList(file?:string):Promise<void> {
         /** load an `index.json` file that contains references to the DocSets to load. */
-        async function getIndexFile(url:string):Promise<boolean> {
+        async function getIndexFile(dir:string, url:string):Promise<boolean> {
             if (!url) { return false; }
             try {
                 const result = await m.request({ method: "GET", url: file});
                 DocSets.gTitle = result.title;
-                DocSets.docs = result.docs;
-                log.info(`found index file ${url}`);
+                DocSets.docs = result.docs.map((doc:string) => doc.indexOf(':')>0? doc : dir+doc);
+                log.info(`found index file ${url} with ${DocSets.docs.length} library references`);
                 return true;
             } catch(e) {
                 return false;
@@ -128,7 +128,7 @@ export class DocSets {
                     // const jsons = matches.filter(m => !m.startsWith('index'));
 
                     if (index) { 
-                        result = await getIndexFile(index); 
+                        result = await getIndexFile(dir, index); 
                     } else if (jsons.length) {
                         log.info(`found dir list in ${url}`);
                         DocSets.gTitle = '';
@@ -143,11 +143,11 @@ export class DocSets {
         const dir = file.substring(0,i+1);
         
         let found = false;
-        if (!found) { found = await getIndexFile(file); }
+        if (!found) { found = await getIndexFile(dir, file); }
         if (!found) { found = await getDirJSONs(dir); }
         if (!found) { found = await getDirJSONs(DOCDIR); }
         log.debug(`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, 5)}`);
-        await Promise.all(DocSets.docs.map(async (f:string) => await loadDocSet(dir, f))).catch(log.error);        
+        await Promise.all(DocSets.docs.map(async (f:string) => await loadDocSet(f))).catch(log.error);        
         log.info(`found ${DocSets.nodeCount} DocNodes`);
         m.redraw();
     }
@@ -159,9 +159,9 @@ export class DocSets {
  * @param dir the directory to read from
  * @param file the `json` file to load as docset
  */
-async function loadDocSet(dir:string, file:string):Promise<void> {
-    log.debug(`loading ${dir+file}`);
-    const r:json = await m.request({ method: "GET", url: dir+file });
+async function loadDocSet(file:string):Promise<void> {
+    log.debug(`loading ${file}`);
+    const r:json = await m.request({ method: "GET", url: file });
     DocSets.addDocSet(r, file);
 }
 
