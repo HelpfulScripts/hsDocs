@@ -49,13 +49,14 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 </html>
 ```
 
-3 - Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json`. Install `typedoc` and run
+3 - Install `typedoc` and, inside your project folder, run
 ```
 typedoc --json docs.json src
 (or: ./node_modules/.bin/typedoc --json docs.json src)
 ```
 in your project folder. This assumes `src` is the path to the sources the sources. 
-Then copy `docs.json` into the `<web-app>/data/`.
+Create a subdirectory **`./data`** and copy the docset into it - i.e. `docs.json` if you used the 
+commend above.
 
 See below for more details on creating the docset.
 

@@ -47,8 +47,16 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 </html>
 ```
 
-3 - Create a subdirectory **`data`** and copy the docsets into it, for example **`hsDocs.json`** or your project's `.json` .
-See below for creating the docset.
+3 - Install `typedoc` and, inside your project folder, run
+```
+typedoc --json docs.json src
+(or: ./node_modules/.bin/typedoc --json docs.json src)
+```
+in your project folder. This assumes `src` is the path to the sources the sources. 
+Create a subdirectory **`./data`** and copy the docset into it - i.e. `docs.json` if you used the 
+commend above.
+
+See below for more details on creating the docset.
 
 4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:
 ```
