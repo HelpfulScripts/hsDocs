@@ -1064,7 +1064,7 @@ exports[`MainDetail overview matches snapshot 1`] = `
 and other variables, depending on the series type:
 
               <code>
-                graph.series.add('area', {x:'time', y:'volume', r:()=&gt;5});
+                graph.add('area', {x:'time', y:'volume', r:()=&gt;5});
               </code>
             </li>
             

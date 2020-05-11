@@ -484,6 +484,7 @@ export class DocsSetSignature extends DocsBaseNode {
         this.parameters = [];  
         this.TYPE = ['intrinsic', 'stringLiteral'];
         this.FLAGS = { isExported:false };
+        this.inheritedFrom = null;
     }
 }
 
