@@ -255,7 +255,7 @@
 <p id=232 class="line"><span>&nbsp;232</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scriptFn(root,&nbsp;...libs);</p>
 <p id=233 class="line"><span>&nbsp;233</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=234 class="line"><span>&nbsp;234</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</p>
-<p id=235 class="line"><span>&nbsp;235</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug('</quote>example&nbsp;function&nbsp;ready<quote>');</p>
+<p id=235 class="line"><span>&nbsp;235</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>'</quote>example&nbsp;function&nbsp;ready<quote>');</p>
 <p id=236 class="line"><span>&nbsp;236</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IDs.created&nbsp;=&nbsp;true;</p>
 <p id=237 class="line"><span>&nbsp;237</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;</p>
 <p id=238 class="line"><span>&nbsp;238</span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch(e)&nbsp;{&nbsp;</p>
@@ -364,12 +364,12 @@
 <p id=341 class="line"><span>&nbsp;341</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;findTokens(IDs,&nbsp;attrs[1]);</p>
 <p id=342 class="line"><span>&nbsp;342</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(IDs.attrs.libs.length>0)&nbsp;{</p>
 <p id=343 class="line"><span>&nbsp;343</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Promise.all(IDs.attrs.libs.map(async&nbsp;l&nbsp;=>&nbsp;{</p>
-<p id=344 class="line"><span>&nbsp;344</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`loading&nbsp;lib:&nbsp;${l.sym}:&nbsp;${l.path}`);</p>
+<p id=344 class="line"><span>&nbsp;344</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>`loading&nbsp;lib:&nbsp;${l.sym}:&nbsp;${l.path}`);</p>
 <p id=345 class="line"><span>&nbsp;345</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;content&nbsp;=&nbsp;await&nbsp;loadScript(l.sym,&nbsp;l.path);</p>
 <p id=346 class="line"><span>&nbsp;346</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(content)&nbsp;{&nbsp;modules[l.sym]&nbsp;=&nbsp;content[l.sym];&nbsp;}</p>
 <p id=347 class="line"><span>&nbsp;347</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}));</p>
 <p id=348 class="line"><span>&nbsp;348</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-<p id=349 class="line"><span>&nbsp;349</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`found&nbsp;attrs:\n&nbsp;${log.inspect(IDs.attrs,&nbsp;5)}`);</p>
+<p id=349 class="line"><span>&nbsp;349</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>`found&nbsp;attrs:\n&nbsp;${log.inspect(IDs.attrs,&nbsp;{depth:5})}`);</p>
 <p id=350 class="line"><span>&nbsp;350</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=351 class="line"><span>&nbsp;351</span>&nbsp;&nbsp;&nbsp;&nbsp;example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['</quote>|<quote>"]>([\S\s]*?)<\/file>/gi,&nbsp;function(text:string)&nbsp;{</p>
 <p id=352 class="line"><span>&nbsp;352</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;args&nbsp;=&nbsp;[...arguments];</p>
@@ -399,7 +399,7 @@
 <p id=376 class="line"><span>&nbsp;376</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=377 class="line"><span>&nbsp;377</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=378 class="line"><span>&nbsp;378</span>&nbsp;&nbsp;&nbsp;&nbsp;});</p>
-<p id=379 class="line"><span>&nbsp;379</span>&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`${str}&nbsp;-->&nbsp;\n${log.inspect(IDs.attrs,5)}`);</p>
+<p id=379 class="line"><span>&nbsp;379</span>&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>`${str}&nbsp;-->&nbsp;\n${log.inspect(IDs.attrs,{depth:5})}`);</p>
 <p id=380 class="line"><span>&nbsp;380</span>}</p>
 <p id=381 class="line"><span>&nbsp;381</span></p>
 <p id=382 class="line"><span>&nbsp;382</span></p>

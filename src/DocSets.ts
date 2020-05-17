@@ -26,7 +26,7 @@ function matchAll(str:string, re:RegExp): string[] {
     let partial:string[];
     while ((partial = re.exec(str)) !== null) {
         result.push(partial[1]);
-        log.debug(log.inspect(partial));
+        log.debug(()=>log.inspect(partial));
     }
     return result;
 }
@@ -146,7 +146,7 @@ export class DocSets {
         if (!found) { found = await getIndexFile(dir, file); }
         if (!found) { found = await getDirJSONs(dir); }
         if (!found) { found = await getDirJSONs(DOCDIR); }
-        log.debug(`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, 5)}`);
+        log.debug(()=>`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, {depth:5})}`);
         await Promise.all(DocSets.docs.map(async (f:string) => await loadDocSet(f))).catch(log.error);        
         log.info(`found ${DocSets.nodeCount} DocNodes`);
         m.redraw();
@@ -160,7 +160,7 @@ export class DocSets {
  * @param file the `json` file to load as docset
  */
 async function loadDocSet(file:string):Promise<void> {
-    log.debug(`loading ${file}`);
+    log.debug(()=>`loading ${file}`);
     const r:json = await m.request({ method: "GET", url: file });
     DocSets.addDocSet(r, file);
 }

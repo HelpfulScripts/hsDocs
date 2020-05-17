@@ -49,7 +49,7 @@
 <p id=26 class="line"><span>&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;partial:string[];</p>
 <p id=27 class="line"><span>&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;((partial&nbsp;=&nbsp;re.exec(str))&nbsp;!==&nbsp;null)&nbsp;{</p>
 <p id=28 class="line"><span>&nbsp;&nbsp;28</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.push(partial[1]);</p>
-<p id=29 class="line"><span>&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(log.inspect(partial));</p>
+<p id=29 class="line"><span>&nbsp;&nbsp;29</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>log.inspect(partial));</p>
 <p id=30 class="line"><span>&nbsp;&nbsp;30</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=31 class="line"><span>&nbsp;&nbsp;31</span>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</p>
 <p id=32 class="line"><span>&nbsp;&nbsp;32</span>}</p>
@@ -169,7 +169,7 @@
 <p id=146 class="line"><span>&nbsp;146</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!found)&nbsp;{&nbsp;found&nbsp;=&nbsp;await&nbsp;getIndexFile(dir,&nbsp;file);&nbsp;}</p>
 <p id=147 class="line"><span>&nbsp;147</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!found)&nbsp;{&nbsp;found&nbsp;=&nbsp;await&nbsp;getDirJSONs(dir);&nbsp;}</p>
 <p id=148 class="line"><span>&nbsp;148</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!found)&nbsp;{&nbsp;found&nbsp;=&nbsp;await&nbsp;getDirJSONs(DOCDIR);&nbsp;}</p>
-<p id=149 class="line"><span>&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`found&nbsp;${DocSets.docs.length}&nbsp;dos&nbsp;sets:&nbsp;${log.inspect(DocSets.docs,&nbsp;5)}`);</p>
+<p id=149 class="line"><span>&nbsp;149</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>`found&nbsp;${DocSets.docs.length}&nbsp;dos&nbsp;sets:&nbsp;${log.inspect(DocSets.docs,&nbsp;{depth:5})}`);</p>
 <p id=150 class="line"><span>&nbsp;150</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Promise.all(DocSets.docs.map(async&nbsp;(f:string)&nbsp;=>&nbsp;await&nbsp;loadDocSet(f))).catch(log.error);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 <p id=151 class="line"><span>&nbsp;151</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(`found&nbsp;${DocSets.nodeCount}&nbsp;DocNodes`);</p>
 <p id=152 class="line"><span>&nbsp;152</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.redraw();</p>
@@ -183,7 +183,7 @@
 <p id=160 class="line"><span>&nbsp;160</span><comment>&nbsp;*&nbsp;@param&nbsp;file&nbsp;the&nbsp;`json`&nbsp;file&nbsp;to&nbsp;load&nbsp;as&nbsp;docset</comment></p>
 <p id=161 class="line"><span>&nbsp;161</span><comment>&nbsp;*/</comment></p>
 <p id=162 class="line"><span>&nbsp;162</span>async&nbsp;function&nbsp;loadDocSet(file:string):Promise<void>&nbsp;{</p>
-<p id=163 class="line"><span>&nbsp;163</span>&nbsp;&nbsp;&nbsp;&nbsp;log.debug(`loading&nbsp;${file}`);</p>
+<p id=163 class="line"><span>&nbsp;163</span>&nbsp;&nbsp;&nbsp;&nbsp;log.debug(()=>`loading&nbsp;${file}`);</p>
 <p id=164 class="line"><span>&nbsp;164</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;r:json&nbsp;=&nbsp;await&nbsp;m.request({&nbsp;method:&nbsp;<quote>"GET"</quote>,&nbsp;url:&nbsp;file&nbsp;});</p>
 <p id=165 class="line"><span>&nbsp;165</span>&nbsp;&nbsp;&nbsp;&nbsp;DocSets.addDocSet(r,&nbsp;file);</p>
 <p id=166 class="line"><span>&nbsp;166</span>}</p>

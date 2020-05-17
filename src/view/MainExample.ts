@@ -232,7 +232,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
                 scriptFn(root, ...libs);
             }
         };
-        log.debug('example function ready');
+        log.debug(()=>'example function ready');
         IDs.created = true;
         return true;
     } catch(e) { 
@@ -341,12 +341,12 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
         findTokens(IDs, attrs[1]);
         if (IDs.attrs.libs.length>0) {
             await Promise.all(IDs.attrs.libs.map(async l => {
-                log.debug(`loading lib: ${l.sym}: ${l.path}`);
+                log.debug(()=>`loading lib: ${l.sym}: ${l.path}`);
                 const content = await loadScript(l.sym, l.path);
                 if (content) { modules[l.sym] = content[l.sym]; }
             }));
         }
-        log.debug(`found attrs:\n ${log.inspect(IDs.attrs, 5)}`);
+        log.debug(()=>`found attrs:\n ${log.inspect(IDs.attrs, {depth:5})}`);
     }
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
@@ -376,7 +376,7 @@ function findTokens(IDs:CommentDescriptor, str:string) {
                 }
         }
     });
-    log.debug(`${str} --> \n${log.inspect(IDs.attrs,5)}`);
+    log.debug(()=>`${str} --> \n${log.inspect(IDs.attrs,{depth:5})}`);
 }
 
 

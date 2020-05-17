@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.99% </span>
+                <span class="strong">68.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>93/131</span>
+                <span class='fraction'>93/135</span>
             </div>
         
             
@@ -37,9 +37,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.85% </span>
+                <span class="strong">46.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/26</span>
+                <span class='fraction'>14/30</span>
             </div>
         
             
@@ -1157,7 +1157,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
 <span class="cstat-no" title="statement not covered" >                scriptFn(root, ...libs);</span>
             }
         };
-        log.debug('example function ready');
+        log.debug(<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >'example function ready')</span>;
         IDs.created = true;
         return true;
     } catch(e) { 
@@ -1266,12 +1266,12 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
         findTokens(IDs, attrs[1]);
         <span class="missing-if-branch" title="else path not taken" >E</span>if (IDs.attrs.libs.length&gt;0) {
             await Promise.all(IDs.attrs.libs.map(async l =&gt; {
-                log.debug(`loading lib: ${l.sym}: ${l.path}`);
+                log.debug(<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >`loading lib: ${l.sym}: ${l.path}`)</span>;
                 const content = await loadScript(l.sym, l.path);
                 <span class="missing-if-branch" title="else path not taken" >E</span>if (content) { modules[l.sym] = content[l.sym]; }
             }));
         }
-        log.debug(`found attrs:\n ${log.inspect(IDs.attrs, 5)}`);
+        log.debug(<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >`found attrs:\n ${log.inspect(IDs.attrs, {depth:5})}`)</span>;
     }
     example.replace(/&lt;file[\s]*name=[\S]*?\.([\s\S]*?)['|"]&gt;([\S\s]*?)&lt;\/file&gt;/gi, function(text:string) {
         const args = [...arguments];
@@ -1301,7 +1301,7 @@ function findTokens(IDs:CommentDescriptor, str:string) {
                 }
         }
     });
-    log.debug(`${str} --&gt; \n${log.inspect(IDs.attrs,5)}`);
+    log.debug(<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >`${str} --&gt; \n${log.inspect(IDs.attrs,{depth:5})}`)</span>;
 }
 &nbsp;
 &nbsp;

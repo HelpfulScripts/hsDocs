@@ -179,7 +179,7 @@ export class DocsBaseNode extends DocsNode {
         fields = Object.getOwnPropertyNames(mdl);
         fields.forEach(f => { // unexpected fields
             if (this[f]===undefined && isNotIgnored(f)) {
-                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],2, '   ', null)}'`);
+                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],{depth:2})}'`);
                 DocsNode.errCount++;
             }
         });
@@ -197,7 +197,7 @@ export class DocsBaseNode extends DocsNode {
         const flags = Object.getOwnPropertyNames(mdlFlags);
         flags.forEach(f => { // unexpected flags
             if (staticFlags[f]===undefined) {
-                log.warn(`'${this.kindString}' #${this.id}: found extra flag '${f}'='${log.inspect(mdlFlags[f],1)}'`);
+                log.warn(`'${this.kindString}' #${this.id}: found extra flag '${f}'='${log.inspect(mdlFlags[f],{depth:1})}'`);
                 DocsNode.errCount++;
             }
         });
@@ -420,6 +420,7 @@ export class DocsParameter extends DocsBaseNode {
         this.sources = null;   //  sources optional
         this.defaultValue = null;
         this.kindPrint = 'parameter';
+        this.originalName = null;
     }
 }
 
