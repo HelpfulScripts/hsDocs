@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/jest": "^25.2.x",
     "@types/mithril": "^2.0.2",
-    "@types/node": "^13.13.4",
+    "@types/node": "14.0.x",
     "@vamship/grunt-typedoc": "^1.7.3",
     "coveralls": "^3.0.9",
     "grunt": "^1.0.4",
