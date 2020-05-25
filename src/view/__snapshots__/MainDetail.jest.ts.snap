@@ -258,6 +258,15 @@ provides access to elements of each docset.
                   </a>
                 </span>
               </span>
+              <div
+                class="hsdocs_sig_comment"
+              >
+                <span
+                  class="hsdocs_type_intrinsic"
+                >
+                  any
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -337,6 +346,15 @@ provides access to elements of each docset.
                   </a>
                 </span>
               </span>
+              <div
+                class="hsdocs_sig_comment"
+              >
+                <span
+                  class="hsdocs_type_intrinsic"
+                >
+                  string
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -493,6 +511,15 @@ provides access to elements of each docset.
                   </a>
                 </span>
               </span>
+              <div
+                class="hsdocs_sig_comment"
+              >
+                <span
+                  class="hsdocs_type_reference"
+                >
+                  Log
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -538,7 +565,11 @@ provides access to elements of each docset.
                      (
                   </span>
                   <span>
-                    
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      
+                    </span>
                     <span
                       class="hsdocs_signature_param"
                     >
@@ -566,7 +597,11 @@ provides access to elements of each docset.
                     </span>
                   </span>
                   <span>
-                    , 
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      , 
+                    </span>
                     <span
                       class="hsdocs_signature_param"
                     >
@@ -752,7 +787,11 @@ Once received, the docset is registered in
                      (
                   </span>
                   <span>
-                    
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      
+                    </span>
                     <span
                       class="hsdocs_signature_param"
                     >
@@ -780,7 +819,11 @@ Once received, the docset is registered in
                     </span>
                   </span>
                   <span>
-                    , 
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      , 
+                    </span>
                     <span
                       class="hsdocs_signature_param"
                     >
@@ -849,7 +892,19 @@ Once received, the docset is registered in
               </span>
               <div
                 class="hsdocs_childsig_comment"
-              />
+              >
+                <span
+                  class="hsdocs_type_array"
+                >
+                  Array&lt;
+                  <span
+                    class="hsdocs_type_intrinsic"
+                  >
+                    string
+                  </span>
+                  &gt;
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -85,8 +85,7 @@ export class DocsComment {
      * creates the `returns` message for a function or method.
      */
     getParams(params?:DocsParameter[]) {
-        let text = params;
-        return !text? undefined: m('.hsdocs_comment_params', [
+        return !params? undefined: m('.hsdocs_comment_params', [
             m('.hsdocs_params_title', 'parameters:'),
             ...params.map(p => 
                 m('.hsdocs_comment_param',[
@@ -203,14 +202,17 @@ function mItemName(node:DocsNode):Vnode {
 function mSignature(node:DocsNode):Vnode {
     const optional = (flags:any) => (flags && flags.isOptional)? '.hsdocs_flag_optional' : '';
     const params = (s:DocsParamaterized):Vnode[] => 
-        !s.parameters? undefined : s.parameters.map((p:DocsParameter, i:number) => m('span', [
-            (i>0)? ', ': '',
-            m('span.hsdocs_signature_param', [
-                m(`span.hsdocs_itemname${optional(p.flags)}`, p.getName()),
-                m('span.hsdocs_colon', ':'),
-                mType(p)
-            ])
-        ]));
+        !s.parameters? undefined : s.parameters.map((p:DocsParameter, i:number) => { 
+            const name = p.getName() === '__namedParameters'? '' : p.getName();
+            return m('span', [
+                m('span.hsdocs_colon', i>0?', ' : ''),
+                m('span.hsdocs_signature_param', [
+                    m(`span.hsdocs_itemname${optional(p.flags)}`, name),
+                    m('span.hsdocs_colon', name.length>0?':' : ''),     // possibly unnamed parameter
+                    mType(p)
+                ])
+            ]);
+        });
     const sigText = (s:DocsParamaterized) => {
         let result:Vnode[];
         if (s.type && s.type.declaration) {
@@ -359,6 +361,8 @@ export function commentLong(node:DocsNode):Vnode[] {
         content.push(node.comment.getCommentRemainder());
     } else if (node.getSignatures()) {
         return node.getSignatures().map(s => commentLong(s));
+    } else if (node.type) {
+        return node.type.mType();
     }
     return content.length? content : undefined;    
 }

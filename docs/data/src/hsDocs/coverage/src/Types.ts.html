@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.59% </span>
+                <span class="strong">39.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/39</span>
+                <span class='fraction'>17/43</span>
             </div>
         
             
@@ -289,14 +289,7 @@
 <a name='L230'></a><a href='#L230'>230</a>
 <a name='L231'></a><a href='#L231'>231</a>
 <a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a>
-<a name='L235'></a><a href='#L235'>235</a>
-<a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a>
-<a name='L238'></a><a href='#L238'>238</a>
-<a name='L239'></a><a href='#L239'>239</a>
-<a name='L240'></a><a href='#L240'>240</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L233'></a><a href='#L233'>233</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -372,8 +365,7 @@
 <span class="cline-any cline-yes">14922x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -385,13 +377,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -422,7 +414,7 @@
 <span class="cline-any cline-yes">6556x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -462,20 +454,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -611,7 +597,6 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType() {
-        // return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
         return m('span.hsdocs_type_intrinsic', this.id? <span class="branch-0 cbranch-no" title="branch not covered" >libLinkByPath(this.node.lib, ''+this.id, this.name) </span>: this.name); 
     }
 }
@@ -697,15 +682,6 @@ class DocsReflectionType extends DocsType {
         super(mdlType, node);
         <span class="missing-if-branch" title="else path not taken" >E</span>if (mdlType.declaration) {
             const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.fullPath);
-            // if (decl.children) {
-            //     this.declaration.children = decl.children.map((c:json) =&gt; DocsNode.traverse(c, node.fullPath));
-            // }
-            // if (decl.signatures) {
-            //     this.declaration.signatures = decl.signatures.map((c:json) =&gt; DocsNode.traverse(c, node.fullPath)));
-            // }
-            // if (decl.indexSignature) {
-            //     decl.indexSignature = decl.indexSignature.map(c =&gt; &lt;DocsIndexSignature&gt;DocsNode.traverse(c, node.fullPath));
-            // }
         }
     }
 &nbsp;
@@ -713,10 +689,13 @@ class DocsReflectionType extends DocsType {
         const dec = <span class="cstat-no" title="statement not covered" >this.declaration;</span>
         const rflRes = <span class="cstat-no" title="statement not covered" >!dec? 'UNKNOWN' : </span>
             dec.children? [
-                '{ ',
-                ...dec.children.map(<span class="fstat-no" title="function not covered" >(c</span>:any, i:number) =&gt; <span class="cstat-no" title="statement not covered" >`${c.name}: ${c.type?c.type.mType() : '??type??'}`)</span>.join(', '),
-                ' }'
-            ] : dec.getSignatures()? [
+                '{ ', 
+                ...dec.children
+                    .map(<span class="fstat-no" title="function not covered" >(c</span>:any, i:number) =&gt;
+<span class="cstat-no" title="statement not covered" >                        m('span.named_param',[i&gt;0?', ':'', c.name, ':', c.type?c.type.mType() : '??type??',c.defaultValue?'='+c.defaultValue : ''])</span>
+                    ),
+                ' }']
+            : dec.getSignatures()? [
                 ...dec.getSignatures().map(<span class="fstat-no" title="function not covered" >s </span>=&gt; <span class="cstat-no" title="statement not covered" >titleArr(s))</span>
             ] : dec.kindString
         ;

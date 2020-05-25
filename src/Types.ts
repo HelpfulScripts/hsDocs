@@ -74,7 +74,6 @@ class DocsIntrinsicType extends DocsType {
         this.name = mdlType.name;
     }
     mType() {
-        // return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : parent.getName()); 
         return m('span.hsdocs_type_intrinsic', this.id? libLinkByPath(this.node.lib, ''+this.id, this.name) : this.name); 
     }
 }
@@ -160,15 +159,6 @@ class DocsReflectionType extends DocsType {
         super(mdlType, node);
         if (mdlType.declaration) {
             const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.fullPath);
-            // if (decl.children) {
-            //     this.declaration.children = decl.children.map((c:json) => DocsNode.traverse(c, node.fullPath));
-            // }
-            // if (decl.signatures) {
-            //     this.declaration.signatures = decl.signatures.map((c:json) => DocsNode.traverse(c, node.fullPath)));
-            // }
-            // if (decl.indexSignature) {
-            //     decl.indexSignature = decl.indexSignature.map(c => <DocsIndexSignature>DocsNode.traverse(c, node.fullPath));
-            // }
         }
     }
 
@@ -176,10 +166,13 @@ class DocsReflectionType extends DocsType {
         const dec = this.declaration;
         const rflRes = !dec? 'UNKNOWN' : 
             dec.children? [
-                '{ ',
-                ...dec.children.map((c:any, i:number) => `${c.name}: ${c.type?c.type.mType() : '??type??'}`).join(', '),
-                ' }'
-            ] : dec.getSignatures()? [
+                '{ ', 
+                ...dec.children
+                    .map((c:any, i:number) =>
+                        m('span.named_param',[i>0?', ':'', c.name, ':', c.type?c.type.mType() : '??type??',c.defaultValue?'='+c.defaultValue : ''])
+                    ),
+                ' }']
+            : dec.getSignatures()? [
                 ...dec.getSignatures().map(s => titleArr(s))
             ] : dec.kindString
         ;
