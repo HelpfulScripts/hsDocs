@@ -68,12 +68,12 @@ export class DocSets {
         const i = DocSets.docs.indexOf(file);
         DocSets.libs[i] = lib;
         const root = DocsNode.traverse(content, lib);
-        log.info(`traversed '${root.fullPath}'`);
+        log.debug(`traversed '${root.fullPath}'`);
     }
     
     public static getNode(id:string|number, lib:string):DocsNode {
         const key = ((typeof id === 'number') || (parseInt(''+id, 10)>=0))? `${lib}.${id}` : id;
-        // log.info(`getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
+        log.debug(() => `getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
         if (DocSets.nodeList.length && !DocSets.nodeList[key]) { 
             log.warn(`did not find node for key '${key}' (id=${id}, lib=${lib})`); 
             log.warn(new Error().stack);
@@ -107,7 +107,7 @@ export class DocSets {
                 const result = await m.request({ method: "GET", url: file});
                 DocSets.gTitle = result.title;
                 DocSets.docs = result.docs.map((doc:string) => doc.indexOf(':')>0? doc : dir+doc);
-                log.info(`found index file ${url} with ${DocSets.docs.length} library references`);
+                log.debug(`found index file ${url} with ${DocSets.docs.length} library references`);
                 return true;
             } catch(e) {
                 return false;
@@ -130,7 +130,7 @@ export class DocSets {
                     if (index) { 
                         result = await getIndexFile(dir, index); 
                     } else if (jsons.length) {
-                        log.info(`found dir list in ${url}`);
+                        log.debug(`found dir list in ${url}`);
                         DocSets.gTitle = '';
                         DocSets.docs = jsons;
                         result = true;
@@ -148,7 +148,7 @@ export class DocSets {
         if (!found) { found = await getDirJSONs(DOCDIR); }
         log.debug(()=>`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, {depth:5})}`);
         await Promise.all(DocSets.docs.map(async (f:string) => await loadDocSet(f))).catch(log.error);        
-        log.info(`found ${DocSets.nodeCount} DocNodes`);
+        log.debug(`found ${DocSets.nodeCount} DocNodes`);
         m.redraw();
     }
 }

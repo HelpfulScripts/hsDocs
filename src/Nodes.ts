@@ -171,6 +171,8 @@ export class DocsBaseNode extends DocsNode {
                         this[f] = mdl.typeParameter.map((c:json) => DocsNode.traverse(c, this.lib, mdl.fullPath)); break;
                     default: this[f] = mdl[f];
                 }
+            } else if (this.lib && this.kind && !this.kindString) {
+                log.warn(`${this.lib}: no 'kindString' for ${log.inspect(this, {indent:'   ', colors:null})}`);
             } else if (isExpected(this[f]) && isNotIgnored(f)) {
                 log.warn(`${this.lib}: '${this.kindString}' #${mdl.id}: field '${f}' should be optional`);
                 DocsNode.errCount++;
@@ -328,7 +330,7 @@ class DocsInterface extends DocsStructured {
 class DocsConstructor extends DocsSourced implements DocsParamaterized {
     init() {
         super.init();
-        this.FLAGS = flagsExported({});
+        this.FLAGS = flagsPublic(flagsExported({}));
         this.signatures = null;
         this.overwrites = null;
         this.inheritedFrom = null;
@@ -499,6 +501,7 @@ class DocsObjectLiteral extends DocsStructured implements DocsParamaterized {
         }));
         this.parameters = null;
         this.inheritedFrom = null;
+        this.overwrites = null;
     }
 }
 

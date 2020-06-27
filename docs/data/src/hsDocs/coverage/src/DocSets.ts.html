@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.1% </span>
+                <span class="strong">63.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>50/78</span>
+                <span class='fraction'>51/80</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.56% </span>
+                <span class="strong">52.63% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/18</span>
+                <span class='fraction'>10/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.18% </span>
+                <span class="strong">68.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/66</span>
+                <span class='fraction'>46/67</span>
             </div>
         
             
@@ -298,13 +298,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">309x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">309x</span>
+<span class="cline-any cline-yes">308x</span>
+<span class="cline-any cline-yes">308x</span>
+<span class="cline-any cline-yes">308x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">309x</span>
+<span class="cline-any cline-yes">308x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -461,12 +461,12 @@ export class DocSets {
         const i = DocSets.docs.indexOf(file);
         DocSets.libs[i] = lib;
         const root = DocsNode.traverse(content, lib);
-        log.info(`traversed '${root.fullPath}'`);
+        log.debug(`traversed '${root.fullPath}'`);
     }
     
     public static getNode(id:string|number, lib:string):DocsNode {
         const key = ((typeof id === 'number') || (parseInt(''+id, 10)&gt;=0))? `${lib}.${id}` : id;
-        // log.info(`getNode id=${id}, lib=${lib} -&gt; ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
+        log.debug(<span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >`getNode id=${id}, lib=${lib} -&gt; ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`)</span>;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (DocSets.nodeList.length &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!DocSets.nodeList[key])</span> { 
 <span class="cstat-no" title="statement not covered" >            log.warn(`did not find node for key '${key}' (id=${id}, lib=${lib})`); </span>
 <span class="cstat-no" title="statement not covered" >            log.warn(new Error().stack);</span>
@@ -500,7 +500,7 @@ export class DocSets {
                 const result = await m.request({ method: "GET", url: file});
                 DocSets.gTitle = result.title;
                 DocSets.docs = result.docs.map((doc:string) =&gt; doc.indexOf(':')&gt;0? <span class="branch-0 cbranch-no" title="branch not covered" >doc </span>: dir+doc);
-                log.info(`found index file ${url} with ${DocSets.docs.length} library references`);
+                log.debug(`found index file ${url} with ${DocSets.docs.length} library references`);
                 return true;
             } catch(e) {
 <span class="cstat-no" title="statement not covered" >                return false;</span>
@@ -523,7 +523,7 @@ export class DocSets {
 <span class="cstat-no" title="statement not covered" >                    if (index) { </span>
 <span class="cstat-no" title="statement not covered" >                        result = await getIndexFile(dir, index); </span>
                     } else <span class="cstat-no" title="statement not covered" >if (jsons.length) {</span>
-<span class="cstat-no" title="statement not covered" >                        log.info(`found dir list in ${url}`);</span>
+<span class="cstat-no" title="statement not covered" >                        log.debug(`found dir list in ${url}`);</span>
 <span class="cstat-no" title="statement not covered" >                        DocSets.gTitle = '';</span>
 <span class="cstat-no" title="statement not covered" >                        DocSets.docs = jsons;</span>
 <span class="cstat-no" title="statement not covered" >                        result = true;</span>
@@ -541,7 +541,7 @@ export class DocSets {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!found) { <span class="cstat-no" title="statement not covered" >found = await getDirJSONs(DOCDIR); </span>}
         log.debug(<span class="fstat-no" title="function not covered" >()=</span>&gt;<span class="cstat-no" title="statement not covered" >`found ${DocSets.docs.length} dos sets: ${log.inspect(DocSets.docs, {depth:5})}`)</span>;
         await Promise.all(DocSets.docs.map(async (f:string) =&gt; await loadDocSet(f))).catch(log.error);        
-        log.info(`found ${DocSets.nodeCount} DocNodes`);
+        log.debug(`found ${DocSets.nodeCount} DocNodes`);
         m.redraw();
     }
 }
