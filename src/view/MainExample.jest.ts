@@ -1,5 +1,5 @@
 import { example } from './MainExample';
-import { m } from 'hslayout';
+import m from "mithril";
 
 m.redraw = () => 0;
 m.mount = () => 0;

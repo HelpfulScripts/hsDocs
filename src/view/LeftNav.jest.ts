@@ -1,6 +1,5 @@
 import { LeftNav } from './LeftNav';
-import { m } from 'hslayout';
-import { DocSets } from '../DocSets';
+import m from "mithril";
 const fs = require('fs');
 
 

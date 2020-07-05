@@ -1,5 +1,5 @@
 import { MainDetail } from './MainDetail';
-import { m } from 'hslayout';
+import m from "mithril";
 import { Log } from 'hsnode'; const log = new Log('MainDetail.jest');
 import { DocSets } from '../DocSets';
 const fs = require('fs');

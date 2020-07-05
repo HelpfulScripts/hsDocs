@@ -121,7 +121,7 @@
  */
 
 /** */
-import { m }                    from 'hslayout';
+import m from "mithril";
 import { Menu, SelectorDesc }   from 'hswidget';
 import * as hswidget            from 'hswidget';
 import * as hslayout            from 'hslayout';

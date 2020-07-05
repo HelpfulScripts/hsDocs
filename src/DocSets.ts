@@ -7,7 +7,7 @@
  */
 
 /** */
-import { m }            from 'hslayout';
+import m from "mithril";
 import { Log }          from 'hsutil'; const log = new Log('DocsSets');
 import { DocsNode }     from './Nodes';
 

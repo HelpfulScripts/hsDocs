@@ -1,64 +1,72 @@
 {
-  "name": "hsdocs",
-  "version": "2.8.16",
-  "keywords": [
-    "es6",
-    "jsdocs",
-    "typescript",
-    "typedoc",
-    "API documentation viewer"
-  ],
-  "description": "Helpful Scripts API documentation viewer for Typescript projects",
-  "homepage": "https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0",
-  "author": {
-    "name": "masterscripter",
-    "email": "helpfulscripts@gmail.com"
-  },
-  "scripts": {
-    "build": "grunt build",
-    "test": "grunt test"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HelpfulScripts/hsDocs.git"
-  },
-  "engines": {
-    "node": ">= 12.14.0"
-  },
-  "plugins": [
-    "plugins/markdown"
-  ],
-  "devDependencies": {
-    "@types/jest": "^25.2.x",
-    "@types/mithril": "^2.0.2",
-    "@types/node": "14.0.x",
-    "@vamship/grunt-typedoc": "^1.7.3",
-    "coveralls": "^3.0.9",
-    "grunt": "^1.0.4",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-uglify": "^4.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-coveralls": "^2.0.0",
-    "grunt-ts": "^6.0.0-beta.22",
-    "grunt-webpack": "^3.1.3",
-    "hsnode": "2.16.x",
-    "jest": "^25.5.x",
-    "terser-webpack-plugin": "3.0.x",
-    "ts-jest": "25.5.x",
-    "eslint": "^6.8.0",
-    "typedoc": "^0.17.6",
-    "typescript": "^3.8.3",
-    "webpack": "^4.43.x"
-  },
-  "dependencies": {
-    "hslayout": "2.4.x",
-    "hsutil": "3.5.x",
-    "hswidget": "2.4.x",
-    "mithril": "^2.0.4",
-    "showdown": "^1.9.1"
-  }
+    "name": "hsdocs",
+    "version": "2.8.16",
+    "keywords": [
+        "es6",
+        "jsdocs",
+        "typescript",
+        "typedoc",
+        "API documentation viewer"
+    ],
+    "description": "Helpful Scripts API documentation viewer for Typescript projects",
+    "homepage": "https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0",
+    "author": {
+        "name": "masterscripter",
+        "email": "helpfulscripts@gmail.com"
+    },
+    "main": "./cjs/index.js",
+    "module": "./esm/index.js",
+    "files": [
+        "bin/"
+    ],
+    "types": "./esm/index.d.ts",
+    "type": "module",
+    "scripts": {
+        "grunt": "grunt --gruntfile Gruntfile.cjs",
+        "prepublishOnly": "npm run grunt",
+        "postpublish": "npm version patch"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HelpfulScripts/hsDocs.git"
+    },
+    "engines": {
+        "node": ">= 12.14.0"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "devDependencies": {
+        "@types/jest": "^25.2.x",
+        "@types/mithril": "^2.0.2",
+        "@types/node": "14.0.x",
+        "@vamship/grunt-typedoc": "^1.7.3",
+        "coveralls": "^3.0.9",
+        "grunt": "^1.0.4",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-less": "^2.0.0",
+        "grunt-contrib-uglify": "^4.0.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-coveralls": "^2.0.0",
+        "grunt-ts": "^6.0.0-beta.22",
+        "grunt-webpack": "^3.1.3",
+        "hsnode": "2.16.x",
+        "jest": "^25.5.x",
+        "terser-webpack-plugin": "3.0.x",
+        "ts-jest": "25.5.x",
+        "eslint": "^6.8.0",
+        "typedoc": "^0.17.6",
+        "typescript": "^3.8.3",
+        "webpack": "^4.43.x"
+    },
+    "dependencies": {
+        "hslayout": "2.4.x",
+        "hsutil": "3.5.x",
+        "hswidget": "2.4.x",
+        "mithril": "^2.0.4",
+        "showdown": "^1.9.1"
+    }
 }

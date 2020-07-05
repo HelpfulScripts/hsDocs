@@ -3,8 +3,9 @@
  */
 
  /** */
-import { m, Vnode}              from 'hslayout';
-import { Log }                  from 'hsutil'; const log = new Log('NodesDisplay');
+ import m from "mithril";
+ type Vnode = m.Vnode<any, any>;
+ import { Log }                  from 'hsutil'; const log = new Log('NodesDisplay');
 import { DocsNode, DocsSignature }             from './Nodes';
 import { DocsParameter }        from './Nodes';
 import { DocSets }              from './DocSets';

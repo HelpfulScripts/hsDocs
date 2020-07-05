@@ -4,8 +4,9 @@
 
  /** */
 
-import { m, Vnode}  from 'hslayout';
-import { DocsNode } from './Nodes';
+ import m from "mithril";
+ type Vnode = m.Vnode<any, any>;
+ import { DocsNode } from './Nodes';
 
 export interface Flags {
     isExported?: boolean;

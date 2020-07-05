@@ -1,5 +1,5 @@
 import { markDown } from './markdown';
-import { m } from 'hslayout';
+import m from "mithril";
 
 
 describe('markdown', () => {

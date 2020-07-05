@@ -1,6 +1,6 @@
 import { DocsMenu } from './DocsMenu';
 import { DocSets }  from '../DocSets'; 
-import { m }        from "hslayout";
+import m from "mithril";
 
 const sets = {
     "docs": [

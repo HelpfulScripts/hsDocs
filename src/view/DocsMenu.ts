@@ -1,7 +1,9 @@
-import { m, Vnode, Layout }         from 'hslayout';
+import { Layout }                   from 'hslayout';
 import { DocSets }                  from '../DocSets'; 
 import { Menu, SelectorDesc }       from 'hswidget';
 import { Log }                      from 'hsutil'; const log = new Log('DocsMenu');
+import m from "mithril";
+type Vnode = m.Vnode<any, any>;
 
 /**
  * Creates the title menu for selecting between the different docsets.

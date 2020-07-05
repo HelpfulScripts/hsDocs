@@ -5,7 +5,8 @@
 
 import { Log }                  from 'hsutil'; const log = new Log('Types');
 import { DocsNode }             from './Nodes';
-import { m, Vnode}              from 'hslayout';
+import m from "mithril";
+type Vnode = m.Vnode<any, any>;
 import { libLinkByPath }        from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
 

@@ -4,8 +4,8 @@
  */
 /** */
 import { Log }                  from 'hsutil'; const log = new Log('MainDetail');
-import { m, Vnode}              from 'hslayout';
-import { Layout }               from 'hslayout';
+import m from "mithril";
+type Vnode = m.Vnode<any, any>;import { Layout }               from 'hslayout';
 import { DocsNode }             from '../Nodes';
 import { DocSets }              from '../DocSets';
 

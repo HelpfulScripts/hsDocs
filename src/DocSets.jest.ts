@@ -1,7 +1,7 @@
 import { DocSets } from './DocSets';
 const fs = require('fs');
 
-import { m } from 'hslayout';
+import m from "mithril";
 
 const set = {
     "docs": [
