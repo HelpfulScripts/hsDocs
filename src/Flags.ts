@@ -55,7 +55,7 @@ export const flagsClass = (flags:Flags):Flags => {
  * generates CSS classes for the provided flags.
  * @param mdl the `DocsNode` module for which to provide the css classes
  */
-export function flagsDisplay(mdl:DocsNode):Vnode {
+export function flagsDisplay(mdl:DocsNode):Vnode[] {
     const classMembers = ['Method', 'Property'];
     const knownFlags = {
         isExported:     'export',

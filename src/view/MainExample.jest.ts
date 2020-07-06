@@ -1,7 +1,7 @@
 import { example } from './MainExample';
 import m from "mithril";
 
-m.redraw = () => 0;
+m.redraw = <m.Redraw>(() => undefined);
 m.mount = () => 0;
 
 const exmp = `

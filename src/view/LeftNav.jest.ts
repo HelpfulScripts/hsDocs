@@ -1,5 +1,6 @@
 import { LeftNav } from './LeftNav';
 import m from "mithril";
+import { DocSets } from '../DocSets';
 const fs = require('fs');
 
 
@@ -33,7 +34,7 @@ const route = {
     lib: 'hsDocs'
 };
 
-m.route.param = (name:string) => {
+m.route.param = (name?:string) => {
     if (name==='field') { return route.field; }
     if (name==='lib')   { return route.lib; }
     return '';

@@ -100,11 +100,15 @@ export class DocSets {
      * @return a promise to load the index set
      */
     public static async loadList(file?:string):Promise<void> {
+        interface DocFile {
+            title:string;
+            docs: string[];
+        }
         /** load an `index.json` file that contains references to the DocSets to load. */
         async function getIndexFile(dir:string, url:string):Promise<boolean> {
             if (!url) { return false; }
             try {
-                const result = await m.request({ method: "GET", url: file});
+                const result:DocFile = await m.request({ method: "GET", url: file});
                 DocSets.gTitle = result.title;
                 DocSets.docs = result.docs.map((doc:string) => doc.indexOf(':')>0? doc : dir+doc);
                 log.debug(`found index file ${url} with ${DocSets.docs.length} library references`);

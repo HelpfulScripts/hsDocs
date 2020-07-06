@@ -6,6 +6,7 @@
 /** */
 import m from "mithril";
 type Vnode = m.Vnode<any, any>;
+
 import { Log }                  from 'hsutil'; const log = new Log('Nodes');
 import { json }                 from './DocSets';
 import { DocSets }              from './DocSets';
@@ -92,12 +93,12 @@ export class DocsNode {
     public getName() { return this.name; }
     public getSignatures() { return this.signatures; }
     public setSignatures(signatures: DocsSignature[]) { this.signatures = signatures; }
-    public getParameters(params:(s:DocsParamaterized)=>Vnode[]):Vnode { 
+    public getParameters(params:(s:DocsParamaterized)=>Vnode[]):Vnode[] { 
         return this.getParameters? params(this) : undefined;    
     }
 
     public title():Vnode { return title(this); }
-    public commentLong():Vnode { return commentLong(this); }
+    public commentLong():m.Children { return commentLong(this); }
     public members():Vnode { return members(this); }
 }
 
@@ -182,7 +183,7 @@ export class DocsBaseNode extends DocsNode {
         fields = Object.getOwnPropertyNames(mdl);
         fields.forEach(f => { // unexpected fields
             if (this[f]===undefined && isNotIgnored(f)) {
-                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],{depth:2})}'`);
+                log.warn(`${this.lib}: '${this.kindString}' #${this.id}: found extra field '${f}'='${log.inspect(mdl[f],{depth:2, indent:'   '})}'`);
                 DocsNode.errCount++;
             }
         });

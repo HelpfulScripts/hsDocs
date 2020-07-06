@@ -5,7 +5,8 @@
 /** */
 import { Log }                  from 'hsutil'; const log = new Log('MainDetail');
 import m from "mithril";
-type Vnode = m.Vnode<any, any>;import { Layout }               from 'hslayout';
+type Vnode = m.Vnode<any, any>;
+import { Layout }               from 'hslayout';
 import { DocsNode }             from '../Nodes';
 import { DocSets }              from '../DocSets';
 
@@ -34,7 +35,7 @@ export class MainDetail extends Layout {
  * @param mdl the module name to check
  * @return Vnode containing the overview file, or `undefined`
  */
-function getOverview(node:DocsNode):Vnode {
+function getOverview(node:DocsNode):m.Child {
     return node? m('div.hsdocs_head_comment', (node.getSignatures()? node.getSignatures()[0] : node).commentLong()) : 'overview unavailable';
 }
 

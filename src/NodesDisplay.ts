@@ -3,10 +3,12 @@
  */
 
  /** */
- import m from "mithril";
- type Vnode = m.Vnode<any, any>;
- import { Log }                  from 'hsutil'; const log = new Log('NodesDisplay');
-import { DocsNode, DocsSignature }             from './Nodes';
+import m from "mithril";
+type Vnode = m.Vnode<any, any>;
+ 
+import { Log }                  from 'hsutil'; const log = new Log('NodesDisplay');
+import { DocsNode }             from './Nodes';
+import { DocsSignature }        from './Nodes';
 import { DocsParameter }        from './Nodes';
 import { DocSets }              from './DocSets';
 import { DocsParamaterized }    from './Nodes';
@@ -37,10 +39,10 @@ interface Tag {
  * @param name the name on which to formt he link
  */
 export function libLinkByPath(lib:string, path:string, name:string, css=''):Vnode {
-    return m(`a${css}`, { href:`#!/api/${lib}/${path}`, oncreate: m.route.link, onupdate: m.route.link }, name);
+    return m(`a${css}`, { href:`#!/api/${lib}/${path}`, /*oncreate: m.route.Link, onupdate: m.route.Link*/ }, name);
 }
 
-function libLinkByID(lib:string, id:string|number, name:string, css=''):Vnode {
+function libLinkByID(lib:string, id:string|number, name:string, css=''):m.Child {
 // log.info(`libLinkByID ${lib} ${id} ${name}`);
     const path = (DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';
     return libLinkByPath(lib, path, name, css);
@@ -128,9 +130,9 @@ export class DocsComment {
 
 export function title(node:DocsNode, parent?:DocsNode):Vnode {
     if (node.getSignatures()) {
-        return node.getSignatures().map((s:DocsNode) => 
+        return m('.hsdocs_title', node.getSignatures().map((s:DocsNode) => 
             m('.hsdocs_child.hsdocs_signature', [title(s, node), m('.hsdocs_sig_comment', s.commentLong())])
-        );
+        ));
     }
     return m('.hsdocs_title', {id: 'title_' + node.getName().toLowerCase()}, titleElements(node, parent)); 
 }
@@ -141,7 +143,7 @@ export function title(node:DocsNode, parent?:DocsNode):Vnode {
  * @param parent optional parent node for use in `mItemName`, used 
  * when the node has a `signature` array. 
  */
-export function titleArr(node:DocsNode, parent?:DocsNode):Vnode {
+export function titleArr(node:DocsNode, parent?:DocsNode):m.Vnode<any, any> {
     return m('span', titleElements(node, parent)); 
 }
 
@@ -169,8 +171,8 @@ function titleElements(node:DocsNode, parent?:DocsNode) {
     }
 }
 
-export function inlineTitle(node:DocsNode):Vnode {
-    let desc:Vnode = '';
+export function inlineTitle(node:DocsNode):m.Vnode<any, any> {
+    let desc:any = '';
     try { desc = [ 
         mFlags(node),
         mKindString(node),
@@ -191,7 +193,7 @@ function mFlags(node:DocsNode):Vnode {
     return m('span.hsdocs_flags', flagsDisplay(node));
 }
 
-function mKindString(node:DocsNode):Vnode {
+function mKindString(node:DocsNode):m.Child {
     const kind = node.kindPrint;
     return kind===''? '' : m('span.hsdocs_kind', node.getSignature? 'get ' : (node.setSignature? 'set ' : kind));
 }
@@ -220,7 +222,7 @@ function mSignature(node:DocsNode):Vnode {
             const dec = s.type.declaration;
             const sig = dec.indexSignature || dec.getSignatures();
             if (sig) {
-                result = sig.map((isig:DocsSignature) => params(isig));
+                result = [m('span', sig.map((isig:DocsSignature) => params(isig)))];
             }
         }
         result = params(s);
@@ -353,15 +355,17 @@ function mImplementedBy(node:DocsNode):Vnode {
  * @param node the module to scan for comments
  * @return a vnode representing the comment entries
  */
-export function commentLong(node:DocsNode):Vnode[] {
-    let content:any[] = [];
+export function commentLong(node:DocsNode):m.Children {
+    let content:m.Children = [];
     if (node.comment) {
-        content.push(node.comment.getDescription(false));
-        content.push(node.comment.getParams(node.parameters));
-        content.push(node.comment.getReturns());
-        content.push(node.comment.getCommentRemainder());
+        return [
+            node.comment.getDescription(false),
+            node.comment.getParams(node.parameters),
+            node.comment.getReturns(),
+            node.comment.getCommentRemainder()
+        ];
     } else if (node.getSignatures()) {
-        return node.getSignatures().map(s => commentLong(s));
+        return node.getSignatures().map(s => m('', commentLong(s)));
     } else if (node.type) {
         return node.type.mType();
     }
@@ -424,7 +428,7 @@ export function members(node:DocsNode):Vnode {
     return m('.hsdocs_members');
 }
 
-function member(nodes:DocsNode[], title:string, access:Access): Vnode {
+function member(nodes:DocsNode[], title:string, access:Access): m.Child {
     const directChildren    = ((node:DocsNode) => !node.inheritedFrom);
     const inheritedChildren = ((node:DocsNode) =>  node.inheritedFrom);
     const [css, flagText]   = nodes.length? getFlagText(nodes[0], access) : ['',''];
@@ -439,11 +443,11 @@ function member(nodes:DocsNode[], title:string, access:Access): Vnode {
     if (content.length>0) {
         content.unshift(m('div.hsdocs_member_title', `${flagText} ${title}`));
     }
-    const members:DocsNode[] = content.concat(inherited);
+    const members:Vnode[] = content.concat(inherited);
     return !members.length? '' : m(`.hsdocs_member ${css}`, members);
 }
 
-function itemChild(node:DocsNode): Vnode[] {
+function itemChild(node:DocsNode): m.Children {
     if (node.getSignatures()) {
         return node.getSignatures().map((s:DocsNode) => 
             m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), m('.hsdocs_childsig_comment', s.commentLong())])

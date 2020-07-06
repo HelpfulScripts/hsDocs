@@ -40,7 +40,7 @@ const route = {
     lib: 'hsGraphD3'
 };
 
-m.route.param = (name:string) => {
+m.route.param = (name?:string):string => {
     if (name==='field') { return route.field; }
     if (name==='lib')   { return route.lib; }
     return '';
