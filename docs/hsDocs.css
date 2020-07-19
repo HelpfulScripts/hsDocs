@@ -107,6 +107,9 @@
   background-color: #fff;
   font-weight: bold;
 }
+.scrolly {
+  overflow-y: scroll;
+}
 .hs-collapsible-arrow {
   width: 0;
   height: 0;
@@ -181,8 +184,7 @@
 }
 .hs-collapsible-content {
   position: relative;
-  overflow: hidden;
-  transition: max-height 0.25s ease-in-out;
+  overflow-x: hidden;
 }
 .hs-dropover {
   position: relative;

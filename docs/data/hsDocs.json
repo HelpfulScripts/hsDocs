@@ -66472,7 +66472,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 8,
 									"character": 9
 								}
@@ -66533,7 +66533,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 10,
 									"character": 20
 								}
@@ -66690,7 +66690,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 12,
 									"character": 8
 								}
@@ -66858,7 +66858,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 8,
 									"character": 9
 								}
@@ -66919,7 +66919,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 10,
 									"character": 20
 								}
@@ -67029,7 +67029,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 12,
 									"character": 8
 								}
@@ -67469,7 +67469,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 8,
 									"character": 9
 								}
@@ -67530,7 +67530,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 10,
 									"character": 20
 								}
@@ -67640,7 +67640,7 @@
 							],
 							"sources": [
 								{
-									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/view/Layout.d.ts",
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/view/Layout.d.ts",
 									"line": 12,
 									"character": 8
 								}
@@ -68963,7 +68963,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/esm/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hslayout/bin/esm/index\""
 							},
 							"defaultValue": "hslayout"
 						},
@@ -68982,7 +68982,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hsutil/esm/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hsutil/bin/esm/index\""
 							},
 							"defaultValue": "hsutil"
 						},
@@ -69001,7 +69001,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/esm/index\""
+								"name": "\"/Users/Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/index\""
 							},
 							"defaultValue": "hswidget"
 						},
