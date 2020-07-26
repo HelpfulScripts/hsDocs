@@ -325,6 +325,7 @@ class DocsInterface extends DocsStructured {
         this.signatures = null;
         this.implementedBy = null;
         this.kindPrint = 'interface';
+        this.typeParameter = null;
     }
     
 }
@@ -345,7 +346,7 @@ class DocsConstructor extends DocsSourced implements DocsParamaterized {
 class DocsProperty extends DocsWithDefault {
     init() {
         super.init();
-        this.TYPE = ['intrinsic', 'array', 'reflection', 'stringLiteral', 'reference', 'tuple', 'union'];
+        this.TYPE = ['intrinsic', 'array', 'reflection', 'stringLiteral', 'reference', 'tuple', 'union', 'typeParameter',];
         this.FLAGS = flagsPublic(flagsExported({
             isStatic:               false,
             isOptional:             false,

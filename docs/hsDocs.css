@@ -582,6 +582,57 @@ div.hsedit_list_header {
   margin: 0;
   padding-left: 10px;
 }
+.right {
+  text-align: right;
+}
+.scrolly {
+  overflow-y: scroll;
+}
+.pivot {
+  width: 100%;
+  border-bottom: 5px solid white;
+}
+.pivot .mon_header {
+  height: 1.4em;
+  background-color: #66a;
+  color: white;
+}
+.pivot .row {
+  width: 100%;
+  padding: 0;
+  height: 1.4em;
+}
+.pivot span {
+  display: inline-block;
+  width: 20%;
+  font-size: 80%;
+}
+.pivot span.name {
+  width: 10%;
+  white-space: nowrap;
+  padding-top: 3px;
+  padding-left: 4px;
+}
+.pivot .mon0 {
+  background-color: #99b;
+  color: white;
+}
+.pivot .mon1 {
+  background-color: #bbd;
+  color: black;
+}
+.pivot .mon2 {
+  background-color: #ddf;
+  color: black;
+}
+.pivot .mon3 {
+  background-color: #eee;
+  color: black;
+}
+.pivot .mon4 {
+  background-color: #fff;
+  color: black;
+}
 /*# sourceMappingURL=hsWidget.css.map */
 .hsdocs_title {
   padding: 5px 10px;

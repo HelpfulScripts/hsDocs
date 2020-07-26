@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.91% </span>
+                <span class="strong">90.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>250/275</span>
+                <span class='fraction'>251/276</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.91% </span>
+                <span class="strong">90.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>230/253</span>
+                <span class='fraction'>231/254</span>
             </div>
         
             
@@ -616,7 +616,8 @@
 <a name='L557'></a><a href='#L557'>557</a>
 <a name='L558'></a><a href='#L558'>558</a>
 <a name='L559'></a><a href='#L559'>559</a>
-<a name='L560'></a><a href='#L560'>560</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -709,20 +710,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">62x</span>
-<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">97x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">131020x</span>
-<span class="cline-any cline-yes">308004x</span>
+<span class="cline-any cline-yes">308378x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -762,8 +763,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">733236x</span>
-<span class="cline-any cline-yes">732948x</span>
+<span class="cline-any cline-yes">733610x</span>
+<span class="cline-any cline-yes">733322x</span>
 <span class="cline-any cline-yes">424944x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">33314x</span>
@@ -791,9 +792,9 @@
 <span class="cline-any cline-yes">228x</span>
 <span class="cline-any cline-yes">369376x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">308004x</span>
+<span class="cline-any cline-yes">308378x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">308004x</span>
+<span class="cline-any cline-yes">308378x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -934,6 +935,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">374x</span>
 <span class="cline-any cline-yes">374x</span>
 <span class="cline-any cline-yes">374x</span>
 <span class="cline-any cline-yes">374x</span>
@@ -1502,6 +1504,7 @@ class DocsInterface extends DocsStructured {
         this.signatures = null;
         this.implementedBy = null;
         this.kindPrint = 'interface';
+        this.typeParameter = null;
     }
     
 }
@@ -1522,7 +1525,7 @@ class DocsConstructor extends DocsSourced implements DocsParamaterized {
 class DocsProperty extends DocsWithDefault {
     init() {
         super.init();
-        this.TYPE = ['intrinsic', 'array', 'reflection', 'stringLiteral', 'reference', 'tuple', 'union'];
+        this.TYPE = ['intrinsic', 'array', 'reflection', 'stringLiteral', 'reference', 'tuple', 'union', 'typeParameter',];
         this.FLAGS = flagsPublic(flagsExported({
             isStatic:               false,
             isOptional:             false,
