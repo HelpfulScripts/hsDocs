@@ -1,10 +1,13 @@
-@Background:       #e0e0ef;
-@PublicBackground: #e0efe0;
-@PublicTitleColor: #060;
+@MainBackground:       #e0e0ef;
+@MainPublicBackground: #e0efe0;
+@MainPublicTitleColor: #060;
+@MainTitleBackground:  #eef;
 
-@StaticBackground: #efefe0;
-@StaticTitleColor: #600;
-@Transparent: rgba(255, 255, 255, 0);
+@MainStaticBackground: #efefe0;
+@MainStaticTitleColor: #600;
+@MainTransparent:      rgba(255, 255, 255, 0);
+@MainBorderColor:      #ccc;
+
 
 .hsdocs_menu {
     .state0 { border:none; }
@@ -30,7 +33,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     grid-row: 2;
-    border-left: 1px solid @BorderColor;
+    border-left: 1px solid @MainBorderColor;
     font-size: 16px;
     overflow-y: scroll;
 }
@@ -64,10 +67,10 @@
     font-weight:bold;
     padding: 5px 0px 5px 5px;
     margin: 4px 0;
-    span { .hs-indent; }
+    span { .hs_indent; }
 }
 
-@BgStop: 30%;
+@MainBgStop: 30%;
 
 .hsdocs_colon {
     padding: 0;
@@ -77,7 +80,7 @@
     .hsdocs_colon
 }
 
-.hs-item-desc {
+.hs_item_desc {
     padding-left: 0.5em;
 }
 
@@ -96,20 +99,20 @@
 .hsdocs_member {
     &hsdocs_flag_public {
         .hsdocs_member_title {
-            background-color: @PublicBackground;
-            color: @PublicTitleColor;
+            background-color: @MainPublicBackground;
+            color: @MainPublicTitleColor;
         }
         .hsdocs_node_variable {
-            background: linear-gradient(to bottom, @PublicBackground @BgStop, @Transparent); 
+            background: linear-gradient(to bottom, @MainPublicBackground @MainBgStop, @MainTransparent); 
         }
     }
     .hsdocs_flag_static {
         .hsdocs_member_title {
-            background-color: @StaticBackground;
-            color: @StaticTitleColor;
+            background-color: @MainStaticBackground;
+            color: @MainStaticTitleColor;
         }
         .hsdocs_node_variable {
-            background: linear-gradient(to bottom, @StaticBackground @BgStop, @Transparent); 
+            background: linear-gradient(to bottom, @MainStaticBackground @MainBgStop, @MainTransparent); 
         }
     }
 }
@@ -133,14 +136,14 @@
 .hsdocs_node_function           { .hsdocs_node; }
 
 
-@InheritedBackground: #f8f8f8;
+@MainInheritedBackground: #f8f8f8;
 .hsdocs_node_inherited {
     // padding-left: 0px;
-    background-color: @InheritedBackground;
+    background-color: @MainInheritedBackground;
     font-size: 80%;
     color: #444;
     &.hsdocs_member_title {
-        background-color: @TitleBackground;
+        background-color: @MainTitleBackground;
         font-size: 100%;
     }
     .hsdocs_inheritedFrom {
@@ -155,21 +158,21 @@
     font-weight: bold;
 }
 
-@CodeBackground: #f4f4f4;
-@CodeFontColor: #800;
+@MainCodeBackground: #f4f4f4;
+@MainCodeFontColor: #800;
 pre {
     padding-left: 10px;
     margin-right: 10px;
     border-radius: 4px;
-    background-color: @CodeBackground;
+    background-color: @MainCodeBackground;
     code {
         padding: 0;
     }
 }
 
 code {
-    color: @CodeFontColor;
-    background-color: @CodeBackground;
+    color: @MainCodeFontColor;
+    background-color: @MainCodeBackground;
     border-radius: 4px;
     padding:  3px;
 }

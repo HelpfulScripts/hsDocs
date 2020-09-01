@@ -1,5 +1,7 @@
 @bg-example: #eed;
-@bg-source:  #dde;
+@bg-source:  #eef;
+@menuSource: #f8f8f8;
+@menuSourceSelected: #d8d8e8;
 @menuItemBorder: 1px solid rgb(240, 30, 30); 
 @windowHeight: 300px;
 @LayoutSpacing: 1px solid white; 
@@ -22,13 +24,13 @@
             grid-row: 1;
             box-shadow: none;
         }
-        .hs-scroll {
+        .hs_scroll_content {
             overflow-x: hidden;
             overflow-y: scroll;
             grid-row: 2;
             grid-column: 1 / span 2;
         }
-        .hs-execution { 
+        .hs_execution { 
             display: inline-block;
             vertical-align: top;
             width:50%;
@@ -36,7 +38,7 @@
             div { margin: 0px; }
             .hs_grid { width: 100%; }
     
-            .hs-white {    // white background for example execution
+            .hs_white {    // white background for example execution
                 background-color:white;
                 padding-left: 5px;          // start content 5px in
                 padding-right: 5px;          // start content 5px in
@@ -44,7 +46,7 @@
             }
         }
     
-        .hs-source {
+        .hs_source {
             width:50%;
             display: inline-block;
             background-color: @bg-source;  
@@ -54,10 +56,10 @@
 
     .hs_menu.hs_option_buttons {
         .state0 {
-            background-color: #f8f8f8; 
+            background-color: @menuSource;
         }
         .state1 {
-            background-color: @bg-source; 
+            background-color: @menuSourceSelected;
         }
     }
 

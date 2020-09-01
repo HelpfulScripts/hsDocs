@@ -1568,7 +1568,7 @@ function prettifyCode(comment:string, short:boolean):Vnode {
                 let k = <span class="cstat-no" title="statement not covered" >l.trim();</span>
 <span class="cstat-no" title="statement not covered" >                indent += Math.max(-1, Math.min(1, k.split('{').length - k.split('}').length)); </span>
 <span class="cstat-no" title="statement not covered" >                indent += Math.max(-1, Math.min(1, k.split('[').length - k.split(']').length)); </span>
-<span class="cstat-no" title="statement not covered" >                return '&lt;span class="hs-code-indent"&gt;&lt;/span&gt;'.repeat(((indent &lt; oldIndent)?indent:oldIndent)) + k;</span>
+<span class="cstat-no" title="statement not covered" >                return '&lt;span class="hs_code_indent"&gt;&lt;/span&gt;'.repeat(((indent &lt; oldIndent)?indent:oldIndent)) + k;</span>
             })
             .join('\n')
             .trim();

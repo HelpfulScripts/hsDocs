@@ -454,24 +454,7 @@
 <a name='L395'></a><a href='#L395'>395</a>
 <a name='L396'></a><a href='#L396'>396</a>
 <a name='L397'></a><a href='#L397'>397</a>
-<a name='L398'></a><a href='#L398'>398</a>
-<a name='L399'></a><a href='#L399'>399</a>
-<a name='L400'></a><a href='#L400'>400</a>
-<a name='L401'></a><a href='#L401'>401</a>
-<a name='L402'></a><a href='#L402'>402</a>
-<a name='L403'></a><a href='#L403'>403</a>
-<a name='L404'></a><a href='#L404'>404</a>
-<a name='L405'></a><a href='#L405'>405</a>
-<a name='L406'></a><a href='#L406'>406</a>
-<a name='L407'></a><a href='#L407'>407</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L398'></a><a href='#L398'>398</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -633,7 +616,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -881,14 +863,12 @@
  *     &amp;lt;example&amp;gt; 
  *     &lt;file name='script.js'&gt;
  *     m.mount(root, { 
- *         view:() =&gt; m(hsLayout.Layout, { columns:[], 
- *             content:['first line','second line')]
- *         })
+ *         view:() =&gt; m('.myClass', { style:'font-weight:bold;' }, 'my example')
  *     });
  *     &lt;/file&gt;
  * 
  *     &lt;file name='style.css'&gt;
- *     .hsLeaf { 
+ *     .myClass { 
  *         color: blue; 
  *     }
  *     &lt;/file&gt;
@@ -903,8 +883,8 @@
  * as parameters in the `Function` constructor and are thus available to the script. 
  * hsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:
  * - **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function    
- * - **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library, 
- * providing functions to layout the browser window.
+ * - **hsUtil**: namespace for the [`hsUtil`](http://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/0) library, 
+ * providing various utility functions.
  * - **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library, 
  * providing various UI widget functions.
  * - **root**: the DOM element to attach content to.
@@ -912,7 +892,8 @@
  * Additional Scripts can loaded - see `Configuring the example` below. 
  * 
  * The script can access and manipulate any of the provided libraries
- * via their namespace, for example as in `m(hsLayout.Layout,{})`
+ * via their namespace, for example as in `m(hsWidget.Icon,{mdi:'stop'})`
+ * 
  * #### Using Mithril:
  * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
  * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
@@ -968,21 +949,14 @@
  * &lt;example&gt;
  * &lt;file name='script.js'&gt;
  * m.mount(root, { 
- *     view:() =&gt; m(hsLayout.Layout, {
- *         css:'.myExample', 
- *         columns:[], 
- *         content:[
- *             'left column',
- *             'right column'
- *         ]
- *     })
+ *     view:() =&gt; m(hsWidget.GridColumns, [
+ *          'left column',
+ *          'right column'
+ *     ])
  * });
  * &lt;/file&gt;
  * &lt;file name='style.css'&gt;
  * $exampleID { height: 200px;}
- * .hs-layout { 
- *     margin:0; 
- * }
  * .myExample { 
  *     color: red; 
  *     font-weight:bold; 
@@ -1051,8 +1025,7 @@ function getNewID():string {
  * import * as layout from "layout";
  * text = text.replace(/&lt;example&gt;([\S\s]*?)&lt;\/example&gt;/gi, example({layout:layout}));
  * &lt;/pre&gt;&lt;/code&gt;
- * The modules `m`, `hsLayout`, and `hsGraph` will be added by default as 
- * ` { m: m, layout: layout, widget: widget } `
+ * The modules `m`, `hsUtil`, and `hsWidget` will be added by default. 
  * @param exmpl the example string extracted from the comment, including the `&lt;example&gt;` tags.
  * @param context the context in which the example script should be run, expressed as `name`:`namespace` pairs.
  */
@@ -1137,10 +1110,10 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 &nbsp;
     <span class="missing-if-branch" title="if path not taken" >I</span>if (root &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >IDs.created)</span> {
 <span class="cstat-no" title="statement not covered" >        m.mount(root, {view: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >m('.exampleGrid', [</span></span>
-            m(Menu, { class:'hs-menu', onclick: click }, IDs.items),
-            m('.hs-scroll', [
-                m(`.hs-execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
-                m('.hs-source', m.trust(`&lt;code&gt;&lt;pre&gt;${IDs.pages[item]}&lt;/pre&gt;&lt;/code&gt;`))
+            m(Menu, { class:'hs_menu', onclick: click }, IDs.items),
+            m('.hs_scroll_content', [
+                m(`.hs_execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
+                m('.hs_source', m.trust(`&lt;code&gt;&lt;pre&gt;${IDs.pages[item]}&lt;/pre&gt;&lt;/code&gt;`))
             ])
         ])});
     }

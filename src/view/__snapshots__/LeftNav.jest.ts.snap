@@ -3,33 +3,33 @@
 exports[`LeftNav overview matches snapshot 1`] = `
 <body>
   <div
-    class="hs-left"
+    class="hs_left"
     field="0"
     lib="hsDocs"
   >
     <div
-      class="hs-left-nav"
+      class="hs_left_nav"
     >
       <div
-        class="hs-left-nav-content"
+        class="hs_left_nav-content"
       >
         <div
-          class="hs-left-nav-header"
+          class="hs_left_nav-header"
         >
           Modules
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.DocSets"
               >
                 DocSets
@@ -37,22 +37,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.Flags"
               >
                 Flags
@@ -60,22 +60,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.Nodes"
               >
                 Nodes
@@ -83,22 +83,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.NodesDisplay"
               >
                 NodesDisplay
@@ -106,22 +106,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.Site"
               >
                 Site
@@ -129,22 +129,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.Types"
               >
                 Types
@@ -152,22 +152,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.markdown"
               >
                 markdown
@@ -175,22 +175,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.view.DocsMenu"
               >
                 view.DocsMenu
@@ -198,22 +198,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.view.LeftNav"
               >
                 view.LeftNav
@@ -221,22 +221,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.view.MainDetail"
               >
                 view.MainDetail
@@ -244,22 +244,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.view.MainExample"
               >
                 view.MainExample
@@ -267,22 +267,22 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>
         <div
-          class="hs-collapsible  hs-left-nav-module"
+          class="hs_collapsible  hs_left_nav_module"
         >
           <div
-            class="hs-collapsible-title"
+            class="hs_collapsible_title"
           >
             <div
-              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+              class="hs_collapsible_pre  hs_collapsible_arrow_right"
             />
             <div>
               <a
-                class="hs-left-nav-module-name"
+                class="hs_left_nav_module_name"
                 href="#!/api/hsDocs/hsDocs.view.Tooltip"
               >
                 view.Tooltip
@@ -290,7 +290,7 @@ exports[`LeftNav overview matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="hs-collapsible-content hs_scrolly"
+            class="hs_collapsible_content hs_scrolly"
             style="max-height: 0; transition: max-height 0.25s ease-in-out;"
           />
         </div>

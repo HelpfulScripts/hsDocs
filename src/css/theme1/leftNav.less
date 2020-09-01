@@ -1,12 +1,18 @@
-@BorderRadius:  5px;
-@HoverColor:    #fee;
-@SelectColor:   #cfc;
-@TitleColor:    #ddc;
+@LeftBorderRadius:  5px;
+@LeftBackground:    #fff;
+@LeftHoverColor:    #fee;
+@LeftSelectColor:   #dde;
+@LeftTitleColor:    #eef;    // #ddc;
+@LeftHeaderColor:   #eee;
+@LeftEntryColor:    #f8f8f8;
 
 
-.hs-left {
+.hs_left {
+    .hs_collapsible_title:hover, .hs_left_nav_entry:hover {
+        filter:brightness(95%);
+    }
     overflow-x: hidden;
-    background-color: #fff;
+    background-color: @LeftBackground;
     width: 100%;
     overflow-y: scroll;
     a {
@@ -17,69 +23,62 @@
         }
     }
     
-    .hs-left-nav {    // the left detail window providing a nav overview
+    .hs_left_nav {    // the left detail window providing a nav overview
         padding: 0px 5px 0 5px;  
         font-size:0.8em;
         list-style-type: none; 
     }
 
-    .hs-library-name {
+    .hs_library_name {
         font-size: 1.6em;
         font-weight: bold;
         padding:0.3em 10px;
         margin:2px 0;
         height: 0.8em;
-        &:hover {
-            background-color: #eef;
-        }
     }
 
-    .hs-left-nav-module {
+    .hs_left_nav_module {
         margin-top: 5px;
         margin-bottom: 10px; 
-        border-left: 1px solid darken(@TitleColor, 20%);
-        border-top: 1px solid darken(@TitleColor, 10%); 
-        border-top-right-radius : @BorderRadius;
-        border-top-left-radius : @BorderRadius;
+        border-left: 1px solid darken(@LeftTitleColor, 20%);
+        border-top: 1px solid darken(@LeftTitleColor, 10%); 
+        border-top-right-radius : @LeftBorderRadius;
+        border-top-left-radius : @LeftBorderRadius;
         overflow: hidden;
-    }
 
-    .hs-left-nav-module {
-        .hs-collapsible-title {
+        .hs_collapsible_title {
             padding-left:0px;
             font-size: 1.1em;
-            background-color: @TitleColor;
-            &:hover {
-                background-color: darken(@TitleColor, 10%);
-            }
+            background-color: @LeftTitleColor;
         }
-        &.hs-collapsible-expanded .hs-collapsible-title {
-            background-color: @SelectColor;
+        &.hs_collapsible_expanded .hs_collapsible_title {
+            background-color: @LeftSelectColor;
         }
     }
 
 
-    .hs-left-nav-header {
+    .hs_left_nav-header {
         padding-right: 5px;
         text-align: right;
         font-style: italic;
-        background-color: #f0f0e8;
+        background-color: @LeftHeaderColor;
     }
 
-    .hs-left-nav-entries {
+    .hs_left_nav_entries {
         border-top: 1px solid #ccc;
-        background-color: #f8f8f0;
+        background-color: @LeftEntryColor;
     }
 
-    .hs-left-nav-entry {
+    .hs_left_nav_entry {
+        background-color: @LeftEntryColor;
+    }
+
+    .hs_left_nav_entry_link {
         padding-left:5px;
         background-color: transparent;
-        &:hover {
-            background-color: @HoverColor;
-        }
     }
 
-    .hs-left-nav-exported {
+    .hs_left_nav-exported {
         color: #44f;
         font-weight:bold;
     }

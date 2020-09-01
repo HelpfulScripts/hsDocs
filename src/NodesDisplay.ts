@@ -495,7 +495,7 @@ function prettifyCode(comment:string, short:boolean):Vnode {
                 let k = l.trim();
                 indent += Math.max(-1, Math.min(1, k.split('{').length - k.split('}').length)); 
                 indent += Math.max(-1, Math.min(1, k.split('[').length - k.split(']').length)); 
-                return '<span class="hs-code-indent"></span>'.repeat(((indent < oldIndent)?indent:oldIndent)) + k;
+                return '<span class="hs_code_indent"></span>'.repeat(((indent < oldIndent)?indent:oldIndent)) + k;
             })
             .join('\n')
             .trim();

@@ -2,7 +2,7 @@
 @TTBackground:  #000;
 @TTHeight:      1.6em;
 
-.hs-tooltip {
+.hs_tooltip {
     position: relative;
     // display: ;
     span {
@@ -25,7 +25,7 @@
             position: absolute;
             width: 0; height: 0;
         }
-        &.hs-tooltip-left:after {
+        &.hs_tooltip_left:after {
             top: 50%;
             left: 100%;
             margin-top: -@TTRadius;
@@ -33,7 +33,7 @@
             border-top: @TTRadius solid transparent;
             border-bottom: @TTRadius solid transparent;
         }  
-        &.hs-tooltip-right:after {
+        &.hs_tooltip_right:after {
             top: 50%;
             right: 100%;
             margin-top: -@TTRadius;
@@ -41,7 +41,7 @@
             border-top: @TTRadius solid transparent;
             border-bottom: @TTRadius solid transparent;
         }  
-        &.hs-tooltip-top:after {
+        &.hs_tooltip_top:after {
             top: 100%;
             left: 50%;
             margin-left: -@TTRadius;
@@ -49,7 +49,7 @@
             border-right: @TTRadius solid transparent;
             border-left: @TTRadius solid transparent;
         }  
-        &.hs-tooltip-bottom:after {
+        &.hs_tooltip_bottom:after {
             bottom: 100%;
             left: 50%;
             margin-left: -@TTRadius;
@@ -63,22 +63,22 @@
         visibility: visible;
         opacity: 1;
         z-index: 999;
-        &.hs-tooltip-left {
+        &.hs_tooltip_left {
             right: 100%;
             top: 50%;
             margin-top: -@TTRadius;
         }
-        &.hs-tooltip-right {
+        &.hs_tooltip_right {
             left: 100%;
             top: 50%;
             margin-top: -@TTRadius;
             margin-left: @TTRadius;
         }
-        &.hs-tooltip-top {
+        &.hs_tooltip_top {
             bottom: @TTHeight;
             left: 0%;
         }
-        &.hs-tooltip-bottom {
+        &.hs_tooltip_bottom {
             top: @TTHeight;
             left: 0%;
             margin-top: @TTRadius;

@@ -66734,7 +66734,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/overview.ts",
 			"comment": {
 				"shortText": "# hsDocs",
-				"text": "Helpful Scripts code documentation viewer.\n<a href=\"./data/src/hsDocs/coverage/\" target=\"_blank\">[Coverage Info]</a>\n\n[![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs)\n[![GitHub](https://img.shields.io/badge/GitHub-hsDocs-blue.svg)](https://github.com/helpfulscripts/hsdocs)\n[![docs](https://img.shields.io/badge/hsDocs-hsDocs-blue.svg)](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)\n[![Build Status](https://travis-ci.org/HelpfulScripts/hsDocs.svg?branch=master)](https://travis-ci.org/HelpfulScripts/hsDocs)\n[![Dependencies Status](https://david-dm.org/helpfulscripts/hsdocs.svg)](https://david-dm.org/helpfulscripts/hsdocs)\n[![codecov](https://codecov.io/gh/HelpfulScripts/hsDocs/branch/master/graph/badge.svg)](https://codecov.io/gh/HelpfulScripts/hsDocs)\n[![Known Vulnerabilities](https://snyk.io/test/github/HelpfulScripts/hsDocs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/HelpfulScripts/hsDocs?targetFile=package.json)\n[![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)\n\n___\nhsDocs.js is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.\nIt provides a browser rendering of JSON documentation files as created by [typedoc](http://typedoc.org).\n\n## Usage\n1 - Create a web-app directory to serve the docsets from. As an example,\nsee the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs),\nwhich serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)\n\n2a - Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs),\nor create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:\n```\n<html>\n<head>\n<link href=\"https://helpfulscripts.github.io/hsDocs/hsDocs.css\" rel=\"stylesheet\" />\n</head>\n<body class='hs-layout-fill'>\n<script src=\"https://helpfulscripts.github.io/hsDocs/hsDocs.min.js\"></script>\n</body>\n</html>\n```\n\n2b - Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes\n(`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from\n[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and modify `index.html` as follows:\n```\n<html>\n<head><link href=\"hsDocs.css\" rel=\"stylesheet\" /></head>\n<body class='hs-layout-fill'>\n<script src=\"./hsDocs.min.js\"></script>\n</body>\n</html>\n```\n\n3 - Install `typedoc` and, inside your project folder, run\n```\ntypedoc --json docs.json src\n(or: ./node_modules/.bin/typedoc --json docs.json src)\n```\nin your project folder. This assumes `src` is the path to the sources the sources.\nCreate a subdirectory **`./data`** and copy the docset into it - i.e. `docs.json` if you used the\ncommend above.\n\nSee below for more details on creating the docset.\n\n4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:\n```\n{\n\"docs\": [\n\"docs.json\",\n...\n],\n\"title\": \"HS Libraries\"   // will be displayed at the top left corner\n}\n```\n\n5 - optionally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it.\nThese are created by the command `grunt sourceCode` in the `docs/data/src/` folder of your project.\n\n6 - Point a browser to the web-app directory\n\n## Creating the Documentation DocSet\nInstall and run `typedoc` in your project folder; e.g. assuming `src` contains the sources:\n```\ntypedoc --json docs.json src\n```\n\nFollow the instruction for [`typedoc`](https://typedoc.org/guides/doccomments/) in commenting the code\nand set the [`json`](https://typedoc.org/guides/options/#json) option to create a\njson file containing the documentation. See the Configuration section below for details.\n\nIn addition to the documented source files, `hsDocs` recognizes a special **`overview.ts`** file\nthat will be displayed as a project overview.\nFor this to work, `typedoc` requires the file to have two separate comment entries.\nIf the second comment is missing, `typedoc` will not generate a comment in the DocSet.\n\nDocSets are shown as menu tabs across the top of the window. To include a DocSet in the menu, ensure that the\ncorresponding documentation `<DocSet>.json` file is copied into the `data` folder inside the folder that holds the serving html file.\nThen edit the `index.json` file to include the documentation file name in the \"docs\" section. If no `index.json` file is found,\n`hsDocs` will attempt to load a directory listing of the `data` file and include all encountered `*.json` files as DocSet.\nThis requires enabling the http server to provide a directory listing for the `data` folder.\n\n### Modules\nEach source file is considered to be a `module`. Modules are shown in the left-hand overview panel of the main `hsDocs` window.\nAlternatively, a `@module` statement in the summary comment at the top of a file will create, or add to, a module of the specified name.\nThis encourages to separate code into files without cluttering the overview.\n\n### Linking across the docsets\nLinks to items across the docsets can be placed via a link directive:\n- `{@link [docset:]module.item` linked text`}`,\n\nwhere\n- *docset* optional; the name of the docset. If omitted, a link within the current docSet will be created\n- *module* is name of the module to link to;\nif *module* is `overview`, or unspecified, the link will point to the docset overview page.\n- *item* is the name, or period-separated path, of the item within the module.\n- *linked text* is displayed with a link to path within module\n\nExamples:\n- `{@link overview` this hsDocs overview`}` -> {@link overview this hsDocs overview}\n- `{@link hsDocs:` this hsDocs overview`}` -> {@link hsDocs: this hsDocs overview}\n- `{@link hsDocs:DocSets.DocSets.add` the `add` function`}` -> {@link hsDocs:DocSets.DocSets.add the `add` function}\n- `{@link DocSets.DocSets.add` the `add` function`}` -> {@link DocSets.DocSets.add the `add` function}\n\n\n### Code Examples\n`hsDocs` supports creating live code examples in comment sections as explained\nin the {@link hsDocs:view.MainExample MainExample overview}. The following example\nrenders content using [Mithril](https://mithril.js.org/).\n<example>\n<file name=\"script.js\">\nlet tl = [10, 10];\n\nm.mount(root, {\n    view: () => m('.myBlock', {\n        onclick:() => tl = tl.map(i => Math.floor(80*Math.random())),\n        style:`top:${tl[0]}%; left:${tl[1]}%;`\n    }, m('', 'click me'))\n})\n</file>\n<file name=\"style.css\">\n.myBlock {\n    text-align:center;\n    color: white;\n    background-color: red;\n    position:relative;\n    width:  20%;\n    height: 30%;\n}\n.myBlock div {\n    padding-top: 40%;\n}\n</file>\n</example>\n\n## Configuring typedoc\nAs an example, we use grunt-typedoc with the following configuration:\n\n### tsconfig.json:\nA `tsconfig.json` file seems to be required by typedoc. The file can be empty\n\n### Gruntfile:\n<code>module.exports = function(grunt) {\n...\ntypedoc: {\ncode: {\noptions: {\ntsconfig: 'typedoc.json',\njson:   './docs/hsDocs.json',\nout:    './docs',\nmode:   'modules',\nname:   'hsDocs'\n}\nsrc: ['src/*.ts', '!src/*.spec.ts']\n}\n},\n\n...\ngrunt.loadNpmTasks('grunt-typedoc');\n...\ngrunt.registerTask('doc', ['typedoc']);\n}\n</code>\n\n## Dependencies\n### For creating the docsets:\n- [typedoc](http://typedoc.org)\n\n### For rendering the docsets:\n- [Mithril](https://mithril.js.org)\n- [showdown](https://github.com/showdownjs/showdown)\n- [hsLayout](https://github.com/HelpfulScripts/hsLayout)\n- [hsWidget](https://github.com/HelpfulScripts/hsWidget)\n- [webpack](https://webpack.js.org/)\n\n## Structural Code Overview\nThe main entry point for the web-app is index.ts, which initiates loading the docsets\nand sets up a mithril {@link hsDocs:Router router}\n\n"
+				"text": "Helpful Scripts code documentation viewer.\n<a href=\"./data/src/hsDocs/coverage/\" target=\"_blank\">[Coverage Info]</a>\n\n[![npm version](https://badge.fury.io/js/hsdocs.svg)](https://badge.fury.io/js/hsdocs)\n[![GitHub](https://img.shields.io/badge/GitHub-hsDocs-blue.svg)](https://github.com/helpfulscripts/hsdocs)\n[![docs](https://img.shields.io/badge/hsDocs-hsDocs-blue.svg)](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)\n[![Build Status](https://travis-ci.org/HelpfulScripts/hsDocs.svg?branch=master)](https://travis-ci.org/HelpfulScripts/hsDocs)\n[![Dependencies Status](https://david-dm.org/helpfulscripts/hsdocs.svg)](https://david-dm.org/helpfulscripts/hsdocs)\n[![codecov](https://codecov.io/gh/HelpfulScripts/hsDocs/branch/master/graph/badge.svg)](https://codecov.io/gh/HelpfulScripts/hsDocs)\n[![Known Vulnerabilities](https://snyk.io/test/github/HelpfulScripts/hsDocs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/HelpfulScripts/hsDocs?targetFile=package.json)\n[![NPM License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://www.npmjs.com/package/hsdocs)\n\n___\nhsDocs.js is a code documentation viewer for [Typescript](https://www.typescriptlang.org) projects.\nIt provides a browser rendering of JSON documentation files as created by [typedoc](http://typedoc.org).\n\n## Usage\n1 - Create a web-app directory to serve the docsets from. As an example,\nsee the `docs` folder in this project's [Github page](https://github.com/HelpfulScripts/hsDocs/tree/master/docs),\nwhich serves the [Github IO pages for this project](https://helpfulscripts.github.io/hsDocs/#!/api/hsDocs/0)\n\n2a - Copy the `index.html` file from [Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs),\nor create a new **`index.html`** as follows. This will use the `GitHub`-hosted version of `hsDocs`:\n```\n<html>\n<head>\n<link href=\"https://helpfulscripts.github.io/hsDocs/hsDocs.css\" rel=\"stylesheet\" />\n</head>\n<body>\n<script src=\"https://helpfulscripts.github.io/hsDocs/hsDocs.min.js\"></script>\n</body>\n</html>\n```\n\n2b - Alternatively you can use a self-hosted hsDocs version. Copy the `hsDocs` runtimes\n(`hsDocs.js`, `hsDocs.min.js`, `hsDocs.css`, `hsDocs.css.map`) from\n[Github](https://github.com/HelpfulScripts/hsDocs/tree/master/docs) into the directory and modify `index.html` as follows:\n```\n<html>\n<head><link href=\"hsDocs.css\" rel=\"stylesheet\" /></head>\n<body>\n<script src=\"./hsDocs.min.js\"></script>\n</body>\n</html>\n```\n\n3 - Install `typedoc` and, inside your project folder, run\n```\ntypedoc --json docs.json src\n(or: ./node_modules/.bin/typedoc --json docs.json src)\n```\nin your project folder. This assumes `src` is the path to the sources the sources.\nCreate a subdirectory **`./data`** and copy the docset into it - i.e. `docs.json` if you used the\ncommend above.\n\nSee below for more details on creating the docset.\n\n4 - Create a list of docsets to render in a new file **`index.json`** inside **`data`**:\n```\n{\n\"docs\": [\n\"docs.json\",\n...\n],\n\"title\": \"HS Libraries\"   // will be displayed at the top left corner\n}\n```\n\n5 - optionally, create a `src` folder inside the `data` folder and copy the `html`-ified source files into it.\nThese are created by the command `grunt sourceCode` in the `docs/data/src/` folder of your project.\n\n6 - Point a browser to the web-app directory\n\n## Creating the Documentation DocSet\nInstall and run `typedoc` in your project folder; e.g. assuming `src` contains the sources:\n```\ntypedoc --json docs.json src\n```\n\nFollow the instruction for [`typedoc`](https://typedoc.org/guides/doccomments/) in commenting the code\nand set the [`json`](https://typedoc.org/guides/options/#json) option to create a\njson file containing the documentation. See the Configuration section below for details.\n\nIn addition to the documented source files, `hsDocs` recognizes a special **`overview.ts`** file\nthat will be displayed as a project overview.\nFor this to work, `typedoc` requires the file to have two separate comment entries.\nIf the second comment is missing, `typedoc` will not generate a comment in the DocSet.\n\nDocSets are shown as menu tabs across the top of the window. To include a DocSet in the menu, ensure that the\ncorresponding documentation `<DocSet>.json` file is copied into the `data` folder inside the folder that holds the serving html file.\nThen edit the `index.json` file to include the documentation file name in the \"docs\" section. If no `index.json` file is found,\n`hsDocs` will attempt to load a directory listing of the `data` file and include all encountered `*.json` files as DocSet.\nThis requires enabling the http server to provide a directory listing for the `data` folder.\n\n### Modules\nEach source file is considered to be a `module`. Modules are shown in the left-hand overview panel of the main `hsDocs` window.\nAlternatively, a `@module` statement in the summary comment at the top of a file will create, or add to, a module of the specified name.\nThis encourages to separate code into files without cluttering the overview.\n\n### Linking across the docsets\nLinks to items across the docsets can be placed via a link directive:\n- `{@link [docset:]module.item` linked text`}`,\n\nwhere\n- *docset* optional; the name of the docset. If omitted, a link within the current docSet will be created\n- *module* is name of the module to link to;\nif *module* is `overview`, or unspecified, the link will point to the docset overview page.\n- *item* is the name, or period-separated path, of the item within the module.\n- *linked text* is displayed with a link to path within module\n\nExamples:\n- `{@link overview` this hsDocs overview`}` -> {@link overview this hsDocs overview}\n- `{@link hsDocs:` this hsDocs overview`}` -> {@link hsDocs: this hsDocs overview}\n- `{@link hsDocs:DocSets.DocSets.add` the `add` function`}` -> {@link hsDocs:DocSets.DocSets.add the `add` function}\n- `{@link DocSets.DocSets.add` the `add` function`}` -> {@link DocSets.DocSets.add the `add` function}\n\n\n### Code Examples\n`hsDocs` supports creating live code examples in comment sections as explained\nin the {@link hsDocs:view.MainExample MainExample overview}. The following example\nrenders content using [Mithril](https://mithril.js.org/).\n<example>\n<file name=\"script.js\">\nlet tl = [10, 10];\n\nm.mount(root, {\n    view: () => m('.myBlock', {\n        onclick:() => tl = tl.map(i => Math.floor(80*Math.random())),\n        style:`top:${tl[0]}%; left:${tl[1]}%;`\n    }, m('', 'click me'))\n})\n</file>\n<file name=\"style.css\">\n.myBlock {\n    text-align:center;\n    color: white;\n    background-color: red;\n    position:relative;\n    width:  20%;\n    height: 30%;\n}\n.myBlock div {\n    padding-top: 40%;\n}\n</file>\n</example>\n\n## Configuring typedoc\nAs an example, we use grunt-typedoc with the following configuration:\n\n### tsconfig.json:\nA `tsconfig.json` file seems to be required by typedoc. The file can be empty\n\n### Gruntfile:\n<code>module.exports = function(grunt) {\n...\ntypedoc: {\ncode: {\noptions: {\ntsconfig: 'typedoc.json',\njson:   './docs/hsDocs.json',\nout:    './docs',\nmode:   'modules',\nname:   'hsDocs'\n}\nsrc: ['src/*.ts', '!src/*.spec.ts']\n}\n},\n\n...\ngrunt.loadNpmTasks('grunt-typedoc');\n...\ngrunt.registerTask('doc', ['typedoc']);\n}\n</code>\n\n## Dependencies\n### For creating the docsets:\n- [typedoc](http://typedoc.org)\n\n### For rendering the docsets:\n- [Mithril](https://mithril.js.org)\n- [showdown](https://github.com/showdownjs/showdown)\n- [hsWidget](https://github.com/HelpfulScripts/hsWidget)\n- [webpack](https://webpack.js.org/)\n\n## Structural Code Overview\nThe main entry point for the web-app is index.ts, which initiates loading the docsets\nand sets up a mithril {@link hsDocs:Router router}\n\n"
 			},
 			"sources": [
 				{
@@ -68795,7 +68795,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
 			"comment": {
 				"shortText": "# How to add live code examples\nComment sections may contain code examples that are intended to be live demonstrations for\nexplaining some concept of the module are contained in.",
-				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m(hsLayout.Layout, { columns:[],\n            content:['first line','second line')]\n        })\n    });\n    </file>\n\n    <file name='style.css'>\n    .hsLeaf {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library,\nproviding functions to layout the browser window.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsLayout.Layout,{})`\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using D3js:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsLayout.Layout, {\n        css:'.myExample',\n        columns:[],\n        content:[\n            'left column',\n            'right column'\n        ]\n    })\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.hs-layout {\n    margin:0;\n}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
+				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m('.myClass', { style:'font-weight:bold;' }, 'my example')\n    });\n    </file>\n\n    <file name='style.css'>\n    .myClass {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsUtil**: namespace for the [`hsUtil`](http://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/0) library,\nproviding various utility functions.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsWidget.Icon,{mdi:'stop'})`\n\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using D3js:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsWidget.GridColumns, [\n         'left column',\n         'right column'\n    ])\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
 			},
 			"children": [
 				{
@@ -68816,7 +68816,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 139,
+									"line": 131,
 									"character": 10
 								}
 							],
@@ -68836,7 +68836,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 140,
+									"line": 132,
 									"character": 8
 								}
 							],
@@ -68860,7 +68860,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 140,
+														"line": 132,
 														"character": 28
 													}
 												],
@@ -68878,7 +68878,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 140,
+														"line": 132,
 														"character": 15
 													}
 												],
@@ -68901,7 +68901,7 @@
 										"sources": [
 											{
 												"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-												"line": 140,
+												"line": 132,
 												"character": 10
 											}
 										]
@@ -68923,7 +68923,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 138,
+							"line": 130,
 							"character": 19
 						}
 					]
@@ -68947,7 +68947,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 156,
+									"line": 148,
 									"character": 17
 								}
 							],
@@ -68967,7 +68967,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 152,
+									"line": 144,
 									"character": 9
 								}
 							],
@@ -68986,7 +68986,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 147,
+									"line": 139,
 									"character": 11
 								}
 							],
@@ -69004,7 +69004,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 148,
+									"line": 140,
 									"character": 13
 								}
 							],
@@ -69024,7 +69024,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 155,
+									"line": 147,
 									"character": 17
 								}
 							],
@@ -69042,7 +69042,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 150,
+									"line": 142,
 									"character": 9
 								}
 							],
@@ -69063,7 +69063,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 149,
+									"line": 141,
 									"character": 10
 								}
 							],
@@ -69081,7 +69081,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 153,
+									"line": 145,
 									"character": 9
 								}
 							],
@@ -69105,7 +69105,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-													"line": 153,
+													"line": 145,
 													"character": 19
 												}
 											],
@@ -69127,7 +69127,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 153,
+											"line": 145,
 											"character": 10
 										}
 									]
@@ -69145,7 +69145,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 154,
+									"line": 146,
 									"character": 13
 								}
 							],
@@ -69186,7 +69186,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 154,
+											"line": 146,
 											"character": 15
 										}
 									]
@@ -69214,7 +69214,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 146,
+							"line": 138,
 							"character": 27
 						}
 					]
@@ -69233,7 +69233,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 165,
+							"line": 157,
 							"character": 14
 						}
 					],
@@ -69257,7 +69257,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 162,
+							"line": 154,
 							"character": 18
 						}
 					],
@@ -69281,7 +69281,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 162,
+											"line": 154,
 											"character": 26
 										}
 									],
@@ -69304,7 +69304,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 162,
+									"line": 154,
 									"character": 19
 								}
 							]
@@ -69322,7 +69322,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 129,
+							"line": 121,
 							"character": 53
 						}
 					],
@@ -69375,7 +69375,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 262,
+							"line": 253,
 							"character": 28
 						}
 					]
@@ -69433,7 +69433,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 218,
+							"line": 209,
 							"character": 34
 						}
 					]
@@ -69456,7 +69456,7 @@
 								"isExported": true
 							},
 							"comment": {
-								"shortText": "creates the example configuration, generates the DOM hook, and sets up the example execution.\n`example` takes a context map of the form `{ name:module, ...}` containing libraries to be used\nwithin the example, and returns a function that can be used in calls to `string.replace`.\nSee the following example:\n<code><pre>\nimport * as layout from \"layout\";\ntext = text.replace(/<example>([\\S\\s]*?)<\\/example>/gi, example({layout:layout}));\n</pre></code>\nThe modules `m`, `hsLayout`, and `hsGraph` will be added by default as\n` { m: m, layout: layout, widget: widget } `"
+								"shortText": "creates the example configuration, generates the DOM hook, and sets up the example execution.\n`example` takes a context map of the form `{ name:module, ...}` containing libraries to be used\nwithin the example, and returns a function that can be used in calls to `string.replace`.\nSee the following example:\n<code><pre>\nimport * as layout from \"layout\";\ntext = text.replace(/<example>([\\S\\s]*?)<\\/example>/gi, example({layout:layout}));\n</pre></code>\nThe modules `m`, `hsUtil`, and `hsWidget` will be added by default."
 							},
 							"parameters": [
 								{
@@ -69485,7 +69485,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 188,
+							"line": 179,
 							"character": 23
 						}
 					]
@@ -69525,7 +69525,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 299,
+							"line": 290,
 							"character": 21
 						}
 					]
@@ -69573,7 +69573,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 283,
+							"line": 274,
 							"character": 22
 						}
 					]
@@ -69625,7 +69625,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 334,
+							"line": 325,
 							"character": 19
 						}
 					]
@@ -69693,7 +69693,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 309,
+							"line": 300,
 							"character": 35
 						}
 					]
@@ -69723,7 +69723,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 168,
+							"line": 160,
 							"character": 17
 						}
 					]
@@ -69768,7 +69768,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 245,
+							"line": 236,
 							"character": 17
 						}
 					]
@@ -69831,7 +69831,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 365,
+							"line": 356,
 							"character": 25
 						}
 					]
@@ -69854,7 +69854,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 134,
+									"line": 126,
 									"character": 10
 								}
 							],
@@ -69873,7 +69873,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 135,
+									"line": 127,
 									"character": 12
 								}
 							],
@@ -69892,7 +69892,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 133,
+									"line": 125,
 									"character": 5
 								}
 							],
@@ -69917,7 +69917,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 132,
+							"line": 124,
 							"character": 13
 						}
 					],

@@ -1415,11 +1415,11 @@ exports[`MainDetail overview matches snapshot 1`] = `
 #hs100001 .myCollapsible {
     margin-bottom: 5px;
 }
-.myCollapsible .hs-collapsible-title {
+.myCollapsible .hs_collapsible_title {
     font-weight:bold;
     background-color: #eee;
 }
-.myCollapsible .hs-collapsible-expanded {
+.myCollapsible .hs_collapsible_expanded {
     margin-left: 10px;
 }
 #hs100001 .myCornerClicked { background-color: #efe; }
@@ -1437,7 +1437,7 @@ exports[`MainDetail overview matches snapshot 1`] = `
 }
 #hs100001 .hs-corner-button { color: #008; }
 
-#hs100001 .hs-radio-buttons&gt;.hs-column-layout&gt;.hs-layout { border-color: transparent}
+#hs100001 .hs_radio_buttons&gt;.hs-column-layout&gt;.hs-layout { border-color: transparent}
           </style>
           <div
             id="hs100000"

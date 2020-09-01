@@ -29,7 +29,7 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
    <head>
       <link href="https://helpfulscripts.github.io/hsDocs/hsDocs.css" rel="stylesheet" />
    </head>
-   <body class='hs-layout-fill'>
+   <body>
       <script src="https://helpfulscripts.github.io/hsDocs/hsDocs.min.js"></script>
     </body>
 </html>
@@ -41,7 +41,7 @@ or create a new **`index.html`** as follows. This will use the `GitHub`-hosted v
 ```
 <html>
    <head><link href="hsDocs.css" rel="stylesheet" /></head>
-   <body class='hs-layout-fill'>
+   <body>
       <script src="./hsDocs.min.js"></script>
    </body>
 </html>
@@ -184,7 +184,6 @@ A `tsconfig.json` file seems to be required by typedoc. The file can be empty
 ### For rendering the docsets:
 - [Mithril](https://mithril.js.org)
 - [showdown](https://github.com/showdownjs/showdown)
-- [hsLayout](https://github.com/HelpfulScripts/hsLayout)
 - [hsWidget](https://github.com/HelpfulScripts/hsWidget)
 - [webpack](https://webpack.js.org/)
 

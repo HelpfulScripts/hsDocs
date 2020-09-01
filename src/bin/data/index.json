@@ -3,9 +3,8 @@
         "hsDocs.json",
         "hsUtil.json",
         "hsDatab.json",
-        "hsLayout.json",
         "hsWidget.json",
-        "hsGraph.json",
+        "hsGraphD3.json",
         "hsNode.json",
         "hsExcel.json",
         "hsBank.json"

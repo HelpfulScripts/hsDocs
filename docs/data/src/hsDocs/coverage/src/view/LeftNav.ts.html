@@ -410,7 +410,7 @@ export class LeftNav extends Widget {
         const lib = node.attrs.lib;
         const field = node.attrs.field;
         const docSet = DocSets.getNode(0, lib) || <span class="branch-1 cbranch-no" title="branch not covered" >{name:'unknown', id:0};</span>
-        return m('.hs-left', node.attrs, navList(&lt;DocsNode&gt;docSet, field));
+        return m('.hs_left', node.attrs, navList(&lt;DocsNode&gt;docSet, field));
     }
 }
 &nbsp;
@@ -422,8 +422,8 @@ function navList(docSet:DocsNode, field:string):m.Children {
         // if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { selected=true; }
         <span class="missing-if-branch" title="if path not taken" >I</span>if (field.indexOf(mdl.fullPath) === 0) { <span class="cstat-no" title="statement not covered" >selected=true; </span>}
 &nbsp;
-        return m(Collapsible, {class:`hs-left-nav-module`, preArrow: true, isExpanded:selected}, [
-            m(`${selected?<span class="branch-0 cbranch-no" title="branch not covered" >'.hs-left-nav-selected':</span>''}`, libLinkByPath(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
+        return m(Collapsible, {class:`hs_left_nav_module`, preArrow: true, isExpanded:selected}, [
+            m(`${selected?<span class="branch-0 cbranch-no" title="branch not covered" >'.hs_left_nav-selected':</span>''}`, libLinkByPath(mdl.lib, mdl.fullPath, mdl.name, `.hs_left_nav_module_name`)),
             ...(mdl.groups || <span class="branch-1 cbranch-no" title="branch not covered" >[])</span>.map((g:any) =&gt; entries(g, mdl, field))
         ]);
     }
@@ -431,8 +431,8 @@ function navList(docSet:DocsNode, field:string):m.Children {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (docSet.kind === 0) { // External DocSets
         collectModules(docSet);
         const modules = docSet.modules.map(externalModule);
-        modules.unshift(m('.hs-left-nav-header', 'Modules'));
-        return m('.hs-left-nav', [m('.hs-left-nav-content', modules)]);
+        modules.unshift(m('.hs_left_nav-header', 'Modules'));
+        return m('.hs_left_nav', [m('.hs_left_nav-content', modules)]);
     }
 }
 &nbsp;
@@ -504,12 +504,12 @@ function entries(group:any, mdl:any, field:string) {
      * processes one entry within a group, e.g. one variable, function, or class.
      */
     function entry(mod:any) { 
-        const selected = (field===''+mod.id || field===mod.fullPath)? <span class="branch-0 cbranch-no" title="branch not covered" >'.hs-left-nav-selected' </span>: '';
+        const selected = (field===''+mod.id || field===mod.fullPath)? <span class="branch-0 cbranch-no" title="branch not covered" >'.hs_left_nav-selected' </span>: '';
         const exported = (mod.flags &amp;&amp; mod.flags.isExported);
         const isStatic = (mod.flags &amp;&amp; mod.flags.isStatic);
-        const css = `.hs-left-nav-entry ${selected} ${exported?'.hs-left-nav-exported' : ''}`;
+        const css = `.hs_left_nav_entry_link ${selected} ${exported?'.hs_left_nav-exported' : ''}`;
         return (!exported &amp;&amp; group.title==='Variables')? '' :   // ignore local module variables
-            m('', [
+            m('.hs_left_nav_entry', [
                 isStatic? <span class="branch-0 cbranch-no" title="branch not covered" >'static':</span> '',
                 libLinkByPath(mod.lib, mod.fullPath, mod.name, css)
             ]);
@@ -525,10 +525,10 @@ function entries(group:any, mdl:any, field:string) {
             .map(entry)             // replace module by vnode structure
             .filter(empty);         // filter empty elements
         if (grp.length &gt; 0) { // add an entries header if there are elements
-            grp.unshift(m('.hs-left-nav-header', group.title));
+            grp.unshift(m('.hs_left_nav-header', group.title));
         }
     }
-    return (grp.length &gt; 1)? m(`.hs-left-nav-entries`, grp) : '';
+    return (grp.length &gt; 1)? m(`.hs_left_nav_entries`, grp) : '';
 }
 &nbsp;
 /**

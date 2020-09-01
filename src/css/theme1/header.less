@@ -1,17 +1,19 @@
+@HeaderBorderColor:      #ccc;
+
 .hsdocs_title {    // the left Header in the top bar
     padding: 5px 10px;  
-    border-bottom: 1px solid #000; //@BorderColor;
+    border-bottom: 1px solid #000; 
 }
 
-@hdrTabColor: lighten(@BorderColor, 15%);
+@hdrTabColor: lighten(@HeaderBorderColor, 15%);
 @ItemBorder: 0.5px solid white;
 @Transparent: rgba(255, 255, 255, 0);
 
 .hs_menu { 
-    .state0 {   // name menu item in hs-modules-title
+    .state0 {   // name menu item in hs_modules_title
         border-left: @ItemBorder;
         border-right: @Transparent;
-        border-bottom: 1px solid @BorderColor;
+        border-bottom: 1px solid @HeaderBorderColor;
     }
     .state1 {
         border-bottom: none;

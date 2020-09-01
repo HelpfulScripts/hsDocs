@@ -10,14 +10,12 @@
  *     &lt;example&gt; 
  *     <file name='script.js'>
  *     m.mount(root, { 
- *         view:() => m(hsLayout.Layout, { columns:[], 
- *             content:['first line','second line')]
- *         })
+ *         view:() => m('.myClass', { style:'font-weight:bold;' }, 'my example')
  *     });
  *     </file>
  * 
  *     <file name='style.css'>
- *     .hsLeaf { 
+ *     .myClass { 
  *         color: blue; 
  *     }
  *     </file>
@@ -32,8 +30,8 @@
  * as parameters in the `Function` constructor and are thus available to the script. 
  * hsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:
  * - **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function    
- * - **hsLayout**: namespace for the [`hsLayout`](http://helpfulscripts.github.io/hsLayout/#!/api/hsLayout/0) library, 
- * providing functions to layout the browser window.
+ * - **hsUtil**: namespace for the [`hsUtil`](http://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/0) library, 
+ * providing various utility functions.
  * - **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library, 
  * providing various UI widget functions.
  * - **root**: the DOM element to attach content to.
@@ -41,7 +39,8 @@
  * Additional Scripts can loaded - see `Configuring the example` below. 
  * 
  * The script can access and manipulate any of the provided libraries
- * via their namespace, for example as in `m(hsLayout.Layout,{})`
+ * via their namespace, for example as in `m(hsWidget.Icon,{mdi:'stop'})`
+ * 
  * #### Using Mithril:
  * mount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`. 
  * Do not use `m.route` as only a single call is allowed per web app and that is used to manage the 
@@ -97,21 +96,14 @@
  * <example>
  * <file name='script.js'>
  * m.mount(root, { 
- *     view:() => m(hsLayout.Layout, {
- *         css:'.myExample', 
- *         columns:[], 
- *         content:[
- *             'left column',
- *             'right column'
- *         ]
- *     })
+ *     view:() => m(hsWidget.GridColumns, [
+ *          'left column',
+ *          'right column'
+ *     ])
  * });
  * </file>
  * <file name='style.css'>
  * $exampleID { height: 200px;}
- * .hs-layout { 
- *     margin:0; 
- * }
  * .myExample { 
  *     color: red; 
  *     font-weight:bold; 
@@ -180,8 +172,7 @@ function getNewID():string {
  * import * as layout from "layout";
  * text = text.replace(/<example>([\S\s]*?)<\/example>/gi, example({layout:layout}));
  * </pre></code>
- * The modules `m`, `hsLayout`, and `hsGraph` will be added by default as 
- * ` { m: m, layout: layout, widget: widget } `
+ * The modules `m`, `hsUtil`, and `hsWidget` will be added by default. 
  * @param exmpl the example string extracted from the comment, including the `<example>` tags.
  * @param context the context in which the example script should be run, expressed as `name`:`namespace` pairs.
  */
@@ -266,10 +257,10 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 
     if (root && IDs.created) {
         m.mount(root, {view: () => m('.exampleGrid', [
-            m(Menu, { class:'hs-menu', onclick: click }, IDs.items),
-            m('.hs-scroll', [
-                m(`.hs-execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
-                m('.hs-source', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))
+            m(Menu, { class:'hs_menu', onclick: click }, IDs.items),
+            m('.hs_scroll_content', [
+                m(`.hs_execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
+                m('.hs_source', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))
             ])
         ])});
     }
