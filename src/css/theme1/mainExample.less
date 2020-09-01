@@ -4,83 +4,76 @@
 @windowHeight: 300px;
 @LayoutSpacing: 1px solid white; 
 
-.hs-layout-spacing {
-    .hs-column-layout > .hs-layout {
-        border-left: @LayoutSpacing; 
-        border-right: @LayoutSpacing; 
-        &:first-of-type { border-left: 0; }  
-        &:last-of-type { border-right: 0; }  
-    } 
-    .hs-row-layout > .hs-layout {
-        border-top: @LayoutSpacing;
-        border-bottom: @LayoutSpacing;
-        &:first-of-type { border-top: 0; }  
-        &:last-of-type { border-bottom: 0; }  
-    } 
-}
+.example {
+    margin-top: 30px;
+    width:100%;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
 
-example { 
-    display: block;
-    height: @windowHeight;
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-
-    .hs-selectable {
-        border-bottom:0;
-        height:100%;
-    }
-     
-    .hs-execution { 
-        overflow-x: hidden;
-        overflow-y: auto;
-        .hs-layout-spacing;
-        background-color: @bg-example; 
-        div { margin: 0px; }
-        .hs-leaf { padding: 5px; } 
-
-        .hs-white {    // white background for example execution
-            position: absolute;
-            background-color:white;
-            padding-left: 5px;          // start content 5px in
-            border-left: 4px solid white;
-            left: 5px;                  // show 5px left border
-            top: 0;
-            bottom:0;
-            right: 0;
+    .exampleGrid {
+        display: grid;
+        background-color: white;
+        grid-template-rows: 30px auto;
+        grid-template-columns: 50% 50%;
+        height: 100%;
+    
+        .hs_menu {
+            grid-column: 2;
+            grid-row: 1;
+            box-shadow: none;
         }
-    }
-
-    .hs-source {
-        overflow-x: hidden;
-        overflow-y: auto;
-        .hs-menu .hs-layout {
-            background-color: white;
-            .hs-layout  {
-                background-color: @bg-source;
+        .hs-scroll {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            grid-row: 2;
+            grid-column: 1 / span 2;
+        }
+        .hs-execution { 
+            display: inline-block;
+            vertical-align: top;
+            width:50%;
+            background-color: @bg-example; 
+            div { margin: 0px; }
+            .hs_grid { width: 100%; }
+    
+            .hs-white {    // white background for example execution
+                background-color:white;
+                padding-left: 5px;          // start content 5px in
+                padding-right: 5px;          // start content 5px in
+                border-left: 4px solid white;
             }
         }
-        .hsdocs_source_main {
-            overflow: auto;
+    
+        .hs-source {
+            width:50%;
+            display: inline-block;
             background-color: @bg-source;  
             font-size: 12px;
+        } 
+    }
+
+    .hs_menu.hs_option_buttons {
+        .state0 {
+            background-color: #f8f8f8; 
         }
-
-        .hs-selected  { 
-            background-color: darken(@bg-source, 3%); 
-        }
-    } 
-
-    pre { padding-left: 10px; }
-
-    &>.hs-column-layout{
-        &>.hs-layout:last-child {
-            border-left: 3px solid white;
+        .state1 {
+            background-color: @bg-source; 
         }
     }
-    code, pre {
-        background-color:transparent;
-        color:black;
-        line-height: 18px;
+
+    &>div { 
+        display: block;
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        
+        pre { padding-left: 10px; }
+    
+        code, pre {
+            background-color:transparent;
+            color:black;
+            line-height: 18px;
+        }        
     }    
 }
+

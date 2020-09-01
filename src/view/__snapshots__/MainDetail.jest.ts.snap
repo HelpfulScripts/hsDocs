@@ -3,908 +3,906 @@
 exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
 <body>
   <div
-    class="hs-layout  "
+    class="hsdocs_detail"
+    field="hsDocs.DocSets"
+    lib="hsWidget"
   >
     <div
-      class="hsdocs"
+      class="hsdocs_title"
+      id="title_docsets"
+    >
+      <span
+        class="hsdocs_flags"
+      >
+        <span
+          class="hsdocs_flag_export"
+        >
+          export
+        </span>
+      </span>
+      <span
+        class="hsdocs_kind"
+      >
+        module
+      </span>
+      <span
+        class="hsdocs_itemname"
+      >
+        <a
+          href="#!/api/hsDocs/hsDocs.DocSets"
+        >
+          DocSets
+        </a>
+      </span>
+      <span
+        class="hsdocs_signatures"
+      />
+      <span
+        class="hsdocs_title_colon"
+      >
+        : 
+      </span>
+      <span>
+        
+      </span>
+      <span
+        class="hsdocs_extensionOf"
+      />
+      <span
+        class="hsdocs_inheritedFrom"
+      />
+      <span
+        class="hsdocs_source"
+      >
+        <a
+          href="data/src/hsDocs/DocSets.html#0"
+          target="_blank"
+        >
+          [source]
+        </a>
+      </span>
+    </div>
+    <div
+      class="hsdocs_head_comment"
+    >
+      <span
+        class="hsdocs_comment_desc"
+      >
+        <p>
+          DocSets.ts. Loads the doc.json files to process and display as documentation.
+Processing occurs in these steps:
+        </p>
+        
+
+        <ol>
+          
+
+          <li>
+            Load the index.json file that contains a list of doc.json files to load, one for each library to show
+          </li>
+          
+
+          <li>
+            Load each doc.json file, which describes a library
+          </li>
+          
+
+          <li>
+            Call DocSets.add to add the library name to the registry and create an index of entries for the library
+          </li>
+          
+
+        </ol>
+      </span>
+      <div />
+    </div>
+    <div
+      class="hsdocs_members"
     >
       <div
-        class="hsdocs_title"
-        id="title_docsets"
-      >
-        <span
-          class="hsdocs_flags"
-        >
-          <span
-            class="hsdocs_flag_export"
-          >
-            export
-          </span>
-        </span>
-        <span
-          class="hsdocs_kind"
-        >
-          module
-        </span>
-        <span
-          class="hsdocs_itemname"
-        >
-          <a
-            href="#!/api/hsDocs/hsDocs.DocSets"
-          >
-            DocSets
-          </a>
-        </span>
-        <span
-          class="hsdocs_signatures"
-        />
-        <span
-          class="hsdocs_title_colon"
-        >
-          : 
-        </span>
-        <span>
-          
-        </span>
-        <span
-          class="hsdocs_extensionOf"
-        />
-        <span
-          class="hsdocs_inheritedFrom"
-        />
-        <span
-          class="hsdocs_source"
-        >
-          <a
-            href="data/src/hsDocs/DocSets.html#0"
-            target="_blank"
-          >
-            [source]
-          </a>
-        </span>
-      </div>
-      <div
-        class="hsdocs_head_comment"
-      >
-        <span
-          class="hsdocs_comment_desc"
-        >
-          <p>
-            DocSets.ts. Loads the doc.json files to process and display as documentation.
-Processing occurs in these steps:
-          </p>
-          
-
-          <ol>
-            
-
-            <li>
-              Load the index.json file that contains a list of doc.json files to load, one for each library to show
-            </li>
-            
-
-            <li>
-              Load each doc.json file, which describes a library
-            </li>
-            
-
-            <li>
-              Call DocSets.add to add the library name to the registry and create an index of entries for the library
-            </li>
-            
-
-          </ol>
-        </span>
-        <div />
-      </div>
-      <div
-        class="hsdocs_members"
+        class="hsdocs_member  hsdocs_flag_public"
       >
         <div
-          class="hsdocs_member  hsdocs_flag_public"
+          class="hsdocs_member_title"
+        >
+          Exported Classes
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.DocSets"
         >
           <div
-            class="hsdocs_member_title"
+            class="hsdocs_child"
           >
-            Exported Classes
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.DocSets"
-          >
-            <div
-              class="hsdocs_child"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                >
-                  <span
-                    class="hsdocs_flag_export"
-                  >
-                    export
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_kind"
-                >
-                  class
-                </span>
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.DocSets"
-                  >
-                    DocSets
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                />
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#33"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
-                </span>
-              </span>
-              <div
-                class="hsdocs_sig_comment"
+            <span>
+              <span
+                class="hsdocs_flags"
               >
                 <span
-                  class="hsdocs_comment_desc"
+                  class="hsdocs_flag_export"
                 >
-                  <p>
-                    DocSets object. Keeps a list of registered docsets and
+                  export
+                </span>
+              </span>
+              <span
+                class="hsdocs_kind"
+              >
+                class
+              </span>
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.DocSets"
+                >
+                  DocSets
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              />
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                <a
+                  href="data/src/hsDocs/DocSets.html#33"
+                  target="_blank"
+                >
+                  [source]
+                </a>
+              </span>
+            </span>
+            <div
+              class="hsdocs_sig_comment"
+            >
+              <span
+                class="hsdocs_comment_desc"
+              >
+                <p>
+                  DocSets object. Keeps a list of registered docsets and
 provides access to elements of each docset.
-                  </p>
-                </span>
-                <div />
-              </div>
+                </p>
+              </span>
+              <div />
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="hsdocs_member  hsdocs_flag_public"
+      >
         <div
-          class="hsdocs_member  hsdocs_flag_public"
+          class="hsdocs_member_title"
+        >
+          Exported Type aliases
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.json"
         >
           <div
-            class="hsdocs_member_title"
+            class="hsdocs_child"
           >
-            Exported Type aliases
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.json"
-          >
-            <div
-              class="hsdocs_child"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                >
-                  <span
-                    class="hsdocs_flag_export"
-                  >
-                    export
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_kind"
-                >
-                  type
-                </span>
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.json"
-                  >
-                    json
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                />
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_intrinsic"
-                    >
-                      any
-                    </span>
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#17"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
-                </span>
-              </span>
-              <div
-                class="hsdocs_sig_comment"
+            <span>
+              <span
+                class="hsdocs_flags"
               >
                 <span
-                  class="hsdocs_type_intrinsic"
+                  class="hsdocs_flag_export"
                 >
-                  any
+                  export
                 </span>
-              </div>
+              </span>
+              <span
+                class="hsdocs_kind"
+              >
+                type
+              </span>
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.json"
+                >
+                  json
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              />
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
+                  <span
+                    class="hsdocs_type_intrinsic"
+                  >
+                    any
+                  </span>
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                <a
+                  href="data/src/hsDocs/DocSets.html#17"
+                  target="_blank"
+                >
+                  [source]
+                </a>
+              </span>
+            </span>
+            <div
+              class="hsdocs_sig_comment"
+            >
+              <span
+                class="hsdocs_type_intrinsic"
+              >
+                any
+              </span>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="hsdocs_member "
+      >
         <div
-          class="hsdocs_member "
+          class="hsdocs_member_title"
         >
-          <div
-            class="hsdocs_member_title"
-          >
-            Internal Variables
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.DOCDIR"
-          >
-            <div
-              class="hsdocs_child"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                >
-                  <span
-                    class="hsdocs_flag_const"
-                  >
-                    const
-                  </span>
-                </span>
-                
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.DOCDIR"
-                  >
-                    DOCDIR
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                />
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_intrinsic"
-                    >
-                      string
-                    </span>
-                  </span>
-                  <span
-                    class="hsdocs_type_default"
-                  >
-                     = "./data/"
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#9"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
-                </span>
-              </span>
-              <div
-                class="hsdocs_sig_comment"
-              >
-                <span
-                  class="hsdocs_type_intrinsic"
-                >
-                  string
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.FILE"
-          >
-            <div
-              class="hsdocs_child"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                >
-                  <span
-                    class="hsdocs_flag_const"
-                  >
-                    const
-                  </span>
-                </span>
-                
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.FILE"
-                  >
-                    FILE
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                />
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_intrinsic"
-                    >
-                      string
-                    </span>
-                  </span>
-                  <span
-                    class="hsdocs_type_default"
-                  >
-                     = "./data/index.json"
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#15"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
-                </span>
-              </span>
-              <div
-                class="hsdocs_sig_comment"
-              >
-                <span
-                  class="hsdocs_comment_desc"
-                >
-                  <p>
-                    the default location for the index .json files, relative to the web page:
-
-                    <code>
-                      './data/index.json'
-                    </code>
-                  </p>
-                </span>
-                <div />
-              </div>
-            </div>
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.log"
-          >
-            <div
-              class="hsdocs_child"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                >
-                  <span
-                    class="hsdocs_flag_const"
-                  >
-                    const
-                  </span>
-                </span>
-                
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.log"
-                  >
-                    log
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                />
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_reference"
-                    >
-                      Log
-                    </span>
-                  </span>
-                  <span
-                    class="hsdocs_type_default"
-                  >
-                     =  new Log('DocsSets')
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  <a
-                    href="data/src/hsDocs/DocSets.html#6"
-                    target="_blank"
-                  >
-                    [source]
-                  </a>
-                </span>
-              </span>
-              <div
-                class="hsdocs_sig_comment"
-              >
-                <span
-                  class="hsdocs_type_reference"
-                >
-                  Log
-                </span>
-              </div>
-            </div>
-          </div>
+          Internal Variables
         </div>
         <div
-          class="hsdocs_member "
+          class="hsdocs_node"
+          id="hsDocs.DocSets.DOCDIR"
         >
           <div
-            class="hsdocs_member_title"
+            class="hsdocs_child"
           >
-            Internal Functions
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.loadDocSet"
-          >
-            <div
-              class="hsdocs_child hsdocs_signature"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                />
-                <span
-                  class="hsdocs_kind"
-                >
-                  function
-                </span>
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.loadDocSet"
-                  >
-                    loadDocSet
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                >
-                  <span
-                    class="hsdocs_itemname"
-                  >
-                     (
-                  </span>
-                  <span>
-                    <span
-                      class="hsdocs_colon"
-                    >
-                      
-                    </span>
-                    <span
-                      class="hsdocs_signature_param"
-                    >
-                      <span
-                        class="hsdocs_itemname"
-                      >
-                        dir
-                      </span>
-                      <span
-                        class="hsdocs_colon"
-                      >
-                        :
-                      </span>
-                      <span>
-                        <span
-                          class="hsdocs_type"
-                        >
-                          <span
-                            class="hsdocs_type_intrinsic"
-                          >
-                            string
-                          </span>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                    <span
-                      class="hsdocs_colon"
-                    >
-                      , 
-                    </span>
-                    <span
-                      class="hsdocs_signature_param"
-                    >
-                      <span
-                        class="hsdocs_itemname"
-                      >
-                        file
-                      </span>
-                      <span
-                        class="hsdocs_colon"
-                      >
-                        :
-                      </span>
-                      <span>
-                        <span
-                          class="hsdocs_type"
-                        >
-                          <span
-                            class="hsdocs_type_intrinsic"
-                          >
-                            string
-                          </span>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                  <span
-                    class="hsdocs_itemname"
-                  >
-                    )
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_reference"
-                    >
-                      Promise
-                      &lt;
-                      <span
-                        class="hsdocs_type_intrinsic"
-                      >
-                        void
-                      </span>
-                      &gt;
-                    </span>
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  
-                </span>
-              </span>
-              <div
-                class="hsdocs_childsig_comment"
+            <span>
+              <span
+                class="hsdocs_flags"
               >
                 <span
-                  class="hsdocs_comment_desc"
+                  class="hsdocs_flag_const"
                 >
-                  <p>
-                    Loads a docset specified by file from the directory 
-                    <code>
-                      dir
-                    </code>
-                    .
-Once received, the docset is registered in 
-                    <code>
-                      modules
-                    </code>
-                     via the 
-                    <code>
-                      add
-                    </code>
-                     method.
-                  </p>
-                </span>
-                <div
-                  class="hsdocs_comment_params"
-                >
-                  <div
-                    class="hsdocs_params_title"
-                  >
-                    parameters:
-                  </div>
-                  <div
-                    class="hsdocs_comment_param"
-                  >
-                    <span
-                      class="hsdocs_param_name"
-                    >
-                      dir
-                      : 
-                    </span>
-                    <span
-                      class="hsdocs_param_comment"
-                    >
-                      <span
-                        class="hsdocs_comment_desc"
-                      >
-                        <p>
-                          the directory to read from
-                        </p>
-                      </span>
-                      <div />
-                    </span>
-                  </div>
-                  <div
-                    class="hsdocs_comment_param"
-                  >
-                    <span
-                      class="hsdocs_param_name"
-                    >
-                      file
-                      : 
-                    </span>
-                    <span
-                      class="hsdocs_param_comment"
-                    >
-                      <span
-                        class="hsdocs_comment_desc"
-                      >
-                        <p>
-                          the 
-                          <code>
-                            json
-                          </code>
-                           file to load as docset
-                        </p>
-                      </span>
-                      <div />
-                    </span>
-                  </div>
-                </div>
-                <div />
-              </div>
-            </div>
-          </div>
-          <div
-            class="hsdocs_node"
-            id="hsDocs.DocSets.matchAll"
-          >
-            <div
-              class="hsdocs_child hsdocs_signature"
-            >
-              <span>
-                <span
-                  class="hsdocs_flags"
-                />
-                <span
-                  class="hsdocs_kind"
-                >
-                  function
-                </span>
-                <span
-                  class="hsdocs_itemname"
-                >
-                  <a
-                    href="#!/api/hsDocs/hsDocs.DocSets.matchAll"
-                  >
-                    matchAll
-                  </a>
-                </span>
-                <span
-                  class="hsdocs_signatures"
-                >
-                  <span
-                    class="hsdocs_itemname"
-                  >
-                     (
-                  </span>
-                  <span>
-                    <span
-                      class="hsdocs_colon"
-                    >
-                      
-                    </span>
-                    <span
-                      class="hsdocs_signature_param"
-                    >
-                      <span
-                        class="hsdocs_itemname"
-                      >
-                        str
-                      </span>
-                      <span
-                        class="hsdocs_colon"
-                      >
-                        :
-                      </span>
-                      <span>
-                        <span
-                          class="hsdocs_type"
-                        >
-                          <span
-                            class="hsdocs_type_intrinsic"
-                          >
-                            string
-                          </span>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                    <span
-                      class="hsdocs_colon"
-                    >
-                      , 
-                    </span>
-                    <span
-                      class="hsdocs_signature_param"
-                    >
-                      <span
-                        class="hsdocs_itemname"
-                      >
-                        re
-                      </span>
-                      <span
-                        class="hsdocs_colon"
-                      >
-                        :
-                      </span>
-                      <span>
-                        <span
-                          class="hsdocs_type"
-                        >
-                          <span
-                            class="hsdocs_type_reference"
-                          >
-                            RegExp
-                          </span>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                  <span
-                    class="hsdocs_itemname"
-                  >
-                    )
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_title_colon"
-                >
-                  : 
-                </span>
-                <span>
-                  <span
-                    class="hsdocs_type"
-                  >
-                    <span
-                      class="hsdocs_type_array"
-                    >
-                      Array&lt;
-                      <span
-                        class="hsdocs_type_intrinsic"
-                      >
-                        string
-                      </span>
-                      &gt;
-                    </span>
-                  </span>
-                </span>
-                <span
-                  class="hsdocs_extensionOf"
-                />
-                <span
-                  class="hsdocs_inheritedFrom"
-                />
-                <span
-                  class="hsdocs_source"
-                >
-                  
+                  const
                 </span>
               </span>
-              <div
-                class="hsdocs_childsig_comment"
+              
+              <span
+                class="hsdocs_itemname"
               >
-                <span
-                  class="hsdocs_type_array"
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.DOCDIR"
                 >
-                  Array&lt;
+                  DOCDIR
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              />
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
                   <span
                     class="hsdocs_type_intrinsic"
                   >
                     string
                   </span>
-                  &gt;
                 </span>
+                <span
+                  class="hsdocs_type_default"
+                >
+                   = "./data/"
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                <a
+                  href="data/src/hsDocs/DocSets.html#9"
+                  target="_blank"
+                >
+                  [source]
+                </a>
+              </span>
+            </span>
+            <div
+              class="hsdocs_sig_comment"
+            >
+              <span
+                class="hsdocs_type_intrinsic"
+              >
+                string
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.FILE"
+        >
+          <div
+            class="hsdocs_child"
+          >
+            <span>
+              <span
+                class="hsdocs_flags"
+              >
+                <span
+                  class="hsdocs_flag_const"
+                >
+                  const
+                </span>
+              </span>
+              
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.FILE"
+                >
+                  FILE
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              />
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
+                  <span
+                    class="hsdocs_type_intrinsic"
+                  >
+                    string
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_type_default"
+                >
+                   = "./data/index.json"
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                <a
+                  href="data/src/hsDocs/DocSets.html#15"
+                  target="_blank"
+                >
+                  [source]
+                </a>
+              </span>
+            </span>
+            <div
+              class="hsdocs_sig_comment"
+            >
+              <span
+                class="hsdocs_comment_desc"
+              >
+                <p>
+                  the default location for the index .json files, relative to the web page:
+
+                  <code>
+                    './data/index.json'
+                  </code>
+                </p>
+              </span>
+              <div />
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.log"
+        >
+          <div
+            class="hsdocs_child"
+          >
+            <span>
+              <span
+                class="hsdocs_flags"
+              >
+                <span
+                  class="hsdocs_flag_const"
+                >
+                  const
+                </span>
+              </span>
+              
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.log"
+                >
+                  log
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              />
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
+                  <span
+                    class="hsdocs_type_reference"
+                  >
+                    Log
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_type_default"
+                >
+                   =  new Log('DocsSets')
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                <a
+                  href="data/src/hsDocs/DocSets.html#6"
+                  target="_blank"
+                >
+                  [source]
+                </a>
+              </span>
+            </span>
+            <div
+              class="hsdocs_sig_comment"
+            >
+              <span
+                class="hsdocs_type_reference"
+              >
+                Log
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hsdocs_member "
+      >
+        <div
+          class="hsdocs_member_title"
+        >
+          Internal Functions
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.loadDocSet"
+        >
+          <div
+            class="hsdocs_child hsdocs_signature"
+          >
+            <span>
+              <span
+                class="hsdocs_flags"
+              />
+              <span
+                class="hsdocs_kind"
+              >
+                function
+              </span>
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.loadDocSet"
+                >
+                  loadDocSet
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              >
+                <span
+                  class="hsdocs_itemname"
+                >
+                   (
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_colon"
+                  >
+                    
+                  </span>
+                  <span
+                    class="hsdocs_signature_param"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      dir
+                    </span>
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      :
+                    </span>
+                    <span>
+                      <span
+                        class="hsdocs_type"
+                      >
+                        <span
+                          class="hsdocs_type_intrinsic"
+                        >
+                          string
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_colon"
+                  >
+                    , 
+                  </span>
+                  <span
+                    class="hsdocs_signature_param"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      file
+                    </span>
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      :
+                    </span>
+                    <span>
+                      <span
+                        class="hsdocs_type"
+                      >
+                        <span
+                          class="hsdocs_type_intrinsic"
+                        >
+                          string
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  )
+                </span>
+              </span>
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
+                  <span
+                    class="hsdocs_type_reference"
+                  >
+                    Promise
+                    &lt;
+                    <span
+                      class="hsdocs_type_intrinsic"
+                    >
+                      void
+                    </span>
+                    &gt;
+                  </span>
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                
+              </span>
+            </span>
+            <div
+              class="hsdocs_childsig_comment"
+            >
+              <span
+                class="hsdocs_comment_desc"
+              >
+                <p>
+                  Loads a docset specified by file from the directory 
+                  <code>
+                    dir
+                  </code>
+                  .
+Once received, the docset is registered in 
+                  <code>
+                    modules
+                  </code>
+                   via the 
+                  <code>
+                    add
+                  </code>
+                   method.
+                </p>
+              </span>
+              <div
+                class="hsdocs_comment_params"
+              >
+                <div
+                  class="hsdocs_params_title"
+                >
+                  parameters:
+                </div>
+                <div
+                  class="hsdocs_comment_param"
+                >
+                  <span
+                    class="hsdocs_param_name"
+                  >
+                    dir
+                    : 
+                  </span>
+                  <span
+                    class="hsdocs_param_comment"
+                  >
+                    <span
+                      class="hsdocs_comment_desc"
+                    >
+                      <p>
+                        the directory to read from
+                      </p>
+                    </span>
+                    <div />
+                  </span>
+                </div>
+                <div
+                  class="hsdocs_comment_param"
+                >
+                  <span
+                    class="hsdocs_param_name"
+                  >
+                    file
+                    : 
+                  </span>
+                  <span
+                    class="hsdocs_param_comment"
+                  >
+                    <span
+                      class="hsdocs_comment_desc"
+                    >
+                      <p>
+                        the 
+                        <code>
+                          json
+                        </code>
+                         file to load as docset
+                      </p>
+                    </span>
+                    <div />
+                  </span>
+                </div>
               </div>
+              <div />
+            </div>
+          </div>
+        </div>
+        <div
+          class="hsdocs_node"
+          id="hsDocs.DocSets.matchAll"
+        >
+          <div
+            class="hsdocs_child hsdocs_signature"
+          >
+            <span>
+              <span
+                class="hsdocs_flags"
+              />
+              <span
+                class="hsdocs_kind"
+              >
+                function
+              </span>
+              <span
+                class="hsdocs_itemname"
+              >
+                <a
+                  href="#!/api/hsDocs/hsDocs.DocSets.matchAll"
+                >
+                  matchAll
+                </a>
+              </span>
+              <span
+                class="hsdocs_signatures"
+              >
+                <span
+                  class="hsdocs_itemname"
+                >
+                   (
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_colon"
+                  >
+                    
+                  </span>
+                  <span
+                    class="hsdocs_signature_param"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      str
+                    </span>
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      :
+                    </span>
+                    <span>
+                      <span
+                        class="hsdocs_type"
+                      >
+                        <span
+                          class="hsdocs_type_intrinsic"
+                        >
+                          string
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span>
+                  <span
+                    class="hsdocs_colon"
+                  >
+                    , 
+                  </span>
+                  <span
+                    class="hsdocs_signature_param"
+                  >
+                    <span
+                      class="hsdocs_itemname"
+                    >
+                      re
+                    </span>
+                    <span
+                      class="hsdocs_colon"
+                    >
+                      :
+                    </span>
+                    <span>
+                      <span
+                        class="hsdocs_type"
+                      >
+                        <span
+                          class="hsdocs_type_reference"
+                        >
+                          RegExp
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="hsdocs_itemname"
+                >
+                  )
+                </span>
+              </span>
+              <span
+                class="hsdocs_title_colon"
+              >
+                : 
+              </span>
+              <span>
+                <span
+                  class="hsdocs_type"
+                >
+                  <span
+                    class="hsdocs_type_array"
+                  >
+                    Array&lt;
+                    <span
+                      class="hsdocs_type_intrinsic"
+                    >
+                      string
+                    </span>
+                    &gt;
+                  </span>
+                </span>
+              </span>
+              <span
+                class="hsdocs_extensionOf"
+              />
+              <span
+                class="hsdocs_inheritedFrom"
+              />
+              <span
+                class="hsdocs_source"
+              >
+                
+              </span>
+            </span>
+            <div
+              class="hsdocs_childsig_comment"
+            >
+              <span
+                class="hsdocs_type_array"
+              >
+                Array&lt;
+                <span
+                  class="hsdocs_type_intrinsic"
+                >
+                  string
+                </span>
+                &gt;
+              </span>
             </div>
           </div>
         </div>
@@ -917,13 +915,11 @@ Once received, the docset is registered in
 exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
 <body>
   <div
-    class="hs-layout  "
+    class="hsdocs_detail"
+    field="hsDocs.DocSets.DocSets.add"
+    lib="hsWidget"
   >
-    <div
-      class="hsdocs"
-    >
-      no item
-    </div>
+    no item
   </div>
 </body>
 `;
@@ -931,13 +927,11 @@ exports[`MainDetail hsDocs.DocSets.DocSets.add matches snapshot 1`] = `
 exports[`MainDetail hsGraphD3.plots.Pie.Pie matches snapshot 1`] = `
 <body>
   <div
-    class="hs-layout  "
+    class="hsdocs_detail"
+    field="hsGraphD3.plots.Pie.Pie"
+    lib="hsGraphD3"
   >
-    <div
-      class="hsdocs"
-    >
-      no item
-    </div>
+    no item
   </div>
 </body>
 `;
@@ -945,329 +939,513 @@ exports[`MainDetail hsGraphD3.plots.Pie.Pie matches snapshot 1`] = `
 exports[`MainDetail overview matches snapshot 1`] = `
 <body>
   <div
-    class="hs-layout  "
+    class="hsdocs_detail"
+    field="0"
+    lib="hsWidget"
   >
     <div
-      class="hsdocs"
+      class="hsdocs_head_comment"
     >
-      <div
-        class="hsdocs_head_comment"
+      <span
+        class="hsdocs_comment_desc"
       >
-        <span
-          class="hsdocs_comment_desc"
+        <h1
+          id="hswidgets"
         >
-          <h1
-            id="hsgraphd3"
+          hsWidgets
+        </h1>
+        
+
+        <p>
+          Helpful Scripts UI widgets.
+
+          <a
+            href="./data/src/hsWidget/coverage/"
+            target="_blank"
           >
-            hsGraphD3
-          </h1>
-          
+            [Coverage Info]
+          </a>
+        </p>
+        
 
-          <p>
-            Helpful Scripts Graph convenience wrapper for D3js.
-
-            <a
-              href="./data/src/hsGraphD3/coverage/"
-              target="_blank"
-            >
-              [Coverage Info]
-            </a>
-          </p>
-          
-
-          <p>
-            <a
-              href="https://badge.fury.io/js/hsgraphd3"
-            >
-              <img
-                alt="npm version"
-                src="https://badge.fury.io/js/hsgraphd3.svg"
-              />
-            </a>
-            
-
-            <a
-              href="https://github.com/helpfulscripts/hsgraphd3"
-            >
-              <img
-                alt="GitHub"
-                src="https://img.shields.io/badge/GitHub-hsGraphD3-blue.svg"
-              />
-            </a>
-            
-
-            <a
-              href="https://helpfulscripts.github.io/hsGraphD3/#!/api/hsGraphD3/0"
-            >
-              <img
-                alt="docs"
-                src="https://img.shields.io/badge/hsDocs-hsGraphD3-blue.svg"
-              />
-            </a>
-            
-
-            <a
-              href="https://travis-ci.org/HelpfulScripts/hsGraphD3"
-            >
-              <img
-                alt="Build Status"
-                src="https://travis-ci.org/HelpfulScripts/hsGraphD3.svg?branch=master"
-              />
-            </a>
-            
-
-            <a
-              href="https://david-dm.org/helpfulscripts/hsgraphd3"
-            >
-              <img
-                alt="Dependencies Status"
-                src="https://david-dm.org/helpfulscripts/hsgraphd3.svg"
-              />
-            </a>
-            
-
-            <a
-              href="https://coveralls.io/github/HelpfulScripts/hsGraphD3?branch=master"
-            >
-              <img
-                alt="Coverage Status"
-                src="https://coveralls.io/repos/github/HelpfulScripts/hsGraphD3/badge.svg?branch=master"
-              />
-            </a>
-            
-
-            <a
-              href="https://snyk.io/test/github/HelpfulScripts/hsGraphD3?targetFile=package.json"
-            >
-              <img
-                alt="Known Vulnerabilities"
-                src="https://snyk.io/test/github/HelpfulScripts/hsGraphD3/badge.svg?targetFile=package.json"
-              />
-            </a>
-            
-
-            <a
-              href="https://www.npmjs.com/package/hsgraphd3"
-            >
-              <img
-                alt="NPM License"
-                src="https://img.shields.io/badge/license-MIT-brightgreen.svg"
-              />
-            </a>
-          </p>
-          
-
-          <hr />
-          
-
-          <p>
-            <code>
-              hsGraphD3
-            </code>
-             provides convienent programmatic shortcuts to plotting data with 
-            <a
-              href="https://d3js.org/"
-            >
-              <code>
-                D3js
-              </code>
-            </a>
-            .
-          </p>
-          
-
-          <p>
-            See 
-            <a
-              href="#!/api/hsDocs/hsDocs.API"
-            >
-              API
-            </a>
-            .
-          </p>
-          
-
-          <h2
-            id="usage"
+        <p>
+          <a
+            href="https://badge.fury.io/js/hswidget"
           >
-            Usage
-          </h2>
+            <img
+              alt="npm version"
+              src="https://badge.fury.io/js/hswidget.svg"
+            />
+          </a>
           
 
-          <ol>
+          <a
+            href="https://github.com/helpfulscripts/hswidget"
+          >
+            <img
+              alt="GitHub"
+              src="https://img.shields.io/badge/GitHub-hsWidget-blue.svg"
+            />
+          </a>
+          
+
+          <a
+            href="https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0"
+          >
+            <img
+              alt="docs"
+              src="https://img.shields.io/badge/hsDocs-hsWidget-blue.svg"
+            />
+          </a>
+          
+
+          <a
+            href="https://travis-ci.org/HelpfulScripts/hsWidget"
+          >
+            <img
+              alt="Build Status"
+              src="https://travis-ci.org/HelpfulScripts/hsWidget.svg?branch=master"
+            />
+          </a>
+          
+
+          <a
+            href="https://david-dm.org/helpfulscripts/hswidget"
+          >
+            <img
+              alt="Dependencies Status"
+              src="https://david-dm.org/helpfulscripts/hswidget.svg"
+            />
+          </a>
+          
+
+          <a
+            href="https://coveralls.io/github/HelpfulScripts/hsWidget?branch=master"
+          >
+            <img
+              alt="Coverage Status"
+              src="https://coveralls.io/repos/github/HelpfulScripts/hsWidget/badge.svg?branch=master"
+            />
+          </a>
+          
+
+          <a
+            href="https://snyk.io/test/github/HelpfulScripts/hsWidget?targetFile=package.json"
+          >
+            <img
+              alt="Known Vulnerabilities"
+              src="https://snyk.io/test/github/HelpfulScripts/hsWidget/badge.svg?targetFile=package.json"
+            />
+          </a>
+          
+
+          <a
+            href="https://www.npmjs.com/package/hswidget"
+          >
+            <img
+              alt="NPM License"
+              src="https://img.shields.io/badge/license-MIT-brightgreen.svg"
+            />
+          </a>
+        </p>
+        
+
+        <hr />
+        
+
+        <p>
+          <em>
+            hsWidgets
+          </em>
+          * Provides various UI widgets for use with mithril:
+        </p>
+        
+
+        <table>
+          
+
+          <thead>
             
 
-            <li>
-              create a 
-              <a
-                href="#!/api/hsDocs/hsDocs.Graph"
-              >
+            <tr>
+              
+
+              <th>
+                Widget
+              </th>
+              
+
+              <th>
+                Description
+              </th>
+              
+
+            </tr>
+            
+
+          </thead>
+          
+
+          <tbody>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.Menu.Menu"
+                >
+                  Menu
+                </a>
+              </td>
+              
+
+              <td>
+                A group of horizontal menu items that can trigger actions
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.Button.Button"
+                >
+                  Button
+                </a>
+              </td>
+              
+
+              <td>
+                A simple button widget
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.ToggleButton.ToggleButton"
+                >
+                  ToggleButton
+                </a>
+              </td>
+              
+
+              <td>
+                A button widget that toggleds through a number of items
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.RadioButton.RadioButton"
+                >
+                  RadioButton
+                </a>
+              </td>
+              
+
+              <td>
+                A radio button group widget: one selected at a time
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.OptionsButton.OptionsButton"
+                >
+                  OptionsButton
+                </a>
+              </td>
+              
+
+              <td>
+                An options button group widget: independently selected
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.Collapsible"
+                >
+                  Collapsible
+                </a>
+              </td>
+              
+
+              <td>
+                A panel that will expand znd collapse when the title is clicked
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.Modal"
+                >
+                  Modal
+                </a>
+              </td>
+              
+
+              <td>
+                A modal panel that will cover the entire window until released.
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.AddRemove"
+                >
+                  AddButton
+                </a>
+              </td>
+              
+
+              <td>
+                An  
                 <code>
-                  Graph
+                  +
                 </code>
-              </a>
-               object with a root DOM element to attach to:
+                 button that will open a form for adding new elements.
+              </td>
+              
 
-              <code>
-                graph = new hsGraphD3.GraphCartesian(root);
-              </code>
-            </li>
+            </tr>
             
 
-            <li>
-              add desired series configurations, specifying the type of series, as well as the data to use for the x- and y-axes,
-and other variables, depending on the series type:
+            <tr>
+              
 
-              <code>
-                graph.add('area', {x:'time', y:'volume', r:()=&gt;5});
-              </code>
-            </li>
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.AddRemove"
+                >
+                  RemoveButton
+                </a>
+              </td>
+              
+
+              <td>
+                An  
+                <code>
+                  -
+                </code>
+                 button that will remove an item.
+              </td>
+              
+
+            </tr>
             
 
-            <li>
-              apply any desired formatting changes to the default:
+            <tr>
+              
 
-              <code>
-                graph.axes.defaults.color = '#88f';
-              </code>
-            </li>
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.TypeAhead"
+                >
+                  TypeAhead
+                </a>
+              </td>
+              
+
+              <td>
+                A TypeAhead search input form.
+              </td>
+              
+
+            </tr>
             
 
-            <li>
-              render the graph for a given data set:
+            <tr>
+              
 
-              <code>
-                graph.render(data);
-              </code>
-            </li>
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.Slider"
+                >
+                  Slider
+                </a>
+              </td>
+              
+
+              <td>
+                A simple nominal or continuous slider.
+              </td>
+              
+
+            </tr>
             
 
-          </ol>
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.EditLabel"
+                >
+                  EditLabel
+                </a>
+              </td>
+              
+
+              <td>
+                A text label that turns into a single-line input field when clicked on.
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.EditSelect"
+                >
+                  EditSelect
+                </a>
+              </td>
+              
+
+              <td>
+                A text label with pulldown select capability.
+              </td>
+              
+
+            </tr>
+            
+
+            <tr>
+              
+
+              <td>
+                  
+                <a
+                  href="#!/api/hsDocs/hsDocs.EditList"
+                >
+                  EditList
+                </a>
+              </td>
+              
+
+              <td>
+                An auto-extending list of editable rows.
+              </td>
+              
+
+            </tr>
+            
+
+          </tbody>
           
 
-          <p>
-            To dynamically update the graph to new data, call the 
-            <a
-              href="#!/api/hsDocs/hsDocs.Graph.RenderChain"
-            >
-              <code>
-                update
-              </code>
-            </a>
-             method.
-See 
-            <a
-              href="#!/api/hsDocs/hsDocs.examples"
-            >
-              examples
-            </a>
-            .
-          </p>
-          
+        </table>
+        
 
-          <h2
-            id="data"
-          >
-            Data
-          </h2>
-          
-
-          <p>
-            Data is provided either in table form
-          </p>
-          
-
-          <pre>
-            <code>
-              [
-   colNames[],
-   &lt;number|string|Date&gt;[],
-   ...
-]
-
-            </code>
-          </pre>
-          
-
-          <p>
-            or in object-literal form
-          </p>
-          
-
-          <pre>
-            <code>
-              {
-   name?:  string;
-   colNames:  string[];
-   rows:   &lt;number|string|Date&gt;[][];
+        <div
+          class="example"
+        >
+          <style>
+            #hs100001 .myMenuMain {
+   border:1px solid #ddd;
+   border-top: 0px solid #ddd;
 }
+.myMenu .hs-selectable {
+    background-color: #eef;
+}
+.myMenu .hs-selected {
+    background-color: #ddf;
+    border-width:0px;
+}
+#hs100001 .myCollapsible {
+    margin-bottom: 5px;
+}
+.myCollapsible .hs-collapsible-title {
+    font-weight:bold;
+    background-color: #eee;
+}
+.myCollapsible .hs-collapsible-expanded {
+    margin-left: 10px;
+}
+#hs100001 .myCornerClicked { background-color: #efe; }
+#hs100001 .myCornerPositioned {
+     position: relative;
+     display: inline-block;
+     box-sizing: border-box;
+     background-color: #eee;
+     text-align: center;
+     font-size: 70%;
+     margin:  2px;
+     padding-top: 20px;
+     height: 50px;
+     width:  50px;
+}
+#hs100001 .hs-corner-button { color: #008; }
 
-            </code>
-          </pre>
-          
-
-          <h2
-            id="example-1-link-plotsbubble-bubble-chart"
-          >
-            Example 1: 
-            <a
-              href="#!/api/hsDocs/hsDocs.plots.Bubble"
-            >
-              <code>
-                bubble
-              </code>
-            </a>
-             chart
-          </h2>
-          
-
-          <style />
-          
-
-          <p>
-            <example
-              class="hs-layout-frame"
-              id="hs100000"
-              style="height:200px"
-            />
-          </p>
-          
-
-          <h2
-            id="example-2-link-plotsline-line-vs-link-plotstimeseries-timeseries"
-          >
-            Example 2: 
-            <a
-              href="#!/api/hsDocs/hsDocs.plots.Line"
-            >
-              <code>
-                line
-              </code>
-            </a>
-             vs. 
-            <a
-              href="#!/api/hsDocs/hsDocs.plots.TimeSeries"
-            >
-              <code>
-                timeseries
-              </code>
-            </a>
-          </h2>
-          
-
-          <style />
-          
-
-          <p>
-            <example
-              class="hs-layout-frame"
-              id="hs100002"
-              style="height:200px"
-            />
-          </p>
-        </span>
-        <div />
-      </div>
+#hs100001 .hs-radio-buttons&gt;.hs-column-layout&gt;.hs-layout { border-color: transparent}
+          </style>
+          <div
+            id="hs100000"
+            style="height:3500px"
+          />
+        </div>
+      </span>
+      <div />
     </div>
   </div>
 </body>

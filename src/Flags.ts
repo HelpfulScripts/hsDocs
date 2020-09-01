@@ -20,6 +20,7 @@ export interface Flags {
     isAbstract?: boolean;
     isRest?: boolean;
     isConstructorProperty?: boolean;
+    isExternal?: boolean;
 }
 
 

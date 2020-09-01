@@ -6,9 +6,9 @@
 @StaticTitleColor: #600;
 @Transparent: rgba(255, 255, 255, 0);
 
-.hsdocs_detail {
-    overflow-x: hidden;
-    overflow-y: auto;
+.hsdocs_menu {
+    .state0 { border:none; }
+    grid-row: 1;
 }
 
 .hsdocs_node {
@@ -26,7 +26,10 @@
     }
 }
 
-.hsdocs { // the main information window on the right
+.hsdocs_detail { // the main information window on the right
+    overflow-x: hidden;
+    overflow-y: scroll;
+    grid-row: 2;
     border-left: 1px solid @BorderColor;
     font-size: 16px;
     overflow-y: scroll;
@@ -35,16 +38,6 @@
 .hsdocs_head_comment {
     padding: 0px 0 0px 5px;
 }
-
-// .hsdocs_title {
-//     font-size: 1.2em;
-//     // background-color: @TitleBackground;
-//     border-top: 1px solid @TitleBorder;
-//     border-bottom: 1px solid @TitleBorder;
-//     margin-top: 5px;
-//     padding: 10px 0.4em 10px 0em;  
-//     padding-left: 5px;
-// }
 
 .hsdocs_comment {
     // background-color:rgba(255,255,255, 0.8);
@@ -101,8 +94,6 @@
 }
 
 .hsdocs_member {
-//    border-top: 1px solid #f8f8f8;
-//  @ChildBackground: @Background; 
     &hsdocs_flag_public {
         .hsdocs_member_title {
             background-color: @PublicBackground;
@@ -111,9 +102,6 @@
         .hsdocs_node_variable {
             background: linear-gradient(to bottom, @PublicBackground @BgStop, @Transparent); 
         }
-        // .hsdocs_nodes {
-        //     background-color: #f0f0f8;
-        // }
     }
     .hsdocs_flag_static {
         .hsdocs_member_title {
@@ -144,12 +132,6 @@
 .hsdocs_node_method             { .hsdocs_node; }
 .hsdocs_node_function           { .hsdocs_node; }
 
-// .hsdocs_node_variable {
-//     background: linear-gradient(to bottom, @Background @BgStop , @Transparent); 
-//     .hsdocs_title & {
-//         background-image: none;
-//     }
-// }
 
 @InheritedBackground: #f8f8f8;
 .hsdocs_node_inherited {

@@ -3,36 +3,18 @@
 exports[`DocsMenu should match snapshot 1`] = `
 <div>
   <div
-    class="hs-layout  "
+    class="hs_option_buttons  hs_radio_buttons hsdocs_menu hs_menu"
+    style="grid-template-columns: repeat(2, 1fr);"
   >
     <div
-      class="hs-menu "
-      style=""
+      class="hs_button state0  hs_onoff_button index0"
     >
-      <div
-        class="hs-layout  hs-column-layout "
-      >
-        <div
-          class="hs-layout  "
-          style="height: 100%; left: 0%; right: 50%; width: auto;"
-        >
-          <div
-            class="hs-selectable  hs-selected"
-          >
-            hsUtil
-          </div>
-        </div>
-        <div
-          class="hs-layout  "
-          style="height: 100%; left: 50%; right: 0%; width: auto;"
-        >
-          <div
-            class="hs-selectable  "
-          >
-            hsDocs
-          </div>
-        </div>
-      </div>
+      hsUtil
+    </div>
+    <div
+      class="hs_button state0  hs_onoff_button index1"
+    >
+      hsDocs
     </div>
   </div>
 </div>

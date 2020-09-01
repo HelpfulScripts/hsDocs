@@ -1,4 +1,4 @@
 {
-    "dependencies":[],
+    "dependencies":["hsUtil", "hsLayout", "hsWidget"],
     "type": "app"
 }

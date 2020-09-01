@@ -8,11 +8,7 @@ const exmp = `
     <example>
     <file='script.js'>
     const theContent = ['Top row: 50px', 'Bottom row: remainder']
-    m.mount(root, {view: () => m(hslayout.Layout, {
-        css: 'myColumn',
-        rows: ["50px", "fill"], 
-        content:theContent
-        })
+    m.mount(root, {view: () => m('', 'the test')
     });
     </file>
     <file='style.css'>
@@ -31,7 +27,7 @@ describe('example', () => {
     });
 
     it('matches snapshot', (done) => {
-        expect(x).toMatch(/<style><\/style><example id=hs\d* style=\"height:300px\" class=\"hs-layout-frame\"><\/example>/gm);
+        expect(x).toMatch(/<div class='example'><style><\/style><div id='hs100000' style='height:300px'><\/div><\/div>/gm);
         done();
     });
 });

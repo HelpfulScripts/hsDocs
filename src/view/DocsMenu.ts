@@ -1,9 +1,21 @@
-import { Layout }                   from 'hslayout';
-import { DocSets }                  from '../DocSets'; 
-import { Menu, SelectorDesc }       from 'hswidget';
-import { Log }                      from 'hsutil'; const log = new Log('DocsMenu');
-import m from "mithril";
-type Vnode = m.Vnode<any, any>;
+import { DocSets }      from '../DocSets'; 
+import { Vnode }        from 'hswidget';
+import { MenuAttrs }    from 'hswidget';
+import { WidgetAttrs }  from 'hswidget';
+import { Widget }       from 'hswidget';
+import { Menu }         from 'hswidget';
+import { Log }          from 'hsutil'; const log = new Log('DocsMenu');
+import m                from "mithril";
+
+
+export interface DocsAttrs extends WidgetAttrs {
+    lib?: string;
+    field?: string;
+}
+
+interface DocsMenuAttrs extends DocsAttrs {
+    docSet: string;
+}
 
 /**
  * Creates the title menu for selecting between the different docsets.
@@ -19,35 +31,28 @@ type Vnode = m.Vnode<any, any>;
  * - DocsMenu creates a `SelectorDesc` structure with a {@link hsWidget:hsSelector.SelectorDesc.clicked `clicked`} callback that initiates a route change 
  *   to the selected docSet
  */
-export class DocsMenu extends Layout {
-    docSet = '';
-
-    private getDesc(attrs:any):SelectorDesc { 
-        if (this.docSet !== attrs.docSet) {
-            this.docSet = attrs.docSet;
-            DocSets.loadList(attrs.docSet)
-            .then(() => {
-                m.redraw();
-                DocSets.getLibs().map((set:string) => {
-                    const mdl = DocSets.getNode(0, set);
-                });
-            })
-            .catch(e => {
-                log.error(e.message);
-                log.error(e);
-            });
+export class DocsMenu extends Widget {
+    async load(docSet:string) {        
+        try {    
+            await DocSets.loadList(docSet);
+            DocSets.getLibs().forEach(set => DocSets.getNode(0, set));
+            // m.redraw();
         }
-        const items = DocSets.getLibs(); 
-        return {
-            items: items.map((c:string) => c),
-            // defaultItem: (attrs.route && attrs.route.lib)? attrs.route.lib : items[0],
-            defaultItem: m.route.param('lib') || items[0],
-            clicked: (item:string) => m.route.set('/api/:lib/0', {lib:item})
+        catch(e) {
+            log.error(e.message);
+            log.error(e);
         };
-    }
 
-    getComponents(node:Vnode):Vnode {
-        const desc:SelectorDesc = this.getDesc(node.attrs);
-        return m(Menu, {desc: desc});
+    }
+    view(node:Vnode<DocsMenuAttrs, this>) {
+        const lib = node.attrs.lib;
+        // const field = node.attrs.field;
+        const items = DocSets.getLibs(); 
+        if (items.length === 0) { this.load(node.attrs.docSet); }
+        return m(Menu, this.attrs(node.attrs, <MenuAttrs>{
+            onclick: (index:number) => m.route.set('/api/:lib/0', {lib:items[index]}),
+            initial: items.indexOf(lib),
+            class:'hsdocs_menu'
+        }), items);
     }
 }

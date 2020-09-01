@@ -29,6 +29,20 @@ import { members }              from './NodesDisplay';
 const ignoreFields = ['FLAGS', 'TYPE', 'modules', 'kindPrint'];
 
 
+export interface Group {
+    children:   DocsNode[];
+    kind:       string;
+    title:      string;
+}
+
+export interface ModuleDesc {
+    name:       string;
+    lib:        string;
+    fullPath:   string;
+    groups:     Group[];
+}
+
+
 export class DocsNode {
     static errCount = 0;
 
@@ -52,6 +66,7 @@ export class DocsNode {
     // - undefined: not allowed
     // - null:      optional
     // - els:       required
+    public    modules: ModuleDesc[];
     public    children:DocsNode[];
     public    comment:DocsComment = null;
     public    defaultValue:string;
@@ -151,7 +166,7 @@ export class DocsBaseNode extends DocsNode {
                         if (this.TYPE && this.TYPE.indexOf(mdl[f].type)>=0) {
                             this[f] = DocsType.makeType(mdl[f], this);
                         } else {
-                            log.warn(`${this.lib} #${mdl.id}: unexpected type '${mdl[f].type}' missing in class '${this.kindString}'`);
+                            log.warn(`${this.lib} #${mdl.id}: unexpected TYPE '${mdl[f].type}' missing in class '${this.kindString}'`);
                             DocsNode.errCount++;
                         }
                         break;
@@ -237,7 +252,7 @@ class DocsRoot extends DocsBaseNode {
     init() {
         super.init();
         this.children = null;   // optional
-        this.groups = [];       // required
+        this.groups = null;     // optional
         this.kindString = null; // optional for root
         this.sources = null;    // optional for root
     }
@@ -256,7 +271,9 @@ class DocsExternalModule extends DocsStructured {
 class DocsModule extends DocsStructured {
     init() {
         super.init();
-        this.FLAGS = flagsExported({});
+        this.FLAGS = flagsExported({            
+            isExternal: false
+        });
         this.kindPrint = 'namespace';
     }
 }
@@ -306,7 +323,9 @@ class DocsFunction extends DocsSourced implements DocsParamaterized {
 class DocsClass extends DocsStructured {
     init() {
         super.init();
-        this.FLAGS = flagsClass({});
+        this.FLAGS = flagsClass({            
+            isExternal: false
+        });
         this.extendedTypes = null;
         this.extendedBy = null;
         this.implementedTypes = null;
@@ -317,7 +336,9 @@ class DocsClass extends DocsStructured {
 class DocsInterface extends DocsStructured {
     init() {
         super.init();
-        this.FLAGS = flagsExported({});
+        this.FLAGS = flagsExported({            
+            isExternal: false
+        });
         this.extendedTypes = null;
         this.extendedBy = null;
         this.implementedTypes = null;
@@ -350,7 +371,8 @@ class DocsProperty extends DocsWithDefault {
         this.FLAGS = flagsPublic(flagsExported({
             isStatic:               false,
             isOptional:             false,
-            isConstructorProperty:  false
+            isConstructorProperty:  false,
+            isExternal: false
         }));
         this.overwrites = null;
         this.inheritedFrom = null;
@@ -365,7 +387,8 @@ class DocsMethod extends DocsSourced implements DocsParamaterized {
         this.FLAGS = flagsPublic(flagsExported({
             isStatic:   false,
             isAbstract: false,
-            isOptional: false
+            isOptional: false,
+            isExternal: false
         }));
         this.signatures = [];
         this.overwrites = null;
@@ -379,7 +402,7 @@ class DocsMethod extends DocsSourced implements DocsParamaterized {
 class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
     init() {
         super.init();
-        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection', 'tuple'];
+        this.TYPE = ['reference', 'union', 'intrinsic', 'array', 'reflection', 'tuple', 'typeParameter'];
         this.FLAGS = flagsPublic(flagsExported({}));
         this.sources = null;
         this.parameters = null;
@@ -389,7 +412,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
         this.typeParameter = null;
         this.kindPrint = '';
     }
-    public getName() { return this.name === '__call'? '' : this.name; }
+    public getName() { return this.name === '__call'? '()' : this.name; }
 }
 
 export class DocsIndexSignature extends DocsBaseNode {
@@ -514,6 +537,7 @@ class DocsTypeAlias extends DocsSourced {
         this.FLAGS = flagsExported({});
         this.TYPE = ['intrinsic', 'union', 'array', 'tuple', 'reflection', 'reference'];
         this.kindPrint = 'type';
+        this.typeParameter = null;
     }
 }
 

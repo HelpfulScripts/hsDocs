@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -109,7 +109,8 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,24 +126,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,7 +146,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,29 +168,30 @@
  * 
  */
 /** */
-import { Log }                  from 'hsutil'; const log = new Log('MainDetail');
-import m from "mithril";
-type Vnode = m.Vnode&lt;any, any&gt;;
-import { Layout }               from 'hslayout';
-import { DocsNode }             from '../Nodes';
-import { DocSets }              from '../DocSets';
+import { Log }          from 'hsutil'; const log = new Log('MainDetail');
+import m                from "mithril";
+import { Vnode }        from 'hswidget';
+import { Widget }       from 'hswidget';
+import { DocsNode }     from '../Nodes';
+import { DocSets }      from '../DocSets';
+import { DocsAttrs }    from './DocsMenu';
 &nbsp;
+interface MainDetailAttrs extends DocsAttrs {
 &nbsp;
+}
 /**
  * Creates Documentation on the main panel 
  */
-export class MainDetail extends Layout { 
-    getComponents(node:Vnode): Vnode {
-        const lib =  m.route.param('lib');
-        const field = m.route.param('field');
-        node.attrs.route = undefined;
-&nbsp;
+export class MainDetail extends Widget { 
+    view(node:Vnode&lt;MainDetailAttrs, this&gt;) {
+        const lib = node.attrs.lib;
+        const field = node.attrs.field;
         let result = DocSets.nodeCount&lt;=0? <span class="branch-0 cbranch-no" title="branch not covered" >'...' </span>:  (
             (field==='0' || field==='' || field==='overview')? 
                 getOverview(DocSets.getNode(`${lib}.overview`, lib)) 
               : itemDoc(DocSets.getNode(field, lib))
         ); 
-        return m('.hsdocs', [result || <span class="branch-1 cbranch-no" title="branch not covered" >`no content for lib ${lib} and field ${field}`]</span>); 
+        return m('.hsdocs_detail', node.attrs, [result || <span class="branch-1 cbranch-no" title="branch not covered" >`no content for lib ${lib} and field ${field}`]</span>); 
     }
 }
 &nbsp;

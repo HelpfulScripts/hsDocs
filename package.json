@@ -1,6 +1,6 @@
 {
     "name": "hsdocs",
-    "version": "2.8.17",
+    "version": "2.9.0",
     "keywords": [
         "es6",
         "jsdocs",
@@ -17,7 +17,7 @@
     "main": "./bin/cjs/index.js",
     "module": "./bin/esm/index.js",
     "files": [
-        "./"
+        "bin/"
     ],
     "types": "./bin/esm/index.d.ts",
     "type": "module",
@@ -63,7 +63,6 @@
         "webpack": "^4.43.x"
     },
     "dependencies": {
-        "hslayout": "2.x.x",
         "hsutil": "3.x.x",
         "hswidget": "2.x.x",
         "mithril": "^2.0.4",

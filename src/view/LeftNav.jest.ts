@@ -46,15 +46,12 @@ const root:any = window.document.createElement("body");
 
 describe('LeftNav', () => {
     describe('overview', () => {
-        beforeAll((done) => { 
+        beforeAll(async (done) => { 
             m.route.get = () => '/api/hsDocs/0';
-            DocSets.loadList('mylist.json')
-            .then(() => {
-                route.field = '0';
-                m.mount(root, { view: () => { return m(LeftNav, {});} }); 
-                setTimeout(done, 200);
-                m.redraw();
-            });
+            await DocSets.loadList('mylist.json')
+            route.field = '0';
+            m.mount(root, { view: () => { return m(LeftNav, {lib:route.lib,field:route.field});} }); 
+            done();
         });
     
         it('exists', (done)=>{

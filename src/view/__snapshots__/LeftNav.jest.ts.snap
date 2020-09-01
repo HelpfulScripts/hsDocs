@@ -3,298 +3,296 @@
 exports[`LeftNav overview matches snapshot 1`] = `
 <body>
   <div
-    class="hs-layout  "
+    class="hs-left"
+    field="0"
+    lib="hsDocs"
   >
     <div
-      class="hs-left"
+      class="hs-left-nav"
     >
       <div
-        class="hs-left-nav"
+        class="hs-left-nav-content"
       >
         <div
-          class="hs-left-nav-content"
+          class="hs-left-nav-header"
+        >
+          Modules
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
         >
           <div
-            class="hs-left-nav-header"
+            class="hs-collapsible-title"
           >
-            Modules
+            <div
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
+            />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.DocSets"
+              >
+                DocSets
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.DocSets"
-                >
-                  DocSets
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.Flags"
+              >
+                Flags
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.Flags"
-                >
-                  Flags
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.Nodes"
+              >
+                Nodes
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.Nodes"
-                >
-                  Nodes
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.NodesDisplay"
+              >
+                NodesDisplay
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.NodesDisplay"
-                >
-                  NodesDisplay
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.Site"
+              >
+                Site
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.Site"
-                >
-                  Site
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.Types"
+              >
+                Types
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.Types"
-                >
-                  Types
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.markdown"
+              >
+                markdown
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.markdown"
-                >
-                  markdown
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.view.DocsMenu"
+              >
+                view.DocsMenu
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.DocsMenu"
-                >
-                  view.DocsMenu
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.view.LeftNav"
+              >
+                view.LeftNav
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.LeftNav"
-                >
-                  view.LeftNav
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.view.MainDetail"
+              >
+                view.MainDetail
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.MainDetail"
-                >
-                  view.MainDetail
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.view.MainExample"
+              >
+                view.MainExample
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
+        </div>
+        <div
+          class="hs-collapsible  hs-left-nav-module"
+        >
+          <div
+            class="hs-collapsible-title"
           >
             <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.MainExample"
-                >
-                  view.MainExample
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+              class="hs-collapsible-pre  hs-collapsible-arrow-right"
             />
+            <div>
+              <a
+                class="hs-left-nav-module-name"
+                href="#!/api/hsDocs/hsDocs.view.Tooltip"
+              >
+                view.Tooltip
+              </a>
+            </div>
           </div>
           <div
-            class="hs-collapsible  hs-left-nav-module"
-          >
-            <div
-              class="hs-collapsible-title"
-            >
-              <div
-                class="hs-collapsible-pre  hs-collapsible-arrow-right"
-              />
-              <div>
-                <a
-                  class="hs-left-nav-module-name"
-                  href="#!/api/hsDocs/hsDocs.view.Tooltip"
-                >
-                  view.Tooltip
-                </a>
-              </div>
-            </div>
-            <div
-              class="hs-collapsible-content scrolly"
-              style="max-height: 0; transition: max-height 0.25s ease-in-out;"
-            />
-          </div>
+            class="hs-collapsible-content hs_scrolly"
+            style="max-height: 0; transition: max-height 0.25s ease-in-out;"
+          />
         </div>
       </div>
     </div>

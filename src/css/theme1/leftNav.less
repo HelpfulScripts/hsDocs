@@ -3,23 +3,18 @@
 @SelectColor:   #cfc;
 @TitleColor:    #ddc;
 
-.hsdocs_leftnav {
-    overflow-x: hidden;
-    overflow-y: auto;    
-}
 
 .hs-left {
+    overflow-x: hidden;
     background-color: #fff;
+    width: 100%;
+    overflow-y: scroll;
     a {
         text-decoration: none;
         color: black;
         :link, :visited { 
             text-decoration: none;
-//            cursor: black;
         }
-        // :link:active, :visited:active { 
-        //    color: black;
-        // }
     }
     
     .hs-left-nav {    // the left detail window providing a nav overview
@@ -27,19 +22,10 @@
         font-size:0.8em;
         list-style-type: none; 
     }
-/*
-    a.hs-left-nav-selected {
-        background-color: @SelectColor;
-        &:hover {
-            background-color: darken(@HoverColor, 10%);
-        }
-    }
-*/
 
-    .hs-library-name{
+    .hs-library-name {
         font-size: 1.6em;
         font-weight: bold;
-    //    background-color: #cfc;
         padding:0.3em 10px;
         margin:2px 0;
         height: 0.8em;
@@ -48,14 +34,7 @@
         }
     }
 
-    // .hs-left-nav-content {
-    // }
-
-    // .hs-left-nav-module-content {
-    // }
-
     .hs-left-nav-module {
-    //    margin-left:5px;
         margin-top: 5px;
         margin-bottom: 10px; 
         border-left: 1px solid darken(@TitleColor, 20%);
@@ -64,8 +43,6 @@
         border-top-left-radius : @BorderRadius;
         overflow: hidden;
     }
-
-
 
     .hs-left-nav-module {
         .hs-collapsible-title {
@@ -102,11 +79,9 @@
         }
     }
 
-
     .hs-left-nav-exported {
         color: #44f;
         font-weight:bold;
     }
-
 }
 

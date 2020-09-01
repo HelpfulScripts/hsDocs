@@ -3,29 +3,30 @@
  * 
  */
 /** */
-import { Log }                  from 'hsutil'; const log = new Log('MainDetail');
-import m from "mithril";
-type Vnode = m.Vnode<any, any>;
-import { Layout }               from 'hslayout';
-import { DocsNode }             from '../Nodes';
-import { DocSets }              from '../DocSets';
+import { Log }          from 'hsutil'; const log = new Log('MainDetail');
+import m                from "mithril";
+import { Vnode }        from 'hswidget';
+import { Widget }       from 'hswidget';
+import { DocsNode }     from '../Nodes';
+import { DocSets }      from '../DocSets';
+import { DocsAttrs }    from './DocsMenu';
 
+interface MainDetailAttrs extends DocsAttrs {
 
+}
 /**
  * Creates Documentation on the main panel 
  */
-export class MainDetail extends Layout { 
-    getComponents(node:Vnode): Vnode {
-        const lib =  m.route.param('lib');
-        const field = m.route.param('field');
-        node.attrs.route = undefined;
-
+export class MainDetail extends Widget { 
+    view(node:Vnode<MainDetailAttrs, this>) {
+        const lib = node.attrs.lib;
+        const field = node.attrs.field;
         let result = DocSets.nodeCount<=0? '...' :  (
             (field==='0' || field==='' || field==='overview')? 
                 getOverview(DocSets.getNode(`${lib}.overview`, lib)) 
               : itemDoc(DocSets.getNode(field, lib))
         ); 
-        return m('.hsdocs', [result || `no content for lib ${lib} and field ${field}`]); 
+        return m('.hsdocs_detail', node.attrs, [result || `no content for lib ${lib} and field ${field}`]); 
     }
 }
 

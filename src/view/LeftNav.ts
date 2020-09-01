@@ -4,86 +4,98 @@
 
 /** */
 import m from "mithril";
-type Vnode = m.Vnode<any, any>;
-import { Layout }       from 'hslayout';
+import { Vnode }        from 'hswidget';
+import { Widget }       from 'hswidget';
 import { Collapsible }  from 'hswidget';
+import { Log }          from 'hsutil';  const log = new Log('LeftNav');
 import { libLinkByPath }from '../NodesDisplay'; 
 import { DocSets }      from '../DocSets';
+import { DocsNode  }    from "../Nodes";
+import { ModuleDesc }   from "../Nodes";
+import { Group }        from "../Nodes";
+import { DocsAttrs }    from "./DocsMenu";
+ 
 
+interface LeftNavAttrs extends DocsAttrs {
+}
 
 /**
  * Constructs the left-hand navigation pane
  */
-export class LeftNav extends Layout {
-    getComponents(node: Vnode): Vnode {
-        let lib = m.route.param('lib');
-        let field = m.route.param('field');
+export class LeftNav extends Widget {
+    view(node:Vnode<LeftNavAttrs, this>) {
+        const lib = node.attrs.lib;
+        const field = node.attrs.field;
         const docSet = DocSets.getNode(0, lib) || {name:'unknown', id:0};
-        return m('.hs-left', [m('.hs-left-nav', navList(docSet, field))]);
-    } 
+        return m('.hs-left', node.attrs, navList(<DocsNode>docSet, field));
+    }
 }
 
 /** creates the list if modules (`*.ts` files) */
-function navList(docSet:any, field:string):Vnode[] {
-    /** */
-    function collectModules(docSet:any) {
-        const modulesByName = {};
-        docSet.modules = [];
-        if (docSet.children) {
-            docSet.children.forEach((c:any) => {
-                // don't show modules from other projects (isExternal flag) or modules on the ignore list
-                if (!(c.flags && c.flags.isExternal) && !ignoreModules[c.name]) {
-                    const name = c.innerModule? c.innerModule : c.name;
-                    let module = modulesByName[name];
-                    if (!module) {  // new module
-                        docSet.modules.push(module = modulesByName[name] = { 
-                            name: name,
-                            lib: docSet.lib,
-                            fullPath: docSet.fullPath + '.'+ name,
-                            groups:[]
-                        });
-                    }
-                    // get existing module groups
-                    const groups = {};
-                    module.groups.forEach((g:any) => groups[g.title] = g); 
-                    // for each group in child:
-                    if (c.groups) { c.groups.forEach((g:any) => {
-                        let group = groups[g.title]; // get existing 
-                        if (!group) {                 //  else create new
-                            group = groups[g.title] = {
-                                children:[],
-                                kind: g.kind,
-                                title: g.title
-                            };
-                        module.groups.push(group);
-                        }
-                        group.children = group.children.concat(g.children);
-                    });}
-                }
-            });
-        }
-    }
-    /** 
-     * processes a module, i.e. a `.ts` file.
-     */
-    function externalModule(mdl:any) {
+function navList(docSet:DocsNode, field:string):m.Children {
+    /** processes a module, i.e. a `.ts` file. */
+    function externalModule(mdl:ModuleDesc) {
         let selected = false;
-        if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { selected=true; }
+        // if (field===''+mdl.id || field.indexOf(mdl.fullPath) === 0) { selected=true; }
+        if (field.indexOf(mdl.fullPath) === 0) { selected=true; }
 
-        return m(Collapsible, {css:`.hs-left-nav-module`, preArrow: true, isExpanded:selected, components:[
+        return m(Collapsible, {class:`hs-left-nav-module`, preArrow: true, isExpanded:selected}, [
             m(`${selected?'.hs-left-nav-selected':''}`, libLinkByPath(mdl.lib, mdl.fullPath, mdl.name, `.hs-left-nav-module-name`)),
-            !mdl.groups? undefined : mdl.groups.map((g:any) => entries(g, mdl, field))
-        ]});
+            ...(mdl.groups || []).map((g:any) => entries(g, mdl, field))
+        ]);
     }
 
     if (docSet.kind === 0) { // External DocSets
         collectModules(docSet);
-//        const modules = docSet.children? docSet.children.map(externalModule) : ['no children'];
         const modules = docSet.modules.map(externalModule);
         modules.unshift(m('.hs-left-nav-header', 'Modules'));
-        return [m('.hs-left-nav-content', modules)];
+        return m('.hs-left-nav', [m('.hs-left-nav-content', modules)]);
     }
 }
+
+function collectModules(docSet:DocsNode) {
+    const modulesByName = <ModuleDesc>{};
+    docSet.modules = <ModuleDesc[]>[];
+    if (docSet.children) {
+        docSet.children.forEach(c => {
+            if (!c) { 
+                log.warn(`c is undefined for docSet ${docSet.id}`);
+                return;
+            }
+            // don't show modules from other projects (isExternal flag) or modules on the ignore list
+            if (!(c.flags && c.flags.isExternal) && !ignoreModules[c.name]) {
+                // const name = c.innerModule? c.innerModule : c.name;
+                const name = c.name;
+                let module = modulesByName[name];
+                if (!module) {  // new module
+                    docSet.modules.push(module = modulesByName[name] = <ModuleDesc>{ 
+                        name: name,
+                        lib: docSet.lib,
+                        fullPath: docSet.fullPath + '.'+ name,
+                        groups:[]
+                    });
+                }
+                // get existing module groups
+                const groups = <{[title:string]:Group}>{};
+                module.groups.forEach((g:Group) => groups[g.title] = g); 
+                // for each group in child:
+                if (c.groups) { c.groups.forEach((g:any) => {
+                    let group = groups[g.title]; // get existing 
+                    if (!group) {                 //  else create new
+                        group = groups[g.title] = <Group>{
+                            children:[],
+                            kind: g.kind,
+                            title: g.title
+                        };
+                    module.groups.push(group);
+                    }
+                    group.children = group.children.concat(g.children);
+                });}
+            }
+        });
+    }
+}
+
 
 /**
  * modules to ignore in the list

@@ -29,8 +29,8 @@
 <p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span>import&nbsp;{&nbsp;Log&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'hsutil'</quote>;&nbsp;const&nbsp;log&nbsp;=&nbsp;new&nbsp;Log(<quote>'Types'</quote>);</p>
 <p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>import&nbsp;{&nbsp;DocsNode&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./Nodes'</quote>;</p>
 <p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span>import&nbsp;m&nbsp;from&nbsp;<quote>"mithril"</quote>;</p>
-<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>type&nbsp;Vnode&nbsp;=&nbsp;m.Vnode<any,&nbsp;any>;</p>
-<p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;libLinkByPath&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./NodesDisplay'</quote>;</p>
+<p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span><comment>//&nbsp;type&nbsp;Vnode&nbsp;=&nbsp;m.Vnode<any,&nbsp;any>;</comment></p>
+<p id=10 class="line"><span>&nbsp;&nbsp;10</span><comment></comment>import&nbsp;{&nbsp;libLinkByPath&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./NodesDisplay'</quote>;</p>
 <p id=11 class="line"><span>&nbsp;&nbsp;11</span>import&nbsp;{&nbsp;titleArr&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./NodesDisplay'</quote>;</p>
 <p id=12 class="line"><span>&nbsp;&nbsp;12</span></p>
 <p id=13 class="line"><span>&nbsp;&nbsp;13</span>interface&nbsp;DocsGenericType&nbsp;{</p>
@@ -226,7 +226,7 @@
 <p id=203 class="line"><span>&nbsp;203</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mdlType.types.forEach((t:DocsReferenceIdType)&nbsp;=>&nbsp;this.types.push(DocsType.makeType(t,&nbsp;node)));</p>
 <p id=204 class="line"><span>&nbsp;204</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=205 class="line"><span>&nbsp;205</span></p>
-<p id=206 class="line"><span>&nbsp;206</span>&nbsp;&nbsp;&nbsp;&nbsp;mType():Vnode&nbsp;{</p>
+<p id=206 class="line"><span>&nbsp;206</span>&nbsp;&nbsp;&nbsp;&nbsp;mType()&nbsp;{</p>
 <p id=207 class="line"><span>&nbsp;207</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(<quote>'span.hsdocs_type_union'</quote>,&nbsp;[...this.types.map((t:any,&nbsp;i:number)&nbsp;=>&nbsp;m(<quote>'span'</quote>,&nbsp;[i>0?<quote>'&nbsp;|&nbsp;'</quote>:<quote>''</quote>,&nbsp;t.mType()]))]);</p>
 <p id=208 class="line"><span>&nbsp;208</span>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
 <p id=209 class="line"><span>&nbsp;209</span>}</p>

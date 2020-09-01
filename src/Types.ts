@@ -6,7 +6,7 @@
 import { Log }                  from 'hsutil'; const log = new Log('Types');
 import { DocsNode }             from './Nodes';
 import m from "mithril";
-type Vnode = m.Vnode<any, any>;
+// type Vnode = m.Vnode<any, any>;
 import { libLinkByPath }        from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
 
@@ -203,7 +203,7 @@ class DocsUnionType extends DocsType {
         mdlType.types.forEach((t:DocsReferenceIdType) => this.types.push(DocsType.makeType(t, node)));
     }
 
-    mType():Vnode {
+    mType() {
         return m('span.hsdocs_type_union', [...this.types.map((t:any, i:number) => m('span', [i>0?' | ':'', t.mType()]))]);
     }
 }

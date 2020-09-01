@@ -122,19 +122,16 @@
 
 /** */
 import m from "mithril";
-import { Menu, SelectorDesc }   from 'hswidget';
-import * as hswidget            from 'hswidget';
-import * as hslayout            from 'hslayout';
-import { Layout }               from 'hslayout';
-import { shortCheckSum }        from 'hsutil'; 
-import { delay }                from 'hsutil'; 
-import { Log }                  from 'hsutil';  const log = new Log('MainExample');
-import * as hsutil              from 'hsutil';
+import { Menu }             from 'hswidget';
+import * as hswidget        from 'hswidget';
+import { shortCheckSum }    from 'hsutil'; 
+import { delay }            from 'hsutil'; 
+import { Log }              from 'hsutil';  const log = new Log('MainExample');
+import * as hsutil          from 'hsutil';
 
 const modules = {
     m:          m,
     hsUtil:     hsutil, 
-    hsLayout:   hslayout, 
     hsWidget:   hswidget
 };
 
@@ -150,7 +147,8 @@ interface CommentDescriptor {
     created:   boolean;                 // indicates if all dynamic modules are loaded
     exampleID: string;                  // example tag ID
     menuID:    string;                  // menu tag ID
-    desc:   SelectorDesc;               // menu items
+    items:     string[];
+    // desc:   SelectorDesc;               // menu items
     attrs?: Attribute;                  // <example attr=value>
     pages:  {string?:string};           // page content for each menu item
     runScript?: (root:any) => void; // the example code to execute
@@ -214,12 +212,12 @@ export function example(exmpl:string) {
                     IDs.pages['css'].replace(/(^|})\s*?(\S*?)\s*?{/gi,    // otherwise wrap each css statement
                         (x:string, ...args:any[]) => x.replace(args[1], wrapWithID(args[1]))
     );
-    return `<style>${style}</style><example id=${IDs.exampleID} style="height:${frameHeight}" class="hs-layout-frame"></example>`;
+    return `<div class='example'><style>${style}</style><div id='${IDs.exampleID}' style='height:${frameHeight}'></div></div>`;
 }
 
 async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise<boolean> {
     try {
-        const desc = await getCommentDescriptor(IDs, exmpl);
+        const commentDesc = await getCommentDescriptor(IDs, exmpl);
         IDs.runScript = (root:any) => {
             const libNames = Object.keys(modules);
             const missingLibs = IDs.attrs.libs.map(l => l.sym).filter(l => libNames.indexOf(l)<0);
@@ -227,7 +225,7 @@ async function createExecuteScript(IDs:CommentDescriptor, exmpl:string): Promise
                 log.info(`expected modules to be loaded: ${missingLibs.join(', ')}`);
             } else {
                 const libs = libNames.map(name => modules[name]);
-                const scriptFn = new Function('root', ...libNames, desc);    
+                const scriptFn = new Function('root', ...libNames, commentDesc);    
                 log.info(`running example script with modules '${libNames.join(', ')}'`);
                 scriptFn(root, ...libs);
             }
@@ -249,19 +247,7 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
         created:    false,
         exampleID:  getNewID(),    // example tag ID
         menuID:     getNewID(),    // main execution area tag ID
-        desc:<SelectorDesc>{ 
-            items:<string[]>[],
-            selectedItem: 'js',
-            clicked: async () => {
-                try {
-                    addExampleStructure(IDs);   // called when source menu changes
-                    await delay(1)();
-                    await executeScript(IDs);
-                } 
-                catch(e) { executeError(e); }
-            },
-            size: ["50px"]
-        },
+        items:<string[]>[],
         pages:{},
         activeSrcPage: undefined,
         attrs: {libs:[]}
@@ -276,28 +262,16 @@ function initDesc(IDs:CommentDescriptor):CommentDescriptor {
 function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor { 
     let item = IDs.activeSrcPage || 'js';
     const root = document.getElementById(IDs.exampleID);
-
-    IDs.desc.clicked = (newItem:string) => {
-        item = IDs.activeSrcPage = newItem;
-    };
+    const click = (menuIndex:number) => item = IDs.activeSrcPage = IDs.items[menuIndex];
 
     if (root && IDs.created) {
-        m.mount(root, {view: () => m(Layout, { 
-            columns: ["50%"],
-            content: [
-                m(Layout, {
-                    content: m('.hs-layout .hs-execution', {id:IDs.menuID}, m('div.placeholder', 'placeholder'))
-                }),
-                m(Layout, {
-                    rows:["30px", "fill"],
-                    css: '.hs-source',
-                    content:[
-                        m(Menu, {desc: IDs.desc, size:['50px'] }),
-                        m(Layout, { content: m('.hs-layout .hsdocs_source_main', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))})
-                    ]
-                })
-            ]})
-        });
+        m.mount(root, {view: () => m('.exampleGrid', [
+            m(Menu, { class:'hs-menu', onclick: click }, IDs.items),
+            m('.hs-scroll', [
+                m(`.hs-execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
+                m('.hs-source', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))
+            ])
+        ])});
     }
     return IDs;
 }
@@ -335,7 +309,6 @@ function executeError(e:any) {
 async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promise<string> {
     let result = '';
     
-    // let attrs = example.match(/<example\s(\S*?)(\s|>)/gi);
     let attrs = example.match(/<example\s([\s\S]*?)>/); // capture all parameters to `example`
     if (attrs && attrs[1]) { 
         findTokens(IDs, attrs[1]);
@@ -351,7 +324,7 @@ async function getCommentDescriptor(IDs:CommentDescriptor, example:string):Promi
     example.replace(/<file[\s]*name=[\S]*?\.([\s\S]*?)['|"]>([\S\s]*?)<\/file>/gi, function(text:string) {
         const args = [...arguments];
         const content = args[2].trim();         // the part between <file> and </file>
-        IDs.desc.items.push(args[1]);           // record available extensions, i.e. 'js', 'html', etc 
+        IDs.items.push(args[1]);                // record available extensions, i.e. 'js', 'html', etc 
         IDs.pages[args[1]] = content.trim();    // associate the content with the extension
         return result;
     });
