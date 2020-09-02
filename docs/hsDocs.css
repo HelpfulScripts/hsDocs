@@ -1226,7 +1226,7 @@ code {
 .example {
   margin-top: 30px;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: #afa;
   margin-bottom: 10px;
 }
 .example .exampleGrid {
@@ -1251,6 +1251,7 @@ code {
   display: inline-block;
   vertical-align: top;
   width: 50%;
+  height: 100%;
   background-color: #eed;
 }
 .example .exampleGrid .hs_execution div {
@@ -1280,7 +1281,7 @@ code {
 .example > div {
   display: block;
   width: 100%;
-  padding: 5px;
+  padding: 2px;
   box-sizing: border-box;
 }
 .example > div pre {
