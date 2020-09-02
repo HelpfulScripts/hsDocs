@@ -257,11 +257,11 @@ function addExampleStructure(IDs:CommentDescriptor):CommentDescriptor {
 
     if (root && IDs.created) {
         m.mount(root, {view: () => m('.exampleGrid', [
-            m(Menu, { class:'hs_menu', onclick: click }, IDs.items),
             m('.hs_scroll_content', [
                 m(`.hs_execution`, {id:IDs.menuID}, m('div.placeholder', 'placeholder')),
                 m('.hs_source', m.trust(`<code><pre>${IDs.pages[item]}</pre></code>`))
-            ])
+            ]),
+            m(Menu, { class:'hs_menu', onclick: click }, IDs.items)
         ])});
     }
     return IDs;
