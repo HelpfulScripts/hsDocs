@@ -59963,7 +59963,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-							"line": 16,
+							"line": 15,
 							"character": 20
 						}
 					]
@@ -68829,7 +68829,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
 			"comment": {
 				"shortText": "# How to add live code examples\nComment sections may contain code examples that are intended to be live demonstrations for\nexplaining some concept of the module are contained in.",
-				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m('.myClass', { style:'font-weight:bold;' }, 'my example')\n    });\n    </file>\n\n    <file name='style.css'>\n    .myClass {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsUtil**: namespace for the [`hsUtil`](http://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/0) library,\nproviding various utility functions.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsWidget.Icon,{mdi:'stop'})`\n\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using D3js:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsWidget.GridColumns, [\n         'left column',\n         'right column'\n    ])\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
+				"text": "`hsDocs` will interpret comment sections between `<example>` and `</example>`\ntags as code examples. Inside a code example, `<file name='script.js'>` tags contain a script to be executed,\nand `<file name='style.css'>` tags contain stylesheet instructions to apply, as in the following snippet (also see Example below):\n<code>\n    &lt;example&gt;\n    <file name='script.js'>\n    m.mount(root, {\n        view:() => m('.myClass', { style:'font-weight:bold;' }, 'my example')\n    });\n    </file>\n\n    <file name='style.css'>\n    .myClass {\n        color: blue;\n    }\n    </file>\n    &lt;/example&gt;\n</code>\n\n### Scripts\nScripts are enclosed by `<file name='script.js'>` and `</file>` tags.\n\nhsDocs internally uses the [global Function object][Function] to parse and execute the script.\nThus the script runs in the global scope and has access to global objects. A number of additional modules are provided\nas parameters in the `Function` constructor and are thus available to the script.\nhsDocs currently provides the following default namespaces to access the corresponding modules in the scripts:\n- **m**: namespace for the [`Mithril`](https://mithril.js.org/) m function\n- **hsUtil**: namespace for the [`hsUtil`](http://helpfulscripts.github.io/hsUtil/#!/api/hsUtil/0) library,\nproviding various utility functions.\n- **hsWidget**: namespace for the [`hsWidget`](https://helpfulscripts.github.io/hsWidget/#!/api/hsWidget/0) library,\nproviding various UI widget functions.\n- **root**: the DOM element to attach content to.\n\nAdditional Scripts can loaded - see `Configuring the example` below.\n\nThe script can access and manipulate any of the provided libraries\nvia their namespace, for example as in `m(hsWidget.Icon,{mdi:'stop'})`\n\n#### Using Mithril:\nmount a `mithril Vnode` on the provided root DOM element using `m.mount` or `m.render`.\nDo not use `m.route` as only a single call is allowed per web app and that is used to manage the\nmain hsDocs site menu and navigation.\n```\nm.mount(root, { view:() => m('div', 'content')});\n```\n#### Using D3js:\n```\nconst base = d3.select(root);\n const svg = base.append('svg')\n    .classed('baseSVG', true)\n    .attr('height', '100%')\n    .attr('width', '100%')\n    .attr('preserveAspectRatio', 'xMinYMin meet');\n```\n\n### Configuring the `example`\nThe `<example>` accepts additional arguments to configure the example:\n\n#### Height of the `example` panel\nTo change the default panel height of 300px, set the `height=<numper>px` argument.\n\n#### Module injection\nAdditional module libraries can be injected by adding the argument `libs={<export name>:<path>[,...]}`.\n`hsDocs` will try to load the library via the provided `path` and make it available to the script within the namespace `export name`.\nFor example:\n<code>\n<example height=500px libs={hsGraphd3:'hsGraphd3', d3:'https://d3js.org/d3.v5.min.js'}>\n...in the script:\n   new hsGraph.Graph();\n   d3.slect('');\n</code>\nThe following rules apply in resolving `path`:\n1. If `path` is structured, i.e. contains '/', it is requested as is - see 'd3' example above.\n2. load from `node_modules/<path.toLowerCase()>/<path>.js`, relative to the current web page.\nThis is useful to maintain libraries installed via `npm` locally on the server.\n3. load from `https://helpfulscripts.github.io/<path>/<path>.js`. Provided as a convenience to access `helpfulscript` modules ;)\n\nTo be recognized as injectable module, libraries need to follow the convention of `webPack's`\n[`output.libraryTarget: \"this\"`](https://webpack.js.org/configuration/output/#expose-via-object-assignment) configuration.\n\n[Function]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\n\n### Styles\nStyles will be automatically sandboxed so they are valid only within the enclosing example tags.\nThis is achieved by prefixing css tags with a unique exmple ID and allows multiple examples to co-exist on the same page.\nIn the DOM, the example ID is assgned top the &lt;example&gt; tag.\nUse `$exampleID` as css tag in the `css` section of the example to refer to the &lt;example&gt; element,\nas shown below.\n\n### Example\n<example>\n<file name='script.js'>\nm.mount(root, {\n    view:() => m(hsWidget.Grid, {\n         columns:''\n    }, [\n         'left column',\n         'right column'\n    ])\n});\n</file>\n<file name='style.css'>\n$exampleID { height: 200px;}\n.myExample {\n    color: red;\n    font-weight:bold;\n}\n</file>\n</example>\n"
 			},
 			"children": [
 				{
@@ -68850,7 +68850,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 131,
+									"line": 133,
 									"character": 10
 								}
 							],
@@ -68870,7 +68870,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 132,
+									"line": 134,
 									"character": 8
 								}
 							],
@@ -68894,7 +68894,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 132,
+														"line": 134,
 														"character": 28
 													}
 												],
@@ -68912,7 +68912,7 @@
 												"sources": [
 													{
 														"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-														"line": 132,
+														"line": 134,
 														"character": 15
 													}
 												],
@@ -68935,7 +68935,7 @@
 										"sources": [
 											{
 												"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-												"line": 132,
+												"line": 134,
 												"character": 10
 											}
 										]
@@ -68957,7 +68957,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 130,
+							"line": 132,
 							"character": 19
 						}
 					]
@@ -68981,7 +68981,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 148,
+									"line": 150,
 									"character": 17
 								}
 							],
@@ -69001,7 +69001,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 144,
+									"line": 146,
 									"character": 9
 								}
 							],
@@ -69020,7 +69020,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 139,
+									"line": 141,
 									"character": 11
 								}
 							],
@@ -69038,7 +69038,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 140,
+									"line": 142,
 									"character": 13
 								}
 							],
@@ -69058,7 +69058,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 147,
+									"line": 149,
 									"character": 17
 								}
 							],
@@ -69076,7 +69076,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 142,
+									"line": 144,
 									"character": 9
 								}
 							],
@@ -69097,7 +69097,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 141,
+									"line": 143,
 									"character": 10
 								}
 							],
@@ -69115,7 +69115,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 145,
+									"line": 147,
 									"character": 9
 								}
 							],
@@ -69139,7 +69139,7 @@
 											"sources": [
 												{
 													"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-													"line": 145,
+													"line": 147,
 													"character": 19
 												}
 											],
@@ -69161,7 +69161,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 145,
+											"line": 147,
 											"character": 10
 										}
 									]
@@ -69179,7 +69179,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 146,
+									"line": 148,
 									"character": 13
 								}
 							],
@@ -69220,7 +69220,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 146,
+											"line": 148,
 											"character": 15
 										}
 									]
@@ -69248,7 +69248,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 138,
+							"line": 140,
 							"character": 27
 						}
 					]
@@ -69267,7 +69267,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 157,
+							"line": 159,
 							"character": 14
 						}
 					],
@@ -69291,7 +69291,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 154,
+							"line": 156,
 							"character": 18
 						}
 					],
@@ -69315,7 +69315,7 @@
 									"sources": [
 										{
 											"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-											"line": 154,
+											"line": 156,
 											"character": 26
 										}
 									],
@@ -69338,7 +69338,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 154,
+									"line": 156,
 									"character": 19
 								}
 							]
@@ -69356,7 +69356,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 121,
+							"line": 123,
 							"character": 53
 						}
 					],
@@ -69409,7 +69409,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 253,
+							"line": 255,
 							"character": 28
 						}
 					]
@@ -69467,7 +69467,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 209,
+							"line": 211,
 							"character": 34
 						}
 					]
@@ -69519,7 +69519,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 179,
+							"line": 181,
 							"character": 23
 						}
 					]
@@ -69559,7 +69559,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 290,
+							"line": 292,
 							"character": 21
 						}
 					]
@@ -69607,7 +69607,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 274,
+							"line": 276,
 							"character": 22
 						}
 					]
@@ -69659,7 +69659,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 325,
+							"line": 327,
 							"character": 19
 						}
 					]
@@ -69727,7 +69727,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 300,
+							"line": 302,
 							"character": 35
 						}
 					]
@@ -69757,7 +69757,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 160,
+							"line": 162,
 							"character": 17
 						}
 					]
@@ -69802,7 +69802,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 236,
+							"line": 238,
 							"character": 17
 						}
 					]
@@ -69865,7 +69865,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 356,
+							"line": 358,
 							"character": 25
 						}
 					]
@@ -69888,7 +69888,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 126,
+									"line": 128,
 									"character": 10
 								}
 							],
@@ -69907,7 +69907,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 127,
+									"line": 129,
 									"character": 12
 								}
 							],
@@ -69926,7 +69926,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-									"line": 125,
+									"line": 127,
 									"character": 5
 								}
 							],
@@ -69951,7 +69951,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/MainExample.ts",
-							"line": 124,
+							"line": 126,
 							"character": 13
 						}
 					],

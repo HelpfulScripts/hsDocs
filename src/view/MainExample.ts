@@ -96,7 +96,9 @@
  * <example>
  * <file name='script.js'>
  * m.mount(root, { 
- *     view:() => m(hsWidget.GridColumns, [
+ *     view:() => m(hsWidget.Grid, {
+ *          columns:''
+ *     }, [
  *          'left column',
  *          'right column'
  *     ])
