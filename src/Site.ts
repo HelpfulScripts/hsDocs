@@ -10,6 +10,7 @@ import { GridRows }     from 'hswidget';
 import { DocsMenu }     from './view/DocsMenu';
 import { LeftNav }      from './view/LeftNav';
 import { MainDetail }   from './view/MainDetail';
+import { DocSets } from "./DocSets";
 
 
 export function init() {
@@ -19,7 +20,7 @@ export function init() {
             const field = node.attrs.field;
             return m(GridColumns, { class:'hsdocs', template: '200px auto' }, [
                 m(GridRows, { class:'hsdocs_leftpane', template: '35px auto 14px' }, [
-                    m('.hsdocs_title', { href:'https://github.com/HelpfulScripts/hsDocs'}, 'hsDocs'), 
+                    m('.hsdocs_title', { href:'https://github.com/HelpfulScripts/hsDocs'}, DocSets.getTitle() || 'hsDocs'), 
                     m(LeftNav, { lib:lib, field:field}),
                     m('.hsdocs_footer', m.trust(`powered by <i><a href='https://github.com/HelpfulScripts/hsDocs' target='_blank'>hsDocs</a></i>`))
                 ]),

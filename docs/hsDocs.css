@@ -1259,6 +1259,7 @@ code {
 }
 .example .exampleGrid .hs_execution .hs_grid {
   width: 100%;
+  height: 100%;
 }
 .example .exampleGrid .hs_execution .hs_white {
   background-color: white;
@@ -1301,6 +1302,7 @@ code {
 }
 body {
   color: black;
+  margin: 0;
 }
 .hsdocs_title {
   color: #448;

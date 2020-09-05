@@ -196,7 +196,7 @@
 							"defaultValue": "<{[id:string]: DocsNode}>{}"
 						},
 						{
-							"id": 2787,
+							"id": 2789,
 							"name": "addDocSet",
 							"kind": 2048,
 							"kindString": "Method",
@@ -207,7 +207,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2788,
+									"id": 2790,
 									"name": "addDocSet",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -219,7 +219,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2789,
+											"id": 2791,
 											"name": "content",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -231,12 +231,12 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
 										{
-											"id": 2790,
+											"id": 2792,
 											"name": "file",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -261,13 +261,13 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-									"line": 66,
+									"line": 68,
 									"character": 27
 								}
 							]
 						},
 						{
-							"id": 2783,
+							"id": 2785,
 							"name": "addNode",
 							"kind": 2048,
 							"kindString": "Method",
@@ -278,7 +278,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2784,
+									"id": 2786,
 									"name": "addNode",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -287,7 +287,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2785,
+											"id": 2787,
 											"name": "mdl",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -296,12 +296,12 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
 										{
-											"id": 2786,
+											"id": 2788,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -324,13 +324,13 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-									"line": 51,
+									"line": 53,
 									"character": 25
 								}
 							]
 						},
 						{
-							"id": 2795,
+							"id": 2797,
 							"name": "getLibs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -341,7 +341,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2796,
+									"id": 2798,
 									"name": "getLibs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -363,13 +363,13 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-									"line": 92,
+									"line": 94,
 									"character": 25
 								}
 							]
 						},
 						{
-							"id": 2791,
+							"id": 2793,
 							"name": "getNode",
 							"kind": 2048,
 							"kindString": "Method",
@@ -380,7 +380,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2792,
+									"id": 2794,
 									"name": "getNode",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -389,7 +389,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2793,
+											"id": 2795,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -411,7 +411,7 @@
 											}
 										},
 										{
-											"id": 2794,
+											"id": 2796,
 											"name": "lib",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -434,13 +434,46 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-									"line": 74,
+									"line": 76,
 									"character": 25
 								}
 							]
 						},
 						{
-							"id": 2797,
+							"id": 2783,
+							"name": "getTitle",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isPublic": true,
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 2784,
+									"name": "getTitle",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
+									"line": 51,
+									"character": 26
+								}
+							]
+						},
+						{
+							"id": 2799,
 							"name": "loadList",
 							"kind": 2048,
 							"kindString": "Method",
@@ -451,7 +484,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2798,
+									"id": 2800,
 									"name": "loadList",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -464,7 +497,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2799,
+											"id": 2801,
 											"name": "file",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -496,7 +529,7 @@
 							"sources": [
 								{
 									"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-									"line": 102,
+									"line": 104,
 									"character": 32
 								}
 							]
@@ -518,11 +551,12 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2787,
+								2789,
+								2785,
+								2797,
+								2793,
 								2783,
-								2795,
-								2791,
-								2797
+								2799
 							]
 						}
 					],
@@ -535,7 +569,7 @@
 					]
 				},
 				{
-					"id": 2803,
+					"id": 2805,
 					"name": "json",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -555,7 +589,7 @@
 					}
 				},
 				{
-					"id": 2801,
+					"id": 2803,
 					"name": "DOCDIR",
 					"kind": 32,
 					"kindString": "Variable",
@@ -576,7 +610,7 @@
 					"defaultValue": "\"./data/\""
 				},
 				{
-					"id": 2802,
+					"id": 2804,
 					"name": "FILE",
 					"kind": 32,
 					"kindString": "Variable",
@@ -600,7 +634,7 @@
 					"defaultValue": "\"./data/index.json\""
 				},
 				{
-					"id": 2800,
+					"id": 2802,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -621,14 +655,14 @@
 					"defaultValue": "new Log('DocsSets')"
 				},
 				{
-					"id": 2808,
+					"id": 2810,
 					"name": "loadDocSet",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2809,
+							"id": 2811,
 							"name": "loadDocSet",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -638,7 +672,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2810,
+									"id": 2812,
 									"name": "file",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -667,27 +701,27 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/DocSets.ts",
-							"line": 166,
+							"line": 168,
 							"character": 25
 						}
 					]
 				},
 				{
-					"id": 2804,
+					"id": 2806,
 					"name": "matchAll",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2805,
+							"id": 2807,
 							"name": "matchAll",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2806,
+									"id": 2808,
 									"name": "str",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -698,7 +732,7 @@
 									}
 								},
 								{
-									"id": 2807,
+									"id": 2809,
 									"name": "re",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -739,24 +773,24 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						2803
+						2805
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2801,
-						2802,
-						2800
+						2803,
+						2804,
+						2802
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2808,
-						2804
+						2810,
+						2806
 					]
 				}
 			],
@@ -1456,7 +1490,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -2194,7 +2228,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -2955,7 +2989,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -3021,7 +3055,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -3189,7 +3223,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -3381,7 +3415,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -4022,7 +4056,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							}
 						},
@@ -4708,7 +4742,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -4772,7 +4806,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -4923,7 +4957,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -5148,7 +5182,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -5886,7 +5920,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -6647,7 +6681,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -6713,7 +6747,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -6881,7 +6915,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -7062,7 +7096,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -7690,7 +7724,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -8346,7 +8380,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -8412,7 +8446,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -8560,7 +8594,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -8724,7 +8758,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -9462,7 +9496,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -10223,7 +10257,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -10289,7 +10323,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -10457,7 +10491,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -10638,7 +10672,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -11376,7 +11410,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -12137,7 +12171,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -12203,7 +12237,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -12371,7 +12405,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -12552,7 +12586,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -13180,7 +13214,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -13836,7 +13870,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -13902,7 +13936,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -14050,7 +14084,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -14214,7 +14248,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -14842,7 +14876,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -15498,7 +15532,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -15564,7 +15598,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -15712,7 +15746,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -15876,7 +15910,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -16504,7 +16538,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -17160,7 +17194,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -17226,7 +17260,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -17374,7 +17408,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -17538,7 +17572,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -18276,7 +18310,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -19037,7 +19071,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -19103,7 +19137,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -19271,7 +19305,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -19460,7 +19494,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -20111,7 +20145,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -20812,7 +20846,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -20886,7 +20920,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -21047,7 +21081,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -21223,7 +21257,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -21874,7 +21908,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -22575,7 +22609,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -22649,7 +22683,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -22810,7 +22844,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -22978,7 +23012,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -23606,7 +23640,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -24262,7 +24296,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -24328,7 +24362,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -24476,7 +24510,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -24640,7 +24674,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -25378,7 +25412,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -26139,7 +26173,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -26205,7 +26239,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -26373,7 +26407,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -26554,7 +26588,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -27182,7 +27216,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -27838,7 +27872,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -27904,7 +27938,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -28052,7 +28086,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -28224,7 +28258,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -29359,7 +29393,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -29408,7 +29442,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -29568,7 +29602,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -30306,7 +30340,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -31067,7 +31101,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -31133,7 +31167,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -31301,7 +31335,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -31490,7 +31524,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -32141,7 +32175,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -32842,7 +32876,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -32916,7 +32950,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -33077,7 +33111,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -33245,7 +33279,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -33873,7 +33907,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -34529,7 +34563,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -34595,7 +34629,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -34743,7 +34777,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -34907,7 +34941,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -35535,7 +35569,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -36191,7 +36225,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -36257,7 +36291,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -36405,7 +36439,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -36569,7 +36603,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -37197,7 +37231,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -37853,7 +37887,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -37919,7 +37953,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -38067,7 +38101,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -38239,7 +38273,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -38890,7 +38924,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -39591,7 +39625,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -39665,7 +39699,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -39826,7 +39860,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -39994,7 +40028,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -40622,7 +40656,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -41278,7 +41312,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -41344,7 +41378,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -41492,7 +41526,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -41693,7 +41727,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -42321,7 +42355,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -42977,7 +43011,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -43043,7 +43077,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -43191,7 +43225,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -43392,7 +43426,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -44020,7 +44054,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -44676,7 +44710,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -44742,7 +44776,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -44890,7 +44924,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -45054,7 +45088,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -45682,7 +45716,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -46338,7 +46372,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -46404,7 +46438,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -46552,7 +46586,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -46716,7 +46750,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -47344,7 +47378,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -48000,7 +48034,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -48066,7 +48100,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -48214,7 +48248,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -48378,7 +48412,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -49006,7 +49040,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -49662,7 +49696,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -49728,7 +49762,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -49876,7 +49910,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -50040,7 +50074,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -50668,7 +50702,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -51324,7 +51358,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -51390,7 +51424,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -51538,7 +51572,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -51702,7 +51736,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -52330,7 +52364,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 2803,
+								"id": 2805,
 								"name": "json"
 							},
 							"inheritedFrom": {
@@ -52986,7 +53020,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -53052,7 +53086,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -53200,7 +53234,7 @@
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -53481,7 +53515,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -54860,7 +54894,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -55076,7 +55110,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										}
@@ -56455,7 +56489,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -57789,7 +57823,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 2803,
+												"id": 2805,
 												"name": "json"
 											}
 										},
@@ -59863,7 +59897,7 @@
 			]
 		},
 		{
-			"id": 2897,
+			"id": 2899,
 			"name": "\"Site\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -59876,7 +59910,7 @@
 			},
 			"children": [
 				{
-					"id": 2898,
+					"id": 2900,
 					"name": "Vnode",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -59904,7 +59938,7 @@
 					}
 				},
 				{
-					"id": 2899,
+					"id": 2901,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -59913,7 +59947,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2900,
+							"id": 2902,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -59929,7 +59963,7 @@
 					"sources": [
 						{
 							"fileName": "sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/Site.ts",
-							"line": 15,
+							"line": 16,
 							"character": 20
 						}
 					]
@@ -59940,14 +59974,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						2898
+						2900
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2899
+						2901
 					]
 				}
 			],
@@ -66498,7 +66532,7 @@
 			]
 		},
 		{
-			"id": 2901,
+			"id": 2903,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -66724,7 +66758,7 @@
 			]
 		},
 		{
-			"id": 2902,
+			"id": 2904,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -66745,7 +66779,7 @@
 			]
 		},
 		{
-			"id": 2811,
+			"id": 2813,
 			"name": "\"view/DocsMenu\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -66755,7 +66789,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/DocsMenu.ts",
 			"children": [
 				{
-					"id": 2825,
+					"id": 2827,
 					"name": "DocsMenu",
 					"kind": 128,
 					"kindString": "Class",
@@ -66767,7 +66801,7 @@
 					},
 					"children": [
 						{
-							"id": 2832,
+							"id": 2834,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66777,7 +66811,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2833,
+									"id": 2835,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66786,7 +66820,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2834,
+											"id": 2836,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -66801,7 +66835,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2835,
+											"id": 2837,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66814,7 +66848,7 @@
 											}
 										},
 										{
-											"id": 2836,
+											"id": 2838,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66842,7 +66876,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2832,
+										"id": 2834,
 										"name": "Widget.attrs"
 									}
 								}
@@ -66856,12 +66890,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2832,
+								"id": 2834,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2826,
+							"id": 2828,
 							"name": "load",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66870,7 +66904,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2827,
+									"id": 2829,
 									"name": "load",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66879,7 +66913,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2828,
+											"id": 2830,
 											"name": "docSet",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66913,7 +66947,7 @@
 							]
 						},
 						{
-							"id": 2829,
+							"id": 2831,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -66922,7 +66956,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2830,
+									"id": 2832,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -66931,7 +66965,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2831,
+											"id": 2833,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66943,7 +66977,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2818,
+														"id": 2820,
 														"name": "DocsMenuAttrs"
 													},
 													{
@@ -66993,9 +67027,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2832,
-								2826,
-								2829
+								2834,
+								2828,
+								2831
 							]
 						}
 					],
@@ -67026,7 +67060,7 @@
 					]
 				},
 				{
-					"id": 2812,
+					"id": 2814,
 					"name": "DocsAttrs",
 					"kind": 256,
 					"kindString": "Interface",
@@ -67035,7 +67069,7 @@
 					},
 					"children": [
 						{
-							"id": 2816,
+							"id": 2818,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67056,12 +67090,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2816,
+								"id": 2818,
 								"name": "WidgetAttrs.class"
 							}
 						},
 						{
-							"id": 2814,
+							"id": 2816,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67082,7 +67116,7 @@
 							}
 						},
 						{
-							"id": 2815,
+							"id": 2817,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67103,12 +67137,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2815,
+								"id": 2817,
 								"name": "WidgetAttrs.id"
 							}
 						},
 						{
-							"id": 2813,
+							"id": 2815,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67129,7 +67163,7 @@
 							}
 						},
 						{
-							"id": 2817,
+							"id": 2819,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67150,7 +67184,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2817,
+								"id": 2819,
 								"name": "WidgetAttrs.style"
 							}
 						}
@@ -67160,11 +67194,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								2818,
 								2816,
-								2814,
+								2817,
 								2815,
-								2813,
-								2817
+								2819
 							]
 						}
 					],
@@ -67184,30 +67218,30 @@
 					"extendedBy": [
 						{
 							"type": "reference",
-							"id": 2818,
+							"id": 2820,
 							"name": "DocsMenuAttrs"
 						},
 						{
 							"type": "reference",
-							"id": 2839,
+							"id": 2841,
 							"name": "LeftNavAttrs"
 						},
 						{
 							"type": "reference",
-							"id": 2875,
+							"id": 2877,
 							"name": "MainDetailAttrs"
 						}
 					]
 				},
 				{
-					"id": 2818,
+					"id": 2820,
 					"name": "DocsMenuAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2823,
+							"id": 2825,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67227,12 +67261,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2816,
+								"id": 2818,
 								"name": "WidgetAttrs.class"
 							}
 						},
 						{
-							"id": 2819,
+							"id": 2821,
 							"name": "docSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67250,7 +67284,7 @@
 							}
 						},
 						{
-							"id": 2821,
+							"id": 2823,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67270,12 +67304,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2814,
+								"id": 2816,
 								"name": "DocsAttrs.field"
 							}
 						},
 						{
-							"id": 2822,
+							"id": 2824,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67295,12 +67329,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2815,
+								"id": 2817,
 								"name": "WidgetAttrs.id"
 							}
 						},
 						{
-							"id": 2820,
+							"id": 2822,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67320,12 +67354,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2813,
+								"id": 2815,
 								"name": "DocsAttrs.lib"
 							}
 						},
 						{
-							"id": 2824,
+							"id": 2826,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67345,7 +67379,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2817,
+								"id": 2819,
 								"name": "WidgetAttrs.style"
 							}
 						}
@@ -67355,12 +67389,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2823,
-								2819,
+								2825,
 								2821,
+								2823,
+								2824,
 								2822,
-								2820,
-								2824
+								2826
 							]
 						}
 					],
@@ -67374,13 +67408,13 @@
 					"extendedTypes": [
 						{
 							"type": "reference",
-							"id": 2812,
+							"id": 2814,
 							"name": "DocsAttrs"
 						}
 					]
 				},
 				{
-					"id": 2837,
+					"id": 2839,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -67406,22 +67440,22 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2825
+						2827
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2812,
-						2818
+						2814,
+						2820
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2837
+						2839
 					]
 				}
 			],
@@ -67434,7 +67468,7 @@
 			]
 		},
 		{
-			"id": 2838,
+			"id": 2840,
 			"name": "\"view/LeftNav\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -67447,7 +67481,7 @@
 			},
 			"children": [
 				{
-					"id": 2845,
+					"id": 2847,
 					"name": "LeftNav",
 					"kind": 128,
 					"kindString": "Class",
@@ -67459,7 +67493,7 @@
 					},
 					"children": [
 						{
-							"id": 2849,
+							"id": 2851,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67469,7 +67503,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2850,
+									"id": 2852,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67478,7 +67512,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2851,
+											"id": 2853,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -67493,7 +67527,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2852,
+											"id": 2854,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67506,7 +67540,7 @@
 											}
 										},
 										{
-											"id": 2853,
+											"id": 2855,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67534,7 +67568,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2832,
+										"id": 2834,
 										"name": "Widget.attrs"
 									}
 								}
@@ -67548,12 +67582,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2832,
+								"id": 2834,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2846,
+							"id": 2848,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67562,7 +67596,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2847,
+									"id": 2849,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67571,7 +67605,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2848,
+											"id": 2850,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67583,7 +67617,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2839,
+														"id": 2841,
 														"name": "LeftNavAttrs"
 													},
 													{
@@ -67633,8 +67667,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2849,
-								2846
+								2851,
+								2848
 							]
 						}
 					],
@@ -67665,14 +67699,14 @@
 					]
 				},
 				{
-					"id": 2839,
+					"id": 2841,
 					"name": "LeftNavAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2843,
+							"id": 2845,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67692,12 +67726,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2816,
+								"id": 2818,
 								"name": "WidgetAttrs.class"
 							}
 						},
 						{
-							"id": 2841,
+							"id": 2843,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67717,12 +67751,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2814,
+								"id": 2816,
 								"name": "DocsAttrs.field"
 							}
 						},
 						{
-							"id": 2842,
+							"id": 2844,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67742,12 +67776,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2815,
+								"id": 2817,
 								"name": "WidgetAttrs.id"
 							}
 						},
 						{
-							"id": 2840,
+							"id": 2842,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67767,12 +67801,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2813,
+								"id": 2815,
 								"name": "DocsAttrs.lib"
 							}
 						},
 						{
-							"id": 2844,
+							"id": 2846,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -67792,7 +67826,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2817,
+								"id": 2819,
 								"name": "WidgetAttrs.style"
 							}
 						}
@@ -67802,11 +67836,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								2845,
 								2843,
-								2841,
+								2844,
 								2842,
-								2840,
-								2844
+								2846
 							]
 						}
 					],
@@ -67820,13 +67854,13 @@
 					"extendedTypes": [
 						{
 							"type": "reference",
-							"id": 2812,
+							"id": 2814,
 							"name": "DocsAttrs"
 						}
 					]
 				},
 				{
-					"id": 2854,
+					"id": 2856,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -67847,21 +67881,21 @@
 					"defaultValue": "new Log('LeftNav')"
 				},
 				{
-					"id": 2859,
+					"id": 2861,
 					"name": "collectModules",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2860,
+							"id": 2862,
 							"name": "collectModules",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2861,
+									"id": 2863,
 									"name": "docSet",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67888,14 +67922,14 @@
 					]
 				},
 				{
-					"id": 2865,
+					"id": 2867,
 					"name": "entries",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2866,
+							"id": 2868,
 							"name": "entries",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -67905,7 +67939,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2867,
+									"id": 2869,
 									"name": "group",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67919,7 +67953,7 @@
 									}
 								},
 								{
-									"id": 2868,
+									"id": 2870,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67933,7 +67967,7 @@
 									}
 								},
 								{
-									"id": 2869,
+									"id": 2871,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -67981,14 +68015,14 @@
 					]
 				},
 				{
-					"id": 2870,
+					"id": 2872,
 					"name": "exportAscending",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2871,
+							"id": 2873,
 							"name": "exportAscending",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -67998,7 +68032,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2872,
+									"id": 2874,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68009,7 +68043,7 @@
 									}
 								},
 								{
-									"id": 2873,
+									"id": 2875,
 									"name": "b",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68044,14 +68078,14 @@
 					]
 				},
 				{
-					"id": 2855,
+					"id": 2857,
 					"name": "navList",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2856,
+							"id": 2858,
 							"name": "navList",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68061,7 +68095,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2857,
+									"id": 2859,
 									"name": "docSet",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68073,7 +68107,7 @@
 									}
 								},
 								{
-									"id": 2858,
+									"id": 2860,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68099,7 +68133,7 @@
 					]
 				},
 				{
-					"id": 2862,
+					"id": 2864,
 					"name": "ignoreModules",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -68111,7 +68145,7 @@
 					},
 					"children": [
 						{
-							"id": 2864,
+							"id": 2866,
 							"name": "index",
 							"kind": 32,
 							"kindString": "Variable",
@@ -68130,7 +68164,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 2863,
+							"id": 2865,
 							"name": "overview",
 							"kind": 32,
 							"kindString": "Variable",
@@ -68154,8 +68188,8 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								2864,
-								2863
+								2866,
+								2865
 							]
 						}
 					],
@@ -68177,38 +68211,38 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2845
+						2847
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2839
+						2841
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2854
+						2856
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2859,
-						2865,
-						2870,
-						2855
+						2861,
+						2867,
+						2872,
+						2857
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						2862
+						2864
 					]
 				}
 			],
@@ -68221,7 +68255,7 @@
 			]
 		},
 		{
-			"id": 2874,
+			"id": 2876,
 			"name": "\"view/MainDetail\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -68234,7 +68268,7 @@
 			},
 			"children": [
 				{
-					"id": 2881,
+					"id": 2883,
 					"name": "MainDetail",
 					"kind": 128,
 					"kindString": "Class",
@@ -68246,7 +68280,7 @@
 					},
 					"children": [
 						{
-							"id": 2885,
+							"id": 2887,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -68256,7 +68290,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2886,
+									"id": 2888,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -68265,7 +68299,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2887,
+											"id": 2889,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -68280,7 +68314,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2888,
+											"id": 2890,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68293,7 +68327,7 @@
 											}
 										},
 										{
-											"id": 2889,
+											"id": 2891,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68321,7 +68355,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2832,
+										"id": 2834,
 										"name": "Widget.attrs"
 									}
 								}
@@ -68335,12 +68369,12 @@
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2832,
+								"id": 2834,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2882,
+							"id": 2884,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -68349,7 +68383,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2883,
+									"id": 2885,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -68358,7 +68392,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2884,
+											"id": 2886,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68370,7 +68404,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2875,
+														"id": 2877,
 														"name": "MainDetailAttrs"
 													},
 													{
@@ -68420,8 +68454,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2885,
-								2882
+								2887,
+								2884
 							]
 						}
 					],
@@ -68452,14 +68486,14 @@
 					]
 				},
 				{
-					"id": 2875,
+					"id": 2877,
 					"name": "MainDetailAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2879,
+							"id": 2881,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68479,12 +68513,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2816,
+								"id": 2818,
 								"name": "WidgetAttrs.class"
 							}
 						},
 						{
-							"id": 2877,
+							"id": 2879,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68504,12 +68538,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2814,
+								"id": 2816,
 								"name": "DocsAttrs.field"
 							}
 						},
 						{
-							"id": 2878,
+							"id": 2880,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68529,12 +68563,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2815,
+								"id": 2817,
 								"name": "WidgetAttrs.id"
 							}
 						},
 						{
-							"id": 2876,
+							"id": 2878,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68554,12 +68588,12 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2813,
+								"id": 2815,
 								"name": "DocsAttrs.lib"
 							}
 						},
 						{
-							"id": 2880,
+							"id": 2882,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68579,7 +68613,7 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2817,
+								"id": 2819,
 								"name": "WidgetAttrs.style"
 							}
 						}
@@ -68589,11 +68623,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								2881,
 								2879,
-								2877,
+								2880,
 								2878,
-								2876,
-								2880
+								2882
 							]
 						}
 					],
@@ -68607,13 +68641,13 @@
 					"extendedTypes": [
 						{
 							"type": "reference",
-							"id": 2812,
+							"id": 2814,
 							"name": "DocsAttrs"
 						}
 					]
 				},
 				{
-					"id": 2890,
+					"id": 2892,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -68634,14 +68668,14 @@
 					"defaultValue": "new Log('MainDetail')"
 				},
 				{
-					"id": 2891,
+					"id": 2893,
 					"name": "getOverview",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2892,
+							"id": 2894,
 							"name": "getOverview",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68652,7 +68686,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2893,
+									"id": 2895,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68679,14 +68713,14 @@
 					]
 				},
 				{
-					"id": 2894,
+					"id": 2896,
 					"name": "itemDoc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2895,
+							"id": 2897,
 							"name": "itemDoc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68696,7 +68730,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2896,
+									"id": 2898,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68750,29 +68784,29 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2881
+						2883
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2875
+						2877
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2890
+						2892
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2891,
-						2894
+						2893,
+						2896
 					]
 				}
 			],
@@ -69978,7 +70012,7 @@
 			]
 		},
 		{
-			"id": 2903,
+			"id": 2905,
 			"name": "\"view/Tooltip\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -69988,7 +70022,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/Tooltip.ts",
 			"children": [
 				{
-					"id": 2904,
+					"id": 2906,
 					"name": "Vnode",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -70016,7 +70050,7 @@
 					}
 				},
 				{
-					"id": 2905,
+					"id": 2907,
 					"name": "tooltip",
 					"kind": 64,
 					"kindString": "Function",
@@ -70025,7 +70059,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2906,
+							"id": 2908,
 							"name": "tooltip",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -70034,7 +70068,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2907,
+									"id": 2909,
 									"name": "text",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70047,7 +70081,7 @@
 									}
 								},
 								{
-									"id": 2908,
+									"id": 2910,
 									"name": "tip",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70060,7 +70094,7 @@
 									}
 								},
 								{
-									"id": 2909,
+									"id": 2911,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70093,14 +70127,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						2904
+						2906
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2905
+						2907
 					]
 				}
 			],
@@ -70122,16 +70156,16 @@
 				1,
 				475,
 				107,
-				2897,
+				2899,
 				229,
-				2901,
+				2903,
 				96,
-				2902,
-				2811,
-				2838,
-				2874,
+				2904,
+				2813,
+				2840,
+				2876,
 				32,
-				2903
+				2905
 			]
 		}
 	]

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.75% </span>
+                <span class="strong">62.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/80</span>
+                <span class='fraction'>51/81</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.63% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/19</span>
+                <span class='fraction'>10/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.66% </span>
+                <span class="strong">67.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>46/67</span>
+                <span class='fraction'>46/68</span>
             </div>
         
             
@@ -228,7 +228,9 @@
 <a name='L169'></a><a href='#L169'>169</a>
 <a name='L170'></a><a href='#L170'>170</a>
 <a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -277,6 +279,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42786x</span>
@@ -448,6 +452,8 @@ export class DocSets {
     private static nodeList = &lt;{[id:string]: DocsNode}&gt;{};
     
     public static nodeCount = 0;
+&nbsp;
+    public <span class="fstat-no" title="function not covered" >static </span>getTitle() { <span class="cstat-no" title="statement not covered" >return DocSets.gTitle; </span>}
     
     public static addNode(mdl:json, node:DocsNode) {
         const id = mdl.id;

@@ -47,6 +47,8 @@ export class DocSets {
     private static nodeList = <{[id:string]: DocsNode}>{};
     
     public static nodeCount = 0;
+
+    public static getTitle() { return DocSets.gTitle; }
     
     public static addNode(mdl:json, node:DocsNode) {
         const id = mdl.id;
