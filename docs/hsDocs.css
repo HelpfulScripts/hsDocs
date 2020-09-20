@@ -731,20 +731,11 @@ input.hsedit_label {
 }
 .hsdocs_type_default {
   font-size: 90%;
+  background-color: #88f;
+  color: #fff;
   padding: 2px;
   border-radius: 4px;
   font-weight: bold;
-}
-.hsdocs_type {
-  border-radius: 4px;
-  background-color: #ddb;
-  padding: 2px 4px;
-  margin-left: 2px;
-  margin-right: 2px;
-  font-size: 0.9em;
-}
-.hsdocs_type :link {
-  text-decoration: none;
 }
 .hsdocs_type_instrinct {
   font-style: italic;
@@ -1216,8 +1207,16 @@ code {
   border-radius: 4px;
   padding: 3px;
 }
-.hsdocs_type_reference span {
-  padding-left: 5px;
+.hsdocs_type_reference {
+  border-radius: 4px;
+  background-color: #ddb;
+  padding: 2px 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 0.9em;
+}
+.hsdocs_type_reference :link {
+  text-decoration: none;
 }
 .hsdocs_type_reflection span.named_param {
   background-color: #fff;

@@ -7,7 +7,7 @@ import { Log }                  from 'hsutil'; const log = new Log('Types');
 import { DocsNode }             from './Nodes';
 import m from "mithril";
 // type Vnode = m.Vnode<any, any>;
-import { libLinkByPath }        from './NodesDisplay';
+import { libLinkByPath, mSignature } from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
 
 interface DocsGenericType {
@@ -165,7 +165,7 @@ class DocsReflectionType extends DocsType {
     constructor(mdlType:DocsGenericType, node:DocsNode) {
         super(mdlType, node);
         if (mdlType.declaration) {
-            const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.fullPath);
+            const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.lib, node.fullPath);
         }
     }
 
@@ -176,7 +176,9 @@ class DocsReflectionType extends DocsType {
                 '{ ', 
                 ...dec.children
                     .map((c:any, i:number) =>
-                        m('span.named_param',[i>0?', ':'', c.name, ':', c.type?c.type.mType() : '??type??',c.defaultValue?'='+c.defaultValue : ''])
+                        m('span.named_param',[i>0?', ':'', c.name, ':', 
+                            c.type?c.type.mType() : '??type??',
+                            c.defaultValue?'='+c.defaultValue : ''])
                     ),
                 ' }']
             : dec.getSignatures()? [

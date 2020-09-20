@@ -207,7 +207,7 @@ function mItemName(node:DocsNode):Vnode {
         m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLinkByPath(node.lib, node.fullPath, node.getName()));
 }
 
-function mSignature(node:DocsNode):Vnode {
+export function mSignature(node:DocsNode):Vnode {
     const optional = (flags:any) => (flags && flags.isOptional)? '.hsdocs_flag_optional' : '';
     const params = (s:DocsParamaterized):Vnode[] => 
         !s.parameters? undefined : s.parameters.map((p:DocsParameter, i:number) => { 

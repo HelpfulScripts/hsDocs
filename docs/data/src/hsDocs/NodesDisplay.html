@@ -230,7 +230,7 @@
 <p id=207 class="line"><span>&nbsp;207</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(<quote>'span.hsdocs_itemname'</quote>,&nbsp;!node.fullPath?&nbsp;node.getName()&nbsp;:&nbsp;libLinkByPath(node.lib,&nbsp;node.fullPath,&nbsp;node.getName()));</p>
 <p id=208 class="line"><span>&nbsp;208</span>}</p>
 <p id=209 class="line"><span>&nbsp;209</span></p>
-<p id=210 class="line"><span>&nbsp;210</span>function&nbsp;mSignature(node:DocsNode):Vnode&nbsp;{</p>
+<p id=210 class="line"><span>&nbsp;210</span>export&nbsp;function&nbsp;mSignature(node:DocsNode):Vnode&nbsp;{</p>
 <p id=211 class="line"><span>&nbsp;211</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;optional&nbsp;=&nbsp;(flags:any)&nbsp;=>&nbsp;(flags&nbsp;&&&nbsp;flags.isOptional)?&nbsp;<quote>'.hsdocs_flag_optional'</quote>&nbsp;:&nbsp;<quote>''</quote>;</p>
 <p id=212 class="line"><span>&nbsp;212</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;params&nbsp;=&nbsp;(s:DocsParamaterized):Vnode[]&nbsp;=>&nbsp;</p>
 <p id=213 class="line"><span>&nbsp;213</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!s.parameters?&nbsp;undefined&nbsp;:&nbsp;s.parameters.map((p:DocsParameter,&nbsp;i:number)&nbsp;=>&nbsp;{&nbsp;</p>

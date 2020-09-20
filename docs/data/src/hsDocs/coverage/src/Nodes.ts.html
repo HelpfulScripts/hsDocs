@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.58% </span>
+                <span class="strong">90.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>250/276</span>
+                <span class='fraction'>251/278</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.08% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>38/52</span>
+                <span class='fraction'>39/54</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.55% </span>
+                <span class="strong">90.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>230/254</span>
+                <span class='fraction'>231/256</span>
             </div>
         
             
@@ -647,7 +647,10 @@
 <a name='L588'></a><a href='#L588'>588</a>
 <a name='L589'></a><a href='#L589'>589</a>
 <a name='L590'></a><a href='#L590'>590</a>
-<a name='L591'></a><a href='#L591'>591</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a>
+<a name='L593'></a><a href='#L593'>593</a>
+<a name='L594'></a><a href='#L594'>594</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -709,6 +712,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42786x</span>
+<span class="cline-any cline-yes">42786x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42786x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42786x</span>
@@ -761,14 +767,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">86x</span>
-<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-yes">78x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1299,6 +1305,9 @@ export class DocsNode {
     
     static traverse(mdl:json, lib:string, path=''):DocsNode {
         mdl.lib = lib;
+<span class="missing-if-branch" title="if path not taken" >I</span>if (lib.indexOf('.')&gt;0) {
+<span class="cstat-no" title="statement not covered" >log.info('');</span>
+}
         mdl.name = mdl.name.replace(/["'](.+)["']|(.+)/g, "$1$2")   // remove quotes 
                            .replace(/\//g, '.');                    // "a/b" =&gt; "a.b" /
         mdl.fullPath = (path==='')? mdl.name : `${path}.${mdl.name}`;

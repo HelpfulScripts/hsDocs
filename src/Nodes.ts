@@ -60,6 +60,9 @@ export class DocsNode {
     
     static traverse(mdl:json, lib:string, path=''):DocsNode {
         mdl.lib = lib;
+if (lib.indexOf('.')>0) {
+log.info('');
+}
         mdl.name = mdl.name.replace(/["'](.+)["']|(.+)/g, "$1$2")   // remove quotes 
                            .replace(/\//g, '.');                    // "a/b" => "a.b" /
         mdl.fullPath = (path==='')? mdl.name : `${path}.${mdl.name}`;

@@ -298,7 +298,9 @@
 <a name='L239'></a><a href='#L239'>239</a>
 <a name='L240'></a><a href='#L240'>240</a>
 <a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -477,6 +479,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -548,7 +552,7 @@ import { Log }                  from 'hsutil'; const log = new Log('Types');
 import { DocsNode }             from './Nodes';
 import m from "mithril";
 // type Vnode = m.Vnode&lt;any, any&gt;;
-import { libLinkByPath }        from './NodesDisplay';
+import { libLinkByPath, mSignature } from './NodesDisplay';
 import { titleArr }             from './NodesDisplay';
 &nbsp;
 interface DocsGenericType {
@@ -706,7 +710,7 @@ class DocsReflectionType extends DocsType {
     constructor(mdlType:DocsGenericType, node:DocsNode) {
         super(mdlType, node);
         <span class="missing-if-branch" title="else path not taken" >E</span>if (mdlType.declaration) {
-            const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.fullPath);
+            const decl:DocsNode = this.declaration = DocsNode.traverse(mdlType.declaration, node.lib, node.fullPath);
         }
     }
 &nbsp;
@@ -717,7 +721,9 @@ class DocsReflectionType extends DocsType {
                 '{ ', 
                 ...dec.children
                     .map(<span class="fstat-no" title="function not covered" >(c</span>:any, i:number) =&gt;
-<span class="cstat-no" title="statement not covered" >                        m('span.named_param',[i&gt;0?', ':'', c.name, ':', c.type?c.type.mType() : '??type??',c.defaultValue?'='+c.defaultValue : ''])</span>
+<span class="cstat-no" title="statement not covered" >                        m('span.named_param',[i&gt;0?', ':'', c.name, ':', </span>
+                            c.type?c.type.mType() : '??type??',
+                            c.defaultValue?'='+c.defaultValue : ''])
                     ),
                 ' }']
             : dec.getSignatures()? [
