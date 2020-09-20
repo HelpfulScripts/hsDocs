@@ -53,6 +53,9 @@ export class DocSets {
     public static addNode(mdl:json, node:DocsNode) {
         const id = mdl.id;
         const lib =  mdl.lib;
+        // if (DocSets.nodeList[`${lib}.${id}`] && DocSets.nodeList[mdl.fullPath]) {
+        //     log.warn(`repeated assignment of ${lib}.${id} = ${mdl.fullPath}`);
+        // }
         DocSets.nodeList[`${lib}.${id}`] = node;
         DocSets.nodeList[mdl.fullPath] = node;
 // if (mdl.fullPath.indexOf('hsDocs.DocSets')>=0) { log.info(`added node ${id}: '${mdl.fullPath}'`); }
@@ -69,14 +72,18 @@ export class DocSets {
         const lib = content.name;
         const i = DocSets.docs.indexOf(file);
         DocSets.libs[i] = lib;
-        const root = DocsNode.traverse(content, lib);
-        log.debug(`traversed '${root.fullPath}'`);
+        try {
+            const root = DocsNode.traverse(content, lib);
+            log.debug(()=>`traversed '${root.fullPath}'`);
+        } catch(e) {
+            log.error(`traversing ${lib}: ${e}`);
+        }
     }
     
     public static getNode(id:string|number, lib:string):DocsNode {
         const key = ((typeof id === 'number') || (parseInt(''+id, 10)>=0))? `${lib}.${id}` : id;
         log.debug(() => `getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
-        if (DocSets.nodeList.length && !DocSets.nodeList[key]) { 
+        if (!DocSets.nodeList[key]) { 
             log.warn(`did not find node for key '${key}' (id=${id}, lib=${lib})`); 
             log.warn(new Error().stack);
         }

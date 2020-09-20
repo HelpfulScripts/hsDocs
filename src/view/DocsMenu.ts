@@ -39,8 +39,11 @@ export class DocsMenu extends Widget {
             // m.redraw();
         }
         catch(e) {
-            log.error(e.message);
-            log.error(e);
+            // some weird error in `m.request`
+            if (e.message !== 'this is undefined') {
+                log.error(e.message);
+                log.error(e);
+            }
         };
 
     }

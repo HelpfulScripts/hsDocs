@@ -135,10 +135,16 @@ class DocsTypeParameterType extends DocsType {
         this.constraint = mdlType.constraint;
     }
     mType() {
-        return !this.constraint? 
-            m('span.hsdocs_type_typeparameter', this.name) : this.constraint.name? 
-            m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
-          : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
+        // examples:
+        // constrained:   http://127.0.0.1/hsDocs/#!/api/hsWidget/hsWidget.Button.Button.attrs
+        // unconstrained: http://127.0.0.1/hsDocs/#!/api/hsUtil/1
+        return this.name? m('span.hsdocs_type_typeparameter', this.name) :
+               this.constraint?.name? m('span.hsdocs_type_typeparameter', `${this.constraint.name}`) :
+               m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
+        // return !this.constraint? 
+        //     m('span.hsdocs_type_typeparameter', this.name) : this.constraint.name? 
+        //     m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
+        //   : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
     }
 }
 
@@ -185,7 +191,9 @@ class DocsTupleType extends DocsType {
     elements = <DocsType[]>[];
     constructor(mdlType:DocsGenericType, node:DocsNode) {
         super(mdlType, node);
-        mdlType.elements.forEach((e:DocsType) => this.elements.push(DocsType.makeType(e, node)));
+        if (mdlType.elements) {
+            mdlType.elements.forEach((e:DocsType) => this.elements.push(DocsType.makeType(e, node)));
+        }
     }
     mType() {
         return m('span.hsdocs_type_tuple', [

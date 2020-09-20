@@ -108,7 +108,7 @@
 <p id=85 class="line"><span>&nbsp;&nbsp;85</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map(f&nbsp;=>&nbsp;{</p>
 <p id=86 class="line"><span>&nbsp;&nbsp;86</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;flag&nbsp;=&nbsp;knownFlags[f];</p>
 <p id=87 class="line"><span>&nbsp;&nbsp;87</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(flag&nbsp;===&nbsp;undefined)&nbsp;{&nbsp;flag&nbsp;=&nbsp;`unknown-${f}`;&nbsp;}</p>
-<p id=88 class="line"><span>&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(`span.hsdocs_flag_${flag}`,&nbsp;flag);</p>
+<p id=88 class="line"><span>&nbsp;&nbsp;88</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;flag===<quote>''</quote>?&nbsp;undefined&nbsp;:&nbsp;m(`span.hsdocs_flag_${flag}`,&nbsp;flag);</p>
 <p id=89 class="line"><span>&nbsp;&nbsp;89</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
 <p id=90 class="line"><span>&nbsp;&nbsp;90</span>}</p>
 <p id=91 class="line"><span>&nbsp;&nbsp;91</span></p></code></div>

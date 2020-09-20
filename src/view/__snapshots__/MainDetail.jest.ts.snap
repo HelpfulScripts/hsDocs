@@ -42,9 +42,6 @@ exports[`MainDetail hsDocs.DocSets matches snapshot 1`] = `
       >
         : 
       </span>
-      <span>
-        
-      </span>
       <span
         class="hsdocs_extensionOf"
       />
@@ -114,7 +111,9 @@ Processing occurs in these steps:
           <div
             class="hsdocs_child"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               >
@@ -145,9 +144,6 @@ Processing occurs in these steps:
                 class="hsdocs_title_colon"
               >
                 : 
-              </span>
-              <span>
-                
               </span>
               <span
                 class="hsdocs_extensionOf"
@@ -197,7 +193,9 @@ provides access to elements of each docset.
           <div
             class="hsdocs_child"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               >
@@ -229,15 +227,13 @@ provides access to elements of each docset.
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_intrinsic"
                 >
-                  <span
-                    class="hsdocs_type_intrinsic"
-                  >
-                    any
-                  </span>
+                  any
                 </span>
               </span>
               <span
@@ -257,15 +253,6 @@ provides access to elements of each docset.
                 </a>
               </span>
             </span>
-            <div
-              class="hsdocs_sig_comment"
-            >
-              <span
-                class="hsdocs_type_intrinsic"
-              >
-                any
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -284,7 +271,9 @@ provides access to elements of each docset.
           <div
             class="hsdocs_child"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               >
@@ -312,15 +301,13 @@ provides access to elements of each docset.
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_intrinsic"
                 >
-                  <span
-                    class="hsdocs_type_intrinsic"
-                  >
-                    string
-                  </span>
+                  string
                 </span>
                 <span
                   class="hsdocs_type_default"
@@ -345,15 +332,6 @@ provides access to elements of each docset.
                 </a>
               </span>
             </span>
-            <div
-              class="hsdocs_sig_comment"
-            >
-              <span
-                class="hsdocs_type_intrinsic"
-              >
-                string
-              </span>
-            </div>
           </div>
         </div>
         <div
@@ -363,7 +341,9 @@ provides access to elements of each docset.
           <div
             class="hsdocs_child"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               >
@@ -391,15 +371,13 @@ provides access to elements of each docset.
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_intrinsic"
                 >
-                  <span
-                    class="hsdocs_type_intrinsic"
-                  >
-                    string
-                  </span>
+                  string
                 </span>
                 <span
                   class="hsdocs_type_default"
@@ -449,7 +427,9 @@ provides access to elements of each docset.
           <div
             class="hsdocs_child"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               >
@@ -477,15 +457,13 @@ provides access to elements of each docset.
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_reference"
                 >
-                  <span
-                    class="hsdocs_type_reference"
-                  >
-                    Log
-                  </span>
+                  Log
                 </span>
                 <span
                   class="hsdocs_type_default"
@@ -510,15 +488,6 @@ provides access to elements of each docset.
                 </a>
               </span>
             </span>
-            <div
-              class="hsdocs_sig_comment"
-            >
-              <span
-                class="hsdocs_type_reference"
-              >
-                Log
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -537,7 +506,9 @@ provides access to elements of each docset.
           <div
             class="hsdocs_child hsdocs_signature"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               />
@@ -582,15 +553,13 @@ provides access to elements of each docset.
                     >
                       :
                     </span>
-                    <span>
+                    <span
+                      class="hsdocs_type"
+                    >
                       <span
-                        class="hsdocs_type"
+                        class="hsdocs_type_intrinsic"
                       >
-                        <span
-                          class="hsdocs_type_intrinsic"
-                        >
-                          string
-                        </span>
+                        string
                       </span>
                     </span>
                   </span>
@@ -614,15 +583,13 @@ provides access to elements of each docset.
                     >
                       :
                     </span>
-                    <span>
+                    <span
+                      class="hsdocs_type"
+                    >
                       <span
-                        class="hsdocs_type"
+                        class="hsdocs_type_intrinsic"
                       >
-                        <span
-                          class="hsdocs_type_intrinsic"
-                        >
-                          string
-                        </span>
+                        string
                       </span>
                     </span>
                   </span>
@@ -638,22 +605,20 @@ provides access to elements of each docset.
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_reference"
                 >
+                  Promise
+                  &lt;
                   <span
-                    class="hsdocs_type_reference"
+                    class="hsdocs_type_intrinsic"
                   >
-                    Promise
-                    &lt;
-                    <span
-                      class="hsdocs_type_intrinsic"
-                    >
-                      void
-                    </span>
-                    &gt;
+                    void
                   </span>
+                  &gt;
                 </span>
               </span>
               <span
@@ -669,7 +634,7 @@ provides access to elements of each docset.
               </span>
             </span>
             <div
-              class="hsdocs_childsig_comment"
+              class="hsdocs_sig_comment"
             >
               <span
                 class="hsdocs_comment_desc"
@@ -759,7 +724,9 @@ Once received, the docset is registered in
           <div
             class="hsdocs_child hsdocs_signature"
           >
-            <span>
+            <span
+              class="hsdocs_title_arr"
+            >
               <span
                 class="hsdocs_flags"
               />
@@ -804,15 +771,13 @@ Once received, the docset is registered in
                     >
                       :
                     </span>
-                    <span>
+                    <span
+                      class="hsdocs_type"
+                    >
                       <span
-                        class="hsdocs_type"
+                        class="hsdocs_type_intrinsic"
                       >
-                        <span
-                          class="hsdocs_type_intrinsic"
-                        >
-                          string
-                        </span>
+                        string
                       </span>
                     </span>
                   </span>
@@ -836,15 +801,13 @@ Once received, the docset is registered in
                     >
                       :
                     </span>
-                    <span>
+                    <span
+                      class="hsdocs_type"
+                    >
                       <span
-                        class="hsdocs_type"
+                        class="hsdocs_type_reference"
                       >
-                        <span
-                          class="hsdocs_type_reference"
-                        >
-                          RegExp
-                        </span>
+                        RegExp
                       </span>
                     </span>
                   </span>
@@ -860,21 +823,19 @@ Once received, the docset is registered in
               >
                 : 
               </span>
-              <span>
+              <span
+                class="hsdocs_type"
+              >
                 <span
-                  class="hsdocs_type"
+                  class="hsdocs_type_array"
                 >
+                  Array&lt;
                   <span
-                    class="hsdocs_type_array"
+                    class="hsdocs_type_intrinsic"
                   >
-                    Array&lt;
-                    <span
-                      class="hsdocs_type_intrinsic"
-                    >
-                      string
-                    </span>
-                    &gt;
+                    string
                   </span>
+                  &gt;
                 </span>
               </span>
               <span
@@ -890,20 +851,8 @@ Once received, the docset is registered in
               </span>
             </span>
             <div
-              class="hsdocs_childsig_comment"
-            >
-              <span
-                class="hsdocs_type_array"
-              >
-                Array&lt;
-                <span
-                  class="hsdocs_type_intrinsic"
-                >
-                  string
-                </span>
-                &gt;
-              </span>
-            </div>
+              class="hsdocs_sig_comment"
+            />
           </div>
         </div>
       </div>

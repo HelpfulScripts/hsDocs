@@ -49,7 +49,13 @@ export class DocsNode {
     private static makeNode(mdl:json):DocsNode {
         const node = groupKindTitle[mdl.kind];
         if (!node) { log.warn(`unknown kind ${mdl.kindString} (${mdl.kind}) for ${mdl.fullPath}`); }
-        else { return new node(mdl); }
+        else { 
+            // if (DocSets.getNode(mdl.id, mdl.lib)) {
+            //     log.warn(`node ${mdl.lib}.${mdl.id} already exists`);
+            // // } else {
+            // }
+            return new node(mdl); 
+        }
     }
     
     static traverse(mdl:json, lib:string, path=''):DocsNode {
@@ -412,7 +418,7 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
         this.typeParameter = null;
         this.kindPrint = '';
     }
-    public getName() { return this.name === '__call'? '()' : this.name; }
+    // public getName() { return this.name === '__call'? '()' : this.name; }
 }
 
 export class DocsIndexSignature extends DocsBaseNode {

@@ -44,8 +44,10 @@ export function libLinkByPath(lib:string, path:string, name:string, css=''):Vnod
 
 function libLinkByID(lib:string, id:string|number, name:string, css=''):m.Child {
 // log.info(`libLinkByID ${lib} ${id} ${name}`);
-    const path = (DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';
-    return libLinkByPath(lib, path, name, css);
+    // const path = (DocSets.getNode(id, lib)||{fullPath:''}).fullPath||'';
+    // return libLinkByPath(lib, path, name, css);
+    const path = DocSets.getNode(id, lib);
+    return path? libLinkByPath(lib, path.fullPath||'', name, css) : name;
 }
 
 export class DocsComment {
@@ -144,7 +146,7 @@ export function title(node:DocsNode, parent?:DocsNode):Vnode {
  * when the node has a `signature` array. 
  */
 export function titleArr(node:DocsNode, parent?:DocsNode):m.Vnode<any, any> {
-    return m('span', titleElements(node, parent)); 
+    return m('span.hsdocs_title_arr', titleElements(node, parent)); 
 }
 
 function titleElements(node:DocsNode, parent?:DocsNode) {
@@ -199,7 +201,10 @@ function mKindString(node:DocsNode):m.Child {
 }
 
 function mItemName(node:DocsNode):Vnode {
-    return m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLinkByPath(node.lib, node.fullPath, node.getName()));
+    let name = node.getName();
+    return name === '__call'?       // avoid `__call` 'onclick: export __call (newStateIndex:number, newState:string): void'
+        m('span.hsdocs_itemname', '') :
+        m('span.hsdocs_itemname', !node.fullPath? node.getName() : libLinkByPath(node.lib, node.fullPath, node.getName()));
 }
 
 function mSignature(node:DocsNode):Vnode {
@@ -231,7 +236,10 @@ function mSignature(node:DocsNode):Vnode {
             result.push(m('span.hsdocs_itemname', ')'));
         }
         if (s.typeParameter) {
-            result.unshift(...s.typeParameter.map(t => m('span',` <${t.name}>`)));
+            result.unshift(...s.typeParameter.map(t => {
+                const type = (t.type)? ` extends ${t.type.name}` : '';
+                return m('span',` <${t.name}${type}>`);
+            }))
         }
         return result;
     };
@@ -246,19 +254,17 @@ function mType(node:DocsNode):Vnode {
 
     if (!node.type) { 
         if (node.getSignatures()) { 
-            return m('span', node.getSignatures().map(s => mType(s)));
+            return m('span.hsdocs_type', node.getSignatures().map(s => mType(s)));
         } else {
-            return defVal || m('span', ''); 
+            // return defVal || m('span.hsdocs_type', ''); 
+            return defVal; 
         }
     }
     if (!node.type.mType) {
         log.warn(``);
     }
     try {
-        return m('span', [
-            m('span.hsdocs_type', node.type.mType()),
-            defVal
-         ]);
+        return m('span.hsdocs_type', [node.type.mType(), defVal]);
      } catch(e) { 
          log.error(`mType: ${e}`); 
          log.error(e.trace); 
@@ -278,7 +284,7 @@ function mExtensionOf(node:DocsNode):Vnode {
 }
 
 function mImplementationOf(node:DocsNode):Vnode {
-    return !node.implementedTypes? undefined : m('span.hsdocs_implementationsOf', [
+    return !node.implementedTypes? undefined : m('span.hsdocs_implementationOf', [
         m('span.hsdocs_implements', 'implements'),
         m('span', node.implementedTypes.map((t:DocsNamedType, i:number) =>
             m('span.hsdocs_implementationType', [ (i>0)?', ' : '', libLinkByID(node.lib, t.id, t.name)])
@@ -366,8 +372,8 @@ export function commentLong(node:DocsNode):m.Children {
         ];
     } else if (node.getSignatures()) {
         return node.getSignatures().map(s => m('', commentLong(s)));
-    } else if (node.type) {
-        return node.type.mType();
+    // } else if (node.type) {      // type already reported in signature
+    //     return node.type.mType();
     }
     return content.length? content : undefined;    
 }
@@ -450,7 +456,7 @@ function member(nodes:DocsNode[], title:string, access:Access): m.Child {
 function itemChild(node:DocsNode): m.Children {
     if (node.getSignatures()) {
         return node.getSignatures().map((s:DocsNode) => 
-            m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), m('.hsdocs_childsig_comment', s.commentLong())])
+            m('.hsdocs_child.hsdocs_signature', [titleArr(s, node), m('.hsdocs_sig_comment', s.commentLong())])
         );
     } else if (node.commentLong()) {
         return m('.hsdocs_child', [titleArr(node), m('.hsdocs_sig_comment',node.commentLong())]);

@@ -85,6 +85,6 @@ export function flagsDisplay(mdl:DocsNode):Vnode[] {
         .map(f => {
             let flag = knownFlags[f];
             if (flag === undefined) { flag = `unknown-${f}`; }
-            return m(`span.hsdocs_flag_${flag}`, flag);
+            return flag===''? undefined : m(`span.hsdocs_flag_${flag}`, flag);
         });
 }

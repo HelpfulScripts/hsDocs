@@ -706,7 +706,7 @@ input.hsedit_label {
 .hsdocs_extensionType {
   padding: 10px 0.4em 2px 0em;
 }
-.hsdocs_implementationsOf {
+.hsdocs_implementationOf {
   font-size: 80%;
   padding: 10px 0.4em 2px 0em;
   font-style: italic;
@@ -810,11 +810,12 @@ input.hsedit_label {
 .hsdocs_comment_params .hsdocs_params_title {
   line-height: 1.2em;
   color: #044;
-  padding: 5px 0 5px 5px;
+  padding: 5px 0 0 5px;
   font-size: 1.1em;
   font-weight: bold;
 }
 .hsdocs_comment_param {
+  padding-left: 10px;
   margin-top: 5px;
   color: #044;
   line-height: 1.2em;
