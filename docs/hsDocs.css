@@ -734,6 +734,7 @@ input.hsedit_label {
   background-color: #88f;
   color: #fff;
   padding: 2px;
+  margin-left: 5px;
   border-radius: 4px;
   font-weight: bold;
 }

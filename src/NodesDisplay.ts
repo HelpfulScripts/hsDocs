@@ -249,22 +249,22 @@ export function mSignature(node:DocsNode):Vnode {
 }
 
 function mType(node:DocsNode):Vnode {
-    const defVal = !node.defaultValue? undefined : m('span.hsdocs_type_default', 
-    ` = ${node.defaultValue.replace(/{/gi, '{ ').replace(/}/gi, ' }')}`);
+    let defVal = node.defaultValue?.replace(/{/gi, '{ ').replace(/}/gi, ' }').replace(/\n/gi, '<br>');
+    const defNode = !defVal? undefined : m('span.hsdocs_type_default', m.trust(` = ${defVal}&nbsp;`));
 
     if (!node.type) { 
         if (node.getSignatures()) { 
             return m('span.hsdocs_type', node.getSignatures().map(s => mType(s)));
         } else {
             // return defVal || m('span.hsdocs_type', ''); 
-            return defVal; 
+            return defNode; 
         }
     }
     if (!node.type.mType) {
         log.warn(``);
     }
     try {
-        return m('span.hsdocs_type', [node.type.mType(), defVal]);
+        return m('span.hsdocs_type', [node.type.mType(), defNode]);
      } catch(e) { 
          log.error(`mType: ${e}`); 
          log.error(e.trace); 
