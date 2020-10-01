@@ -312,7 +312,7 @@ provides access to elements of each docset.
                 <span
                   class="hsdocs_type_default"
                 >
-                   = "./data/"
+                   = "./data/" 
                 </span>
               </span>
               <span
@@ -382,7 +382,7 @@ provides access to elements of each docset.
                 <span
                   class="hsdocs_type_default"
                 >
-                   = "./data/index.json"
+                   = "./data/index.json" 
                 </span>
               </span>
               <span
@@ -468,7 +468,7 @@ provides access to elements of each docset.
                 <span
                   class="hsdocs_type_default"
                 >
-                   =  new Log('DocsSets')
+                   =  new Log('DocsSets') 
                 </span>
               </span>
               <span

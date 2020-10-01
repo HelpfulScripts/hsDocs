@@ -67000,7 +67000,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"name": "MenuAttrs"
+												"name": "RadioButtonsAttrs"
 											},
 											{
 												"type": "intrinsic",

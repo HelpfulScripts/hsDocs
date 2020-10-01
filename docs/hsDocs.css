@@ -246,8 +246,10 @@
 }
 input.hsedit_label {
   border: 0;
+  margin: 0;
   font-family: inherit;
   font-size: inherit;
+  padding-bottom: 8px;
 }
 .hsedit_label.default {
   color: #aaa;
@@ -414,10 +416,13 @@ input.hsedit_label {
   filter: brightness(95%);
 }
 .hs_button.hs_pressed {
-  filter: brightness(105%);
+  filter: brightness(80%);
 }
 .hs_button span {
   vertical-align: middle;
+}
+.hs_disabled {
+  filter: grayscale(1) contrast(50%) brightness(120%);
 }
 .hs_onoff_button.state0 {
   background-color: #dde;
@@ -505,18 +510,25 @@ input.hsedit_label {
   display: grid;
   box-sizing: border-box;
   place-items: stretch;
+  place-content: stretch;
+  min-height: 0;
+  /* NEW */
+  min-width: 0;
+  /* NEW; needed for Firefox */
 }
 .hs_grid.hs_grid_col {
   grid-auto-flow: column;
+  width: 100%;
 }
 .hs_grid.hs_grid_row {
   grid-auto-flow: row;
+  height: 100%;
 }
-.hs_grid_auto_col {
-  grid-auto-flow: column;
-}
-.hs_grid_auto_row {
-  grid-auto-flow: row;
+.hs_grid > * {
+  min-height: 0;
+  /* NEW */
+  min-width: 0;
+  /* NEW; needed for Firefox */
 }
 /*# sourceMappingURL=hsWidget.css.map */
 .hsdocs_title {
@@ -1314,6 +1326,9 @@ body {
 }
 a.hsdocs_title {
   text-decoration: none;
+}
+.hsdocs {
+  height: 100vh;
 }
 th {
   text-align: left;
