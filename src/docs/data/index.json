@@ -1,7 +1,7 @@
 {
     "docs": [
         "hsDocs.json",
-        "https://helpfulscripts.github.io/hsLayout/data/hsLayout.json"
+        "https://helpfulscripts.github.io/hsWidget/data/hsWidget.json"
     ], 
     "title": "HS Libraries"
 }
