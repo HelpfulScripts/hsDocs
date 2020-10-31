@@ -236,6 +236,7 @@ export function mSignature(node:DocsNode):Vnode {
             result.push(m('span.hsdocs_itemname', ')'));
         }
         if (s.typeParameter) {
+            if (!result) { result = [];}
             result.unshift(...s.typeParameter.map(t => {
                 const type = (t.type)? ` extends ${t.type.name}` : '';
                 return m('span',` <${t.name}${type}>`);
@@ -249,7 +250,12 @@ export function mSignature(node:DocsNode):Vnode {
 }
 
 function mType(node:DocsNode):Vnode {
-    let defVal = node.defaultValue?.replace(/{/gi, '{ ').replace(/}/gi, ' }').replace(/\n/gi, '<br>');
+    let defVal = node.defaultValue
+       ?.replace(/{/gi, '{ ')       // add a space after opening braces
+        .replace(/}/gi, ' }')       // add a space before closing braces
+        .replace(/\</gi, '&lt;')    // replace < with escape code
+        .replace(/\>/gi, '&gt;')    // replace > with escape code
+        .replace(/\n/gi, '<br>');   // replace line feed with <br>
     const defNode = !defVal? undefined : m('span.hsdocs_type_default', m.trust(` = ${defVal}&nbsp;`));
 
     if (!node.type) { 
