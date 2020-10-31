@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.42% </span>
+                <span class="strong">76.53% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>48/62</span>
+                <span class='fraction'>75/98</span>
             </div>
         
             
@@ -504,14 +504,14 @@ function entries(group:any, mdl:any, field:string) {
      * processes one entry within a group, e.g. one variable, function, or class.
      */
     function entry(mod:any) { 
-        const selected = (field===''+mod.id || field===mod.fullPath)? <span class="branch-0 cbranch-no" title="branch not covered" >'.hs_left_nav-selected' </span>: '';
-        const exported = (mod.flags &amp;&amp; mod.flags.isExported);
-        const isStatic = (mod.flags &amp;&amp; mod.flags.isStatic);
+        const selected = (field===''+mod<span class="branch-0 cbranch-no" title="branch not covered" >?.i</span>d || field===mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>ullPath)? <span class="branch-0 cbranch-no" title="branch not covered" >'.hs_left_nav-selected' </span>: '';
+        const exported = (mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>lags &amp;&amp; mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>lags.isExported);
+        const isStatic = (mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>lags &amp;&amp; mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>lags.isStatic);
         const css = `.hs_left_nav_entry_link ${selected} ${exported?'.hs_left_nav-exported' : ''}`;
         return (!exported &amp;&amp; group.title==='Variables')? '' :   // ignore local module variables
             m('.hs_left_nav_entry', [
                 isStatic? <span class="branch-0 cbranch-no" title="branch not covered" >'static':</span> '',
-                libLinkByPath(mod.lib, mod.fullPath, mod.name, css)
+                libLinkByPath(mod<span class="branch-0 cbranch-no" title="branch not covered" >?.l</span>ib, mod<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>ullPath, mod<span class="branch-0 cbranch-no" title="branch not covered" >?.n</span>ame, css)
             ]);
     }
 &nbsp;

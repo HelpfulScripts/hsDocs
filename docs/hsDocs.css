@@ -1235,6 +1235,10 @@ code {
   margin-left: 3px;
   margin-right: 3px;
 }
+.hsdocs_type_predicate {
+  font-weight: bold;
+  color: red;
+}
 .example {
   margin-top: 30px;
   width: 100%;

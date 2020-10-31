@@ -41,10 +41,10 @@
 <p id=18 class="line"><span>&nbsp;&nbsp;18</span><comment>&nbsp;*&nbsp;Creates&nbsp;Documentation&nbsp;on&nbsp;the&nbsp;main&nbsp;panel&nbsp;</comment></p>
 <p id=19 class="line"><span>&nbsp;&nbsp;19</span><comment>&nbsp;*/</comment></p>
 <p id=20 class="line"><span>&nbsp;&nbsp;20</span>export&nbsp;class&nbsp;MainDetail&nbsp;extends&nbsp;Widget&nbsp;{&nbsp;</p>
-<p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;view(node:Vnode<MainDetailAttrs,&nbsp;this>)&nbsp;{</p>
+<p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;view(node:Vnode&lt;MainDetailAttrs,&nbsp;this&gt;)&nbsp;{</p>
 <p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;lib&nbsp;=&nbsp;node.attrs.lib;</p>
 <p id=23 class="line"><span>&nbsp;&nbsp;23</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;field&nbsp;=&nbsp;node.attrs.field;</p>
-<p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;DocSets.nodeCount<=0?&nbsp;<quote>'...'</quote>&nbsp;:&nbsp;&nbsp;(</p>
+<p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;DocSets.nodeCount&lt;=0?&nbsp;<quote>'...'</quote>&nbsp;:&nbsp;&nbsp;(</p>
 <p id=25 class="line"><span>&nbsp;&nbsp;25</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(field===<quote>'0'</quote>&nbsp;||&nbsp;field===<quote>''</quote>&nbsp;||&nbsp;field===<quote>'overview'</quote>)?&nbsp;</p>
 <p id=26 class="line"><span>&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getOverview(DocSets.getNode(`${lib}.overview`,&nbsp;lib))&nbsp;</p>
 <p id=27 class="line"><span>&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;itemDoc(DocSets.getNode(field,&nbsp;lib))</p>

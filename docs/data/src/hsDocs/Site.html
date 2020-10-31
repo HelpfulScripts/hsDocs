@@ -27,7 +27,7 @@
 <p id=4 class="line"><span>&nbsp;&nbsp;&nbsp;4</span></p>
 <p id=5 class="line"><span>&nbsp;&nbsp;&nbsp;5</span><comment>/**&nbsp;*/</comment></p>
 <p id=6 class="line"><span>&nbsp;&nbsp;&nbsp;6</span>import&nbsp;m&nbsp;from&nbsp;<quote>"mithril"</quote>;</p>
-<p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>type&nbsp;Vnode&nbsp;=&nbsp;m.Vnode<any,&nbsp;any>;</p>
+<p id=7 class="line"><span>&nbsp;&nbsp;&nbsp;7</span>type&nbsp;Vnode&nbsp;=&nbsp;m.Vnode&lt;any,&nbsp;any&gt;;</p>
 <p id=8 class="line"><span>&nbsp;&nbsp;&nbsp;8</span>import&nbsp;{&nbsp;Grid&nbsp;}&nbsp;&nbsp;from&nbsp;<quote>'hswidget'</quote>;</p>
 <p id=9 class="line"><span>&nbsp;&nbsp;&nbsp;9</span>import&nbsp;{&nbsp;DocsMenu&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./view/DocsMenu'</quote>;</p>
 <p id=10 class="line"><span>&nbsp;&nbsp;10</span>import&nbsp;{&nbsp;LeftNav&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;<quote>'./view/LeftNav'</quote>;</p>
@@ -37,14 +37,14 @@
 <p id=14 class="line"><span>&nbsp;&nbsp;14</span></p>
 <p id=15 class="line"><span>&nbsp;&nbsp;15</span>export&nbsp;function&nbsp;init()&nbsp;{</p>
 <p id=16 class="line"><span>&nbsp;&nbsp;16</span>&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;Router&nbsp;=&nbsp;{</p>
-<p id=17 class="line"><span>&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view:&nbsp;(node:&nbsp;Vnode)&nbsp;=>&nbsp;{</p>
+<p id=17 class="line"><span>&nbsp;&nbsp;17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;view:&nbsp;(node:&nbsp;Vnode)&nbsp;=&gt;&nbsp;{</p>
 <p id=18 class="line"><span>&nbsp;&nbsp;18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;lib&nbsp;=&nbsp;node.attrs.lib;</p>
 <p id=19 class="line"><span>&nbsp;&nbsp;19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;field&nbsp;=&nbsp;node.attrs.field;</p>
 <p id=20 class="line"><span>&nbsp;&nbsp;20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;m(Grid,&nbsp;{&nbsp;class:<quote>'hsdocs'</quote>,&nbsp;columns:&nbsp;<quote>'200px&nbsp;auto'</quote>&nbsp;},&nbsp;[</p>
 <p id=21 class="line"><span>&nbsp;&nbsp;21</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(Grid,&nbsp;{&nbsp;class:<quote>'hsdocs_leftpane'</quote>,&nbsp;rows:&nbsp;<quote>'35px&nbsp;auto&nbsp;14px'</quote>&nbsp;},&nbsp;[</p>
 <p id=22 class="line"><span>&nbsp;&nbsp;22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(<quote>'.hsdocs_title'</quote>,&nbsp;{&nbsp;href:<quote>'https:<comment>//github.com/HelpfulScripts/hsDocs'</quote>},&nbsp;DocSets.getTitle()&nbsp;||&nbsp;<quote>'hsDocs'</quote>),&nbsp;</comment></p>
 <p id=23 class="line"><span>&nbsp;&nbsp;23</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(LeftNav,&nbsp;{&nbsp;lib:lib,&nbsp;field:field}),</p>
-<p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(<quote>'.hsdocs_footer'</quote>,&nbsp;m.trust(`powered&nbsp;by&nbsp;<i><a&nbsp;href=<quote>'https:<comment>//github.com/HelpfulScripts/hsDocs'</quote>&nbsp;target=<quote>'_blank'</quote>>hsDocs</a></i>`))</comment></p>
+<p id=24 class="line"><span>&nbsp;&nbsp;24</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(<quote>'.hsdocs_footer'</quote>,&nbsp;m.trust(`powered&nbsp;by&nbsp;&lt;i&gt;&lt;a&nbsp;href=<quote>'https:<comment>//github.com/HelpfulScripts/hsDocs'</quote>&nbsp;target=<quote>'_blank'</quote>&gt;hsDocs&lt;/a&gt;&lt;/i&gt;`))</comment></p>
 <p id=25 class="line"><span>&nbsp;&nbsp;25</span><comment></comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]),</p>
 <p id=26 class="line"><span>&nbsp;&nbsp;26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(Grid,&nbsp;{&nbsp;class:<quote>'hsdocs_left'</quote>,&nbsp;rows:&nbsp;<quote>'35px&nbsp;auto'</quote>},&nbsp;[</p>
 <p id=27 class="line"><span>&nbsp;&nbsp;27</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m(DocsMenu,&nbsp;&nbsp;&nbsp;{&nbsp;docSet:<quote>'./data/index.json'</quote>,&nbsp;lib:lib,&nbsp;field:field}),</p>
