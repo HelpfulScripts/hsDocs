@@ -21,6 +21,7 @@ export interface Flags {
     isRest?: boolean;
     isConstructorProperty?: boolean;
     isExternal?: boolean;
+    isReadonly?: boolean;
 }
 
 
@@ -71,6 +72,7 @@ export function flagsDisplay(mdl:DocsNode):Vnode[] {
         isAbstract:     'abstract',
         isExternal:     'external',
         isRest:         'rest',
+        isReadonly:     'readonly',
         isConstructorProperty: 'constructor-property'
     };
     const flags:string[] = Object.keys(mdl.flags);
