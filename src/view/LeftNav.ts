@@ -121,14 +121,14 @@ function entries(group:any, mdl:any, field:string) {
      * processes one entry within a group, e.g. one variable, function, or class.
      */
     function entry(mod:any) { 
-        const selected = (field===''+mod.id || field===mod.fullPath)? '.hs_left_nav-selected' : '';
-        const exported = (mod.flags && mod.flags.isExported);
-        const isStatic = (mod.flags && mod.flags.isStatic);
+        const selected = (field===''+mod?.id || field===mod?.fullPath)? '.hs_left_nav-selected' : '';
+        const exported = (mod?.flags && mod?.flags.isExported);
+        const isStatic = (mod?.flags && mod?.flags.isStatic);
         const css = `.hs_left_nav_entry_link ${selected} ${exported?'.hs_left_nav-exported' : ''}`;
         return (!exported && group.title==='Variables')? '' :   // ignore local module variables
             m('.hs_left_nav_entry', [
                 isStatic? 'static': '',
-                libLinkByPath(mod.lib, mod.fullPath, mod.name, css)
+                libLinkByPath(mod?.lib, mod?.fullPath, mod?.name, css)
             ]);
     }
 
