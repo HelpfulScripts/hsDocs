@@ -85,7 +85,7 @@ export class DocSets {
         log.debug(() => `getNode id=${id}, lib=${lib} -> ${key}, typeof=${typeof id}, parseInt=${parseInt(''+id, 10)}`);
         if (!DocSets.nodeList[key]) { 
             log.warn(`did not find node for key '${key}' (id=${id}, lib=${lib})`); 
-            log.warn(new Error().stack);
+            // log.warn(new Error().stack);
         }
         return DocSets.nodeList[key]; 
     }
