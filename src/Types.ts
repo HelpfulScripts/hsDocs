@@ -32,6 +32,15 @@ export interface DocsConstrainedType extends DocsNamedType {
     };
 }
 
+export interface DocsTargetType {
+    type: "array",
+    elementType: {
+        type: string;
+        name: string;
+        constraint: DocsReferenceIdType;
+    }
+}
+
 
 //------------- Type class definitions -------------------------------------------
 
@@ -49,6 +58,7 @@ export class DocsType implements DocsReferenceIdType {
             case 'typeOperator': return new DocsTypeOperatorType(mdlType, node);
             case 'query': return new DocsQueryType(mdlType, node);
             case 'indexedAccess': return new DocsIndexedAccessType(mdlType, node);
+            case 'predicate': return new DocsPredicateType(mdlType, node);
             case 'unknown': return new DocsUnknownType(mdlType, node);
             default: log.warn(`unknown type '${mdlType.type}' for ${node.fullPath} in makeType`);
         }
@@ -103,7 +113,7 @@ class DocsUnknownType extends DocsType {
         super(mdlType, node);
         this.name = mdlType.name;
     }
-    mType() { return m('span.hsdocs_type_unknown', 'unknown type'); }
+    mType() { return this.name? m(`span`, this.name) : m('span.hsdocs_type_unknown', 'unknown type'); }
 }
 
 class DocsStringLiteralType extends DocsType {
@@ -141,10 +151,6 @@ class DocsTypeParameterType extends DocsType {
         return this.name? m('span.hsdocs_type_typeparameter', this.name) :
                this.constraint?.name? m('span.hsdocs_type_typeparameter', `${this.constraint.name}`) :
                m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
-        // return !this.constraint? 
-        //     m('span.hsdocs_type_typeparameter', this.name) : this.constraint.name? 
-        //     m('span.hsdocs_type_typeparameter', `${this.constraint.name}`)
-        //   : m('span.hsdocs_type_typeparameter', `${this.constraint.operator} ${this.constraint.target.name}`);
     }
 }
 
@@ -239,5 +245,16 @@ class DocsIndexedAccessType extends DocsType {
     }
     mType() {
         return m('span.hsdocs_type_indexed_access', this.objectType.name);
+    }
+}
+
+class DocsPredicateType extends DocsType {
+    targetType: DocsTargetType;
+    constructor(mdlType:DocsGenericType, node:DocsNode) {
+        super(mdlType, node);
+        this.targetType  = mdlType.targetType;
+    }
+    mType() {
+        return m('span.hsdocs_type_predicate', `predicate type '${this.targetType.elementType.name}'`);
     }
 }
