@@ -38,6 +38,7 @@
         "plugins/markdown"
     ],
     "devDependencies": {
+        "@types/d3": "^5.7.2",
         "@types/jest": "26.x.x",
         "@types/mithril": "2.0.x",
         "@types/node": "14.0.x",
@@ -64,6 +65,7 @@
     },
     "dependencies": {
         "@mdi/js": "5.3.x",
+        "d3": "^5.16.0",
         "hsutil": "3.x.x",
         "hswidget": "2.x.x",
         "mithril": "^2.0.4",
