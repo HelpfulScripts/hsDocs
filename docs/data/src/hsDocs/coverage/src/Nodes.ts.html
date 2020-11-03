@@ -656,9 +656,7 @@
 <a name='L597'></a><a href='#L597'>597</a>
 <a name='L598'></a><a href='#L598'>598</a>
 <a name='L599'></a><a href='#L599'>599</a>
-<a name='L600'></a><a href='#L600'>600</a>
-<a name='L601'></a><a href='#L601'>601</a>
-<a name='L602'></a><a href='#L602'>602</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L600'></a><a href='#L600'>600</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -769,7 +767,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">42786x</span>
 <span class="cline-any cline-yes">42786x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1091,7 +1088,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">104x</span>
@@ -1271,7 +1267,7 @@ type Vnode = m.Vnode&lt;any, any&gt;;
 import { Log }                  from 'hsutil'; const log = new Log('Nodes');
 import { json }                 from './DocSets';
 import { DocSets }              from './DocSets';
-import { DocsTargetType, DocsType }             from './Types';
+import { DocsType }             from './Types';
 import { DocsNamedType }        from './Types';
 import { DocsReferenceIdType }  from './Types';
 import { Flags }                from './Flags';
@@ -1371,7 +1367,6 @@ export class DocsNode {
     public    TYPE = &lt;string[]&gt;[];
     public    type: DocsType = optional;
     public    typeParameter:DocsTypeParameter[];
-    // public    predicate: DocsTargetType;
 &nbsp;
     constructor(mdl:json) {
         this.id = mdl.id;
@@ -1688,7 +1683,6 @@ class DocsCallSignature extends DocsBaseNode implements DocsParamaterized {
         this.overwrites = optional;
         this.typeParameter = optional;
         this.kindPrint = '';
-        // this.predicate = optional;
     }
     // public getName() { return this.name === '__call'? '()' : this.name; }
 }
