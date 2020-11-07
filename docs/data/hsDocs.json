@@ -59895,39 +59895,8 @@
 							"type": {
 								"type": "array",
 								"elementType": {
-									"type": "union",
-									"types": [
-										{
-											"type": "intrinsic",
-											"name": "string"
-										},
-										{
-											"type": "intrinsic",
-											"name": "number"
-										},
-										{
-											"type": "intrinsic",
-											"name": "false"
-										},
-										{
-											"type": "intrinsic",
-											"name": "true"
-										},
-										{
-											"type": "reference",
-											"typeArguments": [
-												{
-													"type": "intrinsic",
-													"name": "any"
-												},
-												{
-													"type": "intrinsic",
-													"name": "any"
-												}
-											],
-											"name": "Vnode"
-										}
-									]
+									"type": "reference",
+									"name": "Child"
 								}
 							}
 						}
