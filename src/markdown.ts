@@ -1,4 +1,4 @@
-const showdown  = require('showdown');
+import showdown from 'showdown';
 import m from "mithril";
 
 /**

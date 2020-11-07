@@ -65,7 +65,7 @@
     },
     "dependencies": {
         "@mdi/js": "^5.x.x",
-        "d3": "^5.16.0",
+        "d3": "6.x.x",
         "hsutil": "3.x.x",
         "hswidget": "2.x.x",
         "mithril": "^2.0.4",
