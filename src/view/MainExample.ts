@@ -359,6 +359,7 @@ async function loadScript(sym:string, path:string) {
     const load = (p:string) => m.request({ method: "GET", url: p, extract: (xhr:any) => xhr });
 
     const paths = [
+        `node_modules/${path.toLowerCase()}/bin/${path}.js`,
         `node_modules/${path.toLowerCase()}/${path}.js`,
         `https://helpfulscripts.github.io/${path}/${path}.js`
     ];

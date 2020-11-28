@@ -140,6 +140,12 @@
   height: auto;
   font-size: 14px;
 }
+.hs_popup.idle {
+  border: none;
+  width: 0;
+  height: 0;
+  top: -100px;
+}
 .hs_form {
   position: relative;
 }
@@ -236,8 +242,7 @@
   background-color: #88f;
 }
 .hsedit_label {
-  padding-top: 0px;
-  padding-left: 7px;
+  padding: 0 0 0 7px;
   line-height: 1.5em;
   display: inline-block;
   width: 100%;
@@ -245,11 +250,14 @@
   border-top-width: 2px;
 }
 input.hsedit_label {
+  width: 80%;
   border: 0;
   margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   font-family: inherit;
   font-size: inherit;
-  padding-bottom: 8px;
+  padding-top: 5px;
 }
 .hsedit_label.default {
   color: #aaa;
@@ -298,6 +306,9 @@ input.hsedit_label {
   padding-left: 7px;
   line-height: 1.5em;
   width: 100%;
+}
+textarea.hs_edit_textarea {
+  width: 80%;
 }
 .hs_edit_textarea p {
   margin: 0;

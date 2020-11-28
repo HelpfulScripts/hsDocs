@@ -59982,7 +59982,7 @@
 			]
 		},
 		{
-			"id": 2927,
+			"id": 2943,
 			"name": "\"Site\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -59995,7 +59995,7 @@
 			},
 			"children": [
 				{
-					"id": 2928,
+					"id": 2944,
 					"name": "Vnode",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -60023,7 +60023,7 @@
 					}
 				},
 				{
-					"id": 2929,
+					"id": 2945,
 					"name": "init",
 					"kind": 64,
 					"kindString": "Function",
@@ -60032,7 +60032,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2930,
+							"id": 2946,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -60059,14 +60059,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						2928
+						2944
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2929
+						2945
 					]
 				}
 			],
@@ -67303,7 +67303,7 @@
 			]
 		},
 		{
-			"id": 2931,
+			"id": 2947,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -67501,7 +67501,7 @@
 			]
 		},
 		{
-			"id": 2932,
+			"id": 2948,
 			"name": "\"overview\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -67532,7 +67532,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/DocsMenu.ts",
 			"children": [
 				{
-					"id": 2855,
+					"id": 2863,
 					"name": "DocsMenu",
 					"kind": 128,
 					"kindString": "Class",
@@ -67544,7 +67544,7 @@
 					},
 					"children": [
 						{
-							"id": 2862,
+							"id": 2870,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67554,7 +67554,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2863,
+									"id": 2871,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67563,7 +67563,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2864,
+											"id": 2872,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -67578,7 +67578,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2865,
+											"id": 2873,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67591,7 +67591,7 @@
 											}
 										},
 										{
-											"id": 2866,
+											"id": 2874,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67619,7 +67619,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2862,
+										"id": 2870,
 										"name": "Widget.attrs"
 									}
 								}
@@ -67627,18 +67627,18 @@
 							"sources": [
 								{
 									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
-									"line": 12,
+									"line": 13,
 									"character": 19
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2862,
+								"id": 2870,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2856,
+							"id": 2864,
 							"name": "load",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67647,7 +67647,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2857,
+									"id": 2865,
 									"name": "load",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67656,7 +67656,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2858,
+											"id": 2866,
 											"name": "docSet",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67690,7 +67690,7 @@
 							]
 						},
 						{
-							"id": 2859,
+							"id": 2867,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -67699,7 +67699,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2860,
+									"id": 2868,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -67708,7 +67708,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2861,
+											"id": 2869,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -67720,7 +67720,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2848,
+														"id": 2852,
 														"name": "DocsMenuAttrs"
 													},
 													{
@@ -67770,9 +67770,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2862,
-								2856,
-								2859
+								2870,
+								2864,
+								2867
 							]
 						}
 					],
@@ -67906,6 +67906,78 @@
 							}
 						},
 						{
+							"id": 2848,
+							"name": "onclick",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true,
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+									"line": 8,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 2849,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {
+										"isExported": true
+									},
+									"signatures": [
+										{
+											"id": 2850,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {
+												"isExported": true
+											},
+											"parameters": [
+												{
+													"id": 2851,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isExported": true,
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+											"line": 8,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 2848,
+								"name": "WidgetAttrs.onclick"
+							}
+						},
+						{
 							"id": 2847,
 							"name": "style",
 							"kind": 1024,
@@ -67941,6 +68013,7 @@
 								2844,
 								2845,
 								2843,
+								2848,
 								2847
 							]
 						}
@@ -67961,30 +68034,30 @@
 					"extendedBy": [
 						{
 							"type": "reference",
-							"id": 2848,
+							"id": 2852,
 							"name": "DocsMenuAttrs"
 						},
 						{
 							"type": "reference",
-							"id": 2869,
+							"id": 2877,
 							"name": "LeftNavAttrs"
 						},
 						{
 							"type": "reference",
-							"id": 2905,
+							"id": 2917,
 							"name": "MainDetailAttrs"
 						}
 					]
 				},
 				{
-					"id": 2848,
+					"id": 2852,
 					"name": "DocsMenuAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2853,
+							"id": 2857,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68009,7 +68082,7 @@
 							}
 						},
 						{
-							"id": 2849,
+							"id": 2853,
 							"name": "docSet",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68027,7 +68100,7 @@
 							}
 						},
 						{
-							"id": 2851,
+							"id": 2855,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68052,7 +68125,7 @@
 							}
 						},
 						{
-							"id": 2852,
+							"id": 2856,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68077,7 +68150,7 @@
 							}
 						},
 						{
-							"id": 2850,
+							"id": 2854,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68102,7 +68175,73 @@
 							}
 						},
 						{
-							"id": 2854,
+							"id": 2859,
+							"name": "onclick",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+									"line": 8,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 2860,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 2861,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 2862,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+											"line": 8,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 2848,
+								"name": "WidgetAttrs.onclick"
+							}
+						},
+						{
+							"id": 2858,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68132,12 +68271,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								2857,
 								2853,
-								2849,
-								2851,
-								2852,
-								2850,
-								2854
+								2855,
+								2856,
+								2854,
+								2859,
+								2858
 							]
 						}
 					],
@@ -68157,7 +68297,7 @@
 					]
 				},
 				{
-					"id": 2867,
+					"id": 2875,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -68183,7 +68323,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2855
+						2863
 					]
 				},
 				{
@@ -68191,14 +68331,14 @@
 					"kind": 256,
 					"children": [
 						2842,
-						2848
+						2852
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2867
+						2875
 					]
 				}
 			],
@@ -68211,7 +68351,7 @@
 			]
 		},
 		{
-			"id": 2868,
+			"id": 2876,
 			"name": "\"view/LeftNav\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -68224,7 +68364,7 @@
 			},
 			"children": [
 				{
-					"id": 2875,
+					"id": 2887,
 					"name": "LeftNav",
 					"kind": 128,
 					"kindString": "Class",
@@ -68236,7 +68376,7 @@
 					},
 					"children": [
 						{
-							"id": 2879,
+							"id": 2891,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -68246,7 +68386,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2880,
+									"id": 2892,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -68255,7 +68395,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2881,
+											"id": 2893,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -68270,7 +68410,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2882,
+											"id": 2894,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68283,7 +68423,7 @@
 											}
 										},
 										{
-											"id": 2883,
+											"id": 2895,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68311,7 +68451,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2862,
+										"id": 2870,
 										"name": "Widget.attrs"
 									}
 								}
@@ -68319,18 +68459,18 @@
 							"sources": [
 								{
 									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
-									"line": 12,
+									"line": 13,
 									"character": 19
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2862,
+								"id": 2870,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2876,
+							"id": 2888,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -68339,7 +68479,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2877,
+									"id": 2889,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -68348,7 +68488,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2878,
+											"id": 2890,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -68360,7 +68500,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2869,
+														"id": 2877,
 														"name": "LeftNavAttrs"
 													},
 													{
@@ -68410,8 +68550,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2879,
-								2876
+								2891,
+								2888
 							]
 						}
 					],
@@ -68442,14 +68582,14 @@
 					]
 				},
 				{
-					"id": 2869,
+					"id": 2877,
 					"name": "LeftNavAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2873,
+							"id": 2881,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68474,7 +68614,7 @@
 							}
 						},
 						{
-							"id": 2871,
+							"id": 2879,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68499,7 +68639,7 @@
 							}
 						},
 						{
-							"id": 2872,
+							"id": 2880,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68524,7 +68664,7 @@
 							}
 						},
 						{
-							"id": 2870,
+							"id": 2878,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68549,7 +68689,73 @@
 							}
 						},
 						{
-							"id": 2874,
+							"id": 2883,
+							"name": "onclick",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+									"line": 8,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 2884,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 2885,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 2886,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+											"line": 8,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 2848,
+								"name": "WidgetAttrs.onclick"
+							}
+						},
+						{
+							"id": 2882,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -68579,11 +68785,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2873,
-								2871,
-								2872,
-								2870,
-								2874
+								2881,
+								2879,
+								2880,
+								2878,
+								2883,
+								2882
 							]
 						}
 					],
@@ -68603,7 +68810,7 @@
 					]
 				},
 				{
-					"id": 2884,
+					"id": 2896,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -68624,21 +68831,21 @@
 					"defaultValue": "new Log('LeftNav')"
 				},
 				{
-					"id": 2889,
+					"id": 2901,
 					"name": "collectModules",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2890,
+							"id": 2902,
 							"name": "collectModules",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 2891,
+									"id": 2903,
 									"name": "docSet",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68665,14 +68872,14 @@
 					]
 				},
 				{
-					"id": 2895,
+					"id": 2907,
 					"name": "entries",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2896,
+							"id": 2908,
 							"name": "entries",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68682,7 +68889,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2897,
+									"id": 2909,
 									"name": "group",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68696,7 +68903,7 @@
 									}
 								},
 								{
-									"id": 2898,
+									"id": 2910,
 									"name": "mdl",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68710,7 +68917,7 @@
 									}
 								},
 								{
-									"id": 2899,
+									"id": 2911,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68758,14 +68965,14 @@
 					]
 				},
 				{
-					"id": 2900,
+					"id": 2912,
 					"name": "exportAscending",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2901,
+							"id": 2913,
 							"name": "exportAscending",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68775,7 +68982,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2902,
+									"id": 2914,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68786,7 +68993,7 @@
 									}
 								},
 								{
-									"id": 2903,
+									"id": 2915,
 									"name": "b",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68821,14 +69028,14 @@
 					]
 				},
 				{
-					"id": 2885,
+					"id": 2897,
 					"name": "navList",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2886,
+							"id": 2898,
 							"name": "navList",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68838,7 +69045,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2887,
+									"id": 2899,
 									"name": "docSet",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68850,7 +69057,7 @@
 									}
 								},
 								{
-									"id": 2888,
+									"id": 2900,
 									"name": "field",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -68876,7 +69083,7 @@
 					]
 				},
 				{
-					"id": 2892,
+					"id": 2904,
 					"name": "ignoreModules",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -68888,7 +69095,7 @@
 					},
 					"children": [
 						{
-							"id": 2894,
+							"id": 2906,
 							"name": "index",
 							"kind": 32,
 							"kindString": "Variable",
@@ -68907,7 +69114,7 @@
 							"defaultValue": "true"
 						},
 						{
-							"id": 2893,
+							"id": 2905,
 							"name": "overview",
 							"kind": 32,
 							"kindString": "Variable",
@@ -68931,8 +69138,8 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								2894,
-								2893
+								2906,
+								2905
 							]
 						}
 					],
@@ -68954,38 +69161,38 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2875
+						2887
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2869
+						2877
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2884
+						2896
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2889,
-						2895,
-						2900,
-						2885
+						2901,
+						2907,
+						2912,
+						2897
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						2892
+						2904
 					]
 				}
 			],
@@ -68998,7 +69205,7 @@
 			]
 		},
 		{
-			"id": 2904,
+			"id": 2916,
 			"name": "\"view/MainDetail\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -69011,7 +69218,7 @@
 			},
 			"children": [
 				{
-					"id": 2911,
+					"id": 2927,
 					"name": "MainDetail",
 					"kind": 128,
 					"kindString": "Class",
@@ -69023,7 +69230,7 @@
 					},
 					"children": [
 						{
-							"id": 2915,
+							"id": 2931,
 							"name": "attrs",
 							"kind": 2048,
 							"kindString": "Method",
@@ -69033,7 +69240,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2916,
+									"id": 2932,
 									"name": "attrs",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -69042,7 +69249,7 @@
 									},
 									"typeParameter": [
 										{
-											"id": 2917,
+											"id": 2933,
 											"name": "A",
 											"kind": 131072,
 											"kindString": "Type parameter",
@@ -69057,7 +69264,7 @@
 									],
 									"parameters": [
 										{
-											"id": 2918,
+											"id": 2934,
 											"name": "a",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -69070,7 +69277,7 @@
 											}
 										},
 										{
-											"id": 2919,
+											"id": 2935,
 											"name": "others",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -69098,7 +69305,7 @@
 									},
 									"inheritedFrom": {
 										"type": "reference",
-										"id": 2862,
+										"id": 2870,
 										"name": "Widget.attrs"
 									}
 								}
@@ -69106,18 +69313,18 @@
 							"sources": [
 								{
 									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
-									"line": 12,
+									"line": 13,
 									"character": 19
 								}
 							],
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 2862,
+								"id": 2870,
 								"name": "Widget.attrs"
 							}
 						},
 						{
-							"id": 2912,
+							"id": 2928,
 							"name": "view",
 							"kind": 2048,
 							"kindString": "Method",
@@ -69126,7 +69333,7 @@
 							},
 							"signatures": [
 								{
-									"id": 2913,
+									"id": 2929,
 									"name": "view",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -69135,7 +69342,7 @@
 									},
 									"parameters": [
 										{
-											"id": 2914,
+											"id": 2930,
 											"name": "node",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -69147,7 +69354,7 @@
 												"typeArguments": [
 													{
 														"type": "reference",
-														"id": 2905,
+														"id": 2917,
 														"name": "MainDetailAttrs"
 													},
 													{
@@ -69197,8 +69404,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								2915,
-								2912
+								2931,
+								2928
 							]
 						}
 					],
@@ -69229,14 +69436,14 @@
 					]
 				},
 				{
-					"id": 2905,
+					"id": 2917,
 					"name": "MainDetailAttrs",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 2909,
+							"id": 2921,
 							"name": "class",
 							"kind": 1024,
 							"kindString": "Property",
@@ -69261,7 +69468,7 @@
 							}
 						},
 						{
-							"id": 2907,
+							"id": 2919,
 							"name": "field",
 							"kind": 1024,
 							"kindString": "Property",
@@ -69286,7 +69493,7 @@
 							}
 						},
 						{
-							"id": 2908,
+							"id": 2920,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -69311,7 +69518,7 @@
 							}
 						},
 						{
-							"id": 2906,
+							"id": 2918,
 							"name": "lib",
 							"kind": 1024,
 							"kindString": "Property",
@@ -69336,7 +69543,73 @@
 							}
 						},
 						{
-							"id": 2910,
+							"id": 2923,
+							"name": "onclick",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+									"line": 8,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 2924,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"signatures": [
+										{
+											"id": 2925,
+											"name": "__call",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 2926,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "void"
+											}
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Shared/Sites/staging/apps/hsDocs/node_modules/hswidget/bin/esm/Widget.d.ts",
+											"line": 8,
+											"character": 13
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 2848,
+								"name": "WidgetAttrs.onclick"
+							}
+						},
+						{
+							"id": 2922,
 							"name": "style",
 							"kind": 1024,
 							"kindString": "Property",
@@ -69366,11 +69639,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								2909,
-								2907,
-								2908,
-								2906,
-								2910
+								2921,
+								2919,
+								2920,
+								2918,
+								2923,
+								2922
 							]
 						}
 					],
@@ -69390,7 +69664,7 @@
 					]
 				},
 				{
-					"id": 2920,
+					"id": 2936,
 					"name": "log",
 					"kind": 32,
 					"kindString": "Variable",
@@ -69411,14 +69685,14 @@
 					"defaultValue": "new Log('MainDetail')"
 				},
 				{
-					"id": 2921,
+					"id": 2937,
 					"name": "getOverview",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2922,
+							"id": 2938,
 							"name": "getOverview",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -69429,7 +69703,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2923,
+									"id": 2939,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -69456,14 +69730,14 @@
 					]
 				},
 				{
-					"id": 2924,
+					"id": 2940,
 					"name": "itemDoc",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 2925,
+							"id": 2941,
 							"name": "itemDoc",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -69473,7 +69747,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2926,
+									"id": 2942,
 									"name": "node",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -69527,29 +69801,29 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2911
+						2927
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						2905
+						2917
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						2920
+						2936
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2921,
-						2924
+						2937,
+						2940
 					]
 				}
 			],
@@ -70755,7 +71029,7 @@
 			]
 		},
 		{
-			"id": 2933,
+			"id": 2949,
 			"name": "\"view/Tooltip\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -70765,7 +71039,7 @@
 			"originalName": "/Users/sth1pal/Documents/Development/JavaScript/nodejs/ts6/dev/hsApps/hsDocs/src/view/Tooltip.ts",
 			"children": [
 				{
-					"id": 2934,
+					"id": 2950,
 					"name": "Vnode",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -70793,7 +71067,7 @@
 					}
 				},
 				{
-					"id": 2935,
+					"id": 2951,
 					"name": "tooltip",
 					"kind": 64,
 					"kindString": "Function",
@@ -70802,7 +71076,7 @@
 					},
 					"signatures": [
 						{
-							"id": 2936,
+							"id": 2952,
 							"name": "tooltip",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -70811,7 +71085,7 @@
 							},
 							"parameters": [
 								{
-									"id": 2937,
+									"id": 2953,
 									"name": "text",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70824,7 +71098,7 @@
 									}
 								},
 								{
-									"id": 2938,
+									"id": 2954,
 									"name": "tip",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70837,7 +71111,7 @@
 									}
 								},
 								{
-									"id": 2939,
+									"id": 2955,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -70870,14 +71144,14 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						2934
+						2950
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						2935
+						2951
 					]
 				}
 			],
@@ -70899,16 +71173,16 @@
 				1,
 				499,
 				107,
-				2927,
+				2943,
 				229,
-				2931,
+				2947,
 				97,
-				2932,
+				2948,
 				2841,
-				2868,
-				2904,
+				2876,
+				2916,
 				33,
-				2933
+				2949
 			]
 		}
 	]

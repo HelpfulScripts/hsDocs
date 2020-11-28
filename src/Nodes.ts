@@ -481,7 +481,7 @@ class DocsTypeLiteral extends DocsStructured {
 class DocsTypeParameter extends DocsBaseNode {
     init() {
         super.init();
-        this.TYPE = ['typeOperator', 'reference'];
+        this.TYPE = ['typeOperator', 'reference', 'union', 'intrinsic'];
         this.FLAGS = { isExported:allowed };
         this.sources = optional;   
         this.kindPrint = 'types parameter';
