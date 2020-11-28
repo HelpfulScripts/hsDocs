@@ -1,6 +1,6 @@
 {
     "name": "hsdocs",
-    "version": "2.9.2",
+    "version": "2.9.3",
     "keywords": [
         "es6",
         "jsdocs",
@@ -16,7 +16,9 @@
     },
     "main": "./bin/cjs/index.js",
     "module": "./bin/esm/index.js",
-    "files": ["bin/"],
+    "files": [
+        "bin/"
+    ],
     "types": "./bin/esm/index.d.ts",
     "type": "module",
     "scripts": {
