@@ -72,6 +72,6 @@
         "hsutil": "3.x.x",
         "hswidget": "2.x.x",
         "mithril": "^2.0.4",
-        "showdown": "^1.9.1"
+        "showdown": "^2.0.0"
     }
 }
